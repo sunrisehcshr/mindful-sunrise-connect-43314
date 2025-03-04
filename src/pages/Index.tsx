@@ -1,9 +1,14 @@
 
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, MapPin, CheckCircle, Clock, Mail, Phone } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
+import SEOHead from "@/components/SEOHead";
+import SchemaMarkup from "@/components/SchemaMarkup";
+import InternalNavLinks from "@/components/InternalNavLinks";
+
+// Lazy load components to improve initial load time
+const TestimonialsSection = lazy(() => import('@/components/TestimonialsSection'));
 
 const Index = () => {
   const [name, setName] = useState("");
@@ -12,6 +17,7 @@ const Index = () => {
   const [date, setDate] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,18 +37,39 @@ const Index = () => {
     }, 3000);
   };
 
+  // Close mobile menu when clicking a link
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  // Add smooth scrolling for better UX
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    // Handle initial hash on page load
+    handleHashChange();
+
+    // Add event listener for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Clean up
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
   return (
     <>
-      <Helmet>
-        <title>Sunrise Human Care Services | Mental Health Clinic in Havertown, PA</title>
-        <meta name="description" content="Sunrise Human Care Services provides compassionate mental health services in Havertown, PA. Professional therapy, counseling, and psychiatric care for individuals, couples, and families." />
-        <meta name="keywords" content="mental health, therapy, counseling, psychiatry, Havertown, PA, psychological services, depression, anxiety, trauma, wellness" />
-        <meta property="og:title" content="Sunrise Human Care Services | Mental Health Clinic in Havertown, PA" />
-        <meta property="og:description" content="Professional therapy, counseling, and psychiatric services in Havertown, PA. Compassionate care for individuals, couples, and families." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://sunrisehcs.com" />
-        <link rel="canonical" href="https://sunrisehcs.com" />
-      </Helmet>
+      <SEOHead />
+      <SchemaMarkup />
 
       <div className="min-h-screen flex flex-col">
         {/* Navbar */}
@@ -67,21 +94,32 @@ const Index = () => {
                 </div>
               </Link>
 
-              <nav className="hidden md:flex items-center space-x-1">
-                <a href="#home" className="px-4 py-2 rounded-md text-sm font-medium text-foreground bg-sunrise-400/20">Home</a>
-                <a href="#services" className="px-4 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-sunrise-400/10">Services</a>
-                <a href="#about" className="px-4 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-sunrise-400/10">About</a>
-                <a href="#faq" className="px-4 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-sunrise-400/10">FAQ</a>
-                <a href="#contact" className="px-4 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-sunrise-400/10">Contact</a>
-                <a href="#appointment" className="ml-2 btn-sunrise">Book Now</a>
-              </nav>
+              {/* Desktop Navigation */}
+              <div className="hidden md:block">
+                <InternalNavLinks />
+              </div>
 
-              <button className="md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground focus:outline-none">
+              {/* Mobile Menu Button */}
+              <button 
+                className="md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground focus:outline-none"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-expanded={mobileMenuOpen}
+                aria-label="Toggle navigation menu"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
             </div>
+            
+            {/* Mobile Navigation */}
+            {mobileMenuOpen && (
+              <div className="md:hidden mt-4 py-2 bg-white border-t">
+                <nav className="flex flex-col space-y-2">
+                  <InternalNavLinks className="flex-col" onLinkClick={closeMobileMenu} />
+                </nav>
+              </div>
+            )}
           </div>
         </header>
         
@@ -438,7 +476,7 @@ const Index = () => {
                     {/* Map */}
                     <div className="h-64 md:h-80 rounded-xl overflow-hidden border border-border/40 shadow-sm">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24470.75269647747!2d-75.31516589451929!3d39.9707342424314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c09bb476bd27%3A0xfb0cdef8f04a8c20!2sHavertown%2C%20PA!5e0!3m2!1sen!2sus!4v1697318636626!5m2!1sen!2sus"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.025196175262!2d-75.35433992420519!3d39.97271998652599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c1c6a4c1b55b%3A0xa5a74da50eaac1d!2s2050%20West%20Chester%20Pike%2C%20Havertown%2C%20PA%2019083!5e0!3m2!1sen!2sus!4v1682187759696!5m2!1sen!2sus"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
@@ -457,15 +495,16 @@ const Index = () => {
                         <div className="flex items-start space-x-3">
                           <MapPin className="h-5 w-5 text-sunrise-700 mt-0.5" />
                           <p className="text-muted-foreground">
-                            123 Main Street<br />
-                            Havertown, PA 19083
+                            2050 West Chester Pike<br />
+                            Havertown, PA 19083<br />
+                            United States
                           </p>
                         </div>
                         
                         <div className="flex items-center space-x-3">
                           <Phone className="h-5 w-5 text-sunrise-700" />
-                          <a href="tel:+12155551234" className="text-muted-foreground hover:text-sunrise-700 transition-colors">
-                            (215) 555-1234
+                          <a href="tel:+18146202162" className="text-muted-foreground hover:text-sunrise-700 transition-colors">
+                            (814) 620-2162
                           </a>
                         </div>
                         
@@ -484,12 +523,28 @@ const Index = () => {
                       
                       <div className="space-y-2">
                         <div className="flex justify-between">
-                          <p className="text-muted-foreground">Monday - Friday</p>
-                          <p className="font-medium">8:00 AM - 7:00 PM</p>
+                          <p className="text-muted-foreground">Monday</p>
+                          <p className="font-medium">9:00 AM - 5:00 PM</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="text-muted-foreground">Tuesday</p>
+                          <p className="font-medium">9:00 AM - 5:00 PM</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="text-muted-foreground">Wednesday</p>
+                          <p className="font-medium">9:00 AM - 5:00 PM</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="text-muted-foreground">Thursday</p>
+                          <p className="font-medium">9:00 AM - 5:00 PM</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="text-muted-foreground">Friday</p>
+                          <p className="font-medium">9:00 AM - 5:00 PM</p>
                         </div>
                         <div className="flex justify-between">
                           <p className="text-muted-foreground">Saturday</p>
-                          <p className="font-medium">9:00 AM - 5:00 PM</p>
+                          <p className="font-medium">Closed</p>
                         </div>
                         <div className="flex justify-between">
                           <p className="text-muted-foreground">Sunday</p>
@@ -504,56 +559,9 @@ const Index = () => {
           </section>
           
           {/* Testimonials Section */}
-          <section className="py-20 bg-secondary">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-400/20 text-sunrise-900 mb-4">
-                  Testimonials
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  What Our Clients Say
-                </h2>
-                <p className="text-muted-foreground">
-                  Hear about the experiences of individuals who have found support 
-                  and healing through our services.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  {
-                    quote: "The therapists at Sunrise have helped me develop the tools I need to manage my anxiety. I'm truly grateful for their compassionate approach.",
-                    author: "J.M., Havertown",
-                  },
-                  {
-                    quote: "Our family therapy sessions have transformed our communication. We've learned to understand each other better and build stronger relationships.",
-                    author: "The Wilson Family",
-                  },
-                  {
-                    quote: "After struggling for years, the team at Sunrise helped me find a path forward. Their personalized approach made all the difference in my recovery.",
-                    author: "T.D., Philadelphia",
-                  },
-                ].map((testimonial, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-card rounded-xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow duration-300"
-                  >
-                    <div className="h-32 flex items-center justify-center mb-6">
-                      <svg className="h-10 w-10 text-sunrise-400/30" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                        <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                      </svg>
-                    </div>
-                    <p className="text-muted-foreground mb-4 italic">"{testimonial.quote}"</p>
-                    <p className="font-medium text-foreground">- {testimonial.author}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <Suspense fallback={<div className="py-20 text-center">Loading testimonials...</div>}>
+            <TestimonialsSection />
+          </Suspense>
         </main>
         
         {/* Footer */}
@@ -577,8 +585,9 @@ const Index = () => {
                   <h3 className="font-semibold text-lg">Sunrise</h3>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Sunrise Human Care Services provides compassionate mental health care in Havertown, PA, 
-                  focusing on individual well-being and community support.
+                  Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. 
+                  Our dedicated team provides counseling, therapy, psychiatry, and medication management for 
+                  anxiety, depression, ADHD, trauma, and more.
                 </p>
                 <div className="flex space-x-4">
                   <a 
@@ -624,13 +633,13 @@ const Index = () => {
                   <li className="flex items-start space-x-3">
                     <MapPin className="h-5 w-5 text-sunrise-400 mt-0.5" />
                     <span className="text-sm text-muted-foreground">
-                      123 Main Street, Havertown, PA 19083
+                      2050 West Chester Pike, Havertown, PA 19083, United States
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <Phone className="h-5 w-5 text-sunrise-400" />
-                    <a href="tel:+12155551234" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      (215) 555-1234
+                    <a href="tel:+18146202162" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      (814) 620-2162
                     </a>
                   </li>
                   <li className="flex items-center space-x-3">
@@ -642,16 +651,40 @@ const Index = () => {
                   <li className="flex items-start space-x-3">
                     <Clock className="h-5 w-5 text-sunrise-400 mt-0.5" />
                     <div className="text-sm text-muted-foreground">
-                      <p>Monday - Friday: 8am - 7pm</p>
-                      <p>Saturday: 9am - 5pm</p>
-                      <p>Sunday: Closed</p>
+                      <p>Monday - Friday: 9am - 5pm</p>
+                      <p>Saturday & Sunday: Closed</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
+              {/* Quick Links */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-lg">Quick Links</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <a href="#home" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</a>
+                  </li>
+                  <li>
+                    <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Our Services</a>
+                  </li>
+                  <li>
+                    <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</a>
+                  </li>
+                  <li>
+                    <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="#appointment" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+                  </li>
+                  <li>
+                    <a href="/sitemap.xml" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Sitemap</a>
+                  </li>
+                </ul>
+              </div>
+
               {/* Newsletter */}
-              <div className="space-y-4 md:col-span-2 lg:col-span-2">
+              <div className="space-y-4">
                 <h3 className="font-semibold text-lg">Newsletter</h3>
                 <p className="text-sm text-muted-foreground">
                   Subscribe to our newsletter for helpful mental health tips and updates.
@@ -681,17 +714,17 @@ const Index = () => {
                 <div className="mt-4 md:mt-0">
                   <ul className="flex space-x-6">
                     <li>
-                      <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                      <a href="/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                         Privacy Policy
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                      <a href="/terms-of-service" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                         Terms of Service
                       </a>
                     </li>
                     <li>
-                      <a href="#sitemap" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                      <a href="/sitemap.xml" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                         Sitemap
                       </a>
                     </li>
