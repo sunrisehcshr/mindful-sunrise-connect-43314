@@ -17,6 +17,14 @@ const FAQSection: React.FC = () => {
       answer: "Typical therapy sessions are 50 minutes in length, which is the standard for most mental health services. Initial evaluations may be longer, usually around 60-90 minutes, to allow for a comprehensive assessment of your needs."
     },
     {
+      question: "What happens during couples counseling?",
+      answer: "During couples counseling, our therapists work with both partners to identify communication patterns, resolve conflicts, and strengthen your relationship. Sessions typically focus on developing skills for effective communication, rebuilding trust, and creating shared goals. Both partners are encouraged to participate actively in the process."
+    },
+    {
+      question: "How does medication management work with your practice?",
+      answer: "Our psychiatrists provide comprehensive medication management services, starting with a thorough evaluation of your symptoms and medical history. If medication is appropriate, they'll discuss options, potential benefits, and side effects with you. Regular follow-up appointments help monitor your progress and make any necessary adjustments to your treatment plan."
+    },
+    {
       question: "How do I know if I need therapy?",
       answer: "If you're experiencing persistent feelings of sadness, anxiety, or overwhelm, having difficulty managing daily life, struggling with relationships, or facing challenging life transitions, therapy might be beneficial. We offer free 15-minute consultations to help determine if our services are right for you."
     },

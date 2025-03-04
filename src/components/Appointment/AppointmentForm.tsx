@@ -6,19 +6,30 @@ const AppointmentForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
+  const [service, setService] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  const services = [
+    "Individual Therapy",
+    "Group Therapy",
+    "Family Counseling",
+    "Couples Counseling",
+    "Psychiatry & Medication Management",
+    "Specialized Programs"
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real application, you would send this data to your backend
-    console.log({ name, email, phone, date, message });
+    console.log({ name, email, phone, date, service, message });
     setSubmitted(true);
     // Reset form
     setName("");
     setEmail("");
     setPhone("");
     setDate("");
+    setService("");
     setMessage("");
     
     // Show success for 3 seconds then reset
@@ -67,16 +78,34 @@ const AppointmentForm: React.FC = () => {
         </div>
       </div>
       
-      <div>
-        <label htmlFor="date" className="block text-sm font-medium text-foreground mb-1">Preferred Date</label>
-        <input
-          id="date"
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
-          required
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="date" className="block text-sm font-medium text-foreground mb-1">Preferred Date</label>
+          <input
+            id="date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        
+        <div>
+          <label htmlFor="service" className="block text-sm font-medium text-foreground mb-1">Service Type</label>
+          <select
+            id="service"
+            value={service}
+            onChange={(e) => setService(e.target.value)}
+            className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
+            required
+          >
+            <option value="" disabled>Select a service...</option>
+            {services.map((svc, index) => (
+              <option key={index} value={svc}>{svc}</option>
+            ))}
+          </select>
+        </div>
       </div>
       
       <div>
