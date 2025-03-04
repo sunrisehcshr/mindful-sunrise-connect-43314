@@ -1,0 +1,66 @@
+
+import React from 'react';
+
+const AboutSection: React.FC = () => {
+  const stats = [
+    { value: "13+", label: "Years of Experience" },
+    { value: "20+", label: "Mental Health Professionals" },
+    { value: "5,000+", label: "Clients Helped" },
+    { value: "98%", label: "Client Satisfaction" }
+  ];
+
+  return (
+    <section id="about" className="py-20 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-400/20 text-sunrise-900 mb-4">
+              About Us
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Dedicated to Your Mental Health Journey
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              At Sunrise Human Care Services, we believe in a holistic approach to mental health. 
+              Our clinic was founded in 2010 with a mission to provide accessible, compassionate care 
+              to the Havertown community and surrounding areas.
+            </p>
+            <p className="text-muted-foreground mb-6">
+              Our team of licensed therapists, counselors, and psychiatrists bring diverse expertise 
+              to address a wide range of mental health challenges, from anxiety and depression to trauma 
+              and relationship issues.
+            </p>
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              {stats.map((stat, index) => (
+                <div key={index} className="bg-secondary/50 rounded-lg p-4 text-center">
+                  <p className="text-2xl font-bold text-sunrise-700">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
+            <img 
+              className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md"
+              src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+              alt="Our clinic building"
+            />
+            <img 
+              className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md"
+              src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+              alt="Our therapy room"
+            />
+            <img 
+              className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2"
+              src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Our team"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;

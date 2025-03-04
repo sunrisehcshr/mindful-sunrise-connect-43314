@@ -1,34 +1,13 @@
 
-import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { CalendarCheck, Phone } from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { CalendarCheck, Phone } from 'lucide-react';
 
-const HeroSection = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  // Parallax effect on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!heroRef.current) return;
-      const scrollY = window.scrollY;
-      const opacity = 1 - Math.min(scrollY / 500, 0.6);
-      const transform = `translateY(${scrollY * 0.5}px)`;
-      
-      heroRef.current.style.opacity = opacity.toString();
-      heroRef.current.style.transform = transform;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background gradient */}
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       <div className="absolute inset-0 bg-gradient-to-b from-sunrise-50/40 to-white/50 z-0"></div>
       
-      {/* Background pattern */}
       <div className="absolute inset-0 z-0 opacity-5">
         <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
@@ -38,10 +17,7 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div 
-        ref={heroRef}
-        className="container mx-auto px-4 md:px-6 relative z-10"
-      >
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div 
             className="space-y-6"
@@ -85,10 +61,10 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.8 }}
             >
-              <Link to="/appointment" className="btn-sunrise flex items-center gap-2">
+              <a href="#appointment" className="btn-sunrise flex items-center gap-2">
                 <CalendarCheck className="h-5 w-5" />
                 Book Appointment
-              </Link>
+              </a>
               <a href="tel:+12155551234" className="btn-sunrise-outline flex items-center gap-2">
                 <Phone className="h-5 w-5" />
                 Call Us Now
@@ -114,29 +90,6 @@ const HeroSection = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div 
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-muted-foreground"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-        >
-          <span className="text-xs uppercase tracking-wider mb-2">Scroll to discover</span>
-          <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
-            <motion.div 
-              className="w-1.5 h-3 bg-muted-foreground/50 rounded-full mt-2"
-              animate={{ 
-                y: [0, 12, 0],
-              }}
-              transition={{ 
-                repeat: Infinity,
-                duration: 1.5,
-                ease: "easeInOut",
-              }}
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   );
