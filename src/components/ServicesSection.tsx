@@ -35,7 +35,7 @@ const services = [
 const ServicesSection = () => {
   const controls = useAnimation();
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, threshold: 0.2 });
+  const inView = useInView(ref, { once: true });
   
   useEffect(() => {
     if (inView) {
