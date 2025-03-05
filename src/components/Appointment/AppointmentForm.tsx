@@ -1,13 +1,15 @@
-
 import React, { useState } from 'react';
 
 const AppointmentForm: React.FC = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [date, setDate] = useState("");
-  const [service, setService] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    service: "",
+    message: ""
+  });
+
   const [submitted, setSubmitted] = useState(false);
 
   const services = [
@@ -19,23 +21,34 @@ const AppointmentForm: React.FC = () => {
     "Specialized Programs"
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Form submission
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to your backend
-    console.log({ name, email, phone, date, service, message });
-    setSubmitted(true);
-    // Reset form
-    setName("");
-    setEmail("");
-    setPhone("");
-    setDate("");
-    setService("");
-    setMessage("");
-    
-    // Show success for 3 seconds then reset
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 3000);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xpwqvvvw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", date: "", service: "", message: "" });
+
+        // Hide success message after 3 seconds
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
@@ -44,59 +57,64 @@ const AppointmentForm: React.FC = () => {
         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Full Name</label>
         <input
           id="name"
+          name="name"
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={formData.name}
+          onChange={handleChange}
           className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
           required
         />
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">Email</label>
           <input
             id="email"
+            name="email"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleChange}
             className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
             required
           />
         </div>
-        
+
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1">Phone Number</label>
           <input
             id="phone"
+            name="phone"
             type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={formData.phone}
+            onChange={handleChange}
             className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
             required
           />
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="date" className="block text-sm font-medium text-foreground mb-1">Preferred Date</label>
           <input
             id="date"
+            name="date"
             type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            value={formData.date}
+            onChange={handleChange}
             className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
             required
           />
         </div>
-        
+
         <div>
           <label htmlFor="service" className="block text-sm font-medium text-foreground mb-1">Service Type</label>
           <select
             id="service"
-            value={service}
-            onChange={(e) => setService(e.target.value)}
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
             className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
             required
           >
@@ -107,20 +125,21 @@ const AppointmentForm: React.FC = () => {
           </select>
         </div>
       </div>
-      
+
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">Your Message</label>
         <textarea
           id="message"
+          name="message"
           rows={4}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          value={formData.message}
+          onChange={handleChange}
           className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50"
           placeholder="Please share any specific concerns or questions you have."
           required
         ></textarea>
       </div>
-      
+
       <button type="submit" className="btn-sunrise w-full">
         {submitted ? "Request Sent!" : "Request Appointment"}
       </button>
