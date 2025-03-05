@@ -24,7 +24,7 @@ const AboutSection: React.FC = () => {
               Dedicated to Your Mental Health Journey
             </h2>
             <p className="text-muted-foreground mb-6">Step into a brighter tomorrow with Sunrise Human Care Services, founded by Michael Thevar, whose dedication to mental health spans over 30 years. Built on a foundation of experience, trust, and community care, we are committed to helping individuals navigate their challenges and realize their full potential.</p>
-            <p className="text-muted-foreground mb-6">With a deep understanding of mental well-being, our mission is to provide compassionate support and meaningful solutions, empowering people to lead healthier, more fulfilling lives.</p>
+            
             <div className="grid grid-cols-2 gap-4 mb-6">
               {stats.map((stat, index) => <div key={index} className="bg-secondary/50 rounded-lg p-4 text-center">
                   <p className="text-2xl font-bold text-sunrise-700">{stat.value}</p>
