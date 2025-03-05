@@ -1,13 +1,10 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import SocialLinks from './SocialLinks';
 import FooterNav from './FooterNav';
 import NewsletterForm from './NewsletterForm';
-
 const Footer: React.FC = () => {
-  return (
-    <footer className="bg-secondary py-12 border-t">
+  return <footer className="bg-secondary py-12 border-t">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
@@ -52,9 +49,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-sunrise-400" />
-                <a href="mailto:info@sunrisehcs.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  info@sunrisehcs.com
-                </a>
+                <a href="mailto:info@sunrisehcs.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">info@sunrisehcsllc.com</a>
               </li>
               <li className="flex items-start space-x-3">
                 <Clock className="h-5 w-5 text-sunrise-400 mt-0.5" />
@@ -100,8 +95,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
