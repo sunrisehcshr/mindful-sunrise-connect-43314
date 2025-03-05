@@ -1,4 +1,3 @@
-
 import { useState, useEffect, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
@@ -7,6 +6,7 @@ import InternalNavLinks from "@/components/InternalNavLinks";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/services/ServicesSection";
 import AboutSection from "@/components/AboutSection";
+import SpecialtiesSection from "@/components/SpecialtiesSection";
 import FAQSection from "@/components/FAQ/FAQSection";
 import AppointmentSection from "@/components/Appointment/AppointmentSection";
 import Footer from "@/components/Footer/Footer";
@@ -107,6 +107,7 @@ const Index = () => {
           <HeroSection />
           <ServicesSection />
           <AboutSection />
+          <SpecialtiesSection />
           <FAQSection />
           <AppointmentSection />
           
