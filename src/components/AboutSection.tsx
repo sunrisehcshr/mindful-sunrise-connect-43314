@@ -16,7 +16,7 @@ const AboutSection: React.FC = () => {
   return <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 py-[3px]">
             <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-400/20 text-sunrise-900 mb-4">
               About Us
             </span>
