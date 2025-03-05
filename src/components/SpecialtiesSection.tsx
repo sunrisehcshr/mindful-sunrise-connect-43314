@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { CircleCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const SpecialtiesSection: React.FC = () => {
@@ -70,7 +70,7 @@ const SpecialtiesSection: React.FC = () => {
               variants={itemVariants}
             >
               <div className="mr-3 text-sunrise-500">
-                <Check size={20} />
+                <CircleCheck size={20} />
               </div>
               <p className="font-medium">{specialty}</p>
             </motion.div>
