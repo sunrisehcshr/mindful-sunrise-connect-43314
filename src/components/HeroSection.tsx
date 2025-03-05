@@ -36,9 +36,7 @@ const HeroSection: React.FC = () => {
             }} transition={{
               delay: 0.3,
               duration: 0.5
-            }}>
-                Sunrise Human Care Services
-              </motion.span>
+            }}>Mental Health Clinic</motion.span>
             </div>
             <motion.h1 initial={{
             opacity: 0
