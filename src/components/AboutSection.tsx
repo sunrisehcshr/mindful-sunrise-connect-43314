@@ -1,20 +1,12 @@
 
 import React from 'react';
+
 const AboutSection: React.FC = () => {
-  const stats = [{
-    value: "20+",
-    label: "Mental Health Professionals"
-  }, {
-    value: "5,000+",
-    label: "Clients Helped"
-  }, {
-    value: "98%",
-    label: "Client Satisfaction"
-  }];
-  return <section id="about" className="py-20 bg-background">
+  return (
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1 py-[3px]">
+          <div className="order-2 lg:order-1">
             <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-400/20 text-sunrise-900 mb-4">
               About Us
             </span>
@@ -23,13 +15,6 @@ const AboutSection: React.FC = () => {
             </h2>
             <p className="text-muted-foreground mb-6">Step into a brighter tomorrow with Sunrise Human Care Services, founded by Michael Thevar, whose dedication to mental health spans over 30 years. Built on a foundation of experience, trust, and community care, we are committed to helping individuals navigate their challenges and realize their full potential.</p>
             <p className="text-muted-foreground mb-6">With a deep understanding of mental well-being, our mission is to provide compassionate support and meaningful solutions, empowering people to lead healthier, more fulfilling lives.</p>
-            
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              {stats.map((stat, index) => <div key={index} className="bg-secondary/50 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-bold text-sunrise-700">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>)}
-            </div>
           </div>
           
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
@@ -39,6 +24,8 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AboutSection;
