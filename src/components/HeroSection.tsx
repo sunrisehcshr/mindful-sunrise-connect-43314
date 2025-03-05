@@ -98,7 +98,7 @@ const HeroSection: React.FC = () => {
             <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Therapy session in a comfortable environment" className="h-full w-full object-cover" />
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent z-20">
               <p className="text-white text-lg font-medium">Creating a safe space for healing</p>
-              <p className="text-white/80 text-sm">Personalized therapy for your unique needs</p>
+              <p className="text-white/80 text-sm">Personalized therapy and psychiatry services in Havertown, PA for your unique needs.</p>
             </div>
           </motion.div>
         </div>
