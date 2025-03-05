@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
-
 const ContactInfo: React.FC = () => {
-  return (
-    <div className="bg-secondary/50 rounded-xl p-6 border border-border/40">
+  return <div className="bg-secondary/50 rounded-xl p-6 border border-border/40">
       <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
       
       <div className="space-y-4">
@@ -26,13 +23,9 @@ const ContactInfo: React.FC = () => {
         
         <div className="flex items-center space-x-3">
           <Mail className="h-5 w-5 text-sunrise-700" />
-          <a href="mailto:info@sunrisehcs.com" className="text-muted-foreground hover:text-sunrise-700 transition-colors">
-            info@sunrisehcs.com
-          </a>
+          <a href="mailto:info@sunrisehcs.com" className="text-muted-foreground hover:text-sunrise-700 transition-colors">info@sunrisehcsllc.com</a>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ContactInfo;
