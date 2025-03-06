@@ -1,9 +1,6 @@
-
 import React from 'react';
-
 const AboutSection: React.FC = () => {
-  return (
-    <section id="about" className="py-12 pb-4 bg-background">
+  return <section id="about" className="py-12 pb-4 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
@@ -14,7 +11,7 @@ const AboutSection: React.FC = () => {
               Dedicated to Your Mental Health Journey
             </h2>
             <p className="text-muted-foreground mb-6">Step into a brighter tomorrow with Sunrise Human Care Services, founded by Michael Thevar, whose dedication to mental health spans over 30 years. Built on a foundation of experience, trust, and community care, we are committed to helping individuals navigate their challenges and realize their full potential.</p>
-            <p className="text-muted-foreground mb-6">With a deep understanding of mental well-being, our mission is to provide compassionate support and meaningful solutions, empowering people to lead healthier, more fulfilling lives.</p>
+            <p className="text-muted-foreground mb-6">With a deep understanding of mental well-being, our mission is to provide compassionate support and meaningful solutions for children, teens, adults, and seniors to lead healthier, more fulfilling lives.</p>
           </div>
           
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
@@ -24,8 +21,6 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
