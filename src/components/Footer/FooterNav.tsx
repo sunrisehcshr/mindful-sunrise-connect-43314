@@ -8,8 +8,6 @@ const FooterNav: React.FC = () => {
     { href: "#about", label: "About Us" },
     { href: "#faq", label: "FAQ" },
     { href: "#appointment", label: "Contact" },
-    { href: "/couples-counseling", label: "Couples Counseling" },
-    { href: "/psychiatry", label: "Psychiatry Services" },
     { href: "/sitemap.xml", label: "Sitemap" }
   ];
 
