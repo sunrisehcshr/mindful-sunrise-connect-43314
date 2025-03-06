@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarCheck, Phone } from 'lucide-react';
 const HeroSection: React.FC = () => {
-  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10">
       <div className="absolute inset-0 bg-gradient-to-b from-sunrise-50/40 to-white/50 z-0"></div>
       
       <div className="absolute inset-0 z-0 opacity-5">
@@ -16,7 +17,7 @@ const HeroSection: React.FC = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div className="space-y-6" initial={{
+          <motion.div className="space-y-5" initial={{
           opacity: 0,
           y: 20
         }} animate={{
@@ -60,7 +61,7 @@ const HeroSection: React.FC = () => {
             delay: 0.7,
             duration: 0.8
           }}>We provide compassionate, personalized mental health services to help you navigate life's challenges. Our dedicated team of Licensed therapists, Psychologists, Counselors, and Psychiatrists are dedicated to your well-being.</motion.p>
-            <motion.div className="flex flex-wrap gap-4 pt-2" initial={{
+            <motion.div className="flex flex-wrap gap-4 pt-1" initial={{
             opacity: 0,
             y: 20
           }} animate={{
