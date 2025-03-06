@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
           
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
             <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" src="https://i.imgur.com/CIVFGK9.jpeg" alt="therapy for older adults" />
-            <img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" src="https://i.imgur.com/OxJkb2X.jpeg="family counseling in havertown" />
+            <img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" src="https://i.imgur.com/OxJkb2X.jpeg" alt="family counseling in havertown" />
             <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2" src="https://i.imgur.com/oLQIxo3.jpeg" alt="Couple therapy in havertown,pa" />
           </div>
         </div>
