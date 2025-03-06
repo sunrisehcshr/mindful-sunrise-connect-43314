@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarCheck, Phone } from 'lucide-react';
+
 const HeroSection: React.FC = () => {
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-6">
       <div className="absolute inset-0 bg-gradient-to-b from-sunrise-50/40 to-white/50 z-0"></div>
@@ -46,9 +47,9 @@ const HeroSection: React.FC = () => {
             delay: 0.5,
             duration: 0.8
           }} className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900">
-              Step Into a Brighter Tomorrow with Sunrise Human Care -{" "}
+              Compassionate Mental Health Care in{" "}
               <span className="relative">
-                <span className="relative z-10 text-amber-500">Mental Health Services in Havertown, PA</span>
+                <span className="relative z-10 text-gray-900">Havertown, PA</span>
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-sunrise-400/30 -z-10"></span>
               </span>
             </motion.h1>
@@ -103,4 +104,5 @@ const HeroSection: React.FC = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
