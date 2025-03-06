@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarCheck, Phone } from 'lucide-react';
 const HeroSection: React.FC = () => {
-  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10">
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-6">
       <div className="absolute inset-0 bg-gradient-to-b from-sunrise-50/40 to-white/50 z-0"></div>
       
       <div className="absolute inset-0 z-0 opacity-5">
