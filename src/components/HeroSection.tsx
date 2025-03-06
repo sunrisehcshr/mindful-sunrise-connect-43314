@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarCheck, Phone } from 'lucide-react';
-
 const HeroSection: React.FC = () => {
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-6">
       <div className="absolute inset-0 bg-gradient-to-b from-sunrise-50/40 to-white/50 z-0"></div>
@@ -53,14 +52,14 @@ const HeroSection: React.FC = () => {
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-sunrise-400/30 -z-10"></span>
               </span>
             </motion.h1>
-            <motion.p className="text-lg text-muted-foreground max-w-2xl" initial={{
+            <motion.p initial={{
             opacity: 0
           }} animate={{
             opacity: 1
           }} transition={{
             delay: 0.7,
             duration: 0.8
-          }}>We provide compassionate, personalized mental health services to help you navigate life's challenges. Our team of licensed therapists, psychologists, counselors, and psychiatrists is committed to guiding you toward a healthier, happier life.</motion.p>
+          }} className="text-muted-foreground max-w-2xl text-lg font-normal">Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health care in Havertown with licensed therapists, psychologists, counselors, and psychiatrists. Schedule an appointment today!</motion.p>
             <motion.div className="flex flex-wrap gap-4 pt-1" initial={{
             opacity: 0,
             y: 20
@@ -104,5 +103,4 @@ const HeroSection: React.FC = () => {
       </div>
     </section>;
 };
-
 export default HeroSection;
