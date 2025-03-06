@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
             delay: 0.5,
             duration: 0.8
           }} className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900">
-              Compassionate Mental Health Care in{" "}
+              Personalized Mental Health Care in{" "}
               <span className="relative">
                 <span className="relative z-10 text-gray-900">Havertown, PA</span>
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-sunrise-400/30 -z-10"></span>
