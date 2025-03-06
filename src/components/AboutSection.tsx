@@ -18,7 +18,7 @@ const AboutSection: React.FC = () => {
           </div>
           
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-            <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" src="https://i.imgur.com/CIVFGK9.jpeg" alt="Mental health of older adults" />
+            <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Our clinic building" />
             <img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" src="https://i.imgur.com/OxJkb2X.jpeg="family counseling in havertown" />
             <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2" src="https://i.imgur.com/oLQIxo3.jpeg" alt="Couple therapy in havertown,pa" />
           </div>
