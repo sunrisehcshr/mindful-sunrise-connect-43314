@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarCheck, Phone } from 'lucide-react';
+
 const HeroSection: React.FC = () => {
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-6">
       <div className="absolute inset-0 bg-gradient-to-b from-sunrise-50/40 to-white/50 z-0"></div>
@@ -74,7 +75,7 @@ const HeroSection: React.FC = () => {
                 <CalendarCheck className="h-5 w-5" />
                 Book Appointment
               </a>
-              <a href="tel:+12155551234" className="btn-sunrise-outline flex items-center gap-2">
+              <a href="tel:+18146202162" className="btn-sunrise-outline flex items-center gap-2">
                 <Phone className="h-5 w-5" />
                 Call Us Now
               </a>
@@ -103,4 +104,5 @@ const HeroSection: React.FC = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
