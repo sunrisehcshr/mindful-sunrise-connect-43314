@@ -59,7 +59,7 @@ const HeroSection: React.FC = () => {
           }} transition={{
             delay: 0.7,
             duration: 0.8
-          }}>We provide compassionate, personalized mental health services to help you navigate life's challenges. Our dedicated team of Licensed therapists, Psychologists, Counselors, and Psychiatrists are dedicated to your well-being.</motion.p>
+          }}>We provide compassionate, personalized mental health services to help you navigate life's challenges. Our team of licensed therapists, psychologists, counselors, and psychiatrists is committed to guiding you toward a healthier, happier life.</motion.p>
             <motion.div className="flex flex-wrap gap-4 pt-1" initial={{
             opacity: 0,
             y: 20
