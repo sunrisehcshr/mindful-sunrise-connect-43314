@@ -92,9 +92,9 @@ const HeroSection: React.FC = () => {
           duration: 1,
           ease: "easeOut"
         }}>
-            <div className="absolute inset-0 bg-gradient-to-tr from-sunrise-400/40 to-sunrise-500/10 mix-blend-multiply z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-sunrise-400/80 to-sunrise-500/20 mix-blend-multiply z-10"></div>
             <img src="https://i.imgur.com/UxXFSUX.jpeg" alt="Expert mental health therapy in Havertown, PA" className="h-full w-full object-cover" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent z-20 bg-transparent">
+            <div className="absolute bottom-0 left-0 right-0 p-9 bg-gradient-to-t from-black/50 to-transparent z-20 bg-transparent">
               <p className="text-white text-lg font-medium">Creating a safe space for healing</p>
               <p className="text-sm font-medium text-slate-50">Personalized therapy and psychiatry services in Havertown, PA for your unique needs.</p>
             </div>
