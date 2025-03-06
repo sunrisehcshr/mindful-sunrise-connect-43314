@@ -93,8 +93,8 @@ const HeroSection: React.FC = () => {
           ease: "easeOut"
         }}>
             <div className="absolute inset-0 bg-gradient-to-tr from-sunrise-400/80 to-sunrise-500/20 mix-blend-multiply z-10"></div>
-            <img src="https://raw.githubusercontent.com/sunrisehumancare/mindful-sunrise-connect/main/public/Therapy%20in%20havertown.jpg" 
-     alt="Therapy session in a comfortable environment" 
+            <img src="https://github.com/sunrisehumancare/mindful-sunrise-connect/blob/main/public/therapy-in-havertown.jpg?raw=true" 
+     alt="Expert mental health therapy in Havertown, PA – compassionate care from licensed therapists" 
      className="h-full w-full object-cover" />
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent z-20">
               <p className="text-white text-lg font-medium">Creating a safe space for healing</p>
