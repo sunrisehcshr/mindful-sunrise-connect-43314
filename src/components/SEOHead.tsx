@@ -12,7 +12,7 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({
   title = "Sunrise Human Care Services | Mental Health Clinic in Havertown, PA",
   description = "Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. Our dedicated team provides counseling, therapy, psychiatry, and medication management for anxiety, depression, ADHD, trauma, and more.",
-  canonicalUrl = "https://sunrisehcs.com",
+  canonicalUrl = "https://sunrisehcsllc.com",
   ogImage = "/og-image.png"
 }) => {
   return (
