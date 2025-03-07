@@ -3,24 +3,18 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import SocialLinks from './SocialLinks';
 import FooterNav from './FooterNav';
 import NewsletterForm from './NewsletterForm';
-
 const Footer: React.FC = () => {
-  return (
-    <footer className="bg-secondary py-12 border-t">
+  return <footer className="bg-secondary py-12 border-t">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img
-                src="/logo.svg" 
-    alt="Sunrise Logo"
-    className="h-10 w-13 scale-200 transition-transform duration-500 group-hover:translate-y-[-5px]" 
-  />
+              <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-13 scale-200 opacity-50 transition-transform duration-500 group-hover:translate-y-[-5px]" />
  <div className="flex flex-col">
   <span className="font-semibold text-lg leading-tight">Sunrise</span>
   <span className="text-xs text-muted-foreground leading-tight">Human Care Services</span>
-</div>
+            </div>
             </div>
             <p className="text-sm text-muted-foreground">
               Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. 
@@ -91,8 +85,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
