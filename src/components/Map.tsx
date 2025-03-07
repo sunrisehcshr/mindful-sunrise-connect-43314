@@ -15,7 +15,7 @@ const Map = () => {
               <MapPin className="h-10 w-10 text-sunrise-500" />
             </div>
             <h3 className="text-lg font-medium">Sunrise Human Care Services</h3>
-            <p className="text-muted-foreground">123 Main Street, Havertown, PA 19083</p>
+            <p className="text-muted-foreground">2050 West Chester Pike, Havertown, PA 19083, United States</p>
             <p className="text-xs text-muted-foreground mt-1">Map loading...</p>
           </div>
         </div>
@@ -25,10 +25,10 @@ const Map = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4 text-sunrise-500" />
-              <span className="text-sm font-medium">123 Main Street, Havertown, PA 19083</span>
+              <span className="text-sm font-medium">2050 West Chester Pike, Havertown, PA 19083, United States</span>
             </div>
             <a 
-              href="https://maps.google.com/?q=Havertown,PA" 
+              href="https://maps.app.goo.gl/5Bop8fKVPk1i61Ss6" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-xs text-sunrise-700 hover:text-sunrise-800 font-medium"
@@ -43,9 +43,9 @@ const Map = () => {
         <div className="bg-card rounded-lg p-4 border border-border flex flex-col items-center text-center shadow-sm">
           <MapPin className="h-6 w-6 text-sunrise-400 mb-2" />
           <h3 className="font-medium">Our Location</h3>
-          <p className="text-sm text-muted-foreground mt-1">123 Main Street, Havertown, PA 19083</p>
+          <p className="text-sm text-muted-foreground mt-1">2050 West Chester Pike, Havertown, PA 19083, United States</p>
           <a 
-            href="https://maps.google.com/?q=Havertown,PA" 
+            href="https://maps.app.goo.gl/5Bop8fKVPk1i61Ss6" 
             target="_blank" 
             rel="noopener noreferrer"
             className="mt-2 text-xs text-sunrise-700 hover:text-sunrise-800 font-medium"
@@ -67,10 +67,10 @@ const Map = () => {
         <div className="bg-card rounded-lg p-4 border border-border flex flex-col items-center text-center shadow-sm">
           <Phone className="h-6 w-6 text-sunrise-400 mb-2" />
           <h3 className="font-medium">Contact Us</h3>
-          <p className="text-sm text-muted-foreground mt-1">Phone: (215) 555-1234</p>
-          <p className="text-sm text-muted-foreground">Email: info@sunrisehcs.com</p>
+          <p className="text-sm text-muted-foreground mt-1">Phone: (814) 620-2162</p>
+          <p className="text-sm text-muted-foreground">Email: info@sunrisehcsllc.com</p>
           <a 
-            href="tel:+12155551234" 
+            href="tel:+18146202162" 
             className="mt-2 text-xs text-sunrise-700 hover:text-sunrise-800 font-medium"
           >
             Call Now
@@ -82,12 +82,10 @@ const Map = () => {
         <h3 className="text-lg font-medium mb-3">How to Find Us</h3>
         <div className="space-y-3 text-sm">
           <p>
-            <strong>By Car:</strong> Plenty of free parking is available in our dedicated lot. 
-            We're located just off Township Line Road, 5 minutes from the Havertown Shopping Center.
+            <strong>By Car:</strong> Plenty of free parking is available in our dedicated lot. We're located just off West Chester Pike, 5 minutes from the Manoa Shopping Center..
           </p>
           <p>
-            <strong>Public Transportation:</strong> We're accessible via SEPTA bus routes 44 and 65, 
-            with stops within a 2-minute walk of our facility.
+            <strong>Public Transportation:</strong> We're accessible via SEPTA bus routes 104 and 112, with stops within a 2-minute walk of our facility.
           </p>
           <p>
             <strong>Accessibility:</strong> Our facility is fully accessible with ramp access and 
