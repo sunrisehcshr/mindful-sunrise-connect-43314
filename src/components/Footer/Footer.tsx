@@ -10,10 +10,10 @@ const Footer: React.FC = () => {
           {/* About */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-13 scale-200 opacity-50 transition-transform duration-500 group-hover:translate-y-[-5px]" />
+              <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-13 scale-200 opacity-70 transition-transform duration-500 group-hover:translate-y-[-5px]" />
  <div className="flex flex-col">
-  <span className="font-semibold text-lg leading-tight">Sunrise</span>
-  <span className="text-xs text-muted-foreground leading-tight">Human Care Services</span>
+  <span className="text-lg leading-tight font-medium">Sunrise</span>
+  <span className="text-xs text-muted-foreground leading-tight font-normal">Human Care Services</span>
             </div>
             </div>
             <p className="text-sm text-muted-foreground">
