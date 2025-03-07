@@ -3,24 +3,20 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import SocialLinks from './SocialLinks';
 import FooterNav from './FooterNav';
 import NewsletterForm from './NewsletterForm';
+
 const Footer: React.FC = () => {
-  return <footer className="bg-secondary py-12 border-t">
+  return (
+    <footer className="bg-secondary py-12 border-t">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-sunrise-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="5" />
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </svg>
+              <img
+                src="/logo.svg" // Reference logo.svg directly from public folder
+                alt="Sunrise Logo"
+                className="h-6 w-6 object-contain" // Adjust size and styling as needed
+              />
               <h3 className="font-semibold text-lg">Sunrise</h3>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -61,17 +57,14 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
           <FooterNav />
-
-          {/* Newsletter */}
           <NewsletterForm />
         </div>
 
         <div className="mt-12 pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Sunrise Human Care Services. All rights reserved.
+              © {new Date().getFullYear()} Sunrise Human Care Services. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6">
@@ -95,6 +88,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
