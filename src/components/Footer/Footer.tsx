@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
   <img
     src="/logo.svg" 
     alt="Sunrise Human Care Logo"
-    className="h-10 w-13 scale-200 transition-transform duration-500 group-hover:translate-y-[-5px]" 
+    className="h-09 w-13 scale-200 transition-transform duration-500 group-hover:translate-y-[-5px]" 
   />
   <div className="flex flex-col">
     <span className="font-semibold text-lg leading-tight">Sunrise</span>
