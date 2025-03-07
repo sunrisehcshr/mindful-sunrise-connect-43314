@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
             }} transition={{
               delay: 0.3,
               duration: 0.5
-            }} className="inline-block px-3 py-1 rounded-full text-xs bg-sunrise-400/20 font-medium text-amber-500">Mental Health Clinic</motion.span>
+            }} className="inline-block px-3 py-1 rounded-full text-xs bg-sunrise-400/20 font-medium text-sunrise-900">Mental Health Clinic</motion.span>
             </div>
             <motion.h1 initial={{
             opacity: 0
