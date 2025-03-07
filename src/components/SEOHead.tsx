@@ -1,5 +1,5 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { Helmet } from "react-helmet-async"; // ✅ Replace react-helmet with react-helmet-async
 
 interface SEOHeadProps {
   title?: string;
@@ -23,7 +23,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="robots" content="index, follow" />
       <meta name="keywords" content="mental health, therapy, counseling, psychiatry, Havertown, PA, anxiety, depression, ADHD, trauma, PTSD, OCD, bipolar disorder, medication management, psychologist, therapist" />
 
-      {/* Canonical URL */}
+      {/* Canonical URL (Fixing Duplicate Issue) */}
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph / Facebook */}
