@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://sunrisehcs.com/sitemap.xml
+Sitemap: https://sunrisehcsllc.com/sitemap.xml
