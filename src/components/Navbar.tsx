@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react"; // Removed Sun import
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -20,7 +19,6 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
-  // Close mobile menu when navigating
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
@@ -46,7 +44,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <Sun className="h-8 w-8 text-sunrise-400 transition-transform duration-500 group-hover:rotate-45" />
+            <img
+              src="/logo.svg" // Your logo from the public folder
+              alt="Sunrise Logo"
+              className="h-8 w-8 object-contain transition-transform duration-300 group-hover:-translate-y-1" // Size matches Sun, hover rises
+            />
             <div className="flex flex-col">
               <span className="font-semibold text-lg leading-tight">Sunrise</span>
               <span className="text-xs text-muted-foreground leading-tight">Human Care Services</span>
