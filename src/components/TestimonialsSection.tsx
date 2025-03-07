@@ -5,16 +5,16 @@ import { motion } from 'framer-motion';
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
     {
-      quote: "The therapists at Sunrise have helped me develop the tools I need to manage my anxiety. I'm truly grateful for their compassionate approach.",
-      author: "J.M., Havertown",
+      quote: "Sunrise Human Care Services has been a huge help for my teenage daughter. The therapist really connected with her, and we’ve seen such a positive change. So grateful for their support!",
+      author: "JEmily T., Havertown",
     },
     {
-      quote: "Our family therapy sessions have transformed our communication. We've learned to understand each other better and build stronger relationships.",
-      author: "The Wilson Family",
+      quote: "I was hesitant to start therapy, but from my first session, I felt truly heard and understood. The staff is kind, professional, and really invested in helping you heal.",
+      author: "James W., Drexel Hill, PA",
     },
     {
-      quote: "After struggling for years, the team at Sunrise helped me find a path forward. Their personalized approach made all the difference in my recovery.",
-      author: "T.D., Philadelphia",
+      quote: "My father has difficulty leaving the house, so finding a clinic that offers home sessions was a relief. The therapist visits us in Broomall, and it has made such a difference in his well-being!",
+      author: "Sarah W., Broomall, PA",
     },
   ];
 
