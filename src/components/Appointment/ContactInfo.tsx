@@ -23,7 +23,7 @@ const ContactInfo: React.FC = () => {
         
         <div className="flex items-center space-x-3">
           <Mail className="h-5 w-5 text-sunrise-700" />
-          <a href="mailto:info@sunrisehcs.com" className="text-muted-foreground hover:text-sunrise-700 transition-colors">info@sunrisehcsllc.com</a>
+          <a href="mailto:info@sunrisehcsllc.com" className="text-muted-foreground hover:text-sunrise-700 transition-colors">info@sunrisehcsllc.com</a>
         </div>
       </div>
     </div>;
