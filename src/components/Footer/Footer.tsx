@@ -17,8 +17,10 @@ const Footer: React.FC = () => {
     alt="Sunrise Logo"
     className="h-10 w-13 scale-200 transition-transform duration-500 group-hover:translate-y-[-5px]" 
   />
-  <h3 className="font-semibold text-lg leading-tight">Sunrise</h3>
+ <div className="flex flex-col">
+  <span className="font-semibold text-lg leading-tight">Sunrise</span>
   <span className="text-xs text-muted-foreground leading-tight">Human Care Services</span>
+</div>
             </div>
             <p className="text-sm text-muted-foreground">
               Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. 
