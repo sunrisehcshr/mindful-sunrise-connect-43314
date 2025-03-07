@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-sunrise-400" />
-                <a href="mailto:info@sunrisehcs.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">info@sunrisehcsllc.com</a>
+                <a href="mailto:info@sunrisehcsllc.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">info@sunrisehcsllc.com</a>
               </li>
               <li className="flex items-start space-x-3">
                 <Clock className="h-5 w-5 text-sunrise-400 mt-0.5" />
