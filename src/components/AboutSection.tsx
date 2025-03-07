@@ -15,9 +15,18 @@ const AboutSection: React.FC = () => {
           </div>
           
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-            <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" src="https://i.imgur.com/T3NWCo3.jpeg" alt="therapy for older adults" />
-            <img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" src="https://i.imgur.com/lKq2BA9.jpeg" alt="family counseling in havertown" />
-            <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2" src="https://i.imgur.com/oLQIxo3.jpeg" alt="Couple therapy in havertown,pa" />
+            <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" 
+     src="/images/therapy-for-older-adults.webp" 
+     alt="Compassionate therapy for older adults in Havertown, PA" />
+
+<img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" 
+     src="/images/family-counseling-havertown.webp" 
+     alt="Expert family counseling services in Havertown, PA" />
+
+<img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2" 
+     src="/images/couple-counseling-havertown-pa.webp" 
+     alt="Professional couples therapy in Havertown, PA for stronger relationships" />
+
           </div>
         </div>
       </div>
