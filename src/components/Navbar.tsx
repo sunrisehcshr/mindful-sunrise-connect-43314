@@ -44,13 +44,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* LOGO - Updated to /logo.svg */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <img
-              src="/logo.svg"
-              alt="Sunrise Logo"
-              className="h-8 w-auto transition-transform duration-300 group-hover:-translate-y-1"
-            />
+          <Link to="/" className="flex items-center gap-2">
+            {/* Logo from public folder */}
+            <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-auto" />
             <div className="flex flex-col">
               <span className="font-semibold text-lg leading-tight">Sunrise</span>
               <span className="text-xs text-muted-foreground leading-tight">Human Care Services</span>
