@@ -10,15 +10,17 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <img
-                src="/logo.svg" 
-    alt="Sunrise Logo"
+          <div className="flex items-center gap-2">
+  <img
+    src="/logo.svg" 
+    alt="Sunrise Human Care Logo"
     className="h-10 w-13 scale-200 transition-transform duration-500 group-hover:translate-y-[-5px]" 
   />
-  <h3 className="font-semibold text-lg leading-tight">Sunrise</h3>
-            </div>
+  <div className="flex flex-col">
+    <span className="font-semibold text-lg leading-tight">Sunrise</span>
+    <span className="text-xs text-muted-foreground leading-tight">Human Care Services</span>
+  </div>
+</div>
             <p className="text-sm text-muted-foreground">
               Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. 
               Our dedicated team provides counseling, therapy, psychiatry, and medication management for 
