@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
         }} transition={{
           duration: 0.8,
           ease: "easeOut"
-        }} className="space-y-5 my-[60px]">
+        }} className="space-y-5 my-[50px]">
             <div>
               <motion.span initial={{
               opacity: 0,
