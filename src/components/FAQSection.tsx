@@ -5,39 +5,35 @@ import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
 const faqs = [
-  {
-    question: "What types of mental health services do you offer?",
-    answer: "We offer a comprehensive range of mental health services, including individual therapy, couples counseling, family therapy, group therapy, child and adolescent therapy, psychiatric evaluation, and medication management. Our therapeutic approaches include cognitive-behavioral therapy (CBT), dialectical behavior therapy (DBT), trauma-focused therapy, and more."
-  },
-  {
-    question: "Do you accept insurance?",
-    answer: "Yes, we accept most major insurance plans, including Blue Cross Blue Shield, Aetna, Cigna, UnitedHealthcare, and Medicare. We also offer self-pay options and sliding scale fees for those without insurance coverage. Please contact our office to verify your specific insurance benefits."
-  },
-  {
-    question: "How do I schedule an appointment?",
-    answer: "You can schedule an appointment by calling our office at (215) 555-1234, using our online booking system on our website, or emailing us at info@sunrisehcs.com. We typically respond to all appointment requests within 24 business hours."
-  },
-  {
-    question: "What can I expect during my first therapy session?",
-    answer: "Your first session will primarily be an assessment where your therapist will gather information about your history, current concerns, and goals for therapy. It's an opportunity for you to ask questions and determine if the therapist is a good fit for your needs. The session typically lasts about 50-60 minutes."
-  },
-  {
-    question: "Do you offer telehealth/virtual appointments?",
-    answer: "Yes, we offer secure video telehealth appointments for most of our services. Telehealth is a convenient option that provides the same quality care as in-person sessions while allowing you to attend from the comfort of your home."
-  },
-  {
-    question: "How long does therapy typically last?",
-    answer: "The duration of therapy varies widely depending on your specific needs, goals, and the complexity of your concerns. Some clients benefit from short-term therapy (8-12 sessions), while others may engage in longer-term treatment. Your therapist will discuss treatment recommendations during your initial sessions."
-  },
-  {
-    question: "Is everything I share in therapy confidential?",
-    answer: "Yes, confidentiality is a fundamental part of the therapeutic relationship. However, there are legal limits to confidentiality, including situations involving risk of harm to yourself or others, suspicion of abuse of children or vulnerable adults, or if records are subpoenaed by a court. Your therapist will discuss these limitations in detail during your first session."
-  },
-  {
-    question: "What are your cancellation policies?",
-    answer: "We require 24 hours' notice for cancellation of appointments. Late cancellations or missed appointments without proper notice may result in a fee that is not covered by insurance. We understand that emergencies happen, and these situations are handled on a case-by-case basis."
-  },
-];
+ {
+      question: "What mental health services do you offer at your Havertown, PA clinic?",
+      answer: "We provide comprehensive mental health services, including individual therapy, couple Counseling, group therapy, family counseling, psychiatric evaluations, and medication management. Our team addresses various conditions such as anxiety, depression, PTSD, and substance use disorders."
+    },
+    {
+      question: "Which insurance plans are currently accepted at your Havertown clinic?",
+      answer: "At present, we accept Medicare for our services. We understand the importance of accessible care and are actively working to expand our accepted insurance plans in the near future."
+    },
+    {
+      question: "How do I know if I need to seek help from a mental health professional?",
+      answer: "If you're experiencing persistent feelings of sadness, anxiety, anger, or if these emotions interfere with daily activities and relationships, it may be beneficial to consult a mental health professional."
+    },
+    {
+      question: "What should I expect during my first visit to your clinic?",
+      answer: "During your initial visit, our clinicians will conduct a comprehensive assessment to understand your mental health needs. This evaluation helps us create a personalized treatment plan tailored to your specific goals and concerns."
+    },
+    {
+      question: "How do I schedule an appointment at your Havertown clinic?",
+      answer: "To schedule an appointment, please contact our office directly via phone or through our website's appointment request form. Our team will guide you through the process and address any questions you may have."
+    },
+    {
+      question: "Do you offer virtual therapy sessions?",
+      answer: "Yes, we offer virtual therapy sessions for individuals who prefer remote care. Our telehealth services provide a secure and convenient way to access therapy from the comfort of your home. Contact us to learn more about availability and scheduling."
+    },
+    {
+      question: "What steps should I take if I or someone I know is in crisis?",
+      answer: "If you or someone you know is struggling or in crisis, help is available. Call or text 988 to speak with a trained crisis counselor any time of day or night."
+    }
+  ];
 
 const FAQItem = ({ question, answer, isOpen, onClick }: {
   question: string;
@@ -108,10 +104,10 @@ const FAQSection = () => {
           Our friendly staff is here to help.
         </p>
         <div className="flex flex-wrap gap-4">
-          <a href="tel:+12155551234" className="btn-sunrise-outline text-sm">
-            Call Us at (215) 555-1234
+          <a href="tel:+18146202162" className="btn-sunrise-outline text-sm">
+            Call Us at (814) 620-2162
           </a>
-          <a href="mailto:info@sunrisehcs.com" className="btn-sunrise text-sm">
+          <a href="mailto:info@sunrisehcsllc.com" className="btn-sunrise text-sm">
             Email Us
           </a>
         </div>
