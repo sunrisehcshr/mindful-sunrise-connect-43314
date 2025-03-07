@@ -13,11 +13,11 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <img
-                src="/logo.svg" // Reference logo.svg directly from public folder
-                alt="Sunrise Logo"
-                className="h-6 w-6 object-contain" // Adjust size and styling as needed
-              />
-              <h3 className="font-semibold text-lg">Sunrise</h3>
+                src="/logo.svg" 
+    alt="Sunrise Human Care Logo" 
+    className="h-10 w-13 scale-200 transition-transform duration-500 group-hover:translate-y-[-5px]"
+  />
+  <h3 className="font-semibold text-lg leading-tight">Sunrise Human Care</h3>
             </div>
             <p className="text-sm text-muted-foreground">
               Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. 
