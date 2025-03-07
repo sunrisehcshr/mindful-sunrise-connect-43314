@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div className="space-y-5" initial={{
+          <motion.div initial={{
           opacity: 0,
           y: 20
         }} animate={{
@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
         }} transition={{
           duration: 0.8,
           ease: "easeOut"
-        }}>
+        }} className="space-y-5 my-[60px]">
             <div>
               <motion.span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-400/20 text-sunrise-900" initial={{
               opacity: 0,
