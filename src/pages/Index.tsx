@@ -60,7 +60,7 @@ const Index = () => {
   <img
     src="/logo.svg"
     alt="Sunrise Human Care Logo"
-    className="h-10 w-10 transition-transform duration-500 group-hover:translate-y-[-5px] scale-110"
+    className="h-10 w-10 transition-transform duration-500 group-hover:translate-y-[-5px] scale-130"
   />
   <div className="flex flex-col">
     <span className="font-semibold text-lg leading-tight">Sunrise</span>
