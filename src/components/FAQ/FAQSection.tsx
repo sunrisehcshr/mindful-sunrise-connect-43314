@@ -5,32 +5,32 @@ import FAQItem from './FAQItem';
 const FAQSection: React.FC = () => {
   const faqs = [
     {
-      question: "What types of mental health issues do you treat?",
-      answer: "We provide treatment for a wide range of mental health concerns including anxiety, depression, trauma, PTSD, relationship issues, grief, stress management, and more. Our team is experienced in working with individuals of all ages, from children to seniors."
+      question: "What mental health services do you offer at your Havertown, PA clinic?",
+      answer: "We provide comprehensive mental health services, including individual therapy, couple Counseling, group therapy, family counseling, psychiatric evaluations, and medication management. Our team addresses various conditions such as anxiety, depression, PTSD, and substance use disorders."
     },
     {
-      question: "Do you accept insurance?",
-      answer: "Yes, we accept most major insurance plans including Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, and Medicare. We also offer affordable self-pay options for those without insurance coverage. Please contact our office to verify your specific insurance benefits."
+      question: "Which insurance plans are currently accepted at your Havertown clinic?",
+      answer: "At present, we accept Medicare for our services. We understand the importance of accessible care and are actively working to expand our accepted insurance plans in the near future."
     },
     {
-      question: "How long are therapy sessions?",
-      answer: "Typical therapy sessions are 50 minutes in length, which is the standard for most mental health services. Initial evaluations may be longer, usually around 60-90 minutes, to allow for a comprehensive assessment of your needs."
+      question: "How do I know if I need to seek help from a mental health professional?",
+      answer: "If you're experiencing persistent feelings of sadness, anxiety, anger, or if these emotions interfere with daily activities and relationships, it may be beneficial to consult a mental health professional."
     },
     {
-      question: "What happens during couples counseling?",
-      answer: "During couples counseling, our therapists work with both partners to identify communication patterns, resolve conflicts, and strengthen your relationship. Sessions typically focus on developing skills for effective communication, rebuilding trust, and creating shared goals. Both partners are encouraged to participate actively in the process."
+      question: "What should I expect during my first visit to your clinic?",
+      answer: "During your initial visit, our clinicians will conduct a comprehensive assessment to understand your mental health needs. This evaluation helps us create a personalized treatment plan tailored to your specific goals and concerns."
     },
     {
-      question: "How does medication management work with your practice?",
-      answer: "Our psychiatrists provide comprehensive medication management services, starting with a thorough evaluation of your symptoms and medical history. If medication is appropriate, they'll discuss options, potential benefits, and side effects with you. Regular follow-up appointments help monitor your progress and make any necessary adjustments to your treatment plan."
+      question: "How do I schedule an appointment at your Havertown clinic?",
+      answer: "To schedule an appointment, please contact our office directly via phone or through our website's appointment request form. Our team will guide you through the process and address any questions you may have."
     },
     {
-      question: "How do I know if I need therapy?",
-      answer: "If you're experiencing persistent feelings of sadness, anxiety, or overwhelm, having difficulty managing daily life, struggling with relationships, or facing challenging life transitions, therapy might be beneficial. We offer free 15-minute consultations to help determine if our services are right for you."
+      question: "Do you offer virtual therapy sessions?",
+      answer: "Yes, we offer virtual therapy sessions for individuals who prefer remote care. Our telehealth services provide a secure and convenient way to access therapy from the comfort of your home. Contact us to learn more about availability and scheduling."
     },
     {
-      question: "Is therapy confidential?",
-      answer: "Yes, confidentiality is a fundamental part of the therapeutic relationship. What you share in therapy is protected by law and ethical standards. There are some legal limitations to confidentiality, such as situations involving risk of harm to yourself or others, which your therapist will discuss with you during your first session."
+      question: "What steps should I take if I or someone I know is in crisis?",
+      answer: "If you or someone you know is struggling or in crisis, help is available. Call or text 988 to speak with a trained crisis counselor any time of day or night."
     }
   ];
 
