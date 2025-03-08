@@ -25,7 +25,7 @@ const SchemaMarkup = () => {
         "inLanguage": "en-US"
       },
       {
-        "@type": "Organization",
+        "@type": "MedicalOrganization",
         "@id": "https://sunrisehcsllc.com/#organization",
         "name": "Sunrise Human Care Services",
         "url": "https://sunrisehcsllc.com/",
@@ -40,7 +40,6 @@ const SchemaMarkup = () => {
           "https://www.facebook.com/sunrisehcs",
           "https://twitter.com/sunrisehcs",
           "https://instagram.com/sunrisehcs",
-          "https://www.youtube.com/channel/YOUR_YOUTUBE_LINK",
           "https://www.linkedin.com/company/sunrisehcs"
         ],
         "contactPoint": {
@@ -51,7 +50,7 @@ const SchemaMarkup = () => {
         }
       },
       {
-        "@type": "MedicalClinic",
+        "@type": "MedicalOrganization",
         "@id": "https://sunrisehcsllc.com/#clinic",
         "name": "Sunrise Human Care Services",
         "url": "https://sunrisehcsllc.com/",
