@@ -6,6 +6,39 @@ const SchemaMarkup = () => {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "MedicalOrganization",
+        "@id": "https://sunrisehcsllc.com/#organization",
+        "name": "Sunrise Human Care Services",
+        "url": "https://sunrisehcsllc.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://sunrisehcsllc.com/#logo",
+          "url": "https://sunrisehcsllc.com/logo.svg",
+          "width": 500,
+          "height": 171
+        },
+        "sameAs": [
+          "https://www.facebook.com/sunrisehcs",
+          "https://twitter.com/sunrisehcs",
+          "https://instagram.com/sunrisehcs",
+          "https://www.linkedin.com/company/sunrisehcs"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+18146202162",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2050 West Chester Pike",
+          "addressLocality": "Havertown",
+          "addressRegion": "PA",
+          "postalCode": "19083",
+          "addressCountry": "US"
+        }
+      },
+      {
         "@type": "MedicalClinic",
         "@id": "https://sunrisehcsllc.com/#clinic",
         "name": "Sunrise Human Care Services",
@@ -32,7 +65,13 @@ const SchemaMarkup = () => {
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
             "opens": "09:00",
             "closes": "17:00"
           }
