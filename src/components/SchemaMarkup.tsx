@@ -6,6 +6,25 @@ const SchemaMarkup = () => {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://sunrisehcsllc.com/#website",
+        "url": "https://sunrisehcsllc.com/",
+        "name": "Sunrise Human Care Services",
+        "description": "Comprehensive mental health care in Havertown, PA, offering therapy and psychiatry services.",
+        "publisher": {
+          "@id": "https://sunrisehcsllc.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://sunrisehcsllc.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "en-US"
+      },
+      {
         "@type": "MedicalOrganization",
         "@id": "https://sunrisehcsllc.com/#organization",
         "name": "Sunrise Human Care Services",
@@ -83,15 +102,70 @@ const SchemaMarkup = () => {
           "ratingValue": 4.8,
           "reviewCount": 50
         }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://sunrisehcsllc.com/#mental-health-service",
+        "name": "Mental Health Therapy and Psychiatry Services",
+        "description": "Specializing in anxiety, depression, ADHD, PTSD, OCD, bipolar disorder, addiction, and more. Offering individual, couples, and family therapy for all ages in Havertown, PA and via telehealth.",
+        "provider": {
+          "@id": "https://sunrisehcsllc.com/#clinic"
+        },
+        "availableChannel": [
+          {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://sunrisehcsllc.com/book-appointment",
+            "availableLanguage": {
+              "@type": "Language",
+              "name": "English"
+            },
+            "providesService": {
+              "@type": "MedicalProcedure",
+              "name": "In-Person Therapy & Psychiatry"
+            }
+          },
+          {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://sunrisehcsllc.com/telehealth",
+            "availableLanguage": {
+              "@type": "Language",
+              "name": "English"
+            },
+            "providesService": {
+              "@type": "MedicalProcedure",
+              "name": "Telehealth Therapy & Psychiatry"
+            }
+          }
+        ],
+        "areaServed": [
+          {
+            "@type": "Place",
+            "name": "Havertown, PA"
+          },
+          {
+            "@type": "Place",
+            "name": "Online"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "minPrice": 100,
+            "maxPrice": 500
+          }
+        }
       }
     ]
   };
 
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schemaData)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
     </Helmet>
   );
 };
