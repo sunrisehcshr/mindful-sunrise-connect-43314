@@ -38,20 +38,18 @@ const HeroSection: React.FC = () => {
               duration: 0.5
             }} className="inline-block px-3 py-1 rounded-full text-xs bg-sunrise-400/20 font-medium text-sunrise-900">Mental Health Clinic</motion.span>
             </div>
-            <motion.h1 initial={{
-            opacity: 0
-          }} animate={{
-            opacity: 1
-          }} transition={{
-            delay: 0.5,
-            duration: 0.8
-          }} className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900">
-              Personalized Mental Health Services in{" "}
-              <span className="relative">
-                <span className="relative z-10 text-gray-900">Havertown, PA</span>
-                <span className="absolute bottom-1 left-0 w-full h-3 bg-sunrise-400/30 -z-10"></span>
-              </span>
-            </motion.h1>
+            <motion.h1 
+  initial={{ opacity: 0 }} 
+  animate={{ opacity: 1 }} 
+  transition={{ delay: 0.5, duration: 0.8 }} 
+  className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight"
+>
+  Personalized Mental Health Services in{" "}
+  <span className="relative inline-block">
+    <span className="relative z-10 text-gray-900">Havertown, PA</span>
+    <span className="absolute bottom-0 left-0 w-full h-[0.4em] bg-sunrise-400/30 -z-10"></span>
+  </span>
+</motion.h1>
             <motion.p initial={{
             opacity: 0
           }} animate={{
