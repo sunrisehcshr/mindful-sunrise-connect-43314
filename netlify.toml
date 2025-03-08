@@ -1,7 +1,14 @@
 [[headers]]
   for = "/*"
   [headers.values]
-  Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://cdn.gpteng.co https://trusted.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://sunrisehcsllc.com; object-src 'none';"
+  Content-Security-Policy = "default-src 'self'; 
+                            script-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://cdn.gpteng.co https://trusted.com https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com; 
+                            style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                            font-src 'self' https://fonts.gstatic.com;
+                            img-src 'self' data: https://sunrisehcsllc.com https://www.google-analytics.com;
+                            connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;
+                            frame-src 'self' https://www.google.com https://www.youtube.com;
+                            object-src 'none';"
   X-Frame-Options = "DENY"
   X-Content-Type-Options = "nosniff"
   Referrer-Policy = "strict-origin-when-cross-origin"
