@@ -34,22 +34,16 @@
 
     <!-- Preload Important Resources for Faster Loading -->
     <link rel="preload" href="/og-image.webp" as="image" />
-    <link rel="preload" href="https://cdn.gpteng.co/gptengineer.js" as="script" />
+    <link rel="preload" href="https://cdn.gpteng.co/gptengineer.js" as="script" crossorigin="anonymous" />
     <link rel="preload" href="/src/main.tsx" as="script" />
 
-    <!-- Critical CSS Inline (Improves First Contentful Paint) -->
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: white;
-        margin: 0;
-        padding: 0;
-      }
-      h1 {
-        font-size: 24px;
-        color: #333;
-      }
-    </style>
+    <!-- Load Google Fonts Efficiently -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Load CSS Without Blocking Render -->
+    <link rel="stylesheet" href="/styles.css" />
 
     <!-- Structured Data (JSON-LD Schema Markup) -->
     <script type="application/ld+json">
@@ -84,7 +78,7 @@
     <div id="root"></div>
 
     <!-- Defer JavaScript for Faster Loading -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer crossorigin="anonymous"></script>
     <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>
