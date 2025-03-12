@@ -63,7 +63,7 @@
   
   .warm-glow::before {
     content: "";
-    @apply absolute inset-0 bg-gradient-to-br from-amber-50/30 via-transparent to-orange-50/20 rounded-inherit;
+    @apply absolute inset-0 bg-gradient-to-br from-amber-50/30 via-transparent to-orange-50/20 rounded-md;
     pointer-events: none;
   }
   
