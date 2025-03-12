@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { Phone, CircleDot, Star, Triangle, Square } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
-
 const WarmHeroSection = () => {
   return <section className="relative overflow-hidden pb-16 pt-20 sm:pb-24 sm:pt-28">
       <div className="absolute inset-0 -z-10 opacity-30">
@@ -62,71 +60,78 @@ const WarmHeroSection = () => {
         }}>
             <div className="relative">
               {/* Decorative shapes */}
-              <motion.div 
-                className="absolute -top-6 -left-4 text-orange-300 opacity-70 z-10"
-                initial={{ rotate: 0 }}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
+              <motion.div className="absolute -top-6 -left-4 text-orange-300 opacity-70 z-10" initial={{
+              rotate: 0
+            }} animate={{
+              rotate: 360
+            }} transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}>
                 <Star size={24} fill="currentColor" />
               </motion.div>
               
-              <motion.div 
-                className="absolute -bottom-3 right-12 text-amber-400 opacity-60 z-10"
-                initial={{ y: 0 }}
-                animate={{ y: -8 }}
-                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-              >
+              <motion.div className="absolute -bottom-3 right-12 text-amber-400 opacity-60 z-10" initial={{
+              y: 0
+            }} animate={{
+              y: -8
+            }} transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut"
+            }}>
                 <CircleDot size={32} fill="currentColor" />
               </motion.div>
               
-              <motion.div 
-                className="absolute right-0 top-1/3 text-orange-500 opacity-50 z-10"
-                initial={{ scale: 1 }}
-                animate={{ scale: 1.2 }}
-                transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-              >
-                <Triangle size={28} />
+              <motion.div className="absolute right-0 top-1/3 text-orange-500 opacity-50 z-10" initial={{
+              scale: 1
+            }} animate={{
+              scale: 1.2
+            }} transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut"
+            }}>
+                
               </motion.div>
               
-              <motion.div 
-                className="absolute left-1/4 bottom-0 text-amber-500 opacity-50 rotate-12 z-10"
-                initial={{ rotate: 12 }}
-                animate={{ rotate: -12 }}
-                transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-              >
+              <motion.div className="absolute left-1/4 bottom-0 text-amber-500 opacity-50 rotate-12 z-10" initial={{
+              rotate: 12
+            }} animate={{
+              rotate: -12
+            }} transition={{
+              duration: 4,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut"
+            }}>
                 <Square size={24} />
               </motion.div>
 
               {/* Main grid with modern layout */}
               <div className="grid grid-cols-12 gap-4 relative z-0">
                 <div className="col-span-7">
-                  <motion.div 
-                    className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-80 relative"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-80 relative" whileHover={{
+                  scale: 1.02
+                }} transition={{
+                  duration: 0.3
+                }}>
                     <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-transparent z-10"></div>
-                    <img 
-                      className="w-full h-full object-cover" 
-                      src="/images/therapy-for-older-adults.webp" 
-                      alt="Compassionate therapy for older adults in Havertown, PA" 
-                    />
+                    <img className="w-full h-full object-cover" src="/images/therapy-for-older-adults.webp" alt="Compassionate therapy for older adults in Havertown, PA" />
                   </motion.div>
                 </div>
                 
                 <div className="col-span-5">
-                  <motion.div 
-                    className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-80 relative"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-80 relative" whileHover={{
+                  scale: 1.02
+                }} transition={{
+                  duration: 0.3
+                }}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-amber-400/20 to-transparent z-10"></div>
-                    <img 
-                      className="w-full h-full object-cover" 
-                      src="/images/family-counseling-havertown.webp" 
-                      alt="Expert family counseling services in Havertown, PA" 
-                    />
+                    <img className="w-full h-full object-cover" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
                   </motion.div>
                 </div>
               </div>
