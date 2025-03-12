@@ -1,6 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Removed Sun import
+import { Menu, X, CircleDot } from "lucide-react"; // Added CircleDot icon
+
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -45,9 +47,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <img
-              src="/logo.svg" // Your logo from the public folder
+              src="/logo.svg"
               alt="Sunrise Logo"
-              className="h-8 w-8 object-contain transition-transform duration-300 group-hover:-translate-y-1" // Size matches Sun, hover rises
+              className="h-8 w-8 object-contain transition-transform duration-300 group-hover:-translate-y-1"
             />
             <div className="flex flex-col">
               <span className="font-semibold text-lg leading-tight">Sunrise</span>
@@ -62,18 +64,19 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300",
+                  "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5",
                   isActive(link.path)
-                    ? "text-foreground bg-sunrise-400/20"
-                    : "text-muted-foreground hover:text-foreground hover:bg-sunrise-400/10"
+                    ? "text-primary bg-primary/10 font-semibold"
+                    : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                 )}
               >
+                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-primary" />}
                 {link.label}
               </Link>
             ))}
             <Link
               to="/appointment"
-              className="ml-2 btn-sunrise"
+              className="ml-2 px-4 py-2 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
             >
               Book Now
             </Link>
@@ -108,18 +111,19 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300",
+                  "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2",
                   isActive(link.path)
-                    ? "text-foreground bg-sunrise-400/20"
-                    : "text-muted-foreground hover:text-foreground hover:bg-sunrise-400/10"
+                    ? "text-primary bg-primary/10 font-semibold"
+                    : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                 )}
               >
+                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-primary" />}
                 {link.label}
               </Link>
             ))}
             <Link
               to="/appointment"
-              className="btn-sunrise text-center mt-2"
+              className="px-4 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors text-center mt-2"
             >
               Book Now
             </Link>
