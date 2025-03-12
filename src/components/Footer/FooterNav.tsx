@@ -17,13 +17,13 @@ const FooterNav: React.FC = () => {
       {links.map((link, index) => (
         <li key={index}>
           {link.to.endsWith('.xml') ? (
-            <a href={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center">
-              <span className="inline-block w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+            <a href={link.to} className="text-sm text-white/80 hover:text-white transition-colors flex items-center">
+              <span className="inline-block w-2 h-2 bg-white rounded-full mr-2"></span>
               {link.label}
             </a>
           ) : (
-            <Link to={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center">
-              <span className="inline-block w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+            <Link to={link.to} className="text-sm text-white/80 hover:text-white transition-colors flex items-center">
+              <span className="inline-block w-2 h-2 bg-white rounded-full mr-2"></span>
               {link.label}
             </Link>
           )}
