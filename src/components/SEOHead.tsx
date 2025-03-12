@@ -41,10 +41,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
 
-      {/* Favicon (SVG only) */}
+      {/* Favicon (SVG and Alternative Formats) */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <link rel="apple-touch-icon" href="/favicon.svg" />
       <meta name="msapplication-TileImage" content="/favicon.svg" />
+      <meta name="theme-color" content="#EB5757" />
 
       {/* Performance Optimization */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

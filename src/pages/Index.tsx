@@ -1,3 +1,4 @@
+
 import React from 'react';
 import WarmHeroSection from '../components/WarmHeroSection';
 import ServicesSection from '../components/services/ServicesSection';
@@ -10,8 +11,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
-import { Star } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const Index = () => {
   return (
@@ -19,6 +18,7 @@ const Index = () => {
       <SEOHead
         title="Sunrise Human Care Services | Mental Health Services in Havertown, PA"
         description="Dedicated mental health professionals offering therapy services in Havertown, PA. Counseling for anxiety, depression, and family issues in a warm, supportive environment."
+        canonicalUrl="https://sunrisehcsllc.com/"
       />
       <SchemaMarkup />
       <div className="flex flex-col min-h-screen relative overflow-hidden">

@@ -1,5 +1,6 @@
+
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const SchemaMarkup = () => {
   const schemaData = {
@@ -32,9 +33,17 @@ const SchemaMarkup = () => {
         "logo": {
           "@type": "ImageObject",
           "@id": "https://sunrisehcsllc.com/#logo",
-          "url": "https://sunrisehcsllc.com/logo.svg",
-          "width": 500,
-          "height": 171
+          "url": "https://sunrisehcsllc.com/favicon.svg",
+          "contentUrl": "https://sunrisehcsllc.com/favicon.svg",
+          "width": 512,
+          "height": 512
+        },
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://sunrisehcsllc.com/#logo",
+          "url": "https://sunrisehcsllc.com/favicon.svg",
+          "width": 512,
+          "height": 512
         },
         "sameAs": [
           "https://www.facebook.com/sunrisehcs",
