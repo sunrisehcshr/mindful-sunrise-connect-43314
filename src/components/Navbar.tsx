@@ -30,9 +30,6 @@ const Navbar = () => {
     path: "/services",
     label: "Services"
   }, {
-    path: "/appointment",
-    label: "Appointments"
-  }, {
     path: "/faq",
     label: "FAQ"
   }, {
@@ -52,8 +49,8 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            {navLinks.map(link => <Link key={link.path} to={link.path} className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5", isActive(link.path) ? "bg-orange-500 text-white font-semibold" : "text-muted-foreground hover:text-foreground hover:bg-primary/5")}>
-                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-white" />}
+            {navLinks.map(link => <Link key={link.path} to={link.path} className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5", isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5")}>
+                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
                 {link.label}
               </Link>)}
             <Link to="/appointment" className="ml-2 px-4 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors">
@@ -72,8 +69,8 @@ const Navbar = () => {
       <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b", isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
         <div className="container mx-auto px-4 py-4">
           <nav className="flex flex-col space-y-2">
-            {navLinks.map(link => <Link key={link.path} to={link.path} className={cn("px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", isActive(link.path) ? "bg-orange-500 text-white font-semibold" : "text-muted-foreground hover:text-foreground hover:bg-primary/5")}>
-                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-white" />}
+            {navLinks.map(link => <Link key={link.path} to={link.path} className={cn("px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5")}>
+                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
                 {link.label}
               </Link>)}
             <Link to="/appointment" className="px-4 py-3 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors text-center mt-2">
