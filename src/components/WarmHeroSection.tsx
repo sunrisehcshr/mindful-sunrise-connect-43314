@@ -35,10 +35,10 @@ const WarmHeroSection = () => {
               Start your journey to emotional well-being today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="text-white bg-orange-500 hover:bg-orange-400">
+              <Button size="lg" className="text-white bg-orange-500 hover:bg-orange-400 font-semibold">
                 Schedule Appointment
               </Button>
-              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500">
+              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 font-semibold">
                 Our Services
               </Button>
             </div>

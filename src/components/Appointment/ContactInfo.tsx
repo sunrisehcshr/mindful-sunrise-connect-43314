@@ -6,7 +6,7 @@ const ContactInfo: React.FC = () => {
       
       <div className="space-y-4">
         <div className="flex items-start space-x-3">
-          <MapPin className="h-5 w-5 text-sunrise-700 mt-0.5" />
+          <MapPin className="h-5 w-5 text-orange-500 mt-0.5" />
           <p className="text-muted-foreground">
             2050 West Chester Pike<br />
             Havertown, PA 19083<br />
@@ -15,14 +15,14 @@ const ContactInfo: React.FC = () => {
         </div>
         
         <div className="flex items-center space-x-3">
-          <Phone className="h-5 w-5 text-sunrise-700" />
+          <Phone className="h-5 w-5 text-orange-500" />
           <a href="tel:+18146202162" className="text-muted-foreground hover:text-sunrise-700 transition-colors">
             (814) 620-2162
           </a>
         </div>
         
         <div className="flex items-center space-x-3">
-          <Mail className="h-5 w-5 text-sunrise-700" />
+          <Mail className="h-5 w-5 text-orange-500" />
           <a href="mailto:info@sunrisehcsllc.com" className="text-muted-foreground hover:text-sunrise-700 transition-colors">info@sunrisehcsllc.com</a>
         </div>
       </div>
