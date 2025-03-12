@@ -76,7 +76,7 @@ const WarmHeroSection = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-bl from-amber-400/20 to-transparent z-10"></div>
-                    <div className="absolute -top-6 -left-4 text-orange-300 opacity-70 z-10">
+                    <div className="absolute top-4 left-4 text-orange-300 opacity-70 z-10">
                       <Star size={24} fill="currentColor" />
                     </div>
                     <img 
