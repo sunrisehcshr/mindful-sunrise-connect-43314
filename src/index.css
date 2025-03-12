@@ -86,4 +86,16 @@
     @apply inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-500 text-white
     border border-orange-400 mb-4;
   }
+  
+  .orange-tag {
+    @apply bg-orange-500 text-white px-3 py-1 rounded-md;
+  }
+  
+  .orange-dot {
+    @apply inline-block w-2 h-2 bg-orange-500 rounded-full mr-2;
+  }
+  
+  .active-nav-item {
+    @apply bg-orange-500 text-white font-semibold;
+  }
 }

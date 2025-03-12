@@ -13,24 +13,23 @@ const FooterNav: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-4">
-      <h3 className="font-semibold text-lg">Quick Links</h3>
-      <ul className="space-y-2">
-        {links.map((link, index) => (
-          <li key={index}>
-            {link.to.endsWith('.xml') ? (
-              <a href={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {link.label}
-              </a>
-            ) : (
-              <Link to={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {link.label}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="space-y-2">
+      {links.map((link, index) => (
+        <li key={index}>
+          {link.to.endsWith('.xml') ? (
+            <a href={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center">
+              <span className="inline-block w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+              {link.label}
+            </a>
+          ) : (
+            <Link to={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center">
+              <span className="inline-block w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+              {link.label}
+            </Link>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 };
 

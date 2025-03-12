@@ -66,17 +66,17 @@ const Navbar = () => {
                 className={cn(
                   "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5",
                   isActive(link.path)
-                    ? "text-primary bg-primary/10 font-semibold"
+                    ? "bg-orange-500 text-white font-semibold"
                     : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                 )}
               >
-                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-primary" />}
+                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-white" />}
                 {link.label}
               </Link>
             ))}
             <Link
               to="/appointment"
-              className="ml-2 px-4 py-2 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
+              className="ml-2 px-4 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors"
             >
               Book Now
             </Link>
@@ -113,17 +113,17 @@ const Navbar = () => {
                 className={cn(
                   "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2",
                   isActive(link.path)
-                    ? "text-primary bg-primary/10 font-semibold"
+                    ? "bg-orange-500 text-white font-semibold"
                     : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                 )}
               >
-                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-primary" />}
+                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-white" />}
                 {link.label}
               </Link>
             ))}
             <Link
               to="/appointment"
-              className="px-4 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors text-center mt-2"
+              className="px-4 py-3 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors text-center mt-2"
             >
               Book Now
             </Link>
