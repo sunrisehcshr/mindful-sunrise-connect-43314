@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CircleDot, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   return <section id="about" className="py-12 pb-4 bg-background relative overflow-hidden">
-      {/* Decorative background elements */}
+      {/* Decorative background elements - using only stars now */}
       <motion.div 
-        className="absolute top-16 left-4 text-orange-300 opacity-60"
+        className="absolute top-16 left-4 text-orange-300 opacity-20"
         initial={{ rotate: 0 }}
         animate={{ rotate: 360 }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
@@ -16,16 +16,16 @@ const AboutSection: React.FC = () => {
       </motion.div>
       
       <motion.div 
-        className="absolute bottom-8 right-8 text-amber-400 opacity-50"
-        initial={{ y: 0 }}
-        animate={{ y: -15 }}
-        transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        className="absolute bottom-8 right-8 text-amber-400 opacity-15"
+        initial={{ rotate: 0 }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
       >
-        <CircleDot size={48} fill="currentColor" />
+        <Star size={20} fill="currentColor" />
       </motion.div>
       
-      <div className="absolute -z-10 rounded-full w-64 h-64 bg-orange-100/40 blur-3xl top-1/4 -left-20"></div>
-      <div className="absolute -z-10 rounded-full w-72 h-72 bg-amber-50/50 blur-3xl bottom-0 right-0"></div>
+      <div className="absolute -z-10 rounded-full w-64 h-64 bg-orange-100/20 blur-3xl top-1/4 -left-20"></div>
+      <div className="absolute -z-10 rounded-full w-72 h-72 bg-amber-50/30 blur-3xl bottom-0 right-0"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -66,9 +66,24 @@ const AboutSection: React.FC = () => {
                 />
               </motion.div>
               
-              {/* Decorative corner accent */}
-              <div className="absolute -top-3 -right-3 w-12 h-12 border-t-4 border-r-4 border-orange-400 rounded-tr-xl"></div>
-              <div className="absolute -bottom-3 -left-3 w-12 h-12 border-b-4 border-l-4 border-orange-400 rounded-bl-xl"></div>
+              {/* Small star decorations replacing the corner accents */}
+              <motion.div 
+                className="absolute -top-4 -right-4 text-orange-300 opacity-30"
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              >
+                <Star size={16} fill="currentColor" />
+              </motion.div>
+              
+              <motion.div 
+                className="absolute -bottom-4 -left-4 text-orange-300 opacity-30"
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              >
+                <Star size={16} fill="currentColor" />
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -76,3 +91,4 @@ const AboutSection: React.FC = () => {
     </section>;
 };
 export default AboutSection;
+

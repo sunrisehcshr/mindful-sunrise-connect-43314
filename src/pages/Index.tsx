@@ -34,12 +34,12 @@ const Index = () => {
       />
       <SchemaMarkup />
       <div className="flex flex-col min-h-screen relative overflow-hidden">
-        {/* Subtle star decorations throughout the page */}
-        <StarDecoration className="top-[10%] right-[5%]" size={12} opacity={0.15} animationDuration={25} />
-        <StarDecoration className="top-[30%] left-[8%]" size={14} opacity={0.1} animationDuration={30} />
-        <StarDecoration className="bottom-[35%] right-[12%]" size={10} opacity={0.2} animationDuration={20} />
-        <StarDecoration className="bottom-[15%] left-[15%]" size={16} opacity={0.15} animationDuration={35} />
-        <StarDecoration className="top-[60%] right-[20%]" size={8} opacity={0.2} animationDuration={15} />
+        {/* More subtle star decorations throughout the page */}
+        <StarDecoration className="top-[15%] right-[8%] z-0" size={10} opacity={0.1} animationDuration={28} />
+        <StarDecoration className="top-[40%] left-[5%] z-0" size={12} opacity={0.08} animationDuration={32} />
+        <StarDecoration className="bottom-[40%] right-[7%] z-0" size={8} opacity={0.12} animationDuration={24} />
+        <StarDecoration className="bottom-[20%] left-[10%] z-0" size={14} opacity={0.1} animationDuration={36} />
+        <StarDecoration className="top-[70%] right-[15%] z-0" size={6} opacity={0.1} animationDuration={20} />
         
         <Navbar />
         <main className="flex-grow">
@@ -58,3 +58,4 @@ const Index = () => {
 };
 
 export default Index;
+
