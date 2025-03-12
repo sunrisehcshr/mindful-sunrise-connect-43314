@@ -4,7 +4,7 @@ const AboutSection: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-500 mb-4 text-white">
+            <span className="inline-block px-3 py-1 rounded-full text-xs bg-orange-500 mb-4 text-white font-semibold">
               About Us
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
