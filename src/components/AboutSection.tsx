@@ -1,3 +1,4 @@
+
 import React from 'react';
 const AboutSection: React.FC = () => {
   return <section id="about" className="py-12 pb-4 bg-background">
@@ -14,13 +15,11 @@ const AboutSection: React.FC = () => {
             <p className="text-muted-foreground mb-6">With a deep understanding of mental well-being, our mission is to provide compassionate support and meaningful solutions for children, teens, adults, and seniors to lead healthier, more fulfilling lives.</p>
           </div>
           
-          <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-            <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" src="/images/therapy-for-older-adults.webp" alt="Compassionate therapy for older adults in Havertown, PA" />
-
-          <img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
-
-          <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2" src="/images/couple-counseling-havertown-pa.webp" alt="Professional couples therapy in Havertown, PA for stronger relationships" />
-
+          <div className="order-1 lg:order-2">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-200 to-orange-200 rounded-3xl blur-md"></div>
+              <img src="/images/Therapy-in-havertown.webp" alt="Therapy session in Havertown" className="w-full h-auto rounded-2xl shadow-xl relative z-10 border-2 border-amber-50" />
+            </div>
           </div>
         </div>
       </div>
