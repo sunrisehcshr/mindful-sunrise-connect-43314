@@ -1,4 +1,9 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
   <path d="M259.5 16c0 0-36.5 33.8-36.5 60s33.8 60 60 60 60-33.8 60-60-36.5-60-36.5-60c-15.5 0-31.5 0-47 0z M259.5 160c-150 10-230 130-230 130l70 100 180-60 180 60 70-100c0 0-120-140-270-130z" fill="#F05A56"/>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      path { fill: #F05A56; }
+    }
+  </style>
 </svg>
