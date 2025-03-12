@@ -99,12 +99,9 @@ const FAQSection = () => {
             If you couldn't find the answer to your question, please feel free to contact us.
             Our friendly staff is here to help.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex justify-center">
             <a href="tel:+18146202162" className="inline-flex items-center px-6 py-3 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition-colors">
               Call Us at (814) 620-2162
-            </a>
-            <a href="mailto:info@sunrisehcsllc.com" className="inline-flex items-center px-6 py-3 rounded-lg border-2 border-orange-500 text-orange-500 hover:bg-orange-50 transition-colors">
-              Email Us
             </a>
           </div>
         </div>

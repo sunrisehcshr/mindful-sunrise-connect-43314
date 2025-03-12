@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, CircleDot } from "lucide-react"; // Added CircleDot icon
+import { Menu, X, CircleDot } from "lucide-react"; 
 
 import { cn } from "@/lib/utils";
 const Navbar = () => {
@@ -42,9 +43,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/logo.svg" alt="Sunrise Logo" className="h-13 w-10 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
+            <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-10 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
             <div className="flex flex-col">
-              <span className="font-semibold leading-tight text-lg">Sunrise</span>
+              <span className="font-semibold leading-tight text-base">Sunrise</span>
               <span className="text-muted-foreground leading-tight text-xs font-normal">Human Care Services</span>
             </div>
           </Link>

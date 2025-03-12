@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -93,6 +94,9 @@ const WarmHeroSection = () => {
               </div>
               <div className="absolute -bottom-8 -right-6 text-amber-300 opacity-50 z-10">
                 <Star size={20} fill="currentColor" />
+              </div>
+              <div className="absolute -bottom-6 right-14 text-orange-300 opacity-50 z-10">
+                <Star size={18} fill="currentColor" />
               </div>
               
               <div className="absolute -z-10 rounded-full w-32 h-32 bg-orange-100/60 blur-3xl -top-10 -right-10"></div>

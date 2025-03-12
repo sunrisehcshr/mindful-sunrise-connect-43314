@@ -61,23 +61,40 @@ const QuickAppointmentForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulating form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success('Thank you! Your appointment request has been submitted.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        date: undefined,
-        service: '',
-        preferredContact: '',
-        message: '',
+      // Format the date for the form submission
+      const formattedData = {
+        ...formData,
+        date: formData.date ? format(formData.date, 'PPP') : '',
+      };
+      
+      // Send data to Formspree
+      const response = await fetch('https://formspree.io/f/mqkrqkwo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formattedData),
       });
       
-      // Close the dialog after successful submission
-      const closeButton = document.querySelector('[data-state="open"] button[data-state="closed"]');
-      if (closeButton && closeButton instanceof HTMLElement) {
-        closeButton.click();
+      if (response.ok) {
+        toast.success('Thank you! Your appointment request has been submitted.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          date: undefined,
+          service: '',
+          preferredContact: '',
+          message: '',
+        });
+        
+        // Close the dialog after successful submission
+        const closeButton = document.querySelector('[data-state="open"] button[data-state="closed"]');
+        if (closeButton && closeButton instanceof HTMLElement) {
+          closeButton.click();
+        }
+      } else {
+        throw new Error('Form submission failed');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
