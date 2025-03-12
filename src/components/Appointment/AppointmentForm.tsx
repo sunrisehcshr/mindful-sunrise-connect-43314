@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { toast } from 'sonner';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, Hospital, Video } from 'lucide-react';
 
 const AppointmentForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ const AppointmentForm: React.FC = () => {
     date: "",
     time: "",
     service: "",
+    sessionType: "",
     preferredContact: "",
     message: ""
   });
@@ -44,12 +45,17 @@ const AppointmentForm: React.FC = () => {
     setIsSubmitting(true);
     
     try {
+      const formspreeData = {
+        ...formData,
+        _cc: "shweta.s@sunrisehcsllc.com" // Add CC email
+      };
+      
       const response = await fetch("https://formspree.io/f/mqkrqkwo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formspreeData)
       });
       
       if (response.ok) {
@@ -61,6 +67,7 @@ const AppointmentForm: React.FC = () => {
           date: "",
           time: "",
           service: "",
+          sessionType: "",
           preferredContact: "",
           message: ""
         });
@@ -165,6 +172,39 @@ const AppointmentForm: React.FC = () => {
             <option key={index} value={svc}>{svc}</option>
           ))}
         </select>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-foreground mb-1">Session Type</label>
+        <div className="flex gap-4">
+          <label className="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="radio"
+              name="sessionType"
+              value="in-clinic"
+              onChange={handleChange}
+              checked={formData.sessionType === 'in-clinic'}
+              className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+              required
+            />
+            <span className="flex items-center">
+              <Hospital className="h-4 w-4 text-orange-500 mr-1" /> In-Clinic
+            </span>
+          </label>
+          <label className="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="radio"
+              name="sessionType"
+              value="online"
+              onChange={handleChange}
+              checked={formData.sessionType === 'online'}
+              className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+            />
+            <span className="flex items-center">
+              <Video className="h-4 w-4 text-orange-500 mr-1" /> Online
+            </span>
+          </label>
+        </div>
       </div>
 
       <div>

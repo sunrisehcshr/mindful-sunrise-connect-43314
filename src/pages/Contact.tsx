@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Hospital, Video } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    sessionType: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,12 +27,17 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      const formspreeData = {
+        ...formData,
+        _cc: "shweta.s@sunrisehcsllc.com" // Add CC email
+      };
+      
       const response = await fetch("https://formspree.io/f/mqkrqkwo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formspreeData)
       });
       
       if (response.ok) {
@@ -39,6 +45,7 @@ const Contact = () => {
         setFormData({
           name: '',
           email: '',
+          sessionType: '',
           message: ''
         });
       } else {
@@ -131,6 +138,39 @@ const Contact = () => {
                         className="w-full p-2 border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent"
                         required
                       />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-amber-800 mb-1">Preferred Session Type</label>
+                      <div className="flex gap-4">
+                        <label className="flex items-center space-x-2 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="sessionType"
+                            value="in-clinic"
+                            onChange={handleChange}
+                            checked={formData.sessionType === 'in-clinic'}
+                            className="h-4 w-4 text-amber-500 focus:ring-amber-500"
+                            required
+                          />
+                          <span className="flex items-center">
+                            <Hospital className="h-4 w-4 text-amber-500 mr-1" /> In-Clinic
+                          </span>
+                        </label>
+                        <label className="flex items-center space-x-2 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="sessionType"
+                            value="online"
+                            onChange={handleChange}
+                            checked={formData.sessionType === 'online'}
+                            className="h-4 w-4 text-amber-500 focus:ring-amber-500"
+                          />
+                          <span className="flex items-center">
+                            <Video className="h-4 w-4 text-amber-500 mr-1" /> Online
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     
                     <div>
