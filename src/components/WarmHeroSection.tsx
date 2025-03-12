@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -60,12 +59,17 @@ const WarmHeroSection = () => {
           duration: 0.7,
           delay: 0.2
         }}>
-            <div className="grid grid-cols-2 gap-3 max-w-md mx-auto lg:max-w-full">
-              <img className="rounded-lg h-32 object-cover w-full md:h-48 shadow-md" src="/images/therapy-for-older-adults.webp" alt="Compassionate therapy for older adults in Havertown, PA" />
-
-              <img className="rounded-lg h-32 object-cover w-full md:h-48 mt-6 shadow-md" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
-
-              <img className="rounded-lg h-32 object-cover w-full md:h-48 shadow-md col-span-2" src="/images/couple-counseling-havertown-pa.webp" alt="Professional couples therapy in Havertown, PA for stronger relationships" />
+            <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto lg:max-w-full">
+              <img 
+                className="rounded-lg h-48 md:h-64 object-cover w-full shadow-md transform hover:scale-[1.02] transition-transform" 
+                src="/images/therapy-for-older-adults.webp" 
+                alt="Compassionate therapy for older adults in Havertown, PA" 
+              />
+              <img 
+                className="rounded-lg h-48 md:h-64 object-cover w-full shadow-md transform hover:scale-[1.02] transition-transform" 
+                src="/images/family-counseling-havertown.webp" 
+                alt="Expert family counseling services in Havertown, PA" 
+              />
             </div>
           </motion.div>
         </div>
