@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
-import { Phone, Star } from 'lucide-react';
+import { Phone, Star, Clock, MapPin } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
+
 const WarmHeroSection = () => {
   return <section className="relative overflow-hidden pb-16 pt-20 sm:pb-24 sm:pt-28">
       <div className="absolute inset-0 -z-10 opacity-30">
@@ -35,7 +37,25 @@ const WarmHeroSection = () => {
             <p className="text-lg md:text-body text-amber-900 mb-8 max-w-2xl mx-auto lg:mx-0">
               Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health services in Havertown with licensed therapists, psychologists, counselors, and psychiatrists. Schedule an appointment today!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-6 text-sm text-amber-800">
+              <div className="flex items-start gap-2">
+                <Clock className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-medium">Opening Hours</p>
+                  <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-medium">Address</p>
+                  <p>2050 West Chester Pike, Havertown, PA 19083</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-4">
               <a href="tel:+18146202162">
                 <Button size="lg" className="text-white bg-orange-500 hover:bg-orange-400 font-semibold w-full sm:w-auto">
                   <Phone className="mr-2 h-4 w-4" /> Call Now
@@ -78,7 +98,7 @@ const WarmHeroSection = () => {
                 }}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-amber-400/20 to-transparent z-10"></div>
                     <div className="absolute top-4 left-4 text-orange-300 opacity-70 z-10">
-                      
+                      <Star size={20} fill="currentColor" />
                     </div>
                     <img className="w-full h-full object-cover" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
                   </motion.div>
