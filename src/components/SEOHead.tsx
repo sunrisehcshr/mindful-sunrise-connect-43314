@@ -1,6 +1,5 @@
-
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async"; // ✅ Replace react-helmet with react-helmet-async
 
 interface SEOHeadProps {
   title?: string;
@@ -41,21 +40,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
 
-      {/* Comprehensive Favicon Support */}
-      {/* Standard Favicon */}
+      {/* Favicon (SVG only) */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      
-      {/* iOS/macOS Safari */}
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      
-      {/* Android Chrome */}
-      <link rel="manifest" href="/site.webmanifest" />
-      
-      {/* Microsoft Windows */}
-      <meta name="msapplication-TileColor" content="#FFD75E" />
-      <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
-      <meta name="theme-color" content="#FFD75E" />
+      <link rel="apple-touch-icon" href="/favicon.svg" />
+      <meta name="msapplication-TileImage" content="/favicon.svg" />
 
       {/* Performance Optimization */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
