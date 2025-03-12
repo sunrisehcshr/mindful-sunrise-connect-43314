@@ -1,13 +1,10 @@
-
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { Phone, Star } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
-
 const WarmHeroSection = () => {
-  return (
-    <section className="relative overflow-hidden pb-16 pt-20 sm:pb-24 sm:pt-28">
+  return <section className="relative overflow-hidden pb-16 pt-20 sm:pb-24 sm:pt-28">
       <div className="absolute inset-0 -z-10 opacity-30">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -23,11 +20,15 @@ const WarmHeroSection = () => {
       
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
-          <motion.div className="w-full lg:w-1/2 text-center lg:text-left"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <motion.div className="w-full lg:w-1/2 text-center lg:text-left" initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-amber-950">
               Sunrise Human Care Services
             </h1>
@@ -49,41 +50,38 @@ const WarmHeroSection = () => {
             </div>
           </motion.div>
           
-          <motion.div className="w-full lg:w-1/2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+          <motion.div className="w-full lg:w-1/2" initial={{
+          opacity: 0
+        }} animate={{
+          opacity: 1
+        }} transition={{
+          duration: 0.7,
+          delay: 0.2
+        }}>
             <div className="relative">
               <div className="grid grid-cols-2 gap-4 relative z-0">
                 <div className="col-span-1">
-                  <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-[340px] relative"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-[340px] relative" whileHover={{
+                  scale: 1.02
+                }} transition={{
+                  duration: 0.3
+                }}>
                     <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-transparent z-10"></div>
-                    <img 
-                      className="w-full h-full object-cover" 
-                      src="/images/therapy-for-older-adults.webp" 
-                      alt="Compassionate therapy for older adults in Havertown, PA" 
-                    />
+                    <img className="w-full h-full object-cover" src="/images/therapy-for-older-adults.webp" alt="Compassionate therapy for older adults in Havertown, PA" />
                   </motion.div>
                 </div>
                 
                 <div className="col-span-1">
-                  <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-[340px] relative"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-[340px] relative" whileHover={{
+                  scale: 1.02
+                }} transition={{
+                  duration: 0.3
+                }}>
                     <div className="absolute inset-0 bg-gradient-to-bl from-amber-400/20 to-transparent z-10"></div>
                     <div className="absolute top-4 left-4 text-orange-300 opacity-70 z-10">
-                      <Star size={24} fill="currentColor" />
+                      
                     </div>
-                    <img 
-                      className="w-full h-full object-cover" 
-                      src="/images/family-counseling-havertown.webp" 
-                      alt="Expert family counseling services in Havertown, PA" 
-                    />
+                    <img className="w-full h-full object-cover" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
                   </motion.div>
                 </div>
               </div>
@@ -98,7 +96,7 @@ const WarmHeroSection = () => {
                 <Star size={18} fill="currentColor" />
               </div>
               <div className="absolute -bottom-10 right-20 text-orange-300 opacity-50 z-10">
-                <Star size={18} fill="currentColor" />
+                
               </div>
               
               <div className="absolute -z-10 rounded-full w-32 h-32 bg-orange-100/60 blur-3xl -top-10 -right-10"></div>
@@ -107,8 +105,6 @@ const WarmHeroSection = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WarmHeroSection;
