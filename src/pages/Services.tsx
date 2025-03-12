@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ServicesSection from '../components/services/ServicesSection';
+import ConditionsSection from '../components/conditions/ConditionsSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
@@ -16,6 +17,7 @@ const Services = () => {
         <Navbar />
         <main className="flex-grow pt-24">
           <ServicesSection />
+          <ConditionsSection />
         </main>
         <Footer />
       </div>
