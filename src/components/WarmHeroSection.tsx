@@ -38,7 +38,7 @@ const WarmHeroSection = () => {
               <Button size="lg" className="text-white bg-orange-500 hover:bg-orange-400">
                 Schedule Appointment
               </Button>
-              <Button size="lg" variant="outline" className="border-amber-600 text-amber-800">
+              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500">
                 Our Services
               </Button>
             </div>
