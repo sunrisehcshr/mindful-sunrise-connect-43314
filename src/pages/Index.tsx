@@ -1,15 +1,15 @@
 
 import React from 'react';
 import WarmHeroSection from '../components/WarmHeroSection';
-import { ServicesSection } from '../components/services/ServicesSection';
+import ServicesSection from '../components/services/ServicesSection';
 import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
-import { FAQSection } from '../components/FAQ/FAQSection';
-import { AppointmentSection } from '../components/Appointment/AppointmentSection';
+import FAQSection from '../components/FAQ/FAQSection';
+import AppointmentSection from '../components/Appointment/AppointmentSection';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
-import { Footer } from '../components/Footer/Footer';
+import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar';
-import { AboutSection } from '../components/AboutSection';
+import AboutSection from '../components/AboutSection';
 
 export default function Index() {
   return (
