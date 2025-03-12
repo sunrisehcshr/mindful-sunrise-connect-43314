@@ -33,7 +33,7 @@ const WarmHeroSection = () => {
               Mental Health Care in Havertown, PA
             </h1>
             <p className="text-lg md:text-body text-amber-900 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health care in Havertown with licensed therapists, psychologists, counselors, and psychiatrists. Schedule an appointment today!
+              Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health services in Havertown with licensed therapists, psychologists, counselors, and psychiatrists. Schedule an appointment today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a href="tel:+18146202162">
