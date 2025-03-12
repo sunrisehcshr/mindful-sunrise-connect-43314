@@ -108,7 +108,7 @@ const ConditionsSection: React.FC = () => {
     <section className="py-16 bg-gradient-to-b from-secondary to-amber-50/50" id="conditions-we-treat" aria-labelledby="conditions-heading">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary-foreground mb-4">
+          <span className="section-tag">
             Conditions We Treat
           </span>
           <h2 id="conditions-heading" className="text-3xl md:text-4xl font-bold mb-4">
