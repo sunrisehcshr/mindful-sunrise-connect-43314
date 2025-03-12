@@ -6,7 +6,7 @@ import ConditionsSection from '../components/conditions/ConditionsSection';
 import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
 import AboutSection from '../components/AboutSection';
 import FAQSection from '../components/FAQSection';
-import AppointmentForm from '../components/AppointmentForm';
+import AppointmentSection from '../components/Appointment/AppointmentSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
@@ -29,7 +29,7 @@ const Index = () => {
           <AboutSection />
           <WarmTestimonialsSection />
           <FAQSection />
-          <AppointmentForm />
+          <AppointmentSection />
         </main>
         <Footer />
       </div>
