@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown } from "lucide-react";
+
 const faqs = [{
   question: "What mental health services do you offer at your Havertown, PA clinic?",
   answer: "We provide comprehensive mental health services, including individual therapy, couple Counseling, group therapy, family counseling, psychiatric evaluations, and medication management. Our team addresses various conditions such as anxiety, depression, PTSD, and substance use disorders."
@@ -24,6 +25,7 @@ const faqs = [{
   question: "What steps should I take if I or someone I know is in crisis?",
   answer: "If you or someone you know is struggling or in crisis, help is available. Call or text 988 to speak with a trained crisis counselor any time of day or night."
 }];
+
 const FAQItem = ({
   question,
   answer,
@@ -63,12 +65,15 @@ const FAQItem = ({
       </AnimatePresence>
     </div>;
 };
+
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  return <section id="faq" className="section-padding bg-secondary/30">
+
+  return (
+    <section id="faq" className="section-padding bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <span className="inline-block px-3 py-1 rounded-full text-xs bg-orange-500 mb-4 text-white font-semibold">
@@ -86,22 +91,26 @@ const FAQSection = () => {
           {faqs.map((faq, index) => <FAQItem key={index} question={faq.question} answer={faq.answer} isOpen={openIndex === index} onClick={() => toggleFAQ(index)} />)}
         </div>
         
-        <div className="max-w-3xl mx-auto mt-10 bg-white/70 p-6 rounded-lg border border-sunrise-100/80 shadow-sm warm-glow">
-          <h3 className="text-lg font-medium mb-3 text-center">Still have questions?</h3>
-          <p className="text-muted-foreground mb-4 text-center">
+        <div className="max-w-3xl mx-auto mt-12 bg-white/70 p-8 rounded-xl border border-sunrise-100/80 shadow-sm">
+          <h3 className="text-xl font-semibold mb-4 text-center">
+            Still have questions?
+          </h3>
+          <p className="text-muted-foreground mb-6 text-center">
             If you couldn't find the answer to your question, please feel free to contact us.
             Our friendly staff is here to help.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="tel:+18146202162" className="btn-sunrise-outline text-sm">
+            <a href="tel:+18146202162" className="inline-flex items-center px-6 py-3 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition-colors">
               Call Us at (814) 620-2162
             </a>
-            <a href="mailto:info@sunrisehcsllc.com" className="btn-sunrise text-sm">
+            <a href="mailto:info@sunrisehcsllc.com" className="inline-flex items-center px-6 py-3 rounded-lg border-2 border-orange-500 text-orange-500 hover:bg-orange-50 transition-colors">
               Email Us
             </a>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default FAQSection;

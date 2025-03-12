@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -55,12 +54,10 @@ const WarmHeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <div className="relative">
-              {/* Star at the top corner of first image */}
               <div className="absolute -top-6 -left-4 text-orange-300 opacity-70 z-10">
                 <Star size={24} fill="currentColor" />
               </div>
               
-              {/* Main grid with modern layout and fixed image cropping */}
               <div className="grid grid-cols-2 gap-4 relative z-0">
                 <div className="col-span-1">
                   <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-[340px] relative"
@@ -91,15 +88,13 @@ const WarmHeroSection = () => {
                 </div>
               </div>
               
-              {/* Two stars below the second image at the outer corners */}
-              <div className="absolute -bottom-8 -left-6 text-orange-300 opacity-50 z-10">
+              <div className="absolute -bottom-8 right-6 text-orange-300 opacity-50 z-10">
                 <Star size={20} fill="currentColor" />
               </div>
               <div className="absolute -bottom-8 -right-6 text-amber-300 opacity-50 z-10">
                 <Star size={20} fill="currentColor" />
               </div>
               
-              {/* Background elements */}
               <div className="absolute -z-10 rounded-full w-32 h-32 bg-orange-100/60 blur-3xl -top-10 -right-10"></div>
               <div className="absolute -z-10 rounded-full w-48 h-48 bg-amber-200/40 blur-3xl -bottom-16 -left-10"></div>
             </div>
