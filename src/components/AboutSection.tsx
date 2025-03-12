@@ -16,10 +16,7 @@ const AboutSection: React.FC = () => {
           </div>
           
           <div className="order-1 lg:order-2">
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-200 to-orange-200 rounded-3xl blur-md"></div>
-              <img src="/images/Therapy-in-havertown.webp" alt="Therapy session in Havertown" className="w-full h-auto rounded-2xl shadow-xl relative z-10 border-2 border-amber-50" />
-            </div>
+            <img src="/images/Therapy-in-havertown.webp" alt="Therapy session in Havertown" className="w-full h-auto rounded-lg shadow-md border border-amber-50" />
           </div>
         </div>
       </div>

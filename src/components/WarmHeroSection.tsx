@@ -60,12 +60,12 @@ const WarmHeroSection = () => {
           duration: 0.7,
           delay: 0.2
         }}>
-            <div className="grid grid-cols-2 gap-4">
-              <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" src="/images/therapy-for-older-adults.webp" alt="Compassionate therapy for older adults in Havertown, PA" />
+            <div className="grid grid-cols-2 gap-3 max-w-md mx-auto lg:max-w-full">
+              <img className="rounded-lg h-32 object-cover w-full md:h-48 shadow-md" src="/images/therapy-for-older-adults.webp" alt="Compassionate therapy for older adults in Havertown, PA" />
 
-              <img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
+              <img className="rounded-lg h-32 object-cover w-full md:h-48 mt-6 shadow-md" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
 
-              <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2" src="/images/couple-counseling-havertown-pa.webp" alt="Professional couples therapy in Havertown, PA for stronger relationships" />
+              <img className="rounded-lg h-32 object-cover w-full md:h-48 shadow-md col-span-2" src="/images/couple-counseling-havertown-pa.webp" alt="Professional couples therapy in Havertown, PA for stronger relationships" />
             </div>
           </motion.div>
         </div>
