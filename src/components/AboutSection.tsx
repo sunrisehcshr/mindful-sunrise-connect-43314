@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
@@ -37,8 +38,8 @@ const AboutSection: React.FC = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="/images/Therapy-in-havertown.webp" 
-                  alt="Therapy session in Havertown" 
+                  src="/images/therapy-for-older-adults.webp" 
+                  alt="Compassionate therapy for older adults in Havertown, PA" 
                   className="w-full h-auto rounded-2xl shadow-md" 
                 />
               </motion.div>
