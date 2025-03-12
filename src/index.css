@@ -96,11 +96,6 @@
   }
   
   .active-nav-item {
-    @apply bg-white text-orange-500 font-semibold;
-  }
-
-  /* Inverted tag for orange backgrounds */
-  .inverted-tag {
-    @apply bg-white text-orange-500 px-3 py-1 rounded-md;
+    @apply bg-orange-500 text-white font-semibold;
   }
 }
