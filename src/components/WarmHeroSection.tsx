@@ -55,10 +55,6 @@ const WarmHeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <div className="relative">
-              <div className="absolute -top-6 -left-4 text-orange-300 opacity-70 z-10">
-                <Star size={24} fill="currentColor" />
-              </div>
-              
               <div className="grid grid-cols-2 gap-4 relative z-0">
                 <div className="col-span-1">
                   <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-[340px] relative"
@@ -80,6 +76,9 @@ const WarmHeroSection = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-bl from-amber-400/20 to-transparent z-10"></div>
+                    <div className="absolute -top-6 -left-4 text-orange-300 opacity-70 z-10">
+                      <Star size={24} fill="currentColor" />
+                    </div>
                     <img 
                       className="w-full h-full object-cover" 
                       src="/images/family-counseling-havertown.webp" 
@@ -96,6 +95,9 @@ const WarmHeroSection = () => {
                 <Star size={20} fill="currentColor" />
               </div>
               <div className="absolute -bottom-6 right-14 text-orange-300 opacity-50 z-10">
+                <Star size={18} fill="currentColor" />
+              </div>
+              <div className="absolute -bottom-10 right-20 text-orange-300 opacity-50 z-10">
                 <Star size={18} fill="currentColor" />
               </div>
               

@@ -1,11 +1,57 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { toast } from 'sonner';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mqkrqkwo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        toast.success("Thank you! Your message has been sent.");
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <SEOHead
@@ -27,7 +73,7 @@ const Contact = () => {
                       <Phone className="h-5 w-5 text-amber-500 mt-1" />
                       <div>
                         <h3 className="font-medium">Phone</h3>
-                        <p className="text-amber-700">(610) 555-1234</p>
+                        <p className="text-amber-700">(814) 620-2162</p>
                       </div>
                     </div>
                     
@@ -35,7 +81,7 @@ const Contact = () => {
                       <Mail className="h-5 w-5 text-amber-500 mt-1" />
                       <div>
                         <h3 className="font-medium">Email</h3>
-                        <p className="text-amber-700">contact@sunrisehcs.com</p>
+                        <p className="text-amber-700">info@sunrisehcsllc.com</p>
                       </div>
                     </div>
                     
@@ -43,7 +89,7 @@ const Contact = () => {
                       <MapPin className="h-5 w-5 text-amber-500 mt-1" />
                       <div>
                         <h3 className="font-medium">Address</h3>
-                        <p className="text-amber-700">123 Healing Way, Havertown, PA 19083</p>
+                        <p className="text-amber-700">2050 West Chester Pike, Havertown, PA 19083</p>
                       </div>
                     </div>
                     
@@ -51,9 +97,8 @@ const Contact = () => {
                       <Clock className="h-5 w-5 text-amber-500 mt-1" />
                       <div>
                         <h3 className="font-medium">Hours</h3>
-                        <p className="text-amber-700">Monday - Friday: 9am - 7pm</p>
-                        <p className="text-amber-700">Saturday: 10am - 3pm</p>
-                        <p className="text-amber-700">Sunday: Closed</p>
+                        <p className="text-amber-700">Monday - Friday: 9am - 5pm</p>
+                        <p className="text-amber-700">Saturday & Sunday: Closed</p>
                       </div>
                     </div>
                   </div>
@@ -61,13 +106,17 @@ const Contact = () => {
                 
                 <div className="warm-card p-6 rounded-lg">
                   <h2 className="text-2xl font-semibold text-amber-800 mb-4">Send a Message</h2>
-                  <form className="space-y-4">
+                  <form className="space-y-4" onSubmit={handleSubmit}>
                     <div>
                       <label htmlFor="name" className="block text-amber-800 mb-1">Your Name</label>
                       <input 
                         type="text" 
-                        id="name" 
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         className="w-full p-2 border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+                        required
                       />
                     </div>
                     
@@ -75,25 +124,34 @@ const Contact = () => {
                       <label htmlFor="email" className="block text-amber-800 mb-1">Email Address</label>
                       <input 
                         type="email" 
-                        id="email" 
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         className="w-full p-2 border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+                        required
                       />
                     </div>
                     
                     <div>
                       <label htmlFor="message" className="block text-amber-800 mb-1">Message</label>
                       <textarea 
-                        id="message" 
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         rows={5}
                         className="w-full p-2 border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+                        required
                       ></textarea>
                     </div>
                     
                     <button 
                       type="submit" 
                       className="bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                      disabled={isSubmitting}
                     >
-                      Send Message
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 </div>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
 import SocialLinks from './SocialLinks';
 import FooterNav from './FooterNav';
 import NewsletterForm from './NewsletterForm';
@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           {/* About */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-10 object-contain transition-transform duration-500 group-hover:translate-y-[-5px]" />
+              <img src="/logo.svg" alt="Sunrise Logo" className="h-8 w-8 object-contain" />
               <div className="flex flex-col">
                 <span className="text-base leading-tight font-medium">Sunrise</span>
                 <span className="text-xs text-muted-foreground leading-tight font-normal">Human Care Services</span>
@@ -73,7 +73,19 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border/50">
+        {/* Emergency Information */}
+        <div className="mt-8 pt-6 border-t border-border/50">
+          <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-md">
+            <div className="flex items-start">
+              <AlertTriangle className="h-5 w-5 text-red-500 mr-2 mt-0.5" />
+              <p className="text-sm text-red-700">
+                <span className="font-medium">Emergency:</span> If this is a life-threatening emergency, please call 911 or the National Suicide Prevention Lifeline <a href="tel:988" className="font-semibold underline hover:no-underline inline-flex items-center"><Phone className="h-3 w-3 mr-1" /> 988</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Sunrise Human Care Services. All rights reserved.

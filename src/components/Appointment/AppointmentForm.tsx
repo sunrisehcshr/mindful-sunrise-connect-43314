@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { toast } from 'sonner';
+import { Phone, Mail } from 'lucide-react';
 
 const AppointmentForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const AppointmentForm: React.FC = () => {
     date: "",
     time: "",
     service: "",
+    preferredContact: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,7 +44,7 @@ const AppointmentForm: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch("https://formspree.io/f/xpwqvvvw", {
+      const response = await fetch("https://formspree.io/f/mqkrqkwo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -59,6 +61,7 @@ const AppointmentForm: React.FC = () => {
           date: "",
           time: "",
           service: "",
+          preferredContact: "",
           message: ""
         });
       } else {
@@ -162,6 +165,39 @@ const AppointmentForm: React.FC = () => {
             <option key={index} value={svc}>{svc}</option>
           ))}
         </select>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-foreground mb-1">Preferred Contact Method</label>
+        <div className="flex gap-4">
+          <label className="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="radio"
+              name="preferredContact"
+              value="phone"
+              onChange={handleChange}
+              checked={formData.preferredContact === 'phone'}
+              className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+              required
+            />
+            <span className="flex items-center">
+              <Phone className="h-4 w-4 text-orange-500 mr-1" /> Phone
+            </span>
+          </label>
+          <label className="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="radio"
+              name="preferredContact"
+              value="email"
+              onChange={handleChange}
+              checked={formData.preferredContact === 'email'}
+              className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+            />
+            <span className="flex items-center">
+              <Mail className="h-4 w-4 text-orange-500 mr-1" /> Email
+            </span>
+          </label>
+        </div>
       </div>
 
       <div>
