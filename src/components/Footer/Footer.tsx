@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SocialLinks from './SocialLinks';
 import FooterNav from './FooterNav';
 import NewsletterForm from './NewsletterForm';
@@ -93,14 +94,14 @@ const Footer: React.FC = () => {
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6">
                 <li>
-                  <a href="/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                  <Link to="/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/terms-of-service" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                  <Link to="/terms-of-service" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                     Terms of Service
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="/sitemap.xml" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
