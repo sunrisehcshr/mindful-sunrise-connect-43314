@@ -2,35 +2,39 @@
 import React from 'react';
 import WarmHeroSection from '../components/WarmHeroSection';
 import ServicesSection from '../components/services/ServicesSection';
+import ConditionsSection from '../components/conditions/ConditionsSection';
 import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
-import FAQSection from '../components/FAQ/FAQSection';
-import AppointmentSection from '../components/Appointment/AppointmentSection';
+import AboutSection from '../components/AboutSection';
+import FAQSection from '../components/FAQSection';
+import AppointmentForm from '../components/AppointmentForm';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
-import Footer from '../components/Footer/Footer';
-import Navbar from '../components/Navbar';
-import AboutSection from '../components/AboutSection';
 
-export default function Index() {
+const Index = () => {
   return (
     <>
       <SEOHead
-        title="Mental Health Clinic in Havertown, PA | Sunrise Human Care Services"
-        description="Find compassionate mental health care for children, teens, adults, and seniors in Havertown, PA. Expert therapy for anxiety, depression, and well-being."
+        title="Sunrise Human Care Services | Mental Health Services in Havertown, PA"
+        description="Dedicated mental health professionals offering therapy services in Havertown, PA. Counseling for anxiety, depression, and family issues in a warm, supportive environment."
       />
       <SchemaMarkup />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
           <WarmHeroSection />
-          <AboutSection />
           <ServicesSection />
+          <ConditionsSection />
+          <AboutSection />
           <WarmTestimonialsSection />
           <FAQSection />
-          <AppointmentSection />
+          <AppointmentForm />
         </main>
         <Footer />
       </div>
     </>
   );
-}
+};
+
+export default Index;
