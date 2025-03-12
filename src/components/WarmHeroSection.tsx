@@ -1,6 +1,10 @@
+
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
+import { Phone } from 'lucide-react';
+import AppointmentDialog from './Appointment/AppointmentDialog';
+
 const WarmHeroSection = () => {
   return <section className="relative overflow-hidden pb-16 pt-20 sm:pb-24 sm:pt-28">
       <div className="absolute inset-0 -z-10 opacity-30">
@@ -35,12 +39,16 @@ const WarmHeroSection = () => {
               Start your journey to emotional well-being today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="text-white bg-orange-500 hover:bg-orange-400 font-semibold">
-                Schedule Appointment
-              </Button>
-              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 font-semibold">
-                Our Services
-              </Button>
+              <a href="tel:+18146202162">
+                <Button size="lg" className="text-white bg-orange-500 hover:bg-orange-400 font-semibold w-full sm:w-auto">
+                  <Phone className="mr-2 h-4 w-4" /> Call Now
+                </Button>
+              </a>
+              <AppointmentDialog>
+                <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 font-semibold">
+                  Schedule Appointment
+                </Button>
+              </AppointmentDialog>
             </div>
           </motion.div>
           
