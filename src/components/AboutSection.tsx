@@ -4,7 +4,7 @@ const AboutSection: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-400/20 text-sunrise-900 mb-4">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-500 mb-4 text-white">
               About Us
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -15,17 +15,11 @@ const AboutSection: React.FC = () => {
           </div>
           
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-            <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" 
-     src="/images/therapy-for-older-adults.webp" 
-     alt="Compassionate therapy for older adults in Havertown, PA" />
+            <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md" src="/images/therapy-for-older-adults.webp" alt="Compassionate therapy for older adults in Havertown, PA" />
 
-<img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" 
-     src="/images/family-counseling-havertown.webp" 
-     alt="Expert family counseling services in Havertown, PA" />
+          <img className="rounded-2xl h-40 object-cover w-full md:h-64 mt-8 shadow-md" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
 
-<img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2" 
-     src="/images/couple-counseling-havertown-pa.webp" 
-     alt="Professional couples therapy in Havertown, PA for stronger relationships" />
+          <img className="rounded-2xl h-40 object-cover w-full md:h-64 shadow-md col-span-2" src="/images/couple-counseling-havertown-pa.webp" alt="Professional couples therapy in Havertown, PA for stronger relationships" />
 
           </div>
         </div>
