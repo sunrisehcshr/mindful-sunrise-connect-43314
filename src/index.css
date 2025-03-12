@@ -73,26 +73,26 @@
   }
   
   .section-padding {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-8 md:py-12 lg:py-16;
   }
 
   /* Button and tag styles */
   .btn-sunrise {
-    @apply px-4 py-2 bg-primary text-primary-foreground font-medium rounded-md 
-    hover:bg-primary/90 transition-colors inline-flex items-center gap-2;
+    @apply px-3 py-1.5 md:px-4 md:py-2 bg-primary text-primary-foreground font-medium rounded-md 
+    hover:bg-primary/90 transition-colors inline-flex items-center gap-2 text-sm;
   }
 
   .section-tag {
-    @apply inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-500 text-white
-    border border-orange-400 mb-4;
+    @apply inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-orange-500 text-white
+    border border-orange-400 mb-3 md:mb-4;
   }
   
   .orange-tag {
-    @apply bg-orange-500 text-white px-3 py-1 rounded-md;
+    @apply bg-orange-500 text-white px-2 py-0.5 md:px-3 md:py-1 rounded-md text-xs;
   }
   
   .orange-dot {
-    @apply inline-block w-2 h-2 bg-orange-500 rounded-full mr-2;
+    @apply inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-orange-500 rounded-full mr-1 md:mr-2;
   }
   
   .active-nav-item {
@@ -117,5 +117,28 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(251, 191, 36, 0.1)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 64px 64px;
+  }
+  
+  /* Mobile optimization */
+  input, select, textarea {
+    @apply text-sm;
+  }
+  
+  @media (max-width: 640px) {
+    /* Additional mobile-specific adjustments */
+    .ui-container {
+      @apply px-3;
+    }
+    
+    /* Making forms more compact on mobile */
+    form .space-y-4 {
+      @apply space-y-3;
+    }
+    
+    /* Ensure dialogs don't cover the whole screen */
+    [data-state="open"] {
+      max-height: 90vh;
+      overflow-y: auto;
+    }
   }
 }

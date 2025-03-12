@@ -83,7 +83,7 @@ const AppointmentForm: React.FC = () => {
   };
   
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 bg-white/80 p-6 rounded-lg shadow-sm border border-sunrise-100/50 warm-glow">
+    <form onSubmit={handleSubmit} className="space-y-4 bg-white/80 p-4 sm:p-6 rounded-lg shadow-sm border border-sunrise-100/50 warm-glow">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Full Name</label>
         <input 
@@ -92,12 +92,12 @@ const AppointmentForm: React.FC = () => {
           type="text" 
           value={formData.name} 
           onChange={handleChange} 
-          className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
+          className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
           required 
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 gap-4">
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">Email</label>
           <input 
@@ -106,7 +106,7 @@ const AppointmentForm: React.FC = () => {
             type="email" 
             value={formData.email} 
             onChange={handleChange} 
-            className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
+            className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
             required 
           />
         </div>
@@ -119,13 +119,13 @@ const AppointmentForm: React.FC = () => {
             type="tel" 
             value={formData.phone} 
             onChange={handleChange} 
-            className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
+            className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
             required 
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 gap-4">
         <div>
           <label htmlFor="date" className="block text-sm font-medium text-foreground mb-1">Preferred Date</label>
           <input 
@@ -134,7 +134,7 @@ const AppointmentForm: React.FC = () => {
             type="date" 
             value={formData.date} 
             onChange={handleChange} 
-            className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
+            className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
             required 
           />
         </div>
@@ -146,7 +146,7 @@ const AppointmentForm: React.FC = () => {
             name="time" 
             value={formData.time} 
             onChange={handleChange} 
-            className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
+            className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
             required
           >
             <option value="" disabled>Select a time...</option>
@@ -164,7 +164,7 @@ const AppointmentForm: React.FC = () => {
           name="service" 
           value={formData.service} 
           onChange={handleChange} 
-          className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
+          className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
           required
         >
           <option value="" disabled>Select a service...</option>
@@ -176,7 +176,7 @@ const AppointmentForm: React.FC = () => {
 
       <div>
         <label className="block text-sm font-medium text-foreground mb-1">Session Type</label>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <label className="flex items-center space-x-2 cursor-pointer">
             <input
               type="radio"
@@ -187,8 +187,8 @@ const AppointmentForm: React.FC = () => {
               className="h-4 w-4 text-orange-500 focus:ring-orange-500"
               required
             />
-            <span className="flex items-center">
-              <Hospital className="h-4 w-4 text-orange-500 mr-1" /> In-Clinic
+            <span className="flex items-center text-sm">
+              <Hospital className="h-3 w-3 text-orange-500 mr-1" /> In-Clinic
             </span>
           </label>
           <label className="flex items-center space-x-2 cursor-pointer">
@@ -200,8 +200,8 @@ const AppointmentForm: React.FC = () => {
               checked={formData.sessionType === 'online'}
               className="h-4 w-4 text-orange-500 focus:ring-orange-500"
             />
-            <span className="flex items-center">
-              <Video className="h-4 w-4 text-orange-500 mr-1" /> Online
+            <span className="flex items-center text-sm">
+              <Video className="h-3 w-3 text-orange-500 mr-1" /> Online
             </span>
           </label>
         </div>
@@ -209,7 +209,7 @@ const AppointmentForm: React.FC = () => {
 
       <div>
         <label className="block text-sm font-medium text-foreground mb-1">Preferred Contact Method</label>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <label className="flex items-center space-x-2 cursor-pointer">
             <input
               type="radio"
@@ -220,8 +220,8 @@ const AppointmentForm: React.FC = () => {
               className="h-4 w-4 text-orange-500 focus:ring-orange-500"
               required
             />
-            <span className="flex items-center">
-              <Phone className="h-4 w-4 text-orange-500 mr-1" /> Phone
+            <span className="flex items-center text-sm">
+              <Phone className="h-3 w-3 text-orange-500 mr-1" /> Phone
             </span>
           </label>
           <label className="flex items-center space-x-2 cursor-pointer">
@@ -233,8 +233,8 @@ const AppointmentForm: React.FC = () => {
               checked={formData.preferredContact === 'email'}
               className="h-4 w-4 text-orange-500 focus:ring-orange-500"
             />
-            <span className="flex items-center">
-              <Mail className="h-4 w-4 text-orange-500 mr-1" /> Email
+            <span className="flex items-center text-sm">
+              <Mail className="h-3 w-3 text-orange-500 mr-1" /> Email
             </span>
           </label>
         </div>
@@ -245,10 +245,10 @@ const AppointmentForm: React.FC = () => {
         <textarea 
           id="message" 
           name="message" 
-          rows={4} 
+          rows={3} 
           value={formData.message} 
           onChange={handleChange} 
-          className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
+          className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" 
           placeholder="Please share any specific concerns or questions you have." 
           required
         ></textarea>
@@ -256,7 +256,7 @@ const AppointmentForm: React.FC = () => {
 
       <button 
         type="submit" 
-        className="w-full bg-sunrise-500 hover:bg-sunrise-600 text-white font-medium py-2.5 px-4 rounded-md transition-colors duration-300 shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed" 
+        className="w-full bg-sunrise-500 hover:bg-sunrise-600 text-white font-medium py-2 px-3 text-sm rounded-md transition-colors duration-300 shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed" 
         disabled={isSubmitting}
       >
         {isSubmitting ? "Submitting..." : "Request Appointment"}

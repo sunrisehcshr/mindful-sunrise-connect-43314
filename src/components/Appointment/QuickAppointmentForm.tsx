@@ -108,7 +108,7 @@ const QuickAppointmentForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-3 text-sm max-h-[80vh] overflow-y-auto px-1">
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-1">
           Full Name*
@@ -119,12 +119,12 @@ const QuickAppointmentForm: React.FC = () => {
           type="text"
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
+          className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
           required
         />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="space-y-3">
         <div>
           <label htmlFor="email" className="block text-sm font-medium mb-1">
             Email*
@@ -135,7 +135,7 @@ const QuickAppointmentForm: React.FC = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
+            className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
             required
           />
         </div>
@@ -149,13 +149,13 @@ const QuickAppointmentForm: React.FC = () => {
             type="tel"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
+            className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
             required
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="space-y-3">
         <div>
           <label htmlFor="date" className="block text-sm font-medium mb-1">
             Preferred Date*
@@ -165,11 +165,11 @@ const QuickAppointmentForm: React.FC = () => {
               <Button
                 variant={"outline"}
                 className={cn(
-                  "w-full justify-start text-left font-normal border-sunrise-200/70",
+                  "w-full justify-start text-left text-xs font-normal border-sunrise-200/70 px-3 py-1.5 h-auto",
                   !formData.date && "text-muted-foreground"
                 )}
               >
-                <CalendarIcon className="mr-2 h-4 w-4" />
+                <CalendarIcon className="mr-2 h-3 w-3" />
                 {formData.date ? format(formData.date, "PPP") : <span>Select a date</span>}
               </Button>
             </PopoverTrigger>
@@ -180,7 +180,7 @@ const QuickAppointmentForm: React.FC = () => {
                 onSelect={handleDateChange}
                 initialFocus
                 disabled={(date) => date < new Date()}
-                className={cn("p-3 pointer-events-auto")}
+                className={cn("p-2 pointer-events-auto")}
               />
             </PopoverContent>
           </Popover>
@@ -194,7 +194,7 @@ const QuickAppointmentForm: React.FC = () => {
             name="service"
             value={formData.service}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
+            className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
             required
           >
             <option value="" disabled>
@@ -213,32 +213,32 @@ const QuickAppointmentForm: React.FC = () => {
         <label className="block text-sm font-medium mb-1">
           Session Type*
         </label>
-        <div className="flex gap-4">
-          <label className="flex items-center space-x-2 cursor-pointer">
+        <div className="flex flex-wrap gap-3">
+          <label className="flex items-center space-x-1 cursor-pointer">
             <input
               type="radio"
               name="sessionType"
               value="in-clinic"
               onChange={handleChange}
               checked={formData.sessionType === 'in-clinic'}
-              className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+              className="h-3 w-3 text-orange-500 focus:ring-orange-500"
               required
             />
-            <span className="flex items-center">
-              <Hospital className="h-4 w-4 text-orange-500 mr-1" /> In-Clinic
+            <span className="flex items-center text-xs">
+              <Hospital className="h-3 w-3 text-orange-500 mr-1" /> In-Clinic
             </span>
           </label>
-          <label className="flex items-center space-x-2 cursor-pointer">
+          <label className="flex items-center space-x-1 cursor-pointer">
             <input
               type="radio"
               name="sessionType"
               value="online"
               onChange={handleChange}
               checked={formData.sessionType === 'online'}
-              className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+              className="h-3 w-3 text-orange-500 focus:ring-orange-500"
             />
-            <span className="flex items-center">
-              <Video className="h-4 w-4 text-orange-500 mr-1" /> Online
+            <span className="flex items-center text-xs">
+              <Video className="h-3 w-3 text-orange-500 mr-1" /> Online
             </span>
           </label>
         </div>
@@ -248,32 +248,32 @@ const QuickAppointmentForm: React.FC = () => {
         <label className="block text-sm font-medium mb-1">
           Preferred Contact Method*
         </label>
-        <div className="flex gap-4">
-          <label className="flex items-center space-x-2 cursor-pointer">
+        <div className="flex flex-wrap gap-3">
+          <label className="flex items-center space-x-1 cursor-pointer">
             <input
               type="radio"
               name="preferredContact"
               value="phone"
               onChange={handleChange}
               checked={formData.preferredContact === 'phone'}
-              className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+              className="h-3 w-3 text-orange-500 focus:ring-orange-500"
               required
             />
-            <span className="flex items-center">
-              <Phone className="h-4 w-4 text-orange-500 mr-1" /> Phone
+            <span className="flex items-center text-xs">
+              <Phone className="h-3 w-3 text-orange-500 mr-1" /> Phone
             </span>
           </label>
-          <label className="flex items-center space-x-2 cursor-pointer">
+          <label className="flex items-center space-x-1 cursor-pointer">
             <input
               type="radio"
               name="preferredContact"
               value="email"
               onChange={handleChange}
               checked={formData.preferredContact === 'email'}
-              className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+              className="h-3 w-3 text-orange-500 focus:ring-orange-500"
             />
-            <span className="flex items-center">
-              <Mail className="h-4 w-4 text-orange-500 mr-1" /> Email
+            <span className="flex items-center text-xs">
+              <Mail className="h-3 w-3 text-orange-500 mr-1" /> Email
             </span>
           </label>
         </div>
@@ -286,23 +286,23 @@ const QuickAppointmentForm: React.FC = () => {
         <textarea
           id="message"
           name="message"
-          rows={3}
+          rows={2}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-2 rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
+          className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
           placeholder="Any specific concerns or questions?"
         ></textarea>
       </div>
 
-      <div className="pt-2">
+      <div className="pt-1">
         <Button
           type="submit"
-          className="w-full bg-orange-500 hover:bg-orange-400 text-white font-semibold"
+          className="w-full bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm py-1 h-auto"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Submitting..." : "Request Appointment"}
         </Button>
-        <p className="text-xs text-muted-foreground mt-2 text-center">
+        <p className="text-xs text-muted-foreground mt-1 text-center">
           We'll confirm your appointment within 24 hours.
         </p>
       </div>

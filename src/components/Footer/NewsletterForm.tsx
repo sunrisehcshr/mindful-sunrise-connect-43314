@@ -40,8 +40,8 @@ const NewsletterForm: React.FC = () => {
   };
   
   return (
-    <div className="space-y-4">
-      <p className="text-sm text-muted-foreground">
+    <div className="space-y-3">
+      <p className="text-xs sm:text-sm text-muted-foreground">
         Subscribe to our newsletter for helpful mental health tips and updates.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
@@ -50,12 +50,12 @@ const NewsletterForm: React.FC = () => {
           placeholder="Your email address" 
           value={email} 
           onChange={e => setEmail(e.target.value)} 
-          className="flex-grow px-4 py-2 text-sm rounded-md border border-sunrise-200/70 bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50" 
+          className="flex-grow px-3 py-1.5 text-xs rounded-md border border-sunrise-200/70 bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50" 
           required 
         />
         <button 
           type="submit" 
-          className="bg-sunrise-500 hover:bg-sunrise-600 text-white font-medium py-2 px-4 text-sm rounded-md transition-colors duration-300 whitespace-nowrap disabled:opacity-70" 
+          className="bg-sunrise-500 hover:bg-sunrise-600 text-white font-medium py-1.5 px-3 text-xs rounded-md transition-colors duration-300 whitespace-nowrap disabled:opacity-70" 
           disabled={isSubmitting}
         >
           {isSubmitting ? "Subscribing..." : "Subscribe"}

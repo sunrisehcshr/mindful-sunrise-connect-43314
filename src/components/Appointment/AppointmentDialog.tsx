@@ -20,14 +20,14 @@ const AppointmentDialog: React.FC<AppointmentDialogProps> = ({ children }) => {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] p-0 overflow-hidden">
-        <DialogHeader className="p-6 pb-0">
-          <DialogTitle className="text-2xl font-bold text-amber-950">Schedule Your Appointment</DialogTitle>
-          <DialogDescription className="text-amber-900">
-            Fill out the form below and we'll get back to you shortly to confirm your appointment.
+      <DialogContent className="sm:max-w-[500px] p-0 overflow-hidden w-[95vw] max-h-[90vh]">
+        <DialogHeader className="p-4 pb-0">
+          <DialogTitle className="text-xl font-bold text-amber-950">Schedule Your Appointment</DialogTitle>
+          <DialogDescription className="text-amber-900 text-sm">
+            Fill out the form below and we'll get back to you shortly.
           </DialogDescription>
         </DialogHeader>
-        <div className="px-6 pb-6 pt-2">
+        <div className="px-4 pb-4 pt-2">
           <QuickAppointmentForm />
         </div>
       </DialogContent>
