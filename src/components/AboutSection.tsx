@@ -1,10 +1,41 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
+import { CircleDot, Star } from 'lucide-react';
+
 const AboutSection: React.FC = () => {
-  return <section id="about" className="py-12 pb-4 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
+  return <section id="about" className="py-12 pb-4 bg-background relative overflow-hidden">
+      {/* Decorative background elements */}
+      <motion.div 
+        className="absolute top-16 left-4 text-orange-300 opacity-60"
+        initial={{ rotate: 0 }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      >
+        <Star size={32} fill="currentColor" />
+      </motion.div>
+      
+      <motion.div 
+        className="absolute bottom-8 right-8 text-amber-400 opacity-50"
+        initial={{ y: 0 }}
+        animate={{ y: -15 }}
+        transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+      >
+        <CircleDot size={48} fill="currentColor" />
+      </motion.div>
+      
+      <div className="absolute -z-10 rounded-full w-64 h-64 bg-orange-100/40 blur-3xl top-1/4 -left-20"></div>
+      <div className="absolute -z-10 rounded-full w-72 h-72 bg-amber-50/50 blur-3xl bottom-0 right-0"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
+          <motion.div 
+            className="order-2 lg:order-1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <span className="inline-block px-3 py-1 rounded-full text-xs bg-orange-500 mb-4 text-white font-semibold">
               About Us
             </span>
@@ -13,11 +44,33 @@ const AboutSection: React.FC = () => {
             </h2>
             <p className="text-muted-foreground mb-6">Step into a brighter tomorrow with Sunrise Human Care Services, founded by Michael Thevar, whose dedication to mental health spans over 30 years. Built on a foundation of experience, trust, and community care, we are committed to helping individuals navigate their challenges and realize their full potential.</p>
             <p className="text-muted-foreground mb-6">With a deep understanding of mental well-being, our mission is to provide compassionate support and meaningful solutions for children, teens, adults, and seniors to lead healthier, more fulfilling lives.</p>
-          </div>
+          </motion.div>
           
-          <div className="order-1 lg:order-2">
-            <img src="/images/Therapy-in-havertown.webp" alt="Therapy session in Havertown" className="w-full h-auto rounded-lg shadow-md border border-amber-50" />
-          </div>
+          <motion.div 
+            className="order-1 lg:order-2 relative"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative">
+              <motion.div 
+                className="rounded-2xl overflow-hidden shadow-lg"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img 
+                  src="/images/Therapy-in-havertown.webp" 
+                  alt="Therapy session in Havertown" 
+                  className="w-full h-auto rounded-2xl shadow-md" 
+                />
+              </motion.div>
+              
+              {/* Decorative corner accent */}
+              <div className="absolute -top-3 -right-3 w-12 h-12 border-t-4 border-r-4 border-orange-400 rounded-tr-xl"></div>
+              <div className="absolute -bottom-3 -left-3 w-12 h-12 border-b-4 border-l-4 border-orange-400 rounded-bl-xl"></div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>;
