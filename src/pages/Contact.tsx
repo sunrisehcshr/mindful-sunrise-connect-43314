@@ -5,12 +5,15 @@ import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import { Mail, Phone, MapPin, Clock, Hospital, Video } from 'lucide-react';
 import { toast } from 'sonner';
+import { Button } from '@/components/ui/button';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     sessionType: '',
+    preferredContact: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,7 +48,9 @@ const Contact = () => {
         setFormData({
           name: '',
           email: '',
+          phone: '',
           sessionType: '',
+          preferredContact: '',
           message: ''
         });
       } else {
@@ -115,7 +120,7 @@ const Contact = () => {
                   <h2 className="text-xl font-semibold text-amber-800 mb-3">Send a Message</h2>
                   <form className="space-y-3" onSubmit={handleSubmit}>
                     <div>
-                      <label htmlFor="name" className="block text-amber-800 text-sm mb-1">Your Name</label>
+                      <label htmlFor="name" className="block text-amber-800 text-sm mb-1">Your Name*</label>
                       <input 
                         type="text" 
                         id="name"
@@ -127,21 +132,36 @@ const Contact = () => {
                       />
                     </div>
                     
-                    <div>
-                      <label htmlFor="email" className="block text-amber-800 text-sm mb-1">Email Address</label>
-                      <input 
-                        type="email" 
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full p-2 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent"
-                        required
-                      />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label htmlFor="email" className="block text-amber-800 text-sm mb-1">Email Address*</label>
+                        <input 
+                          type="email" 
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full p-2 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+                          required
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="phone" className="block text-amber-800 text-sm mb-1">Phone Number*</label>
+                        <input 
+                          type="tel" 
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full p-2 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+                          required
+                        />
+                      </div>
                     </div>
                     
                     <div>
-                      <label className="block text-amber-800 text-sm mb-1">Preferred Session Type</label>
+                      <label className="block text-amber-800 text-sm mb-1">Preferred Session Type*</label>
                       <div className="flex flex-wrap gap-3">
                         <label className="flex items-center space-x-1 cursor-pointer">
                           <input
@@ -174,7 +194,40 @@ const Contact = () => {
                     </div>
                     
                     <div>
-                      <label htmlFor="message" className="block text-amber-800 text-sm mb-1">Message</label>
+                      <label className="block text-amber-800 text-sm mb-1">Preferred Contact Method*</label>
+                      <div className="flex flex-wrap gap-3">
+                        <label className="flex items-center space-x-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="preferredContact"
+                            value="phone"
+                            onChange={handleChange}
+                            checked={formData.preferredContact === 'phone'}
+                            className="h-3 w-3 text-amber-500 focus:ring-amber-500"
+                            required
+                          />
+                          <span className="flex items-center text-xs">
+                            <Phone className="h-3 w-3 text-amber-500 mr-1" /> Phone
+                          </span>
+                        </label>
+                        <label className="flex items-center space-x-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="preferredContact"
+                            value="email"
+                            onChange={handleChange}
+                            checked={formData.preferredContact === 'email'}
+                            className="h-3 w-3 text-amber-500 focus:ring-amber-500"
+                          />
+                          <span className="flex items-center text-xs">
+                            <Mail className="h-3 w-3 text-amber-500 mr-1" /> Email
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-amber-800 text-sm mb-1">Message*</label>
                       <textarea 
                         id="message"
                         name="message"
@@ -182,17 +235,18 @@ const Contact = () => {
                         onChange={handleChange}
                         rows={3}
                         className="w-full p-2 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+                        placeholder="Please share any specific concerns or questions you have."
                         required
                       ></textarea>
                     </div>
                     
-                    <button 
+                    <Button 
                       type="submit" 
-                      className="bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 text-sm rounded-md transition-colors"
+                      className="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 text-sm rounded-md transition-colors"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
+                    </Button>
                   </form>
                 </div>
               </div>
