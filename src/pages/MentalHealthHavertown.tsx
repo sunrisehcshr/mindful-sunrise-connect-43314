@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
@@ -8,15 +7,9 @@ import Footer from "../components/Footer/Footer";
 import SpecialtiesSection from "../components/SpecialtiesSection";
 import Map from "../components/Map";
 import { ArrowRight, Check, Phone } from "lucide-react";
-
 const MentalHealthHavertown = () => {
-  return (
-    <>
-      <SEOHead
-        title="Mental Health Services in Havertown, PA | Anxiety & Depression Therapy"
-        description="Top-rated mental health services in Havertown, PA. Specialized therapy for anxiety, depression, and stress from licensed professionals. In-person & virtual sessions available. Call (814) 620-2162 today."
-        canonicalUrl="https://sunrisehcsllc.com/mental-health-havertown-pa"
-      />
+  return <>
+      <SEOHead title="Mental Health Services in Havertown, PA | Anxiety & Depression Therapy" description="Top-rated mental health services in Havertown, PA. Specialized therapy for anxiety, depression, and stress from licensed professionals. In-person & virtual sessions available. Call (814) 620-2162 today." canonicalUrl="https://sunrisehcsllc.com/mental-health-havertown-pa" />
       <SchemaMarkup />
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -26,7 +19,7 @@ const MentalHealthHavertown = () => {
             <div className="container mx-auto px-4 md:px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-800 mb-4">
+                  <span className="inline-block px-3 py-1 rounded-full bg-orange-500 mb-4 text-white text-xs font-semibold">
                     Mental Health Services in Havertown
                   </span>
                   <h1 className="text-4xl md:text-5xl font-bold text-yellow-700 mb-6">
@@ -63,11 +56,7 @@ const MentalHealthHavertown = () => {
                   </div>
                 </div>
                 <div className="relative rounded-xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/Therapy-in-havertown.webp" 
-                    alt="Mental health therapy session in Havertown, PA" 
-                    className="w-full h-auto object-cover rounded-xl"
-                  />
+                  <img src="/images/Therapy-in-havertown.webp" alt="Mental health therapy session in Havertown, PA" className="w-full h-auto object-cover rounded-xl" />
                 </div>
               </div>
             </div>
@@ -93,7 +82,7 @@ const MentalHealthHavertown = () => {
                 {/* Service 1 */}
                 <div className="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
                   <div className="p-3 rounded-lg bg-blue-50 text-blue-600 w-fit mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6"><circle cx="12" cy="12" r="10"/><path d="M18 13a6 6 0 0 1-6 5 6 6 0 0 1-6-5"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6"><circle cx="12" cy="12" r="10" /><path d="M18 13a6 6 0 0 1-6 5 6 6 0 0 1-6-5" /><line x1="9" x2="9.01" y1="9" y2="9" /><line x1="15" x2="15.01" y1="9" y2="9" /></svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Anxiety & Depression Therapy</h3>
                   <p className="text-gray-600 mb-4">
@@ -108,7 +97,7 @@ const MentalHealthHavertown = () => {
                 {/* Service 2 */}
                 <div className="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
                   <div className="p-3 rounded-lg bg-purple-50 text-purple-600 w-fit mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6"><path d="M17 11l.84 2.76a2 2 0 0 0 1.74 1.4l2.76.84a2 2 0 0 1 0 3.8l-2.76.84a2 2 0 0 0-1.74 1.4L17 25a2 2 0 0 1-3.5 0l-.84-2.76a2 2 0 0 0-1.74-1.4l-2.76-.84a2 2 0 0 1 0-3.8l2.76-.84a2 2 0 0 0 1.74-1.4L13 11a2 2 0 0 1 4 0z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6"><path d="M17 11l.84 2.76a2 2 0 0 0 1.74 1.4l2.76.84a2 2 0 0 1 0 3.8l-2.76.84a2 2 0 0 0-1.74 1.4L17 25a2 2 0 0 1-3.5 0l-.84-2.76a2 2 0 0 0-1.74-1.4l-2.76-.84a2 2 0 0 1 0-3.8l2.76-.84a2 2 0 0 0 1.74-1.4L13 11a2 2 0 0 1 4 0z" /></svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Trauma & PTSD Treatment</h3>
                   <p className="text-gray-600 mb-4">
@@ -123,7 +112,7 @@ const MentalHealthHavertown = () => {
                 {/* Service 3 */}
                 <div className="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
                   <div className="p-3 rounded-lg bg-green-50 text-green-600 w-fit mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Family & Couples Counseling</h3>
                   <p className="text-gray-600 mb-4">
@@ -207,11 +196,7 @@ const MentalHealthHavertown = () => {
                 </div>
                 
                 <div className="relative rounded-xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/family-counseling-havertown.webp" 
-                    alt="Family counseling session in Havertown, PA" 
-                    className="w-full h-auto object-cover rounded-xl"
-                  />
+                  <img src="/images/family-counseling-havertown.webp" alt="Family counseling session in Havertown, PA" className="w-full h-auto object-cover rounded-xl" />
                 </div>
               </div>
               
@@ -302,8 +287,6 @@ const MentalHealthHavertown = () => {
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default MentalHealthHavertown;
