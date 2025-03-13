@@ -107,7 +107,7 @@ const ConditionsSection: React.FC = () => {
                 }} whileTap={{
                   scale: 0.98
                 }} aria-expanded={expandedCondition === index}>
-                      <h3 className="text-lg font-semibold mb-1 text-orange-400">{condition.title}</h3>
+                      <h3 className="text-lg font-semibold mb-1 text-foreground">{condition.title}</h3>
                       {expandedCondition === index ? <ChevronUp className="mt-2 h-4 w-4 text-primary" /> : <ChevronDown className="mt-2 h-4 w-4 text-muted-foreground" />}
                     </motion.button>
                   </TooltipTrigger>
