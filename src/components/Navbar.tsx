@@ -39,7 +39,7 @@ const Navbar = () => {
       label: "Services"
     },
     {
-      path: "/blog",
+      path: "/resources",
       label: "Resources"
     },
     {

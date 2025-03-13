@@ -63,7 +63,7 @@ const Blog = () => {
                 <div className="p-6">
                   <CardHeader className="pb-2 px-0 pt-0">
                     <CardTitle className="text-2xl md:text-3xl">
-                      <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
+                      <Link to={`/resources/${post.id}`} className="hover:text-primary transition-colors">
                         {post.title}
                       </Link>
                     </CardTitle>
@@ -81,7 +81,7 @@ const Blog = () => {
                   </CardContent>
                   <CardFooter className="pt-0 pb-0 px-0">
                     <Button asChild className="btn-sunrise">
-                      <Link to={`/blog/${post.id}`}>Read More</Link>
+                      <Link to={`/resources/${post.id}`}>Read More</Link>
                     </Button>
                   </CardFooter>
                 </div>
