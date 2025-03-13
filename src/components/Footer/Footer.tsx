@@ -1,11 +1,9 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SocialLinks from './SocialLinks';
 import FooterNav from './FooterNav';
 import NewsletterForm from './NewsletterForm';
-
 const Footer: React.FC = () => {
   return <footer className="bg-secondary py-12 border-t">
       <div className="container mx-auto px-4 md:px-6">
@@ -30,7 +28,7 @@ const Footer: React.FC = () => {
           {/* Contact Info */}
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">
-              <span className="bg-orange-500 text-white px-3 py-1 rounded-md">Contact Us</span>
+              <span className="px-3 py-1 rounded-md text-orange-400">Contact Us</span>
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
@@ -115,5 +113,4 @@ const Footer: React.FC = () => {
       </div>
     </footer>;
 };
-
 export default Footer;
