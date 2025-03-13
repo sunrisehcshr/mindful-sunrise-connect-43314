@@ -43,54 +43,47 @@ const Blog = () => {
   return (
     <>
       <SEOHead 
-        title="Mental Health Blog | Sunrise Human Care Services in Havertown, PA" 
-        description="Expert mental health insights for Havertown residents from Sunrise Human Care Services. Read our blog for tips on anxiety, depression, and more."
-        canonicalUrl="https://sunrisehcsllc.com/blog"
+        title="Mental Health Resources | Sunrise Human Care Services in Havertown, PA" 
+        description="Expert mental health insights for Havertown residents from Sunrise Human Care Services. Read our resources on anxiety, depression, and more."
+        canonicalUrl="https://sunrisehcsllc.com/resources"
       />
       <SchemaMarkup />
       <Navbar />
       
       <main className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Blog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Resources</h1>
           <p className="text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Mental health insights and resources for Havertown residents from the experts at Sunrise Human Care Services.
           </p>
           
-          <div className="grid gap-16 mt-12">
+          <div className="grid gap-10 mt-12">
             {blogPosts.map((post) => (
-              <Card key={post.id} className="overflow-hidden transition-all hover:shadow-lg border-border/40 bg-white/80 backdrop-blur-sm">
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="md:col-span-1 hidden md:block overflow-hidden">
-                    <div className="bg-orange-100/50 h-full w-full rounded-l-lg flex items-center justify-center">
-                      <div className="text-orange-500/5 text-5xl font-bold">Sunrise</div>
-                    </div>
-                  </div>
-                  <div className="md:col-span-2 flex flex-col p-6">
-                    <CardHeader className="pb-2 px-0 pt-0">
-                      <CardTitle className="text-2xl md:text-3xl">
-                        <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
-                          {post.title}
-                        </Link>
-                      </CardTitle>
-                      <CardDescription className="flex items-center gap-4 mt-3 text-sm">
-                        <span className="flex items-center gap-1">
-                          <CalendarIcon className="h-4 w-4 text-orange-500" /> {post.date}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock3 className="h-4 w-4 text-orange-500" /> {post.readTime}
-                        </span>
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="pt-4 pb-6 px-0 flex-grow">
-                      <p className="text-muted-foreground text-base leading-relaxed">{post.excerpt}</p>
-                    </CardContent>
-                    <CardFooter className="pt-0 pb-0 px-0 mt-auto">
-                      <Button asChild className="btn-sunrise">
-                        <Link to={`/blog/${post.id}`}>Read More</Link>
-                      </Button>
-                    </CardFooter>
-                  </div>
+              <Card key={post.id} className="overflow-hidden transition-all hover:shadow-md border-border/40 bg-white">
+                <div className="p-6">
+                  <CardHeader className="pb-2 px-0 pt-0">
+                    <CardTitle className="text-2xl md:text-3xl">
+                      <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
+                        {post.title}
+                      </Link>
+                    </CardTitle>
+                    <CardDescription className="flex items-center gap-4 mt-3 text-sm">
+                      <span className="flex items-center gap-1">
+                        <CalendarIcon className="h-4 w-4 text-orange-500" /> {post.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock3 className="h-4 w-4 text-orange-500" /> {post.readTime}
+                      </span>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-4 pb-6 px-0">
+                    <p className="text-muted-foreground text-base leading-relaxed">{post.excerpt}</p>
+                  </CardContent>
+                  <CardFooter className="pt-0 pb-0 px-0">
+                    <Button asChild className="btn-sunrise">
+                      <Link to={`/blog/${post.id}`}>Read More</Link>
+                    </Button>
+                  </CardFooter>
                 </div>
               </Card>
             ))}

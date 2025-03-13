@@ -40,7 +40,7 @@ const Navbar = () => {
     },
     {
       path: "/blog",
-      label: "Blog"
+      label: "Resources"
     },
     {
       path: "/faq",
