@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { Phone, Star } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
-
 const WarmHeroSection = () => {
   return <section className="relative overflow-hidden pb-16 pt-20 sm:pb-24 sm:pt-28">
       <div className="absolute inset-0 -z-10 opacity-30">
@@ -31,9 +29,7 @@ const WarmHeroSection = () => {
         }} transition={{
           duration: 0.5
         }}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-amber-950">
-              Mental Health Care in Havertown, PA
-            </h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-amber-950">Expert Mental Health Care in Havertown, PA</h1>
             <p className="text-lg md:text-body text-amber-900 mb-8 max-w-2xl mx-auto lg:mx-0">
               Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health services in Havertown with licensed therapists, psychologists, counselors, and psychiatrists. Schedule an appointment today!
             </p>
