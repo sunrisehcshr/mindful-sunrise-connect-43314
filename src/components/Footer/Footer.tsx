@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           {/* Contact Info */}
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">
-              <span className="px-3 py-1 rounded-md text-orange-400">Contact Us</span>
+              <span className="py-1 rounded-md text-orange-400 text-left px-0">Contact Us</span>
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
@@ -59,14 +59,14 @@ const Footer: React.FC = () => {
 
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">
-              <span className="px-3 py-1 rounded-md text-orange-400">Quick Links</span>
+              <span className="py-1 rounded-md text-orange-400 px-0">Quick Links</span>
             </h3>
             <FooterNav />
           </div>
           
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">
-              <span className="px-3 py-1 rounded-md text-orange-400">Newsletter</span>
+              <span className="py-1 rounded-md text-orange-400 px-0">Newsletter</span>
             </h3>
             <NewsletterForm />
           </div>
