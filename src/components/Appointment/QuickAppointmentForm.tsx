@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { CalendarIcon, Phone, Mail, Hospital, Video, Clock } from 'lucide-react';
@@ -87,8 +88,8 @@ const QuickAppointmentForm: React.FC = () => {
         _cc: "shweta.s@sunrisehcsllc.com"
       };
       
-      // Send data to Formspree - updated to more reliable endpoint
-      const response = await fetch('https://formspree.io/f/xoqgjzra', {
+      // Send data to Formspree with the correct endpoint
+      const response = await fetch('https://formspree.io/f/xpwqvvvw', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +98,7 @@ const QuickAppointmentForm: React.FC = () => {
       });
       
       if (response.ok) {
-        toast.success('Thank you! Your appointment request has been submitted.');
+        toast.success('Thank you! Your appointment request has been submitted. We will contact you shortly to confirm.');
         setFormData({
           name: '',
           email: '',

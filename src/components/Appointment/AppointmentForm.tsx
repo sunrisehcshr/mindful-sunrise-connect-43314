@@ -32,8 +32,8 @@ const AppointmentForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      // Using a more reliable Formspree ID
-      const response = await fetch("https://formspree.io/f/xoqgjzra", {
+      // Using the correct Formspree endpoint
+      const response = await fetch("https://formspree.io/f/xpwqvvvw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -46,7 +46,7 @@ const AppointmentForm: React.FC = () => {
       });
       
       if (response.ok) {
-        toast.success("Thank you! Your appointment request has been submitted.");
+        toast.success("Thank you! Your appointment request has been submitted. We'll get back to you shortly.");
         setFormData({
           name: "",
           email: "",

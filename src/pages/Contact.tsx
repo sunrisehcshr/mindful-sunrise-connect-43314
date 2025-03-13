@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
@@ -35,7 +36,7 @@ const Contact = () => {
         _cc: "shweta.s@sunrisehcsllc.com"
       };
       
-      const response = await fetch("https://formspree.io/f/xoqgjzra", {
+      const response = await fetch("https://formspree.io/f/xpwqvvvw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -44,7 +45,7 @@ const Contact = () => {
       });
       
       if (response.ok) {
-        toast.success("Thank you! Your message has been sent.");
+        toast.success("Thank you! Your message has been sent. We'll get back to you shortly.");
         setFormData({
           name: '',
           email: '',

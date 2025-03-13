@@ -17,8 +17,8 @@ const NewsletterForm: React.FC = () => {
         _cc: "shweta.s@sunrisehcsllc.com"
       };
       
-      // Updated to use a more reliable endpoint
-      const response = await fetch("https://formspree.io/f/xoqgjzra", {
+      // Updated to use the correct endpoint
+      const response = await fetch("https://formspree.io/f/xpwqvvvw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -42,13 +42,14 @@ const AppointmentForm = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Form validation
@@ -57,21 +58,56 @@ const AppointmentForm = () => {
       return;
     }
     
-    // In a real app, you would submit the form data to your backend
-    // For now, we'll just show a success message
-    toast.success("Appointment request submitted! We'll contact you shortly to confirm your appointment.");
+    setIsSubmitting(true);
     
-    // Reset form
-    setSelectedDate(undefined);
-    setSelectedTime("");
-    setSelectedService("");
-    setAppointmentType("in-person");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    try {
+      // Prepare data for submission
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        date: selectedDate ? format(selectedDate, "PPP") : "",
+        time: selectedTime,
+        service: selectedService,
+        appointmentType: appointmentType,
+        message: formData.message,
+        _subject: "New Appointment Request",
+        _cc: "shweta.s@sunrisehcsllc.com"
+      };
+      
+      // Send to Formspree
+      const response = await fetch("https://formspree.io/f/xpwqvvvw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(submissionData)
+      });
+      
+      if (response.ok) {
+        toast.success("Thank you! Your appointment request has been submitted. We'll contact you shortly to confirm your appointment.");
+        
+        // Reset form
+        setSelectedDate(undefined);
+        setSelectedTime("");
+        setSelectedService("");
+        setAppointmentType("in-person");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        console.error("Form submission error:", await response.text());
+        toast.error("Something went wrong. Please try again or contact us directly.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Calculate the minimum date (tomorrow)
@@ -238,8 +274,9 @@ const AppointmentForm = () => {
         <Button
           type="submit"
           className="btn-sunrise w-full max-w-md"
+          disabled={isSubmitting}
         >
-          Request Appointment
+          {isSubmitting ? "Submitting..." : "Request Appointment"}
         </Button>
       </div>
     </form>
