@@ -16,8 +16,8 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="Sunrise Human Care Services | Mental Health Services in Havertown, PA"
-        description="Dedicated mental health professionals offering therapy services in Havertown, PA. Counseling for anxiety, depression, and family issues in a warm, supportive environment."
+        title="Mental Health Therapy & Psychiatry in Havertown, PA | Sunrise Human Care Services"
+        description="Leading mental health clinic in Havertown, PA. Specialized therapy for anxiety, depression, ADHD, and trauma. In-person and telehealth services available. Call (814) 620-2162 to schedule today."
         canonicalUrl="https://sunrisehcsllc.com/"
       />
       <SchemaMarkup />

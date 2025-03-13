@@ -22,7 +22,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="robots" content="index, follow" />
-      <meta name="keywords" content="mental health, therapy, counseling, psychiatry, Havertown, PA, anxiety, depression, ADHD, trauma, PTSD, OCD, bipolar disorder, medication management, psychologist, therapist" />
+      <meta name="keywords" content="mental health Havertown, therapy Havertown PA, counseling Delaware County, psychiatry Havertown, anxiety treatment Havertown, depression therapy Havertown, ADHD treatment Havertown, trauma therapy PA, PTSD counseling Havertown, OCD treatment Havertown, bipolar disorder Havertown, medication management Havertown, psychologist Havertown, therapist near me, Havertown mental health clinic" />
+      <meta name="geo.region" content="US-PA" />
+      <meta name="geo.placename" content="Havertown" />
+      <meta name="geo.position" content="39.9707;-75.3151" />
+      <meta name="ICBM" content="39.9707, -75.3151" />
+      <meta name="google" content="notranslate" />
 
       {/* Canonical URL (Fixing Duplicate Issue) */}
       <link rel="canonical" href={canonicalUrl} />
@@ -33,6 +38,15 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:site_name" content="Sunrise Human Care Services" />
+      <meta property="business:contact_data:street_address" content="2050 West Chester Pike" />
+      <meta property="business:contact_data:locality" content="Havertown" />
+      <meta property="business:contact_data:region" content="PA" />
+      <meta property="business:contact_data:postal_code" content="19083" />
+      <meta property="business:contact_data:country_name" content="USA" />
+      <meta property="place:location:latitude" content="39.9707" />
+      <meta property="place:location:longitude" content="-75.3151" />
 
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />

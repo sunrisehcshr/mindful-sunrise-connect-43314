@@ -2,5 +2,13 @@
 User-agent: *
 Allow: /
 
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /wp-admin/
+
+# Disallow specific files
+Disallow: /*.pdf$
+Disallow: /*.doc$
+
 # Sitemap location
 Sitemap: https://sunrisehcsllc.com/sitemap.xml
