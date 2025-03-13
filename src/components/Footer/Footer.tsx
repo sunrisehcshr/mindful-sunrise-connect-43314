@@ -59,14 +59,14 @@ const Footer: React.FC = () => {
 
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">
-              <span className="bg-orange-500 text-white px-3 py-1 rounded-md">Quick Links</span>
+              <span className="px-3 py-1 rounded-md text-orange-400">Quick Links</span>
             </h3>
             <FooterNav />
           </div>
           
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">
-              <span className="bg-orange-500 text-white px-3 py-1 rounded-md">Newsletter</span>
+              <span className="px-3 py-1 rounded-md text-orange-400">Newsletter</span>
             </h3>
             <NewsletterForm />
           </div>
