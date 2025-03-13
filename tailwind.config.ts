@@ -125,7 +125,7 @@ export default {
 				'slide-down': 'slide-down 0.6s ease-out forwards'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
+				sans: ['Open Sans', 'system-ui', 'sans-serif'],
 				serif: ['Georgia', 'serif']
 			}
 		}
