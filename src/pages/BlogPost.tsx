@@ -118,7 +118,7 @@ const getBlogPostDataById = (id: string) => {
       ctaTopicLink: "Anxiety",
       content: (
         <>
-          <p className="lead">Living in the beautiful suburb of Havertown offers many advantages, from its tight-knit community feel to its convenient location near Philadelphia. However, even in this picturesque Delaware County town, residents aren't immune to the effects of anxiety – especially with the unique pressures of suburban living and commuting.</p>
+          <p className="lead font-medium text-xl text-foreground/90 mb-8">Living in the beautiful suburb of Havertown offers many advantages, from its tight-knit community feel to its convenient location near Philadelphia. However, even in this picturesque Delaware County town, residents aren't immune to the effects of anxiety – especially with the unique pressures of suburban living and commuting.</p>
           
           <p>At Sunrise Human Care Services in Havertown, PA, we've noticed certain anxiety symptoms that are particularly common among our local clients. Recognizing these signs early can make a significant difference in getting the help you need.</p>
           
@@ -126,7 +126,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Many Havertown residents commute to Philadelphia or other nearby employment centers. This daily journey can trigger what we call "commuter anxiety" – a specific form of stress that manifests as:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Feeling of dread when preparing for your morning commute</li>
             <li>Racing heart or shallow breathing while sitting in traffic on West Chester Pike</li>
             <li>Constant checking of traffic apps and feeling overwhelmed by potential delays</li>
@@ -139,7 +139,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Havertown's close-knit community offers wonderful support, but it can also create a unique form of anxiety related to social comparison. Signs include:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Feeling inadequate when comparing your home to neighboring properties</li>
             <li>Anxiety about social gatherings with neighborhood families</li>
             <li>Excessive worry about what others think of your parenting, career, or lifestyle choices</li>
@@ -152,7 +152,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>The Delaware County area offers a wonderful quality of life, but this comes with a higher cost of living than many other regions. Financial anxiety symptoms include:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Persistent worry about mortgage payments or property taxes</li>
             <li>Difficulty sleeping due to financial concerns</li>
             <li>Avoiding opening bills or checking bank accounts</li>
@@ -165,7 +165,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Havertown is known for its excellent schools, but this can create pressure for both children and parents. Signs of parenting anxiety include:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Excessive worry about your child's academic performance</li>
             <li>Feeling overwhelmed by school, sports, and extracurricular schedules</li>
             <li>Constant comparison of your child to other local children</li>
@@ -178,7 +178,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Pennsylvania's variable weather patterns can trigger anxiety for many Havertown residents. Signs include:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Heightened anxiety during storm forecasts or severe weather warnings</li>
             <li>Excessive checking of weather apps</li>
             <li>Significant mood changes during seasonal transitions, particularly fall to winter</li>
@@ -197,7 +197,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>In addition to professional therapy, Havertown residents can access several local resources for anxiety support:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Haverford Township Free Library offers meditation sessions and mental wellness books</li>
             <li>The Havertown YMCA provides stress-reduction exercise classes</li>
             <li>Local community groups offer social support to combat isolation</li>
@@ -216,7 +216,7 @@ const getBlogPostDataById = (id: string) => {
       ctaTopicLink: "Depression",
       content: (
         <>
-          <p className="lead">Depression affects approximately 21 million adults in the United States, and Havertown families are not exempt from this challenging mental health condition. When someone you love is experiencing depression, knowing how to provide effective support can make a significant difference in their recovery journey.</p>
+          <p className="lead font-medium text-xl text-foreground/90 mb-8">Depression affects approximately 21 million adults in the United States, and Havertown families are not exempt from this challenging mental health condition. When someone you love is experiencing depression, knowing how to provide effective support can make a significant difference in their recovery journey.</p>
           
           <p>At Sunrise Human Care Services in Havertown, we work with many local families navigating this difficult terrain. Based on our experience with Delaware County residents, here are practical strategies for supporting a loved one with depression while also maintaining your own wellbeing.</p>
           
@@ -224,7 +224,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Before diving into support strategies, it's important to understand how depression might manifest in our specific community context. While depression is a universal condition, certain local factors can influence how it presents and progresses:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Suburban isolation: Despite Havertown's community-oriented atmosphere, some residents experience isolation, particularly seniors or those new to the area</li>
             <li>Seasonal factors: Pennsylvania's distinct seasons, particularly our often gray and lengthy winters, can exacerbate seasonal depression</li>
             <li>High-achievement culture: Our area's focus on academic and professional success can create additional pressure for those already struggling with depression</li>
@@ -237,7 +237,7 @@ const getBlogPostDataById = (id: string) => {
           <p>Depression often manifests differently across age groups and individuals. Here are some signs that might indicate depression in your Havertown family member:</p>
           
           <h3>In Adults:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Withdrawal from community activities they previously enjoyed</li>
             <li>Changes in sleep patterns (insomnia or excessive sleeping)</li>
             <li>Loss of interest in family gatherings or local events</li>
@@ -246,7 +246,7 @@ const getBlogPostDataById = (id: string) => {
           </ul>
           
           <h3>In Teenagers:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Declining grades at Haverford High School or other local schools</li>
             <li>Withdrawal from sports teams or extracurricular activities</li>
             <li>Increased irritability or sensitivity</li>
@@ -255,7 +255,7 @@ const getBlogPostDataById = (id: string) => {
           </ul>
           
           <h3>In Older Adults:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Neglect of physical health or appearance</li>
             <li>Missing appointments at local medical facilities</li>
             <li>Expressions of feeling burdensome to family</li>
@@ -270,7 +270,7 @@ const getBlogPostDataById = (id: string) => {
           <p>Effective communication is crucial when supporting a family member with depression. Here are approaches we've found particularly helpful for Havertown families:</p>
           
           <h3>Do:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Express concern with specific observations: "I've noticed you haven't been going to your weekly meetup at the Havertown Community Recreation Center."</li>
             <li>Use "I" statements: "I care about you and am here to support you."</li>
             <li>Offer specific help: "Would you like me to drive you to your appointment on West Chester Pike?"</li>
@@ -279,7 +279,7 @@ const getBlogPostDataById = (id: string) => {
           </ul>
           
           <h3>Avoid:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Dismissive statements: "Everyone in Havertown is stressed; you just need to get out more."</li>
             <li>Comparisons to others: "Your sister is handling her job loss much better."</li>
             <li>Trying to "fix" their depression with quick solutions</li>
@@ -294,7 +294,7 @@ const getBlogPostDataById = (id: string) => {
           <p>Beyond emotional support, there are concrete ways Havertown families can help a loved one managing depression:</p>
           
           <h3>Support Their Treatment Journey:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Offer to help research local mental health providers who accept their insurance</li>
             <li>Provide transportation to appointments in Havertown or surrounding areas</li>
             <li>Help them create a comfortable environment for telehealth sessions if they prefer virtual care</li>
@@ -303,7 +303,7 @@ const getBlogPostDataById = (id: string) => {
           </ul>
           
           <h3>Assist with Daily Life:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Drop off a meal from a local Havertown restaurant</li>
             <li>Invite them for a gentle walk through Haverford Reserve</li>
             <li>Help with tasks that might feel overwhelming, like grocery shopping at ACME</li>
@@ -316,7 +316,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Our community offers several valuable resources for families supporting someone with depression:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li><strong>Delaware County Crisis Connections Team:</strong> 855-889-7827 (available 24/7)</li>
             <li><strong>Haverford Township Free Library:</strong> Offers mental health awareness events and resources</li>
             <li><strong>Delaware County NAMI Chapter:</strong> Provides family support groups and education</li>
@@ -330,7 +330,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Supporting someone with depression can be emotionally exhausting. As a Havertown family member providing care, it's essential to maintain your own wellbeing:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Set realistic boundaries about what support you can provide</li>
             <li>Connect with other Havertown families through support groups</li>
             <li>Maintain your own activities and relationships</li>
@@ -344,7 +344,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>In some situations, more urgent intervention is needed. Know these warning signs that require immediate attention:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Expressions of suicidal thoughts or plans</li>
             <li>Severe self-neglect that threatens physical wellbeing</li>
             <li>Psychotic symptoms (hallucinations or delusions)</li>
@@ -370,7 +370,7 @@ const getBlogPostDataById = (id: string) => {
       ctaTopicLink: "Seasonal Affective Disorder",
       content: (
         <>
-          <p className="lead">As the daylight hours shorten and the Delaware County skies turn increasingly gray, many Havertown residents notice a distinct shift in their mood and energy levels. This phenomenon, known as Seasonal Affective Disorder (SAD), affects approximately 5% of adults in the United States – with even more experiencing a milder form often called the "winter blues."</p>
+          <p className="lead font-medium text-xl text-foreground/90 mb-8">As the daylight hours shorten and the Delaware County skies turn increasingly gray, many Havertown residents notice a distinct shift in their mood and energy levels. This phenomenon, known as Seasonal Affective Disorder (SAD), affects approximately 5% of adults in the United States – with even more experiencing a milder form often called the "winter blues."</p>
           
           <p>At Sunrise Human Care Services in Havertown, PA, we see a significant increase in clients seeking support for mood changes during Pennsylvania's darker months. Understanding how our specific regional climate impacts seasonal depression can help local residents develop effective coping strategies.</p>
           
@@ -378,7 +378,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Havertown's location in southeastern Pennsylvania creates specific seasonal patterns that can influence mood and mental health:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li><strong>Reduced Daylight Hours:</strong> During December and January, Havertown receives approximately 9-10 hours of daylight, compared to 15+ hours during summer months</li>
             <li><strong>Cloud Cover:</strong> The Philadelphia region experiences an average of 93 cloudy days per year, with most occurring during winter months</li>
             <li><strong>Temperature Fluctuations:</strong> Our area's variable winter temperatures can limit outdoor activities and social connection</li>
@@ -392,7 +392,7 @@ const getBlogPostDataById = (id: string) => {
           <p>While many people casually reference "winter blues," clinical Seasonal Affective Disorder has specific symptoms that Havertown residents should recognize:</p>
           
           <h3>Common Symptoms in Our Community:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Reduced interest in typically enjoyable activities, such as local community events</li>
             <li>Social withdrawal from friends and family</li>
             <li>Fatigue and low energy, even after adequate sleep</li>
@@ -409,7 +409,7 @@ const getBlogPostDataById = (id: string) => {
           <p>While SAD is influenced by our regional climate, there are numerous effective strategies specifically relevant to Havertown residents:</p>
           
           <h3>1. Maximize Natural Light Exposure</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Position your desk or favorite chair near windows facing Havertown's southern exposure</li>
             <li>Take lunch breaks outdoors at local spots like the Haverford Reserve even on cloudy days (UV light penetrates clouds)</li>
             <li>Keep blinds open during daylight hours to allow maximum natural light into your home</li>
@@ -417,14 +417,14 @@ const getBlogPostDataById = (id: string) => {
           </ul>
           
           <h3>2. Explore Light Therapy</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Light therapy boxes that provide 10,000 lux exposure can simulate sunlight</li>
             <li>Use for 20-30 minutes each morning during winter months</li>
             <li>Local Havertown pharmacies like CVS and Rite Aid often carry these devices</li>
           </ul>
           
           <h3>3. Maintain Physical Activity</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Utilize indoor facilities like the Havertown YMCA or local fitness centers</li>
             <li>Take advantage of winter weather breaks to walk the Pennsy Trail or Haverford Reserve trails</li>
             <li>Consider weather-appropriate outdoor activities like the sledding hill at South Ardmore Park after snowfalls</li>
@@ -434,7 +434,7 @@ const getBlogPostDataById = (id: string) => {
           <p>Regular physical activity is one of the most effective natural interventions for seasonal mood changes, and our community offers many options even during winter months.</p>
           
           <h3>4. Social Connection Strategies</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Schedule regular gatherings at Havertown's cozy local establishments like Kettle or Brick & Brew</li>
             <li>Join winter activities through Haverford Township Parks & Recreation</li>
             <li>Consider volunteering with local organizations like the Haverford Township Free Library or food banks</li>
@@ -444,7 +444,7 @@ const getBlogPostDataById = (id: string) => {
           <p>Social isolation often intensifies SAD symptoms, so intentional connection is crucial during winter months. If social anxiety is a barrier, our <Link to="/services" className="text-primary hover:underline">anxiety treatment services</Link> can help you overcome these challenges.</p>
           
           <h3>5. Nutrition Strategies</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Maintain consistent meal times to regulate circadian rhythms</li>
             <li>Consider vitamin D supplementation (after consulting with your healthcare provider)</li>
             <li>Shop for mood-supporting foods at our local Havertown farmers market or ACME</li>
@@ -452,7 +452,7 @@ const getBlogPostDataById = (id: string) => {
           </ul>
           
           <h3>6. Creating a Winter Wellness Plan</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Schedule a preventative session with a mental health provider before symptoms typically begin</li>
             <li>Create a daily routine that includes exposure to light, exercise, and social connection</li>
             <li>Identify early warning signs of seasonal depression and have an action plan</li>
@@ -466,7 +466,7 @@ const getBlogPostDataById = (id: string) => {
           <p>For many residents, self-care strategies may need to be supplemented with professional support:</p>
           
           <h3>Therapeutic Approaches for SAD:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Particularly effective for modifying negative thoughts associated with winter</li>
             <li><strong>Behavioral Activation:</strong> Focused on increasing pleasant activities during winter months</li>
             <li><strong>Mindfulness-Based Approaches:</strong> Helping manage the difficult emotions that accompany seasonal changes</li>
@@ -475,7 +475,7 @@ const getBlogPostDataById = (id: string) => {
           <p>At Sunrise Human Care Services, located at 2050 West Chester Pike in Havertown, our therapists are specially trained in these evidence-based approaches for seasonal mood disorders. We offer both in-person sessions and telehealth options for those who prefer to receive treatment from home during inclement weather.</p>
           
           <h3>Medical Approaches:</h3>
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Antidepressant medications may be recommended for more severe cases</li>
             <li>Vitamin D testing and supplementation when appropriate</li>
             <li>Combination approaches often yield the best results</li>
@@ -487,7 +487,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>One of the advantages of seasonal depression is its predictability. Havertown residents can prepare for winter challenges:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Schedule a mental health "tune-up" in early fall before symptoms typically begin</li>
             <li>Plan winter activities and social commitments in advance</li>
             <li>Consider organizing or joining a Havertown-based winter wellness group</li>
@@ -500,7 +500,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>While winter-onset SAD is most common in our region, some Havertown residents experience mood changes during other seasonal transitions:</p>
           
-          <ul>
+          <ul className="list-disc pl-6 space-y-2">
             <li><strong>Spring-Onset SAD:</strong> Characterized by increased anxiety, insomnia, and irritability as days lengthen</li>
             <li><strong>Summer Pattern:</strong> Related to heat intolerance or disrupted routines</li>
             <li><strong>Fall Anxiety:</strong> Anticipatory anxiety about the approaching winter</li>

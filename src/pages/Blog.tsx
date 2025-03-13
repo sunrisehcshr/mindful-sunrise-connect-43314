@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
@@ -62,7 +63,7 @@ const Blog = () => {
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="md:col-span-1 hidden md:block overflow-hidden">
                     <div className="bg-orange-100/50 h-full w-full rounded-l-lg flex items-center justify-center">
-                      <div className="text-orange-500/20 text-8xl font-bold">Blog</div>
+                      <div className="text-orange-500/5 text-5xl font-bold">Sunrise</div>
                     </div>
                   </div>
                   <div className="md:col-span-2 flex flex-col p-6">
