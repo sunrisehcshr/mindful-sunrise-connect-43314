@@ -50,7 +50,16 @@ const BlogPost = () => {
             </span>
           </div>
           
-          <div className="prose prose-lg md:prose-xl max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg">
+          <div className="prose prose-lg md:prose-xl max-w-none 
+            prose-headings:text-foreground prose-headings:font-semibold prose-headings:mt-10 prose-headings:mb-4
+            prose-h2:text-2xl prose-h2:font-bold prose-h2:text-primary/90 prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-primary/10
+            prose-h3:text-xl prose-h3:font-semibold prose-h3:text-primary/80 prose-h3:mt-8 prose-h3:mb-4
+            prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:my-6 prose-p:tracking-wide
+            prose-li:text-muted-foreground prose-li:leading-relaxed prose-li:my-2 
+            prose-li:marker:text-primary/70
+            prose-a:text-primary prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+            prose-blockquote:border-l-4 prose-blockquote:border-primary/30 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-muted-foreground/80
+            prose-strong:font-semibold prose-strong:text-foreground/90">
             {blogPostData.content}
           </div>
           
