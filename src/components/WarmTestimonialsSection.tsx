@@ -4,19 +4,16 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    quote: "The therapists at Sunrise Human Care Services helped me find hope again when I thought all was lost. Their compassionate approach made all the difference.",
-    author: "Maria L.",
-    role: "Client"
+    quote: "Sunrise Human Care Services has been a huge help for my teenage daughter. The therapist really connected with her, and we’ve seen such a positive change. So grateful for their support!",
+    author: "JEmily T., Havertown",
   },
   {
-    quote: "As a senior dealing with life transitions, I found the perfect support system here. The staff truly understands the unique needs of older adults.",
-    author: "Robert T.",
-    role: "Client"
+    quote: "I was hesitant to start therapy, but from my first session, I felt truly heard and understood. The staff is kind, professional, and really invested in helping you heal.",
+    author: "James W., Drexel Hill, PA",
   },
   {
-    quote: "Our family counseling sessions transformed how we communicate. We're now able to support each other through difficult times.",
-    author: "The Johnson Family",
-    role: "Clients"
+    quote: "My father has difficulty leaving the house, so finding a clinic that offers home sessions was a relief. The therapist visits us in Broomall, and it has made such a difference in his well-being!",
+    author: "Sarah W., Broomall, PA",
   }
 ];
 
