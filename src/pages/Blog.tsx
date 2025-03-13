@@ -43,16 +43,16 @@ const Blog = () => {
   return (
     <>
       <SEOHead 
-        title="Mental Health Resources | Sunrise Human Care Services in Havertown, PA" 
-        description="Expert mental health insights for Havertown residents from Sunrise Human Care Services. Read our resources on anxiety, depression, and more."
-        canonicalUrl="https://sunrisehcsllc.com/resources"
+        title="Mental Health Blog | Sunrise Human Care Services in Havertown, PA" 
+        description="Expert mental health insights for Havertown residents from Sunrise Human Care Services. Read our blog on anxiety, depression, and more."
+        canonicalUrl="https://sunrisehcsllc.com/blog"
       />
       <SchemaMarkup />
       <Navbar />
       
       <main className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Resources</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Blog</h1>
           <p className="text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Mental health insights and resources for Havertown residents from the experts at Sunrise Human Care Services.
           </p>
@@ -63,7 +63,7 @@ const Blog = () => {
                 <div className="p-6">
                   <CardHeader className="pb-2 px-0 pt-0">
                     <CardTitle className="text-2xl md:text-3xl">
-                      <Link to={`/resources/${post.id}`} className="hover:text-primary transition-colors">
+                      <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
                         {post.title}
                       </Link>
                     </CardTitle>
@@ -81,7 +81,7 @@ const Blog = () => {
                   </CardContent>
                   <CardFooter className="pt-0 pb-0 px-0">
                     <Button asChild className="btn-sunrise">
-                      <Link to={`/resources/${post.id}`}>Read More</Link>
+                      <Link to={`/blog/${post.id}`}>Read More</Link>
                     </Button>
                   </CardFooter>
                 </div>

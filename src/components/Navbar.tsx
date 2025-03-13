@@ -39,8 +39,8 @@ const Navbar = () => {
       label: "Services"
     },
     {
-      path: "/resources",
-      label: "Resources"
+      path: "/blog",
+      label: "Blog"
     },
     {
       path: "/faq",

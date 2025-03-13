@@ -7,7 +7,7 @@ const FooterNav: React.FC = () => {
     { to: "/", label: "Home" },
     { to: "/services", label: "Our Services" },
     { to: "/about", label: "About Us" },
-    { to: "/resources", label: "Resources" },
+    { to: "/blog", label: "Blog" },
     { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "Contact" },
     { to: "/sitemap.xml", label: "Sitemap" }
