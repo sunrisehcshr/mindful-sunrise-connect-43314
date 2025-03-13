@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Helmet } from "react-helmet-async"; // ✅ Replace react-helmet with react-helmet-async
+import { Helmet } from "react-helmet-async";
 
 interface SEOHeadProps {
   title?: string;
@@ -41,12 +41,27 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
 
-      {/* Favicon (SVG and Alternative Formats) */}
+      {/* Comprehensive Favicon Support */}
+      {/* Standard */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
-      <link rel="apple-touch-icon" href="/favicon.svg" />
-      <meta name="msapplication-TileImage" content="/favicon.svg" />
-      <meta name="theme-color" content="#EB5757" />
+      <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+      <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png" />
+      
+      {/* iOS / Apple */}
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="mask-icon" href="/favicon.svg" color="#F7913E" />
+      
+      {/* Android / PWA */}
+      <link rel="manifest" href="/manifest.json" />
+      <meta name="theme-color" content="#F7913E" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="application-name" content="Sunrise HCS" />
+      
+      {/* Microsoft */}
+      <meta name="msapplication-TileColor" content="#F7913E" />
+      <meta name="msapplication-TileImage" content="/favicon-144.png" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
 
       {/* Performance Optimization */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
