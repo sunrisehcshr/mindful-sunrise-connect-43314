@@ -13,11 +13,12 @@ const NewsletterForm: React.FC = () => {
     try {
       const formData = {
         email: email,
-        _cc: "shweta.s@sunrisehcsllc.com" // Add CC email
+        _subject: "Newsletter Subscription",
+        _cc: "shweta.s@sunrisehcsllc.com"
       };
       
-      // Connect to Formspree instead of simulating
-      const response = await fetch("https://formspree.io/f/mqkrqkwo", {
+      // Updated to use a more reliable endpoint
+      const response = await fetch("https://formspree.io/f/xoqgjzra", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -29,6 +30,7 @@ const NewsletterForm: React.FC = () => {
         toast.success("Thank you for subscribing to our newsletter!");
         setEmail("");
       } else {
+        console.error("Newsletter form submission failed:", await response.text());
         toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {

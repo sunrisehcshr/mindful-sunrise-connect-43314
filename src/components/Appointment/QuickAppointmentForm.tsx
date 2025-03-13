@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { CalendarIcon, Phone, Mail, Hospital, Video, Clock } from 'lucide-react';
@@ -84,11 +83,12 @@ const QuickAppointmentForm: React.FC = () => {
       const formattedData = {
         ...formData,
         date: formData.date ? format(formData.date, 'PPP') : '',
-        _cc: "shweta.s@sunrisehcsllc.com" // Add CC email
+        _subject: "Quick Appointment Request",
+        _cc: "shweta.s@sunrisehcsllc.com"
       };
       
-      // Send data to Formspree
-      const response = await fetch('https://formspree.io/f/mqkrqkwo', {
+      // Send data to Formspree - updated to more reliable endpoint
+      const response = await fetch('https://formspree.io/f/xoqgjzra', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -116,6 +116,7 @@ const QuickAppointmentForm: React.FC = () => {
           closeButton.click();
         }
       } else {
+        console.error("Form submission failed:", await response.text());
         throw new Error('Form submission failed');
       }
     } catch (error) {

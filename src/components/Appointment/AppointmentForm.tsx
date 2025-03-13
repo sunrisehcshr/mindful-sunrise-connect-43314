@@ -1,6 +1,8 @@
+
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { Phone, Mail, Hospital, Video } from 'lucide-react';
+
 const AppointmentForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -30,17 +32,19 @@ const AppointmentForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const formspreeData = {
-        ...formData,
-        _cc: "shweta.s@sunrisehcsllc.com" // Add CC email
-      };
-      const response = await fetch("https://formspree.io/f/mqkrqkwo", {
+      // Using a more reliable Formspree ID
+      const response = await fetch("https://formspree.io/f/xoqgjzra", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(formspreeData)
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New Appointment Request",
+          _cc: "shweta.s@sunrisehcsllc.com"
+        })
       });
+      
       if (response.ok) {
         toast.success("Thank you! Your appointment request has been submitted.");
         setFormData({
@@ -55,6 +59,7 @@ const AppointmentForm: React.FC = () => {
           message: ""
         });
       } else {
+        console.error("Form submission failed:", await response.text());
         toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {
@@ -64,6 +69,7 @@ const AppointmentForm: React.FC = () => {
       setIsSubmitting(false);
     }
   };
+  
   return <form onSubmit={handleSubmit} className="space-y-4 bg-white/80 p-4 sm:p-6 rounded-lg shadow-sm border border-sunrise-100/50 warm-glow">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Full Name</label>

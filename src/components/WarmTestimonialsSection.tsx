@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    quote: "Sunrise Human Care Services has been a huge help for my teenage daughter. The therapist really connected with her, and we’ve seen such a positive change. So grateful for their support!",
+    quote: "Sunrise Human Care Services has been a huge help for my teenage daughter. The therapist really connected with her, and we've seen such a positive change. So grateful for their support!",
     author: "JEmily T., Havertown",
   },
   {
@@ -54,7 +54,6 @@ const WarmTestimonialsSection = () => {
               </div>
               <div>
                 <p className="font-semibold text-amber-900">{testimonial.author}</p>
-                <p className="text-amber-700 text-sm">{testimonial.role}</p>
               </div>
             </motion.div>
           ))}

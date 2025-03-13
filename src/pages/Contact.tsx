@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
@@ -32,10 +31,11 @@ const Contact = () => {
     try {
       const formspreeData = {
         ...formData,
-        _cc: "shweta.s@sunrisehcsllc.com" // Add CC email
+        _subject: "Contact Form Message",
+        _cc: "shweta.s@sunrisehcsllc.com"
       };
       
-      const response = await fetch("https://formspree.io/f/mqkrqkwo", {
+      const response = await fetch("https://formspree.io/f/xoqgjzra", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -54,6 +54,7 @@ const Contact = () => {
           message: ''
         });
       } else {
+        console.error("Form submission failed:", await response.text());
         toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {
