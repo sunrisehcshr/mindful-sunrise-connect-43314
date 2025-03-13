@@ -13,7 +13,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
-import MentalHealthHavertown from "./pages/MentalHealthHavertown"; // ✅ Import new page
+import MentalHealthHavertown from "./pages/MentalHealthHavertown"; 
 
 const queryClient = new QueryClient();
 
@@ -33,7 +33,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/mental-health-havertown-pa" element={<MentalHealthHavertown />} />  {/* ✅ New Route */}
+            <Route path="/mental-health-havertown-pa" element={<MentalHealthHavertown />} />  {/* New Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
