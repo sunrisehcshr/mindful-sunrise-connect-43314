@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
@@ -8,58 +7,46 @@ import Footer from "@/components/Footer/Footer";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CalendarIcon, Clock3 } from "lucide-react";
-
 const Blog = () => {
-  const blogPosts = [
-    {
-      id: "anxiety-signs-havertown",
-      title: "5 Signs of Anxiety That Havertown Residents Shouldn't Ignore",
-      excerpt: "Learn about common anxiety symptoms that people in Havertown might experience, especially considering local factors like commuting to Philadelphia or balancing suburban family life.",
-      date: "June 20, 2024",
-      readTime: "7 min read",
-      image: "/images/anxiety-havertown.webp",
-      altText: "Person experiencing anxiety in Havertown, PA",
-    },
-    {
-      id: "supporting-depression-havertown",
-      title: "How Havertown Families Can Support a Loved One with Depression",
-      excerpt: "Practical guidance for local families supporting someone with depression, including local community resources and support groups in Delaware County.",
-      date: "June 18, 2024",
-      readTime: "8 min read",
-      image: "/images/family-counseling-havertown.webp",
-      altText: "Family counseling session in Havertown, PA",
-    },
-    {
-      id: "seasonal-affective-disorder-havertown",
-      title: "Seasonal Affective Disorder in Havertown: Coping with Pennsylvania's Winter Blues",
-      excerpt: "How Pennsylvania's winter weather patterns affect mental health in Havertown specifically, with practical coping strategies for seasonal depression.",
-      date: "June 15, 2024",
-      readTime: "6 min read",
-      image: "/images/winter-blues-havertown.webp",
-      altText: "Winter scene in Havertown, Pennsylvania representing seasonal affective disorder",
-    },
-  ];
-
-  return (
-    <>
-      <SEOHead 
-        title="Mental Health Blog | Sunrise Human Care Services in Havertown, PA" 
-        description="Expert mental health insights for Havertown residents from Sunrise Human Care Services. Read our blog on anxiety, depression, and more."
-        canonicalUrl="https://sunrisehcsllc.com/blog"
-      />
+  const blogPosts = [{
+    id: "anxiety-signs-havertown",
+    title: "5 Signs of Anxiety That Havertown Residents Shouldn't Ignore",
+    excerpt: "Learn about common anxiety symptoms that people in Havertown might experience, especially considering local factors like commuting to Philadelphia or balancing suburban family life.",
+    date: "June 20, 2024",
+    readTime: "7 min read",
+    image: "/images/anxiety-havertown.webp",
+    altText: "Person experiencing anxiety in Havertown, PA"
+  }, {
+    id: "supporting-depression-havertown",
+    title: "How Havertown Families Can Support a Loved One with Depression",
+    excerpt: "Practical guidance for local families supporting someone with depression, including local community resources and support groups in Delaware County.",
+    date: "June 18, 2024",
+    readTime: "8 min read",
+    image: "/images/family-counseling-havertown.webp",
+    altText: "Family counseling session in Havertown, PA"
+  }, {
+    id: "seasonal-affective-disorder-havertown",
+    title: "Seasonal Affective Disorder in Havertown: Coping with Pennsylvania's Winter Blues",
+    excerpt: "How Pennsylvania's winter weather patterns affect mental health in Havertown specifically, with practical coping strategies for seasonal depression.",
+    date: "June 15, 2024",
+    readTime: "6 min read",
+    image: "/images/winter-blues-havertown.webp",
+    altText: "Winter scene in Havertown, Pennsylvania representing seasonal affective disorder"
+  }];
+  return <>
+      <SEOHead title="Mental Health Blog | Sunrise Human Care Services in Havertown, PA" description="Expert mental health insights for Havertown residents from Sunrise Human Care Services. Read our blog on anxiety, depression, and more." canonicalUrl="https://sunrisehcsllc.com/blog" />
       <SchemaMarkup />
       <Navbar />
       
       <main className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Blog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Resources</h1>
           <p className="text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Mental health insights and resources for Havertown residents from the experts at Sunrise Human Care Services.
           </p>
           
           <div className="grid gap-10 mt-12">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="overflow-hidden transition-all hover:shadow-md border-border/40 bg-white">
+            {blogPosts.map(post => <Card key={post.id} className="overflow-hidden transition-all hover:shadow-md border-border/40 bg-white">
                 <div className="p-6">
                   <CardHeader className="pb-2 px-0 pt-0">
                     <CardTitle className="text-2xl md:text-3xl">
@@ -85,8 +72,7 @@ const Blog = () => {
                     </Button>
                   </CardFooter>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           
           <div className="mt-20 text-center p-8 rounded-lg bg-secondary/70 backdrop-blur-sm border border-border/30">
@@ -100,8 +86,6 @@ const Blog = () => {
       </main>
       
       <Footer />
-    </>
-  );
+    </>;
 };
-
 export default Blog;
