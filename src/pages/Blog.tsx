@@ -50,46 +50,57 @@ const Blog = () => {
       <SchemaMarkup />
       <Navbar />
       
-      <main className="container mx-auto px-4 py-16 md:py-20">
+      <main className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Mental Health Blog</h1>
-          <p className="text-lg md:text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Blog</h1>
+          <p className="text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Mental health insights and resources for Havertown residents from the experts at Sunrise Human Care Services.
           </p>
           
-          <div className="grid gap-12 mt-12">
+          <div className="grid gap-16 mt-12">
             {blogPosts.map((post) => (
               <Card key={post.id} className="overflow-hidden transition-all hover:shadow-lg border-border/40 bg-white/80 backdrop-blur-sm">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-2xl md:text-3xl">
-                    <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
-                      {post.title}
-                    </Link>
-                  </CardTitle>
-                  <CardDescription className="flex items-center gap-4 mt-3 text-sm">
-                    <span className="flex items-center gap-1">
-                      <CalendarIcon className="h-4 w-4 text-orange-500" /> {post.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock3 className="h-4 w-4 text-orange-500" /> {post.readTime}
-                    </span>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-4 pb-6">
-                  <p className="text-muted-foreground text-base leading-relaxed">{post.excerpt}</p>
-                </CardContent>
-                <CardFooter className="pt-0 pb-6">
-                  <Button asChild className="btn-sunrise">
-                    <Link to={`/blog/${post.id}`}>Read More</Link>
-                  </Button>
-                </CardFooter>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="md:col-span-1 overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.altText} 
+                      className="w-full h-full object-cover aspect-video md:aspect-square rounded-l-lg"
+                    />
+                  </div>
+                  <div className="md:col-span-2 flex flex-col p-6">
+                    <CardHeader className="pb-2 px-0 pt-0">
+                      <CardTitle className="text-2xl md:text-3xl">
+                        <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
+                          {post.title}
+                        </Link>
+                      </CardTitle>
+                      <CardDescription className="flex items-center gap-4 mt-3 text-sm">
+                        <span className="flex items-center gap-1">
+                          <CalendarIcon className="h-4 w-4 text-orange-500" /> {post.date}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock3 className="h-4 w-4 text-orange-500" /> {post.readTime}
+                        </span>
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="pt-4 pb-6 px-0 flex-grow">
+                      <p className="text-muted-foreground text-base leading-relaxed">{post.excerpt}</p>
+                    </CardContent>
+                    <CardFooter className="pt-0 pb-0 px-0 mt-auto">
+                      <Button asChild className="btn-sunrise">
+                        <Link to={`/blog/${post.id}`}>Read More</Link>
+                      </Button>
+                    </CardFooter>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
           
           <div className="mt-20 text-center p-8 rounded-lg bg-secondary/70 backdrop-blur-sm border border-border/30">
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Need Professional Mental Health Support in Havertown?</h2>
-            <p className="mb-8 text-lg max-w-2xl mx-auto">Our team of licensed therapists and psychiatrists is ready to help you navigate your mental health journey.</p>
+            <p className="mb-8 text-lg max-w-2xl mx-auto leading-relaxed">Our team of licensed therapists and psychiatrists is ready to help you navigate your mental health journey.</p>
             <Button asChild size="lg" className="btn-sunrise">
               <Link to="/appointment">Book Your Appointment Today</Link>
             </Button>
