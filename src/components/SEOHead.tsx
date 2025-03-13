@@ -44,12 +44,11 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Comprehensive Favicon Support */}
       {/* Standard */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-      <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png" />
+      <link rel="icon" href="/lovable-uploads/5de7ce79-1094-4c76-bc02-377afb48eb0a.png" sizes="32x32" type="image/png" />
+      <link rel="icon" href="/lovable-uploads/3558a012-a648-4c7b-bce2-31f787f6a654.png" sizes="16x16" type="image/png" />
       
       {/* iOS / Apple */}
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="apple-touch-icon" href="/lovable-uploads/947ba080-a4e6-428b-a1cd-41a174bfe001.png" />
       <link rel="mask-icon" href="/favicon.svg" color="#F7913E" />
       
       {/* Android / PWA */}
@@ -60,7 +59,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Microsoft */}
       <meta name="msapplication-TileColor" content="#F7913E" />
-      <meta name="msapplication-TileImage" content="/favicon-144.png" />
+      <meta name="msapplication-TileImage" content="/lovable-uploads/947ba080-a4e6-428b-a1cd-41a174bfe001.png" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
 
       {/* Performance Optimization */}
