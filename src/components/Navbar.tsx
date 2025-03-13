@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, CircleDot } from "lucide-react"; 
-
+import { Menu, X, CircleDot } from "lucide-react";
 import { cn } from "@/lib/utils";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,7 +48,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {navLinks.map(link => <Link key={link.path} to={link.path} className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5", isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5")}>
-                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
+                {isActive(link.path)}
                 {link.label}
               </Link>)}
             <Link to="/appointment" className="ml-2 px-4 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors">
