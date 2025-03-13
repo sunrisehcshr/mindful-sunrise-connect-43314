@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
 import { CalendarIcon, Clock3, ArrowLeft } from "lucide-react";
 
@@ -33,51 +33,58 @@ const BlogPost = () => {
       <SchemaMarkup />
       <Navbar />
       
-      <main className="container mx-auto px-4 py-12 md:py-16">
+      <main className="container mx-auto px-4 py-16 md:py-20">
         <div className="max-w-3xl mx-auto">
-          <Button variant="ghost" className="mb-6" onClick={() => navigate("/blog")}>
+          <Button variant="ghost" className="mb-8 hover:bg-secondary/50" onClick={() => navigate("/blog")}>
             <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
           </Button>
           
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">{blogPostData.title}</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{blogPostData.title}</h1>
           
-          <div className="flex items-center gap-4 text-muted-foreground mb-8">
-            <span className="flex items-center gap-1">
-              <CalendarIcon className="h-4 w-4" /> {blogPostData.date}
+          <div className="flex items-center gap-6 text-muted-foreground mb-12">
+            <span className="flex items-center gap-2">
+              <CalendarIcon className="h-4 w-4 text-orange-500" /> {blogPostData.date}
             </span>
-            <span className="flex items-center gap-1">
-              <Clock3 className="h-4 w-4" /> {blogPostData.readTime}
+            <span className="flex items-center gap-2">
+              <Clock3 className="h-4 w-4 text-orange-500" /> {blogPostData.readTime}
             </span>
           </div>
           
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg md:prose-xl max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg">
             {blogPostData.content}
           </div>
           
-          <div className="mt-12 p-6 bg-muted rounded-lg">
-            <h2 className="text-xl font-semibold mb-2">Need Help with {blogPostData.ctaTopicLink}?</h2>
-            <p className="mb-4">Our Havertown mental health professionals specialize in treating {blogPostData.ctaTopic} and other mental health conditions. We're here to help you thrive.</p>
+          <div className="mt-16 p-8 bg-secondary/70 backdrop-blur-sm border border-border/30 rounded-lg">
+            <h2 className="text-2xl font-semibold mb-4">Need Help with {blogPostData.ctaTopicLink}?</h2>
+            <p className="mb-6 text-lg">Our Havertown mental health professionals specialize in treating {blogPostData.ctaTopic} and other mental health conditions. We're here to help you thrive.</p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild>
+              <Button asChild className="btn-sunrise">
                 <Link to="/appointment">Book an Appointment</Link>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="bg-white/50 hover:bg-white/80">
                 <Link to="/services">Explore Our Services</Link>
               </Button>
             </div>
           </div>
           
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold mb-4">Other Blog Posts</h3>
-            <div className="grid gap-4">
+          <div className="mt-20">
+            <h3 className="text-2xl font-semibold mb-6">Other Articles You Might Like</h3>
+            <div className="grid gap-6">
               {getOtherBlogPosts(id || "").map(post => (
-                <div key={post.id} className="p-4 border rounded-lg">
-                  <h4 className="font-medium mb-2">
-                    <Link to={`/blog/${post.id}`} className="hover:text-primary">
+                <div key={post.id} className="p-6 border border-border/40 rounded-lg bg-white/80 backdrop-blur-sm hover:shadow-md transition-all">
+                  <h4 className="font-medium text-lg mb-2">
+                    <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
                       {post.title}
                     </Link>
                   </h4>
-                  <p className="text-sm text-muted-foreground">{post.date} • {post.readTime}</p>
+                  <p className="text-sm text-muted-foreground flex items-center gap-4">
+                    <span className="flex items-center gap-1">
+                      <CalendarIcon className="h-3 w-3 text-orange-500" /> {post.date}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock3 className="h-3 w-3 text-orange-500" /> {post.readTime}
+                    </span>
+                  </p>
                 </div>
               ))}
             </div>
