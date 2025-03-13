@@ -1,4 +1,3 @@
-
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -14,6 +13,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import MentalHealthHavertown from "./pages/MentalHealthHavertown"; // ✅ Import new page
 
 const queryClient = new QueryClient();
 
@@ -33,6 +33,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/mental-health-havertown-pa" element={<MentalHealthHavertown />} />  {/* ✅ New Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
