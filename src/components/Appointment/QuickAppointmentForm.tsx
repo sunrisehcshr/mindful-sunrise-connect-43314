@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { toast } from 'sonner';
-import { CalendarIcon, Phone, Mail, Hospital, Video } from 'lucide-react';
+import { CalendarIcon, Phone, Mail, Hospital, Video, Clock } from 'lucide-react';
 import { format } from 'date-fns';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
@@ -18,6 +18,7 @@ const QuickAppointmentForm: React.FC = () => {
     email: '',
     phone: '',
     date: undefined as Date | undefined,
+    time: '',
     service: '',
     sessionType: '',
     preferredContact: '',
@@ -32,6 +33,18 @@ const QuickAppointmentForm: React.FC = () => {
     'Couples Counseling',
     'Psychiatry & Medication Management',
     'Specialized Programs',
+  ];
+  
+  const timeSlots = [
+    '9:00 AM', 
+    '10:00 AM', 
+    '11:00 AM', 
+    '12:00 PM', 
+    '1:00 PM', 
+    '2:00 PM', 
+    '3:00 PM', 
+    '4:00 PM', 
+    '5:00 PM'
   ];
 
   const handleChange = (
@@ -56,6 +69,11 @@ const QuickAppointmentForm: React.FC = () => {
     e.preventDefault();
     if (!formData.date) {
       toast.error('Please select a preferred date');
+      return;
+    }
+    
+    if (!formData.time) {
+      toast.error('Please select a preferred time');
       return;
     }
     
@@ -85,6 +103,7 @@ const QuickAppointmentForm: React.FC = () => {
           email: '',
           phone: '',
           date: undefined,
+          time: '',
           service: '',
           sessionType: '',
           preferredContact: '',
@@ -185,6 +204,29 @@ const QuickAppointmentForm: React.FC = () => {
             </PopoverContent>
           </Popover>
         </div>
+        
+        <div>
+          <label htmlFor="time" className="block text-sm font-medium mb-1">
+            Preferred Time*
+          </label>
+          <div className="relative">
+            <select
+              id="time"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+              className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent appearance-none"
+              required
+            >
+              <option value="" disabled>Select a time...</option>
+              {timeSlots.map((timeSlot, index) => (
+                <option key={index} value={timeSlot}>{timeSlot}</option>
+              ))}
+            </select>
+            <Clock className="absolute right-3 top-1/2 transform -translate-y-1/2 h-3 w-3 text-muted-foreground pointer-events-none" />
+          </div>
+        </div>
+        
         <div>
           <label htmlFor="service" className="block text-sm font-medium mb-1">
             Service Type*
