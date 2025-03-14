@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
-import { Brain, Users, Heart, HeartHandshake, Stethoscope, Sparkles, ArrowRight, Activity, PenTool, Pills, Laugh } from 'lucide-react';
+import { Brain, Users, Heart, HeartHandshake, Stethoscope, Sparkles, ArrowRight, Activity, PenTool, Pill, Laugh } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Separator } from '../ui/separator';
 
@@ -64,7 +64,7 @@ const ServicesSection: React.FC = () => {
     bgColor: "bg-gradient-to-r from-cyan-400 to-cyan-500",
     url: "/psychiatric-evaluations-havertown-pa"
   }, {
-    icon: <Pills className="h-6 w-6" />,
+    icon: <Pill className="h-6 w-6" />,
     title: "Medication Management",
     description: "Professional psychiatric medication reviews and management for mental health conditions.",
     color: "bg-emerald-50 text-emerald-600",
