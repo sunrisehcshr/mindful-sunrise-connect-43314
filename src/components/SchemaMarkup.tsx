@@ -1,13 +1,6 @@
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 const SchemaMarkup = () => {
-  const [schemaReady, setSchemaReady] = useState(false);
-
-  useEffect(() => {
-    setSchemaReady(true);
-  }, []);
-
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -32,7 +25,13 @@ const SchemaMarkup = () => {
         "url": "https://sunrisehcsllc.com/",
         "foundingDate": "2020-01-01",
         "founder": "John Doe",
-        "logo": { "@type": "ImageObject", "@id": "https://sunrisehcsllc.com/#logo", "url": "https://sunrisehcsllc.com/favicon.svg", "width": 512, "height": 512 },
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://sunrisehcsllc.com/#logo",
+          "url": "https://sunrisehcsllc.com/favicon.svg",
+          "width": 512,
+          "height": 512
+        },
         "sameAs": [
           "https://www.facebook.com/sunrisehcs",
           "https://twitter.com/sunrisehcs",
@@ -59,11 +58,11 @@ const SchemaMarkup = () => {
   };
 
   return (
-    schemaReady && (
-      <Helmet>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
-      </Helmet>
-    )
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaData)}
+      </script>
+    </Helmet>
   );
 };
 
