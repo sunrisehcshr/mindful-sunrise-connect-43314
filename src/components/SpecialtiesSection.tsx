@@ -40,7 +40,7 @@ const SpecialtiesSection: React.FC = () => {
           <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-400/20 text-sunrise-900 mb-4">
             Our Expertise
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-caladea">
             Our Specialties
           </h2>
           <p className="text-muted-foreground">

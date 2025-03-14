@@ -95,7 +95,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                     {serviceType}
                   </span>
                   
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-playfair">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-caladea">
                     {title}
                   </h1>
                   
@@ -140,7 +140,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
           <section className="py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-caladea">
                   Benefits of {serviceType}
                 </h2>
               </div>
@@ -169,7 +169,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
           <section className="py-16 bg-gradient-to-b from-white to-secondary/20">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-caladea">
                   Our Approach to {serviceType}
                 </h2>
                 <p className="text-muted-foreground">
@@ -187,7 +187,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="bg-white p-6 rounded-lg shadow-sm border border-border/40"
                   >
-                    <h3 className="text-xl font-semibold mb-3 font-playfair">{approach.title}</h3>
+                    <h3 className="text-xl font-semibold mb-3 font-caladea">{approach.title}</h3>
                     <p className="text-muted-foreground">{approach.description}</p>
                   </motion.div>
                 ))}
@@ -199,7 +199,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
           <section className="py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-caladea">
                   Frequently Asked Questions
                 </h2>
               </div>
@@ -214,7 +214,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="bg-secondary/20 p-6 rounded-lg"
                   >
-                    <h3 className="text-lg font-semibold mb-3 font-playfair">{faq.question}</h3>
+                    <h3 className="text-lg font-semibold mb-3 font-caladea">{faq.question}</h3>
                     <p className="text-muted-foreground">{faq.answer}</p>
                   </motion.div>
                 ))}
@@ -226,7 +226,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
           <section className="py-16 bg-gradient-to-b from-secondary/20 to-secondary/40">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-caladea">
                   Related Services
                 </h2>
                 <p className="text-muted-foreground">
@@ -244,7 +244,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="bg-white p-6 rounded-lg shadow-sm border border-border/40"
                   >
-                    <h3 className="text-lg font-semibold mb-3 font-playfair">{service.title}</h3>
+                    <h3 className="text-lg font-semibold mb-3 font-caladea">{service.title}</h3>
                     <Link
                       to={service.url}
                       className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group"
