@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
@@ -30,17 +29,18 @@ const SchemaMarkup = () => {
         "@id": "https://sunrisehcsllc.com/#organization",
         "name": "Sunrise Human Care Services",
         "url": "https://sunrisehcsllc.com/",
+        "foundingDate": "2020-01-01",
+        "founder": "John Doe",
         "logo": {
           "@type": "ImageObject",
           "@id": "https://sunrisehcsllc.com/#logo",
           "url": "https://sunrisehcsllc.com/favicon.svg",
-          "contentUrl": "https://sunrisehcsllc.com/favicon.svg",
           "width": 512,
           "height": 512
         },
         "image": {
           "@type": "ImageObject",
-          "@id": "https://sunrisehcsllc.com/#logo",
+          "@id": "https://sunrisehcsllc.com/#image",
           "url": "https://sunrisehcsllc.com/favicon.svg",
           "width": 512,
           "height": 512
@@ -56,7 +56,11 @@ const SchemaMarkup = () => {
           "telephone": "+18146202162",
           "contactType": "customer service",
           "availableLanguage": "English",
-          "areaServed": ["Havertown", "Delaware County", "Pennsylvania"]
+          "areaServed": [
+            { "@type": "Place", "name": "Havertown, PA" },
+            { "@type": "Place", "name": "Delaware County, PA" },
+            { "@type": "Place", "name": "Philadelphia Metro Area" }
+          ]
         },
         "address": {
           "@type": "PostalAddress",
@@ -65,23 +69,7 @@ const SchemaMarkup = () => {
           "addressRegion": "PA",
           "postalCode": "19083",
           "addressCountry": "US"
-        },
-        "location": {
-          "@type": "Place",
-          "name": "Havertown, PA",
-          "hasMap": "https://www.google.com/maps?q=2050+West+Chester+Pike,+Havertown,+PA+19083"
-        },
-        "areaServed": [
-          {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": 39.9707,
-              "longitude": -75.3151
-            },
-            "geoRadius": 10000
-          }
-        ]
+        }
       },
       {
         "@type": "MedicalClinic",
@@ -110,13 +98,7 @@ const SchemaMarkup = () => {
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "09:00",
             "closes": "17:00"
           }
@@ -127,18 +109,7 @@ const SchemaMarkup = () => {
           "@type": "AggregateRating",
           "ratingValue": 4.8,
           "reviewCount": 50
-        },
-        "areaServed": [
-          "Havertown",
-          "Ardmore",
-          "Broomall",
-          "Drexel Hill",
-          "Springfield",
-          "Upper Darby",
-          "Newtown Square",
-          "Delaware County",
-          "Philadelphia"
-        ]
+        }
       },
       {
         "@type": "Service",
@@ -146,16 +117,12 @@ const SchemaMarkup = () => {
         "name": "Mental Health Therapy and Psychiatry Services in Havertown, PA",
         "description": "Specializing in anxiety, depression, ADHD, PTSD, OCD, bipolar disorder, addiction, and more. Offering individual, couples, and family therapy for all ages in Havertown, PA and via telehealth.",
         "provider": {
-          "@id": "https://sunrisehcsllc.com/#clinic"
+          "@id": "https://sunrisehcsllc.com/#organization"
         },
         "availableChannel": [
           {
             "@type": "ServiceChannel",
             "serviceUrl": "https://sunrisehcsllc.com/book-appointment",
-            "availableLanguage": {
-              "@type": "Language",
-              "name": "English"
-            },
             "providesService": {
               "@type": "MedicalProcedure",
               "name": "In-Person Therapy & Psychiatry in Havertown"
@@ -164,43 +131,12 @@ const SchemaMarkup = () => {
           {
             "@type": "ServiceChannel",
             "serviceUrl": "https://sunrisehcsllc.com/telehealth",
-            "availableLanguage": {
-              "@type": "Language",
-              "name": "English"
-            },
             "providesService": {
               "@type": "MedicalProcedure",
               "name": "Telehealth Therapy & Psychiatry"
             }
           }
-        ],
-        "areaServed": [
-          {
-            "@type": "Place",
-            "name": "Havertown, PA"
-          },
-          {
-            "@type": "Place",
-            "name": "Delaware County, PA"
-          },
-          {
-            "@type": "Place",
-            "name": "Philadelphia Metro Area"
-          },
-          {
-            "@type": "Place",
-            "name": "Online"
-          }
-        ],
-        "offers": {
-          "@type": "Offer",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "priceCurrency": "USD",
-            "minPrice": 100,
-            "maxPrice": 500
-          }
-        }
+        ]
       },
       {
         "@type": "LocalBusiness",
@@ -225,19 +161,12 @@ const SchemaMarkup = () => {
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "09:00",
             "closes": "17:00"
           }
         ],
-        "priceRange": "$$$",
-        "servesCuisine": "Mental Health Services"
+        "priceRange": "$$$"
       }
     ]
   };
