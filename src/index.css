@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -52,11 +52,19 @@
     flex-direction: column;
     min-height: 100vh;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
 }
 
 @layer components {
   .warm-card {
-    @apply bg-white/60 backdrop-blur-sm border border-amber-100/40 shadow-sm hover:shadow-md transition-shadow duration-300;
+    @apply bg-white/60 backdrop-blur-sm border border-amber-100/40 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden;
+  }
+  
+  .floating-card {
+    @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
   }
   
   .warm-glow {
@@ -75,18 +83,23 @@
   }
   
   .section-padding {
-    @apply py-8 md:py-12 lg:py-16;
+    @apply py-12 md:py-16 lg:py-24;
   }
 
   /* Button and tag styles */
   .btn-sunrise {
-    @apply px-3 py-1.5 md:px-4 md:py-2 bg-primary text-primary-foreground font-medium rounded-md 
-    hover:bg-primary/90 transition-colors inline-flex items-center gap-2 text-sm;
+    @apply px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-primary-foreground font-medium rounded-md 
+    hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-sm hover:shadow-md inline-flex items-center gap-2 text-sm;
+  }
+
+  .btn-outline-sunrise {
+    @apply px-3 py-1.5 md:px-4 md:py-2 bg-white/30 text-orange-600 font-medium rounded-md border border-orange-200
+    hover:bg-orange-50 transition-all duration-300 inline-flex items-center gap-2 text-sm shadow-sm hover:shadow-md;
   }
 
   .section-tag {
-    @apply inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-orange-500 text-white
-    border border-orange-400 mb-3 md:mb-4;
+    @apply inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-white
+    border border-orange-400 mb-3 md:mb-4 shadow-sm;
   }
   
   .orange-tag {
@@ -99,6 +112,16 @@
   
   .active-nav-item {
     @apply bg-orange-500 text-white font-semibold;
+  }
+  
+  /* Enhanced dividers */
+  .sunrise-divider {
+    @apply relative py-4 my-8;
+  }
+  
+  .sunrise-divider::before {
+    content: "";
+    @apply absolute w-24 h-[2px] bg-gradient-to-r from-amber-300 to-orange-400 left-1/2 -translate-x-1/2;
   }
   
   /* Star decoration classes */
@@ -141,6 +164,33 @@
     [data-state="open"] {
       max-height: 90vh;
       overflow-y: auto;
+    }
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Transition for page elements */
+  .page-transition {
+    @apply transition-all duration-500 ease-in-out;
+  }
+  
+  /* Enhanced floating animation */
+  .float-animation {
+    animation: floating 6s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
     }
   }
 }
