@@ -4,67 +4,67 @@ import ServicePageLayout from '../../components/services/ServicePageLayout';
 
 const PsychiatricEvaluations = () => {
   const benefits = [
-    "Accurate diagnosis to guide effective treatment",
-    "Comprehensive understanding of your mental health condition",
-    "Evidence-based treatment recommendations",
-    "Clarification of complex or overlapping symptoms",
-    "Documentation for accommodations or disability support when needed",
-    "Personalized care planning based on clinical findings"
+    "Accurate diagnosis of mental health conditions",
+    "Comprehensive understanding of your symptoms and challenges",
+    "Personalized treatment recommendations",
+    "Baseline assessment for measuring treatment progress",
+    "Documentation for insurance, accommodations, or legal purposes",
+    "Clarity and direction for your mental health journey"
   ];
   
   const approaches = [
     {
       title: "Clinical Interview",
-      description: "An in-depth conversation about your symptoms, history, and concerns, providing essential information for accurate diagnosis."
+      description: "In-depth conversation to understand your symptoms, history, concerns, and goals for treatment."
     },
     {
       title: "Standardized Assessments",
-      description: "Evidence-based questionnaires and rating scales that help measure symptom severity and track treatment progress."
-    },
-    {
-      title: "Medical History Review",
-      description: "Examination of your physical health history to understand any medical factors that may be contributing to mental health symptoms."
+      description: "Evidence-based questionnaires and rating scales to objectively measure symptoms and functioning."
     },
     {
       title: "Collateral Information",
-      description: "With your permission, input from family members or other providers to gain additional perspective on symptoms and functioning."
+      description: "With your permission, gathering relevant information from family members, previous providers, or medical records."
+    },
+    {
+      title: "Medical Considerations",
+      description: "Evaluation of physical health factors, medication effects, and other medical conditions that may impact mental health."
     }
   ];
   
   const faqs = [
     {
       question: "What happens during a psychiatric evaluation?",
-      answer: "A psychiatric evaluation typically involves an in-depth interview about your current symptoms, mental health history, medical history, family history, and social/environmental factors. Your provider may use standardized questionnaires or rating scales to gather additional information. The evaluation concludes with a discussion of findings, diagnosis (if applicable), and treatment recommendations."
+      answer: "A psychiatric evaluation typically includes a comprehensive interview about your symptoms, concerns, medical history, family history, and life circumstances. You may complete standardized assessments to measure specific symptoms. The provider will discuss their findings, provide diagnostic information, and recommend treatment options."
     },
     {
       question: "How long does a psychiatric evaluation take?",
-      answer: "Initial evaluations typically take 60-90 minutes to ensure we gather comprehensive information. Follow-up appointments are usually shorter, lasting 30-45 minutes, and focus on treatment progress and medication management if applicable."
+      answer: "Initial evaluations typically take 45-60 minutes. Complex cases may require multiple sessions to complete a thorough assessment. We'll provide information about the expected timeframe when you schedule your appointment."
     },
     {
-      question: "Will I receive medication during my first evaluation?",
-      answer: "It depends on your specific situation. Some conditions clearly benefit from medication, and prescriptions may be provided at the first visit. In other cases, your provider may want additional information or to try non-medication approaches first. If medication is recommended, your provider will discuss the benefits, risks, and alternatives."
+      question: "Do I need to prepare anything for my evaluation?",
+      answer: "It's helpful to bring a list of current medications, names of previous providers, relevant medical records, and notes about your symptoms. Consider writing down questions you have for the provider. Coming prepared helps maximize the effectiveness of your evaluation."
     },
     {
-      question: "Do I need a referral for a psychiatric evaluation?",
-      answer: "In most cases, no referral is needed. You can schedule directly with our office. However, some insurance plans may require a referral from your primary care physician for coverage. Our staff can help you determine if a referral is needed based on your specific insurance."
+      question: "Will I receive medication after my evaluation?",
+      answer: "Not necessarily. Medication is one potential treatment option, but not the only one. Based on your evaluation, we'll discuss whether medication might be beneficial for your specific situation, along with other treatment approaches like therapy. If medication is recommended, we'll explain the options, potential benefits, and possible side effects."
     }
   ];
   
   const relatedServices = [
     { title: "Medication Management", url: "/medication-management-havertown-pa" },
     { title: "ADHD Treatment", url: "/adhd-treatment-havertown-pa" },
-    { title: "Individual Therapy", url: "/individual-therapy-havertown-pa" }
+    { title: "Depression Therapy", url: "/depression-therapy-havertown-pa" }
   ];
   
   return (
     <ServicePageLayout
       title="Psychiatric Evaluations in Havertown, PA"
-      description="Comprehensive mental health assessments to provide accurate diagnosis and guide effective treatment planning for optimal outcomes."
-      pageTitle="Expert Psychiatric Evaluations in Havertown, PA - Accurate Mental Health Assessment | Sunrise Human Care"
-      metaDescription="Professional psychiatric evaluations in Havertown, PA. Comprehensive mental health assessments for accurate diagnosis and personalized treatment planning. Schedule your evaluation today."
+      description="Comprehensive mental health assessments to provide accurate diagnosis and guide effective treatment planning."
+      pageTitle="Expert Psychiatric Evaluations in Havertown, PA - Mental Health Assessment | Sunrise Human Care"
+      metaDescription="Professional psychiatric evaluations in Havertown, PA. Comprehensive mental health assessments for accurate diagnosis and personalized treatment planning. Schedule today."
       serviceType="Psychiatric Evaluations"
       canonicalUrl="/psychiatric-evaluations-havertown-pa"
-      schemaType="MedicalTest"
+      schemaType="MedicalService"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -76,27 +76,31 @@ const PsychiatricEvaluations = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                The Importance of Comprehensive Psychiatric Evaluation
+                Understanding Psychiatric Evaluations
               </h2>
               
               <div className="space-y-4">
                 <p>
-                  At Sunrise Human Care Services in Havertown, PA, our psychiatric evaluations provide a thorough assessment of your mental health to establish an accurate diagnosis and create an effective treatment plan. These evaluations are the foundation for successful mental health care.
+                  At Sunrise Human Care Services in Havertown, PA, our psychiatric evaluations provide a comprehensive assessment of your mental health. These evaluations are the foundation for effective treatment, offering clarity about your symptoms and guidance for your path forward.
                 </p>
                 
                 <p>
-                  Our psychiatric providers take the time to listen to your concerns and gather comprehensive information about your symptoms, medical history, family history, and life circumstances. This holistic approach ensures we understand not just your symptoms, but you as a whole person.
+                  Our evaluations are conducted by licensed psychiatric specialists who combine clinical expertise with compassionate care. We take time to listen to your concerns, gather relevant information, and understand the unique factors affecting your mental health.
                 </p>
                 
                 <p>
-                  Following your evaluation, we'll discuss our findings, explain any diagnoses in clear, understandable terms, and collaborate with you to develop a personalized treatment plan. This may include medication recommendations, therapy referrals, lifestyle modifications, or a combination of approaches.
+                  Following your evaluation, we'll discuss our findings with you, including any diagnoses and recommended treatment options. We believe in collaborative care—working together to develop a treatment plan that aligns with your needs, preferences, and goals.
+                </p>
+                
+                <p>
+                  Whether you're seeking answers about longstanding symptoms, clarity about a specific condition, or guidance for your mental health journey, our comprehensive psychiatric evaluations provide the information and direction you need.
                 </p>
               </div>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
               <h3 className="text-xl font-semibold mb-4 font-playfair">
-                Our Psychiatric Evaluations Can Assess:
+                Our Evaluations Assess:
               </h3>
               
               <ul className="space-y-3">
@@ -118,7 +122,7 @@ const PsychiatricEvaluations = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Obsessive-compulsive disorder (OCD)</span>
+                  <span>Obsessive-compulsive and related disorders</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-sunrise-500 mr-2">✓</span>
@@ -126,11 +130,11 @@ const PsychiatricEvaluations = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Neurocognitive disorders</span>
+                  <span>Neurodevelopmental disorders</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Personality disorders</span>
+                  <span>Medication effects and needs</span>
                 </li>
               </ul>
             </div>
