@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { Helmet } from "react-helmet-async";
 
 const SchemaMarkup = () => {
@@ -36,7 +36,7 @@ const SchemaMarkup = () => {
         "logo": {
           "@type": "ImageObject",
           "@id": "https://sunrisehcsllc.com/#logo",
-          "url": "https://sunrisehcsllc.com/favicon.svg",
+          "url": "https://sunrisehcsllc.com/logo.svg",
           "width": 512,
           "height": 512
         },
@@ -60,14 +60,33 @@ const SchemaMarkup = () => {
           "addressRegion": "PA",
           "postalCode": "19083",
           "addressCountry": "US"
-        }
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.9707",
+          "longitude": "-75.3151"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ]
       },
       {
         "@type": "MedicalClinic",
         "@id": "https://sunrisehcsllc.com/#MedicalClinic",
         "name": "Sunrise Human Care Services - Mental Health Clinic",
         "url": "https://sunrisehcsllc.com/mental-health-havertown-pa",
-        "image": "https://sunrisehcsllc.com/clinic-image.jpg",
+        "image": "https://sunrisehcsllc.com/therapy-in-havertown.jpg",
         "description": "A trusted mental health clinic in Havertown, PA, providing therapy and psychiatric services.",
         "address": {
           "@type": "PostalAddress",
@@ -77,9 +96,49 @@ const SchemaMarkup = () => {
           "postalCode": "19083",
           "addressCountry": "US"
         },
-        "openingHours": "Mo-Fr 09:00-17:00",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
         "telephone": "+18146202162",
         "medicalSpecialty": ["Psychiatry", "Psychotherapy", "Mental Health"],
+        "availableService": [
+          {
+            "@type": "MedicalTherapy",
+            "name": "Anxiety Therapy",
+            "description": "Effective therapy approaches for anxiety disorders"
+          },
+          {
+            "@type": "MedicalTherapy",
+            "name": "Depression Treatment",
+            "description": "Evidence-based therapy for depression"
+          },
+          {
+            "@type": "MedicalTherapy",
+            "name": "ADHD Management",
+            "description": "Comprehensive ADHD treatment for children and adults"
+          },
+          {
+            "@type": "MedicalTherapy",
+            "name": "Trauma Therapy",
+            "description": "Specialized treatment for trauma and PTSD"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.9707",
+          "longitude": "-75.3151"
+        },
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://sunrisehcsllc.com/mental-health-havertown-pa"
@@ -88,17 +147,49 @@ const SchemaMarkup = () => {
           "@type": "MedicalOrganization",
           "@id": "https://sunrisehcsllc.com/#MedicalOrganization"
         }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://sunrisehcsllc.com/#LocalBusiness",
+        "name": "Sunrise Human Care Services",
+        "image": "https://sunrisehcsllc.com/og-image.png",
+        "url": "https://sunrisehcsllc.com",
+        "telephone": "+18146202162",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2050 West Chester Pike",
+          "addressLocality": "Havertown",
+          "addressRegion": "PA",
+          "postalCode": "19083",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.9707",
+          "longitude": "-75.3151"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ]
       }
     ]
   };
 
-  useEffect(() => {
-    console.log("Injecting Schema Markup");
-  }, []);
-
   return (
     <Helmet>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+      <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
     </Helmet>
   );
 };

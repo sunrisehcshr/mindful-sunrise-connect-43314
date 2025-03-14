@@ -10,7 +10,6 @@ import AppointmentSection from '../components/Appointment/AppointmentSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
-import SchemaMarkup from '../components/SchemaMarkup';
 
 const Index = () => {
   return (
@@ -20,7 +19,6 @@ const Index = () => {
         description="Leading mental health clinic in Havertown, PA. Specialized therapy for anxiety, depression, ADHD, and trauma. In-person and telehealth services available. Call (814) 620-2162 to schedule today."
         canonicalUrl="https://sunrisehcsllc.com/"
       />
-      <SchemaMarkup />
       <div className="flex flex-col min-h-screen relative overflow-hidden">
         <Navbar />
         <main className="flex-grow">
