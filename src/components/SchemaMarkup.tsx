@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet-async";
 
 const SchemaMarkup = () => {
@@ -60,26 +59,7 @@ const SchemaMarkup = () => {
           "addressRegion": "PA",
           "postalCode": "19083",
           "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "39.9707",
-          "longitude": "-75.3151"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "17:00"
-          }
-        ]
+        }
       },
       {
         "@type": "MedicalClinic",
