@@ -64,6 +64,7 @@ const TraumaPTSDTherapy = () => {
       metaDescription="Effective trauma and PTSD treatment in Havertown, PA. Specialized approaches including EMDR therapy help you process traumatic experiences and reclaim your life. Schedule today."
       serviceType="Trauma & PTSD Therapy"
       canonicalUrl="/ptsd-therapy-havertown-pa"
+      heroImage="/images/trauma-therapy-havertown.webp"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -74,7 +75,7 @@ const TraumaPTSDTherapy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-caladea">
                 Our Approach to Trauma Treatment
               </h2>
               
@@ -98,7 +99,10 @@ const TraumaPTSDTherapy = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
+              <span className="section-tag font-semibold mb-3 inline-block">
+                Trauma Recovery
+              </span>
+              <h3 className="text-xl font-semibold mb-4 font-caladea">
                 Our Trauma Services Help With:
               </h3>
               
