@@ -64,17 +64,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				sunrise: {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#0c4a6e',
-					950: '#082f49',
+					50: '#fff8eb',
+					100: '#ffecc6',
+					200: '#ffe0a3',
+					300: '#ffd47f',
+					400: '#fec76f', // The requested color
+					500: '#fdb346',
+					600: '#f99920',
+					700: '#dc7110',
+					800: '#b55712',
+					900: '#934714',
+					950: '#502306',
 				}
 			},
 			borderRadius: {
@@ -142,7 +142,8 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Open Sans', 'system-ui', 'sans-serif'],
-				serif: ['Georgia', 'serif']
+				serif: ['Georgia', 'serif'],
+				lato: ['Lato', 'sans-serif']
 			}
 		}
 	},

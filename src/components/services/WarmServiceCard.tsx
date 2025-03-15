@@ -21,14 +21,14 @@ const WarmServiceCard: React.FC<WarmServiceCardProps> = ({
 }) => {
   return (
     <motion.div 
-      className="warm-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 bg-white border border-blue-100"
+      className="warm-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 bg-white border border-amber-100"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
     >
       <div className="h-48 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-amber-600/20 to-transparent z-10" />
         <img 
           src={imageSrc} 
           alt={title} 
@@ -36,11 +36,11 @@ const WarmServiceCard: React.FC<WarmServiceCardProps> = ({
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-blue-900 mb-3">{title}</h3>
-        <p className="text-blue-800 mb-4 text-sm">{description}</p>
+        <h3 className="text-xl font-semibold text-amber-900 mb-3 font-caladea">{title}</h3>
+        <p className="text-amber-800 mb-4 text-sm">{description}</p>
         <Link
           to={url}
-          className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group mt-2 shadow-sm"
+          className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group mt-2 shadow-sm"
         >
           Learn more 
           <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

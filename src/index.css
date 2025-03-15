@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,33 +6,33 @@
  
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 20%;
+    --background: 48 30% 97%;
+    --foreground: 25 20% 25%;
     
-    --card: 210 40% 98%;
-    --card-foreground: 222 47% 20%;
+    --card: 48 30% 97%;
+    --card-foreground: 25 20% 25%;
  
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 20%;
+    --popover-foreground: 25 20% 25%;
  
-    --primary: 210 100% 50%;
+    --primary: 25 85% 58%;
     --primary-foreground: 210 40% 98%;
  
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 20%;
+    --secondary: 45 70% 94%;
+    --secondary-foreground: 25 20% 25%;
  
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 25% 40%;
+    --muted: 45 50% 94%;
+    --muted-foreground: 25 20% 45%;
  
-    --accent: 210 40% 96%; 
-    --accent-foreground: 222 47% 20%;
+    --accent: 48 70% 94%;
+    --accent-foreground: 25 20% 25%;
  
-    --destructive: 0 74% 55%;
+    --destructive: 0 74% 65%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 210 100% 50%;
+    --border: 45 50% 85%;
+    --input: 45 50% 85%;
+    --ring: 25 85% 58%;
  
     --radius: 0.5rem;
   }
@@ -41,9 +40,9 @@
   body {
     @apply bg-background text-foreground antialiased min-h-screen font-sans;
     background-image: 
-      radial-gradient(circle at 100% 0%, rgba(230, 244, 255, 0.5) 0%, transparent 40%),
-      radial-gradient(circle at 0% 80%, rgba(229, 242, 255, 0.4) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(246, 250, 255, 0.7) 0%, rgba(230, 244, 255, 0.3) 100%);
+      radial-gradient(circle at 100% 0%, rgba(254, 243, 199, 0.5) 0%, transparent 40%),
+      radial-gradient(circle at 0% 80%, rgba(254, 215, 170, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 251, 235, 0.7) 0%, rgba(254, 243, 199, 0.3) 100%);
     background-attachment: fixed;
   }
 
@@ -54,13 +53,13 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-semibold;
+    @apply font-lato;
   }
 }
 
 @layer components {
   .warm-card {
-    @apply bg-white/80 backdrop-blur-sm border border-blue-50/60 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden;
+    @apply bg-white/60 backdrop-blur-sm border border-amber-100/40 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden;
   }
   
   .floating-card {
@@ -73,13 +72,13 @@
   
   .warm-glow::before {
     content: "";
-    @apply absolute inset-0 bg-gradient-to-br from-blue-50/20 via-transparent to-blue-50/10 rounded-md;
+    @apply absolute inset-0 bg-gradient-to-br from-amber-50/20 via-transparent to-orange-50/10 rounded-md;
     pointer-events: none;
   }
   
   .hero-gradient {
-    background-image: linear-gradient(135deg, rgba(240, 249, 255, 0.8) 0%, rgba(224, 242, 254, 0.6) 100%);
-    @apply backdrop-blur-sm border border-blue-100/40;
+    background-image: linear-gradient(135deg, rgba(254, 249, 231, 0.8) 0%, rgba(254, 230, 175, 0.6) 100%);
+    @apply backdrop-blur-sm border border-amber-100/40;
   }
   
   .section-padding {
@@ -88,30 +87,30 @@
 
   /* Button and tag styles */
   .btn-sunrise {
-    @apply px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-primary-foreground font-medium rounded-md 
-    hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-sm hover:shadow-md inline-flex items-center gap-2 text-sm;
+    @apply px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-primary-foreground font-medium rounded-md 
+    hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-sm hover:shadow-md inline-flex items-center gap-2 text-sm;
   }
 
   .btn-outline-sunrise {
-    @apply px-3 py-1.5 md:px-4 md:py-2 bg-white/30 text-blue-700 font-medium rounded-md border border-blue-200
-    hover:bg-blue-50 transition-all duration-300 inline-flex items-center gap-2 text-sm shadow-sm hover:shadow-md;
+    @apply px-3 py-1.5 md:px-4 md:py-2 bg-white/30 text-orange-600 font-medium rounded-md border border-orange-200
+    hover:bg-orange-50 transition-all duration-300 inline-flex items-center gap-2 text-sm shadow-sm hover:shadow-md;
   }
 
   .section-tag {
-    @apply inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-gradient-to-r from-blue-600 to-blue-500 text-white
-    border border-blue-400 mb-3 md:mb-4 shadow-sm;
+    @apply inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-white
+    border border-orange-400 mb-3 md:mb-4 shadow-sm;
   }
   
   .orange-tag {
-    @apply bg-blue-600 text-white px-2 py-0.5 md:px-3 md:py-1 rounded-md text-xs;
+    @apply bg-orange-500 text-white px-2 py-0.5 md:px-3 md:py-1 rounded-md text-xs;
   }
   
   .orange-dot {
-    @apply inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-blue-500 rounded-full mr-1 md:mr-2;
+    @apply inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-orange-500 rounded-full mr-1 md:mr-2;
   }
   
   .active-nav-item {
-    @apply bg-blue-600 text-white font-semibold;
+    @apply bg-orange-500 text-white font-semibold;
   }
   
   /* Enhanced dividers */
@@ -121,7 +120,7 @@
   
   .sunrise-divider::before {
     content: "";
-    @apply absolute w-24 h-[2px] bg-gradient-to-r from-blue-300 to-blue-500 left-1/2 -translate-x-1/2;
+    @apply absolute w-24 h-[2px] bg-gradient-to-r from-amber-300 to-orange-400 left-1/2 -translate-x-1/2;
   }
   
   /* Star decoration classes */
@@ -131,15 +130,15 @@
   
   .star-subtle::after {
     content: "★";
-    @apply absolute text-blue-300 opacity-20 text-xs;
+    @apply absolute text-amber-300 opacity-20 text-xs;
   }
   
   .star-accent {
-    @apply text-blue-500;
+    @apply text-amber-400;
   }
   
   .star-bg {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(59, 130, 246, 0.1)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(251, 191, 36, 0.1)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 64px 64px;
   }
