@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
@@ -69,7 +70,8 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "absolute left-0 top-full z-50 min-w-[200px] max-h-[300px] overflow-auto bg-white shadow-lg rounded-md border flex flex-col space-y-1",
+      "absolute left-1/2 top-0 data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight -translate-x-1/2",
+      "z-50 min-w-[200px] max-h-[400px] overflow-auto bg-white shadow-lg rounded-md border",
       className
     )}
     {...props}

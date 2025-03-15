@@ -1,14 +1,17 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -16,13 +19,17 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleMobileServices = () => setMobileServicesOpen(!mobileServicesOpen);
+  
   useEffect(() => {
     setIsMenuOpen(false);
     setMobileServicesOpen(false);
   }, [location.pathname]);
+  
   const isActive = (path: string) => location.pathname === path;
+  
   const serviceLinks = [{
     title: "Individual Therapy",
     path: "/individual-therapy-havertown-pa"
@@ -54,6 +61,7 @@ const Navbar = () => {
     title: "Trauma & PTSD Therapy",
     path: "/ptsd-therapy-havertown-pa"
   }];
+  
   const navLinks = [{
     path: "/",
     label: "Home"
@@ -74,6 +82,7 @@ const Navbar = () => {
     path: "/contact",
     label: "Contact"
   }];
+  
   return <header className={cn("fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300", isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent")}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
@@ -95,20 +104,27 @@ const Navbar = () => {
                         <NavigationMenuTrigger className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5", isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600")}>
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-4 w-[800px] max-h-[70vh] overflow-auto z-[100]">
-                          <ScrollArea className="h-full w-full max-h-[65vh]">
-                            <ul className="grid grid-cols-2 gap-1.5">
-                              {link.children.map((child, childIndex) => <li key={childIndex} className="w-full">
-                                  <Link to={child.path} className={cn("block select-none rounded-md py-2 px-3 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600", isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground")}>
-                                    <div className="text-sm font-medium">{child.title}</div>
-                                  </Link>
-                                </li>)}
-                            </ul>
-                            <div className="p-3 mt-3 pt-3 border-t border-border">
-                              <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium">
-                                View All Services
-                                <ChevronRight className="ml-1 h-4 w-4" />
-                              </Link>
+                        <NavigationMenuContent className="p-2 w-[400px] max-h-[400px]">
+                          <ScrollArea className="h-full w-full max-h-[350px]">
+                            <div className="grid grid-cols-1 gap-1 p-2">
+                              {link.children.map((child, childIndex) => (
+                                <Link 
+                                  key={childIndex} 
+                                  to={child.path} 
+                                  className={cn(
+                                    "block select-none rounded-md py-2 px-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600", 
+                                    isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
+                                  )}
+                                >
+                                  {child.title}
+                                </Link>
+                              ))}
+                              <div className="pt-2 mt-2 border-t border-border">
+                                <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-3 py-2">
+                                  View All Services
+                                  <ChevronRight className="ml-1 h-4 w-4" />
+                                </Link>
+                              </div>
                             </div>
                           </ScrollArea>
                         </NavigationMenuContent>
@@ -169,4 +185,5 @@ const Navbar = () => {
       </div>
     </header>;
 };
+
 export default Navbar;
