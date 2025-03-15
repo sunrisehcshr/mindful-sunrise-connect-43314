@@ -143,7 +143,7 @@ export default {
 			fontFamily: {
 				sans: ['Open Sans', 'system-ui', 'sans-serif'],
 				serif: ['Georgia', 'serif'],
-				lato: ['Lato', 'sans-serif']
+				openSans: ['Open Sans', 'sans-serif']
 			}
 		}
 	},
