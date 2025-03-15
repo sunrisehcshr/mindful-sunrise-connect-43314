@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer/Footer";
 import Map from "../components/Map";
 import { ArrowRight, Check, Phone } from "lucide-react";
-import { ConditionsSection } from "../components/conditions/ConditionsSection";
+import ConditionsSection from "../components/conditions/ConditionsSection";
 
 const MentalHealthHavertown = () => {
   return <>
