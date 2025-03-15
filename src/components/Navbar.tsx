@@ -10,12 +10,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -105,14 +99,14 @@ const Navbar = () => {
                         )}>
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border w-[400px] p-2">
-                          <ul className="grid grid-cols-2 gap-3 p-2">
+                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-2">
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 p-2">
                             {link.children.map((child, childIndex) => (
                               <li key={childIndex}>
                                 <Link
                                   to={child.path}
                                   className={cn(
-                                    "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                                    "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
                                     isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
                                   )}
                                 >
@@ -172,7 +166,7 @@ const Navbar = () => {
                   <div key={index} className="space-y-2">
                     <div className={cn(
                       "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
-                      isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                      isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground"
                     )}>
                       {link.label}
                       <ChevronDown className="h-4 w-4 ml-2" />
@@ -183,8 +177,8 @@ const Navbar = () => {
                           key={childIndex}
                           to={child.path} 
                           className={cn(
-                            "block px-4 py-2 text-sm rounded-md", 
-                            isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground"
+                            "block px-4 py-2 text-sm rounded-md transition-colors", 
+                            isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50"
                           )}
                         >
                           {child.title}
@@ -208,7 +202,7 @@ const Navbar = () => {
                   to={link.path} 
                   className={cn(
                     "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", 
-                    isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                    isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-50"
                   )}
                 >
                   {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
@@ -227,3 +221,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
