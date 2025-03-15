@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -6,7 +7,25 @@ import SchemaMarkup from '../SchemaMarkup';
 import { motion } from 'framer-motion';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar, PhoneCall, Heart, Brain, Shield, Sparkles } from 'lucide-react';
+import { 
+  ArrowRight, 
+  Calendar, 
+  PhoneCall, 
+  Heart, 
+  Brain, 
+  Shield, 
+  Sparkles, 
+  Users, 
+  MessageCircleHeart, 
+  Pill, 
+  Clock, 
+  Baby, 
+  BookOpen, 
+  FileSpreadsheet, 
+  HeartPulse, 
+  Grape, 
+  HandHeart
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SectionTag from '../ui/section-tag';
 
@@ -32,10 +51,26 @@ const getServiceIcon = (serviceType: string) => {
     case 'anxiety therapy':
       return <Brain className="h-12 w-12" />;
     case 'depression therapy':
-      return <Heart className="h-12 w-12" />;
+      return <HeartPulse className="h-12 w-12" />;
     case 'trauma therapy':
-    case 'ptsd therapy':
+    case 'trauma & ptsd therapy':
       return <Shield className="h-12 w-12" />;
+    case 'individual therapy':
+      return <BookOpen className="h-12 w-12" />;
+    case 'couples counseling':
+      return <MessageCircleHeart className="h-12 w-12" />;
+    case 'family therapy':
+      return <Users className="h-12 w-12" />;
+    case 'child & adolescent therapy':
+      return <Baby className="h-12 w-12" />;
+    case 'medication management':
+      return <Pill className="h-12 w-12" />;
+    case 'psychiatric evaluations':
+      return <FileSpreadsheet className="h-12 w-12" />;
+    case 'adhd treatment':
+      return <Grape className="h-12 w-12" />; 
+    case 'substance use counseling':
+      return <HandHeart className="h-12 w-12" />;
     default:
       return <Sparkles className="h-12 w-12" />;
   }
@@ -72,17 +107,12 @@ const ServicePageLayout = ({
         <Navbar />
         
         <main className="flex-grow pt-24">
-          {/* Hero Section - Updated with gradient background and icon */}
+          {/* Hero Section - Updated with gradient background and service-appropriate icon, grid removed */}
           <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
-            <div className="absolute inset-0 z-0 opacity-20">
-              <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
-                  <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" strokeWidth="0.5" />
-                </pattern>
-                <rect width="100%" height="100%" fill="url(#grid)" />
-              </svg>
-            </div>
+            
+            {/* Subtle texture overlay instead of grid */}
+            <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl">

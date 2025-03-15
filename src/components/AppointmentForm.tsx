@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Calendar as CalendarIcon, Clock, Info } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
@@ -18,7 +19,7 @@ const timeSlots = [
   "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"
 ];
 
-// Updated comprehensive list of all services
+// Comprehensive list of all services from the service pages
 const services = [
   "Individual Therapy",
   "Couples Counseling",
@@ -32,7 +33,7 @@ const services = [
   "Psychiatric Evaluation",
   "Medication Management",
   "Substance Use Counseling",
-  "Grief Counseling",
+  "Grief Counseling", 
   "Life Transitions Counseling",
   "Other"
 ];
