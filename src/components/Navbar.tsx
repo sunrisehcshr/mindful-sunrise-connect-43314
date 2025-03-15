@@ -107,7 +107,7 @@ const Navbar = () => {
                           <ScrollArea className="h-full w-full max-h-[65vh]">
                             <ul className="grid grid-cols-2 gap-4">
                               {link.children.map((child, childIndex) => (
-                                <li key={childIndex}>
+                                <li key={childIndex} className="w-full">
                                   <Link
                                     to={child.path}
                                     className={cn(
