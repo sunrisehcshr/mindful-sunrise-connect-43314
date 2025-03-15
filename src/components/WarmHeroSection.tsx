@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { Phone, Sparkles, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
+import SectionTag from './ui/section-tag';
 
 const WarmHeroSection = () => {
   return (
@@ -29,15 +30,14 @@ const WarmHeroSection = () => {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.7 }}
           >
-            <motion.span 
-              className="inline-block px-3 py-1 bg-gradient-to-r from-orange-500/20 to-amber-500/20 rounded-full text-orange-800 text-sm font-medium mb-4"
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-4"
             >
-              <Sparkles className="w-4 h-4 inline-block mr-2 text-orange-500" /> 
-              Trusted Mental Health Care
-            </motion.span>
+              <SectionTag>Trusted Mental Health Care</SectionTag>
+            </motion.div>
             
             <motion.h1 
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-amber-950 leading-tight"

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -7,7 +6,7 @@ import SchemaMarkup from '../SchemaMarkup';
 import { motion } from 'framer-motion';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar, PhoneCall } from 'lucide-react';
+import { ArrowRight, Calendar, PhoneCall, Heart, Brain, Shield, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SectionTag from '../ui/section-tag';
 
@@ -25,7 +24,22 @@ interface ServicePageLayoutProps {
   faqs: { question: string; answer: string; }[];
   relatedServices: { title: string; url: string; }[];
   schemaType?: string;
+  icon?: React.ReactNode;
 }
+
+const getServiceIcon = (serviceType: string) => {
+  switch (serviceType.toLowerCase()) {
+    case 'anxiety therapy':
+      return <Brain className="h-12 w-12" />;
+    case 'depression therapy':
+      return <Heart className="h-12 w-12" />;
+    case 'trauma therapy':
+    case 'ptsd therapy':
+      return <Shield className="h-12 w-12" />;
+    default:
+      return <Sparkles className="h-12 w-12" />;
+  }
+};
 
 const ServicePageLayout = ({
   children,
@@ -40,8 +54,11 @@ const ServicePageLayout = ({
   approaches,
   faqs,
   relatedServices,
-  schemaType
+  schemaType,
+  icon
 }: ServicePageLayoutProps) => {
+  const serviceIcon = icon || getServiceIcon(serviceType);
+  
   return (
     <>
       <SEOHead
@@ -59,19 +76,29 @@ const ServicePageLayout = ({
         <Navbar />
         
         <main className="flex-grow pt-24">
-          {/* Hero Section - Optimized for mobile */}
+          {/* Hero Section - Updated with gradient background and icon */}
           <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
-            <div className="absolute inset-0 z-0">
-              <img
-                src={heroImage}
-                alt={title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-orange-400/30"></div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
+            <div className="absolute inset-0 z-0 opacity-20">
+              <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
+                  <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" strokeWidth="0.5" />
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+              </svg>
             </div>
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl">
+                <div className="flex items-center mb-6">
+                  <div className="bg-white/20 p-4 rounded-full mr-4 backdrop-blur-sm border border-white/30 text-white">
+                    {serviceIcon}
+                  </div>
+                  <SectionTag className="text-white bg-white/20 border-white/30">
+                    {serviceType}
+                  </SectionTag>
+                </div>
+                
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
