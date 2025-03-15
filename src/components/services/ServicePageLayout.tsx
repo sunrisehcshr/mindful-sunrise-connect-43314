@@ -23,6 +23,7 @@ interface ServicePageProps {
   relatedServices: { title: string; url: string }[];
   schemaType?: string;
   children?: React.ReactNode;
+  keywords?: string;
 }
 
 const ServicePageLayout: React.FC<ServicePageProps> = ({
@@ -38,7 +39,8 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
   faqs,
   relatedServices,
   schemaType = "MedicalTherapy",
-  children
+  children,
+  keywords
 }) => {
   
   // Schema markup for the service
@@ -46,7 +48,8 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
     "@context": "https://schema.org",
     "@type": schemaType,
     "name": title,
-    "description": description,
+    "description": metaDescription,
+    "url": `https://sunrisehcsllc.com${canonicalUrl}`,
     "provider": {
       "@type": "MedicalOrganization",
       "name": "Sunrise Human Care Services",
@@ -66,8 +69,28 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
         "@type": "State",
         "name": "Pennsylvania"
       }
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD"
+      }
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Patients seeking mental health care"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://sunrisehcsllc.com${canonicalUrl}`
     }
   };
+
+  // Generate service-specific keywords
+  const defaultKeywords = `${serviceType} Havertown, ${serviceType} Delaware County, mental health services PA, ${serviceType} near me`;
+  const serviceKeywords = keywords || defaultKeywords;
   
   return (
     <>
@@ -75,6 +98,8 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
         title={pageTitle}
         description={metaDescription}
         canonicalUrl={`https://sunrisehcsllc.com${canonicalUrl}`}
+        ogImage={heroImage}
+        keywords={serviceKeywords}
       />
       <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       

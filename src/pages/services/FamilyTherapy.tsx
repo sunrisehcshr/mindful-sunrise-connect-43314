@@ -60,8 +60,8 @@ const FamilyTherapy = () => {
     <ServicePageLayout
       title="Family Therapy in Havertown, PA"
       description="Comprehensive family counseling to improve communication, resolve conflicts, and strengthen relationships among all family members."
-      pageTitle="Expert Family Therapy in Havertown, PA - Relationship Counseling | Sunrise Human Care Services"
-      metaDescription="Professional family therapy in Havertown, PA to improve communication, resolve conflicts, and strengthen family bonds. Our experienced therapists help families thrive. Schedule today."
+      pageTitle="Expert Family Therapy in Havertown, PA | Improve Communication & Resolve Conflicts | Sunrise Human Care"
+      metaDescription="Professional family therapy in Havertown, PA to improve communication, resolve conflicts, and strengthen family bonds. Our experienced therapists help families navigate challenges, develop healthy boundaries, and create a supportive home environment. Schedule a consultation today."
       serviceType="Family Therapy"
       canonicalUrl="/family-therapy-havertown-pa"
       heroImage="/images/family-counseling-havertown.webp"
@@ -69,6 +69,7 @@ const FamilyTherapy = () => {
       approaches={approaches}
       faqs={faqs}
       relatedServices={relatedServices}
+      schemaType="TherapeuticProcedure"
     >
       {/* Service-specific content */}
       <section className="py-16 bg-secondary/10">

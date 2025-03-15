@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet-async";
 
 const SchemaMarkup = () => {
@@ -94,23 +95,63 @@ const SchemaMarkup = () => {
         "medicalSpecialty": ["Psychiatry", "Psychotherapy", "Mental Health"],
         "availableService": [
           {
-            "@type": "MedicalTherapy",
+            "@type": "TherapeuticProcedure",
+            "name": "Individual Therapy",
+            "url": "https://sunrisehcsllc.com/individual-therapy-havertown-pa",
+            "description": "Personalized one-on-one therapy sessions tailored to your unique needs"
+          },
+          {
+            "@type": "TherapeuticProcedure",
+            "name": "Couples Counseling",
+            "url": "https://sunrisehcsllc.com/couples-counseling-havertown-pa",
+            "description": "Specialized therapy to help couples improve communication and resolve conflicts"
+          },
+          {
+            "@type": "TherapeuticProcedure",
+            "name": "Family Therapy",
+            "url": "https://sunrisehcsllc.com/family-therapy-havertown-pa",
+            "description": "Comprehensive family counseling to improve relationships among all family members"
+          },
+          {
+            "@type": "TherapeuticProcedure",
+            "name": "Child & Adolescent Therapy",
+            "url": "https://sunrisehcsllc.com/child-therapy-havertown-pa",
+            "description": "Specialized therapeutic approaches for children and teens"
+          },
+          {
+            "@type": "TherapeuticProcedure",
             "name": "Anxiety Therapy",
-            "description": "Effective therapy approaches for anxiety disorders"
+            "url": "https://sunrisehcsllc.com/anxiety-therapy-havertown-pa",
+            "description": "Evidence-based therapy for all types of anxiety disorders"
           },
           {
-            "@type": "MedicalTherapy",
-            "name": "Depression Treatment",
-            "description": "Evidence-based therapy for depression"
+            "@type": "TherapeuticProcedure",
+            "name": "Depression Therapy",
+            "url": "https://sunrisehcsllc.com/depression-therapy-havertown-pa",
+            "description": "Effective, compassionate treatment for depression"
           },
           {
-            "@type": "MedicalTherapy",
-            "name": "ADHD Management",
-            "description": "Comprehensive ADHD treatment for children and adults"
+            "@type": "TherapeuticProcedure",
+            "name": "ADHD Treatment",
+            "url": "https://sunrisehcsllc.com/adhd-treatment-havertown-pa",
+            "description": "Comprehensive ADHD assessment and treatment for children, adolescents, and adults"
           },
           {
-            "@type": "MedicalTherapy",
-            "name": "Trauma Therapy",
+            "@type": "MedicalTest",
+            "name": "Psychiatric Evaluations",
+            "url": "https://sunrisehcsllc.com/psychiatric-evaluations-havertown-pa",
+            "description": "Comprehensive mental health assessments for accurate diagnosis"
+          },
+          {
+            "@type": "MedicalProcedure",
+            "name": "Medication Management",
+            "url": "https://sunrisehcsllc.com/medication-management-havertown-pa",
+            "description": "Expert psychiatric medication services to manage mental health conditions"
+          },
+          {
+            "@type": "TherapeuticProcedure",
+            "name": "Trauma & PTSD Therapy",
+            "url": "https://sunrisehcsllc.com/ptsd-therapy-havertown-pa",
             "description": "Specialized treatment for trauma and PTSD"
           }
         ],
@@ -161,6 +202,30 @@ const SchemaMarkup = () => {
             ],
             "opens": "09:00",
             "closes": "17:00"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://sunrisehcsllc.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sunrisehcsllc.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://sunrisehcsllc.com/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "All Services",
+            "item": "https://sunrisehcsllc.com/services"
           }
         ]
       }
