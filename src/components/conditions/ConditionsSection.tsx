@@ -1,8 +1,11 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Separator } from '@/components/ui/separator';
+import { Card, CardContent } from '@/components/ui/card';
 
 const ConditionsSection: React.FC = () => {
   const [expandedCondition, setExpandedCondition] = useState<number | null>(null);
@@ -99,47 +102,84 @@ const ConditionsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-secondary to-white" id="conditions-we-treat" aria-labelledby="conditions-heading">
+    <section className="py-16 bg-gradient-to-b from-secondary/80 to-white" id="conditions-we-treat" aria-labelledby="conditions-heading">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="section-tag font-semibold">
-            Conditions We Treat
-          </span>
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.span 
+            className="section-tag inline-flex items-center gap-1"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            <Sparkles className="h-3 w-3" /> Specialized Care
+          </motion.span>
+          
           <h2 id="conditions-heading" className="text-3xl md:text-4xl font-bold mb-4 font-opensans">
-            Specialized Mental Health Support
+            Conditions We Treat
           </h2>
+          
           <p className="text-muted-foreground">
             Our team provides expert care for a wide range of mental health conditions, 
             with treatment plans tailored to your unique needs.
           </p>
-        </div>
+          
+          <div className="mx-auto mt-6 mb-10 w-24">
+            <Separator className="bg-gradient-to-r from-transparent via-amber-300/50 to-transparent h-0.5" />
+          </div>
+        </motion.div>
         
         <TooltipProvider>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.05, delayChildren: 0.1 }}
+          >
             {conditions.map((condition, index) => (
-              <div key={index} className="flex flex-col">
+              <motion.div 
+                key={index} 
+                className="flex flex-col"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
+              >
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <motion.button 
                       onClick={() => toggleCondition(index)} 
                       className={`
-                        bg-white rounded-lg p-4 shadow-sm 
-                        border border-gray-100 hover:shadow-md transition-shadow duration-300 
-                        flex flex-col items-center justify-center text-center h-full
-                        ${expandedCondition === index ? 'border-primary ring-1 ring-primary/20' : ''}
+                        relative overflow-hidden rounded-lg p-4 h-full transition-all duration-300
+                        ${expandedCondition === index 
+                          ? 'bg-gradient-to-br from-orange-50 to-amber-100 border-primary shadow-md ring-1 ring-primary/20' 
+                          : 'bg-white/90 backdrop-blur-sm border border-amber-100/40 hover:shadow-md hover:border-amber-200/60'}
                       `}
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ 
+                        scale: 1.02,
+                        boxShadow: "0 4px 20px rgba(234, 179, 8, 0.1)"
+                      }}
                       whileTap={{ scale: 0.98 }}
                       aria-expanded={expandedCondition === index}
                     >
-                      <h3 className="text-lg font-semibold mb-1 text-foreground">{condition.title}</h3>
-                      {expandedCondition === index ? 
-                        <ChevronUp className="mt-2 h-4 w-4 text-primary" /> : 
-                        <ChevronDown className="mt-2 h-4 w-4 text-muted-foreground" />
-                      }
+                      <div className="flex flex-col items-center justify-center text-center">
+                        <h3 className="text-lg font-semibold mb-1 text-foreground">{condition.title}</h3>
+                        {expandedCondition === index ? 
+                          <ChevronUp className="mt-2 h-4 w-4 text-primary" /> : 
+                          <ChevronDown className="mt-2 h-4 w-4 text-amber-500/70" />
+                        }
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-amber-50/20 via-transparent to-orange-50/10 pointer-events-none rounded-md"></div>
                     </motion.button>
                   </TooltipTrigger>
-                  <TooltipContent side="top" className="max-w-xs">
+                  <TooltipContent side="top" className="max-w-xs bg-amber-50/90 backdrop-blur-sm border border-amber-200/40">
                     <p className="text-xs">{condition.short}</p>
                   </TooltipContent>
                 </Tooltip>
@@ -150,22 +190,27 @@ const ConditionsSection: React.FC = () => {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="mt-2 bg-white rounded-lg p-4 shadow-sm border border-gray-100"
+                    className="mt-2"
                   >
-                    <p className="text-sm text-foreground">{condition.details}</p>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      onClick={() => setExpandedCondition(null)} 
-                      className="mt-2 text-primary hover:text-primary-foreground hover:bg-primary/90"
-                    >
-                      Close
-                    </Button>
+                    <Card className="overflow-hidden border-amber-100/50 bg-gradient-to-br from-white to-amber-50/50 backdrop-blur-sm shadow-md">
+                      <CardContent className="p-4">
+                        <p className="text-sm text-foreground">{condition.details}</p>
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          onClick={() => setExpandedCondition(null)} 
+                          className="mt-3 text-amber-600 hover:text-amber-700 hover:bg-amber-100/50 group"
+                        >
+                          Close 
+                          <ChevronUp className="ml-1 h-4 w-4 group-hover:-translate-y-0.5 transition-transform" />
+                        </Button>
+                      </CardContent>
+                    </Card>
                   </motion.div>
                 )}
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </TooltipProvider>
       </div>
     </section>
