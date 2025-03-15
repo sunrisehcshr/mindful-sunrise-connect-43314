@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
@@ -12,80 +11,80 @@ const ServicesSection: React.FC = () => {
       icon: <Brain className="h-6 w-6" />,
       title: "Individual Therapy",
       description: "One-on-one therapy sessions tailored to your unique needs and challenges.",
-      color: "bg-blue-50 text-blue-600",
-      bgColor: "bg-gradient-to-r from-blue-400 to-blue-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/individual-therapy-havertown-pa"
     }, 
     {
       icon: <HeartHandshake className="h-6 w-6" />,
       title: "Couples Counseling",
       description: "Specialized therapy to help couples improve communication, resolve conflicts, and strengthen relationships.",
-      color: "bg-rose-50 text-rose-600",
-      bgColor: "bg-gradient-to-r from-rose-400 to-rose-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/couples-counseling-havertown-pa"
     }, 
     {
       icon: <Users className="h-6 w-6" />,
       title: "Family Therapy",
       description: "Therapy sessions focused on improving family relationships and communication.",
-      color: "bg-green-50 text-green-600",
-      bgColor: "bg-gradient-to-r from-green-400 to-green-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/family-therapy-havertown-pa"
     }, 
     {
       icon: <Laugh className="h-6 w-6" />,
       title: "Child & Adolescent Therapy",
       description: "Specialized therapy for children and teens facing behavioral or emotional challenges.",
-      color: "bg-amber-50 text-amber-600",
-      bgColor: "bg-gradient-to-r from-amber-400 to-amber-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/child-therapy-havertown-pa"
     }, 
     {
       icon: <Activity className="h-6 w-6" />,
       title: "Anxiety Therapy",
       description: "Evidence-based approaches for managing anxiety and stress-related disorders.",
-      color: "bg-purple-50 text-purple-600",
-      bgColor: "bg-gradient-to-r from-purple-400 to-purple-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/anxiety-therapy-havertown-pa"
     }, 
     {
       icon: <Heart className="h-6 w-6" />,
       title: "Depression Therapy",
       description: "Comprehensive treatment approaches for managing depression and mood disorders.",
-      color: "bg-blue-50 text-blue-600",
-      bgColor: "bg-gradient-to-r from-blue-400 to-blue-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/depression-therapy-havertown-pa"
     }, 
     {
       icon: <Sparkles className="h-6 w-6" />,
       title: "ADHD Treatment",
       description: "Specialized strategies and support for managing attention deficit hyperactivity disorder.",
-      color: "bg-orange-50 text-orange-600",
-      bgColor: "bg-gradient-to-r from-orange-400 to-orange-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/adhd-treatment-havertown-pa"
     }, 
     {
       icon: <PenTool className="h-6 w-6" />,
       title: "Psychiatric Evaluations",
       description: "Comprehensive mental health assessments and diagnostic services.",
-      color: "bg-cyan-50 text-cyan-600",
-      bgColor: "bg-gradient-to-r from-cyan-400 to-cyan-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/psychiatric-evaluations-havertown-pa"
     }, 
     {
       icon: <Pill className="h-6 w-6" />,
       title: "Medication Management",
       description: "Professional psychiatric medication reviews and management for mental health conditions.",
-      color: "bg-emerald-50 text-emerald-600",
-      bgColor: "bg-gradient-to-r from-emerald-400 to-emerald-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/medication-management-havertown-pa"
     }, 
     {
       icon: <Stethoscope className="h-6 w-6" />,
       title: "Trauma & PTSD Therapy",
       description: "Specialized treatment for trauma survivors using evidence-based approaches like EMDR.",
-      color: "bg-violet-50 text-violet-600",
-      bgColor: "bg-gradient-to-r from-violet-400 to-violet-500",
+      color: "bg-sunrise-50 text-sunrise-700",
+      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/ptsd-therapy-havertown-pa"
     }
   ];

@@ -26,22 +26,16 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
       className={cn(
-        "rounded-xl p-6 shadow-md border border-border/40 transition-all duration-300 flex flex-col h-full",
+        "rounded-xl p-6 shadow-md border border-sunrise-100/40 transition-all duration-300 flex flex-col h-full",
         "bg-white/80 backdrop-blur-sm hover:bg-white",
         "relative overflow-hidden"
       )}
     >
       <div 
-        className={cn(
-          "absolute top-0 left-0 w-full h-1.5 rounded-t-xl",
-          service.bgColor
-        )}
+        className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange-400 to-amber-400 rounded-t-xl"
       ></div>
 
-      <div className={cn(
-        "p-3 rounded-lg w-fit mb-4",
-        service.color
-      )}>
+      <div className="p-3 rounded-lg w-fit mb-4 bg-sunrise-50 text-sunrise-700">
         {service.icon}
       </div>
 
