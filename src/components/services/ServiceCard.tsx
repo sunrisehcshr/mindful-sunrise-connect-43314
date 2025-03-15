@@ -27,13 +27,13 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
       whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
       className={cn(
         "rounded-xl p-6 shadow-md border border-border/40 transition-all duration-300 flex flex-col h-full",
-        "bg-white/70 backdrop-blur-sm hover:bg-white/90",
+        "bg-white/80 backdrop-blur-sm hover:bg-white",
         "relative overflow-hidden"
       )}
     >
       <div 
         className={cn(
-          "absolute top-0 left-0 w-full h-1 rounded-t-xl",
+          "absolute top-0 left-0 w-full h-1.5 rounded-t-xl",
           service.bgColor
         )}
       ></div>
@@ -56,7 +56,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
         className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group mt-auto"
       >
         Learn more 
-        <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
       </Link>
     </motion.div>
   );

@@ -1,8 +1,22 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, CircleDot } from "lucide-react";
+import { Menu, X, CircleDot, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,6 +39,19 @@ const Navbar = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const serviceLinks = [
+    { title: "Individual Therapy", path: "/individual-therapy-havertown-pa" },
+    { title: "Couples Counseling", path: "/couples-counseling-havertown-pa" },
+    { title: "Family Therapy", path: "/family-therapy-havertown-pa" },
+    { title: "Child Therapy", path: "/child-therapy-havertown-pa" },
+    { title: "Anxiety Therapy", path: "/anxiety-therapy-havertown-pa" },
+    { title: "Depression Therapy", path: "/depression-therapy-havertown-pa" },
+    { title: "ADHD Treatment", path: "/adhd-treatment-havertown-pa" },
+    { title: "Psychiatric Evaluations", path: "/psychiatric-evaluations-havertown-pa" },
+    { title: "Medication Management", path: "/medication-management-havertown-pa" },
+    { title: "Trauma & PTSD Therapy", path: "/ptsd-therapy-havertown-pa" },
+  ];
+
   const navLinks = [
     {
       path: "/",
@@ -35,8 +62,9 @@ const Navbar = () => {
       label: "About"
     },
     {
-      path: "/services",
-      label: "Services"
+      type: "dropdown",
+      label: "Services",
+      children: serviceLinks
     },
     {
       path: "/blog",
@@ -66,19 +94,66 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            {navLinks.map(link => (
-              <Link 
-                key={link.path} 
-                to={link.path} 
-                className={cn(
-                  "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5", 
-                  isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
-                )}
-              >
-                {isActive(link.path)}
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link, index) => {
+              if (link.type === "dropdown") {
+                return (
+                  <NavigationMenu key={index}>
+                    <NavigationMenuList>
+                      <NavigationMenuItem>
+                        <NavigationMenuTrigger className={cn(
+                          "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5",
+                          isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                        )}>
+                          {link.label}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border w-[400px] p-2">
+                          <ul className="grid grid-cols-2 gap-3 p-2">
+                            {link.children.map((child, childIndex) => (
+                              <li key={childIndex}>
+                                <NavigationMenuLink asChild>
+                                  <Link
+                                    to={child.path}
+                                    className={cn(
+                                      "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                                      isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
+                                    )}
+                                  >
+                                    <div className="text-sm font-medium">{child.title}</div>
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                            ))}
+                          </ul>
+                          <div className="p-2 mt-2 pt-3 border-t">
+                            <Link 
+                              to="/services" 
+                              className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium"
+                            >
+                              View All Services
+                              <ChevronRight className="ml-1 h-4 w-4" />
+                            </Link>
+                          </div>
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    </NavigationMenuList>
+                  </NavigationMenu>
+                );
+              }
+              
+              return (
+                <Link 
+                  key={index} 
+                  to={link.path} 
+                  className={cn(
+                    "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5", 
+                    isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                  )}
+                >
+                  {isActive(link.path)}
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link to="/appointment" className="ml-2 px-4 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors">
               Book Now
             </Link>
@@ -95,19 +170,63 @@ const Navbar = () => {
       <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b", isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
         <div className="container mx-auto px-4 py-4">
           <nav className="flex flex-col space-y-2">
-            {navLinks.map(link => (
-              <Link 
-                key={link.path} 
-                to={link.path} 
-                className={cn(
-                  "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", 
-                  isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
-                )}
-              >
-                {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link, index) => {
+              if (link.type === "dropdown") {
+                return (
+                  <div key={index} className="space-y-2">
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="w-full">
+                        <div className={cn(
+                          "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
+                          isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                        )}>
+                          {link.label}
+                          <ChevronDown className="h-4 w-4 ml-2" />
+                        </div>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="w-[calc(100vw-2rem)] bg-white">
+                        {link.children.map((child, childIndex) => (
+                          <DropdownMenuItem key={childIndex} asChild>
+                            <Link 
+                              to={child.path} 
+                              className={cn(
+                                "px-4 py-2 text-sm", 
+                                isActive(child.path) ? "text-orange-600" : "text-muted-foreground"
+                              )}
+                            >
+                              {child.title}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                        <div className="p-2 mt-1 pt-3 border-t">
+                          <Link 
+                            to="/services" 
+                            className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium"
+                          >
+                            View All Services
+                            <ChevronRight className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                );
+              }
+              
+              return (
+                <Link 
+                  key={index} 
+                  to={link.path} 
+                  className={cn(
+                    "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", 
+                    isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                  )}
+                >
+                  {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link to="/appointment" className="px-4 py-3 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors text-center mt-2">
               Book Now
             </Link>
