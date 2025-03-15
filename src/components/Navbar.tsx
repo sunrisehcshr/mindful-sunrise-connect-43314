@@ -1,7 +1,7 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, CircleDot, ChevronDown, ChevronRight } from "lucide-react";
+import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -10,10 +10,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -25,9 +27,11 @@ const Navbar = () => {
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMobileServices = () => setMobileServicesOpen(!mobileServicesOpen);
 
   useEffect(() => {
     setIsMenuOpen(false);
+    setMobileServicesOpen(false);
   }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path;
@@ -95,35 +99,37 @@ const Navbar = () => {
                       <NavigationMenuItem>
                         <NavigationMenuTrigger className={cn(
                           "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5",
-                          isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                          isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600"
                         )}>
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-2">
-                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 p-2">
-                            {link.children.map((child, childIndex) => (
-                              <li key={childIndex}>
-                                <Link
-                                  to={child.path}
-                                  className={cn(
-                                    "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
-                                    isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
-                                  )}
-                                >
-                                  <div className="text-sm font-medium">{child.title}</div>
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                          <div className="p-2 mt-2 pt-3 border-t">
-                            <Link 
-                              to="/services" 
-                              className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium"
-                            >
-                              View All Services
-                              <ChevronRight className="ml-1 h-4 w-4" />
-                            </Link>
-                          </div>
+                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-2 w-[450px] max-h-[70vh] overflow-auto">
+                          <ScrollArea className="h-full w-full max-h-[65vh]">
+                            <ul className="grid grid-cols-2 gap-2 p-2">
+                              {link.children.map((child, childIndex) => (
+                                <li key={childIndex}>
+                                  <Link
+                                    to={child.path}
+                                    className={cn(
+                                      "block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
+                                      isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
+                                    )}
+                                  >
+                                    <div className="text-sm font-medium">{child.title}</div>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="p-2 mt-2 pt-3 border-t">
+                              <Link 
+                                to="/services" 
+                                className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium"
+                              >
+                                View All Services
+                                <ChevronRight className="ml-1 h-4 w-4" />
+                              </Link>
+                            </div>
+                          </ScrollArea>
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                     </NavigationMenuList>
@@ -137,7 +143,7 @@ const Navbar = () => {
                   to={link.path} 
                   className={cn(
                     "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5", 
-                    isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                    isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600"
                   )}
                 >
                   {link.label}
@@ -157,68 +163,78 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b z-40", isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex flex-col space-y-2">
-            {navLinks.map((link, index) => {
-              if (link.type === "dropdown") {
-                return (
-                  <div key={index} className="space-y-2">
-                    <div className={cn(
-                      "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
-                      isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground"
-                    )}>
-                      {link.label}
-                      <ChevronDown className="h-4 w-4 ml-2" />
-                    </div>
-                    <div className="pl-4 space-y-2 border-l border-orange-200 ml-2">
-                      {link.children.map((child, childIndex) => (
-                        <Link 
-                          key={childIndex}
-                          to={child.path} 
-                          className={cn(
-                            "block px-4 py-2 text-sm rounded-md transition-colors", 
-                            isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50"
-                          )}
-                        >
-                          {child.title}
-                        </Link>
-                      ))}
-                      <Link 
-                        to="/services" 
-                        className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2"
+      <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b z-40 max-h-[80vh] overflow-hidden", 
+        isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
+        <ScrollArea className="h-full max-h-[80vh]">
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex flex-col space-y-2">
+              {navLinks.map((link, index) => {
+                if (link.type === "dropdown") {
+                  return (
+                    <div key={index} className="space-y-2">
+                      <button
+                        onClick={toggleMobileServices}
+                        className={cn(
+                          "w-full px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
+                          isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground"
+                        )}
                       >
-                        View All Services
-                        <ChevronRight className="ml-1 h-4 w-4" />
-                      </Link>
+                        {link.label}
+                        {mobileServicesOpen ? 
+                          <ChevronUp className="h-4 w-4 ml-2" /> : 
+                          <ChevronDown className="h-4 w-4 ml-2" />
+                        }
+                      </button>
+                      {mobileServicesOpen && (
+                        <div className="pl-4 space-y-2 border-l border-orange-200 ml-2">
+                          {link.children.map((child, childIndex) => (
+                            <Link 
+                              key={childIndex}
+                              to={child.path} 
+                              className={cn(
+                                "block px-4 py-2 text-sm rounded-md transition-colors", 
+                                isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50"
+                              )}
+                            >
+                              {child.title}
+                            </Link>
+                          ))}
+                          <Link 
+                            to="/services" 
+                            className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2"
+                          >
+                            View All Services
+                            <ChevronRight className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  );
+                }
+                
+                return (
+                  <Link 
+                    key={index} 
+                    to={link.path} 
+                    className={cn(
+                      "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", 
+                      isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-50"
+                    )}
+                  >
+                    {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
+                    {link.label}
+                  </Link>
                 );
-              }
-              
-              return (
-                <Link 
-                  key={index} 
-                  to={link.path} 
-                  className={cn(
-                    "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", 
-                    isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-50"
-                  )}
-                >
-                  {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
-                  {link.label}
-                </Link>
-              );
-            })}
-            <Link to="/appointment" className="px-4 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium rounded-md hover:from-orange-600 hover:to-amber-600 transition-colors text-center mt-2 shadow-sm">
-              Book Now
-            </Link>
-          </nav>
-        </div>
+              })}
+              <Link to="/appointment" className="px-4 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium rounded-md hover:from-orange-600 hover:to-amber-600 transition-colors text-center mt-2 shadow-sm">
+                Book Now
+              </Link>
+            </nav>
+          </div>
+        </ScrollArea>
       </div>
     </header>
   );
 };
 
 export default Navbar;
-
