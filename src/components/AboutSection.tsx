@@ -1,7 +1,6 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import { Separator } from './ui/separator';
 import SectionTag from './ui/section-tag';
 
@@ -86,12 +85,6 @@ const AboutSection = () => {
             <p className="text-muted-foreground">
               Whether you're seeking support for a specific mental health condition, navigating a difficult life transition, or working toward personal growth, we're here to walk alongside you on your journey.
             </p>
-            
-            <div className="pt-4">
-              <Link to="/about" className="btn-outline-sunrise">
-                Learn More About Us <ArrowRight className="h-4 w-4 ml-1" />
-              </Link>
-            </div>
           </motion.div>
         </div>
       </div>

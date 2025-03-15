@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Trophy, MessageCircleHeart, Star } from 'lucide-react';
 import { Separator } from './ui/separator';
 import SectionTag from './ui/section-tag';
 
@@ -30,10 +30,10 @@ const WarmTestimonialsSection = () => {
       
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 opacity-10 text-orange-400 -z-5 hidden lg:block">
-        <Quote size={80} />
+        <MessageCircleHeart size={80} />
       </div>
       <div className="absolute bottom-10 right-10 opacity-10 text-orange-400 -z-5 hidden lg:block">
-        <Quote size={80} />
+        <MessageCircleHeart size={80} />
       </div>
       
       <div className="container mx-auto px-4">
@@ -77,7 +77,7 @@ const WarmTestimonialsSection = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-300 to-amber-300 rounded-t-xl"></div>
               
               <div className="text-amber-500 mb-4">
-                <Quote className="w-10 h-10" />
+                <Trophy className="w-10 h-10" />
               </div>
               
               <div className="flex-1">
