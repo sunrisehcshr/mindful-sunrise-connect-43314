@@ -103,15 +103,15 @@ const Navbar = () => {
                         )}>
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-4 w-[500px] max-h-[70vh] overflow-auto z-[100]">
+                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-6 w-[800px] max-h-[70vh] overflow-auto z-[100]">
                           <ScrollArea className="h-full w-full max-h-[65vh]">
-                            <ul className="grid grid-cols-2 gap-3">
+                            <ul className="grid grid-cols-2 gap-4">
                               {link.children.map((child, childIndex) => (
                                 <li key={childIndex}>
                                   <Link
                                     to={child.path}
                                     className={cn(
-                                      "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
+                                      "block select-none rounded-md p-4 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
                                       isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
                                     )}
                                   >
@@ -120,7 +120,7 @@ const Navbar = () => {
                                 </li>
                               ))}
                             </ul>
-                            <div className="p-2 mt-4 pt-4 border-t border-border">
+                            <div className="p-3 mt-5 pt-5 border-t border-border">
                               <Link 
                                 to="/services" 
                                 className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium"
