@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
+import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -99,11 +99,11 @@ const Navbar = () => {
                       <NavigationMenuItem>
                         <NavigationMenuTrigger className={cn(
                           "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5",
-                          isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600"
+                          isActive("/services") ? "text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:text-orange-600"
                         )}>
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-2 w-[450px] max-h-[70vh] overflow-auto">
+                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-2 w-[550px] max-h-[70vh] overflow-auto z-50">
                           <ScrollArea className="h-full w-full max-h-[65vh]">
                             <ul className="grid grid-cols-2 gap-2 p-2">
                               {link.children.map((child, childIndex) => (
@@ -111,11 +111,14 @@ const Navbar = () => {
                                   <Link
                                     to={child.path}
                                     className={cn(
-                                      "block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
-                                      isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
+                                      "block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:text-orange-600",
+                                      isActive(child.path) ? "text-orange-600" : "text-muted-foreground"
                                     )}
                                   >
-                                    <div className="text-sm font-medium">{child.title}</div>
+                                    <div className="flex items-center">
+                                      {isActive(child.path) && <Sparkles className="h-3.5 w-3.5 text-orange-500 mr-1.5" />}
+                                      <span className="text-sm font-medium">{child.title}</span>
+                                    </div>
                                   </Link>
                                 </li>
                               ))}
@@ -143,9 +146,10 @@ const Navbar = () => {
                   to={link.path} 
                   className={cn(
                     "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5", 
-                    isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600"
+                    isActive(link.path) ? "text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:text-orange-600"
                   )}
                 >
+                  {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
                   {link.label}
                 </Link>
               );
@@ -176,10 +180,13 @@ const Navbar = () => {
                         onClick={toggleMobileServices}
                         className={cn(
                           "w-full px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
-                          isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground"
+                          isActive("/services") ? "text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground"
                         )}
                       >
-                        {link.label}
+                        <span className="flex items-center">
+                          {isActive("/services") && <Sparkles className="h-3.5 w-3.5 text-orange-500 mr-1.5" />}
+                          {link.label}
+                        </span>
                         {mobileServicesOpen ? 
                           <ChevronUp className="h-4 w-4 ml-2" /> : 
                           <ChevronDown className="h-4 w-4 ml-2" />
@@ -192,10 +199,11 @@ const Navbar = () => {
                               key={childIndex}
                               to={child.path} 
                               className={cn(
-                                "block px-4 py-2 text-sm rounded-md transition-colors", 
-                                isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50"
+                                "block px-4 py-2 text-sm rounded-md transition-colors flex items-center", 
+                                isActive(child.path) ? "text-orange-600" : "text-muted-foreground hover:text-orange-600"
                               )}
                             >
+                              {isActive(child.path) && <Sparkles className="h-3.5 w-3.5 text-orange-500 mr-1.5" />}
                               {child.title}
                             </Link>
                           ))}
@@ -218,7 +226,7 @@ const Navbar = () => {
                     to={link.path} 
                     className={cn(
                       "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", 
-                      isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-50"
+                      isActive(link.path) ? "text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:text-orange-600"
                     )}
                   >
                     {isActive(link.path) && <CircleDot className="h-3.5 w-3.5 text-orange-500" />}
