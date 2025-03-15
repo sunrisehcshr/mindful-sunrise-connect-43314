@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { CalendarIcon, Phone, Mail, Hospital, Video, Clock } from 'lucide-react';
@@ -27,12 +26,21 @@ const QuickAppointmentForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const services = [
-    'Individual Therapy',
-    'Group Therapy',
-    'Family Counseling',
-    'Couples Counseling',
-    'Psychiatry & Medication Management',
-    'Specialized Programs',
+    "Individual Therapy",
+    "Couples Counseling",
+    "Family Therapy",
+    "Child & Adolescent Therapy",
+    "Group Therapy",
+    "Anxiety Therapy",
+    "Depression Therapy",
+    "Trauma & PTSD Therapy",
+    "ADHD Treatment",
+    "Psychiatric Evaluation",
+    "Medication Management",
+    "Substance Use Counseling",
+    "Grief Counseling",
+    "Life Transitions Counseling",
+    "Other"
   ];
   
   const timeSlots = [
@@ -80,7 +88,6 @@ const QuickAppointmentForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Format the date for the form submission
       const formattedData = {
         ...formData,
         date: formData.date ? format(formData.date, 'PPP') : '',
@@ -88,7 +95,6 @@ const QuickAppointmentForm: React.FC = () => {
         _cc: "shweta.s@sunrisehcsllc.com"
       };
       
-      // Send data to Formspree with the correct endpoint
       const response = await fetch('https://formspree.io/f/xpwqvvvw', {
         method: 'POST',
         headers: {
@@ -111,7 +117,6 @@ const QuickAppointmentForm: React.FC = () => {
           message: '',
         });
         
-        // Close the dialog after successful submission
         const closeButton = document.querySelector('[data-state="open"] button[data-state="closed"]');
         if (closeButton && closeButton instanceof HTMLElement) {
           closeButton.click();

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
-import { Phone, Star, Sparkles, Calendar } from 'lucide-react';
+import { Phone, Sparkles, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
 
 const WarmHeroSection = () => {
@@ -20,31 +20,6 @@ const WarmHeroSection = () => {
           <rect width="100%" height="100%" fill="url(#warm-pattern)" />
         </svg>
       </div>
-      
-      {/* Floating stars */}
-      <motion.div 
-        className="absolute top-40 left-20 text-amber-300 opacity-30 z-0 hidden md:block"
-        animate={{ y: [0, -10, 0], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Star size={24} fill="currentColor" />
-      </motion.div>
-      
-      <motion.div 
-        className="absolute bottom-32 right-40 text-orange-300 opacity-30 z-0 hidden md:block"
-        animate={{ y: [0, 10, 0], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <Star size={18} fill="currentColor" />
-      </motion.div>
-      
-      <motion.div 
-        className="absolute top-60 right-80 text-amber-200 opacity-20 z-0 hidden lg:block"
-        animate={{ y: [0, -15, 0], opacity: [0.2, 0.4, 0.2] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      >
-        <Star size={28} fill="currentColor" />
-      </motion.div>
       
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16">
@@ -123,30 +98,6 @@ const WarmHeroSection = () => {
                   src="/images/family-counseling-havertown.webp" 
                   alt="Expert family counseling services in Havertown, PA" 
                 />
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -bottom-8 right-6 text-orange-300 opacity-60 z-10"
-                animate={{ y: [0, -10, 0], rotate: [0, 10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Star size={28} fill="currentColor" />
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -bottom-12 -right-6 text-amber-300 opacity-60 z-10"
-                animate={{ y: [0, 10, 0], rotate: [0, -5, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              >
-                <Star size={32} fill="currentColor" />
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -bottom-6 right-14 text-orange-300 opacity-60 z-10"
-                animate={{ y: [0, -15, 0], rotate: [0, 15, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              >
-                <Star size={20} fill="currentColor" />
               </motion.div>
               
               <div className="absolute -z-10 rounded-full w-40 h-40 bg-orange-100/60 blur-3xl -top-10 -right-10"></div>

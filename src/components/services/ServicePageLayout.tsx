@@ -59,8 +59,8 @@ const ServicePageLayout = ({
         <Navbar />
         
         <main className="flex-grow pt-24">
-          {/* Hero Section */}
-          <section className="relative py-16 md:py-24 overflow-hidden">
+          {/* Hero Section - Optimized for mobile */}
+          <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
             <div className="absolute inset-0 z-0">
               <img
                 src={heroImage}
@@ -76,7 +76,7 @@ const ServicePageLayout = ({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="text-3xl md:text-5xl font-bold mb-6 text-white"
+                  className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white"
                 >
                   {title}
                 </motion.h1>
@@ -85,20 +85,20 @@ const ServicePageLayout = ({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-xl text-white/90 mb-8"
+                  className="text-base md:text-xl text-white/90 mb-6 md:mb-8"
                 >
                   {description}
                 </motion.p>
                 
-                <div className="flex flex-row gap-4 mt-8">
-                  <Link to="/appointment">
-                    <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50">
+                <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mt-6 md:mt-8">
+                  <Link to="/appointment" className="w-full sm:w-auto">
+                    <Button size="lg" className="w-full sm:w-auto bg-white text-orange-600 hover:bg-orange-50">
                       <Calendar className="mr-2 h-5 w-5" /> Schedule a Consultation
                     </Button>
                   </Link>
                   
-                  <a href="tel:+18146202162">
-                    <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white/10">
+                  <a href="tel:+18146202162" className="w-full sm:w-auto">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white/10">
                       <PhoneCall className="mr-2 h-5 w-5" /> Call (814) 620-2162
                     </Button>
                   </a>
@@ -111,14 +111,14 @@ const ServicePageLayout = ({
           {children}
           
           {/* Benefits Section */}
-          <section className="py-16 bg-orange-50/50">
+          <section className="py-12 md:py-16 bg-orange-50/50">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl font-bold mb-6">Benefits of {serviceType}</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-8" />
+              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Benefits of {serviceType}</h2>
+                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {benefits.map((benefit, index) => (
                   <motion.div
                     key={index}
@@ -133,7 +133,7 @@ const ServicePageLayout = ({
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <p className="text-lg text-muted-foreground">{benefit}</p>
+                    <p className="text-base md:text-lg text-muted-foreground">{benefit}</p>
                   </motion.div>
                 ))}
               </div>
@@ -141,17 +141,17 @@ const ServicePageLayout = ({
           </section>
           
           {/* Approaches Section */}
-          <section className="py-16 bg-white">
+          <section className="py-12 md:py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl font-bold mb-6">Our {serviceType} Approach</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-8" />
-                <p className="text-muted-foreground mb-8">
+              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Our {serviceType} Approach</h2>
+                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
+                <p className="text-muted-foreground mb-6 md:mb-8">
                   We utilize various evidence-based therapies tailored to your specific needs.
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {approaches.map((approach, index) => (
                   <motion.div
                     key={index}
@@ -159,34 +159,34 @@ const ServicePageLayout = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-orange-50/50 rounded-lg p-6 border border-orange-100/50"
+                    className="bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50"
                   >
-                    <h3 className="text-xl font-semibold mb-3">{approach.title}</h3>
-                    <p className="text-muted-foreground">{approach.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{approach.title}</h3>
+                    <p className="text-muted-foreground text-sm md:text-base">{approach.description}</p>
                   </motion.div>
                 ))}
               </div>
             </div>
           </section>
           
-          {/* CTA Section */}
-          <section className="py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
+          {/* CTA Section - Fixed button alignment */}
+          <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Take the First Step?</h2>
-                <p className="text-xl text-white/90 mb-8">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Take the First Step?</h2>
+                <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
                   Our compassionate team is here to support you on your mental health journey.
                 </p>
                 
-                <div className="flex flex-row justify-center gap-4">
-                  <Link to="/appointment">
-                    <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50">
+                <div className="flex flex-row flex-wrap sm:flex-nowrap justify-center gap-3 sm:gap-4">
+                  <Link to="/appointment" className="w-full sm:w-auto">
+                    <Button size="lg" className="w-full bg-white text-orange-600 hover:bg-orange-50">
                       <Calendar className="mr-2 h-5 w-5" /> Schedule an Appointment
                     </Button>
                   </Link>
                   
-                  <a href="tel:+18146202162">
-                    <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10">
+                  <a href="tel:+18146202162" className="w-full sm:w-auto">
+                    <Button variant="outline" size="lg" className="w-full bg-transparent border-white text-white hover:bg-white/10">
                       <PhoneCall className="mr-2 h-5 w-5" /> Call Us Today
                     </Button>
                   </a>
@@ -196,11 +196,11 @@ const ServicePageLayout = ({
           </section>
           
           {/* FAQs Section */}
-          <section className="py-16 bg-white">
+          <section className="py-12 md:py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-8" />
+              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Frequently Asked Questions</h2>
+                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
               </div>
               
               <div className="max-w-3xl mx-auto">
@@ -211,10 +211,10 @@ const ServicePageLayout = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="mb-6 bg-orange-50/50 rounded-lg p-6 border border-orange-100/50"
+                    className="mb-5 md:mb-6 bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50"
                   >
-                    <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                    <p className="text-muted-foreground">{faq.answer}</p>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{faq.question}</h3>
+                    <p className="text-muted-foreground text-sm md:text-base">{faq.answer}</p>
                   </motion.div>
                 ))}
               </div>
@@ -222,17 +222,17 @@ const ServicePageLayout = ({
           </section>
           
           {/* Related Services Section */}
-          <section className="py-16 bg-orange-50/50">
+          <section className="py-12 md:py-16 bg-orange-50/50">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl font-bold mb-6">Related Services</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-8" />
-                <p className="text-muted-foreground mb-8">
+              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Related Services</h2>
+                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
+                <p className="text-muted-foreground mb-6 md:mb-8">
                   Explore our other mental health services that complement {serviceType}.
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
                 {relatedServices.map((service, index) => (
                   <motion.div
                     key={index}
@@ -241,9 +241,9 @@ const ServicePageLayout = ({
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Link to={service.url} className="block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50 h-full">
-                      <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                      <div className="flex items-center text-orange-500 mt-4">
+                    <Link to={service.url} className="block bg-white rounded-lg p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50 h-full">
+                      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{service.title}</h3>
+                      <div className="flex items-center text-orange-500 mt-3 md:mt-4">
                         <span className="text-sm font-medium">Learn more</span>
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>

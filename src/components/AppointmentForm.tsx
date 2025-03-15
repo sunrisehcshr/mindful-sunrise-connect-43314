@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Calendar as CalendarIcon, Clock, Info } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
@@ -19,15 +18,22 @@ const timeSlots = [
   "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"
 ];
 
-// Services offered
+// Updated comprehensive list of all services
 const services = [
   "Individual Therapy",
   "Couples Counseling",
   "Family Therapy",
-  "Group Therapy",
   "Child & Adolescent Therapy",
+  "Group Therapy",
+  "Anxiety Therapy",
+  "Depression Therapy",
+  "Trauma & PTSD Therapy",
+  "ADHD Treatment",
   "Psychiatric Evaluation",
   "Medication Management",
+  "Substance Use Counseling",
+  "Grief Counseling",
+  "Life Transitions Counseling",
   "Other"
 ];
 
