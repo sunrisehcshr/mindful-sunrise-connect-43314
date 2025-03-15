@@ -7,7 +7,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -110,17 +109,15 @@ const Navbar = () => {
                           <ul className="grid grid-cols-2 gap-3 p-2">
                             {link.children.map((child, childIndex) => (
                               <li key={childIndex}>
-                                <NavigationMenuLink asChild>
-                                  <Link
-                                    to={child.path}
-                                    className={cn(
-                                      "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                                      isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
-                                    )}
-                                  >
-                                    <div className="text-sm font-medium">{child.title}</div>
-                                  </Link>
-                                </NavigationMenuLink>
+                                <Link
+                                  to={child.path}
+                                  className={cn(
+                                    "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                                    isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
+                                  )}
+                                >
+                                  <div className="text-sm font-medium">{child.title}</div>
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -149,12 +146,11 @@ const Navbar = () => {
                     isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                   )}
                 >
-                  {isActive(link.path)}
                   {link.label}
                 </Link>
               );
             })}
-            <Link to="/appointment" className="ml-2 px-4 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors">
+            <Link to="/appointment" className="ml-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium rounded-md hover:from-orange-600 hover:to-amber-600 transition-colors shadow-sm">
               Book Now
             </Link>
           </nav>
@@ -167,48 +163,41 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b", isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
+      <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b z-40", isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
         <div className="container mx-auto px-4 py-4">
           <nav className="flex flex-col space-y-2">
             {navLinks.map((link, index) => {
               if (link.type === "dropdown") {
                 return (
                   <div key={index} className="space-y-2">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="w-full">
-                        <div className={cn(
-                          "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
-                          isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
-                        )}>
-                          {link.label}
-                          <ChevronDown className="h-4 w-4 ml-2" />
-                        </div>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent className="w-[calc(100vw-2rem)] bg-white">
-                        {link.children.map((child, childIndex) => (
-                          <DropdownMenuItem key={childIndex} asChild>
-                            <Link 
-                              to={child.path} 
-                              className={cn(
-                                "px-4 py-2 text-sm", 
-                                isActive(child.path) ? "text-orange-600" : "text-muted-foreground"
-                              )}
-                            >
-                              {child.title}
-                            </Link>
-                          </DropdownMenuItem>
-                        ))}
-                        <div className="p-2 mt-1 pt-3 border-t">
-                          <Link 
-                            to="/services" 
-                            className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium"
-                          >
-                            View All Services
-                            <ChevronRight className="ml-1 h-4 w-4" />
-                          </Link>
-                        </div>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
+                    <div className={cn(
+                      "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
+                      isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                    )}>
+                      {link.label}
+                      <ChevronDown className="h-4 w-4 ml-2" />
+                    </div>
+                    <div className="pl-4 space-y-2 border-l border-orange-200 ml-2">
+                      {link.children.map((child, childIndex) => (
+                        <Link 
+                          key={childIndex}
+                          to={child.path} 
+                          className={cn(
+                            "block px-4 py-2 text-sm rounded-md", 
+                            isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground"
+                          )}
+                        >
+                          {child.title}
+                        </Link>
+                      ))}
+                      <Link 
+                        to="/services" 
+                        className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2"
+                      >
+                        View All Services
+                        <ChevronRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
                 );
               }
@@ -227,7 +216,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <Link to="/appointment" className="px-4 py-3 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors text-center mt-2">
+            <Link to="/appointment" className="px-4 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium rounded-md hover:from-orange-600 hover:to-amber-600 transition-colors text-center mt-2 shadow-sm">
               Book Now
             </Link>
           </nav>

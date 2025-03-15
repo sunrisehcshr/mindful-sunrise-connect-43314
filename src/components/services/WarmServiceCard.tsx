@@ -40,7 +40,7 @@ const WarmServiceCard: React.FC<WarmServiceCardProps> = ({
         <p className="text-amber-800 mb-4 text-sm">{description}</p>
         <Link
           to={url}
-          className="inline-flex items-center text-sm font-medium text-amber-700 hover:text-amber-800 transition-colors duration-200 group mt-2"
+          className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group mt-2 shadow-sm"
         >
           Learn more 
           <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

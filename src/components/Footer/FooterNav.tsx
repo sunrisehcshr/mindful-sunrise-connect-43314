@@ -1,14 +1,15 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { ChevronRight, ChevronDown } from 'lucide-react';
 
 const FooterNav: React.FC = () => {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const toggleSection = (label: string) => {
+    setOpenSection(openSection === label ? null : label);
+  };
+
   const links = [
     { to: "/", label: "Home" },
     { 
@@ -39,35 +40,43 @@ const FooterNav: React.FC = () => {
       {links.map((link, index) => (
         <li key={index}>
           {link.isDropdown ? (
-            <Collapsible>
-              <CollapsibleTrigger className="flex items-center justify-between w-full text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <div className="space-y-2">
+              <button 
+                onClick={() => toggleSection(link.label)}
+                className="flex items-center justify-between w-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
                 {link.label}
-                <ChevronRight className="h-4 w-4 text-muted-foreground" />
-              </CollapsibleTrigger>
-              <CollapsibleContent>
+                {openSection === link.label ? (
+                  <ChevronDown className="h-4 w-4 text-orange-400" />
+                ) : (
+                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                )}
+              </button>
+              
+              {openSection === link.label && (
                 <ul className="ml-4 mt-2 space-y-2">
                   {link.children?.map((child, childIndex) => (
                     <li key={childIndex}>
-                      <Link to={child.to} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                      <Link to={child.to} className="text-xs text-muted-foreground hover:text-foreground transition-colors block py-1">
                         {child.label}
                       </Link>
                     </li>
                   ))}
                   <li>
-                    <Link to="/services" className="text-xs text-orange-500 hover:text-orange-600 font-medium transition-colors flex items-center">
+                    <Link to="/services" className="text-xs text-orange-500 hover:text-orange-600 font-medium transition-colors flex items-center py-1">
                       All Services <ChevronRight className="h-3 w-3 ml-1" />
                     </Link>
                   </li>
                 </ul>
-              </CollapsibleContent>
-            </Collapsible>
+              )}
+            </div>
           ) : (
             link.to.endsWith('.xml') ? (
-              <a href={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors block py-1">
                 {link.label}
               </a>
             ) : (
-              <Link to={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link to={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors block py-1">
                 {link.label}
               </Link>
             )

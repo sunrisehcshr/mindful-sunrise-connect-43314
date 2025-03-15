@@ -12,7 +12,7 @@ interface ServiceProps {
     description: string;
     color: string;
     bgColor: string;
-    url?: string; // Add URL property for linking to individual service pages
+    url?: string;
   };
   index: number;
 }
@@ -53,7 +53,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
       
       <Link 
         to={service.url || "/services"} 
-        className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group mt-auto"
+        className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group mt-auto bg-orange-50 rounded-md px-3 py-1.5"
       >
         Learn more 
         <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
