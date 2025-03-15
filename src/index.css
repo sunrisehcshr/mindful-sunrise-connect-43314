@@ -97,10 +97,9 @@
     hover:bg-orange-50 transition-all duration-300 inline-flex items-center gap-2 text-sm shadow-sm hover:shadow-md;
   }
 
-  /* Updated section tag styling to be consistent across the site */
   .section-tag {
-    @apply inline-flex items-center px-2.5 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-white
-    border border-orange-400 shadow-sm mb-3 md:mb-4;
+    @apply inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-white
+    border border-orange-400 mb-3 md:mb-4 shadow-sm;
   }
   
   .orange-tag {

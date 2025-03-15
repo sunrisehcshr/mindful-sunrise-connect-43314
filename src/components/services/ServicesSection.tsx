@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
 import { Brain, Users, Heart, HeartHandshake, Stethoscope, Sparkles, ArrowRight, Activity, PenTool, Pill, Laugh } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Separator } from '../ui/separator';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
 const ServicesSection: React.FC = () => {
   const services = [{
     icon: <Brain className="h-6 w-6" />,
@@ -79,44 +76,56 @@ const ServicesSection: React.FC = () => {
     bgColor: "bg-gradient-to-r from-violet-400 to-violet-500",
     url: "/ptsd-therapy-havertown-pa"
   }];
-
-  return (
-    <section id="services" className="py-24 bg-gradient-to-b from-secondary/50 to-secondary">
+  return <section id="services" className="py-24 bg-gradient-to-b from-secondary/50 to-secondary">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
-          className="max-w-3xl mx-auto text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.span 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="section-tag inline-flex items-center gap-1.5 font-semibold text-sm"
-          >
-            <Sparkles className="h-3.5 w-3.5" /> Our Services
+        <motion.div className="max-w-3xl mx-auto text-center mb-12" initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6
+      }}>
+          <motion.span initial={{
+          opacity: 0,
+          scale: 0.9
+        }} whileInView={{
+          opacity: 1,
+          scale: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.4
+        }} className="section-tag inline-flex items-center gap-1 font-semibold text-sm">
+            <Sparkles className="h-3 w-3" /> Our Services
           </motion.span>
           
-          <motion.h2 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl font-bold mb-4 font-playfair md:text-4xl"
-          >
+          <motion.h2 initial={{
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5,
+          delay: 0.1
+        }} className="text-3xl font-bold mb-4 font-playfair md:text-6xl">
             Comprehensive Mental Health Services
           </motion.h2>
           
-          <motion.p 
-            className="text-muted-foreground"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <motion.p className="text-muted-foreground" initial={{
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5,
+          delay: 0.2
+        }}>
             Our team of experienced mental health professionals provides a range of services 
             designed to support your well-being and personal growth.
           </motion.p>
@@ -126,48 +135,25 @@ const ServicesSection: React.FC = () => {
           </div>
         </motion.div>
         
-        <div className="relative">
-          <Carousel 
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/3">
-                  <ServiceCard service={service} index={index} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="absolute -left-4 top-1/2 -translate-y-1/2 md:-left-12">
-              <CarouselPrevious className="relative left-0 bg-orange-50 hover:bg-orange-100 border-amber-200" />
-            </div>
-            <div className="absolute -right-4 top-1/2 -translate-y-1/2 md:-right-12">
-              <CarouselNext className="relative right-0 bg-orange-50 hover:bg-orange-100 border-amber-200" />
-            </div>
-          </Carousel>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          {services.map((service, index) => <ServiceCard key={index} service={service} index={index} />)}
         </div>
         
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <Link 
-            to="/services" 
-            className="btn-sunrise inline-flex items-center px-5 py-2 text-base"
-          >
-            View All Services
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+        <motion.div className="mt-16 text-center" initial={{
+        opacity: 0,
+        y: 10
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.5,
+        delay: 0.3
+      }}>
+          
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ServicesSection;
