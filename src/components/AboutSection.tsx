@@ -59,8 +59,8 @@ const AboutSection = () => {
           >
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="/images/office-interior.jpg" 
-                alt="Sunrise Human Care Services office" 
+                src="/images/therapy-for-older-adults.webp" 
+                alt="Therapy for older adults at Sunrise Human Care Services" 
                 className="w-full h-full object-cover"
               />
             </div>

@@ -81,11 +81,11 @@ const Navbar = () => {
     <header className={cn("fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300", isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent")}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-1.5 group">
             <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-10 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
             <div className="flex flex-col">
-              <span className="font-semibold leading-tight text-base">Sunrise</span>
-              <span className="text-muted-foreground leading-tight text-xs font-normal">Human Care Services</span>
+              <span className="font-semibold leading-tight text-base bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text">Sunrise</span>
+              <span className="text-muted-foreground leading-tight text-xs font-normal -mt-1">Human Care Services</span>
             </div>
           </Link>
 
@@ -103,15 +103,15 @@ const Navbar = () => {
                         )}>
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-6 w-[800px] max-h-[70vh] overflow-auto z-[100]">
+                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-4 w-[800px] max-h-[70vh] overflow-auto z-[100]">
                           <ScrollArea className="h-full w-full max-h-[65vh]">
-                            <ul className="grid grid-cols-2 gap-4">
+                            <ul className="grid grid-cols-2 gap-1.5">
                               {link.children.map((child, childIndex) => (
                                 <li key={childIndex} className="w-full">
                                   <Link
                                     to={child.path}
                                     className={cn(
-                                      "block select-none rounded-md p-4 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
+                                      "block select-none rounded-md py-2 px-3 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
                                       isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
                                     )}
                                   >
@@ -120,7 +120,7 @@ const Navbar = () => {
                                 </li>
                               ))}
                             </ul>
-                            <div className="p-3 mt-5 pt-5 border-t border-border">
+                            <div className="p-3 mt-3 pt-3 border-t border-border">
                               <Link 
                                 to="/services" 
                                 className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium"
@@ -186,7 +186,7 @@ const Navbar = () => {
                         }
                       </button>
                       {mobileServicesOpen && (
-                        <div className="pl-4 space-y-2 border-l border-orange-200 ml-2">
+                        <div className="pl-4 space-y-1 border-l border-orange-200 ml-2">
                           {link.children.map((child, childIndex) => (
                             <Link 
                               key={childIndex}

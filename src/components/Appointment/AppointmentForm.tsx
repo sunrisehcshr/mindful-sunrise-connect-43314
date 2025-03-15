@@ -16,7 +16,34 @@ const AppointmentForm: React.FC = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const services = ["Individual Therapy", "Group Therapy", "Family Counseling", "Couples Counseling", "Psychiatry & Medication Management", "Specialized Programs"];
+  
+  // Updated comprehensive list of all services
+  const services = [
+    "Individual Therapy", 
+    "Couples Counseling", 
+    "Family Therapy", 
+    "Child & Adolescent Therapy", 
+    "Group Therapy", 
+    "Anxiety Therapy", 
+    "Depression Therapy", 
+    "Trauma & PTSD Therapy", 
+    "ADHD Treatment", 
+    "Psychiatric Evaluation", 
+    "Medication Management", 
+    "Substance Use Counseling", 
+    "Grief Counseling", 
+    "Life Transitions Counseling",
+    "Therapy for Older Adults",
+    "Behavioral Health Services",
+    "Stress Management",
+    "Mental Health Assessment",
+    "Crisis Intervention",
+    "Cognitive Behavioral Therapy (CBT)",
+    "Dialectical Behavior Therapy (DBT)",
+    "Mindfulness-Based Therapy",
+    "Other"
+  ];
+  
   const timeSlots = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"];
 
   // Handle input changes
