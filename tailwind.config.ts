@@ -141,8 +141,9 @@ export default {
 				'gradient-shift': 'gradient-shift 8s ease infinite'
 			},
 			fontFamily: {
-				sans: ['Open Sans', 'system-ui', 'sans-serif'],
+				sans: ['Lato', 'system-ui', 'sans-serif'],
 				serif: ['Georgia', 'serif'],
+				lustria: ['Lustria', 'serif'],
 				lato: ['Lato', 'sans-serif']
 			}
 		}

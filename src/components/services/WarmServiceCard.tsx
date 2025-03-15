@@ -36,7 +36,7 @@ const WarmServiceCard: React.FC<WarmServiceCardProps> = ({
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-amber-900 mb-3 font-caladea">{title}</h3>
+        <h3 className="text-xl font-semibold text-amber-900 mb-3 font-lustria">{title}</h3>
         <p className="text-amber-800 mb-4 text-sm">{description}</p>
         <Link
           to={url}

@@ -53,7 +53,7 @@ const WarmTestimonialsSection = () => {
             <Sparkles className="h-3 w-3" /> Testimonials
           </motion.span>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-stylish">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-lustria">What Our Clients Say</h2>
           
           <p className="text-amber-800 max-w-2xl mx-auto">
             Real stories from people whose lives have been transformed through compassionate care and therapy.
@@ -90,7 +90,7 @@ const WarmTestimonialsSection = () => {
                     <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
                   ))}
                 </div>
-                <p className="font-semibold text-amber-900">{testimonial.author}</p>
+                <p className="font-semibold text-amber-900 font-lustria">{testimonial.author}</p>
               </div>
             </motion.div>
           ))}
