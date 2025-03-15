@@ -16,11 +16,12 @@ interface ServicePageLayoutProps {
   metaDescription: string;
   serviceType: string;
   canonicalUrl: string;
-  heroImage: string;
+  heroImage?: string;
   benefits: string[];
   approaches: { title: string; description: string; }[];
   faqs: { question: string; answer: string; }[];
   relatedServices: { title: string; url: string; }[];
+  schemaType?: string;
 }
 
 const ServicePageLayout = ({
@@ -31,11 +32,12 @@ const ServicePageLayout = ({
   metaDescription,
   serviceType,
   canonicalUrl,
-  heroImage,
+  heroImage = '/therapy-in-havertown.jpg',
   benefits,
   approaches,
   faqs,
-  relatedServices
+  relatedServices,
+  schemaType
 }: ServicePageLayoutProps) => {
   return (
     <>

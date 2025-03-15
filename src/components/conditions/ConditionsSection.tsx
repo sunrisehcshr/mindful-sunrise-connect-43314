@@ -1,7 +1,20 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
+import { ChevronUp, ChevronDown } from 'lucide-react';
+import { 
+  Card, 
+  CardContent 
+} from '../ui/card';
+import { Button } from '../ui/button';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 const ConditionsSection = () => {
   const [expandedCondition, setExpandedCondition] = useState<number | null>(null);
