@@ -77,7 +77,7 @@ const AboutSection = () => {
           >
             <h3 className="text-2xl font-semibold text-amber-900">Compassionate Care for Every Journey</h3>
             <p className="text-muted-foreground">
-              Founded in 2018, Sunrise Human Care Services was born from a vision to create a mental health practice that truly puts clients first. We recognized the need for warm, accessible mental health care in the Havertown community and surrounding areas.
+              Founded by Michael Thevar, whose dedication to mental health spans over 30 years. Built on a foundation of experience, trust, and community care, we are committed to helping individuals navigate their challenges and realize their full potential.
             </p>
             <p className="text-muted-foreground">
               Our team of experienced therapists and psychiatric providers brings diverse backgrounds and specialties, united by a shared commitment to compassionate, evidence-based care. We believe in treating the whole person, not just symptoms, and in creating individualized treatment plans that respect each client's unique needs and goals.
