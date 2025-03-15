@@ -65,7 +65,6 @@ const PsychiatricEvaluations = () => {
       serviceType="Psychiatric Evaluations"
       canonicalUrl="/psychiatric-evaluations-havertown-pa"
       schemaType="MedicalService"
-      heroImage="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1470&auto=format&fit=crop"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -76,7 +75,7 @@ const PsychiatricEvaluations = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-caladea">
                 Understanding Psychiatric Evaluations
               </h2>
               
@@ -100,7 +99,7 @@ const PsychiatricEvaluations = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-opensans">
+              <h3 className="text-xl font-semibold mb-4 font-caladea">
                 Our Evaluations Assess:
               </h3>
               
@@ -139,45 +138,6 @@ const PsychiatricEvaluations = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Evaluation process visual section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <h3 className="text-xl font-semibold mb-8 text-center font-opensans">The Evaluation Process</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <div className="bg-amber-50 p-5 rounded-lg text-center">
-              <div className="text-3xl text-amber-600 font-bold mb-2">1</div>
-              <h4 className="font-medium mb-2">Initial Assessment</h4>
-              <p className="text-sm text-muted-foreground">Comprehensive interview about your symptoms, history, and concerns</p>
-            </div>
-            <div className="bg-amber-50 p-5 rounded-lg text-center">
-              <div className="text-3xl text-amber-600 font-bold mb-2">2</div>
-              <h4 className="font-medium mb-2">Standardized Testing</h4>
-              <p className="text-sm text-muted-foreground">Evidence-based assessments to measure symptoms objectively</p>
-            </div>
-            <div className="bg-amber-50 p-5 rounded-lg text-center">
-              <div className="text-3xl text-amber-600 font-bold mb-2">3</div>
-              <h4 className="font-medium mb-2">Diagnostic Formulation</h4>
-              <p className="text-sm text-muted-foreground">Analysis of all information to determine accurate diagnosis</p>
-            </div>
-            <div className="bg-amber-50 p-5 rounded-lg text-center">
-              <div className="text-3xl text-amber-600 font-bold mb-2">4</div>
-              <h4 className="font-medium mb-2">Treatment Planning</h4>
-              <p className="text-sm text-muted-foreground">Personalized recommendations based on evaluation findings</p>
-            </div>
-          </div>
-          <div className="mt-10 max-w-3xl mx-auto">
-            <img 
-              src="https://images.unsplash.com/photo-1606818953965-11a352351799?q=80&w=1470&auto=format&fit=crop" 
-              alt="Healthcare professional discussing results with a patient" 
-              className="rounded-lg shadow-md w-full h-auto object-cover"
-            />
-            <p className="text-center text-muted-foreground mt-4">
-              Our psychiatric providers take time to explain findings and treatment options in clear, understandable terms.
-            </p>
           </div>
         </div>
       </section>

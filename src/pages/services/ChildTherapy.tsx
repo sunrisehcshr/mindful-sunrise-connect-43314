@@ -64,7 +64,6 @@ const ChildTherapy = () => {
       metaDescription="Professional child and teen therapy in Havertown, PA. Age-appropriate counseling for anxiety, depression, behavioral issues, and developmental challenges. Schedule a consultation today."
       serviceType="Child & Adolescent Therapy"
       canonicalUrl="/child-therapy-havertown-pa"
-      heroImage="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=1335&auto=format&fit=crop"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -75,7 +74,7 @@ const ChildTherapy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 Our Approach to Working with Children & Teens
               </h2>
               
@@ -95,7 +94,7 @@ const ChildTherapy = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-opensans">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 Our Child & Adolescent Therapy Helps With:
               </h3>
               
@@ -133,30 +132,6 @@ const ChildTherapy = () => {
                   <span>Identity and self-esteem development</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Child therapy play area section with image */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto">
-            <div className="md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1602619075660-567db0b8d9cd?q=80&w=1374&auto=format&fit=crop" 
-                alt="Child-friendly therapy play area with toys and art supplies" 
-                className="rounded-lg shadow-md w-full h-auto object-cover"
-              />
-            </div>
-            <div className="md:w-1/2">
-              <h3 className="text-xl font-semibold mb-3 font-opensans">Our Child-Friendly Therapy Environment</h3>
-              <p className="text-muted-foreground mb-4">
-                Our therapy rooms are specially designed to help children feel comfortable, safe, and engaged. Through play, art, and other expressive activities, children can communicate and process their experiences in ways that feel natural to them.
-              </p>
-              <p className="text-muted-foreground">
-                We use a variety of therapeutic toys, games, art supplies, and other materials that are carefully selected to facilitate emotional expression, problem-solving, and skill development.
-              </p>
             </div>
           </div>
         </div>

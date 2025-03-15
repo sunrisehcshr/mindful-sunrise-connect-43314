@@ -75,7 +75,7 @@ const FamilyTherapy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 What to Expect in Family Therapy
               </h2>
               
@@ -95,7 +95,7 @@ const FamilyTherapy = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-opensans">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 Our Family Therapy Helps With:
               </h3>
               
@@ -133,45 +133,6 @@ const FamilyTherapy = () => {
                   <span>Family conflict resolution</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Additional image section showing family therapy session */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-            <div>
-              <h3 className="text-xl font-semibold mb-4 font-opensans">Building Stronger Families Together</h3>
-              <p className="text-muted-foreground mb-4">
-                Family therapy provides a safe space where all members can express themselves and be heard, helping to resolve conflicts and strengthen bonds.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-start">
-                  <span className="text-sunrise-500 mr-2 text-lg">→</span>
-                  <span>Learn effective communication skills</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-sunrise-500 mr-2 text-lg">→</span>
-                  <span>Develop healthier interaction patterns</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-sunrise-500 mr-2 text-lg">→</span>
-                  <span>Understand each other's perspectives</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-sunrise-500 mr-2 text-lg">→</span>
-                  <span>Create a more supportive home environment</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img 
-                src="/images/family-counseling-havertown.webp" 
-                alt="Family therapy session with parents and children" 
-                className="rounded-lg shadow-md w-full h-auto object-cover"
-              />
             </div>
           </div>
         </div>

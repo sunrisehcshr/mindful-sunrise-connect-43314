@@ -1,7 +1,6 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import { motion } from 'framer-motion';
 
 const AnxietyTherapy = () => {
   const benefits = [
@@ -65,7 +64,6 @@ const AnxietyTherapy = () => {
       metaDescription="Specialized anxiety treatment in Havertown, PA. Evidence-based therapy for panic attacks, generalized anxiety, social anxiety, and phobias. Find relief with our experienced therapists."
       serviceType="Anxiety Therapy"
       canonicalUrl="/anxiety-therapy-havertown-pa"
-      heroImage="https://images.unsplash.com/photo-1521310192545-4ac7b234d1a8?q=80&w=1287&auto=format&fit=crop"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -76,7 +74,7 @@ const AnxietyTherapy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 Understanding Anxiety Treatment
               </h2>
               
@@ -96,7 +94,7 @@ const AnxietyTherapy = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-opensans">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 We Treat All Types of Anxiety:
               </h3>
               
@@ -134,47 +132,6 @@ const AnxietyTherapy = () => {
                   <span>General stress and worry</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Additional image section with anxiety management visualization */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl w-full">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 font-opensans">Anxiety Management Techniques</h3>
-                <p className="text-muted-foreground mb-4">
-                  Our therapists will work with you to develop a personalized toolkit of anxiety management strategies that work for your specific needs and lifestyle.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-sunrise-500 mr-2">•</span>
-                    <span>Breathing and relaxation techniques</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-sunrise-500 mr-2">•</span>
-                    <span>Cognitive restructuring for anxious thoughts</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-sunrise-500 mr-2">•</span>
-                    <span>Mindfulness and grounding practices</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-sunrise-500 mr-2">•</span>
-                    <span>Gradual exposure to anxiety triggers</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1399&auto=format&fit=crop" 
-                  alt="Person practicing mindfulness in a peaceful setting" 
-                  className="rounded-lg shadow-md w-full h-auto object-cover"
-                />
-              </div>
             </div>
           </div>
         </div>

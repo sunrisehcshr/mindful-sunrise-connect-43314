@@ -64,7 +64,6 @@ const ADHDTreatment = () => {
       metaDescription="Specialized ADHD treatment in Havertown, PA for children, teens, and adults. Comprehensive assessment, therapy, and medication management to improve focus, organization, and productivity."
       serviceType="ADHD Treatment"
       canonicalUrl="/adhd-treatment-havertown-pa"
-      heroImage="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?q=80&w=1472&auto=format&fit=crop"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -75,7 +74,7 @@ const ADHDTreatment = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 Our Approach to ADHD Treatment
               </h2>
               
@@ -99,7 +98,7 @@ const ADHDTreatment = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-opensans">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 Our ADHD Treatment Services Include:
               </h3>
               
@@ -137,48 +136,6 @@ const ADHDTreatment = () => {
                   <span>Treatment for co-occurring conditions (anxiety, depression)</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* ADHD strategies visualization */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center">
-            <h3 className="text-xl font-semibold mb-6 text-center font-opensans">ADHD Management Strategies</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=1476&auto=format&fit=crop" 
-                  alt="Person using organizational tools and planning systems" 
-                  className="rounded-lg shadow-md w-full h-auto object-cover"
-                />
-              </div>
-              <div className="flex flex-col justify-center space-y-4">
-                <h4 className="text-lg font-medium text-amber-700">Tools for Success</h4>
-                <p className="text-muted-foreground">
-                  Our therapists will help you develop and implement personalized organizational systems and strategies that work with your brain, not against it.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-sunrise-500 mr-2">•</span>
-                    <span>Digital and physical planning systems</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-sunrise-500 mr-2">•</span>
-                    <span>Task prioritization methods</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-sunrise-500 mr-2">•</span>
-                    <span>Environmental modifications</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-sunrise-500 mr-2">•</span>
-                    <span>Time management techniques</span>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>

@@ -1,8 +1,6 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
 
 const CouplesCounseling = () => {
   const benefits = [
@@ -77,7 +75,7 @@ const CouplesCounseling = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 Our Approach to Couples Counseling
               </h2>
               
@@ -97,7 +95,7 @@ const CouplesCounseling = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-opensans">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 Our Couples Counseling Helps With:
               </h3>
               
@@ -136,22 +134,6 @@ const CouplesCounseling = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Additional image section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center">
-            <img 
-              src="/images/couple-counseling-havertown-pa.webp" 
-              alt="Couples working together in therapy session" 
-              className="rounded-lg shadow-md max-w-2xl w-full h-auto object-cover"
-            />
-            <p className="text-center text-muted-foreground mt-4 max-w-2xl">
-              Our dedicated therapists create a supportive environment where couples can rebuild trust and strengthen their connection.
-            </p>
           </div>
         </div>
       </section>

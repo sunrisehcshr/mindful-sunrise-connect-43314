@@ -64,7 +64,6 @@ const IndividualTherapy = () => {
       metaDescription="Compassionate individual therapy in Havertown, PA for anxiety, depression, trauma, and personal growth. Private, confidential sessions with experienced therapists. Schedule today."
       serviceType="Individual Therapy"
       canonicalUrl="/individual-therapy-havertown-pa"
-      heroImage="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1480&auto=format&fit=crop"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -75,7 +74,7 @@ const IndividualTherapy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 What to Expect in Individual Therapy
               </h2>
               
@@ -95,7 +94,7 @@ const IndividualTherapy = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-opensans">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 Our Individual Therapy Services Help With:
               </h3>
               
@@ -133,41 +132,6 @@ const IndividualTherapy = () => {
                   <span>Relationship issues</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Therapeutic journey section with image */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center gap-10 max-w-5xl mx-auto">
-            <div className="md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1531315630201-bb15abeb1653?q=80&w=1374&auto=format&fit=crop" 
-                alt="Serene therapy office with comfortable seating" 
-                className="rounded-lg shadow-md w-full h-auto object-cover"
-              />
-            </div>
-            <div className="md:w-1/2 space-y-4">
-              <h3 className="text-xl font-semibold font-opensans">Your Therapeutic Journey</h3>
-              <p className="text-muted-foreground">
-                In our comfortable, welcoming space, you'll find the support you need to address life's challenges and work toward your goals.
-              </p>
-              <div className="space-y-3 pt-2">
-                <div className="bg-amber-50 p-3 rounded-md">
-                  <h4 className="font-medium text-amber-800">Initial Consultation</h4>
-                  <p className="text-sm text-muted-foreground">Get to know your therapist and discuss your concerns and treatment goals.</p>
-                </div>
-                <div className="bg-amber-50 p-3 rounded-md">
-                  <h4 className="font-medium text-amber-800">Personalized Treatment Plan</h4>
-                  <p className="text-sm text-muted-foreground">Develop a roadmap for your therapy journey based on your specific needs.</p>
-                </div>
-                <div className="bg-amber-50 p-3 rounded-md">
-                  <h4 className="font-medium text-amber-800">Ongoing Support</h4>
-                  <p className="text-sm text-muted-foreground">Regular sessions to build skills, gain insights, and work toward your goals.</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

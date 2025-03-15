@@ -65,7 +65,6 @@ const MedicationManagement = () => {
       serviceType="Medication Management"
       canonicalUrl="/medication-management-havertown-pa"
       schemaType="MedicalService"
-      heroImage="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1460&auto=format&fit=crop"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -76,7 +75,7 @@ const MedicationManagement = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 Our Approach to Medication Management
               </h2>
               
@@ -100,7 +99,7 @@ const MedicationManagement = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-opensans">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 We Provide Medication Management For:
               </h3>
               
@@ -138,45 +137,6 @@ const MedicationManagement = () => {
                   <span>Complex or treatment-resistant conditions</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Medication management visual section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&w=1374&auto=format&fit=crop" 
-                alt="Healthcare professional consulting with patient about medication options" 
-                className="rounded-lg shadow-md w-full h-auto object-cover"
-              />
-            </div>
-            <div className="space-y-5">
-              <h3 className="text-xl font-semibold font-opensans">Personalized Medication Management</h3>
-              <p className="text-muted-foreground">
-                Our psychiatric specialists take a personalized approach to medication, considering your unique symptoms, medical history, and treatment goals.
-              </p>
-              <div className="space-y-3">
-                <div className="bg-slate-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-amber-700 mb-1">Initial Evaluation</h4>
-                  <p className="text-sm text-muted-foreground">Comprehensive assessment to determine if medication might be beneficial.</p>
-                </div>
-                <div className="bg-slate-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-amber-700 mb-1">Medication Selection</h4>
-                  <p className="text-sm text-muted-foreground">Carefully chosen medications based on your specific needs and medical profile.</p>
-                </div>
-                <div className="bg-slate-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-amber-700 mb-1">Ongoing Monitoring</h4>
-                  <p className="text-sm text-muted-foreground">Regular follow-up appointments to assess effectiveness and make adjustments as needed.</p>
-                </div>
-                <div className="bg-slate-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-amber-700 mb-1">Education & Support</h4>
-                  <p className="text-sm text-muted-foreground">Clear information about your medication, potential side effects, and management strategies.</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
