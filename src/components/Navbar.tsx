@@ -103,15 +103,15 @@ const Navbar = () => {
                         )}>
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-2 w-[450px] max-h-[70vh] overflow-auto">
+                        <NavigationMenuContent className="bg-white rounded-md shadow-lg border border-border p-4 w-[500px] max-h-[70vh] overflow-auto z-[100]">
                           <ScrollArea className="h-full w-full max-h-[65vh]">
-                            <ul className="grid grid-cols-2 gap-2 p-2">
+                            <ul className="grid grid-cols-2 gap-3">
                               {link.children.map((child, childIndex) => (
                                 <li key={childIndex}>
                                   <Link
                                     to={child.path}
                                     className={cn(
-                                      "block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
+                                      "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600",
                                       isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
                                     )}
                                   >
@@ -120,7 +120,7 @@ const Navbar = () => {
                                 </li>
                               ))}
                             </ul>
-                            <div className="p-2 mt-2 pt-3 border-t">
+                            <div className="p-2 mt-4 pt-4 border-t border-border">
                               <Link 
                                 to="/services" 
                                 className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium"
