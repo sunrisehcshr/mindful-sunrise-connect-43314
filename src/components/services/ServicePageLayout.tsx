@@ -50,9 +50,9 @@ const ServicePageLayout = ({
         canonicalUrl={canonicalUrl}
       />
       <SchemaMarkup
-        itemName={`${serviceType} - Sunrise Human Care Services`}
-        itemDescription={metaDescription}
-        itemType={schemaType || "MedicalTherapy"}
+        name={`${serviceType} - Sunrise Human Care Services`}
+        description={metaDescription}
+        type={schemaType || "MedicalTherapy"}
       />
 
       <div className="flex flex-col min-h-screen">
