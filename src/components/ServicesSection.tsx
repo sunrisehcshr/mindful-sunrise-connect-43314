@@ -69,8 +69,8 @@ const ServicesSection = () => {
     <section className="py-20 bg-background" id="services">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-400/20 text-sunrise-900 mb-4">
-            Our Services
+          <span className="section-tag inline-flex items-center gap-1.5 font-semibold text-sm">
+            <Sparkles className="h-3.5 w-3.5" /> Our Services
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Comprehensive Mental Health Services

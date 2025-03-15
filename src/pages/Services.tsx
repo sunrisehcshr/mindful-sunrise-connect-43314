@@ -8,10 +8,16 @@ import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import { Separator } from '@/components/ui/separator';
 import { Sparkles } from 'lucide-react';
+import SpecialtiesSection from '../components/SpecialtiesSection';
+import AppointmentSection from '../components/Appointment/AppointmentSection';
 
 const Services = () => {
-  return <>
-      <SEOHead title="Our Services | Sunrise Human Care Services" description="Comprehensive mental health services in Havertown, PA. Therapy for anxiety, depression, family counseling, and specialized care for all ages." />
+  return (
+    <>
+      <SEOHead 
+        title="Our Services | Sunrise Human Care Services" 
+        description="Comprehensive mental health services in Havertown, PA. Therapy for anxiety, depression, family counseling, and specialized care for all ages." 
+      />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-24">
@@ -48,10 +54,20 @@ const Services = () => {
             <Separator className="bg-gradient-to-r from-transparent via-amber-200 to-transparent h-0.5" />
           </div>
           
+          <SpecialtiesSection />
+          
+          <div className="container mx-auto px-4 py-8">
+            <Separator className="bg-gradient-to-r from-transparent via-amber-200 to-transparent h-0.5" />
+          </div>
+          
           <ConditionsSection />
+          
+          <AppointmentSection />
         </main>
         <Footer />
       </div>
-    </>;
+    </>
+  );
 };
+
 export default Services;

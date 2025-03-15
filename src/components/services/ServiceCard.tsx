@@ -24,9 +24,9 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+      whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
       className={cn(
-        "rounded-xl p-6 shadow-md border border-border/40 transition-all duration-300 flex flex-col h-full",
+        "rounded-xl p-6 shadow-md border border-border/40 transition-all duration-300 flex flex-col h-full mx-2",
         "bg-white/80 backdrop-blur-sm hover:bg-white",
         "relative overflow-hidden"
       )}
