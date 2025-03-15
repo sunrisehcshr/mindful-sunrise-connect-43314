@@ -64,6 +64,7 @@ const DepressionTherapy = () => {
       metaDescription="Specialized depression treatment in Havertown, PA. Our experienced therapists provide evidence-based therapy to help you overcome depression and regain joy and purpose. Schedule today."
       serviceType="Depression Therapy"
       canonicalUrl="/depression-therapy-havertown-pa"
+      heroImage="https://images.unsplash.com/photo-1491295314828-fb03946d9b92?q=80&w=1470&auto=format&fit=crop"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -74,7 +75,7 @@ const DepressionTherapy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-opensans">
                 Our Approach to Depression Treatment
               </h2>
               
@@ -94,7 +95,7 @@ const DepressionTherapy = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
+              <h3 className="text-xl font-semibold mb-4 font-opensans">
                 Our Depression Treatment Helps With:
               </h3>
               
@@ -133,6 +134,43 @@ const DepressionTherapy = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Recovery journey section with image */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <h3 className="text-2xl font-semibold mb-8 text-center font-opensans">Your Recovery Journey</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-slate-50 p-6 rounded-lg shadow-sm">
+              <h4 className="text-lg font-medium mb-3 text-amber-700">Beginning Treatment</h4>
+              <p className="text-sm text-muted-foreground">
+                We start with a thorough assessment to understand your unique symptoms and develop a personalized treatment plan focused on your specific needs.
+              </p>
+            </div>
+            <div className="bg-slate-50 p-6 rounded-lg shadow-sm">
+              <h4 className="text-lg font-medium mb-3 text-amber-700">Building Skills</h4>
+              <p className="text-sm text-muted-foreground">
+                Learn practical coping strategies, identify negative thought patterns, and gradually increase activities that bring a sense of accomplishment and pleasure.
+              </p>
+            </div>
+            <div className="bg-slate-50 p-6 rounded-lg shadow-sm">
+              <h4 className="text-lg font-medium mb-3 text-amber-700">Sustaining Progress</h4>
+              <p className="text-sm text-muted-foreground">
+                Develop relapse prevention strategies, strengthen your support systems, and continue building a life of meaning and fulfillment beyond depression.
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 max-w-2xl mx-auto">
+            <img 
+              src="https://images.unsplash.com/photo-1535513261935-77b12d942d29?q=80&w=1472&auto=format&fit=crop" 
+              alt="Person enjoying a peaceful moment in nature, representing recovery from depression" 
+              className="rounded-lg shadow-md w-full h-auto object-cover"
+            />
+            <p className="text-center text-muted-foreground mt-4">
+              Recovery from depression is possible. Our therapists will be with you every step of the way.
+            </p>
           </div>
         </div>
       </section>
