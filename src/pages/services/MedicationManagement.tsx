@@ -65,7 +65,6 @@ const MedicationManagement = () => {
       serviceType="Medication Management"
       canonicalUrl="/medication-management-havertown-pa"
       schemaType="MedicalService"
-      heroImage="/images/medication-management-havertown.webp"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -76,7 +75,7 @@ const MedicationManagement = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-caladea">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 Our Approach to Medication Management
               </h2>
               
@@ -100,10 +99,7 @@ const MedicationManagement = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <span className="section-tag font-semibold mb-3 inline-block">
-                Medication Services
-              </span>
-              <h3 className="text-xl font-semibold mb-4 font-caladea">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 We Provide Medication Management For:
               </h3>
               

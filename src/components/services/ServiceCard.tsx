@@ -13,7 +13,6 @@ interface ServiceProps {
     color: string;
     bgColor: string;
     url?: string;
-    tag?: string;
   };
   index: number;
 }
@@ -39,10 +38,6 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
         )}
       ></div>
 
-      <span className="section-tag font-semibold mb-3 inline-block">
-        {service.tag || "Specialty"}
-      </span>
-
       <div className={cn(
         "p-3 rounded-lg w-fit mb-4",
         service.color
@@ -58,7 +53,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
       
       <Link 
         to={service.url || "/services"} 
-        className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group mt-auto"
+        className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group mt-auto bg-orange-50 rounded-md px-3 py-1.5"
       >
         Learn more 
         <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />

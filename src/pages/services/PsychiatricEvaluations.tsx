@@ -65,7 +65,6 @@ const PsychiatricEvaluations = () => {
       serviceType="Psychiatric Evaluations"
       canonicalUrl="/psychiatric-evaluations-havertown-pa"
       schemaType="MedicalService"
-      heroImage="/images/psychiatric-evaluations-havertown.webp"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -100,9 +99,6 @@ const PsychiatricEvaluations = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <span className="section-tag font-semibold mb-3 inline-block">
-                Diagnostic Services
-              </span>
               <h3 className="text-xl font-semibold mb-4 font-caladea">
                 Our Evaluations Assess:
               </h3>

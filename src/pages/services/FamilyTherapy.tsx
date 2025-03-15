@@ -75,7 +75,7 @@ const FamilyTherapy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-caladea">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
                 What to Expect in Family Therapy
               </h2>
               
@@ -95,10 +95,7 @@ const FamilyTherapy = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <span className="section-tag font-semibold mb-3 inline-block">
-                Family Support
-              </span>
-              <h3 className="text-xl font-semibold mb-4 font-caladea">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
                 Our Family Therapy Helps With:
               </h3>
               
