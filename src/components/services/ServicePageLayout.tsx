@@ -66,11 +66,7 @@ const ServicePageLayout = ({
         description={metaDescription}
         canonicalUrl={canonicalUrl}
       />
-      <SchemaMarkup
-        name={`${serviceType} - Sunrise Human Care Services`}
-        description={metaDescription}
-        type={schemaType || "MedicalTherapy"}
-      />
+      <SchemaMarkup />
 
       <div className="flex flex-col min-h-screen">
         <Navbar />
