@@ -1,12 +1,14 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
 import SchemaMarkup from "../components/SchemaMarkup";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer/Footer";
-import SpecialtiesSection from "../components/SpecialtiesSection";
 import Map from "../components/Map";
 import { ArrowRight, Check, Phone } from "lucide-react";
+import { ConditionsSection } from "../components/conditions/ConditionsSection";
+
 const MentalHealthHavertown = () => {
   return <>
       <SEOHead title="Mental Health Services in Havertown, PA | Anxiety & Depression Therapy" description="Top-rated mental health services in Havertown, PA. Specialized therapy for anxiety, depression, and stress from licensed professionals. In-person & virtual sessions available. Call (814) 620-2162 today." canonicalUrl="https://sunrisehcsllc.com/mental-health-havertown-pa" />
@@ -134,8 +136,8 @@ const MentalHealthHavertown = () => {
             </div>
           </section>
           
-          {/* Specialties Section */}
-          <SpecialtiesSection />
+          {/* Conditions We Treat Section */}
+          <ConditionsSection />
           
           {/* Why Choose Us Section */}
           <section className="py-16 bg-gradient-to-br from-orange-50 to-yellow-50">
