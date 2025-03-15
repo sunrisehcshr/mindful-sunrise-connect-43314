@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
-import { Brain, Users, Heart, HeartHandshake, Stethoscope, Sparkles, ArrowRight, Activity, PenTool, Pill, Laugh } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Brain, Users, Heart, HeartHandshake, Stethoscope, Sparkles, Activity, PenTool, Pill, Laugh } from 'lucide-react';
 import { Separator } from '../ui/separator';
 
 const ServicesSection: React.FC = () => {
@@ -91,7 +89,7 @@ const ServicesSection: React.FC = () => {
   ];
   
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-secondary/50 to-secondary">
+    <section id="services" className="py-24 bg-gradient-to-b from-white to-secondary/50">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-12" 
@@ -115,7 +113,7 @@ const ServicesSection: React.FC = () => {
             whileInView={{ opacity: 1 }} 
             viewport={{ once: true }} 
             transition={{ duration: 0.5, delay: 0.1 }} 
-            className="text-3xl font-bold mb-4 font-stylish md:text-6xl"
+            className="text-3xl font-bold mb-4 font-opensans md:text-5xl"
           >
             Comprehensive Mental Health Services
           </motion.h2>
@@ -141,16 +139,6 @@ const ServicesSection: React.FC = () => {
             <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
-        
-        <motion.div 
-          className="mt-16 text-center" 
-          initial={{ opacity: 0, y: 10 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true }} 
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          
-        </motion.div>
       </div>
     </section>
   );

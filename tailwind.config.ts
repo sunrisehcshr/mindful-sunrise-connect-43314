@@ -143,7 +143,7 @@ export default {
 			fontFamily: {
 				sans: ['Lato', 'system-ui', 'sans-serif'],
 				serif: ['Georgia', 'serif'],
-				merriweather: ['Merriweather', 'serif'],
+				opensans: ['Open Sans', 'sans-serif'],
 				lato: ['Lato', 'sans-serif']
 			}
 		}
