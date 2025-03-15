@@ -143,7 +143,7 @@ export default {
 			fontFamily: {
 				sans: ['Lato', 'system-ui', 'sans-serif'],
 				serif: ['Georgia', 'serif'],
-				lustria: ['Lustria', 'serif'],
+				merriweather: ['Merriweather', 'serif'],
 				lato: ['Lato', 'sans-serif']
 			}
 		}
