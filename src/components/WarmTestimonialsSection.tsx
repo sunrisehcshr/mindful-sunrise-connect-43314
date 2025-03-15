@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote, Sparkles } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 import { Separator } from './ui/separator';
+import SectionTag from './ui/section-tag';
 
 const testimonials = [
   {
@@ -43,15 +44,14 @@ const WarmTestimonialsSection = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.span 
-            className="section-tag inline-flex items-center gap-1"
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Sparkles className="h-3 w-3" /> Testimonials
-          </motion.span>
+            <SectionTag>Testimonials</SectionTag>
+          </motion.div>
           
           <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-merriweather">What Our Clients Say</h2>
           

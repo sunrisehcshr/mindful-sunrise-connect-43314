@@ -1,310 +1,268 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CalendarCheck, Phone, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Check, Phone } from 'lucide-react';
+import { Separator } from '../ui/separator';
+import SectionTag from '../ui/section-tag';
 import { Link } from 'react-router-dom';
+import SEOHead from '../SEOHead';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
-import SEOHead from '../SEOHead';
-import { Button } from '../ui/button';
-import AppointmentDialog from '../Appointment/AppointmentDialog';
 
-interface ServicePageProps {
+interface ServicePageLayoutProps {
+  children: React.ReactNode;
   title: string;
   description: string;
   pageTitle: string;
   metaDescription: string;
   serviceType: string;
   canonicalUrl: string;
-  heroImage?: string;
+  heroImage: string;
   benefits: string[];
-  approaches: { title: string; description: string }[];
-  faqs: { question: string; answer: string }[];
-  relatedServices: { title: string; url: string }[];
-  schemaType?: string;
-  children?: React.ReactNode;
-  keywords?: string;
+  approaches: { title: string; description: string; }[];
+  faqs: { question: string; answer: string; }[];
+  relatedServices: { title: string; url: string; }[];
 }
 
-const ServicePageLayout: React.FC<ServicePageProps> = ({
+const ServicePageLayout = ({
+  children,
   title,
   description,
   pageTitle,
   metaDescription,
   serviceType,
   canonicalUrl,
-  heroImage = "/images/Therapy-in-havertown.webp",
+  heroImage,
   benefits,
   approaches,
   faqs,
-  relatedServices,
-  schemaType = "MedicalTherapy",
-  children,
-  keywords
-}) => {
-  
-  // Schema markup for the service
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": schemaType,
-    "name": title,
-    "description": metaDescription,
-    "url": `https://sunrisehcsllc.com${canonicalUrl}`,
-    "provider": {
-      "@type": "MedicalOrganization",
-      "name": "Sunrise Human Care Services",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2050 West Chester Pike",
-        "addressLocality": "Havertown",
-        "addressRegion": "PA",
-        "postalCode": "19083",
-        "addressCountry": "US"
-      }
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Havertown",
-      "containedIn": {
-        "@type": "State",
-        "name": "Pennsylvania"
-      }
-    },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "USD"
-      }
-    },
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "Patients seeking mental health care"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://sunrisehcsllc.com${canonicalUrl}`
-    }
-  };
-
-  // Generate service-specific keywords
-  const defaultKeywords = `${serviceType} Havertown, ${serviceType} Delaware County, mental health services PA, ${serviceType} near me`;
-  const serviceKeywords = keywords || defaultKeywords;
-  
+  relatedServices
+}: ServicePageLayoutProps) => {
   return (
     <>
       <SEOHead
         title={pageTitle}
         description={metaDescription}
         canonicalUrl={`https://sunrisehcsllc.com${canonicalUrl}`}
-        ogImage={heroImage}
-        keywords={serviceKeywords}
       />
-      <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        
-        <main className="flex-grow pt-20">
-          {/* Hero Section */}
-          <section className="relative py-20 md:py-28 bg-gradient-to-b from-secondary/80 to-secondary">
-            <div className="absolute inset-0 bg-[url('/images/pattern-bg.png')] opacity-5 z-0"></div>
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <motion.div
+      <Navbar />
+      
+      <main>
+        {/* Hero Section */}
+        <section className="relative py-24 bg-secondary/10 overflow-hidden">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="order-2 lg:order-1">
+                <motion.h1 
+                  className="text-4xl md:text-5xl font-bold mb-4 font-playfair text-amber-900"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-500/20 text-sunrise-900 mb-4">
-                    {serviceType}
-                  </span>
-                  
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-caladea">
-                    {title}
-                  </h1>
-                  
-                  <p className="text-muted-foreground text-lg mb-8">
-                    {description}
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <AppointmentDialog>
-                      <Button size="lg" className="bg-sunrise-600 hover:bg-sunrise-700 text-white flex items-center gap-2">
-                        <CalendarCheck className="h-5 w-5" />
-                        Book a Free Consultation
-                      </Button>
-                    </AppointmentDialog>
-                    
-                    <Button variant="outline" size="lg" className="border-sunrise-600 text-sunrise-600 hover:bg-sunrise-50" asChild>
-                      <Link to="tel:+18146202162" className="flex items-center gap-2">
-                        <Phone className="h-5 w-5" />
-                        Call (814) 620-2162
-                      </Link>
-                    </Button>
-                  </div>
-                </motion.div>
+                  {title}
+                </motion.h1>
                 
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                <motion.p 
+                  className="text-muted-foreground mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="rounded-xl overflow-hidden shadow-xl"
                 >
-                  <img 
-                    src={heroImage} 
-                    alt={`${title} in Havertown, PA at Sunrise Human Care Services`}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
+                  {description}
+                </motion.p>
+                
+                <motion.div 
+                  className="space-x-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <Link to="/contact" className="btn-sunrise">
+                    Book Consultation
+                  </Link>
+                  <a href="tel:814-620-2162" className="btn-outline-sunrise inline-flex items-center">
+                    <Phone className="mr-2 h-4 w-4" /> Call Us
+                  </a>
                 </motion.div>
               </div>
-            </div>
-          </section>
-          
-          {/* Benefits Section */}
-          <section className="py-16 bg-white">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-caladea">
-                  Benefits of {serviceType}
-                </h2>
-              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-secondary/30 p-6 rounded-lg flex items-start"
-                  >
-                    <CheckCircle2 className="text-sunrise-500 mr-3 h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <p className="font-medium">{benefit}</p>
-                  </motion.div>
-                ))}
-              </div>
+              <motion.div 
+                className="order-1 lg:order-2"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7 }}
+              >
+                <img src={heroImage} alt={title} className="rounded-2xl shadow-lg" />
+              </motion.div>
             </div>
-          </section>
-          
-          {/* Additional content specific to this service */}
-          {children}
-          
-          {/* Our Approaches */}
-          <section className="py-16 bg-gradient-to-b from-white to-secondary/20">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-500/20 text-sunrise-900 mb-4">
-                  Methodology
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-caladea">
-                  Our Approach to {serviceType}
-                </h2>
-                <p className="text-muted-foreground">
-                  We use evidence-based methods tailored to your specific needs
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {approaches.map((approach, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-white p-6 rounded-lg shadow-sm border border-border/40 hover:shadow-md transition-all duration-300"
-                  >
-                    <h3 className="text-xl font-semibold mb-3 font-caladea">{approach.title}</h3>
-                    <p className="text-muted-foreground">{approach.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-          
-          {/* FAQs */}
-          <section className="py-16 bg-white">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-500/20 text-sunrise-900 mb-4">
-                  Common Questions
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-caladea">
-                  Frequently Asked Questions
-                </h2>
-              </div>
-              
-              <div className="max-w-3xl mx-auto space-y-6">
-                {faqs.map((faq, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-secondary/20 p-6 rounded-lg hover:bg-secondary/30 transition-colors duration-300"
-                  >
-                    <h3 className="text-lg font-semibold mb-3 font-caladea">{faq.question}</h3>
-                    <p className="text-muted-foreground">{faq.answer}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-          
-          {/* Related Services */}
-          <section className="py-16 bg-gradient-to-b from-secondary/20 to-secondary/40">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sunrise-500/20 text-sunrise-900 mb-4">
-                  Explore More
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-caladea">
-                  Related Services
-                </h2>
-                <p className="text-muted-foreground">
-                  Explore other mental health services offered by Sunrise Human Care Services
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {relatedServices.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-white p-6 rounded-lg shadow-sm border border-border/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <h3 className="text-lg font-semibold mb-3 font-caladea">{service.title}</h3>
-                    <Link
-                      to={service.url}
-                      className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group"
-                    >
-                      Learn more
-                      <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <div className="mt-12 text-center">
-                <AppointmentDialog>
-                  <Button size="lg" className="bg-sunrise-600 hover:bg-sunrise-700 text-white">
-                    Schedule Your Consultation Today
-                  </Button>
-                </AppointmentDialog>
-              </div>
-            </div>
-          </section>
-        </main>
+          </div>
+        </section>
         
-        <Footer />
-      </div>
+        {/* Benefits Section */}
+        <section className="py-16 bg-white/60">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <SectionTag>Benefits</SectionTag>
+              
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair">
+                {serviceType} Benefits
+              </h2>
+              
+              <div className="mx-auto mt-6 mb-10 w-24">
+                <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <motion.div 
+                  key={index}
+                  className="flex items-center gap-3 bg-secondary/20 rounded-lg p-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Check className="text-green-500 h-5 w-5" />
+                  <span>{benefit}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Custom Content */}
+        {children}
+        
+        {/* Approaches Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <SectionTag>Our Approaches</SectionTag>
+              
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair">
+                Treatment Approaches
+              </h2>
+              
+              <div className="mx-auto mt-6 mb-10 w-24">
+                <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {approaches.map((approach, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-white rounded-lg shadow-md p-6 border border-secondary/30"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-xl font-semibold mb-2 font-playfair">{approach.title}</h3>
+                  <p className="text-muted-foreground">{approach.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* FAQ Section */}
+        <section className="py-16 bg-white/60">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <SectionTag>FAQ</SectionTag>
+              
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair">
+                Frequently Asked Questions
+              </h2>
+              
+              <div className="mx-auto mt-6 mb-10 w-24">
+                <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {faqs.map((faq, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-secondary/20 rounded-lg shadow-sm p-6 border border-secondary/30"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-lg font-semibold mb-2 font-playfair">{faq.question}</h3>
+                  <p className="text-muted-foreground">{faq.answer}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Call to Action Section */}
+        <section className="py-16 bg-gradient-to-r from-amber-50 to-orange-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto text-center">
+              <SectionTag>Get Started</SectionTag>
+              
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                Ready to Begin Your Healing Journey?
+              </h2>
+              
+              <p className="text-muted-foreground mb-8">
+                Contact us today to schedule your initial consultation and take the first step toward a happier, healthier you.
+              </p>
+              
+              <div className="space-x-4">
+                <Link to="/contact" className="btn-sunrise">
+                  Book Consultation
+                </Link>
+                <a href="tel:814-620-2162" className="btn-outline-sunrise inline-flex items-center">
+                  <Phone className="mr-2 h-4 w-4" /> Call Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Related Services Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <SectionTag>Explore More</SectionTag>
+              
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair">
+                Related Services
+              </h2>
+              
+              <div className="mx-auto mt-6 mb-10 w-24">
+                <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedServices.map((service, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-white rounded-lg shadow-sm p-4 border border-secondary/30 hover:shadow-md transition-shadow duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Link to={service.url} className="block">
+                    <h3 className="text-lg font-semibold mb-2 font-playfair">{service.title}</h3>
+                    <ArrowRight className="h-4 w-4 text-gray-500 inline-block ml-2 align-middle" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <Footer />
     </>
   );
 };

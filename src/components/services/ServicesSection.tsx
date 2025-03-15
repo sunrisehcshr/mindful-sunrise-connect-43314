@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
 import { Brain, Users, Heart, HeartHandshake, Stethoscope, Sparkles, Activity, PenTool, Pill, Laugh } from 'lucide-react';
 import { Separator } from '../ui/separator';
+import SectionTag from '../ui/section-tag';
 
 const ServicesSection: React.FC = () => {
   const services = [
@@ -98,15 +100,14 @@ const ServicesSection: React.FC = () => {
           viewport={{ once: true }} 
           transition={{ duration: 0.6 }}
         >
-          <motion.span 
+          <motion.div 
             initial={{ opacity: 0, scale: 0.9 }} 
             whileInView={{ opacity: 1, scale: 1 }} 
             viewport={{ once: true }} 
             transition={{ duration: 0.4 }} 
-            className="section-tag inline-flex items-center gap-1 font-semibold text-sm"
           >
-            <Sparkles className="h-3 w-3" /> Our Services
-          </motion.span>
+            <SectionTag>Our Services</SectionTag>
+          </motion.div>
           
           <motion.h2 
             initial={{ opacity: 0 }} 

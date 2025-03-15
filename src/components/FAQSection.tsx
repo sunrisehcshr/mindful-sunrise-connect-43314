@@ -1,3 +1,8 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Separator } from './ui/separator';
+import SectionTag from './ui/section-tag';
+
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -73,19 +78,48 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="section-padding bg-secondary/30">
+    <section id="faq" className="py-24 bg-white/50">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <span className="inline-block px-3 py-1 rounded-full text-xs bg-orange-500 mb-4 text-white font-semibold">
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            <SectionTag>FAQ</SectionTag>
+          </motion.div>
+          
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             Frequently Asked Questions
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Common Questions About Our Services
-          </h2>
-          <p className="text-muted-foreground">
-            Find answers to common questions about our mental health services, appointments, and insurance.
-          </p>
-        </div>
+          </motion.h2>
+          
+          <motion.p 
+            className="text-muted-foreground"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Find answers to common questions about our services, appointments, and mental health care.
+          </motion.p>
+          
+          <div className="mx-auto mt-6 mb-10 w-24">
+            <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
+          </div>
+        </motion.div>
         
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => <FAQItem key={index} question={faq.question} answer={faq.answer} isOpen={openIndex === index} onClick={() => toggleFAQ(index)} />)}

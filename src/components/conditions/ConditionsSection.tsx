@@ -1,13 +1,9 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { Separator } from '@/components/ui/separator';
-import { Card, CardContent } from '@/components/ui/card';
+import { Separator } from '../ui/separator';
+import SectionTag from '../ui/section-tag';
 
-const ConditionsSection: React.FC = () => {
+const ConditionsSection = () => {
   const [expandedCondition, setExpandedCondition] = useState<number | null>(null);
   
   const conditions = [
@@ -102,7 +98,7 @@ const ConditionsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-secondary/80 to-white" id="conditions-we-treat" aria-labelledby="conditions-heading">
+    <section id="conditions" className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-12"
@@ -111,27 +107,38 @@ const ConditionsSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <motion.span 
-            className="section-tag inline-flex items-center gap-1"
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Sparkles className="h-3 w-3" /> Specialized Care
-          </motion.span>
+            <SectionTag>Specialized Care</SectionTag>
+          </motion.div>
           
-          <h2 id="conditions-heading" className="text-3xl md:text-4xl font-bold mb-4 font-opensans">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-4 font-opensans"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             Conditions We Treat
-          </h2>
+          </motion.h2>
           
-          <p className="text-muted-foreground">
-            Our team provides expert care for a wide range of mental health conditions, 
-            with treatment plans tailored to your unique needs.
-          </p>
+          <motion.p 
+            className="text-muted-foreground"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Our experienced team provides evidence-based treatment for a wide range of 
+            mental health conditions affecting adults, adolescents, and children.
+          </motion.p>
           
           <div className="mx-auto mt-6 mb-10 w-24">
-            <Separator className="bg-gradient-to-r from-transparent via-amber-300/50 to-transparent h-0.5" />
+            <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
           </div>
         </motion.div>
         

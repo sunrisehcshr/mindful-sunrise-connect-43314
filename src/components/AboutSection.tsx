@@ -1,71 +1,102 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { Separator } from './ui/separator';
+import SectionTag from './ui/section-tag';
 
-const AboutSection: React.FC = () => {
-  return <section id="about" className="py-8 md:py-12 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <motion.div 
-            className="order-2 lg:order-1"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+const AboutSection = () => {
+  return (
+    <section id="about" className="py-24 bg-white/50">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
           >
-            <span className="inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs bg-orange-500 mb-3 text-white font-semibold">
-              About Us
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Dedicated to Your Mental Health Journey
-            </h2>
-            <p className="text-sm md:text-base text-muted-foreground mb-4">Sunrise Human Care Services, founded by Michael Thevar, whose dedication to mental health spans over 30 years. Built on a foundation of experience, trust, and community care, we are committed to helping individuals navigate their challenges and realize their full potential.</p>
-            <p className="text-sm md:text-base text-muted-foreground mb-4">With a deep understanding of mental well-being, our mission is to provide compassionate support and meaningful solutions for children, teens, adults, and seniors to lead healthier, more fulfilling lives.</p>
+            <SectionTag>About Us</SectionTag>
           </motion.div>
           
-          <motion.div 
-            className="order-1 lg:order-2 relative"
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Our Story & Mission
+          </motion.h2>
+          
+          <motion.p 
+            className="text-muted-foreground"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Learn about our commitment to providing compassionate, accessible mental health care in Havertown, PA.
+          </motion.p>
+          
+          <div className="mx-auto mt-6 mb-10 w-24">
+            <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
+          </div>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/office-interior.jpg" 
+                alt="Sunrise Human Care Services office" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-sunrise-50 rounded-full -z-10"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-amber-50 rounded-full -z-10"></div>
+          </motion.div>
+          
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-6"
           >
-            <div className="relative">
-              <motion.div 
-                className="rounded-2xl overflow-hidden shadow-lg"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img 
-                  src="/images/therapy-for-older-adults.webp" 
-                  alt="Compassionate therapy for older adults in Havertown, PA" 
-                  className="w-full h-auto rounded-2xl shadow-md" 
-                />
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -top-4 -right-4 text-orange-300 opacity-30"
-                initial={{ rotate: 0 }}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              >
-                <Star size={12} className="md:w-4 md:h-4" fill="currentColor" />
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -bottom-4 -left-4 text-orange-300 opacity-30"
-                initial={{ rotate: 0 }}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              >
-                <Star size={12} className="md:w-4 md:h-4" fill="currentColor" />
-              </motion.div>
+            <h3 className="text-2xl font-semibold text-amber-900">Compassionate Care for Every Journey</h3>
+            <p className="text-muted-foreground">
+              Founded in 2018, Sunrise Human Care Services was born from a vision to create a mental health practice that truly puts clients first. We recognized the need for warm, accessible mental health care in the Havertown community and surrounding areas.
+            </p>
+            <p className="text-muted-foreground">
+              Our team of experienced therapists and psychiatric providers brings diverse backgrounds and specialties, united by a shared commitment to compassionate, evidence-based care. We believe in treating the whole person, not just symptoms, and in creating individualized treatment plans that respect each client's unique needs and goals.
+            </p>
+            <p className="text-muted-foreground">
+              Whether you're seeking support for a specific mental health condition, navigating a difficult life transition, or working toward personal growth, we're here to walk alongside you on your journey.
+            </p>
+            
+            <div className="pt-4">
+              <Link to="/about" className="btn-outline-sunrise">
+                Learn More About Us <ArrowRight className="h-4 w-4 ml-1" />
+              </Link>
             </div>
           </motion.div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default AboutSection;
