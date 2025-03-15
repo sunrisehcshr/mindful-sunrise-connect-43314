@@ -28,7 +28,7 @@ const WarmServiceCard: React.FC<WarmServiceCardProps> = ({
       viewport={{ once: true }}
     >
       <div className="h-48 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-amber-500/10 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-amber-600/20 to-transparent z-10" />
         <img 
           src={imageSrc} 
           alt={title} 
@@ -36,11 +36,11 @@ const WarmServiceCard: React.FC<WarmServiceCardProps> = ({
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-amber-900 mb-3">{title}</h3>
+        <h3 className="text-xl font-semibold text-amber-900 mb-3 font-caladea">{title}</h3>
         <p className="text-amber-800 mb-4 text-sm">{description}</p>
         <Link
           to={url}
-          className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-orange-400 to-amber-400 hover:from-orange-500 hover:to-amber-500 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group mt-2 shadow-sm"
+          className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group mt-2 shadow-sm"
         >
           Learn more 
           <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

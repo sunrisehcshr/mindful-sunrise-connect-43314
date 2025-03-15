@@ -24,14 +24,14 @@ const testimonials = [
 
 const WarmTestimonialsSection = () => {
   return (
-    <section className="section-padding relative overflow-hidden bg-white">
-      <div className="absolute inset-0 bg-amber-50/20 -z-10"></div>
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-amber-50/30 -z-10"></div>
       
       {/* Decorative elements */}
-      <div className="absolute top-10 left-10 opacity-10 text-orange-300 -z-5 hidden lg:block">
+      <div className="absolute top-10 left-10 opacity-10 text-orange-400 -z-5 hidden lg:block">
         <Quote size={80} />
       </div>
-      <div className="absolute bottom-10 right-10 opacity-10 text-orange-300 -z-5 hidden lg:block">
+      <div className="absolute bottom-10 right-10 opacity-10 text-orange-400 -z-5 hidden lg:block">
         <Quote size={80} />
       </div>
       
@@ -50,10 +50,10 @@ const WarmTestimonialsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Sparkles className="h-3 w-3" /> Patient Testimonials
+            <Sparkles className="h-3 w-3" /> Testimonials
           </motion.span>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-stylish">What Our Clients Say</h2>
           
           <p className="text-amber-800 max-w-2xl mx-auto">
             Real stories from people whose lives have been transformed through compassionate care and therapy.
@@ -68,7 +68,7 @@ const WarmTestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index}
-              className="bg-white rounded-xl p-8 flex flex-col floating-card relative shadow-sm border border-amber-100"
+              className="warm-card rounded-xl p-8 flex flex-col floating-card relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -76,7 +76,7 @@ const WarmTestimonialsSection = () => {
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-300 to-amber-300 rounded-t-xl"></div>
               
-              <div className="text-amber-400 mb-4">
+              <div className="text-amber-500 mb-4">
                 <Quote className="w-10 h-10" />
               </div>
               
