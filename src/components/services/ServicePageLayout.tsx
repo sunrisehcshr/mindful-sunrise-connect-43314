@@ -9,6 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SectionTag from '../ui/section-tag';
 
 interface ServicePageLayoutProps {
   children: React.ReactNode;
@@ -49,9 +50,9 @@ const ServicePageLayout = ({
         canonicalUrl={canonicalUrl}
       />
       <SchemaMarkup
-        name={`${serviceType} - Sunrise Human Care Services`}
-        description={metaDescription}
-        type={schemaType || "MedicalTherapy"}
+        itemName={`${serviceType} - Sunrise Human Care Services`}
+        itemDescription={metaDescription}
+        itemType={schemaType || "MedicalTherapy"}
       />
 
       <div className="flex flex-col min-h-screen">
