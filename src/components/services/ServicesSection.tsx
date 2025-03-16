@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
-import { Brain, Users, Heart, HeartHandshake, Stethoscope, Pill, PenTool, Laugh } from 'lucide-react';
+import { Brain, Users, Heart, HeartHandshake, Stethoscope, Pill } from 'lucide-react';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
 
@@ -32,7 +33,7 @@ const ServicesSection: React.FC = () => {
       url: "/family-therapy-havertown-pa"
     }, 
     {
-      icon: <Laugh className="h-6 w-6" />,
+      icon: <Heart className="h-6 w-6" />,
       title: "Child & Adolescent Therapy",
       description: "Specialized therapy for children and teens facing behavioral or emotional challenges.",
       color: "bg-sunrise-50 text-sunrise-700",
@@ -40,7 +41,7 @@ const ServicesSection: React.FC = () => {
       url: "/child-therapy-havertown-pa"
     }, 
     {
-      icon: <PenTool className="h-6 w-6" />,
+      icon: <Stethoscope className="h-6 w-6" />,
       title: "Psychiatric Evaluations",
       description: "Comprehensive mental health assessments and diagnostic services.",
       color: "bg-sunrise-50 text-sunrise-700",

@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileConditionsOpen, setMobileConditionsOpen] = useState(false);
   const location = useLocation();
   
   useEffect(() => {
@@ -22,10 +23,12 @@ const Navbar = () => {
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleMobileServices = () => setMobileServicesOpen(!mobileServicesOpen);
+  const toggleMobileConditions = () => setMobileConditionsOpen(!mobileConditionsOpen);
   
   useEffect(() => {
     setIsMenuOpen(false);
     setMobileServicesOpen(false);
+    setMobileConditionsOpen(false);
   }, [location.pathname]);
   
   const isActive = (path: string) => location.pathname === path;
@@ -43,23 +46,58 @@ const Navbar = () => {
     title: "Child Therapy",
     path: "/child-therapy-havertown-pa"
   }, {
-    title: "Anxiety Therapy",
-    path: "/anxiety-therapy-havertown-pa"
-  }, {
-    title: "Depression Therapy",
-    path: "/depression-therapy-havertown-pa"
-  }, {
-    title: "ADHD Treatment",
-    path: "/adhd-treatment-havertown-pa"
-  }, {
     title: "Psychiatric Evaluations",
     path: "/psychiatric-evaluations-havertown-pa"
   }, {
     title: "Medication Management",
     path: "/medication-management-havertown-pa"
+  }];
+  
+  const conditionLinks = [{
+    title: "Anxiety",
+    path: "/anxiety-therapy-havertown-pa"
   }, {
-    title: "Trauma & PTSD Therapy",
+    title: "Depression",
+    path: "/depression-therapy-havertown-pa"
+  }, {
+    title: "ADHD",
+    path: "/adhd-treatment-havertown-pa"
+  }, {
+    title: "Bipolar Disorder",
+    path: "/bipolar-disorder-therapy-havertown-pa"
+  }, {
+    title: "OCD",
+    path: "/ocd-therapy-havertown-pa"
+  }, {
+    title: "PTSD & Trauma",
     path: "/ptsd-therapy-havertown-pa"
+  }, {
+    title: "Schizophrenia",
+    path: "/schizophrenia-treatment-havertown-pa"
+  }, {
+    title: "Eating Disorders",
+    path: "/eating-disorders-treatment-havertown-pa"
+  }, {
+    title: "Substance Use",
+    path: "/substance-use-treatment-havertown-pa"
+  }, {
+    title: "Borderline Personality",
+    path: "/bpd-therapy-havertown-pa"
+  }, {
+    title: "Sleep Disorders",
+    path: "/sleep-disorders-treatment-havertown-pa"
+  }, {
+    title: "Dissociative Disorders",
+    path: "/dissociative-disorders-treatment-havertown-pa"
+  }, {
+    title: "Somatic Disorders",
+    path: "/somatic-disorders-treatment-havertown-pa"
+  }, {
+    title: "Relationship Issues",
+    path: "/relationship-therapy-havertown-pa"
+  }, {
+    title: "Grief & Loss",
+    path: "/grief-therapy-havertown-pa"
   }];
   
   const navLinks = [{
@@ -72,6 +110,10 @@ const Navbar = () => {
     type: "dropdown",
     label: "Services",
     children: serviceLinks
+  }, {
+    type: "dropdown",
+    label: "Conditions",
+    children: conditionLinks
   }, {
     path: "/blog",
     label: "Blog"
@@ -101,7 +143,11 @@ const Navbar = () => {
               return <NavigationMenu key={index}>
                     <NavigationMenuList>
                       <NavigationMenuItem>
-                        <NavigationMenuTrigger className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5", isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600")}>
+                        <NavigationMenuTrigger className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5", 
+                          (link.label === "Services" && isActive("/services")) || 
+                          (link.label === "Conditions" && location.pathname.includes("therapy") || location.pathname.includes("treatment")) 
+                          ? "bg-orange-500/10 text-orange-600 font-medium" 
+                          : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600")}>
                           {link.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="p-2 w-[400px] max-h-[400px]">
@@ -119,12 +165,14 @@ const Navbar = () => {
                                   {child.title}
                                 </Link>
                               ))}
-                              <div className="pt-2 mt-2 border-t border-border">
-                                <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-3 py-2">
-                                  View All Services
-                                  <ChevronRight className="ml-1 h-4 w-4" />
-                                </Link>
-                              </div>
+                              {link.label === "Services" && (
+                                <div className="pt-2 mt-2 border-t border-border">
+                                  <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-3 py-2">
+                                    View All Services
+                                    <ChevronRight className="ml-1 h-4 w-4" />
+                                  </Link>
+                                </div>
+                              )}
                             </div>
                           </ScrollArea>
                         </NavigationMenuContent>
@@ -156,19 +204,39 @@ const Navbar = () => {
               {navLinks.map((link, index) => {
               if (link.type === "dropdown") {
                 return <div key={index} className="space-y-2">
-                      <button onClick={toggleMobileServices} className={cn("w-full px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", isActive("/services") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground")}>
+                      <button 
+                        onClick={link.label === "Services" ? toggleMobileServices : toggleMobileConditions} 
+                        className={cn("w-full px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
+                          (link.label === "Services" && isActive("/services")) || 
+                          (link.label === "Conditions" && location.pathname.includes("therapy") || location.pathname.includes("treatment")) 
+                          ? "bg-orange-500/10 text-orange-600 font-medium" 
+                          : "text-muted-foreground hover:text-foreground")}
+                      >
                         {link.label}
-                        {mobileServicesOpen ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
+                        {(link.label === "Services" && mobileServicesOpen) || (link.label === "Conditions" && mobileConditionsOpen) ? 
+                          <ChevronUp className="h-4 w-4 ml-2" /> : 
+                          <ChevronDown className="h-4 w-4 ml-2" />}
                       </button>
-                      {mobileServicesOpen && <div className="pl-4 space-y-1 border-l border-orange-200 ml-2">
-                          {link.children.map((child, childIndex) => <Link key={childIndex} to={child.path} className={cn("block px-4 py-2 text-sm rounded-md transition-colors", isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50")}>
+                      {(link.label === "Services" && mobileServicesOpen) || (link.label === "Conditions" && mobileConditionsOpen) ? (
+                        <div className="pl-4 space-y-1 border-l border-orange-200 ml-2">
+                          {link.children.map((child, childIndex) => (
+                            <Link 
+                              key={childIndex} 
+                              to={child.path} 
+                              className={cn("block px-4 py-2 text-sm rounded-md transition-colors", 
+                                isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50")}
+                            >
                               {child.title}
-                            </Link>)}
-                          <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">
-                            View All Services
-                            <ChevronRight className="ml-1 h-4 w-4" />
-                          </Link>
-                        </div>}
+                            </Link>
+                          ))}
+                          {link.label === "Services" && (
+                            <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">
+                              View All Services
+                              <ChevronRight className="ml-1 h-4 w-4" />
+                            </Link>
+                          )}
+                        </div>
+                      ) : null}
                     </div>;
               }
               return <Link key={index} to={link.path} className={cn("px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-50")}>

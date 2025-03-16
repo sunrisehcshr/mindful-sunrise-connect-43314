@@ -24,25 +24,27 @@ import IndividualTherapy from "./pages/services/IndividualTherapy";
 import CouplesCounseling from "./pages/services/CouplesCounseling";
 import FamilyTherapy from "./pages/services/FamilyTherapy";
 import ChildTherapy from "./pages/services/ChildTherapy";
+import PsychiatricEvaluations from "./pages/services/PsychiatricEvaluations";
+import MedicationManagement from "./pages/services/MedicationManagement";
+
+// Import condition pages
 import AnxietyTherapy from "./pages/services/AnxietyTherapy";
 import DepressionTherapy from "./pages/services/DepressionTherapy";
 import ADHDTreatment from "./pages/services/ADHDTreatment";
-import PsychiatricEvaluations from "./pages/services/PsychiatricEvaluations";
-import MedicationManagement from "./pages/services/MedicationManagement";
 import TraumaPTSDTherapy from "./pages/services/TraumaPTSDTherapy";
 import BipolarDisorderTherapy from "./pages/services/BipolarDisorderTherapy";
 import OCDTherapy from "./pages/services/OCDTherapy";
 
-// Add these pages later as needed
-// import SchizophreniaTherapy from "./pages/services/SchizophreniaTherapy";
-// import EatingDisordersTherapy from "./pages/services/EatingDisordersTherapy";
-// import SubstanceUseTherapy from "./pages/services/SubstanceUseTherapy";
-// import BPDTherapy from "./pages/services/BPDTherapy";
-// import SleepDisordersTherapy from "./pages/services/SleepDisordersTherapy";
-// import DissociativeDisordersTherapy from "./pages/services/DissociativeDisordersTherapy";
-// import SomaticDisordersTherapy from "./pages/services/SomaticDisordersTherapy";
-// import RelationshipTherapy from "./pages/services/RelationshipTherapy";
-// import GriefTherapy from "./pages/services/GriefTherapy";
+// Import new condition pages
+import SchizophreniaTherapy from "./pages/conditions/SchizophreniaTherapy";
+import EatingDisordersTherapy from "./pages/conditions/EatingDisordersTherapy";
+import SubstanceUseTherapy from "./pages/conditions/SubstanceUseTherapy";
+import BPDTherapy from "./pages/conditions/BPDTherapy";
+import SleepDisordersTherapy from "./pages/conditions/SleepDisordersTherapy";
+import DissociativeDisordersTherapy from "./pages/conditions/DissociativeDisordersTherapy";
+import SomaticDisordersTherapy from "./pages/conditions/SomaticDisordersTherapy";
+import RelationshipTherapy from "./pages/conditions/RelationshipTherapy";
+import GriefTherapy from "./pages/conditions/GriefTherapy";
 
 const queryClient = new QueryClient();
 
@@ -72,14 +74,25 @@ const App = () => (
             <Route path="/couples-counseling-havertown-pa" element={<CouplesCounseling />} />
             <Route path="/family-therapy-havertown-pa" element={<FamilyTherapy />} />
             <Route path="/child-therapy-havertown-pa" element={<ChildTherapy />} />
+            <Route path="/psychiatric-evaluations-havertown-pa" element={<PsychiatricEvaluations />} />
+            <Route path="/medication-management-havertown-pa" element={<MedicationManagement />} />
+            
+            {/* Condition pages */}
             <Route path="/anxiety-therapy-havertown-pa" element={<AnxietyTherapy />} />
             <Route path="/depression-therapy-havertown-pa" element={<DepressionTherapy />} />
             <Route path="/adhd-treatment-havertown-pa" element={<ADHDTreatment />} />
-            <Route path="/psychiatric-evaluations-havertown-pa" element={<PsychiatricEvaluations />} />
-            <Route path="/medication-management-havertown-pa" element={<MedicationManagement />} />
             <Route path="/ptsd-therapy-havertown-pa" element={<TraumaPTSDTherapy />} />
             <Route path="/bipolar-disorder-therapy-havertown-pa" element={<BipolarDisorderTherapy />} />
             <Route path="/ocd-therapy-havertown-pa" element={<OCDTherapy />} />
+            <Route path="/schizophrenia-treatment-havertown-pa" element={<SchizophreniaTherapy />} />
+            <Route path="/eating-disorders-treatment-havertown-pa" element={<EatingDisordersTherapy />} />
+            <Route path="/substance-use-treatment-havertown-pa" element={<SubstanceUseTherapy />} />
+            <Route path="/bpd-therapy-havertown-pa" element={<BPDTherapy />} />
+            <Route path="/sleep-disorders-treatment-havertown-pa" element={<SleepDisordersTherapy />} />
+            <Route path="/dissociative-disorders-treatment-havertown-pa" element={<DissociativeDisordersTherapy />} />
+            <Route path="/somatic-disorders-treatment-havertown-pa" element={<SomaticDisordersTherapy />} />
+            <Route path="/relationship-therapy-havertown-pa" element={<RelationshipTherapy />} />
+            <Route path="/grief-therapy-havertown-pa" element={<GriefTherapy />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>
