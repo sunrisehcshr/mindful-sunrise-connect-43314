@@ -4,7 +4,6 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
-import { Heart } from 'lucide-react';
 
 const BPDTherapy = () => {
   const pageData = {
@@ -15,7 +14,6 @@ const BPDTherapy = () => {
     serviceType: "Borderline Personality Disorder Treatment",
     canonicalUrl: "/conditions/bpd-therapy",
     heroImage: "/images/Therapy-in-havertown.webp",
-    icon: <Heart className="h-12 w-12" />,
     benefits: [
       "Comprehensive psychiatric assessment",
       "Dialectical Behavior Therapy (DBT)",
@@ -96,7 +94,6 @@ const BPDTherapy = () => {
         approaches={pageData.approaches}
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
-        icon={pageData.icon}
       >
         {/* Content goes here if needed */}
       </ServicePageLayout>

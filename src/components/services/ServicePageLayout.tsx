@@ -10,24 +10,9 @@ import { Button } from '@/components/ui/button';
 import { 
   ArrowRight, 
   Calendar, 
-  PhoneCall, 
-  Heart, 
-  Brain, 
-  Shield, 
-  Sparkles, 
-  Users, 
-  MessageCircleHeart, 
-  Pill, 
-  Clock, 
-  Baby, 
-  BookOpen, 
-  FileSpreadsheet, 
-  HeartPulse, 
-  Grape, 
-  HandHeart
+  PhoneCall
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import SectionTag from '../ui/section-tag';
 
 interface ServicePageLayoutProps {
   children: React.ReactNode;
@@ -43,38 +28,7 @@ interface ServicePageLayoutProps {
   faqs: { question: string; answer: string; }[];
   relatedServices: { title: string; url: string; }[];
   schemaType?: string;
-  icon?: React.ReactNode;
 }
-
-const getServiceIcon = (serviceType: string) => {
-  switch (serviceType.toLowerCase()) {
-    case 'anxiety therapy':
-      return <Brain className="h-12 w-12" />;
-    case 'depression therapy':
-      return <HeartPulse className="h-12 w-12" />;
-    case 'trauma therapy':
-    case 'trauma & ptsd therapy':
-      return <Shield className="h-12 w-12" />;
-    case 'individual therapy':
-      return <BookOpen className="h-12 w-12" />;
-    case 'couples counseling':
-      return <MessageCircleHeart className="h-12 w-12" />;
-    case 'family therapy':
-      return <Users className="h-12 w-12" />;
-    case 'child & adolescent therapy':
-      return <Baby className="h-12 w-12" />;
-    case 'medication management':
-      return <Pill className="h-12 w-12" />;
-    case 'psychiatric evaluations':
-      return <FileSpreadsheet className="h-12 w-12" />;
-    case 'adhd treatment':
-      return <Grape className="h-12 w-12" />; 
-    case 'substance use counseling':
-      return <HandHeart className="h-12 w-12" />;
-    default:
-      return <Sparkles className="h-12 w-12" />;
-  }
-};
 
 const ServicePageLayout = ({
   children,
@@ -89,11 +43,8 @@ const ServicePageLayout = ({
   approaches,
   faqs,
   relatedServices,
-  schemaType,
-  icon
+  schemaType
 }: ServicePageLayoutProps) => {
-  const serviceIcon = icon || getServiceIcon(serviceType);
-  
   return (
     <>
       <SEOHead
@@ -107,7 +58,7 @@ const ServicePageLayout = ({
         <Navbar />
         
         <main className="flex-grow pt-24">
-          {/* Hero Section - Updated with gradient background and service-appropriate icon, grid removed */}
+          {/* Hero Section - Updated with gradient background, grid removed */}
           <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
             
@@ -115,16 +66,7 @@ const ServicePageLayout = ({
             <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
-              <div className="max-w-3xl">
-                <div className="flex items-center mb-6">
-                  <div className="bg-white/20 p-4 rounded-full mr-4 backdrop-blur-sm border border-white/30 text-white">
-                    {serviceIcon}
-                  </div>
-                  <SectionTag className="text-white bg-white/20 border-white/30">
-                    {serviceType}
-                  </SectionTag>
-                </div>
-                
+              <div className="max-w-3xl">                
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

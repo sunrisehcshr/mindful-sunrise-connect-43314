@@ -4,7 +4,6 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
-import { Moon } from 'lucide-react';
 
 const SleepDisordersTherapy = () => {
   const pageData = {
@@ -15,7 +14,6 @@ const SleepDisordersTherapy = () => {
     serviceType: "Sleep Disorders Treatment",
     canonicalUrl: "/conditions/sleep-disorders-therapy",
     heroImage: "/images/Therapy-in-havertown.webp",
-    icon: <Moon className="h-12 w-12" />,
     benefits: [
       "Comprehensive sleep assessment",
       "Cognitive-Behavioral Therapy for Insomnia (CBT-I)",
@@ -96,7 +94,6 @@ const SleepDisordersTherapy = () => {
         approaches={pageData.approaches}
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
-        icon={pageData.icon}
       >
         {/* Content goes here if needed */}
       </ServicePageLayout>

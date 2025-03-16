@@ -4,7 +4,6 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
-import { HandHeart } from 'lucide-react';
 
 const SubstanceUseTherapy = () => {
   const pageData = {
@@ -15,7 +14,6 @@ const SubstanceUseTherapy = () => {
     serviceType: "Substance Use Counseling",
     canonicalUrl: "/conditions/substance-use-therapy",
     heroImage: "/images/Therapy-in-havertown.webp",
-    icon: <HandHeart className="h-12 w-12" />,
     benefits: [
       "Comprehensive assessment and evaluation",
       "Individualized treatment planning",
@@ -96,7 +94,6 @@ const SubstanceUseTherapy = () => {
         approaches={pageData.approaches}
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
-        icon={pageData.icon}
       >
         {/* Content goes here if needed */}
       </ServicePageLayout>
