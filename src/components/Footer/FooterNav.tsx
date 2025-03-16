@@ -23,9 +23,11 @@ const FooterNav: React.FC = () => {
         { to: "/anxiety-therapy-havertown-pa", label: "Anxiety Therapy" },
         { to: "/depression-therapy-havertown-pa", label: "Depression Therapy" },
         { to: "/adhd-treatment-havertown-pa", label: "ADHD Treatment" },
+        { to: "/bipolar-disorder-therapy-havertown-pa", label: "Bipolar Disorder" },
+        { to: "/ocd-therapy-havertown-pa", label: "OCD Treatment" },
+        { to: "/ptsd-therapy-havertown-pa", label: "Trauma & PTSD Therapy" },
         { to: "/psychiatric-evaluations-havertown-pa", label: "Psychiatric Evaluations" },
         { to: "/medication-management-havertown-pa", label: "Medication Management" },
-        { to: "/ptsd-therapy-havertown-pa", label: "Trauma & PTSD Therapy" },
       ]
     },
     { to: "/about", label: "About Us" },

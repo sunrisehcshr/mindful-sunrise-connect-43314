@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
-import { Brain, Users, Heart, HeartHandshake, Stethoscope, Sparkles, Activity, PenTool, Pill, Laugh } from 'lucide-react';
+import { Brain, Users, Heart, HeartHandshake, Stethoscope, Pill, PenTool, Laugh } from 'lucide-react';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
 
@@ -40,30 +40,6 @@ const ServicesSection: React.FC = () => {
       url: "/child-therapy-havertown-pa"
     }, 
     {
-      icon: <Activity className="h-6 w-6" />,
-      title: "Anxiety Therapy",
-      description: "Evidence-based approaches for managing anxiety and stress-related disorders.",
-      color: "bg-sunrise-50 text-sunrise-700",
-      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-      url: "/anxiety-therapy-havertown-pa"
-    }, 
-    {
-      icon: <Heart className="h-6 w-6" />,
-      title: "Depression Therapy",
-      description: "Comprehensive treatment approaches for managing depression and mood disorders.",
-      color: "bg-sunrise-50 text-sunrise-700",
-      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-      url: "/depression-therapy-havertown-pa"
-    }, 
-    {
-      icon: <Sparkles className="h-6 w-6" />,
-      title: "ADHD Treatment",
-      description: "Specialized strategies and support for managing attention deficit hyperactivity disorder.",
-      color: "bg-sunrise-50 text-sunrise-700",
-      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-      url: "/adhd-treatment-havertown-pa"
-    }, 
-    {
       icon: <PenTool className="h-6 w-6" />,
       title: "Psychiatric Evaluations",
       description: "Comprehensive mental health assessments and diagnostic services.",
@@ -78,14 +54,6 @@ const ServicesSection: React.FC = () => {
       color: "bg-sunrise-50 text-sunrise-700",
       bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
       url: "/medication-management-havertown-pa"
-    }, 
-    {
-      icon: <Stethoscope className="h-6 w-6" />,
-      title: "Trauma & PTSD Therapy",
-      description: "Specialized treatment for trauma survivors using evidence-based approaches like EMDR.",
-      color: "bg-sunrise-50 text-sunrise-700",
-      bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-      url: "/ptsd-therapy-havertown-pa"
     }
   ];
   
