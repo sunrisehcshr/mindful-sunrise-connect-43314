@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 import { 
   Card, 
   CardContent 
@@ -192,7 +192,7 @@ const ConditionsSection = () => {
                       <div className="flex flex-col items-center justify-center text-center">
                         <h3 className="text-lg font-semibold mb-1 text-foreground">{condition.title}</h3>
                         {expandedCondition === index ? 
-                          <ChevronUp className="mt-2 h-4 w-4 text-primary" /> : 
+                          <ChevronRight className="mt-2 h-4 w-4 text-amber-600 rotate-90" /> : 
                           <ChevronDown className="mt-2 h-4 w-4 text-amber-500/70" />
                         }
                       </div>
@@ -219,10 +219,10 @@ const ConditionsSection = () => {
                           variant="ghost" 
                           size="sm" 
                           onClick={() => setExpandedCondition(null)} 
-                          className="mt-3 text-amber-600 hover:text-amber-700 hover:bg-amber-100/50 group"
+                          className="mt-3 text-amber-600 hover:text-amber-700 hover:bg-amber-100/50 group flex items-center"
                         >
-                          Close 
-                          <ChevronUp className="ml-1 h-4 w-4 group-hover:-translate-y-0.5 transition-transform" />
+                          Learn more 
+                          <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                         </Button>
                       </CardContent>
                     </Card>
