@@ -1,7 +1,6 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import { Heart } from 'lucide-react';
 
 const BipolarDisorderTherapy = () => {
   return (
@@ -12,7 +11,6 @@ const BipolarDisorderTherapy = () => {
       metaDescription="Effective bipolar disorder therapy in Havertown, PA. Our specialized approach helps stabilize mood, manage symptoms, and build a balanced lifestyle."
       serviceType="Bipolar Disorder Treatment"
       canonicalUrl="https://sunrisehumancare.com/bipolar-disorder-therapy-havertown-pa"
-      icon={<Heart className="h-12 w-12" />}
       benefits={[
         "Improved mood stability and decreased frequency of episodes",
         "Better understanding of your condition and triggers",

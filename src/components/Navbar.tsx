@@ -22,8 +22,22 @@ const Navbar = () => {
   }, []);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleMobileServices = () => setMobileServicesOpen(!mobileServicesOpen);
-  const toggleMobileConditions = () => setMobileConditionsOpen(!mobileConditionsOpen);
+  
+  const toggleMobileServices = () => {
+    setMobileServicesOpen(!mobileServicesOpen);
+    // If we're opening this section, close the other to prevent long lists
+    if (!mobileServicesOpen && mobileConditionsOpen) {
+      setMobileConditionsOpen(false);
+    }
+  };
+  
+  const toggleMobileConditions = () => {
+    setMobileConditionsOpen(!mobileConditionsOpen);
+    // If we're opening this section, close the other to prevent long lists
+    if (!mobileConditionsOpen && mobileServicesOpen) {
+      setMobileServicesOpen(false);
+    }
+  };
   
   useEffect(() => {
     setIsMenuOpen(false);
@@ -150,8 +164,8 @@ const Navbar = () => {
                           : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600")}>
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="p-2 w-[400px] max-h-[400px]">
-                          <ScrollArea className="h-full w-full max-h-[350px]">
+                        <NavigationMenuContent className="p-2 w-[400px] max-h-[600px]">
+                          <ScrollArea className="h-full w-full max-h-[550px]">
                             <div className="grid grid-cols-1 gap-1 p-2">
                               {link.children.map((child, childIndex) => (
                                 <Link 
@@ -197,10 +211,10 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b z-40 max-h-[80vh] overflow-hidden", isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
-        <ScrollArea className="h-full max-h-[80vh]">
+      <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b z-40 max-h-[calc(100vh-72px)] overflow-hidden", isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
+        <ScrollArea className="h-full max-h-[calc(100vh-72px)]">
           <div className="container mx-auto px-4 py-4">
-            <nav className="flex flex-col space-y-2">
+            <nav className="flex flex-col space-y-2 pb-20">
               {navLinks.map((link, index) => {
               if (link.type === "dropdown") {
                 return <div key={index} className="space-y-2">
