@@ -1,7 +1,6 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import { Repeat } from 'lucide-react';
 
 const OCDTherapy = () => {
   return (
@@ -12,7 +11,6 @@ const OCDTherapy = () => {
       metaDescription="Effective OCD therapy in Havertown, PA. Our specialized approach using ERP and cognitive-behavioral therapy helps reduce obsessions and compulsions."
       serviceType="OCD Treatment"
       canonicalUrl="https://sunrisehumancare.com/ocd-therapy-havertown-pa"
-      icon={<Repeat className="h-12 w-12" />}
       benefits={[
         "Reduced frequency and intensity of obsessions",
         "Decreased time spent on compulsions and rituals",

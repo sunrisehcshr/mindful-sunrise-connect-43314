@@ -95,7 +95,8 @@ const RelationshipTherapy = () => {
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
       >
-        {/* Content goes here if needed */}
+        {/* Empty div to satisfy the children prop requirement */}
+        <div></div>
       </ServicePageLayout>
     </>
   );
