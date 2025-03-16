@@ -36,7 +36,7 @@ const WarmHeroSection = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mb-4"
             >
-              <SectionTag>Trusted Mental Health Care</SectionTag>
+              <SectionTag>Mental Health Clinic</SectionTag>
             </motion.div>
             
             <motion.h1 
