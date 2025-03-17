@@ -35,7 +35,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
   }} className={cn("rounded-xl p-6 shadow-md border border-sunrise-100/40 transition-all duration-300 flex flex-col h-full", "bg-white/80 backdrop-blur-sm hover:bg-white", "relative overflow-hidden")}>
       
 
-      <div className="p-3 rounded-lg w-fit mb-4 bg-sunrise-50 text-sunrise-700">
+      <div className="p-3 rounded-lg w-fit mb-4 text-sunrise-700 bg-sunrise-100">
         {service.icon}
       </div>
 
