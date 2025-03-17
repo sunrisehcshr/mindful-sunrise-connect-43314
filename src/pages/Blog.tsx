@@ -75,7 +75,7 @@ const Blog = () => {
               </Card>)}
           </div>
           
-          <div className="mt-20 text-center p-8 rounded-lg bg-secondary/70 backdrop-blur-sm border border-border/30">
+          <div className="mt-20 text-center p-8 rounded-lg backdrop-blur-sm border border-border/30 bg-white">
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Need Professional Mental Health Support in Havertown?</h2>
             <p className="mb-8 text-lg max-w-2xl mx-auto leading-relaxed">Our team of licensed therapists and psychiatrists is ready to help you navigate your mental health journey.</p>
             <Button asChild size="lg" className="btn-sunrise">
