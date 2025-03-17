@@ -26,26 +26,17 @@ const testimonials = [
 const WarmTestimonialsSection = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      {/* Enhanced vibrant background */}
+      {/* Enhanced vibrant yellow background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-tr from-yellow-50/90 via-white to-amber-50/80"></div>
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="testimonial-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="3" cy="3" r="1.5" fill="rgba(251, 191, 36, 0.4)" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#testimonial-dots)" />
-          </svg>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-yellow-200/80 via-white/40 to-amber-100/70"></div>
+        <div className="absolute inset-0 opacity-15 sunshine-pattern"></div>
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute top-10 left-10 opacity-10 text-orange-400 -z-5 hidden lg:block">
+      <div className="absolute top-10 left-10 opacity-10 text-amber-500 -z-5 hidden lg:block">
         <MessageCircleHeart size={80} />
       </div>
-      <div className="absolute bottom-10 right-10 opacity-10 text-orange-400 -z-5 hidden lg:block">
+      <div className="absolute bottom-10 right-10 opacity-10 text-amber-500 -z-5 hidden lg:block">
         <MessageCircleHeart size={80} />
       </div>
       
@@ -81,7 +72,7 @@ const WarmTestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index} 
-              className="bg-white/80 backdrop-blur-sm border border-amber-100/60 rounded-xl p-8 flex flex-col floating-card relative shadow-md" 
+              className="bg-white/80 backdrop-blur-sm border border-yellow-200/60 rounded-xl p-8 flex flex-col floating-card relative shadow-md" 
               initial={{ opacity: 0, y: 20 }} 
               whileInView={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: index * 0.2 }} 
