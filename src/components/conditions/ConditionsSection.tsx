@@ -180,7 +180,10 @@ const ConditionsSection = () => {
                   <TooltipTrigger asChild>
                     <motion.button onClick={() => toggleCondition(index)} className={`
                         relative overflow-hidden rounded-lg p-4 h-full transition-all duration-300
-                        ${expandedCondition === index ? 'bg-gradient-to-br from-orange-50 to-amber-100 border-primary shadow-md ring-1 ring-primary/20' : 'bg-white/90 backdrop-blur-sm border border-amber-100/40 hover:shadow-md hover:border-amber-200/60'}
+                        ${expandedCondition === index 
+  ? 'bg-gradient-to-br from-orange-50 to-amber-100 border-primary shadow-lg ring-1 ring-primary/20' 
+  : 'bg-white/90 backdrop-blur-sm border border-amber-100/40 shadow-md hover:shadow-lg hover:border-amber-200/60'}
+
                       `} whileHover={{
                   scale: 1.02,
                   boxShadow: "0 4px 20px rgba(234, 179, 8, 0.1)"
