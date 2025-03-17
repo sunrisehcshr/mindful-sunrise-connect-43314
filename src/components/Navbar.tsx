@@ -131,7 +131,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1.5 group">
-            <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-16 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
+            <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-13 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
             <div className="flex flex-col">
               <span className="leading-tight text-base bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text font-extrabold">Sunrise</span>
               <span className="text-muted-foreground leading-tight text-xs font-normal -mt-1">Human Care Services</span>
