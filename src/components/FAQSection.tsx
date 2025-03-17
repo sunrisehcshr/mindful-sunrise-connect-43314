@@ -141,7 +141,7 @@ const FAQSection = () => {
             Our friendly staff is here to help.
           </p>
           <div className="flex justify-center">
-            <a href="tel:+18146202162" className="inline-flex items-center px-6 py-3 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition-colors">
+            <a href="tel:+18146202162" className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-300 to-amber-400  text-white hover:bg-orange-400 transition-colors">
               Call Us at (814) 620-2162
             </a>
           </div>
