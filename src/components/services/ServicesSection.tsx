@@ -59,16 +59,8 @@ const ServicesSection: React.FC = () => {
   ];
   
   return (
-    <section id="services" className="py-24 bg-white relative">
-      {/* Top wave divider with improved transition from hero section */}
-      <div className="absolute top-0 left-0 right-0 h-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-50/70 to-white"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute bottom-0">
-          <path fill="#ffffff" fillOpacity="1" d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-      </div>
-      
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section id="services" className="py-24 bg-gradient-to-b from-white to-secondary/50">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-12" 
           initial={{ opacity: 0, y: 20 }} 
@@ -116,14 +108,6 @@ const ServicesSection: React.FC = () => {
             <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
-      </div>
-      
-      {/* Bottom wave divider with improved transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-amber-100/30 to-white/5"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute top-0 transform rotate-180">
-          <path fill="#ffffff" fillOpacity="1" d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
       </div>
     </section>
   );
