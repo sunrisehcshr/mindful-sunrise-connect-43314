@@ -17,7 +17,7 @@ const testimonials = [{
   rating: 5
 }];
 const WarmTestimonialsSection = () => {
-  return <section className="section-padding relative overflow-hidden bg-inherit">
+  return <section className="section-padding relative overflow-hidden">
       {/* Enhanced vibrant yellow background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-tr from-yellow-200/80 via-white/40 to-amber-100/70"></div>
