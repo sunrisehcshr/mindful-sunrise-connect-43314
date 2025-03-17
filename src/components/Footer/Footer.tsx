@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
                 <span className="text-xs text-muted-foreground leading-tight font-normal">Human Care Services</span>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground py-0 my-0">
               Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. 
               Our dedicated team provides counseling, therapy, psychiatry, and medication management for 
               anxiety, depression, ADHD, trauma, and more.
