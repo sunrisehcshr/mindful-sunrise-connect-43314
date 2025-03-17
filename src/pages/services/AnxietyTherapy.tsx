@@ -2,7 +2,7 @@
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 
-const AnxietyTherapy = () => {
+const AnxietyTreatment = () => {
   const benefits = [
     "Reduce excessive worry, fear, and panic symptoms",
     "Develop effective strategies to manage anxiety in daily life",
