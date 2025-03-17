@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
@@ -7,14 +6,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
 import { CalendarIcon, Clock3, ArrowLeft } from "lucide-react";
-
 const BlogPost = () => {
-  const { id } = useParams<{ id: string }>();
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
   const navigate = useNavigate();
-  
+
   // Get blog post data based on ID
   const blogPostData = getBlogPostDataById(id || "");
-  
   if (!blogPostData) {
     // If blog post not found, navigate to blog list
     React.useEffect(() => {
@@ -22,14 +23,8 @@ const BlogPost = () => {
     }, [navigate]);
     return null;
   }
-
-  return (
-    <>
-      <SEOHead 
-        title={`${blogPostData.title} | Mental Health Blog | Sunrise Human Care Services`}
-        description={blogPostData.excerpt}
-        canonicalUrl={`https://sunrisehcsllc.com/blog/${id}`}
-      />
+  return <>
+      <SEOHead title={`${blogPostData.title} | Mental Health Blog | Sunrise Human Care Services`} description={blogPostData.excerpt} canonicalUrl={`https://sunrisehcsllc.com/blog/${id}`} />
       <SchemaMarkup />
       <Navbar />
       
@@ -63,7 +58,7 @@ const BlogPost = () => {
             {blogPostData.content}
           </div>
           
-          <div className="mt-16 p-8 bg-secondary/70 backdrop-blur-sm border border-border/30 rounded-lg">
+          <div className="mt-16 p-8 backdrop-blur-sm border border-border/30 rounded-lg bg-white">
             <h2 className="text-2xl font-semibold mb-4">Need Help with {blogPostData.ctaTopicLink}?</h2>
             <p className="mb-6 text-lg">Our Havertown mental health professionals specialize in treating {blogPostData.ctaTopic} and other mental health conditions. We're here to help you thrive.</p>
             <div className="flex flex-wrap gap-4">
@@ -79,8 +74,7 @@ const BlogPost = () => {
           <div className="mt-20">
             <h3 className="text-2xl font-semibold mb-6">Other Articles You Might Like</h3>
             <div className="grid gap-6">
-              {getOtherBlogPosts(id || "").map(post => (
-                <div key={post.id} className="p-6 border border-border/40 rounded-lg bg-white/80 backdrop-blur-sm hover:shadow-md transition-all">
+              {getOtherBlogPosts(id || "").map(post => <div key={post.id} className="p-6 border border-border/40 rounded-lg bg-white/80 backdrop-blur-sm hover:shadow-md transition-all">
                   <h4 className="font-medium text-lg mb-2">
                     <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
                       {post.title}
@@ -94,16 +88,14 @@ const BlogPost = () => {
                       <Clock3 className="h-3 w-3 text-orange-500" /> {post.readTime}
                     </span>
                   </p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
       </main>
       
       <Footer />
-    </>
-  );
+    </>;
 };
 
 // Function to get blog post data by ID
@@ -116,8 +108,7 @@ const getBlogPostDataById = (id: string) => {
       excerpt: "Learn about common anxiety symptoms that people in Havertown might experience, especially considering local factors like commuting to Philadelphia or balancing suburban family life.",
       ctaTopic: "anxiety",
       ctaTopicLink: "Anxiety",
-      content: (
-        <>
+      content: <>
           <p className="lead font-medium text-xl text-foreground/90 mb-8">Living in the beautiful suburb of Havertown offers many advantages, from its tight-knit community feel to its convenient location near Philadelphia. However, even in this picturesque Delaware County town, residents aren't immune to the effects of anxiety – especially with the unique pressures of suburban living and commuting.</p>
           
           <p>At Sunrise Human Care Services in Havertown, PA, we've noticed certain anxiety symptoms that are particularly common among our local clients. Recognizing these signs early can make a significant difference in getting the help you need.</p>
@@ -205,7 +196,6 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Remember, experiencing anxiety doesn't mean you're alone – many of your Havertown neighbors are navigating similar challenges. Reaching out for support is a sign of strength, not weakness.</p>
         </>
-      )
     },
     "supporting-depression-havertown": {
       title: "How Havertown Families Can Support a Loved One with Depression",
@@ -214,8 +204,7 @@ const getBlogPostDataById = (id: string) => {
       excerpt: "Practical guidance for local families supporting someone with depression, including local community resources and support groups in Delaware County.",
       ctaTopic: "depression",
       ctaTopicLink: "Depression",
-      content: (
-        <>
+      content: <>
           <p className="lead font-medium text-xl text-foreground/90 mb-8">Depression affects approximately 21 million adults in the United States, and Havertown families are not exempt from this challenging mental health condition. When someone you love is experiencing depression, knowing how to provide effective support can make a significant difference in their recovery journey.</p>
           
           <p>At Sunrise Human Care Services in Havertown, we work with many local families navigating this difficult terrain. Based on our experience with Delaware County residents, here are practical strategies for supporting a loved one with depression while also maintaining your own wellbeing.</p>
@@ -359,7 +348,6 @@ const getBlogPostDataById = (id: string) => {
           
           <p>By combining professional help from qualified providers like our team at Sunrise Human Care Services with compassionate family support, your loved one can find their path to wellness right here in our Havertown community.</p>
         </>
-      )
     },
     "seasonal-affective-disorder-havertown": {
       title: "Seasonal Affective Disorder in Havertown: Coping with Pennsylvania's Winter Blues",
@@ -368,8 +356,7 @@ const getBlogPostDataById = (id: string) => {
       excerpt: "How Pennsylvania's winter weather patterns affect mental health in Havertown specifically, with practical coping strategies for seasonal depression.",
       ctaTopic: "seasonal mood changes",
       ctaTopicLink: "Seasonal Affective Disorder",
-      content: (
-        <>
+      content: <>
           <p className="lead font-medium text-xl text-foreground/90 mb-8">As the daylight hours shorten and the Delaware County skies turn increasingly gray, many Havertown residents notice a distinct shift in their mood and energy levels. This phenomenon, known as Seasonal Affective Disorder (SAD), affects approximately 5% of adults in the United States – with even more experiencing a milder form often called the "winter blues."</p>
           
           <p>At Sunrise Human Care Services in Havertown, PA, we see a significant increase in clients seeking support for mood changes during Pennsylvania's darker months. Understanding how our specific regional climate impacts seasonal depression can help local residents develop effective coping strategies.</p>
@@ -516,37 +503,29 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Remember that seasonal depression, while challenging, is highly treatable with the right combination of self-care, community connection, and professional support. At Sunrise Human Care Services, we're committed to helping Havertown residents thrive during every season of the year.</p>
         </>
-      )
     }
   };
-  
   return blogPosts[id];
 };
 
 // Function to get other blog posts for related content
 const getOtherBlogPosts = (currentId: string) => {
-  const allPosts = [
-    {
-      id: "anxiety-signs-havertown",
-      title: "5 Signs of Anxiety That Havertown Residents Shouldn't Ignore",
-      date: "June 20, 2024",
-      readTime: "7 min read",
-    },
-    {
-      id: "supporting-depression-havertown",
-      title: "How Havertown Families Can Support a Loved One with Depression",
-      date: "June 18, 2024",
-      readTime: "8 min read",
-    },
-    {
-      id: "seasonal-affective-disorder-havertown",
-      title: "Seasonal Affective Disorder in Havertown: Coping with Pennsylvania's Winter Blues",
-      date: "June 15, 2024",
-      readTime: "6 min read",
-    }
-  ];
-  
+  const allPosts = [{
+    id: "anxiety-signs-havertown",
+    title: "5 Signs of Anxiety That Havertown Residents Shouldn't Ignore",
+    date: "June 20, 2024",
+    readTime: "7 min read"
+  }, {
+    id: "supporting-depression-havertown",
+    title: "How Havertown Families Can Support a Loved One with Depression",
+    date: "June 18, 2024",
+    readTime: "8 min read"
+  }, {
+    id: "seasonal-affective-disorder-havertown",
+    title: "Seasonal Affective Disorder in Havertown: Coping with Pennsylvania's Winter Blues",
+    date: "June 15, 2024",
+    readTime: "6 min read"
+  }];
   return allPosts.filter(post => post.id !== currentId);
 };
-
 export default BlogPost;
