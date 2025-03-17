@@ -97,7 +97,7 @@ const ServicesSection: React.FC = () => {
         }} transition={{
           duration: 0.5,
           delay: 0.2
-        }} className="text-muted-foreground text-base font-medium">
+        }} className="text-base font-medium text-zinc-700">
             Our team of experienced mental health professionals provides a range of services 
             designed to support your well-being and personal growth.
           </motion.p>

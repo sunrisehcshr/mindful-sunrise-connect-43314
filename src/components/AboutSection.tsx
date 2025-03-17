@@ -52,7 +52,7 @@ Our Story & Mission
         }} transition={{
           duration: 0.5,
           delay: 0.2
-        }} className="text-muted-foreground font-normal">
+        }} className="font-normal text-zinc-700">
 Learn about our commitment to providing compassionate, accessible mental health care in Havertown, PA.
         </motion.p>
 

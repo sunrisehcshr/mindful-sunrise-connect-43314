@@ -146,7 +146,7 @@ const ConditionsSection = () => {
         }} transition={{
           duration: 0.5,
           delay: 0.2
-        }} className="text-muted-foreground font-medium">
+        }} className="font-medium text-zinc-700">
             Our experienced team provides evidence-based treatment for a wide range of 
             mental health conditions affecting adults, adolescents, and children.
           </motion.p>
