@@ -60,11 +60,11 @@ const ServicesSection: React.FC = () => {
   
   return (
     <section id="services" className="py-24 bg-white relative">
-      {/* Subtle curved divider at top */}
-      <div className="absolute top-0 left-0 right-0 h-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-50 to-white"></div>
+      {/* Top wave divider with improved transition from hero section */}
+      <div className="absolute top-0 left-0 right-0 h-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-50/70 to-white"></div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute bottom-0">
-          <path fill="#ffffff" fillOpacity="1" d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,128C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+          <path fill="#ffffff" fillOpacity="1" d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
       </div>
       
@@ -118,11 +118,11 @@ const ServicesSection: React.FC = () => {
         </div>
       </div>
       
-      {/* Subtle curved divider at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-white/5"></div>
+      {/* Bottom wave divider with improved transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-amber-100/30 to-white/5"></div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute top-0 transform rotate-180">
-          <path fill="#ffffff" fillOpacity="1" d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,128C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+          <path fill="#ffffff" fillOpacity="1" d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
       </div>
     </section>
