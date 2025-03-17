@@ -23,7 +23,7 @@ const FAQSection: React.FC = () => {
     question: "What steps should I take if I or someone I know is in crisis?",
     answer: "If you or someone you know is struggling or in crisis, help is available. Call or text 988 to speak with a trained crisis counselor any time of day or night."
   }];
-  return <section id="faq" className="py-20 bg-secondary/50">
+  return <section id="faq" className="py-20 bg-inherit">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-block px-3 py-1 rounded-full text-xs bg-orange-500 mb-4 text-white font-semibold">
