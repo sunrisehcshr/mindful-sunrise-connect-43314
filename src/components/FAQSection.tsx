@@ -4,7 +4,6 @@ import { Separator } from './ui/separator';
 import SectionTag from './ui/section-tag';
 import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown } from "lucide-react";
-
 const faqs = [{
   question: "What mental health services do you offer at your Havertown, PA clinic?",
   answer: "We provide comprehensive mental health services, including individual therapy, couple Counseling, group therapy, family counseling, psychiatric evaluations, and medication management. Our team addresses various conditions such as anxiety, depression, PTSD, and substance use disorders."
@@ -27,7 +26,6 @@ const faqs = [{
   question: "What steps should I take if I or someone I know is in crisis?",
   answer: "If you or someone you know is struggling or in crisis, help is available. Call or text 988 to speak with a trained crisis counselor any time of day or night."
 }];
-
 const FAQItem = ({
   question,
   answer,
@@ -67,49 +65,61 @@ const FAQItem = ({
       </AnimatePresence>
     </div>;
 };
-
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
-  return (
-    <section id="faq" className="py-24 bg-white/50">
+  return <section id="faq" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
-          className="max-w-3xl mx-auto text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
+        <motion.div className="max-w-3xl mx-auto text-center mb-12" initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.5
+      }}>
+          <motion.div initial={{
+          opacity: 0,
+          scale: 0.9
+        }} whileInView={{
+          opacity: 1,
+          scale: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.4
+        }}>
             <SectionTag>FAQ</SectionTag>
           </motion.div>
           
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          <motion.h2 className="text-3xl md:text-4xl font-bold mb-4" initial={{
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5,
+          delay: 0.1
+        }}>
             Frequently Asked Questions
           </motion.h2>
           
-          <motion.p 
-            className="text-muted-foreground"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <motion.p className="text-muted-foreground" initial={{
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5,
+          delay: 0.2
+        }}>
             Find answers to common questions about our services, appointments, and mental health care.
           </motion.p>
           
@@ -137,8 +147,6 @@ const FAQSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FAQSection;
