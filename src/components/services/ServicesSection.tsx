@@ -6,7 +6,7 @@ import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
 const ServicesSection: React.FC = () => {
   const services = [{
-    icon: <Brain className="h-6 w-7" />,
+    icon: <Brain className="h-6 w-6" />,
     title: "Individual Therapy",
     description: "One-on-one therapy sessions tailored to your unique needs and challenges.",
     color: "bg-sunrise-50 text-sunrise-700",
