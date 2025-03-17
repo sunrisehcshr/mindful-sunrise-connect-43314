@@ -154,7 +154,7 @@ const ConditionsSection = () => {
         </motion.div>
         
         <TooltipProvider>
-          <motion.div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12" initial={{
+          <motion.div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12" initial={{
           opacity: 0
         }} whileInView={{
           opacity: 1
