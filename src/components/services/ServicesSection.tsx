@@ -88,7 +88,7 @@ const ServicesSection: React.FC = () => {
             Comprehensive Mental Health Services
           </motion.h2>
           
-          <motion.p className="text-muted-foreground" initial={{
+          <motion.p initial={{
           opacity: 0
         }} whileInView={{
           opacity: 1
@@ -97,7 +97,7 @@ const ServicesSection: React.FC = () => {
         }} transition={{
           duration: 0.5,
           delay: 0.2
-        }}>
+        }} className="text-muted-foreground text-base font-medium">
             Our team of experienced mental health professionals provides a range of services 
             designed to support your well-being and personal growth.
           </motion.p>

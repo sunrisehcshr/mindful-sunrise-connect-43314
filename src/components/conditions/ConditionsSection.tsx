@@ -137,7 +137,7 @@ const ConditionsSection = () => {
             Conditions We Treat
           </motion.h2>
           
-          <motion.p className="text-muted-foreground" initial={{
+          <motion.p initial={{
           opacity: 0
         }} whileInView={{
           opacity: 1
@@ -146,7 +146,7 @@ const ConditionsSection = () => {
         }} transition={{
           duration: 0.5,
           delay: 0.2
-        }}>
+        }} className="text-muted-foreground font-medium">
             Our experienced team provides evidence-based treatment for a wide range of 
             mental health conditions affecting adults, adolescents, and children.
           </motion.p>

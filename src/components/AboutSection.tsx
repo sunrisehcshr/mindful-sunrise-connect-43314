@@ -43,7 +43,7 @@ const AboutSection = () => {
 Our Story & Mission
         </motion.h2>
 
-        <motion.p className="text-muted-foreground" initial={{
+        <motion.p initial={{
           opacity: 0
         }} whileInView={{
           opacity: 1
@@ -52,7 +52,7 @@ Our Story & Mission
         }} transition={{
           duration: 0.5,
           delay: 0.2
-        }}>
+        }} className="text-muted-foreground font-normal">
 Learn about our commitment to providing compassionate, accessible mental health care in Havertown, PA.
         </motion.p>
 
