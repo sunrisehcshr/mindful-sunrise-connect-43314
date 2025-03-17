@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
-import { Brain, Users, Heart, HeartHandshake, Stethoscope, Pill } from 'lucide-react';
+import { User, Users, Baby, HeartHandshake, Stethoscope, Pill } from 'lucide-react';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
 const ServicesSection: React.FC = () => {
   const services = [{
-    icon: <Brain className="h-6 w-6" />,
+    icon: <User className="h-6 w-6" />,
     title: "Individual Therapy",
     description: "One-on-one therapy sessions tailored to your unique needs and challenges.",
     color: "bg-sunrise-50 text-sunrise-700",
@@ -27,7 +27,7 @@ const ServicesSection: React.FC = () => {
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/family-therapy-havertown-pa"
   }, {
-    icon: <Heart className="h-6 w-6" />,
+    icon: <Baby className="h-6 w-6" />,
     title: "Child & Adolescent Therapy",
     description: "Specialized therapy for children and teens facing behavioral or emotional challenges.",
     color: "bg-sunrise-50 text-sunrise-700",
