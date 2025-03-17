@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2">
               <img src="/logo.svg" alt="Sunrise Logo" className="h-8 w-8 object-contain" />
               <div className="flex flex-col">
-                <span className="text-base leading-tight font-medium">Sunrise</span>
+                <span className="leading-tight text-base bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text font-extrabold">Sunrise</span>
                 <span className="text-xs text-muted-foreground leading-tight font-normal">Human Care Services</span>
               </div>
             </div>
