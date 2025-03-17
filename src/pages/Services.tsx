@@ -11,12 +11,10 @@ const Services = () => {
       <SEOHead title="Our Services | Sunrise Human Care Services" description="Comprehensive mental health services in Havertown, PA. Therapy for anxiety, depression, family counseling, and specialized care for all ages." />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-24 py-0">
+        <main className="flex-grow pt-24 py-0 bg-white">
           <ServicesSection />
           
-          <div className="container mx-auto px-4 py-8">
-            <Separator className="bg-gradient-to-r from-transparent via-amber-200 to-transparent h-0.5" />
-          </div>
+          
           
           <ConditionsSection />
         </main>
