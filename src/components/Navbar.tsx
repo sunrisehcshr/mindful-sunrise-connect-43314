@@ -4,14 +4,12 @@ import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp } from "lucide
 import { cn } from "@/lib/utils";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileConditionsOpen, setMobileConditionsOpen] = useState(false);
   const location = useLocation();
-  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -19,9 +17,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  
   const toggleMobileServices = () => {
     setMobileServicesOpen(!mobileServicesOpen);
     // If we're opening this section, close the other to prevent long lists
@@ -29,7 +25,6 @@ const Navbar = () => {
       setMobileConditionsOpen(false);
     }
   };
-  
   const toggleMobileConditions = () => {
     setMobileConditionsOpen(!mobileConditionsOpen);
     // If we're opening this section, close the other to prevent long lists
@@ -37,15 +32,12 @@ const Navbar = () => {
       setMobileServicesOpen(false);
     }
   };
-  
   useEffect(() => {
     setIsMenuOpen(false);
     setMobileServicesOpen(false);
     setMobileConditionsOpen(false);
   }, [location.pathname]);
-  
   const isActive = (path: string) => location.pathname === path;
-  
   const serviceLinks = [{
     title: "Individual Therapy",
     path: "/individual-therapy-havertown-pa"
@@ -65,7 +57,6 @@ const Navbar = () => {
     title: "Medication Management",
     path: "/medication-management-havertown-pa"
   }];
-  
   const conditionLinks = [{
     title: "Anxiety",
     path: "/anxiety-therapy-havertown-pa"
@@ -112,7 +103,6 @@ const Navbar = () => {
     title: "Grief & Loss",
     path: "/grief-therapy-havertown-pa"
   }];
-  
   const navLinks = [{
     path: "/",
     label: "Home"
@@ -137,8 +127,7 @@ const Navbar = () => {
     path: "/contact",
     label: "Contact"
   }];
-  
-  return <header className={cn("fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300", isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent")}>
+  return <header className="py-[15px] bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1.5 group">
@@ -156,44 +145,27 @@ const Navbar = () => {
               return <NavigationMenu key={index}>
                     <NavigationMenuList>
                       <NavigationMenuItem>
-                        <NavigationMenuTrigger className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5", 
-                          (link.label === "Services" && isActive("/services")) || 
-                          (link.label === "Conditions" && location.pathname.includes("therapy") || location.pathname.includes("treatment")) 
-                          ? "bg-orange-500/10 text-orange-600 font-medium" 
-                          : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600")}>
+                        <NavigationMenuTrigger className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5", link.label === "Services" && isActive("/services") || link.label === "Conditions" && location.pathname.includes("therapy") || location.pathname.includes("treatment") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600")}>
                           {link.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="p-2 w-[400px] max-h-[600px]">
                           <ScrollArea className="h-full w-full max-h-[550px]">
                             <div className="grid grid-cols-1 gap-1 p-2">
-                              {link.children.map((child, childIndex) => (
-                                <Link 
-                                  key={childIndex} 
-                                  to={child.path} 
-                                  className={cn(
-                                    "block select-none rounded-md py-2 px-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600", 
-                                    isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground"
-                                  )}
-                                >
+                              {link.children.map((child, childIndex) => <Link key={childIndex} to={child.path} className={cn("block select-none rounded-md py-2 px-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600", isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground")}>
                                   {child.title}
-                                </Link>
-                              ))}
-                              {link.label === "Services" && (
-                                <div className="pt-2 mt-2 border-t border-border">
+                                </Link>)}
+                              {link.label === "Services" && <div className="pt-2 mt-2 border-t border-border">
                                   <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-3 py-2">
                                     View All Services
                                     <ChevronRight className="ml-1 h-4 w-4" />
                                   </Link>
-                                </div>
-                              )}
-                              {link.label === "Conditions" && (
-                                <div className="pt-2 mt-2 border-t border-border">
+                                </div>}
+                              {link.label === "Conditions" && <div className="pt-2 mt-2 border-t border-border">
                                   <Link to="/services#conditions" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-3 py-2">
                                     View All Conditions
                                     <ChevronRight className="ml-1 h-4 w-4" />
                                   </Link>
-                                </div>
-                              )}
+                                </div>}
                             </div>
                           </ScrollArea>
                         </NavigationMenuContent>
@@ -225,45 +197,23 @@ const Navbar = () => {
               {navLinks.map((link, index) => {
               if (link.type === "dropdown") {
                 return <div key={index} className="space-y-2">
-                      <button 
-                        onClick={link.label === "Services" ? toggleMobileServices : toggleMobileConditions} 
-                        className={cn("w-full px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
-                          (link.label === "Services" && isActive("/services")) || 
-                          (link.label === "Conditions" && location.pathname.includes("therapy") || location.pathname.includes("treatment")) 
-                          ? "bg-orange-500/10 text-orange-600 font-medium" 
-                          : "text-muted-foreground hover:text-foreground")}
-                      >
+                      <button onClick={link.label === "Services" ? toggleMobileServices : toggleMobileConditions} className={cn("w-full px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", link.label === "Services" && isActive("/services") || link.label === "Conditions" && location.pathname.includes("therapy") || location.pathname.includes("treatment") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground")}>
                         {link.label}
-                        {(link.label === "Services" && mobileServicesOpen) || (link.label === "Conditions" && mobileConditionsOpen) ? 
-                          <ChevronUp className="h-4 w-4 ml-2" /> : 
-                          <ChevronDown className="h-4 w-4 ml-2" />}
+                        {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
                       </button>
-                      {(link.label === "Services" && mobileServicesOpen) || (link.label === "Conditions" && mobileConditionsOpen) ? (
-                        <div className="pl-4 space-y-1 border-l border-orange-200 ml-2">
-                          {link.children.map((child, childIndex) => (
-                            <Link 
-                              key={childIndex} 
-                              to={child.path} 
-                              className={cn("block px-4 py-2 text-sm rounded-md transition-colors", 
-                                isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50")}
-                            >
+                      {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? <div className="pl-4 space-y-1 border-l border-orange-200 ml-2">
+                          {link.children.map((child, childIndex) => <Link key={childIndex} to={child.path} className={cn("block px-4 py-2 text-sm rounded-md transition-colors", isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50")}>
                               {child.title}
-                            </Link>
-                          ))}
-                          {link.label === "Services" && (
-                            <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">
+                            </Link>)}
+                          {link.label === "Services" && <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">
                               View All Services
                               <ChevronRight className="ml-1 h-4 w-4" />
-                            </Link>
-                          )}
-                          {link.label === "Conditions" && (
-                            <Link to="/services#conditions" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">
+                            </Link>}
+                          {link.label === "Conditions" && <Link to="/services#conditions" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">
                               View All Conditions
                               <ChevronRight className="ml-1 h-4 w-4" />
-                            </Link>
-                          )}
-                        </div>
-                      ) : null}
+                            </Link>}
+                        </div> : null}
                     </div>;
               }
               return <Link key={index} to={link.path} className={cn("px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-2", isActive(link.path) ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-50")}>
@@ -280,5 +230,4 @@ const Navbar = () => {
       </div>
     </header>;
 };
-
 export default Navbar;
