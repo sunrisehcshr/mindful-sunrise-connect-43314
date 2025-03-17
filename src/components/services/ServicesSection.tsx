@@ -48,7 +48,7 @@ const ServicesSection: React.FC = () => {
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/medication-management-havertown-pa"
   }];
-  return <section id="services" className="bg-gradient-to-b from-white to-secondary/50 py-[160px]">
+  return <section id="services" className="bg-gradient-to-b from-white to-secondary/50 py-[100px]">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div className="max-w-3xl mx-auto text-center mb-12" initial={{
         opacity: 0,
