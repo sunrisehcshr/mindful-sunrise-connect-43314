@@ -97,7 +97,7 @@ const ConditionsSection = () => {
       setExpandedCondition(index);
     }
   };
-  return <section id="conditions" className="py-24 bg-transparent">
+  return <section id="conditions" className="py-24 bg-zinc-100">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div className="max-w-3xl mx-auto text-center mb-12" initial={{
         opacity: 0,
