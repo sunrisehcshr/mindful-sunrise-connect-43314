@@ -1,8 +1,6 @@
-
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { Phone, Mail, Hospital, Video } from 'lucide-react';
-
 const AppointmentForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,34 +14,9 @@ const AppointmentForm: React.FC = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   // Updated comprehensive list of all services
-  const services = [
-    "Individual Therapy", 
-    "Couples Counseling", 
-    "Family Therapy", 
-    "Child & Adolescent Therapy", 
-    "Group Therapy", 
-    "Anxiety Therapy", 
-    "Depression Therapy", 
-    "Trauma & PTSD Therapy", 
-    "ADHD Treatment", 
-    "Psychiatric Evaluation", 
-    "Medication Management", 
-    "Substance Use Counseling", 
-    "Grief Counseling", 
-    "Life Transitions Counseling",
-    "Therapy for Older Adults",
-    "Behavioral Health Services",
-    "Stress Management",
-    "Mental Health Assessment",
-    "Crisis Intervention",
-    "Cognitive Behavioral Therapy (CBT)",
-    "Dialectical Behavior Therapy (DBT)",
-    "Mindfulness-Based Therapy",
-    "Other"
-  ];
-  
+  const services = ["Individual Therapy", "Couples Counseling", "Family Therapy", "Child & Adolescent Therapy", "Group Therapy", "Anxiety Therapy", "Depression Therapy", "Trauma & PTSD Therapy", "ADHD Treatment", "Psychiatric Evaluation", "Medication Management", "Substance Use Counseling", "Grief Counseling", "Life Transitions Counseling", "Therapy for Older Adults", "Behavioral Health Services", "Stress Management", "Mental Health Assessment", "Crisis Intervention", "Cognitive Behavioral Therapy (CBT)", "Dialectical Behavior Therapy (DBT)", "Mindfulness-Based Therapy", "Other"];
   const timeSlots = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"];
 
   // Handle input changes
@@ -71,7 +44,6 @@ const AppointmentForm: React.FC = () => {
           _cc: "shweta.s@sunrisehcsllc.com"
         })
       });
-      
       if (response.ok) {
         toast.success("Thank you! Your appointment request has been submitted. We'll get back to you shortly.");
         setFormData({
@@ -96,8 +68,7 @@ const AppointmentForm: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-  
-  return <form onSubmit={handleSubmit} className="space-y-4 bg-white/80 p-4 sm:p-6 rounded-lg shadow-sm border border-sunrise-100/50 warm-glow">
+  return <form onSubmit={handleSubmit} className="space-y-4 p-4 sm:p-6 rounded-lg shadow-sm border border-sunrise-100/50 warm-glow bg-white">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Full Name</label>
         <input id="name" name="name" type="text" value={formData.name} onChange={handleChange} className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" required />
