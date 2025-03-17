@@ -58,9 +58,9 @@ const AnxietyTherapy = () => {
   
   return (
     <ServicePageLayout
-      title="Anxiety Therapy in Havertown, PA"
+      title="Anxiety Treatment in Havertown, PA"
       description="Evidence-based therapy for all types of anxiety disorders, including generalized anxiety, social anxiety, panic disorder, and phobias."
-      pageTitle="Expert Anxiety Therapy in Havertown, PA - Effective Treatment | Sunrise Human Care Services"
+      pageTitle="Expert Anxiety Treatment in Havertown, PA - Effective Treatment | Sunrise Human Care Services"
       metaDescription="Specialized anxiety treatment in Havertown, PA. Evidence-based therapy for panic attacks, generalized anxiety, social anxiety, and phobias. Find relief with our experienced therapists."
       serviceType="Anxiety Therapy"
       canonicalUrl="/anxiety-therapy-havertown-pa"
