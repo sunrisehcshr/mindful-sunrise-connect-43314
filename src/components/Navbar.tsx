@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
@@ -187,6 +186,14 @@ const Navbar = () => {
                                   </Link>
                                 </div>
                               )}
+                              {link.label === "Conditions" && (
+                                <div className="pt-2 mt-2 border-t border-border">
+                                  <Link to="/services#conditions" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-3 py-2">
+                                    View All Conditions
+                                    <ChevronRight className="ml-1 h-4 w-4" />
+                                  </Link>
+                                </div>
+                              )}
                             </div>
                           </ScrollArea>
                         </NavigationMenuContent>
@@ -246,6 +253,12 @@ const Navbar = () => {
                           {link.label === "Services" && (
                             <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">
                               View All Services
+                              <ChevronRight className="ml-1 h-4 w-4" />
+                            </Link>
+                          )}
+                          {link.label === "Conditions" && (
+                            <Link to="/services#conditions" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">
+                              View All Conditions
                               <ChevronRight className="ml-1 h-4 w-4" />
                             </Link>
                           )}
