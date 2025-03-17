@@ -59,8 +59,16 @@ const ServicesSection: React.FC = () => {
   ];
   
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-white to-secondary/50">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="services" className="py-24 bg-white relative">
+      {/* Subtle curved divider at top */}
+      <div className="absolute top-0 left-0 right-0 h-12 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-50 to-white"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute bottom-0">
+          <path fill="#ffffff" fillOpacity="1" d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,128C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
+      </div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-12" 
           initial={{ opacity: 0, y: 20 }} 
@@ -108,6 +116,14 @@ const ServicesSection: React.FC = () => {
             <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
+      </div>
+      
+      {/* Subtle curved divider at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-12 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-white/5"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute top-0 transform rotate-180">
+          <path fill="#ffffff" fillOpacity="1" d="M0,128L80,117.3C160,107,320,85,480,90.7C640,96,800,128,960,128C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
       </div>
     </section>
   );
