@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -7,13 +6,8 @@ import SchemaMarkup from '../SchemaMarkup';
 import { motion } from 'framer-motion';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { 
-  ArrowRight, 
-  Calendar, 
-  PhoneCall
-} from 'lucide-react';
+import { ArrowRight, Calendar, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 interface ServicePageLayoutProps {
   children: React.ReactNode;
   title: string;
@@ -24,12 +18,20 @@ interface ServicePageLayoutProps {
   canonicalUrl: string;
   heroImage?: string;
   benefits: string[];
-  approaches: { title: string; description: string; }[];
-  faqs: { question: string; answer: string; }[];
-  relatedServices: { title: string; url: string; }[];
+  approaches: {
+    title: string;
+    description: string;
+  }[];
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
+  relatedServices: {
+    title: string;
+    url: string;
+  }[];
   schemaType?: string;
 }
-
 const ServicePageLayout = ({
   children,
   title,
@@ -45,19 +47,14 @@ const ServicePageLayout = ({
   relatedServices,
   schemaType
 }: ServicePageLayoutProps) => {
-  return (
-    <>
-      <SEOHead
-        title={pageTitle}
-        description={metaDescription}
-        canonicalUrl={canonicalUrl}
-      />
+  return <>
+      <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} />
       <SchemaMarkup />
 
       <div className="flex flex-col min-h-screen">
         <Navbar />
         
-        <main className="flex-grow pt-24">
+        <main className="flex-grow pt-24 bg-white">
           {/* Hero Section - Updated with gradient background, grid removed */}
           <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
@@ -67,21 +64,28 @@ const ServicePageLayout = ({
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl">                
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white"
-                >
+                <motion.h1 initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5
+              }} className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
                   {title}
                 </motion.h1>
                 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-base md:text-xl text-white/90 mb-6 md:mb-8"
-                >
+                <motion.p initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5,
+                delay: 0.1
+              }} className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
                   {description}
                 </motion.p>
                 
@@ -114,23 +118,25 @@ const ServicePageLayout = ({
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-start space-x-4"
-                  >
+                {benefits.map((benefit, index) => <motion.div key={index} initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }} className="flex items-start space-x-4">
                     <div className="mt-1 bg-orange-100 text-orange-600 rounded-full p-1.5">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <p className="text-base md:text-lg text-muted-foreground">{benefit}</p>
-                  </motion.div>
-                ))}
+                  </motion.div>)}
               </div>
             </div>
           </section>
@@ -147,19 +153,21 @@ const ServicePageLayout = ({
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {approaches.map((approach, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50"
-                  >
+                {approaches.map((approach, index) => <motion.div key={index} initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }} className="bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50">
                     <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{approach.title}</h3>
                     <p className="text-muted-foreground text-sm md:text-base">{approach.description}</p>
-                  </motion.div>
-                ))}
+                  </motion.div>)}
               </div>
             </div>
           </section>
@@ -199,19 +207,21 @@ const ServicePageLayout = ({
               </div>
               
               <div className="max-w-3xl mx-auto">
-                {faqs.map((faq, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="mb-5 md:mb-6 bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50"
-                  >
+                {faqs.map((faq, index) => <motion.div key={index} initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }} className="mb-5 md:mb-6 bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50">
                     <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{faq.question}</h3>
                     <p className="text-muted-foreground text-sm md:text-base">{faq.answer}</p>
-                  </motion.div>
-                ))}
+                  </motion.div>)}
               </div>
             </div>
           </section>
@@ -228,14 +238,18 @@ const ServicePageLayout = ({
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-                {relatedServices.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
+                {relatedServices.map((service, index) => <motion.div key={index} initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }}>
                     <Link to={service.url} className="block bg-white rounded-lg p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50 h-full">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{service.title}</h3>
                       <div className="flex items-center text-orange-500 mt-3 md:mt-4">
@@ -243,8 +257,7 @@ const ServicePageLayout = ({
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </Link>
-                  </motion.div>
-                ))}
+                  </motion.div>)}
               </div>
             </div>
           </section>
@@ -252,8 +265,6 @@ const ServicePageLayout = ({
         
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default ServicePageLayout;
