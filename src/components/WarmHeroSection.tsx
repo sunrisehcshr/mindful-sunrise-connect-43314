@@ -9,13 +9,15 @@ import SectionTag from './ui/section-tag';
 const WarmHeroSection = () => {
   return (
     <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32">
-      <div className="absolute inset-0 -z-10 opacity-30">
-        <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+      {/* Enhanced background with more vibrant gradient */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/60 via-white to-amber-50/70"></div>
+        <svg className="h-full w-full opacity-20" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
               <rect x="0" y="0" width="100%" height="100%" fill="none" />
-              <path d="M100 0H0V100" stroke="rgba(251, 191, 36, 0.2)" fill="none" strokeWidth="1" />
-              <path d="M0 50H100M50 0V100" stroke="rgba(251, 191, 36, 0.1)" fill="none" strokeWidth="0.5" />
+              <path d="M100 0H0V100" stroke="rgba(251, 191, 36, 0.3)" fill="none" strokeWidth="1" />
+              <path d="M0 50H100M50 0V100" stroke="rgba(251, 191, 36, 0.2)" fill="none" strokeWidth="0.5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#warm-pattern)" />
@@ -92,7 +94,7 @@ const WarmHeroSection = () => {
                 initial={{ y: 20 }}
                 animate={{ y: 0 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-bl from-amber-400/20 to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-bl from-amber-400/30 to-transparent z-10"></div>
                 <img 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
                   src="/images/family-counseling-havertown.webp" 
@@ -100,8 +102,9 @@ const WarmHeroSection = () => {
                 />
               </motion.div>
               
-              <div className="absolute -z-10 rounded-full w-40 h-40 bg-orange-100/60 blur-3xl -top-10 -right-10"></div>
-              <div className="absolute -z-10 rounded-full w-60 h-60 bg-amber-200/40 blur-3xl -bottom-16 -left-10"></div>
+              {/* Enhanced decorative elements */}
+              <div className="absolute -z-10 rounded-full w-40 h-40 bg-yellow-100/80 blur-3xl -top-10 -right-10"></div>
+              <div className="absolute -z-10 rounded-full w-60 h-60 bg-amber-200/60 blur-3xl -bottom-16 -left-10"></div>
             </div>
           </motion.div>
         </div>
