@@ -11,24 +11,28 @@ const services = [
     title: "Individual Therapy",
     description: "One-on-one therapy sessions tailored to your unique needs and challenges.",
     color: "bg-blue-50 text-blue-600",
+    url: "/individual-therapy-havertown-pa",
   },
   {
     icon: Users,
     title: "Group Therapy",
     description: "Supportive group environments to connect with others facing similar challenges.",
     color: "bg-green-50 text-green-600",
+    url: "/family-therapy-havertown-pa",
   },
   {
     icon: Heart,
     title: "Family Counseling",
     description: "Therapy sessions focused on improving family relationships and communication.",
     color: "bg-purple-50 text-purple-600",
+    url: "/family-therapy-havertown-pa",
   },
   {
     icon: Sparkles,
     title: "Specialized Programs",
     description: "Targeted therapeutic approaches for specific mental health conditions.",
     color: "bg-amber-50 text-amber-600",
+    url: "/services",
   },
 ];
 
@@ -102,7 +106,7 @@ const ServicesSection = () => {
                 {service.description}
               </p>
               <Link
-                to="/services"
+                to={service.url}
                 className="mt-4 inline-flex items-center text-sm font-medium text-sunrise-700 hover:text-sunrise-800 transition-colors duration-200"
               >
                 Learn more <ArrowRight className="ml-1 h-4 w-4" />
