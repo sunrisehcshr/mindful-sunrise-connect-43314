@@ -1,27 +1,24 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import { motion } from 'framer-motion';
-
 const TermsOfService = () => {
-  return (
-    <>
-      <SEOHead
-        title="Terms of Service | Sunrise Human Care Services"
-        description="Our terms of service outline the rules, guidelines, and agreements for using Sunrise Human Care Services' website and services."
-      />
+  return <>
+      <SEOHead title="Terms of Service | Sunrise Human Care Services" description="Our terms of service outline the rules, guidelines, and agreements for using Sunrise Human Care Services' website and services." />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow py-12 md:py-16">
-          <div className="container mx-auto px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-4xl mx-auto"
-            >
+          <div className="container mx-auto px-4 md:px-6 py-[70px]">
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.5
+          }} className="max-w-4xl mx-auto">
               <h1 className="text-3xl md:text-4xl font-bold mb-8">Terms of Service</h1>
               
               <div className="prose prose-lg max-w-none space-y-6">
@@ -130,8 +127,6 @@ const TermsOfService = () => {
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default TermsOfService;
