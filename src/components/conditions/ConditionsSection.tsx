@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
@@ -221,7 +222,7 @@ const ConditionsSection = () => {
                     <Card className="overflow-hidden border-amber-100/50 bg-gradient-to-br from-white to-amber-50/50 backdrop-blur-sm shadow-md">
                       <CardContent className="p-4">
                         <p className="text-sm text-foreground">{condition.details}</p>
-                        <Link to={condition.url}>
+                        <Link to={`${condition.url}#home`}>
                           <Button variant="ghost" size="sm" className="mt-3 text-amber-600 hover:text-amber-700 hover:bg-amber-100/50 group flex items-center">
                             Learn more 
                             <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />

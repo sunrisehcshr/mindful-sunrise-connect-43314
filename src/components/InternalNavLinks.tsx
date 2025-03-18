@@ -18,28 +18,47 @@ export const NavLink: React.FC<NavLinkProps> = ({
   activeClassName = "bg-sunrise-400/20",
   onClick
 }) => {
-  // Check if the current path includes therapy or treatment to identify condition pages
-  const isConditionPage = window.location.pathname.includes('therapy') || 
-                          window.location.pathname.includes('treatment') || 
-                          window.location.pathname.includes('disorder') ||
-                          window.location.pathname.includes('counseling');
+  // Helper to check if current path is a condition page
+  const isConditionPage = () => {
+    return window.location.pathname.includes('disorder') || 
+          window.location.pathname.includes('anxiety') ||
+          window.location.pathname.includes('depression') ||
+          window.location.pathname.includes('schizophrenia') || 
+          window.location.pathname.includes('eating-disorders') || 
+          window.location.pathname.includes('substance-use') || 
+          window.location.pathname.includes('dissociative') || 
+          window.location.pathname.includes('somatic') || 
+          window.location.pathname.includes('relationship') || 
+          window.location.pathname.includes('grief') || 
+          window.location.pathname.includes('bpd') || 
+          window.location.pathname.includes('sleep') ||
+          window.location.pathname.includes('ptsd');
+  };
   
-  // Check if it's a service page but not a condition page
-  const isServicePage = (window.location.pathname.includes('therapy') || 
-                         window.location.pathname.includes('treatment') || 
-                         window.location.pathname.includes('counseling') || 
-                         window.location.pathname.includes('evaluations') || 
-                         window.location.pathname.includes('management')) && 
-                        !window.location.pathname.includes('disorder');
+  // Helper to check if current path is a service page
+  const isServicePage = () => {
+    const serviceKeywords = [
+      'individual-therapy',
+      'couples-counseling',
+      'family-therapy',
+      'child-therapy',
+      'psychiatric-evaluations',
+      'medication-management',
+      'adhd-treatment'
+    ];
+    
+    return serviceKeywords.some(keyword => window.location.pathname.includes(keyword)) && 
+           !isConditionPage();
+  };
   
-  // Check if we're on the services page
+  // Check if we're on the services main page
   const isServicesMainPage = window.location.pathname === '/services';
   
   // Determine if this nav link should be active
   const isActive = 
     (href === '#home' && !window.location.hash) || 
     window.location.hash === href || 
-    (href === '#services' && (isServicePage || isServicesMainPage)) ||
+    (href === '#services' && (isServicePage() || isServicesMainPage)) ||
     (href === '#about' && window.location.pathname === '/about') ||
     (href === '#faq' && window.location.pathname === '/faq') ||
     (href === '#appointment' && (window.location.pathname === '/appointment' || window.location.pathname === '/contact'));

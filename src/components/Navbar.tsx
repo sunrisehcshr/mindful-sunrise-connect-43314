@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
@@ -46,17 +47,27 @@ const Navbar = () => {
 
   const isActive = (path: string) => location.pathname === path;
   
+  // Updated service page detection that excludes condition pages
   const isServicePage = () => {
-    return (location.pathname.includes('therapy') || 
-           location.pathname.includes('treatment') || 
-           location.pathname.includes('counseling') || 
-           location.pathname.includes('evaluations') || 
-           location.pathname.includes('management')) && 
+    const serviceKeywords = [
+      'individual-therapy',
+      'couples-counseling',
+      'family-therapy',
+      'child-therapy',
+      'psychiatric-evaluations',
+      'medication-management',
+      'adhd-treatment'
+    ];
+    
+    return serviceKeywords.some(keyword => location.pathname.includes(keyword)) && 
            !isConditionPage();
   };
   
+  // Comprehensive condition page detection
   const isConditionPage = () => {
-    return (location.pathname.includes('disorder') || 
+    return location.pathname.includes('anxiety') ||
+           location.pathname.includes('depression') ||
+           location.pathname.includes('disorder') || 
            location.pathname.includes('schizophrenia') || 
            location.pathname.includes('eating-disorders') || 
            location.pathname.includes('substance-use') || 
@@ -65,7 +76,8 @@ const Navbar = () => {
            location.pathname.includes('relationship') || 
            location.pathname.includes('grief') || 
            location.pathname.includes('bpd') || 
-           location.pathname.includes('sleep'));
+           location.pathname.includes('sleep') ||
+           location.pathname.includes('ptsd');
   };
 
   const serviceLinks = [{
@@ -187,7 +199,7 @@ const Navbar = () => {
                         <NavigationMenuContent className="p-2 w-[400px] max-h-[600px]">
                           <ScrollArea className="h-full w-full max-h-[550px]">
                             <div className="grid grid-cols-1 gap-1 p-2">
-                              {link.children.map((child, childIndex) => <Link key={childIndex} to={child.path} className={cn("block select-none rounded-md py-2 px-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600", isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground")}>
+                              {link.children.map((child, childIndex) => <Link key={childIndex} to={`${child.path}#home`} className={cn("block select-none rounded-md py-2 px-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-orange-500/10 hover:text-orange-600", isActive(child.path) ? "bg-orange-500/10 text-orange-600" : "text-muted-foreground")}>
                                   {child.title}
                                 </Link>)}
                               {link.label === "Services" && <div className="pt-2 mt-2 border-t border-border">
@@ -237,7 +249,7 @@ const Navbar = () => {
                         {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
                       </button>
                       {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? <div className="pl-4 space-y-1 border-l border-orange-200 ml-2">
-                          {link.children.map((child, childIndex) => <Link key={childIndex} to={child.path} className={cn("block px-4 py-2 text-sm rounded-md transition-colors", isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50")}>
+                          {link.children.map((child, childIndex) => <Link key={childIndex} to={`${child.path}#home`} className={cn("block px-4 py-2 text-sm rounded-md transition-colors", isActive(child.path) ? "text-orange-600 bg-orange-50" : "text-muted-foreground hover:text-orange-600 hover:bg-orange-50")}>
                               {child.title}
                             </Link>)}
                           {link.label === "Services" && <Link to="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2">

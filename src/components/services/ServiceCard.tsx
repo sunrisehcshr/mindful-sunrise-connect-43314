@@ -21,6 +21,9 @@ const ServiceCard: React.FC<ServiceProps> = ({
   service,
   index
 }) => {
+  // Ensure we're linking to the hero section by appending #home to the URL
+  const linkUrl = service.url ? `${service.url}#home` : "/services";
+  
   return <motion.div initial={{
     opacity: 0,
     y: 20
@@ -47,7 +50,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
         {service.description}
       </p>
       
-      <Link to={service.url || "/services"} className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group mt-auto bg-orange-50 rounded-md px-3 py-1.5">
+      <Link to={linkUrl} className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group mt-auto bg-orange-50 rounded-md px-3 py-1.5">
         Learn more 
         <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
       </Link>
