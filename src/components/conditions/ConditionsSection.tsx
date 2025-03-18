@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+
 const ConditionsSection = () => {
   const [expandedCondition, setExpandedCondition] = useState<number | null>(null);
+  
   const conditions = [{
     title: "Anxiety Disorders",
     short: "Including generalized anxiety, panic disorder, and social anxiety.",
@@ -90,6 +92,7 @@ const ConditionsSection = () => {
     details: "Our grief counseling provides compassionate support through the grieving process. We help you honor your loss, express emotions safely, and gradually adapt to life changes while finding meaning and moving forward at your own pace.",
     url: "/grief-therapy-havertown-pa"
   }];
+
   const toggleCondition = (index: number) => {
     if (expandedCondition === index) {
       setExpandedCondition(null);
@@ -97,6 +100,7 @@ const ConditionsSection = () => {
       setExpandedCondition(index);
     }
   };
+
   return <section id="conditions" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div className="max-w-3xl mx-auto text-center mb-12" initial={{
@@ -232,4 +236,5 @@ const ConditionsSection = () => {
       </div>
     </section>;
 };
+
 export default ConditionsSection;

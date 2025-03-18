@@ -4,12 +4,14 @@ import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp } from "lucide
 import { cn } from "@/lib/utils";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileConditionsOpen, setMobileConditionsOpen] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -17,7 +19,9 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
   const toggleMobileServices = () => {
     setMobileServicesOpen(!mobileServicesOpen);
     // If we're opening this section, close the other to prevent long lists
@@ -25,6 +29,7 @@ const Navbar = () => {
       setMobileConditionsOpen(false);
     }
   };
+
   const toggleMobileConditions = () => {
     setMobileConditionsOpen(!mobileConditionsOpen);
     // If we're opening this section, close the other to prevent long lists
@@ -32,12 +37,37 @@ const Navbar = () => {
       setMobileServicesOpen(false);
     }
   };
+
   useEffect(() => {
     setIsMenuOpen(false);
     setMobileServicesOpen(false);
     setMobileConditionsOpen(false);
   }, [location.pathname]);
+
   const isActive = (path: string) => location.pathname === path;
+  
+  const isServicePage = () => {
+    return (location.pathname.includes('therapy') || 
+           location.pathname.includes('treatment') || 
+           location.pathname.includes('counseling') || 
+           location.pathname.includes('evaluations') || 
+           location.pathname.includes('management')) && 
+           !isConditionPage();
+  };
+  
+  const isConditionPage = () => {
+    return (location.pathname.includes('disorder') || 
+           location.pathname.includes('schizophrenia') || 
+           location.pathname.includes('eating-disorders') || 
+           location.pathname.includes('substance-use') || 
+           location.pathname.includes('dissociative') || 
+           location.pathname.includes('somatic') || 
+           location.pathname.includes('relationship') || 
+           location.pathname.includes('grief') || 
+           location.pathname.includes('bpd') || 
+           location.pathname.includes('sleep'));
+  };
+
   const serviceLinks = [{
     title: "Individual Therapy",
     path: "/individual-therapy-havertown-pa"
@@ -57,6 +87,7 @@ const Navbar = () => {
     title: "Medication Management",
     path: "/medication-management-havertown-pa"
   }];
+
   const conditionLinks = [{
     title: "Anxiety",
     path: "/anxiety-therapy-havertown-pa"
@@ -103,6 +134,7 @@ const Navbar = () => {
     title: "Grief & Loss",
     path: "/grief-therapy-havertown-pa"
   }];
+
   const navLinks = [{
     path: "/",
     label: "Home"
@@ -127,6 +159,7 @@ const Navbar = () => {
     path: "/contact",
     label: "Contact"
   }];
+
   return <header className={cn("fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300", isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent")}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
@@ -138,14 +171,17 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {navLinks.map((link, index) => {
             if (link.type === "dropdown") {
               return <NavigationMenu key={index}>
                     <NavigationMenuList>
                       <NavigationMenuItem>
-                        <NavigationMenuTrigger className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5", link.label === "Services" && isActive("/services") || link.label === "Conditions" && location.pathname.includes("therapy") || location.pathname.includes("treatment") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600")}>
+                        <NavigationMenuTrigger className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 gap-1.5", 
+                          (link.label === "Services" && (isActive("/services") || isServicePage())) || 
+                          (link.label === "Conditions" && isConditionPage())
+                            ? "bg-orange-500/10 text-orange-600 font-medium" 
+                            : "text-muted-foreground hover:text-foreground hover:bg-orange-500/10 hover:text-orange-600")}>
                           {link.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="p-2 w-[400px] max-h-[600px]">
@@ -179,14 +215,12 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          {/* Mobile menu button */}
           <button onClick={toggleMenu} className="md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground focus:outline-none" aria-label="Toggle menu">
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <div className={cn("md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b z-40 max-h-[calc(100vh-72px)] overflow-hidden", isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none")}>
         <ScrollArea className="h-full max-h-[calc(100vh-72px)]">
           <div className="container mx-auto px-4 py-4">
@@ -194,7 +228,11 @@ const Navbar = () => {
               {navLinks.map((link, index) => {
               if (link.type === "dropdown") {
                 return <div key={index} className="space-y-2">
-                      <button onClick={link.label === "Services" ? toggleMobileServices : toggleMobileConditions} className={cn("w-full px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", link.label === "Services" && isActive("/services") || link.label === "Conditions" && location.pathname.includes("therapy") || location.pathname.includes("treatment") ? "bg-orange-500/10 text-orange-600 font-medium" : "text-muted-foreground hover:text-foreground")}>
+                      <button onClick={link.label === "Services" ? toggleMobileServices : toggleMobileConditions} className={cn("w-full px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center justify-between", 
+                        (link.label === "Services" && (isActive("/services") || isServicePage())) || 
+                        (link.label === "Conditions" && isConditionPage())
+                          ? "bg-orange-500/10 text-orange-600 font-medium" 
+                          : "text-muted-foreground hover:text-foreground")}>
                         {link.label}
                         {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
                       </button>
@@ -227,4 +265,5 @@ const Navbar = () => {
       </div>
     </header>;
 };
+
 export default Navbar;

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+
 interface ServiceProps {
   service: {
     icon: React.ReactNode;
@@ -15,6 +16,7 @@ interface ServiceProps {
   };
   index: number;
 }
+
 const ServiceCard: React.FC<ServiceProps> = ({
   service,
   index
@@ -35,7 +37,6 @@ const ServiceCard: React.FC<ServiceProps> = ({
     boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
   }} className={cn("rounded-xl p-6 shadow-md border border-sunrise-100/40 transition-all duration-300 flex flex-col h-full", "bg-white/80 backdrop-blur-sm hover:bg-white", "relative overflow-hidden")}>
       
-
       <div className="p-3 rounded-lg w-fit mb-4 bg-sunrise-50 text-sunrise-700">
         {service.icon}
       </div>
@@ -52,4 +53,5 @@ const ServiceCard: React.FC<ServiceProps> = ({
       </Link>
     </motion.div>;
 };
+
 export default ServiceCard;

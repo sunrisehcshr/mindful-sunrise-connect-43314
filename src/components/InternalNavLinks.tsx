@@ -18,7 +18,31 @@ export const NavLink: React.FC<NavLinkProps> = ({
   activeClassName = "bg-sunrise-400/20",
   onClick
 }) => {
-  const isActive = window.location.hash === href || (href === '#home' && !window.location.hash);
+  // Check if the current path includes therapy or treatment to identify condition pages
+  const isConditionPage = window.location.pathname.includes('therapy') || 
+                          window.location.pathname.includes('treatment') || 
+                          window.location.pathname.includes('disorder') ||
+                          window.location.pathname.includes('counseling');
+  
+  // Check if it's a service page but not a condition page
+  const isServicePage = (window.location.pathname.includes('therapy') || 
+                         window.location.pathname.includes('treatment') || 
+                         window.location.pathname.includes('counseling') || 
+                         window.location.pathname.includes('evaluations') || 
+                         window.location.pathname.includes('management')) && 
+                        !window.location.pathname.includes('disorder');
+  
+  // Check if we're on the services page
+  const isServicesMainPage = window.location.pathname === '/services';
+  
+  // Determine if this nav link should be active
+  const isActive = 
+    (href === '#home' && !window.location.hash) || 
+    window.location.hash === href || 
+    (href === '#services' && (isServicePage || isServicesMainPage)) ||
+    (href === '#about' && window.location.pathname === '/about') ||
+    (href === '#faq' && window.location.pathname === '/faq') ||
+    (href === '#appointment' && (window.location.pathname === '/appointment' || window.location.pathname === '/contact'));
   
   return (
     <a
