@@ -1,74 +1,40 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { cn } from '@/lib/utils';
+import { pageRoutes, linkToPageHero } from '../utils/linkHelper';
 
-interface NavLinkProps {
-  href: string;
-  children: React.ReactNode;
+interface InternalNavLinksProps {
   className?: string;
-  activeClassName?: string;
-  onClick?: () => void;
 }
 
-export const NavLink: React.FC<NavLinkProps> = ({
-  href,
-  children,
-  className = "",
-  activeClassName = "bg-sunrise-400/20",
-  onClick
-}) => {
-  const isActive = window.location.hash === href || (href === '#home' && !window.location.hash);
-  
-  return (
-    <a
-      href={href}
-      className={cn(
-        "px-4 py-2 rounded-md text-sm font-medium transition-colors",
-        isActive ? `text-foreground ${activeClassName}` : "text-muted-foreground hover:text-foreground hover:bg-sunrise-400/10",
-        className
-      )}
-      onClick={onClick}
-      aria-current={isActive ? 'page' : undefined}
-    >
-      {children}
-    </a>
-  );
-};
-
-interface NavLinksProps {
-  className?: string;
-  onLinkClick?: () => void;
-}
-
-const InternalNavLinks: React.FC<NavLinksProps> = ({ className, onLinkClick }) => {
-  const sections = [
-    { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Services' },
-    { id: 'about', label: 'About' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'appointment', label: 'Contact' },
+const InternalNavLinks: React.FC<InternalNavLinksProps> = ({ className = '' }) => {
+  const links = [
+    { title: 'Depression Therapy', url: linkToPageHero(pageRoutes.depressionTherapy) },
+    { title: 'Anxiety Therapy', url: linkToPageHero(pageRoutes.anxietyTherapy) },
+    { title: 'Couples Counseling', url: linkToPageHero(pageRoutes.couplesCounseling) },
+    { title: 'Family Therapy', url: linkToPageHero(pageRoutes.familyTherapy) },
+    { title: 'Child Therapy', url: linkToPageHero(pageRoutes.childTherapy) },
+    { title: 'ADHD Treatment', url: linkToPageHero(pageRoutes.adhd) },
+    { title: 'Trauma & PTSD', url: linkToPageHero(pageRoutes.traumaPTSD) },
+    { title: 'OCD Therapy', url: linkToPageHero(pageRoutes.ocd) },
   ];
 
   return (
-    <nav className={cn("flex items-center space-x-1", className)}>
-      {sections.map((section) => (
-        <NavLink 
-          key={section.id} 
-          href={`#${section.id}`}
-          onClick={onLinkClick}
-        >
-          {section.label}
-        </NavLink>
-      ))}
-      <a 
-        href="#appointment" 
-        className="ml-2 btn-sunrise"
-        onClick={onLinkClick}
-      >
-        Book Now
-      </a>
-    </nav>
+    <div className={`bg-gray-100 dark:bg-gray-800 py-4 ${className}`}>
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+          {links.map((link, index) => (
+            <Link
+              key={index}
+              to={link.url}
+              className="text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light whitespace-nowrap px-2 py-1"
+            >
+              {link.title}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

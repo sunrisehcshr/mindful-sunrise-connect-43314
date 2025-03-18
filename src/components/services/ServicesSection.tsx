@@ -1,116 +1,125 @@
+
 import React from 'react';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
-import { User, Users, Baby, HeartHandshake, Stethoscope, Pill } from 'lucide-react';
-import { Separator } from '../ui/separator';
-import SectionTag from '../ui/section-tag';
-const ServicesSection: React.FC = () => {
-  const services = [{
-    icon: <User className="h-6 w-6" />,
-    title: "Individual Therapy",
-    description: "One-on-one therapy sessions tailored to your unique needs and challenges.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/individual-therapy-havertown-pa"
-  }, {
-    icon: <HeartHandshake className="h-6 w-6" />,
-    title: "Couples Counseling",
-    description: "Specialized therapy to help couples improve communication, resolve conflicts, and strengthen relationships.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/couples-counseling-havertown-pa"
-  }, {
-    icon: <Users className="h-6 w-6" />,
-    title: "Family Therapy",
-    description: "Therapy sessions focused on improving family relationships and communication.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/family-therapy-havertown-pa"
-  }, {
-    icon: <Baby className="h-6 w-6" />,
-    title: "Child & Adolescent Therapy",
-    description: "Specialized therapy for children and teens facing behavioral or emotional challenges.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/child-therapy-havertown-pa"
-  }, {
-    icon: <Stethoscope className="h-6 w-6" />,
-    title: "Psychiatric Evaluations",
-    description: "Comprehensive mental health assessments and diagnostic services.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/psychiatric-evaluations-havertown-pa"
-  }, {
-    icon: <Pill className="h-6 w-6" />,
-    title: "Medication Management",
-    description: "Professional psychiatric medication reviews and management for mental health conditions.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/medication-management-havertown-pa"
-  }];
-  return <section id="services" className="bg-gradient-to-b from-white to-secondary/50 py-[100px]">
-      <div className="container mx-auto px-4 md:px-6">
-        <motion.div className="max-w-3xl mx-auto text-center mb-12" initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6
-      }}>
-          <motion.div initial={{
-          opacity: 0,
-          scale: 0.9
-        }} whileInView={{
-          opacity: 1,
-          scale: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.4
-        }}>
-            <SectionTag>Our Services</SectionTag>
-          </motion.div>
-          
-          <motion.h2 initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: 0.1
-        }} className="text-3xl font-bold mb-4 font-opensans md:text-5xl">
-            Comprehensive Mental Health Services
-          </motion.h2>
-          
-          <motion.p initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: 0.2
-        }} className="text-base font-medium text-zinc-700">
-            Our team of experienced mental health professionals provides a range of services 
-            designed to support your well-being and personal growth.
-          </motion.p>
-          
-          <div className="mx-auto mt-6 mb-10 w-24">
-            <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
-          </div>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-          {services.map((service, index) => <ServiceCard key={index} service={service} index={index} />)}
+import { pageRoutes, linkToPageHero } from '../../utils/linkHelper';
+
+interface ServicesSectionProps {
+  className?: string;
+  showViewAll?: boolean;
+  limit?: number;
+}
+
+const ServicesSection: React.FC<ServicesSectionProps> = ({
+  className = '',
+  showViewAll = true,
+  limit = 6,
+}) => {
+  const services = [
+    {
+      title: 'Depression Therapy',
+      description:
+        'Effective therapy to help overcome depression and regain a sense of joy and purpose in life.',
+      image: '/images/therapy-in-havertown.jpg',
+      link: pageRoutes.depressionTherapy,
+    },
+    {
+      title: 'Anxiety Therapy',
+      description:
+        'Evidence-based techniques to manage anxiety and find peace of mind.',
+      image: '/images/therapy-in-havertown.jpg',
+      link: pageRoutes.anxietyTherapy,
+    },
+    {
+      title: 'Couples Counseling',
+      description:
+        'Rebuild connection and resolve conflicts to strengthen your relationship.',
+      image: '/images/couple-counseling-havertown-pa.webp',
+      link: pageRoutes.couplesCounseling,
+    },
+    {
+      title: 'Child Therapy',
+      description:
+        'Supportive therapy to help children navigate emotional challenges and develop healthy coping skills.',
+      image: '/images/therapy-in-havertown.jpg',
+      link: pageRoutes.childTherapy,
+    },
+    {
+      title: 'Family Therapy',
+      description:
+        'Improve family dynamics and create a more harmonious home environment.',
+      image: '/images/family-counseling-havertown.webp',
+      link: pageRoutes.familyTherapy,
+    },
+    {
+      title: 'Trauma & PTSD Therapy',
+      description:
+        'Specialized treatment to heal from trauma and reclaim your life.',
+      image: '/images/therapy-in-havertown.jpg',
+      link: pageRoutes.traumaPTSD,
+    },
+    {
+      title: 'ADHD Treatment',
+      description:
+        'Comprehensive approaches to manage ADHD symptoms and improve focus and functioning.',
+      image: '/images/therapy-in-havertown.jpg',
+      link: pageRoutes.adhd,
+    },
+    {
+      title: 'OCD Therapy',
+      description:
+        'Effective treatment for obsessive-compulsive disorder to reduce symptoms and intrusive thoughts.',
+      image: '/images/therapy-in-havertown.jpg',
+      link: pageRoutes.ocd,
+    },
+    {
+      title: 'Psychiatric Evaluations',
+      description:
+        'Thorough assessments to understand your mental health needs and develop appropriate treatment plans.',
+      image: '/images/therapy-in-havertown.jpg',
+      link: pageRoutes.psychiatricEvaluations,
+    },
+  ];
+
+  const displayedServices = limit ? services.slice(0, limit) : services;
+
+  return (
+    <section className={`py-12 bg-gray-50 dark:bg-gray-900 ${className}`}>
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Our Mental Health Services
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Comprehensive mental health services tailored to your unique needs.
+          </p>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayedServices.map((service, index) => (
+            <ServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              image={service.image}
+              link={service.link}
+            />
+          ))}
+        </div>
+
+        {showViewAll && limit && services.length > limit && (
+          <div className="mt-12 text-center">
+            <Link
+              to={pageRoutes.services}
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary shadow-sm hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            >
+              View All Services
+            </Link>
+          </div>
+        )}
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ServicesSection;
