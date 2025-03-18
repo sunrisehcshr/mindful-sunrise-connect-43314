@@ -32,7 +32,8 @@ export const NavLink: React.FC<NavLinkProps> = ({
           window.location.pathname.includes('grief') || 
           window.location.pathname.includes('bpd') || 
           window.location.pathname.includes('sleep') ||
-          window.location.pathname.includes('ptsd');
+          window.location.pathname.includes('ptsd') ||
+          window.location.pathname === '/conditions';
   };
   
   // Helper to check if current path is a service page
@@ -47,18 +48,17 @@ export const NavLink: React.FC<NavLinkProps> = ({
       'adhd-treatment'
     ];
     
-    return serviceKeywords.some(keyword => window.location.pathname.includes(keyword)) && 
+    return (serviceKeywords.some(keyword => window.location.pathname.includes(keyword)) || 
+           window.location.pathname === '/services') && 
            !isConditionPage();
   };
-  
-  // Check if we're on the services main page
-  const isServicesMainPage = window.location.pathname === '/services';
   
   // Determine if this nav link should be active
   const isActive = 
     (href === '#home' && !window.location.hash) || 
     window.location.hash === href || 
-    (href === '#services' && (isServicePage() || isServicesMainPage)) ||
+    (href === '#services' && isServicePage()) ||
+    (href === '#conditions' && isConditionPage()) ||
     (href === '#about' && window.location.pathname === '/about') ||
     (href === '#faq' && window.location.pathname === '/faq') ||
     (href === '#appointment' && (window.location.pathname === '/appointment' || window.location.pathname === '/contact'));
@@ -88,6 +88,7 @@ const InternalNavLinks: React.FC<NavLinksProps> = ({ className, onLinkClick }) =
   const sections = [
     { id: 'home', label: 'Home' },
     { id: 'services', label: 'Services' },
+    { id: 'conditions', label: 'Conditions' },
     { id: 'about', label: 'About' },
     { id: 'faq', label: 'FAQ' },
     { id: 'appointment', label: 'Contact' },

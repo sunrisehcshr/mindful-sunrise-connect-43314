@@ -1,4 +1,3 @@
-
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -9,6 +8,7 @@ import SchemaMarkup from "./components/SchemaMarkup"; // Import Schema
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Conditions from "./pages/Conditions"; // Add the new Conditions page
 import FAQ from "./pages/FAQ";
 import Appointment from "./pages/Appointment";
 import Contact from "./pages/Contact";
@@ -60,6 +60,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/conditions" element={<Conditions />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/contact" element={<Contact />} />

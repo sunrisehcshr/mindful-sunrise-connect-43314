@@ -88,7 +88,7 @@ const FooterNav: React.FC = () => {
                   )}
                   {link.label === "Conditions We Treat" && (
                     <li>
-                      <Link to="/services#conditions" className="text-xs text-orange-500 hover:text-orange-600 font-medium transition-colors flex items-center py-1">
+                      <Link to="/conditions" className="text-xs text-orange-500 hover:text-orange-600 font-medium transition-colors flex items-center py-1">
                         All Conditions <ChevronRight className="h-3 w-3 ml-1" />
                       </Link>
                     </li>
