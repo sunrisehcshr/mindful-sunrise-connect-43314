@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
 
@@ -12,7 +10,7 @@ const GriefTherapy = () => {
     pageTitle: "Grief & Loss Therapy | Sunrise Human Care Services",
     metaDescription: "Compassionate grief counseling and bereavement support in Havertown, PA. Professional therapy for coping with loss and complicated grief.",
     serviceType: "Grief & Loss Therapy",
-    canonicalUrl: "/conditions/grief-therapy",
+    canonicalUrl: "/grief-therapy-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
     benefits: [
       "Grief assessment and education",
@@ -62,15 +60,15 @@ const GriefTherapy = () => {
     relatedServices: [
       {
         title: "Depression Therapy",
-        url: "/services/depression-therapy"
+        url: "/depression-therapy-havertown-pa"
       },
       {
         title: "Anxiety Therapy",
-        url: "/services/anxiety-therapy"
+        url: "/anxiety-therapy-havertown-pa"
       },
       {
         title: "Trauma & PTSD Therapy",
-        url: "/services/trauma-ptsd-therapy"
+        url: "/ptsd-therapy-havertown-pa"
       }
     ]
   };
@@ -95,8 +93,77 @@ const GriefTherapy = () => {
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
       >
-        {/* Empty div to satisfy the children prop requirement */}
-        <div></div>
+        {/* Service-specific content */}
+        <section className="py-16 bg-secondary/10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                  Our Approach to Grief & Loss Therapy
+                </h2>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services in Havertown, PA, we provide compassionate support for individuals experiencing grief and loss. Our approach acknowledges that grief is a natural, necessary response to loss and that each person's grief journey is unique.
+                  </p>
+                  
+                  <p>
+                    We create a safe, non-judgmental space where you can express the full range of emotions that accompany grief—sadness, anger, guilt, relief, confusion, and more. Our therapists help you process these feelings at your own pace, without rushing or imposing arbitrary timelines on your grief.
+                  </p>
+                  
+                  <p>
+                    For those experiencing complicated grief, we offer specialized interventions to address factors that may be blocking the natural grieving process. This may include processing traumatic aspects of the loss, resolving ambivalent relationships, or addressing multiple concurrent losses.
+                  </p>
+                  
+                  <p>
+                    Throughout therapy, we help you find ways to honor and maintain a connection with what you've lost while gradually adapting to your changed life. Our goal is not to help you "get over" your loss, but to support you in integrating it into your life story as you move forward with meaning and purpose.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 font-playfair">
+                  Our Grief & Loss Therapy Helps With:
+                </h3>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Bereavement due to death of loved ones</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Complicated or prolonged grief</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Traumatic or sudden losses</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Ambiguous loss (missing persons, dementia)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Loss through divorce or relationship endings</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Health-related losses and adjustments</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Career and financial losses</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Anniversary reactions and holiday difficulties</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>
   );

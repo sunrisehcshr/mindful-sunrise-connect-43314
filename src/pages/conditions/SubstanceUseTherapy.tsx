@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
 
@@ -12,7 +10,7 @@ const SubstanceUseTherapy = () => {
     pageTitle: "Substance Use Treatment | Sunrise Human Care Services",
     metaDescription: "Comprehensive substance use and addiction treatment in Havertown, PA. Evidence-based approaches for alcohol and drug addiction recovery and relapse prevention.",
     serviceType: "Substance Use Counseling",
-    canonicalUrl: "/conditions/substance-use-therapy",
+    canonicalUrl: "/substance-use-treatment-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
     benefits: [
       "Comprehensive assessment and evaluation",
@@ -62,15 +60,15 @@ const SubstanceUseTherapy = () => {
     relatedServices: [
       {
         title: "Depression Therapy",
-        url: "/services/depression-therapy"
+        url: "/depression-therapy-havertown-pa"
       },
       {
         title: "Anxiety Therapy",
-        url: "/services/anxiety-therapy"
+        url: "/anxiety-therapy-havertown-pa"
       },
       {
         title: "Trauma & PTSD Therapy",
-        url: "/services/trauma-ptsd-therapy"
+        url: "/ptsd-therapy-havertown-pa"
       }
     ]
   };
@@ -95,8 +93,77 @@ const SubstanceUseTherapy = () => {
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
       >
-        {/* Empty div to satisfy the children prop requirement */}
-        <div></div>
+        {/* Service-specific content */}
+        <section className="py-16 bg-secondary/10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                  Our Approach to Substance Use Treatment
+                </h2>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services in Havertown, PA, we provide compassionate, evidence-based treatment for substance use disorders. Our approach begins with a comprehensive assessment to understand your unique situation, substance use history, and any co-occurring mental health conditions.
+                  </p>
+                  
+                  <p>
+                    We recognize that substance use disorders develop for many reasons and often serve as coping mechanisms for underlying issues. Our treatment addresses not only the substance use itself but also the factors that contribute to and maintain addictive patterns.
+                  </p>
+                  
+                  <p>
+                    Using proven therapeutic approaches such as Cognitive-Behavioral Therapy (CBT), Motivational Interviewing, and Relapse Prevention, we help you identify triggers, develop healthier coping skills, change unhelpful thought patterns, and build a lifestyle that supports recovery.
+                  </p>
+                  
+                  <p>
+                    Our dual diagnosis capability ensures that co-occurring mental health conditions receive appropriate attention alongside substance use treatment. This integrated approach leads to better outcomes and more sustainable recovery.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 font-playfair">
+                  Our Substance Use Treatment Helps With:
+                </h3>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Alcohol use disorder</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Opioid use disorder</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Cannabis use disorder</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Stimulant use disorders</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Prescription medication misuse</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Dual diagnosis (co-occurring disorders)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Relapse prevention</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Recovery maintenance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>
   );

@@ -11,6 +11,7 @@ const Conditions = () => {
       <SEOHead 
         title="Conditions We Treat | Sunrise Human Care Services" 
         description="Comprehensive treatment for anxiety, depression, ADHD, and other mental health conditions in Havertown, PA. Evidence-based care for all ages." 
+        canonicalUrl="/conditions"
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />

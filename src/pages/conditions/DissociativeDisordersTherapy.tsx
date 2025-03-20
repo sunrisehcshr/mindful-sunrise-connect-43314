@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
 
@@ -12,7 +10,7 @@ const DissociativeDisordersTherapy = () => {
     pageTitle: "Dissociative Disorders Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for dissociative disorders in Havertown, PA. Trauma-informed therapy focusing on safety, stabilization, and integration.",
     serviceType: "Dissociative Disorders Treatment",
-    canonicalUrl: "/conditions/dissociative-disorders-therapy",
+    canonicalUrl: "/dissociative-disorders-treatment-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
     benefits: [
       "Comprehensive psychological assessment",
@@ -62,15 +60,15 @@ const DissociativeDisordersTherapy = () => {
     relatedServices: [
       {
         title: "Trauma & PTSD Therapy",
-        url: "/services/trauma-ptsd-therapy"
+        url: "/ptsd-therapy-havertown-pa"
       },
       {
         title: "Anxiety Therapy",
-        url: "/services/anxiety-therapy"
+        url: "/anxiety-therapy-havertown-pa"
       },
       {
         title: "Depression Therapy",
-        url: "/services/depression-therapy"
+        url: "/depression-therapy-havertown-pa"
       }
     ]
   };
@@ -95,8 +93,77 @@ const DissociativeDisordersTherapy = () => {
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
       >
-        {/* Empty div to satisfy the children prop requirement */}
-        <div></div>
+        {/* Service-specific content */}
+        <section className="py-16 bg-secondary/10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                  Our Approach to Dissociative Disorders Treatment
+                </h2>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services in Havertown, PA, we provide specialized, trauma-informed treatment for dissociative disorders. Our approach recognizes that dissociation often develops as a creative survival mechanism in response to overwhelming experiences, particularly childhood trauma.
+                  </p>
+                  
+                  <p>
+                    Treatment follows a phase-oriented model that prioritizes safety and stabilization before addressing traumatic material. The first phase focuses on symptom management, establishing safety in daily life, and developing skills to manage dissociative symptoms. We teach grounding techniques, emotional regulation skills, and strategies for maintaining present-moment awareness.
+                  </p>
+                  
+                  <p>
+                    For clients with Dissociative Identity Disorder or otherwise fragmented self-states, we help facilitate internal communication and cooperation among different parts of the self. Our approach emphasizes respect for all aspects of your internal system and the important roles they have played in your survival.
+                  </p>
+                  
+                  <p>
+                    When appropriate and only at your pace, we may gradually help you process traumatic memories using specialized approaches that maintain emotional stability while working toward integration and resolution. Throughout treatment, we focus on improving daily functioning and quality of life.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 font-playfair">
+                  Our Dissociative Disorders Treatment Helps With:
+                </h3>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Dissociative Identity Disorder (DID)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Other Specified Dissociative Disorder (OSDD)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Depersonalization/Derealization Disorder</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Dissociative Amnesia</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Trauma-related dissociation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Identity confusion and fragmentation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Time loss and dissociative fugue experiences</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Integration of dissociated self-states</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>
   );

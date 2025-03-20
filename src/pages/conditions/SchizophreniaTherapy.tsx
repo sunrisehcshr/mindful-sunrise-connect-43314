@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
 
@@ -12,7 +10,7 @@ const SchizophreniaTherapy = () => {
     pageTitle: "Schizophrenia Treatment | Sunrise Human Care Services",
     metaDescription: "Comprehensive treatment for schizophrenia and psychotic disorders in Havertown, PA. Evidence-based therapy approaches, medication management, and family support.",
     serviceType: "Schizophrenia Treatment",
-    canonicalUrl: "/conditions/schizophrenia-therapy",
+    canonicalUrl: "/schizophrenia-treatment-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
     benefits: [
       "Comprehensive assessment and diagnosis",
@@ -62,15 +60,15 @@ const SchizophreniaTherapy = () => {
     relatedServices: [
       {
         title: "Depression Therapy",
-        url: "/services/depression-therapy"
+        url: "/depression-therapy-havertown-pa"
       },
       {
         title: "Anxiety Therapy",
-        url: "/services/anxiety-therapy"
+        url: "/anxiety-therapy-havertown-pa"
       },
       {
         title: "Medication Management",
-        url: "/services/medication-management"
+        url: "/medication-management-havertown-pa"
       }
     ]
   };
@@ -95,8 +93,77 @@ const SchizophreniaTherapy = () => {
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
       >
-        {/* Empty div to satisfy the children prop requirement */}
-        <div></div>
+        {/* Service-specific content */}
+        <section className="py-16 bg-secondary/10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                  Our Approach to Schizophrenia Treatment
+                </h2>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services in Havertown, PA, we offer comprehensive treatment for schizophrenia and other psychotic disorders. Our approach integrates evidence-based psychological therapies with coordination of psychiatric care for a well-rounded treatment experience.
+                  </p>
+                  
+                  <p>
+                    We emphasize a recovery-oriented model that focuses not just on symptom reduction but on helping individuals achieve meaningful goals and improved quality of life. Treatment begins with a thorough assessment to understand your unique symptoms, history, strengths, and challenges.
+                  </p>
+                  
+                  <p>
+                    Our therapeutic approaches include Cognitive Behavioral Therapy for psychosis (CBTp), which helps individuals understand and manage positive symptoms such as hallucinations and delusions, while developing coping strategies for persistent symptoms. We also provide skills training to improve social functioning, problem-solving, and daily living skills.
+                  </p>
+                  
+                  <p>
+                    Family involvement is a crucial component of effective treatment. We offer education about schizophrenia, communication skills training, and guidance on how to create a supportive home environment that promotes recovery while reducing stress and preventing relapse.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 font-playfair">
+                  Our Schizophrenia Treatment Helps With:
+                </h3>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Hallucinations (auditory, visual, etc.)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Delusions and paranoid thinking</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Disorganized thinking and speech</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Negative symptoms (reduced expression, motivation)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Cognitive difficulties</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Social skills development</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Medication management coordination</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Relapse prevention planning</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>
   );

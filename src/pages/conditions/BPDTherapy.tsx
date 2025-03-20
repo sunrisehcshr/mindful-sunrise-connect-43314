@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
 
@@ -12,7 +10,7 @@ const BPDTherapy = () => {
     pageTitle: "Borderline Personality Disorder Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for Borderline Personality Disorder in Havertown, PA. Dialectical Behavior Therapy (DBT) and evidence-based approaches for emotional regulation.",
     serviceType: "Borderline Personality Disorder Treatment",
-    canonicalUrl: "/conditions/bpd-therapy",
+    canonicalUrl: "/bpd-therapy-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
     benefits: [
       "Comprehensive psychiatric assessment",
@@ -62,15 +60,15 @@ const BPDTherapy = () => {
     relatedServices: [
       {
         title: "Depression Therapy",
-        url: "/services/depression-therapy"
+        url: "/depression-therapy-havertown-pa"
       },
       {
         title: "Anxiety Therapy",
-        url: "/services/anxiety-therapy"
+        url: "/anxiety-therapy-havertown-pa"
       },
       {
         title: "Trauma & PTSD Therapy",
-        url: "/services/trauma-ptsd-therapy"
+        url: "/ptsd-therapy-havertown-pa"
       }
     ]
   };
@@ -95,8 +93,77 @@ const BPDTherapy = () => {
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
       >
-        {/* Empty div to satisfy the children prop requirement */}
-        <div></div>
+        {/* Service-specific content */}
+        <section className="py-16 bg-secondary/10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                  Our Approach to BPD Treatment
+                </h2>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services in Havertown, PA, we specialize in evidence-based treatments for Borderline Personality Disorder (BPD). Our approach centers on Dialectical Behavior Therapy (DBT), a comprehensive treatment specifically developed for BPD and emotions that feel overwhelming.
+                  </p>
+                  
+                  <p>
+                    We begin with a thorough assessment to understand your unique symptoms, strengths, challenges, and treatment goals. Based on this assessment, we develop a personalized treatment plan that typically includes individual therapy, skills training, and when necessary, crisis management strategies.
+                  </p>
+                  
+                  <p>
+                    DBT focuses on building four key skill sets: mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness. These skills help you manage intense emotions, reduce impulsive behaviors, improve relationships, and build a more stable sense of self.
+                  </p>
+                  
+                  <p>
+                    Throughout treatment, we balance validation and acceptance of your experiences with teaching strategies for positive change. Our therapists create a supportive, non-judgmental environment where you can work through challenging emotions and develop new patterns of thinking and behaving.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 font-playfair">
+                  Our BPD Treatment Helps With:
+                </h3>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Emotional intensity and mood swings</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Fear of abandonment</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Impulsive behaviors</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Self-harm and suicidal thoughts</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Unstable relationships</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Identity confusion</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Feelings of emptiness</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Angry outbursts and difficulty controlling anger</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>
   );

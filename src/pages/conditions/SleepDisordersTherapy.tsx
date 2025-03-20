@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
 
@@ -12,7 +10,7 @@ const SleepDisordersTherapy = () => {
     pageTitle: "Sleep Disorders Treatment | Sunrise Human Care Services",
     metaDescription: "Effective treatment for insomnia and sleep-related issues in Havertown, PA. Evidence-based approaches including CBT-I and relaxation techniques.",
     serviceType: "Sleep Disorders Treatment",
-    canonicalUrl: "/conditions/sleep-disorders-therapy",
+    canonicalUrl: "/sleep-disorders-treatment-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
     benefits: [
       "Comprehensive sleep assessment",
@@ -62,15 +60,15 @@ const SleepDisordersTherapy = () => {
     relatedServices: [
       {
         title: "Anxiety Therapy",
-        url: "/services/anxiety-therapy"
+        url: "/anxiety-therapy-havertown-pa"
       },
       {
         title: "Depression Therapy",
-        url: "/services/depression-therapy"
+        url: "/depression-therapy-havertown-pa"
       },
       {
         title: "Stress Management",
-        url: "/conditions/stress-management"
+        url: "/stress-management-havertown-pa"
       }
     ]
   };
@@ -95,8 +93,77 @@ const SleepDisordersTherapy = () => {
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
       >
-        {/* Empty div to satisfy the children prop requirement */}
-        <div></div>
+        {/* Service-specific content */}
+        <section className="py-16 bg-secondary/10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                  Our Approach to Sleep Disorders Treatment
+                </h2>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services in Havertown, PA, we provide evidence-based treatment for a range of sleep disorders. Our approach begins with a comprehensive sleep assessment to understand your specific sleep patterns, habits, and factors that may be interfering with restful sleep.
+                  </p>
+                  
+                  <p>
+                    For insomnia, which is the most common sleep disorder, we primarily use Cognitive-Behavioral Therapy for Insomnia (CBT-I), the gold-standard treatment recommended by sleep medicine experts. This structured approach helps you identify and change thoughts and behaviors that cause or worsen sleep problems.
+                  </p>
+                  
+                  <p>
+                    Beyond insomnia, we address sleep-related anxiety, nightmares, circadian rhythm disorders, and the psychological aspects of other sleep conditions. We work collaboratively with medical providers when necessary to ensure comprehensive care for complex sleep problems.
+                  </p>
+                  
+                  <p>
+                    Our goal is to help you develop healthy sleep habits and thought patterns that support natural, restorative sleep without ongoing reliance on medication or therapy.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 font-playfair">
+                  Our Sleep Disorders Treatment Helps With:
+                </h3>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Insomnia (difficulty falling or staying asleep)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Sleep anxiety and worry about sleep</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Nightmares and disturbing dreams</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Circadian rhythm disorders</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Psychological aspects of sleep apnea</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Sleep-related behaviors</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Sleep disruption due to stress or lifestyle</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Sleep issues related to depression or anxiety</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>
   );

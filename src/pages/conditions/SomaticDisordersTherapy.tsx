@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer/Footer';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
 
@@ -12,7 +10,7 @@ const SomaticDisordersTherapy = () => {
     pageTitle: "Somatic Symptom Disorders Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for somatic symptom disorders in Havertown, PA. Mind-body approaches to reduce symptom distress and improve functioning.",
     serviceType: "Somatic Symptom Disorders Treatment",
-    canonicalUrl: "/conditions/somatic-disorders-therapy",
+    canonicalUrl: "/somatic-disorders-treatment-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
     benefits: [
       "Comprehensive biopsychosocial assessment",
@@ -62,15 +60,15 @@ const SomaticDisordersTherapy = () => {
     relatedServices: [
       {
         title: "Anxiety Therapy",
-        url: "/services/anxiety-therapy"
+        url: "/anxiety-therapy-havertown-pa"
       },
       {
         title: "Depression Therapy",
-        url: "/services/depression-therapy"
+        url: "/depression-therapy-havertown-pa"
       },
       {
         title: "Trauma & PTSD Therapy",
-        url: "/services/trauma-ptsd-therapy"
+        url: "/ptsd-therapy-havertown-pa"
       }
     ]
   };
@@ -95,8 +93,77 @@ const SomaticDisordersTherapy = () => {
         faqs={pageData.faqs}
         relatedServices={pageData.relatedServices}
       >
-        {/* Empty div to satisfy the children prop requirement */}
-        <div></div>
+        {/* Service-specific content */}
+        <section className="py-16 bg-secondary/10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                  Our Approach to Somatic Symptom Disorders
+                </h2>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services in Havertown, PA, we provide specialized treatment for individuals experiencing persistent physical symptoms that cause significant distress and impairment. Our approach begins with a comprehensive biopsychosocial assessment to understand your specific symptoms, health history, and the impact of symptoms on your daily life.
+                  </p>
+                  
+                  <p>
+                    We recognize that your physical symptoms are real, regardless of whether a clear medical explanation has been found. Our treatment validates your experience while helping you develop more effective ways to understand and respond to bodily sensations.
+                  </p>
+                  
+                  <p>
+                    Using cognitive-behavioral therapy adapted specifically for somatic symptoms (CBT-SS), we help you identify and modify thought patterns and behaviors that may be intensifying your symptoms or contributing to functional impairment. This includes addressing catastrophic interpretations of bodily sensations, reducing hypervigilance to physical symptoms, and decreasing avoidance behaviors.
+                  </p>
+                  
+                  <p>
+                    Our mind-body approach also incorporates relaxation training, mindfulness practices, and emotional awareness techniques that help regulate the nervous system and process emotions that may be expressed through physical symptoms.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 font-playfair">
+                  Our Somatic Disorders Treatment Helps With:
+                </h3>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Somatic symptom disorder</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Illness anxiety disorder (health anxiety)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Conversion disorder (functional neurological symptom disorder)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Psychological factors affecting medical conditions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Chronic pain with psychological factors</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Medically unexplained symptoms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Adjustment to chronic illness</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Healthcare-related anxiety and trauma</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>
   );
