@@ -71,7 +71,7 @@ const ChildTherapy = () => {
     >
       {/* Service-specific content */}
       <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
         <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
         
         <div className="container relative z-10 mx-auto px-4 md:px-6">
