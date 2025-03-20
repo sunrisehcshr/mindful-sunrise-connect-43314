@@ -218,7 +218,7 @@ const ServicePageLayout = ({
               }} transition={{
                 duration: 0.5,
                 delay: index * 0.1
-              }} className="mb-5 md:mb-6 bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50">
+              }} className="mb-5 md:mb-6 rounded-lg p-5 md:p-6 border border-orange-100/50 bg-inherit">
                     <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{faq.question}</h3>
                     <p className="text-muted-foreground text-sm md:text-base">{faq.answer}</p>
                   </motion.div>)}
