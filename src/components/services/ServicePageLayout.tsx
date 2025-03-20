@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -50,7 +49,6 @@ const ServicePageLayout = ({
 }: ServicePageLayoutProps) => {
   // Updated background class to match hero section gradient
   const sectionBgClass = "bg-gradient-to-br from-white to-amber-50/50 backdrop-blur-sm";
-  
   return <>
       <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} />
       <SchemaMarkup />
@@ -118,7 +116,7 @@ const ServicePageLayout = ({
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
             
             {/* Subtle texture overlay */}
-            <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+            <div className="absolute inset-0 z-0 opacity-100 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
