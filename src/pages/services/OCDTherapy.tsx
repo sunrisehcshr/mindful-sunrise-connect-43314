@@ -73,42 +73,73 @@ const OCDTherapy = () => {
         { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-havertown-pa" }
       ]}
     >
-      <section className="py-12 bg-white">
+      <section className="py-16 bg-secondary/10">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Comprehensive OCD Treatment</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                Our Approach to OCD Treatment
+              </h2>
+              
+              <div className="space-y-4">
+                <p>
+                  At Sunrise Human Care Services in Havertown, PA, we provide specialized, evidence-based treatment for Obsessive-Compulsive Disorder (OCD) and related conditions. Our therapists have extensive training in proven approaches that help reduce obsessions, compulsions, and the distress they cause.
+                </p>
+                
+                <p>
+                  OCD can manifest in many forms—from contamination fears and checking behaviors to intrusive thoughts and mental rituals. Regardless of how OCD appears in your life, our team understands the mechanics of this complex disorder and offers effective strategies to help you break free from its grip.
+                </p>
+                
+                <p>
+                  Our approach centers on Exposure and Response Prevention (ERP), the gold standard treatment for OCD, complemented by other evidence-based methods tailored to your specific needs. We focus not only on symptom reduction but also on rebuilding your quality of life and developing long-term resilience.
+                </p>
+                
+                <p>
+                  With compassionate guidance and proven techniques, you can learn to respond differently to obsessive thoughts and gradually reduce compulsive behaviors, reclaiming the parts of your life that OCD has affected.
+                </p>
+              </div>
+            </div>
             
-            <p className="mb-4 text-muted-foreground">
-              At Sunrise Human Care Services, we provide specialized, evidence-based treatment for Obsessive-Compulsive Disorder (OCD) and related conditions. Our therapists have extensive training in proven approaches that help reduce obsessions, compulsions, and the distress they cause.
-            </p>
-            
-            <p className="mb-4 text-muted-foreground">
-              OCD can manifest in many forms—from contamination fears and checking behaviors to intrusive thoughts and mental rituals. Regardless of how OCD appears in your life, our team understands the mechanics of this complex disorder and offers effective strategies to help you break free from its grip.
-            </p>
-            
-            <p className="mb-8 text-muted-foreground">
-              Our approach centers on Exposure and Response Prevention (ERP), the gold standard treatment for OCD, complemented by other evidence-based methods tailored to your specific needs. We focus not only on symptom reduction but also on rebuilding your quality of life and developing long-term resilience.
-            </p>
-            
-            <h3 className="text-xl font-semibold mb-4">What to Expect</h3>
-            
-            <p className="mb-4 text-muted-foreground">
-              Your OCD treatment journey begins with a thorough assessment to understand your specific symptoms, triggers, and how OCD impacts your life. Based on this evaluation, we'll create a personalized treatment plan that typically includes:
-            </p>
-            
-            <ul className="list-disc pl-6 mb-8 text-muted-foreground space-y-2">
-              <li>Education about OCD and how treatment works</li>
-              <li>Development of a hierarchy of feared situations for gradual exposure</li>
-              <li>Guided exposure exercises during sessions and as homework</li>
-              <li>Cognitive strategies to challenge unhelpful beliefs</li>
-              <li>Skills for managing anxiety and distress</li>
-              <li>Family involvement when helpful to address accommodation</li>
-              <li>Relapse prevention planning</li>
-            </ul>
-            
-            <p className="text-muted-foreground">
-              We understand that seeking help for OCD takes courage, and our compassionate therapists will support you every step of the way. With commitment to the treatment process, you can expect significant reduction in OCD symptoms and a reclaiming of the parts of your life that OCD has affected.
-            </p>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+              <h3 className="text-xl font-semibold mb-4 font-playfair">
+                Our OCD Treatment Helps With:
+              </h3>
+              
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <span className="text-sunrise-500 mr-2">✓</span>
+                  <span>Contamination OCD</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-sunrise-500 mr-2">✓</span>
+                  <span>Checking and reassurance-seeking</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-sunrise-500 mr-2">✓</span>
+                  <span>Harmful, violent, or taboo intrusive thoughts</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-sunrise-500 mr-2">✓</span>
+                  <span>Symmetry, ordering, and "just right" feelings</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-sunrise-500 mr-2">✓</span>
+                  <span>Scrupulosity (religious/moral obsessions)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-sunrise-500 mr-2">✓</span>
+                  <span>Relationship OCD</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-sunrise-500 mr-2">✓</span>
+                  <span>Mental rituals and pure obsessional OCD</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-sunrise-500 mr-2">✓</span>
+                  <span>OCD in children and adolescents</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

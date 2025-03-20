@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -47,6 +48,9 @@ const ServicePageLayout = ({
   relatedServices,
   schemaType
 }: ServicePageLayoutProps) => {
+  // Common background for sections that previously used orange-50
+  const sectionBgClass = "bg-gradient-to-br from-white to-amber-50/50 backdrop-blur-sm";
+  
   return <>
       <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} />
       <SchemaMarkup />
@@ -109,8 +113,8 @@ const ServicePageLayout = ({
           {/* Custom Content Section */}
           {children}
           
-          {/* Benefits Section */}
-          <section className="py-12 md:py-16 bg-orange-50">
+          {/* Benefits Section - Updated background */}
+          <section className={`py-12 md:py-16 ${sectionBgClass}`}>
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Benefits of {serviceType}</h2>
@@ -141,7 +145,7 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Approaches Section */}
+          {/* Approaches Section - Updated background */}
           <section className="py-12 md:py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
@@ -164,7 +168,7 @@ const ServicePageLayout = ({
               }} transition={{
                 duration: 0.5,
                 delay: index * 0.1
-              }} className="bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50">
+              }} className={`${sectionBgClass} rounded-lg p-5 md:p-6 border border-orange-100/50`}>
                     <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{approach.title}</h3>
                     <p className="text-muted-foreground text-sm md:text-base">{approach.description}</p>
                   </motion.div>)}
@@ -198,8 +202,8 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* FAQs Section */}
-          <section className="py-12 md:py-16 bg-white">
+          {/* FAQs Section - Updated background */}
+          <section className={`py-12 md:py-16 ${sectionBgClass}`}>
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Frequently Asked Questions</h2>
@@ -218,7 +222,7 @@ const ServicePageLayout = ({
               }} transition={{
                 duration: 0.5,
                 delay: index * 0.1
-              }} className="mb-5 md:mb-6 bg-orange-50/50 rounded-lg p-5 md:p-6 border border-orange-100/50">
+              }} className="mb-5 md:mb-6 bg-white rounded-lg p-5 md:p-6 border border-orange-100/50 shadow-sm">
                     <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{faq.question}</h3>
                     <p className="text-muted-foreground text-sm md:text-base">{faq.answer}</p>
                   </motion.div>)}
@@ -226,8 +230,8 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Related Services Section */}
-          <section className="py-12 md:py-16 bg-orange-50/50">
+          {/* Related Services Section - Updated background */}
+          <section className={`py-12 md:py-16 ${sectionBgClass}`}>
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Related Services</h2>

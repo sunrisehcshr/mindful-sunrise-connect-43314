@@ -16,6 +16,26 @@ const Conditions = () => {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-24 py-0 bg-white">
+          {/* Hero Section */}
+          <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden">
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
+            
+            {/* Subtle texture overlay */}
+            <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+            
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
+              <div className="max-w-3xl">                
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
+                  Conditions We Treat
+                </h1>
+                
+                <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
+                  Our experienced team provides evidence-based treatment for a wide range of mental health conditions affecting children, adolescents, adults, and seniors.
+                </p>
+              </div>
+            </div>
+          </section>
+          
           <ConditionsSection />
         </main>
         <Footer />
