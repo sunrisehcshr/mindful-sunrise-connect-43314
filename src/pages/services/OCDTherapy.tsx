@@ -10,7 +10,7 @@ const OCDTherapy = () => {
       pageTitle="OCD Treatment | Sunrise Human Care Services | Havertown, PA"
       metaDescription="Effective OCD therapy in Havertown, PA. Our specialized approach using ERP and cognitive-behavioral therapy helps reduce obsessions and compulsions."
       serviceType="OCD Treatment"
-      canonicalUrl="https://sunrisehumancare.com/ocd-therapy-havertown-pa"
+      canonicalUrl="/ocd-therapy-havertown-pa"
       benefits={[
         "Reduced frequency and intensity of obsessions",
         "Decreased time spent on compulsions and rituals",
@@ -73,8 +73,11 @@ const OCDTherapy = () => {
         { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-havertown-pa" }
       ]}
     >
-      <section className="py-16 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
+        <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+        
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">

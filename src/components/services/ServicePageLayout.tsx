@@ -48,7 +48,7 @@ const ServicePageLayout = ({
   relatedServices,
   schemaType
 }: ServicePageLayoutProps) => {
-  // Common background for sections that previously used orange-50
+  // Updated background class to match hero section gradient
   const sectionBgClass = "bg-gradient-to-br from-white to-amber-50/50 backdrop-blur-sm";
   
   return <>
@@ -113,9 +113,14 @@ const ServicePageLayout = ({
           {/* Custom Content Section */}
           {children}
           
-          {/* Benefits Section - Updated background */}
-          <section className={`py-12 md:py-16 ${sectionBgClass}`}>
-            <div className="container mx-auto px-4 md:px-6">
+          {/* Benefits Section - Updated background to gradient */}
+          <section className="py-12 md:py-16 relative overflow-hidden">
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
+            
+            {/* Subtle texture overlay */}
+            <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+            
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Benefits of {serviceType}</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
@@ -145,7 +150,7 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Approaches Section - Updated background */}
+          {/* Approaches Section */}
           <section className="py-12 md:py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
@@ -168,9 +173,13 @@ const ServicePageLayout = ({
               }} transition={{
                 duration: 0.5,
                 delay: index * 0.1
-              }} className={`${sectionBgClass} rounded-lg p-5 md:p-6 border border-orange-100/50`}>
-                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{approach.title}</h3>
-                    <p className="text-muted-foreground text-sm md:text-base">{approach.description}</p>
+              }} className="relative overflow-hidden rounded-lg p-5 md:p-6 border border-orange-100/50">
+                    <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
+                    <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+                    <div className="relative z-10">
+                      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{approach.title}</h3>
+                      <p className="text-muted-foreground text-sm md:text-base">{approach.description}</p>
+                    </div>
                   </motion.div>)}
               </div>
             </div>
@@ -202,9 +211,14 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* FAQs Section - Updated background */}
-          <section className={`py-12 md:py-16 ${sectionBgClass}`}>
-            <div className="container mx-auto px-4 md:px-6">
+          {/* FAQs Section - Updated background to gradient */}
+          <section className="py-12 md:py-16 relative overflow-hidden">
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
+            
+            {/* Subtle texture overlay */}
+            <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+            
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Frequently Asked Questions</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
@@ -230,9 +244,14 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Related Services Section - Updated background */}
-          <section className={`py-12 md:py-16 ${sectionBgClass}`}>
-            <div className="container mx-auto px-4 md:px-6">
+          {/* Related Services Section - Updated background to gradient */}
+          <section className="py-12 md:py-16 relative overflow-hidden">
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
+            
+            {/* Subtle texture overlay */}
+            <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+            
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Related Services</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
