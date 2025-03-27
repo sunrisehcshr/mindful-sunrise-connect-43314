@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -46,7 +45,7 @@ const WarmHeroSection = () => {
               <SectionTag>Mental Health Clinic</SectionTag>
             </motion.div>
             
-            <motion.h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-shadow-effect leading-tight" initial={{
+            <motion.h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-amber-950 leading-tight" initial={{
             opacity: 0
           }} animate={{
             opacity: 1
@@ -54,7 +53,7 @@ const WarmHeroSection = () => {
             duration: 0.6,
             delay: 0.3
           }}>
-              Expert <span className="block sm:inline">Mental Health Care</span> in Havertown, PA
+              Expert Mental Health Care in Havertown, PA
             </motion.h1>
             
             <motion.p className="text-lg md:text-xl text-amber-900 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed" initial={{

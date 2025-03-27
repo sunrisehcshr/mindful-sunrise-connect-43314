@@ -76,7 +76,7 @@ const ServicePageLayout = ({
                 y: 0
               }} transition={{
                 duration: 0.5
-              }} className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-shadow-effect">
+              }} className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
                   {title}
                 </motion.h1>
                 
@@ -115,7 +115,7 @@ const ServicePageLayout = ({
           
           {/* Benefits Section - Updated background to gradient */}
           <section className="py-12 md:py-16 relative overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
             
             {/* Subtle texture overlay */}
             <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
@@ -174,7 +174,7 @@ const ServicePageLayout = ({
                 duration: 0.5,
                 delay: index * 0.1
               }} className="relative overflow-hidden rounded-lg p-5 md:p-6 border border-orange-100/50">
-                    <div className="absolute inset-0 z-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
+                    <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
                     <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
                     <div className="relative z-10">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{approach.title}</h3>
@@ -213,7 +213,7 @@ const ServicePageLayout = ({
           
           {/* FAQs Section - Updated background to gradient */}
           <section className="py-12 md:py-16 relative overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
             
             {/* Subtle texture overlay */}
             <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
@@ -246,7 +246,7 @@ const ServicePageLayout = ({
           
           {/* Related Services Section - Updated background to gradient */}
           <section className="py-12 md:py-16 relative overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
             
             {/* Subtle texture overlay */}
             <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
