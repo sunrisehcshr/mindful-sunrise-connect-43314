@@ -68,7 +68,7 @@ export default {
 					100: '#ffecc6',
 					200: '#ffe0a3',
 					300: '#ffd47f',
-					400: '#fec76f', // The requested color
+					400: '#fec76f', 
 					500: '#fdb346',
 					600: '#f99920',
 					700: '#dc7110',
@@ -145,7 +145,8 @@ export default {
 				serif: ['Georgia', 'serif'],
 				opensans: ['Open Sans', 'sans-serif'],
 				lato: ['Lato', 'sans-serif'],
-				inter: ['Inter', 'sans-serif']
+				inter: ['Inter', 'sans-serif'],
+				playfair: ['Playfair Display', 'serif']
 			}
 		}
 	},
