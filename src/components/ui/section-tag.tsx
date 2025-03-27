@@ -1,25 +1,32 @@
 
-import React from 'react';
-import { Sparkles } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React from 'react'
+import { cn } from '@/lib/utils'
 
-interface SectionTagProps {
-  children: React.ReactNode;
-  className?: string;
-  icon?: React.ReactNode;
+interface SectionTagProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: 'default' | 'outline'
+  children: React.ReactNode
 }
 
-const SectionTag = ({ children, className, icon = <Sparkles className="h-3 w-3" /> }: SectionTagProps) => {
+const SectionTag = ({
+  className,
+  variant = 'default',
+  children,
+  ...props
+}: SectionTagProps) => {
   return (
-    <span 
+    <div
       className={cn(
-        "section-tag inline-flex items-center gap-1.5 font-semibold text-sm px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400 shadow-sm",
+        "inline-block px-3 py-1 rounded-full text-xs font-medium",
+        variant === 'default' 
+          ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400" 
+          : "bg-orange-100 text-orange-600 border border-orange-200",
         className
       )}
+      {...props}
     >
-      {icon} {children}
-    </span>
-  );
-};
+      {children}
+    </div>
+  )
+}
 
-export default SectionTag;
+export default SectionTag
