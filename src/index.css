@@ -60,6 +60,21 @@
 }
 
 @layer components {
+  /* Text shadow effect class for heading */
+  .text-shadow-effect {
+    color: #fff8e1;
+    font-weight: 900;
+    text-shadow: 
+      -0.0075em 0.0075em 0 #fff1c1,
+      0.005em 0.005em 0 #ffdb82,
+      0.01em 0.01em 0 #ffd980, 
+      0.015em 0.015em #ffd77c, 
+      0.02em 0.02em 0 #ffd578, 
+      0.025em 0.025em 0 #ffd376,
+      0.03em 0.03em 0 #ffd173,
+      0.035em 0.035em 0 #ffcf70;
+  }
+
   .warm-card {
     @apply bg-white/80 backdrop-blur-sm border border-yellow-200/70 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden;
   }
@@ -210,4 +225,3 @@
                       radial-gradient(circle at 70% 60%, rgba(255, 234, 112, 0.6) 0%, transparent 40%);
   }
 }
-

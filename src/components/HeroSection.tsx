@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarCheck, Phone } from 'lucide-react';
@@ -42,12 +43,12 @@ const HeroSection: React.FC = () => {
   initial={{ opacity: 0 }} 
   animate={{ opacity: 1 }} 
   transition={{ delay: 0.5, duration: 0.8 }} 
-  className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight"
+  className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-shadow-effect leading-tight"
 >
-  Personalized Mental Health Services in{" "}
+  Personalized <span className="block sm:inline">Mental Health Care</span> in{" "}
   <span className="relative inline-block">
-    <span className="relative z-10 text-gray-900">Havertown, PA</span>
-    <span className="absolute bottom-0 left-0 w-full h-[0.4em] bg-sunrise-400/30 -z-10"></span>
+    <span className="relative z-10">Havertown, PA</span>
+    <span className="absolute bottom-0 left-0 w-full h-[0.4em] bg-amber-400/30 -z-10"></span>
   </span>
 </motion.h1>
             <motion.p initial={{
