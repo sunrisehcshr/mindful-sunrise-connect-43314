@@ -33,8 +33,8 @@ const AppointmentForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      // Using the correct Formspree endpoint
-      const response = await fetch("https://formspree.io/f/xpwqvvvw", {
+      // Using the updated Formspree endpoint
+      const response = await fetch("https://formspree.io/f/xzzeaeql", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

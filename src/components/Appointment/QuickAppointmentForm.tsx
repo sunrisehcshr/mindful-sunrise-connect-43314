@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { CalendarIcon, Phone, Mail, Hospital, Video, Clock } from 'lucide-react';
@@ -92,10 +93,10 @@ const QuickAppointmentForm: React.FC = () => {
         ...formData,
         date: formData.date ? format(formData.date, 'PPP') : '',
         _subject: "Quick Appointment Request",
-        _cc: "shweta.s@sunrisehcsllc.com"
+        _cc: "shweta.s@sunrisehumancare.com"
       };
       
-      const response = await fetch('https://formspree.io/f/xpwqvvvw', {
+      const response = await fetch('https://formspree.io/f/xzzeaeql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
