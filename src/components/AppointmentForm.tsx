@@ -79,7 +79,7 @@ const AppointmentForm = () => {
         appointmentType: appointmentType,
         message: formData.message,
         _subject: "New Appointment Request",
-        _cc: "shweta.s@sunrisehcsllc.com"
+        _cc: "shweta.s@sunrisehumancare.com"
       };
       
       // Send to Formspree

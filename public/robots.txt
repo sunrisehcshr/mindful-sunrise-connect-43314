@@ -11,4 +11,4 @@ Disallow: /*.pdf$
 Disallow: /*.doc$
 
 # Sitemap location
-Sitemap: https://sunrisehcsllc.com/sitemap.xml
+Sitemap: https://sunrisehumancare.com/sitemap.xml

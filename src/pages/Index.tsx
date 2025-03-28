@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import WarmHeroSection from '../components/WarmHeroSection';
@@ -13,7 +14,7 @@ import SEOHead from '../components/SEOHead';
 import { Separator } from '@/components/ui/separator';
 const Index = () => {
   return <>
-      <SEOHead title="Mental Health Therapy & Psychiatry in Havertown, PA | Sunrise Human Care Services" description="Leading mental health clinic in Havertown, PA. Specialized therapy for anxiety, depression, ADHD, and trauma. In-person and telehealth services available. Call (814) 620-2162 to schedule today." canonicalUrl="https://sunrisehcsllc.com/" />
+      <SEOHead title="Mental Health Therapy & Psychiatry in Havertown, PA | Sunrise Human Care Services" description="Leading mental health clinic in Havertown, PA. Specialized therapy for anxiety, depression, ADHD, and trauma. In-person and telehealth services available. Call (814) 620-2162 to schedule today." canonicalUrl="https://sunrisehumancare.com/" />
       <motion.div className="flex flex-col min-h-screen relative overflow-hidden" initial={{
       opacity: 0
     }} animate={{

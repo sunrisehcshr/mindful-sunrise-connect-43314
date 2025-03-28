@@ -14,7 +14,7 @@ const NewsletterForm: React.FC = () => {
       const formData = {
         email: email,
         _subject: "Newsletter Subscription",
-        _cc: "shweta.s@sunrisehcsllc.com"
+        _cc: "shweta.s@sunrisehumancare.com"
       };
       
       // Updated to use the correct endpoint

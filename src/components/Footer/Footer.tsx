@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -45,7 +46,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-orange-500" />
-                <a href="mailto:info@sunrisehcsllc.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">info@sunrisehcsllc.com</a>
+                <a href="mailto:info@sunrisehumancare.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">info@sunrisehumancare.com</a>
               </li>
               <li className="flex items-start space-x-3">
                 <Clock className="h-5 w-5 text-orange-500 mt-0.5" />

@@ -2,4 +2,3 @@
 /*    /index.html   200
 /resources    /blog    301
 /resources/*  /blog/:splat  301
-

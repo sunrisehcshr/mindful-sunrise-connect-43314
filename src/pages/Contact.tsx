@@ -33,7 +33,7 @@ const Contact = () => {
       const formspreeData = {
         ...formData,
         _subject: "Contact Form Message",
-        _cc: "shweta.s@sunrisehcsllc.com"
+        _cc: "shweta.s@sunrisehumancare.com"
       };
       
       const response = await fetch("https://formspree.io/f/xpwqvvvw", {
@@ -95,7 +95,7 @@ const Contact = () => {
                       <Mail className="h-4 w-4 text-amber-500 mt-1" />
                       <div>
                         <h3 className="font-medium text-sm">Email</h3>
-                        <p className="text-amber-700 text-sm">info@sunrisehcsllc.com</p>
+                        <p className="text-amber-700 text-sm">info@sunrisehumancare.com</p>
                       </div>
                     </div>
                     
