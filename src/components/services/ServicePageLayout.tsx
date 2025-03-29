@@ -226,7 +226,7 @@ const ServicePageLayout = ({
           </section>
           
           {/* FAQs Section - With warm gradient background properly applied */}
-          <section className={`py-12 md:py-16 ${warmGradientBg}`}>
+          <section className="py-[50px] bg-white">
             {warmGradientOverlay}
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
