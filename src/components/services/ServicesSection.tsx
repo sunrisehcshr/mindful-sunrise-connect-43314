@@ -6,42 +6,42 @@ import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
 const ServicesSection: React.FC = () => {
   const services = [{
-    icon: <User className="h-6 w-6 text-white" />,
+    icon: <User className="h-6 w-6" />,
     title: "Individual Therapy",
     description: "One-on-one therapy sessions tailored to your unique needs and challenges.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/individual-therapy-havertown-pa"
   }, {
-    icon: <HeartHandshake className="h-6 w-6 text-white" />,
+    icon: <HeartHandshake className="h-6 w-6" />,
     title: "Couples Counseling",
     description: "Specialized therapy to help couples improve communication, resolve conflicts, and strengthen relationships.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/couples-counseling-havertown-pa"
   }, {
-    icon: <Users className="h-6 w-6 text-white" />,
+    icon: <Users className="h-6 w-6" />,
     title: "Family Therapy",
     description: "Therapy sessions focused on improving family relationships and communication.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/family-therapy-havertown-pa"
   }, {
-    icon: <Baby className="h-6 w-6 text-white" />,
+    icon: <Baby className="h-6 w-6" />,
     title: "Child & Adolescent Therapy",
     description: "Specialized therapy for children and teens facing behavioral or emotional challenges.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/child-therapy-havertown-pa"
   }, {
-    icon: <Stethoscope className="h-6 w-6 text-white" />,
+    icon: <Stethoscope className="h-6 w-6" />,
     title: "Psychiatric Evaluations",
     description: "Comprehensive mental health assessments and diagnostic services.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/psychiatric-evaluations-havertown-pa"
   }, {
-    icon: <Pill className="h-6 w-6 text-white" />,
+    icon: <Pill className="h-6 w-6" />,
     title: "Medication Management",
     description: "Professional psychiatric medication reviews and management for mental health conditions.",
     color: "bg-sunrise-50 text-sunrise-700",
