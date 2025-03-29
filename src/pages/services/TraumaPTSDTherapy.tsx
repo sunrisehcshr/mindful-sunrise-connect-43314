@@ -1,6 +1,9 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
+import ServiceContentSection from '../../components/services/ServiceContentSection';
+import { motion } from 'framer-motion';
+import { CheckCircle2 } from 'lucide-react';
 
 const TraumaPTSDTherapy = () => {
   const benefits = [
@@ -69,77 +72,75 @@ const TraumaPTSDTherapy = () => {
       faqs={faqs}
       relatedServices={relatedServices}
     >
-      {/* Service-specific content */}
-      <section className="py-16 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                Our Approach to Trauma Treatment
-              </h2>
+      {/* Enhanced service-specific content */}
+      <ServiceContentSection
+        title="Our Approach to Trauma Treatment"
+        hasBgPattern={true}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-5 text-muted-foreground">
+              <p className="leading-relaxed">
+                At Sunrise Human Care Services in Havertown, PA, we understand that trauma can profoundly impact every aspect of your life. Our trauma-informed therapists specialize in evidence-based approaches specifically designed to help you process traumatic experiences and reduce their impact on your daily life.
+              </p>
               
-              <div className="space-y-4">
-                <p>
-                  At Sunrise Human Care Services in Havertown, PA, we understand that trauma can profoundly impact every aspect of your life. Our trauma-informed therapists specialize in evidence-based approaches specifically designed to help you process traumatic experiences and reduce their impact on your daily life.
-                </p>
-                
-                <p>
-                  We begin with a thorough assessment to understand your specific trauma history, symptoms, and treatment goals. Based on this assessment, we'll recommend the most appropriate therapeutic approach for your particular situation, whether that's EMDR, trauma-focused CBT, or another specialized approach.
-                </p>
-                
-                <p>
-                  Safety and stabilization come first—we'll help you develop skills to manage overwhelming emotions and establish a sense of security before processing traumatic material. Throughout treatment, we work at your pace, respecting your boundaries and ensuring you feel in control of the therapeutic process.
-                </p>
-                
-                <p>
-                  Our goal is not just symptom reduction but helping you integrate traumatic experiences in a way that allows you to move forward with renewed strength and resilience. Many clients find that effective trauma treatment leads to not only relief from PTSD symptoms but also personal growth and a deeper connection to themselves and others.
-                </p>
-              </div>
+              <p className="leading-relaxed">
+                We begin with a thorough assessment to understand your specific trauma history, symptoms, and treatment goals. Based on this assessment, we'll recommend the most appropriate therapeutic approach for your particular situation, whether that's EMDR, trauma-focused CBT, or another specialized approach.
+              </p>
+              
+              <p className="leading-relaxed">
+                Safety and stabilization come first—we'll help you develop skills to manage overwhelming emotions and establish a sense of security before processing traumatic material. Throughout treatment, we work at your pace, respecting your boundaries and ensuring you feel in control of the therapeutic process.
+              </p>
+              
+              <p className="leading-relaxed">
+                Our goal is not just symptom reduction but helping you integrate traumatic experiences in a way that allows you to move forward with renewed strength and resilience. Many clients find that effective trauma treatment leads to not only relief from PTSD symptoms but also personal growth and a deeper connection to themselves and others.
+              </p>
             </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              Our Trauma Services Help With:
+            </h3>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
-                Our Trauma Services Help With:
-              </h3>
-              
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Post-Traumatic Stress Disorder (PTSD)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Complex trauma and C-PTSD</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Childhood trauma and adverse experiences</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Single-incident trauma (accidents, assaults, etc.)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Medical trauma</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Combat trauma and military experiences</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Interpersonal trauma and abuse</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Traumatic grief and loss</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+            <ul className="space-y-3.5">
+              {[
+                "Post-Traumatic Stress Disorder (PTSD)",
+                "Complex trauma and C-PTSD",
+                "Childhood trauma and adverse experiences",
+                "Single-incident trauma (accidents, assaults, etc.)",
+                "Medical trauma",
+                "Combat trauma and military experiences",
+                "Interpersonal trauma and abuse",
+                "Traumatic grief and loss"
+              ].map((item, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
-      </section>
+      </ServiceContentSection>
     </ServicePageLayout>
   );
 };

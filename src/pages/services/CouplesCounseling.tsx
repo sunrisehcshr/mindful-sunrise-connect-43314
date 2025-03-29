@@ -1,6 +1,9 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
+import ServiceContentSection from '../../components/services/ServiceContentSection';
+import { motion } from 'framer-motion';
+import { CheckCircle2 } from 'lucide-react';
 
 const CouplesCounseling = () => {
   const benefits = [
@@ -70,73 +73,71 @@ const CouplesCounseling = () => {
       faqs={faqs}
       relatedServices={relatedServices}
     >
-      {/* Service-specific content */}
-      <section className="py-16 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                Our Approach to Couples Counseling
-              </h2>
+      {/* Enhanced service-specific content */}
+      <ServiceContentSection
+        title="Our Approach to Couples Counseling"
+        hasBgPattern={true}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-5 text-muted-foreground">
+              <p className="leading-relaxed">
+                At Sunrise Human Care Services in Havertown, PA, we understand that every relationship is unique. Our couples counseling begins with a thorough assessment to understand each partner's perspective, the relationship history, and your shared goals.
+              </p>
               
-              <div className="space-y-4">
-                <p>
-                  At Sunrise Human Care Services in Havertown, PA, we understand that every relationship is unique. Our couples counseling begins with a thorough assessment to understand each partner's perspective, the relationship history, and your shared goals.
-                </p>
-                
-                <p>
-                  Using evidence-based approaches, we help you identify and address patterns that may be causing distress in your relationship. Our therapists create a balanced environment where both partners feel heard and respected.
-                </p>
-                
-                <p>
-                  Throughout therapy, you'll learn practical communication skills, emotional regulation techniques, and conflict resolution strategies that you can apply immediately. We focus on building upon your relationship's existing strengths while addressing areas that need improvement.
-                </p>
-              </div>
+              <p className="leading-relaxed">
+                Using evidence-based approaches, we help you identify and address patterns that may be causing distress in your relationship. Our therapists create a balanced environment where both partners feel heard and respected.
+              </p>
+              
+              <p className="leading-relaxed">
+                Throughout therapy, you'll learn practical communication skills, emotional regulation techniques, and conflict resolution strategies that you can apply immediately. We focus on building upon your relationship's existing strengths while addressing areas that need improvement.
+              </p>
             </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              Our Couples Counseling Helps With:
+            </h3>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
-                Our Couples Counseling Helps With:
-              </h3>
-              
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Communication breakdowns</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Recurring arguments and conflicts</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Trust issues and infidelity recovery</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Intimacy and connection challenges</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Navigating major life changes together</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Parenting disagreements</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Pre-marital counseling</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Managing extended family relationships</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+            <ul className="space-y-3.5">
+              {[
+                "Communication breakdowns",
+                "Recurring arguments and conflicts",
+                "Trust issues and infidelity recovery",
+                "Intimacy and connection challenges",
+                "Navigating major life changes together",
+                "Parenting disagreements",
+                "Pre-marital counseling",
+                "Managing extended family relationships"
+              ].map((item, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
-      </section>
+      </ServiceContentSection>
     </ServicePageLayout>
   );
 };

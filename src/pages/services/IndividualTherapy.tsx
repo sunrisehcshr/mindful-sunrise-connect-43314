@@ -1,6 +1,9 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
+import ServiceContentSection from '../../components/services/ServiceContentSection';
+import { motion } from 'framer-motion';
+import { CheckCircle2 } from 'lucide-react';
 
 const IndividualTherapy = () => {
   const benefits = [
@@ -69,73 +72,71 @@ const IndividualTherapy = () => {
       faqs={faqs}
       relatedServices={relatedServices}
     >
-      {/* Service-specific content */}
-      <section className="py-16 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                What to Expect in Individual Therapy
-              </h2>
+      {/* Enhanced service-specific content */}
+      <ServiceContentSection
+        title="What to Expect in Individual Therapy"
+        hasBgPattern={true}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-5 text-muted-foreground">
+              <p className="leading-relaxed">
+                At Sunrise Human Care Services in Havertown, PA, individual therapy begins with a comprehensive assessment to understand your unique concerns, history, and goals. This helps us develop a personalized treatment plan tailored specifically to you.
+              </p>
               
-              <div className="space-y-4">
-                <p>
-                  At Sunrise Human Care Services in Havertown, PA, individual therapy begins with a comprehensive assessment to understand your unique concerns, history, and goals. This helps us develop a personalized treatment plan tailored specifically to you.
-                </p>
-                
-                <p>
-                  During your ongoing sessions, you'll work one-on-one with your therapist in a safe, confidential environment where you can freely express yourself. Your therapist will guide you through evidence-based therapeutic techniques designed to address your specific challenges.
-                </p>
-                
-                <p>
-                  As therapy progresses, you'll develop new insights, coping strategies, and practical skills that you can apply to your daily life. We emphasize measurable progress toward your goals, with regular check-ins to ensure your treatment remains effective and aligned with your evolving needs.
-                </p>
-              </div>
+              <p className="leading-relaxed">
+                During your ongoing sessions, you'll work one-on-one with your therapist in a safe, confidential environment where you can freely express yourself. Your therapist will guide you through evidence-based therapeutic techniques designed to address your specific challenges.
+              </p>
+              
+              <p className="leading-relaxed">
+                As therapy progresses, you'll develop new insights, coping strategies, and practical skills that you can apply to your daily life. We emphasize measurable progress toward your goals, with regular check-ins to ensure your treatment remains effective and aligned with your evolving needs.
+              </p>
             </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              Our Individual Therapy Services Help With:
+            </h3>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
-                Our Individual Therapy Services Help With:
-              </h3>
-              
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Anxiety, worry and panic attacks</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Depression and mood disorders</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Trauma recovery and PTSD</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Grief and loss</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Life transitions and adjustments</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Self-esteem and personal growth</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Stress management</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Relationship issues</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+            <ul className="space-y-3.5">
+              {[
+                "Anxiety, worry and panic attacks",
+                "Depression and mood disorders",
+                "Trauma recovery and PTSD",
+                "Grief and loss",
+                "Life transitions and adjustments",
+                "Self-esteem and personal growth",
+                "Stress management",
+                "Relationship issues"
+              ].map((item, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
-      </section>
+      </ServiceContentSection>
     </ServicePageLayout>
   );
 };

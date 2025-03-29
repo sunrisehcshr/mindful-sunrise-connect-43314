@@ -1,6 +1,9 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
+import ServiceContentSection from '../../components/services/ServiceContentSection';
+import { motion } from 'framer-motion';
+import { CheckCircle2 } from 'lucide-react';
 
 const MedicationManagement = () => {
   const benefits = [
@@ -70,77 +73,75 @@ const MedicationManagement = () => {
       faqs={faqs}
       relatedServices={relatedServices}
     >
-      {/* Service-specific content */}
-      <section className="py-16 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                Our Approach to Medication Management
-              </h2>
+      {/* Enhanced service-specific content */}
+      <ServiceContentSection
+        title="Our Approach to Medication Management"
+        hasBgPattern={true}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-5 text-muted-foreground">
+              <p className="leading-relaxed">
+                At Sunrise Human Care Services in Havertown, PA, our psychiatric medication management services are provided by licensed psychiatric specialists who combine medical expertise with compassionate care. We believe in evidence-based medication practices tailored to your individual needs.
+              </p>
               
-              <div className="space-y-4">
-                <p>
-                  At Sunrise Human Care Services in Havertown, PA, our psychiatric medication management services are provided by licensed psychiatric specialists who combine medical expertise with compassionate care. We believe in evidence-based medication practices tailored to your individual needs.
-                </p>
-                
-                <p>
-                  We begin with a comprehensive evaluation to understand your symptoms, medical history, and treatment goals. If medication is appropriate, we'll explain your options in clear, understandable terms, discussing potential benefits and risks so you can make informed decisions about your care.
-                </p>
-                
-                <p>
-                  Our approach emphasizes finding the right medication and dosage with minimal side effects. We start with the lowest effective dose and adjust based on your response. Throughout treatment, we provide ongoing monitoring, education, and support to help you achieve optimal results.
-                </p>
-                
-                <p>
-                  We value coordinated care and work closely with your therapist or other healthcare providers to ensure your treatment plan is comprehensive and effective. This integrated approach helps address all aspects of your mental health condition.
-                </p>
-              </div>
+              <p className="leading-relaxed">
+                We begin with a comprehensive evaluation to understand your symptoms, medical history, and treatment goals. If medication is appropriate, we'll explain your options in clear, understandable terms, discussing potential benefits and risks so you can make informed decisions about your care.
+              </p>
+              
+              <p className="leading-relaxed">
+                Our approach emphasizes finding the right medication and dosage with minimal side effects. We start with the lowest effective dose and adjust based on your response. Throughout treatment, we provide ongoing monitoring, education, and support to help you achieve optimal results.
+              </p>
+              
+              <p className="leading-relaxed">
+                We value coordinated care and work closely with your therapist or other healthcare providers to ensure your treatment plan is comprehensive and effective. This integrated approach helps address all aspects of your mental health condition.
+              </p>
             </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              We Provide Medication Management For:
+            </h3>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
-                We Provide Medication Management For:
-              </h3>
-              
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Depression and mood disorders</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Anxiety disorders</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Bipolar disorder</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>ADHD in children and adults</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>PTSD and trauma-related disorders</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Obsessive-compulsive disorder (OCD)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Sleep disorders</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Complex or treatment-resistant conditions</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+            <ul className="space-y-3.5">
+              {[
+                "Depression and mood disorders",
+                "Anxiety disorders",
+                "Bipolar disorder",
+                "ADHD in children and adults",
+                "PTSD and trauma-related disorders",
+                "Obsessive-compulsive disorder (OCD)",
+                "Sleep disorders",
+                "Complex or treatment-resistant conditions"
+              ].map((item, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
-      </section>
+      </ServiceContentSection>
     </ServicePageLayout>
   );
 };

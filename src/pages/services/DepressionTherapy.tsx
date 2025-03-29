@@ -1,6 +1,9 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
+import ServiceContentSection from '../../components/services/ServiceContentSection';
+import { motion } from 'framer-motion';
+import { CheckCircle2 } from 'lucide-react';
 
 const DepressionTherapy = () => {
   const benefits = [
@@ -69,73 +72,71 @@ const DepressionTherapy = () => {
       faqs={faqs}
       relatedServices={relatedServices}
     >
-      {/* Service-specific content */}
-      <section className="py-16 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                Our Approach to Depression Treatment
-              </h2>
+      {/* Enhanced service-specific content */}
+      <ServiceContentSection
+        title="Our Approach to Depression Treatment"
+        hasBgPattern={true}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-5 text-muted-foreground">
+              <p className="leading-relaxed">
+                At Sunrise Human Care Services in Havertown, PA, we understand that depression affects each person differently. Our approach begins with a comprehensive assessment to understand your specific symptoms, history, and the unique factors contributing to your depression.
+              </p>
               
-              <div className="space-y-4">
-                <p>
-                  At Sunrise Human Care Services in Havertown, PA, we understand that depression affects each person differently. Our approach begins with a comprehensive assessment to understand your specific symptoms, history, and the unique factors contributing to your depression.
-                </p>
-                
-                <p>
-                  Using evidence-based therapies, we'll help you identify and change negative thought patterns, develop healthy coping strategies, and gradually increase meaningful activities that can improve your mood. We focus not only on symptom reduction but also on helping you build a more fulfilling life.
-                </p>
-                
-                <p>
-                  When appropriate, we collaborate with our psychiatric providers to offer integrated care that may include medication management alongside therapy. Throughout treatment, we'll regularly assess your progress and adjust our approach to ensure you're receiving the most effective care for your specific needs.
-                </p>
-              </div>
+              <p className="leading-relaxed">
+                Using evidence-based therapies, we'll help you identify and change negative thought patterns, develop healthy coping strategies, and gradually increase meaningful activities that can improve your mood. We focus not only on symptom reduction but also on helping you build a more fulfilling life.
+              </p>
+              
+              <p className="leading-relaxed">
+                When appropriate, we collaborate with our psychiatric providers to offer integrated care that may include medication management alongside therapy. Throughout treatment, we'll regularly assess your progress and adjust our approach to ensure you're receiving the most effective care for your specific needs.
+              </p>
             </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              Our Depression Treatment Helps With:
+            </h3>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
-                Our Depression Treatment Helps With:
-              </h3>
-              
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Major Depressive Disorder</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Persistent Depressive Disorder (Dysthymia)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Seasonal Affective Disorder (SAD)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Postpartum Depression</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Bipolar Depression (in coordination with medication management)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Grief and bereavement</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Depression with co-occurring anxiety</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Treatment-resistant depression</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+            <ul className="space-y-3.5">
+              {[
+                "Major Depressive Disorder",
+                "Persistent Depressive Disorder (Dysthymia)",
+                "Seasonal Affective Disorder (SAD)",
+                "Postpartum Depression",
+                "Bipolar Depression (in coordination with medication management)",
+                "Grief and bereavement",
+                "Depression with co-occurring anxiety",
+                "Treatment-resistant depression"
+              ].map((item, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
-      </section>
+      </ServiceContentSection>
     </ServicePageLayout>
   );
 };
