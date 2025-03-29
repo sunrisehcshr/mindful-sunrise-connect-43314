@@ -50,13 +50,14 @@ const ServicePageLayout = ({
   relatedServices,
   schemaType
 }: ServicePageLayoutProps) => {
-  // Updated background class to match home hero section gradient
-  const warmGradientBg = "relative overflow-hidden";
+  // Warm gradient background classes with improved styling
+  const warmGradientBg = "relative overflow-hidden bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90";
+  
+  // SVG pattern overlay (more visible now)
   const warmGradientOverlay = (
     <>
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
-        <svg className="h-full w-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+        <svg className="h-full w-full opacity-30" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
               <rect x="0" y="0" width="100%" height="100%" fill="none" />
@@ -70,7 +71,7 @@ const ServicePageLayout = ({
     </>
   );
   
-  // For approach and card items - soft background
+  // For approach and card items - enhanced soft background
   const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
   
   return <>
@@ -135,7 +136,7 @@ const ServicePageLayout = ({
           {/* Custom Content Section */}
           {children}
           
-          {/* Benefits Section - Updated with warm gradient background */}
+          {/* Benefits Section - With warm gradient background properly applied */}
           <section className={`py-12 md:py-16 ${warmGradientBg}`}>
             {warmGradientOverlay}
             
@@ -169,7 +170,7 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Approaches Section - Updated with warm gradient background */}
+          {/* Approaches Section - With warm gradient background properly applied */}
           <section className={`py-12 md:py-16 ${warmGradientBg}`}>
             {warmGradientOverlay}
             
@@ -230,7 +231,7 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* FAQs Section - Updated with warm gradient background */}
+          {/* FAQs Section - With warm gradient background properly applied */}
           <section className={`py-12 md:py-16 ${warmGradientBg}`}>
             {warmGradientOverlay}
             
@@ -260,7 +261,7 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Related Services Section - Updated with warm gradient background */}
+          {/* Related Services Section - With warm gradient background properly applied */}
           <section className={`py-12 md:py-16 ${warmGradientBg}`}>
             {warmGradientOverlay}
             
