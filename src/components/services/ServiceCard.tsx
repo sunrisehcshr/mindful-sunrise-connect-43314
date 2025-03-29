@@ -47,7 +47,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
         {service.description}
       </p>
       
-      <Link to={linkUrl} className="inline-flex items-center text-sm font-medium text-amber-600 hover:text-amber-700 transition-colors duration-200 group mt-auto bg-amber-50 hover:bg-amber-100 rounded-md px-4 py-2 relative">
+      <Link to={linkUrl} className="inline-flex items-center text-sm font-medium text-white hover:text-white transition-colors duration-200 group mt-auto bg-amber-500 hover:bg-orange-400 rounded-md px-4 py-2 relative">
         Learn more 
         <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
       </Link>
