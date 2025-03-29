@@ -19,11 +19,22 @@ const ServiceContentSection: React.FC<ServiceContentSectionProps> = ({
   return (
     <section className={cn(
       "py-16 lg:py-20 relative overflow-hidden",
-      hasBgPattern && "bg-gradient-to-r from-orange-500/10 to-amber-400/10",
+      hasBgPattern ? "bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90" : "",
       className
     )}>
       {hasBgPattern && (
-        <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+        <div className="absolute inset-0 z-0 opacity-20">
+          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
+                <rect x="0" y="0" width="100%" height="100%" fill="none" />
+                <path d="M100 0H0V100" stroke="rgba(252, 211, 77, 0.4)" fill="none" strokeWidth="1" />
+                <path d="M0 50H100M50 0V100" stroke="rgba(252, 211, 77, 0.3)" fill="none" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#warm-pattern)" />
+          </svg>
+        </div>
       )}
       
       <div className="container relative z-10 mx-auto px-4 md:px-6">

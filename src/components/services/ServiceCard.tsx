@@ -46,14 +46,14 @@ const ServiceCard: React.FC<ServiceProps> = ({
         boxShadow: "0 25px 30px -12px rgba(0, 0, 0, 0.12)"
       }} 
       className={cn(
-        "rounded-xl p-7 shadow-md border border-sunrise-100/40 transition-all duration-300 flex flex-col h-full",
+        "rounded-xl p-7 shadow-md border border-amber-100/60 transition-all duration-300 flex flex-col h-full",
         "bg-white/90 backdrop-blur-sm hover:bg-white", 
         "relative overflow-hidden"
       )}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-orange-50/50 to-transparent opacity-80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-yellow-50/70 to-transparent opacity-80 pointer-events-none" />
       
-      <div className="p-3 rounded-lg w-fit mb-5 bg-sunrise-50 text-sunrise-700 relative">
+      <div className="p-3 rounded-lg w-fit mb-5 bg-amber-50 text-amber-700 relative">
         {service.icon}
       </div>
 
@@ -65,7 +65,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
       
       <Link 
         to={linkUrl} 
-        className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200 group mt-auto bg-orange-50 hover:bg-orange-100 rounded-md px-4 py-2 relative"
+        className="inline-flex items-center text-sm font-medium text-amber-600 hover:text-amber-700 transition-colors duration-200 group mt-auto bg-amber-50 hover:bg-amber-100 rounded-md px-4 py-2 relative"
       >
         Learn more 
         <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
