@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -50,7 +49,6 @@ const ServicePageLayout = ({
 }: ServicePageLayoutProps) => {
   // Updated background class to match hero section gradient
   const sectionBgClass = "bg-gradient-to-br from-white to-amber-50/50 backdrop-blur-sm";
-  
   return <>
       <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} />
       <SchemaMarkup />
@@ -186,7 +184,7 @@ const ServicePageLayout = ({
           </section>
           
           {/* CTA Section - Fixed button alignment */}
-          <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
+          <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-yellow-500 text-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Take the First Step?</h2>
