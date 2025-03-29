@@ -13,35 +13,35 @@ const ServicesSection: React.FC = () => {
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/individual-therapy-havertown-pa"
   }, {
-    icon: <HeartHandshake className="h-6 w-6" />,
+    icon: <HeartHandshake className="h-6 w-6 text-white" />,
     title: "Couples Counseling",
     description: "Specialized therapy to help couples improve communication, resolve conflicts, and strengthen relationships.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/couples-counseling-havertown-pa"
   }, {
-    icon: <Users className="h-6 w-6" />,
+    icon: <Users className="h-6 w-6 text-white" />,
     title: "Family Therapy",
     description: "Therapy sessions focused on improving family relationships and communication.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/family-therapy-havertown-pa"
   }, {
-    icon: <Baby className="h-6 w-6" />,
+    icon: <Baby className="h-6 w-6 text-white" />,
     title: "Child & Adolescent Therapy",
     description: "Specialized therapy for children and teens facing behavioral or emotional challenges.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/child-therapy-havertown-pa"
   }, {
-    icon: <Stethoscope className="h-6 w-6" />,
+    icon: <Stethoscope className="h-6 w-6 text-white" />,
     title: "Psychiatric Evaluations",
     description: "Comprehensive mental health assessments and diagnostic services.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/psychiatric-evaluations-havertown-pa"
   }, {
-    icon: <Pill className="h-6 w-6" />,
+    icon: <Pill className="h-6 w-6 text-white" />,
     title: "Medication Management",
     description: "Professional psychiatric medication reviews and management for mental health conditions.",
     color: "bg-sunrise-50 text-sunrise-700",

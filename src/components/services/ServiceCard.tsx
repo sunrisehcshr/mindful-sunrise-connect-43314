@@ -37,7 +37,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
   }} className={cn("rounded-xl p-7 shadow-md border border-amber-100/60 transition-all duration-300 flex flex-col h-full", "bg-white/90 backdrop-blur-sm hover:bg-white", "relative overflow-hidden")}>
       <div className="absolute inset-0 bg-gradient-to-b from-yellow-50/70 to-transparent opacity-80 pointer-events-none" />
       
-      <div className="p-3 rounded-lg w-fit mb-5 bg-gradient-to-r from-orange-500 to-amber-500">
+      <div className="p-3 rounded-lg w-fit mb-5 bg-gradient-to-r from-orange-500 to-amber-500 bg-transparent">
         {service.icon}
       </div>
 
