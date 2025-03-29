@@ -9,6 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 interface ServicePageLayoutProps {
   children: React.ReactNode;
   title: string;
@@ -33,6 +34,7 @@ interface ServicePageLayoutProps {
   }[];
   schemaType?: string;
 }
+
 const ServicePageLayout = ({
   children,
   title,
@@ -48,8 +50,28 @@ const ServicePageLayout = ({
   relatedServices,
   schemaType
 }: ServicePageLayoutProps) => {
-  // Updated background class to match hero section gradient
-  const sectionBgClass = "bg-gradient-to-br from-white to-amber-50/50 backdrop-blur-sm";
+  // Updated background class to match home hero section gradient
+  const warmGradientBg = "relative overflow-hidden";
+  const warmGradientOverlay = (
+    <>
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
+        <svg className="h-full w-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
+              <rect x="0" y="0" width="100%" height="100%" fill="none" />
+              <path d="M100 0H0V100" stroke="rgba(252, 211, 77, 0.4)" fill="none" strokeWidth="1" />
+              <path d="M0 50H100M50 0V100" stroke="rgba(252, 211, 77, 0.3)" fill="none" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#warm-pattern)" />
+        </svg>
+      </div>
+    </>
+  );
+  
+  // For approach and card items - soft background
+  const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
   
   return <>
       <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} />
@@ -113,16 +135,13 @@ const ServicePageLayout = ({
           {/* Custom Content Section */}
           {children}
           
-          {/* Benefits Section - Updated background to gradient */}
-          <section className="py-12 md:py-16 relative overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
-            
-            {/* Subtle texture overlay */}
-            <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+          {/* Benefits Section - Updated with warm gradient background */}
+          <section className={`py-12 md:py-16 ${warmGradientBg}`}>
+            {warmGradientOverlay}
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Benefits of {serviceType}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Benefits of {serviceType}</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
               </div>
               
@@ -144,19 +163,21 @@ const ServicePageLayout = ({
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <p className="text-base md:text-lg text-muted-foreground">{benefit}</p>
+                    <p className="text-base md:text-lg text-amber-900">{benefit}</p>
                   </motion.div>)}
               </div>
             </div>
           </section>
           
-          {/* Approaches Section */}
-          <section className="py-12 md:py-16 bg-white">
-            <div className="container mx-auto px-4 md:px-6">
+          {/* Approaches Section - Updated with warm gradient background */}
+          <section className={`py-12 md:py-16 ${warmGradientBg}`}>
+            {warmGradientOverlay}
+            
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Our {serviceType} Approach</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Our {serviceType} Approach</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
-                <p className="text-muted-foreground mb-6 md:mb-8">
+                <p className="text-amber-900 mb-6 md:mb-8">
                   We utilize various evidence-based therapies tailored to your specific needs.
                 </p>
               </div>
@@ -173,12 +194,10 @@ const ServicePageLayout = ({
               }} transition={{
                 duration: 0.5,
                 delay: index * 0.1
-              }} className="relative overflow-hidden rounded-lg p-5 md:p-6 border border-orange-100/50">
-                    <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
-                    <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+              }} className={`relative overflow-hidden rounded-lg p-5 md:p-6 ${itemBgClass}`}>
                     <div className="relative z-10">
-                      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{approach.title}</h3>
-                      <p className="text-muted-foreground text-sm md:text-base">{approach.description}</p>
+                      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-amber-900">{approach.title}</h3>
+                      <p className="text-amber-800 text-sm md:text-base">{approach.description}</p>
                     </div>
                   </motion.div>)}
               </div>
@@ -211,16 +230,13 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* FAQs Section - Updated background to gradient */}
-          <section className="py-12 md:py-16 relative overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
-            
-            {/* Subtle texture overlay */}
-            <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+          {/* FAQs Section - Updated with warm gradient background */}
+          <section className={`py-12 md:py-16 ${warmGradientBg}`}>
+            {warmGradientOverlay}
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Frequently Asked Questions</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Frequently Asked Questions</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
               </div>
               
@@ -236,26 +252,23 @@ const ServicePageLayout = ({
               }} transition={{
                 duration: 0.5,
                 delay: index * 0.1
-              }} className="mb-5 md:mb-6 bg-white rounded-lg p-5 md:p-6 border border-orange-100/50 shadow-sm">
-                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{faq.question}</h3>
-                    <p className="text-muted-foreground text-sm md:text-base">{faq.answer}</p>
+              }} className={`mb-5 md:mb-6 rounded-lg p-5 md:p-6 ${itemBgClass}`}>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-amber-900">{faq.question}</h3>
+                    <p className="text-amber-800 text-sm md:text-base">{faq.answer}</p>
                   </motion.div>)}
               </div>
             </div>
           </section>
           
-          {/* Related Services Section - Updated background to gradient */}
-          <section className="py-12 md:py-16 relative overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500/10 to-amber-400/10"></div>
-            
-            {/* Subtle texture overlay */}
-            <div className="absolute inset-0 z-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+          {/* Related Services Section - Updated with warm gradient background */}
+          <section className={`py-12 md:py-16 ${warmGradientBg}`}>
+            {warmGradientOverlay}
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Related Services</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Related Services</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
-                <p className="text-muted-foreground mb-6 md:mb-8">
+                <p className="text-amber-900 mb-6 md:mb-8">
                   Explore our other mental health services that complement {serviceType}.
                 </p>
               </div>
@@ -273,8 +286,8 @@ const ServicePageLayout = ({
                 duration: 0.5,
                 delay: index * 0.1
               }}>
-                    <Link to={service.url} className="block bg-white rounded-lg p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-orange-100/50 h-full">
-                      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{service.title}</h3>
+                    <Link to={service.url} className={`block rounded-lg p-5 md:p-6 h-full ${itemBgClass}`}>
+                      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-amber-900">{service.title}</h3>
                       <div className="flex items-center text-orange-500 mt-3 md:mt-4">
                         <span className="text-sm font-medium">Learn more</span>
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -290,4 +303,5 @@ const ServicePageLayout = ({
       </div>
     </>;
 };
+
 export default ServicePageLayout;
