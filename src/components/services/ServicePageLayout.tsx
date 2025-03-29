@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -9,7 +8,6 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 interface ServicePageLayoutProps {
   children: React.ReactNode;
   title: string;
@@ -34,7 +32,6 @@ interface ServicePageLayoutProps {
   }[];
   schemaType?: string;
 }
-
 const ServicePageLayout = ({
   children,
   title,
@@ -52,10 +49,9 @@ const ServicePageLayout = ({
 }: ServicePageLayoutProps) => {
   // Warm gradient background classes with improved styling
   const warmGradientBg = "relative overflow-hidden bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90";
-  
+
   // SVG pattern overlay (more visible now)
-  const warmGradientOverlay = (
-    <>
+  const warmGradientOverlay = <>
       <div className="absolute inset-0 -z-10">
         <svg className="h-full w-full opacity-30" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -68,12 +64,10 @@ const ServicePageLayout = ({
           <rect width="100%" height="100%" fill="url(#warm-pattern)" />
         </svg>
       </div>
-    </>
-  );
-  
+    </>;
+
   // For approach and card items - enhanced soft background
   const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
-  
   return <>
       <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} />
       <SchemaMarkup />
@@ -137,7 +131,7 @@ const ServicePageLayout = ({
           {children}
           
           {/* Benefits Section - With warm gradient background properly applied */}
-          <section className={`py-12 md:py-16 ${warmGradientBg}`}>
+          <section className="py-[50px] bg-white">
             {warmGradientOverlay}
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
@@ -159,12 +153,12 @@ const ServicePageLayout = ({
                 duration: 0.5,
                 delay: index * 0.1
               }} className="flex items-start space-x-4">
-                    <div className="mt-1 bg-orange-100 text-orange-600 rounded-full p-1.5">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <div className="mt-1 text-orange-600 rounded-full p-1 bg-orange-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-white">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <p className="text-base md:text-lg text-amber-900">{benefit}</p>
+                    <p className="text-base md:text-lg text-inherit">{benefit}</p>
                   </motion.div>)}
               </div>
             </div>
@@ -304,5 +298,4 @@ const ServicePageLayout = ({
       </div>
     </>;
 };
-
 export default ServicePageLayout;
