@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
@@ -67,17 +67,32 @@ const ServiceCard: React.FC<ServiceProps> = ({
         {service.description}
       </p>
       
-      {/* Improved call-to-action button with more descriptive text */}
-      <Link 
-        to={linkUrl} 
-        className="inline-flex items-center text-sm font-medium text-white hover:text-white transition-all duration-300 group mt-auto 
-                 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 
-                 rounded-md px-4 py-2 relative shadow-sm hover:shadow"
-        aria-label={`Learn more about ${service.title}`}
-      >
-        Learn more about {service.title}
-        <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-      </Link>
+      {/* Button container */}
+      <div className="flex flex-col gap-3 mt-auto">
+        {/* Learn More button */}
+        <Link 
+          to={linkUrl} 
+          className="inline-flex items-center text-sm font-medium text-white hover:text-white transition-all duration-300 group
+                   bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 
+                   rounded-md px-4 py-2 relative shadow-sm hover:shadow"
+          aria-label={`Learn more about ${service.title}`}
+        >
+          Learn more about {service.title}
+          <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+        </Link>
+        
+        {/* Book Now button */}
+        <a 
+          href="#appointment" 
+          className="inline-flex items-center justify-center text-sm font-medium bg-white border border-amber-400 
+                   text-amber-700 hover:bg-amber-50 transition-all duration-300 rounded-md px-4 py-2 
+                   relative shadow-sm hover:shadow"
+          aria-label={`Book an appointment for ${service.title}`}
+        >
+          <Calendar className="mr-1.5 h-4 w-4" />
+          Book Appointment
+        </a>
+      </div>
     </motion.div>
   );
 };
