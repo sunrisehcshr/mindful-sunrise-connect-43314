@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
@@ -407,7 +406,8 @@ const MentalHealthHavertown = () => {
         </main>
         <Footer />
       </div>
-    </>;
+    </>
+  );
 };
 
 export default MentalHealthHavertown;
