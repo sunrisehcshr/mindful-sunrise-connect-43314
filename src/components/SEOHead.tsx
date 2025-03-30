@@ -76,6 +76,42 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
 
+      {/* Preload critical fonts - optimizing font loading */}
+      <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        as="style"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload" 
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+        as="style"
+        crossOrigin="anonymous"
+      />
+
+      {/* Font display optimization */}
+      <style>
+        {`
+          /* Font display swap to prevent invisible text during font loading */
+          @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400 700;
+            font-display: swap;
+            src: local('Inter'), url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');
+          }
+          
+          @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400 700;
+            font-display: swap;
+            src: local('Open Sans'), url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');
+          }
+        `}
+      </style>
+
       {/* Comprehensive Favicon Support */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="icon" href="/lovable-uploads/5de7ce79-1094-4c76-bc02-377afb48eb0a.png" sizes="32x32" type="image/png" />
@@ -99,6 +135,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Performance Optimization */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      
+      {/* Pre-connect to analytics domains to speed up their loading */}
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
     </Helmet>
   );
 };

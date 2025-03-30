@@ -1,11 +1,17 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { Phone, Sparkles, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
 import SectionTag from './ui/section-tag';
+import ImageOptimizer from './ui/ImageOptimizer';
+
 const WarmHeroSection = () => {
-  return <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32">
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32" id="home">
       {/* Enhanced background with more vibrant yellow gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
@@ -101,18 +107,32 @@ const WarmHeroSection = () => {
           delay: 0.3
         }}>
             <div className="relative">
-              <motion.div className="rounded-2xl overflow-hidden shadow-lg h-64 md:h-[400px] relative warm-glow" whileHover={{
-              scale: 1.02,
-              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-            }} transition={{
-              duration: 0.4
-            }} initial={{
-              y: 20
-            }} animate={{
-              y: 0
-            }}>
+              <motion.div 
+                className={`rounded-2xl overflow-hidden shadow-lg h-64 md:h-[400px] relative warm-glow ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} 
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }} 
+                transition={{
+                  duration: 0.4
+                }} 
+                initial={{
+                  y: 20
+                }} 
+                animate={{
+                  y: 0
+                }}
+              >
                 <div className=""></div>
-                <img className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" />
+                <ImageOptimizer 
+                  src="/images/family-counseling-havertown.webp" 
+                  alt="Expert family counseling services in Havertown, PA" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  priority={true}
+                  width={600}
+                  height={400}
+                  onLoad={() => setImageLoaded(true)}
+                />
               </motion.div>
               
               {/* Enhanced decorative elements with vibrant yellow */}
@@ -122,6 +142,8 @@ const WarmHeroSection = () => {
           </motion.div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default WarmHeroSection;

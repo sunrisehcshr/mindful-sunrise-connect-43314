@@ -62,19 +62,20 @@ const ServiceCard: React.FC<ServiceProps> = ({
       {/* Title with better styling */}
       <h3 className="text-xl font-semibold mb-3 font-playfair relative text-amber-900">{service.title}</h3>
       
-      {/* Description text */}
+      {/* Description text with more descriptive learn more */}
       <p className="text-muted-foreground text-sm flex-grow mb-5 relative text-amber-700">
         {service.description}
       </p>
       
-      {/* Improved call-to-action button */}
+      {/* Improved call-to-action button with more descriptive text */}
       <Link 
         to={linkUrl} 
         className="inline-flex items-center text-sm font-medium text-white hover:text-white transition-all duration-300 group mt-auto 
                  bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 
                  rounded-md px-4 py-2 relative shadow-sm hover:shadow"
+        aria-label={`Learn more about ${service.title}`}
       >
-        Learn more 
+        Learn more about {service.title}
         <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
       </Link>
     </motion.div>
