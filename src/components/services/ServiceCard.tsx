@@ -69,18 +69,6 @@ const ServiceCard: React.FC<ServiceProps> = ({
       
       {/* Button container */}
       <div className="flex flex-col gap-3 mt-auto">
-        {/* Book Now button - now with gradient styling */}
-        <a 
-          href="#appointment" 
-          className="inline-flex items-center justify-center text-sm font-medium text-white hover:text-white transition-all duration-300 group
-                   bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 
-                   rounded-md px-4 py-2 relative shadow-sm hover:shadow"
-          aria-label={`Book an appointment for ${service.title}`}
-        >
-          <Calendar className="mr-1.5 h-4 w-4" />
-          Book Appointment
-        </a>
-        
         {/* Learn More button - now with white styling */}
         <Link 
           to={linkUrl} 
@@ -92,6 +80,18 @@ const ServiceCard: React.FC<ServiceProps> = ({
           Learn more
           <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
         </Link>
+        
+        {/* Book Now button - now with gradient styling */}
+        <a 
+          href="#appointment" 
+          className="inline-flex items-center justify-center text-sm font-medium text-white hover:text-white transition-all duration-300 group
+                   bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 
+                   rounded-md px-4 py-2 relative shadow-sm hover:shadow"
+          aria-label={`Book an appointment for ${service.title}`}
+        >
+          <Calendar className="mr-1.5 h-4 w-4" />
+          Book Appointment
+        </a>
       </div>
     </motion.div>
   );
