@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import WarmHeroSection from '../components/WarmHeroSection';
-import FeaturesSection from '../components/FeaturesSection';
 import ServicesSection from '../components/services/ServicesSection';
 import ConditionsSection from '../components/conditions/ConditionsSection';
 import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
@@ -51,7 +50,6 @@ const Index = () => {
         <Navbar />
         <main className="flex-grow">
           <WarmHeroSection />
-          <FeaturesSection />
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
