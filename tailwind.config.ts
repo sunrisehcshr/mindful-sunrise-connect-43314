@@ -127,6 +127,26 @@ export default {
 					'0%': { backgroundPosition: '0% 50%' },
 					'50%': { backgroundPosition: '100% 50%' },
 					'100%': { backgroundPosition: '0% 50%' }
+				},
+				first: {
+					"0%": { transform: "translateX(-100%) translateY(-100%) rotate(0deg)" },
+					"100%": { transform: "translateX(100%) translateY(100%) rotate(360deg)" }
+				},
+				second: {
+					"0%": { transform: "translateX(100%) translateY(100%) rotate(0deg)" },
+					"100%": { transform: "translateX(-100%) translateY(-100%) rotate(360deg)" }
+				},
+				third: {
+					"0%": { transform: "translateX(-100%) translateY(100%) rotate(0deg)" },
+					"100%": { transform: "translateX(100%) translateY(-100%) rotate(360deg)" }
+				},
+				fourth: {
+					"0%": { transform: "translateX(100%) translateY(-100%) rotate(0deg)" },
+					"100%": { transform: "translateX(-100%) translateY(100%) rotate(360deg)" }
+				},
+				fifth: {
+					"0%": { transform: "translateX(-100%) translateY(-100%) rotate(0deg)" },
+					"100%": { transform: "translateX(100%) translateY(100%) rotate(360deg)" }
 				}
 			},
 			animation: {
@@ -138,7 +158,12 @@ export default {
 				'slide-down': 'slide-down 0.6s ease-out forwards',
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-gentle': 'pulse-gentle 3s ease-in-out infinite',
-				'gradient-shift': 'gradient-shift 8s ease infinite'
+				'gradient-shift': 'gradient-shift 8s ease infinite',
+				first: "first 25s linear infinite",
+				second: "second 30s linear infinite",
+				third: "third 35s linear infinite",
+				fourth: "fourth 40s linear infinite",
+				fifth: "fifth 45s linear infinite"
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],

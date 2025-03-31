@@ -2,29 +2,31 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
-import { Phone, Sparkles, Calendar } from 'lucide-react';
+import { Phone, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
 import SectionTag from './ui/section-tag';
 import ImageOptimizer from './ui/ImageOptimizer';
+import { BackgroundGradientAnimation } from './ui/background-gradient-animation';
 
 const WarmHeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32" id="home">
-      {/* Enhanced background with more vibrant yellow gradient */}
+      {/* Background Gradient Animation */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
-        <svg className="h-full w-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
-              <rect x="0" y="0" width="100%" height="100%" fill="none" />
-              <path d="M100 0H0V100" stroke="rgba(252, 211, 77, 0.4)" fill="none" strokeWidth="1" />
-              <path d="M0 50H100M50 0V100" stroke="rgba(252, 211, 77, 0.3)" fill="none" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#warm-pattern)" />
-        </svg>
+        <BackgroundGradientAnimation
+          gradientBackgroundStart="#fff8eb"
+          gradientBackgroundEnd="#ffe0a3"
+          firstColor="252, 211, 77" // amber-300
+          secondColor="251, 146, 60" // orange-400
+          thirdColor="251, 191, 36" // amber-400
+          fourthColor="245, 158, 11" // amber-500
+          fifthColor="255, 237, 213" // orange-50
+          interactive={true}
+          containerClassName="!h-full !w-full absolute inset-0"
+          blendingValue="soft-light"
+        />
       </div>
       
       <div className="container mx-auto px-4 z-10 relative">
@@ -134,10 +136,6 @@ const WarmHeroSection = () => {
                   onLoad={() => setImageLoaded(true)}
                 />
               </motion.div>
-              
-              {/* Enhanced decorative elements with vibrant yellow */}
-              <div className="absolute -z-10 rounded-full w-40 h-40 bg-yellow-200/90 blur-3xl -top-10 -right-10"></div>
-              <div className="absolute -z-10 rounded-full w-60 h-60 bg-amber-200/70 blur-3xl -bottom-16 -left-10"></div>
             </div>
           </motion.div>
         </div>

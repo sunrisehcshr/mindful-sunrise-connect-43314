@@ -11,7 +11,6 @@ import AppointmentSection from '../components/Appointment/AppointmentSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
-import { Separator } from '@/components/ui/separator';
 
 const Index = () => {
   useEffect(() => {
