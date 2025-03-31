@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -24,7 +25,8 @@ const WarmHeroSection = () => {
           fifthColor="255, 255, 255" // white
           interactive={true}
           containerClassName="!h-full !w-full absolute inset-0"
-          blendingValue="soft-light"
+          blendingValue="color"
+          size="100%"
         />
       </div>
       
