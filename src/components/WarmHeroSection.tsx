@@ -16,17 +16,16 @@ const WarmHeroSection = () => {
       {/* Background Gradient Animation */}
       <div className="absolute inset-0 -z-10">
         <BackgroundGradientAnimation
-          gradientBackgroundStart="#ffffff"
-          gradientBackgroundEnd="#ffffff"
-          firstColor="255, 248, 235" // very light amber
-          secondColor="255, 236, 179" // light amber
-          thirdColor="255, 224, 163" // amber-100
-          fourthColor="254, 215, 102" // amber-200
-          fifthColor="255, 255, 255" // white
+          gradientBackgroundStart="#fff8eb"
+          gradientBackgroundEnd="#ffe0a3"
+          firstColor="252, 211, 77" // amber-300
+          secondColor="251, 146, 60" // orange-400
+          thirdColor="251, 191, 36" // amber-400
+          fourthColor="245, 158, 11" // amber-500
+          fifthColor="255, 237, 213" // orange-50
           interactive={true}
           containerClassName="!h-full !w-full absolute inset-0"
-          blendingValue="color"
-          size="100%"
+          blendingValue="soft-light"
         />
       </div>
       

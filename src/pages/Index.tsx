@@ -41,7 +41,7 @@ const Index = () => {
         canonicalUrl="https://sunrisehumancare.com/" 
       />
       <motion.div 
-        className="flex flex-col min-h-screen relative overflow-hidden bg-white" 
+        className="flex flex-col min-h-screen relative overflow-hidden" 
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ duration: 0.6 }}
