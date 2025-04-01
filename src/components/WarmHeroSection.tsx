@@ -6,12 +6,13 @@ import { Phone, Sparkles, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
 import SectionTag from './ui/section-tag';
 import ImageOptimizer from './ui/ImageOptimizer';
+import { BackgroundBeams } from './ui/background-beams';
 
 const WarmHeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32" id="home">
+    <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32 bg-white" id="home">
       {/* Enhanced background with more vibrant yellow gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
@@ -26,6 +27,9 @@ const WarmHeroSection = () => {
           <rect width="100%" height="100%" fill="url(#warm-pattern)" />
         </svg>
       </div>
+      
+      {/* Add BackgroundBeams component */}
+      <BackgroundBeams className="opacity-40" />
       
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16">
