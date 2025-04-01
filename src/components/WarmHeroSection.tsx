@@ -7,6 +7,7 @@ import AppointmentDialog from './Appointment/AppointmentDialog';
 import SectionTag from './ui/section-tag';
 import ImageOptimizer from './ui/ImageOptimizer';
 import AnimatedGradientBackground from './ui/animated-gradient-background';
+import { Typewriter } from './ui/typewriter';
 
 const WarmHeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -84,7 +85,17 @@ const WarmHeroSection = () => {
             duration: 0.6,
             delay: 0.3
           }}>
-              Expert Mental Health Care in Havertown, PA
+              <span>Expert Mental Health </span>
+              <Typewriter 
+                text={["Care", "Support", "Therapy", "Healing"]}
+                speed={70}
+                className="text-orange-600"
+                waitTime={1500}
+                deleteSpeed={40}
+                cursorChar={"_"}
+                cursorClassName="text-amber-500 ml-1"
+              />
+              <span> in Havertown, PA</span>
             </motion.h1>
             
             <motion.p className="text-lg md:text-xl text-amber-900 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed" initial={{
