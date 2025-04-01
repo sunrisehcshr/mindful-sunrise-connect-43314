@@ -8,6 +8,7 @@ import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
 import AboutSection from '../components/AboutSection';
 import FAQSection from '../components/FAQSection';
 import AppointmentSection from '../components/Appointment/AppointmentSection';
+import TypewriterSection from '../components/TypewriterSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
@@ -50,6 +51,7 @@ const Index = () => {
         <Navbar />
         <main className="flex-grow">
           <WarmHeroSection />
+          <TypewriterSection />
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
