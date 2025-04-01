@@ -6,15 +6,40 @@ import { Phone, Sparkles, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
 import SectionTag from './ui/section-tag';
 import ImageOptimizer from './ui/ImageOptimizer';
+import AnimatedGradientBackground from './ui/animated-gradient-background';
 
 const WarmHeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  // Yellow shades for gradient
+  const yellowGradientColors = [
+    "#ffffff",                // White
+    "rgba(255, 249, 219, 0.7)", // Very light yellow (transparent)
+    "rgba(254, 240, 138, 0.6)", // Light yellow (transparent)
+    "rgba(253, 224, 71, 0.5)",  // Medium yellow (transparent)
+    "rgba(251, 191, 36, 0.3)",  // Amber yellow (transparent)
+    "rgba(245, 158, 11, 0.1)",  // Dark yellow (transparent)
+    "rgba(255, 255, 255, 0)"    // Transparent
+  ];
+  
+  const gradientStops = [0, 30, 50, 65, 80, 90, 100];
+
   return (
     <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32" id="home">
-      {/* Enhanced background with more vibrant yellow gradient */}
+      {/* Animated Gradient Background */}
+      <AnimatedGradientBackground 
+        gradientColors={yellowGradientColors}
+        gradientStops={gradientStops}
+        startingGap={130}
+        Breathing={true}
+        breathingRange={8}
+        animationSpeed={0.015}
+        topOffset={-10}
+        containerClassName="opacity-80 z-0"
+      />
+      
+      {/* Pattern overlay */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90"></div>
         <svg className="h-full w-full opacity-20" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
