@@ -76,9 +76,10 @@ const GriefTherapy = () => {
   return (
     <>
       <SEOHead 
-        title={pageData.pageTitle}
-        description={pageData.metaDescription}
-        canonicalUrl={pageData.canonicalUrl}
+        title="Grief & Loss Therapy in Havertown, PA | Sunrise Human Care Services" 
+        description="Compassionate grief counseling in Havertown for bereavement, complicated grief, and significant losses. Professional support for processing emotions, creating meaningful rituals, and adapting to life changes. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/grief-therapy-havertown-pa"
+        keywords="grief counseling Havertown, bereavement therapy Pennsylvania, loss support Delaware County, complicated grief treatment, anniversary reaction help, memorial rituals counseling"
       />
       <ServicePageLayout 
         title={pageData.title}

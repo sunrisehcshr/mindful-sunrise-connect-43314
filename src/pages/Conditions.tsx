@@ -9,9 +9,10 @@ const Conditions = () => {
   return (
     <>
       <SEOHead 
-        title="Conditions We Treat | Sunrise Human Care Services" 
-        description="Comprehensive treatment for anxiety, depression, ADHD, and other mental health conditions in Havertown, PA. Evidence-based care for all ages." 
-        canonicalUrl="/conditions"
+        title="Mental Health Conditions We Treat | Sunrise Human Care Services Havertown" 
+        description="Evidence-based treatment for anxiety, depression, ADHD, PTSD, OCD, bipolar disorder, and more in Havertown, PA. Specialized therapy programs for all ages. Insurance accepted. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/conditions"
+        keywords="anxiety treatment Havertown, depression therapy Pennsylvania, ADHD counseling, PTSD therapy Delaware County, OCD treatment PA, bipolar disorder help, schizophrenia care, eating disorders treatment"
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />

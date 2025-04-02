@@ -38,8 +38,9 @@ const Index = () => {
     <>
       <SEOHead 
         title="Mental Health Therapy & Psychiatry in Havertown, PA | Sunrise Human Care Services" 
-        description="Leading mental health clinic in Havertown, PA. Specialized therapy for anxiety, depression, ADHD, and trauma. In-person and telehealth services available. Call (814) 620-2162 to schedule today." 
+        description="Expert mental health therapy in Havertown, PA for anxiety, depression, ADHD, and trauma. In-person and telehealth sessions available with licensed therapists and psychiatrists. Schedule your appointment today: (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/" 
+        keywords="mental health Havertown, anxiety therapy Delaware County, depression counseling Havertown, ADHD treatment PA, psychiatrist near me, therapist Havertown PA, telehealth therapy, in-person counseling" 
       />
       <motion.div 
         className="flex flex-col min-h-screen relative overflow-hidden" 

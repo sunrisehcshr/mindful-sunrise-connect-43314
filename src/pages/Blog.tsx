@@ -7,6 +7,7 @@ import Footer from "@/components/Footer/Footer";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CalendarIcon, Clock3 } from "lucide-react";
+
 const Blog = () => {
   const blogPosts = [{
     id: "anxiety-signs-havertown",
@@ -33,8 +34,15 @@ const Blog = () => {
     image: "/images/winter-blues-havertown.webp",
     altText: "Winter scene in Havertown, Pennsylvania representing seasonal affective disorder"
   }];
+
   return <>
-      <SEOHead title="Mental Health Blog | Sunrise Human Care Services in Havertown, PA" description="Expert mental health insights for Havertown residents from Sunrise Human Care Services. Read our blog on anxiety, depression, and more." canonicalUrl="https://sunrisehcsllc.com/blog" />
+      <SEOHead 
+        title="Mental Health Resources & Blog | Sunrise Human Care Services Havertown" 
+        description="Expert mental health insights for Havertown residents. Read our professional articles on anxiety management, depression treatment, family support strategies, and seasonal affective disorder. Evidence-based guidance from licensed therapists." 
+        canonicalUrl="https://sunrisehumancare.com/blog"
+        keywords="mental health blog Havertown, anxiety tips Pennsylvania, depression resources Delaware County, SAD treatment, family mental health support, therapist advice, psychology articles"
+        article={true}
+      />
       <SchemaMarkup />
       <Navbar />
       
@@ -88,4 +96,5 @@ const Blog = () => {
       <Footer />
     </>;
 };
+
 export default Blog;

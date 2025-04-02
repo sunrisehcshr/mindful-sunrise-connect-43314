@@ -76,9 +76,10 @@ const DissociativeDisordersTherapy = () => {
   return (
     <>
       <SEOHead 
-        title={pageData.pageTitle}
-        description={pageData.metaDescription}
-        canonicalUrl={pageData.canonicalUrl}
+        title="Dissociative Disorders Treatment Havertown | Sunrise Human Care" 
+        description="Specialized treatment for Dissociative Identity Disorder (DID), OSDD, depersonalization, and dissociative amnesia in Havertown. Phase-oriented trauma therapy with safety, stabilization, and integration. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/dissociative-disorders-treatment-havertown-pa"
+        keywords="dissociative disorder treatment Havertown, DID therapy Pennsylvania, OSDD counseling, depersonalization treatment, dissociative amnesia help, trauma-informed therapy, internal family systems"
       />
       <ServicePageLayout 
         title={pageData.title}

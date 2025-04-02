@@ -76,9 +76,10 @@ const RelationshipTherapy = () => {
   return (
     <>
       <SEOHead 
-        title={pageData.pageTitle}
-        description={pageData.metaDescription}
-        canonicalUrl={pageData.canonicalUrl}
+        title="Relationship Therapy in Havertown, PA | Sunrise Human Care Services" 
+        description="Professional relationship counseling in Havertown using evidence-based approaches including EFT and Gottman Method. Resolve communication issues, rebuild trust, and strengthen connections. Insurance accepted. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/relationship-therapy-havertown-pa"
+        keywords="relationship therapy Havertown, couples counseling Delaware County, communication skills therapy, conflict resolution help, trust rebuilding therapy, EFT therapy Pennsylvania, Gottman Method counseling"
       />
       <ServicePageLayout 
         title={pageData.title}

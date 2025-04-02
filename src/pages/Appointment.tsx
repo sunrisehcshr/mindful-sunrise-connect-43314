@@ -9,8 +9,10 @@ const Appointment = () => {
   return (
     <>
       <SEOHead
-        title="Book an Appointment | Sunrise Human Care Services"
-        description="Schedule a therapy session with our mental health professionals in Havertown, PA. Easy online booking for all your counseling needs."
+        title="Book a Therapy Appointment | Sunrise Human Care Services Havertown"
+        description="Schedule your mental health appointment in Havertown, PA. Easy online booking for in-person or telehealth therapy sessions. New patients welcome. Most insurance accepted. Call (814) 620-2162 today."
+        canonicalUrl="https://sunrisehumancare.com/appointment"
+        keywords="therapy appointment Havertown, book counseling session PA, schedule psychiatrist Delaware County, telehealth appointment, in-person therapy booking, same-week mental health appointments"
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />

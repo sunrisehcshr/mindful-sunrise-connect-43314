@@ -76,9 +76,10 @@ const SchizophreniaTherapy = () => {
   return (
     <>
       <SEOHead 
-        title={pageData.pageTitle}
-        description={pageData.metaDescription}
-        canonicalUrl={pageData.canonicalUrl}
+        title="Schizophrenia Treatment in Havertown, PA | Sunrise Human Care Services" 
+        description="Comprehensive schizophrenia and psychotic disorders treatment in Havertown. Combining CBT for psychosis, medication management coordination, family support, and skills training. Recovery-focused care. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/schizophrenia-treatment-havertown-pa"
+        keywords="schizophrenia treatment Havertown, psychotic disorders therapy, CBT for psychosis, hallucination management, delusion treatment Pennsylvania, negative symptoms therapy, family psychoeducation"
       />
       <ServicePageLayout 
         title={pageData.title}

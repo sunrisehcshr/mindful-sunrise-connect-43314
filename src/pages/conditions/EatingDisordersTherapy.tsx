@@ -76,9 +76,10 @@ const EatingDisordersTherapy = () => {
   return (
     <>
       <SEOHead 
-        title={pageData.pageTitle}
-        description={pageData.metaDescription}
-        canonicalUrl={pageData.canonicalUrl}
+        title="Eating Disorders Treatment in Havertown, PA | Sunrise Human Care" 
+        description="Specialized eating disorder therapy in Havertown for anorexia, bulimia, binge eating, and ARFID. Evidence-based treatment combining psychological therapy and nutritional guidance. Personalized recovery plans. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/eating-disorders-treatment-havertown-pa"
+        keywords="eating disorder treatment Havertown, anorexia therapy Pennsylvania, bulimia counseling, binge eating disorder help, ARFID treatment, body image therapy, nutritional counseling Delaware County"
       />
       <ServicePageLayout 
         title={pageData.title}

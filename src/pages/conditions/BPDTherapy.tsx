@@ -76,9 +76,10 @@ const BPDTherapy = () => {
   return (
     <>
       <SEOHead 
-        title={pageData.pageTitle}
-        description={pageData.metaDescription}
-        canonicalUrl={pageData.canonicalUrl}
+        title="Borderline Personality Disorder Treatment Havertown | Sunrise Human Care" 
+        description="Specialized BPD treatment in Havertown using Dialectical Behavior Therapy (DBT) and evidence-based approaches. Expert help with emotional regulation, relationship skills, and distress tolerance. Insurance accepted. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/bpd-therapy-havertown-pa"
+        keywords="BPD therapy Havertown, Borderline Personality Disorder treatment PA, DBT therapy Delaware County, emotional regulation counseling, relationship skills therapy, distress tolerance training"
       />
       <ServicePageLayout 
         title={pageData.title}
