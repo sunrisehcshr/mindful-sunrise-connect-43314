@@ -16,7 +16,7 @@ const Conditions = () => {
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-24 py-0 bg-white">
+        <main className="flex-grow pt-24 bg-white">
           {/* Hero Section */}
           <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden">
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>

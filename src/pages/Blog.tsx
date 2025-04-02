@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
@@ -35,7 +36,8 @@ const Blog = () => {
     altText: "Winter scene in Havertown, Pennsylvania representing seasonal affective disorder"
   }];
 
-  return <>
+  return (
+    <>
       <SEOHead 
         title="Mental Health Resources & Blog | Sunrise Human Care Services Havertown" 
         description="Expert mental health insights for Havertown residents. Read our professional articles on anxiety management, depression treatment, family support strategies, and seasonal affective disorder. Evidence-based guidance from licensed therapists." 
@@ -44,57 +46,62 @@ const Blog = () => {
         article={true}
       />
       <SchemaMarkup />
-      <Navbar />
-      
-      <main className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Resources</h1>
-          <p className="text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Mental health insights and resources for Havertown residents from the experts at Sunrise Human Care Services.
-          </p>
-          
-          <div className="grid gap-10 mt-12">
-            {blogPosts.map(post => <Card key={post.id} className="overflow-hidden transition-all hover:shadow-md border-border/40 bg-white">
-                <div className="p-6">
-                  <CardHeader className="pb-2 px-0 pt-0">
-                    <CardTitle className="text-2xl md:text-3xl">
-                      <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
-                        {post.title}
-                      </Link>
-                    </CardTitle>
-                    <CardDescription className="flex items-center gap-4 mt-3 text-sm">
-                      <span className="flex items-center gap-1">
-                        <CalendarIcon className="h-4 w-4 text-orange-500" /> {post.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock3 className="h-4 w-4 text-orange-500" /> {post.readTime}
-                      </span>
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-4 pb-6 px-0">
-                    <p className="text-muted-foreground text-base leading-relaxed">{post.excerpt}</p>
-                  </CardContent>
-                  <CardFooter className="pt-0 pb-0 px-0">
-                    <Button asChild className="btn-sunrise">
-                      <Link to={`/blog/${post.id}`}>Read More</Link>
-                    </Button>
-                  </CardFooter>
-                </div>
-              </Card>)}
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        
+        <main className="flex-grow pt-24 pb-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Resources</h1>
+              <p className="text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Mental health insights and resources for Havertown residents from the experts at Sunrise Human Care Services.
+              </p>
+              
+              <div className="grid gap-10 mt-12">
+                {blogPosts.map(post => <Card key={post.id} className="overflow-hidden transition-all hover:shadow-md border-border/40 bg-white">
+                    <div className="p-6">
+                      <CardHeader className="pb-2 px-0 pt-0">
+                        <CardTitle className="text-2xl md:text-3xl">
+                          <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
+                            {post.title}
+                          </Link>
+                        </CardTitle>
+                        <CardDescription className="flex items-center gap-4 mt-3 text-sm">
+                          <span className="flex items-center gap-1">
+                            <CalendarIcon className="h-4 w-4 text-orange-500" /> {post.date}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Clock3 className="h-4 w-4 text-orange-500" /> {post.readTime}
+                          </span>
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-4 pb-6 px-0">
+                        <p className="text-muted-foreground text-base leading-relaxed">{post.excerpt}</p>
+                      </CardContent>
+                      <CardFooter className="pt-0 pb-0 px-0">
+                        <Button asChild className="btn-sunrise">
+                          <Link to={`/blog/${post.id}`}>Read More</Link>
+                        </Button>
+                      </CardFooter>
+                    </div>
+                  </Card>)}
+              </div>
+              
+              <div className="mt-20 text-center p-8 rounded-lg backdrop-blur-sm border border-border/30 bg-white">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4">Need Professional Mental Health Support in Havertown?</h2>
+                <p className="mb-8 text-lg max-w-2xl mx-auto leading-relaxed">Our team of licensed therapists and psychiatrists is ready to help you navigate your mental health journey.</p>
+                <Button asChild size="lg" className="btn-sunrise">
+                  <Link to="/appointment">Book Your Appointment Today</Link>
+                </Button>
+              </div>
+            </div>
           </div>
-          
-          <div className="mt-20 text-center p-8 rounded-lg backdrop-blur-sm border border-border/30 bg-white">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Need Professional Mental Health Support in Havertown?</h2>
-            <p className="mb-8 text-lg max-w-2xl mx-auto leading-relaxed">Our team of licensed therapists and psychiatrists is ready to help you navigate your mental health journey.</p>
-            <Button asChild size="lg" className="btn-sunrise">
-              <Link to="/appointment">Book Your Appointment Today</Link>
-            </Button>
-          </div>
-        </div>
-      </main>
-      
-      <Footer />
-    </>;
+        </main>
+        
+        <Footer />
+      </div>
+    </>
+  );
 };
 
 export default Blog;
