@@ -2,12 +2,11 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
-import { Phone, Sparkles, Calendar, Clock, MessageCircle, Heart, Headphones, Lock, Home, Laptop } from 'lucide-react';
+import { Phone, Sparkles, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
 import SectionTag from './ui/section-tag';
 import ImageOptimizer from './ui/ImageOptimizer';
 import AnimatedGradientBackground from './ui/animated-gradient-background';
-import { Badge } from './ui/badge';
 
 const WarmHeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -133,76 +132,6 @@ const WarmHeroSection = () => {
           delay: 0.3
         }}>
             <div className="relative">
-              {/* Badge 1 - Top right - Confidential Care */}
-              <motion.div 
-                className="absolute top-0 right-0 z-20 -mt-5 mr-4 md:mr-0 transform translate-x-0 md:translate-x-1/4"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-              >
-                <div className="bg-white rounded-full py-2 px-4 shadow-lg flex items-center gap-2">
-                  <div className="bg-amber-100 rounded-full p-1">
-                    <Lock className="h-4 w-4 text-amber-600" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-medium text-amber-900">Confidential Care</span>
-                    <span className="text-xs text-amber-700">Committed to your confidentiality</span>
-                  </div>
-                </div>
-              </motion.div>
-              
-              {/* Badge 2 - Left side - Easy Appointment */}
-              <motion.div 
-                className="absolute top-1/3 -left-6 md:-left-16 z-20"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.0 }}
-              >
-                <div className="bg-white rounded-lg p-3 shadow-lg">
-                  <div className="flex gap-2 items-center">
-                    <div className="bg-orange-500 text-white rounded-lg p-2">
-                      <Calendar className="h-5 w-5" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-sm font-semibold text-gray-800">Easy Appointment Scheduling</span>
-                      <span className="text-xs text-gray-600">Monday to Friday 10-8pm</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-              
-              {/* Badge 3 - Bottom right - Accessible Care */}
-              <motion.div 
-                className="absolute bottom-0 right-0 z-20 mb-4 mr-4 md:mr-0 md:mb-0 transform translate-y-0 md:translate-y-1/4 md:translate-x-1/3"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 }}
-              >
-                <div className="bg-white rounded-lg p-4 shadow-lg max-w-[200px]">
-                  <h4 className="text-base font-semibold mb-2 text-gray-800">Accessible Care</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <div className="bg-amber-100 rounded-full p-1">
-                        <Home className="h-4 w-4 text-amber-600" />
-                      </div>
-                      <span className="text-sm">Home Based Care</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="bg-amber-100 rounded-full p-1">
-                        <Laptop className="h-4 w-4 text-amber-600" />
-                      </div>
-                      <span className="text-sm">Online Support</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="bg-amber-100 rounded-full p-1">
-                        <MessageCircle className="h-4 w-4 text-amber-600" />
-                      </div>
-                      <span className="text-sm">In Clinic Support</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            
               <motion.div 
                 className={`rounded-2xl overflow-hidden shadow-lg h-64 md:h-[400px] relative warm-glow ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} 
                 whileHover={{
