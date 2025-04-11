@@ -1,6 +1,10 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
+import ServiceContentSection from '../../components/services/ServiceContentSection';
+import { motion } from 'framer-motion';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AnxietyTherapy = () => {
   const benefits = [
@@ -34,34 +38,34 @@ const AnxietyTherapy = () => {
   const faqs = [
     {
       question: "How long does anxiety treatment typically take?",
-      answer: "Many clients experience significant improvement within 8-16 sessions of anxiety-focused treatment. However, the timeline varies based on anxiety severity, type, and individual factors. We'll discuss expected timeframes during your initial consultation."
+      answer: "Many clients experience significant improvement within 8-16 sessions of anxiety-focused treatment. However, the timeline varies based on anxiety severity, type, and individual factors. At our Havertown anxiety therapy center, we'll discuss expected timeframes during your initial consultation and adjust the treatment plan based on your progress and needs throughout therapy."
     },
     {
       question: "Will I need medication for my anxiety?",
-      answer: "Not necessarily. Many people effectively manage anxiety through therapy alone. After assessment, if medication might be beneficial, we can discuss a referral to our psychiatric providers. We support both medication and non-medication approaches based on your needs and preferences."
+      answer: "Not necessarily. Many people effectively manage anxiety through therapy alone. After a thorough assessment at our Havertown mental health clinic, if medication might be beneficial, we can discuss a referral to our psychiatric providers. Our anxiety treatment in Havertown supports both medication and non-medication approaches based on your specific needs, preferences, and the severity of your anxiety symptoms."
     },
     {
       question: "Will I have to talk about things that make me anxious?",
-      answer: "Gradually addressing anxiety triggers is often part of effective treatment. However, we move at your pace and use techniques to make this process manageable. We'll never force you to discuss something you're not ready to explore."
+      answer: "Gradually addressing anxiety triggers is often part of effective treatment at our Havertown anxiety therapy practice. However, we move at your pace and use techniques to make this process manageable. Our experienced therapists in Havertown provide a safe environment where you can build confidence to face anxiety-provoking situations, but we'll never force you to discuss something you're not ready to explore."
     },
     {
       question: "Is my anxiety just something I have to live with?",
-      answer: "No. Anxiety disorders are highly treatable, and most people experience significant reduction in symptoms with proper treatment. While occasional anxiety is part of life, debilitating anxiety is not something you simply have to endure."
+      answer: "No. Anxiety disorders are highly treatable, and most people experience significant reduction in symptoms with proper treatment at Sunrise Human Care Services in Havertown. While occasional anxiety is part of life, debilitating anxiety is not something you simply have to endure. Our evidence-based anxiety therapy in Havertown has helped many clients regain control and live fulfilling lives despite previous struggles with anxiety."
     }
   ];
   
   const relatedServices = [
-    { title: "Depression Therapy", url: "/depression-therapy-havertown-pa" },
-    { title: "Individual Therapy", url: "/individual-therapy-havertown-pa" },
-    { title: "ADHD Treatment", url: "/adhd-treatment-havertown-pa" }
+    { title: "Depression Therapy in Havertown", url: "/depression-therapy-havertown-pa" },
+    { title: "Individual Therapy in Havertown", url: "/individual-therapy-havertown-pa" },
+    { title: "ADHD Treatment in Havertown", url: "/adhd-treatment-havertown-pa" }
   ];
   
   return (
     <ServicePageLayout
       title="Anxiety Treatment in Havertown, PA"
       description="Evidence-based therapy for all types of anxiety disorders, including generalized anxiety, social anxiety, panic disorder, and phobias."
-      pageTitle="Expert Anxiety Treatment in Havertown, PA - Effective Treatment | Sunrise Human Care Services"
-      metaDescription="Specialized anxiety treatment in Havertown, PA. Evidence-based therapy for panic attacks, generalized anxiety, social anxiety, and phobias. Find relief with our experienced therapists."
+      pageTitle="Expert Anxiety Treatment in Havertown, PA - Effective Therapy | Sunrise Human Care Services"
+      metaDescription="Specialized anxiety treatment in Havertown, PA. Evidence-based therapy for panic attacks, generalized anxiety, social anxiety, and phobias. Serving Delaware County including Drexel Hill and Broomall. Find relief today."
       serviceType="Anxiety Therapy"
       canonicalUrl="/anxiety-therapy-havertown-pa"
       benefits={benefits}
@@ -70,72 +74,132 @@ const AnxietyTherapy = () => {
       relatedServices={relatedServices}
     >
       {/* Service-specific content */}
-      <section className="py-16 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                Understanding Anxiety Treatment
-              </h2>
+      <ServiceContentSection
+        title="Our Anxiety Treatment Approach in Havertown"
+        hasBgPattern={true}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-5 text-muted-foreground">
+              <p className="leading-relaxed">
+                At Sunrise Human Care Services in Havertown, PA, we provide specialized, evidence-based anxiety treatment for all types of anxiety disorders. Our approach begins with a thorough assessment to understand your specific anxiety symptoms, triggers, and how anxiety is impacting your life.
+              </p>
               
-              <div className="space-y-4">
-                <p>
-                  At Sunrise Human Care Services in Havertown, PA, we provide specialized, evidence-based treatment for all types of anxiety disorders. Our approach begins with a thorough assessment to understand your specific anxiety symptoms, triggers, and how anxiety is impacting your life.
-                </p>
-                
-                <p>
-                  Our therapists are trained in proven anxiety treatment methods that help you address both the psychological and physical symptoms of anxiety. You'll learn to recognize and challenge anxious thinking patterns while developing practical coping strategies to manage anxiety in your daily life.
-                </p>
-                
-                <p>
-                  Treatment is collaborative and personalized—we'll work together to develop an approach that fits your unique needs and circumstances. Many clients begin experiencing relief within a few sessions as they gain understanding of their anxiety and start implementing effective management techniques.
-                </p>
-              </div>
+              <p className="leading-relaxed">
+                Our therapists are trained in proven anxiety treatment methods that help you address both the psychological and physical symptoms of anxiety. You'll learn to recognize and challenge anxious thinking patterns while developing practical coping strategies to manage anxiety in your daily life.
+              </p>
+              
+              <p className="leading-relaxed">
+                Anxiety treatment in Havertown at our clinic is collaborative and personalized—we'll work together to develop an approach that fits your unique needs and circumstances. Many clients begin experiencing relief within a few sessions as they gain understanding of their anxiety and start implementing effective management techniques.
+              </p>
+              
+              <p className="leading-relaxed">
+                We proudly serve clients seeking anxiety therapy throughout Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities. Whether you're dealing with <Link to="/conditions/panic-disorder" className="text-orange-600 hover:underline">panic attacks</Link>, <Link to="/conditions/generalized-anxiety-disorder" className="text-orange-600 hover:underline">persistent worry</Link>, or <Link to="/conditions/social-anxiety-disorder" className="text-orange-600 hover:underline">social anxiety</Link>, our licensed therapists provide effective anxiety treatment in Havertown tailored to your specific needs.
+              </p>
             </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              Our Anxiety Treatment in Havertown Helps With:
+            </h3>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
-                We Treat All Types of Anxiety:
-              </h3>
+            <ul className="space-y-3.5">
+              {[
+                "Generalized Anxiety Disorder (GAD)",
+                "Panic Disorder and panic attacks",
+                "Social Anxiety Disorder",
+                "Specific Phobias",
+                "Obsessive-Compulsive Disorder (OCD)",
+                "Health Anxiety",
+                "Performance Anxiety",
+                "General stress and worry"
+              ].map((item, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+            
+            <div className="mt-7 pt-5 border-t border-orange-100">
+              <h4 className="text-lg font-medium mb-3 text-orange-600">
+                Related Mental Health Resources
+              </h4>
               
               <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Generalized Anxiety Disorder (GAD)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Panic Disorder and panic attacks</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Social Anxiety Disorder</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Specific Phobias</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Obsessive-Compulsive Disorder (OCD)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Health Anxiety</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Performance Anxiety</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>General stress and worry</span>
-                </li>
+                {[
+                  { name: "Managing Panic Attacks", url: "/blog/managing-panic-attacks" },
+                  { name: "When to Consider Medication for Anxiety", url: "/medication-management-havertown-pa" },
+                  { name: "How Individual Therapy Helps Anxiety", url: "/individual-therapy-havertown-pa" }
+                ].map((resource, index) => (
+                  <li key={index}>
+                    <Link to={resource.url} className="flex items-center text-orange-500 hover:text-orange-700 transition-colors">
+                      <ArrowRight className="h-4 w-4 mr-2" />
+                      <span>{resource.name}</span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </ServiceContentSection>
+      
+      {/* New testimonial section specifically for anxiety therapy */}
+      <ServiceContentSection title="What Our Anxiety Therapy Clients in Havertown Say" hasBgPattern={false}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
+          >
+            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+            <div className="pl-6 pt-6">
+              <p className="italic text-amber-900">The anxiety therapy I received at Sunrise Human Care in Havertown changed my life. I used to have panic attacks weekly, but with their CBT techniques and support, I've learned how to manage my symptoms and haven't had an attack in months.</p>
+              <p className="mt-4 font-medium text-amber-800">- Rebecca K., Havertown</p>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
+          >
+            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+            <div className="pl-6 pt-6">
+              <p className="italic text-amber-900">As someone from Drexel Hill looking for anxiety treatment, I found Sunrise in Havertown and couldn't be happier. Their therapists truly understand anxiety and provided practical tools I use every day. The difference in my social anxiety has been remarkable.</p>
+              <p className="mt-4 font-medium text-amber-800">- James T., Drexel Hill</p>
+            </div>
+          </motion.div>
+        </div>
+      </ServiceContentSection>
     </ServicePageLayout>
   );
 };

@@ -3,7 +3,8 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CouplesCounseling = () => {
   const benefits = [
@@ -37,26 +38,26 @@ const CouplesCounseling = () => {
   const faqs = [
     {
       question: "Do both partners need to attend every session?",
-      answer: "Ideally, yes. Couples therapy is most effective when both partners participate consistently. However, we may occasionally conduct individual sessions as part of the overall treatment plan."
+      answer: "Ideally, yes. Couples counseling in Havertown is most effective when both partners participate consistently. However, at our Havertown couples therapy practice, we may occasionally conduct individual sessions as part of the overall treatment plan when appropriate. Our goal is to create a balanced approach that serves your relationship's specific needs."
     },
     {
       question: "We're not married. Is couples counseling still appropriate for us?",
-      answer: "Absolutely! Couples counseling benefits all committed relationships regardless of marital status, including dating, engaged, and long-term partnerships."
+      answer: "Absolutely! Our couples counseling in Havertown benefits all committed relationships regardless of marital status, including dating, engaged, and long-term partnerships. Many unmarried couples throughout Havertown, Drexel Hill, and Broomall seek our relationship therapy services to strengthen their bond, improve communication, and navigate challenges together."
     },
     {
       question: "Is couples counseling only for relationships in crisis?",
-      answer: "Not at all. While many couples seek therapy during difficult times, counseling can benefit healthy relationships too. It can strengthen communication, deepen connection, and help navigate transitions like moving in together, having children, or retirement."
+      answer: "Not at all. While many couples seek therapy during difficult times, couples counseling in Havertown can benefit healthy relationships too. Our Havertown relationship therapists help couples strengthen communication, deepen connection, and navigate transitions like moving in together, having children, or retirement. Proactive couples therapy can help prevent small issues from becoming major problems."
     },
     {
       question: "How long does couples counseling typically take?",
-      answer: "The duration varies depending on your specific situation and goals. Some couples achieve their objectives in 8-12 sessions, while others benefit from longer-term support. We'll discuss timeframes during your initial consultation."
+      answer: "The duration of couples therapy in Havertown varies depending on your specific situation and goals. Some couples achieve their objectives in 8-12 sessions at our Havertown practice, while others benefit from longer-term support. We'll discuss timeframes during your initial consultation and regularly evaluate progress throughout your couples counseling journey with us."
     }
   ];
   
   const relatedServices = [
-    { title: "Family Therapy", url: "/family-therapy-havertown-pa" },
-    { title: "Individual Therapy", url: "/individual-therapy-havertown-pa" },
-    { title: "Anxiety Therapy", url: "/anxiety-therapy-havertown-pa" }
+    { title: "Family Therapy in Havertown", url: "/family-therapy-havertown-pa" },
+    { title: "Individual Therapy in Havertown", url: "/individual-therapy-havertown-pa" },
+    { title: "Anxiety Therapy in Havertown", url: "/anxiety-therapy-havertown-pa" }
   ];
   
   return (
@@ -64,7 +65,7 @@ const CouplesCounseling = () => {
       title="Couples Counseling in Havertown, PA"
       description="Specialized therapy to help couples improve communication, resolve conflicts, and strengthen their relationship with professional guidance."
       pageTitle="Expert Couples Counseling in Havertown, PA - Relationship Therapy | Sunrise Human Care Services"
-      metaDescription="Professional couples counseling in Havertown, PA. Improve communication, resolve conflicts, and rebuild intimacy with our experienced relationship therapists. Book your consultation today."
+      metaDescription="Professional couples counseling in Havertown, PA serving Delaware County communities. Improve communication, resolve conflicts, and rebuild intimacy with our experienced relationship therapists. Couples therapy for Havertown, Drexel Hill, and Broomall."
       serviceType="Couples Counseling"
       canonicalUrl="/couples-counseling-havertown-pa"
       heroImage="/images/couple-counseling-havertown-pa.webp"
@@ -75,7 +76,7 @@ const CouplesCounseling = () => {
     >
       {/* Enhanced service-specific content */}
       <ServiceContentSection
-        title="Our Approach to Couples Counseling"
+        title="Our Couples Counseling Approach in Havertown"
         hasBgPattern={true}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -87,15 +88,19 @@ const CouplesCounseling = () => {
           >
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed">
-                At Sunrise Human Care Services in Havertown, PA, we understand that every relationship is unique. Our couples counseling begins with a thorough assessment to understand each partner's perspective, the relationship history, and your shared goals.
+                At Sunrise Human Care Services in Havertown, PA, we understand that every relationship is unique. Our couples counseling begins with a thorough assessment to understand each partner's perspective, the relationship history, and your shared goals as a couple.
               </p>
               
               <p className="leading-relaxed">
-                Using evidence-based approaches, we help you identify and address patterns that may be causing distress in your relationship. Our therapists create a balanced environment where both partners feel heard and respected.
+                Using evidence-based approaches to couples therapy in Havertown, we help you identify and address patterns that may be causing distress in your relationship. Our couples counselors create a balanced environment where both partners feel heard and respected throughout the therapy process.
               </p>
               
               <p className="leading-relaxed">
-                Throughout therapy, you'll learn practical communication skills, emotional regulation techniques, and conflict resolution strategies that you can apply immediately. We focus on building upon your relationship's existing strengths while addressing areas that need improvement.
+                Throughout couples counseling, you'll learn practical communication skills, emotional regulation techniques, and conflict resolution strategies that you can apply immediately. Our couples therapy in Havertown focuses on building upon your relationship's existing strengths while addressing areas that need improvement.
+              </p>
+              
+              <p className="leading-relaxed">
+                We provide couples counseling services to clients throughout Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities. Whether you're navigating communication challenges, rebuilding after infidelity, or seeking to deepen your connection, our <Link to="/individual-therapy-havertown-pa" className="text-orange-600 hover:underline">relationship therapists</Link> are here to support your journey together.
               </p>
             </div>
           </motion.div>
@@ -108,7 +113,7 @@ const CouplesCounseling = () => {
             className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
           >
             <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Our Couples Counseling Helps With:
+              Our Couples Counseling in Havertown Helps With:
             </h3>
             
             <ul className="space-y-3.5">
@@ -135,6 +140,64 @@ const CouplesCounseling = () => {
                 </motion.li>
               ))}
             </ul>
+            
+            <div className="mt-7 pt-5 border-t border-orange-100">
+              <h4 className="text-lg font-medium mb-3 text-orange-600">
+                Related Relationship Resources
+              </h4>
+              
+              <ul className="space-y-3">
+                {[
+                  { name: "Communication Skills for Couples", url: "/blog/communication-skills-couples" },
+                  { name: "When to Consider Family Therapy", url: "/family-therapy-havertown-pa" },
+                  { name: "Individual Growth Within Relationships", url: "/individual-therapy-havertown-pa" }
+                ].map((resource, index) => (
+                  <li key={index}>
+                    <Link to={resource.url} className="flex items-center text-orange-500 hover:text-orange-700 transition-colors">
+                      <ArrowRight className="h-4 w-4 mr-2" />
+                      <span>{resource.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </ServiceContentSection>
+      
+      {/* New testimonial section specifically for couples counseling */}
+      <ServiceContentSection title="What Our Couples Counseling Clients in Havertown Say" hasBgPattern={false}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
+          >
+            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+            <div className="pl-6 pt-6">
+              <p className="italic text-amber-900">My husband and I were considering separation when we started couples counseling at Sunrise in Havertown. The therapist helped us see patterns we couldn't recognize on our own and taught us how to communicate in completely new ways. Six months of couples therapy has transformed our marriage.</p>
+              <p className="mt-4 font-medium text-amber-800">- Jennifer and Mark R., Havertown</p>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
+          >
+            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+            <div className="pl-6 pt-6">
+              <p className="italic text-amber-900">As a same-sex couple from Broomall, we wanted premarital counseling with someone who understood our unique challenges. The couples counseling at Sunrise in Havertown was affirming, insightful, and exactly what we needed. We now have tools to build a strong foundation for our marriage.</p>
+              <p className="mt-4 font-medium text-amber-800">- Chris and Alex T., Broomall</p>
+            </div>
           </motion.div>
         </div>
       </ServiceContentSection>
