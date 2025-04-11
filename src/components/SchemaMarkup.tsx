@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet-async";
 
 const SchemaMarkup = () => {
@@ -27,26 +26,24 @@ const SchemaMarkup = () => {
         }
       },
       {
-  "@type": "MedicalOrganization",
-  "@id": "https://sunrisehumancare.com/#MedicalOrganization",
-  "name": "Sunrise Human Care Services",
-  "url": "https://sunrisehumancare.com/",
-  "foundingDate": "2020-01-01",
-  "founder": "Michael Thevar",
-  "identifier": {
-    "@type": "PropertyValue",
-    "name": "NPI",
-    "value": "1528784568"
-  },
-  "logo": {
-    "@type": "ImageObject",
-    "@id": "https://sunrisehumancare.com/#logo",
-    "url": "https://sunrisehumancare.com/logo.svg",
-    "width": 512,
-    "height": 512
-  },
-  ...
-
+        "@type": "MedicalOrganization",
+        "@id": "https://sunrisehumancare.com/#MedicalOrganization",
+        "name": "Sunrise Human Care Services",
+        "url": "https://sunrisehumancare.com/",
+        "foundingDate": "2020-01-01",
+        "founder": "Michael Thevar",
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "NPI",
+          "value": "1528784568"
+        },
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://sunrisehumancare.com/#logo",
+          "url": "https://sunrisehumancare.com/logo.svg",
+          "width": 512,
+          "height": 512
+        },
         "sameAs": [
           "https://www.facebook.com/sunrisehcs",
           "https://twitter.com/sunrisehcs",
