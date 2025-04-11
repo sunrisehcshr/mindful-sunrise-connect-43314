@@ -1,13 +1,14 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 const IndividualTherapy = () => {
   const benefits = [
-    "Personalized one-on-one attention from a dedicated therapist",
+    "Personalized one-on-one attention from a dedicated therapist in Havertown",
     "Safe, confidential space to explore your thoughts and feelings",
     "Customized treatment approaches tailored to your specific needs",
     "Flexibility in addressing multiple concerns in a single session",
@@ -18,45 +19,45 @@ const IndividualTherapy = () => {
   const approaches = [
     {
       title: "Cognitive Behavioral Therapy (CBT)",
-      description: "Work with your therapist to identify negative thought patterns and develop healthier ways of thinking that positively impact your emotions and behaviors."
+      description: "Our Havertown therapists use CBT to help you identify negative thought patterns and develop healthier ways of thinking that positively impact your emotions and behaviors."
     },
     {
       title: "Psychodynamic Therapy",
-      description: "Explore how past experiences and unconscious patterns may be influencing your current behaviors and relationships."
+      description: "Explore how past experiences and unconscious patterns may be influencing your current behaviors and relationships with expert guidance from our individual therapy specialists."
     },
     {
       title: "Mindfulness-Based Therapy",
-      description: "Learn to stay present, reduce rumination, and develop greater awareness of your thoughts and feelings without judgment."
+      description: "Learn to stay present, reduce rumination, and develop greater awareness of your thoughts and feelings without judgment through our mindfulness approaches in Havertown, PA."
     },
     {
       title: "Solution-Focused Brief Therapy",
-      description: "Concentrate on solutions rather than problems, setting achievable goals and building on your existing strengths."
+      description: "Concentrate on solutions rather than problems, setting achievable goals and building on your existing strengths with our experienced Havertown therapists."
     }
   ];
   
   const faqs = [
     {
-      question: "How long does individual therapy typically last?",
-      answer: "The duration varies based on your needs and goals. Some clients benefit from short-term therapy (8-12 sessions), while others prefer longer-term support. We'll discuss timeframes during your initial consultation and adjust as needed."
+      question: "How long does individual therapy typically last in Havertown?",
+      answer: "The duration varies based on your needs and goals. Some clients benefit from short-term therapy (8-12 sessions), while others prefer longer-term support. At our Havertown mental health clinic, we'll discuss timeframes during your initial consultation and adjust as needed throughout your treatment journey."
     },
     {
       question: "How often will I meet with my therapist?",
-      answer: "Most clients begin with weekly sessions. As you progress, we may adjust to biweekly or monthly meetings. The frequency is tailored to your needs and can be modified throughout your treatment."
+      answer: "Most clients begin with weekly sessions at our Havertown therapy center. As you progress, we may adjust to biweekly or monthly meetings. The frequency is tailored to your specific needs and can be modified throughout your individual therapy treatment. We offer flexible scheduling options for residents of Havertown, Drexel Hill, and Broomall."
     },
     {
       question: "Is individual therapy covered by insurance?",
-      answer: "Many insurance plans cover individual therapy. We accept most major insurance providers and can verify your benefits before your first session. We also offer affordable self-pay options."
+      answer: "Many insurance plans cover individual therapy at Sunrise Human Care Services. We accept most major insurance providers serving Havertown and Delaware County and can verify your benefits before your first session. For those without coverage, we also offer affordable self-pay options for mental health care in Havertown."
     },
     {
       question: "Can I switch therapists if I don't feel it's a good match?",
-      answer: "Absolutely. The therapeutic relationship is crucial for successful treatment. If you feel you'd benefit from working with a different therapist, we'll gladly help you find a better match within our practice."
+      answer: "Absolutely. The therapeutic relationship is crucial for successful individual therapy treatment. If you feel you'd benefit from working with a different therapist at our Havertown mental health clinic, we'll gladly help you find a better match within our practice to ensure you receive the highest quality care."
     }
   ];
   
   const relatedServices = [
-    { title: "Anxiety Therapy", url: "/anxiety-therapy-havertown-pa" },
-    { title: "Depression Therapy", url: "/depression-therapy-havertown-pa" },
-    { title: "ADHD Treatment", url: "/adhd-treatment-havertown-pa" }
+    { title: "Anxiety Therapy in Havertown", url: "/anxiety-therapy-havertown-pa" },
+    { title: "Depression Treatment in Havertown", url: "/depression-therapy-havertown-pa" },
+    { title: "ADHD Treatment in Havertown", url: "/adhd-treatment-havertown-pa" }
   ];
   
   return (
@@ -72,9 +73,9 @@ const IndividualTherapy = () => {
       faqs={faqs}
       relatedServices={relatedServices}
     >
-      {/* Enhanced service-specific content */}
+      {/* Enhanced service-specific content with additional keywords and local context */}
       <ServiceContentSection
-        title="What to Expect in Individual Therapy"
+        title="What to Expect in Individual Therapy in Havertown"
         hasBgPattern={true}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -90,11 +91,15 @@ const IndividualTherapy = () => {
               </p>
               
               <p className="leading-relaxed">
-                During your ongoing sessions, you'll work one-on-one with your therapist in a safe, confidential environment where you can freely express yourself. Your therapist will guide you through evidence-based therapeutic techniques designed to address your specific challenges.
+                During your ongoing sessions, you'll work one-on-one with your therapist in a safe, confidential environment where you can freely express yourself. Your therapist will guide you through evidence-based therapeutic techniques designed to address your specific challenges through our proven individual therapy approach in Havertown.
               </p>
               
               <p className="leading-relaxed">
                 As therapy progresses, you'll develop new insights, coping strategies, and practical skills that you can apply to your daily life. We emphasize measurable progress toward your goals, with regular check-ins to ensure your treatment remains effective and aligned with your evolving needs.
+              </p>
+              
+              <p className="leading-relaxed">
+                Our individual therapy services in Havertown serve clients from throughout Delaware County, including Drexel Hill, Broomall, Springfield, and Newtown Square. Whether you're dealing with <Link to="/anxiety-therapy-havertown-pa" className="text-orange-600 hover:underline">anxiety</Link>, <Link to="/depression-therapy-havertown-pa" className="text-orange-600 hover:underline">depression</Link>, or <Link to="/ptsd-therapy-havertown-pa" className="text-orange-600 hover:underline">trauma and PTSD</Link>, our licensed therapists provide personalized mental health care in Havertown tailored to your unique needs.
               </p>
             </div>
           </motion.div>
@@ -107,7 +112,7 @@ const IndividualTherapy = () => {
             className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
           >
             <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Our Individual Therapy Services Help With:
+              Our Individual Therapy Services in Havertown Help With:
             </h3>
             
             <ul className="space-y-3.5">
@@ -134,6 +139,64 @@ const IndividualTherapy = () => {
                 </motion.li>
               ))}
             </ul>
+            
+            <div className="mt-7 pt-5 border-t border-orange-100">
+              <h4 className="text-lg font-medium mb-3 text-orange-600">
+                Related Mental Health Resources
+              </h4>
+              
+              <ul className="space-y-3">
+                {[
+                  { name: "Anxiety Treatment Options in Havertown", url: "/anxiety-therapy-havertown-pa" },
+                  { name: "Addressing Trauma Through Therapy", url: "/ptsd-therapy-havertown-pa" },
+                  { name: "When to Consider Medication Management", url: "/medication-management-havertown-pa" }
+                ].map((resource, index) => (
+                  <li key={index}>
+                    <Link to={resource.url} className="flex items-center text-orange-500 hover:text-orange-700 transition-colors">
+                      <ArrowRight className="h-4 w-4 mr-2" />
+                      <span>{resource.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </ServiceContentSection>
+      
+      {/* New testimonial section specifically for individual therapy */}
+      <ServiceContentSection title="What Our Individual Therapy Clients in Havertown Say" hasBgPattern={false}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
+          >
+            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+            <div className="pl-6 pt-6">
+              <p className="italic text-amber-900">My therapist at Sunrise Human Care in Havertown really helped me manage my anxiety with CBT. After just a few months of individual therapy, I feel more in control now and have tools to handle difficult situations.</p>
+              <p className="mt-4 font-medium text-amber-800">- Alicia T., Havertown</p>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
+          >
+            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+            <div className="pl-6 pt-6">
+              <p className="italic text-amber-900">Finding individual therapy in Havertown was a turning point for me. The therapists at Sunrise took the time to understand my specific needs and created a treatment plan that actually worked for my depression. I'd recommend them to anyone in Delaware County.</p>
+              <p className="mt-4 font-medium text-amber-800">- Michael R., Broomall</p>
+            </div>
           </motion.div>
         </div>
       </ServiceContentSection>

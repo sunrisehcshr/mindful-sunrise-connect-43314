@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -68,8 +69,17 @@ const ServicePageLayout = ({
 
   // For approach and card items - enhanced soft background
   const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
+  
+  // Extract service name for schema
+  const serviceName = serviceType || title.split('in')[0].trim();
+  
   return <>
-      <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} />
+      <SEOHead 
+        title={pageTitle} 
+        description={metaDescription} 
+        canonicalUrl={canonicalUrl} 
+        keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`}
+      />
       <SchemaMarkup />
 
       <div className="flex flex-col min-h-screen">
@@ -136,7 +146,7 @@ const ServicePageLayout = ({
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Benefits of {serviceType}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Benefits of {serviceType} in Havertown, PA</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
               </div>
               
@@ -170,10 +180,10 @@ const ServicePageLayout = ({
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Our {serviceType} Approach</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Our {serviceType} Approach in Havertown</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
                 <p className="text-amber-900 mb-6 md:mb-8">
-                  We utilize various evidence-based therapies tailored to your specific needs.
+                  We utilize various evidence-based therapies tailored to your specific needs. Our mental health care in Havertown serves clients from throughout Delaware County.
                 </p>
               </div>
               
@@ -205,19 +215,19 @@ const ServicePageLayout = ({
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Take the First Step?</h2>
                 <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
-                  Our compassionate team is here to support you on your mental health journey.
+                  Our compassionate team is here to support you on your mental health journey in Havertown, Broomall, and Drexel Hill.
                 </p>
                 
                 <div className="flex flex-row flex-wrap sm:flex-nowrap justify-center gap-3 sm:gap-4">
                   <Link to="/appointment" className="w-full sm:w-auto">
                     <Button size="lg" className="w-full bg-white text-orange-600 hover:bg-orange-50">
-                      <Calendar className="mr-2 h-5 w-5" /> Schedule an Appointment
+                      <Calendar className="mr-2 h-5 w-5" /> Book Mental Health Appointment in Havertown
                     </Button>
                   </Link>
                   
                   <a href="tel:+18146202162" className="w-full sm:w-auto">
                     <Button variant="outline" size="lg" className="w-full bg-transparent border-white text-white hover:bg-white/10">
-                      <PhoneCall className="mr-2 h-5 w-5" /> Call Us Today
+                      <PhoneCall className="mr-2 h-5 w-5" /> Speak with a Therapist Today
                     </Button>
                   </a>
                 </div>
@@ -231,7 +241,7 @@ const ServicePageLayout = ({
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Frequently Asked Questions</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Frequently Asked Questions About {serviceType} in Havertown</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
               </div>
               
@@ -261,10 +271,10 @@ const ServicePageLayout = ({
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Related Services</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Related Services in Havertown</h2>
                 <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
                 <p className="text-amber-900 mb-6 md:mb-8">
-                  Explore our other mental health services that complement {serviceType}.
+                  Explore our other mental health services in Havertown that complement {serviceType}.
                 </p>
               </div>
               
