@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -64,7 +65,7 @@ const WarmHeroSection = () => {
             duration: 0.5,
             delay: 0.2
           }} className="mb-4">
-              <SectionTag>Mental Health Clinic</SectionTag>
+              <SectionTag>Mental Health Clinic in Havertown</SectionTag>
             </motion.div>
             
             <motion.h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-amber-950 leading-tight" initial={{
@@ -85,7 +86,7 @@ const WarmHeroSection = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.4
-          }}>Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health care with licensed therapists, psychologists, counselors, and psychiatrists.</motion.p>
+          }}>Step into a brighter tomorrow with Sunrise Human Care—offering comprehensive mental health care in Havertown with licensed therapists, psychologists, counselors, and psychiatrists for residents of Havertown, Broomall, and Drexel Hill.</motion.p>
             
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" initial={{
             opacity: 0,
@@ -100,13 +101,13 @@ const WarmHeroSection = () => {
               <a href="tel:+18146202162" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 group">
                   <Phone className="mr-2 h-4 w-4 group-hover:animate-pulse" /> 
-                  Call Now
+                  Speak with a Therapist Today
                 </Button>
               </a>
               <AppointmentDialog>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto border-orange-300 text-orange-600 font-semibold hover:bg-orange-50 shadow-sm hover:shadow-md transition-all duration-300 group">
                   <Calendar className="mr-2 h-4 w-4 group-hover:text-orange-500" />
-                  Schedule Appointment
+                  Book Mental Health Appointment
                 </Button>
               </AppointmentDialog>
             </motion.div>

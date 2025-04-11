@@ -1,18 +1,22 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircleHeart, Star } from 'lucide-react';
+import { MessageCircleHeart, Star, Calendar } from 'lucide-react';
 import { Separator } from './ui/separator';
 import SectionTag from './ui/section-tag';
+import { Button } from './ui/button';
+import AppointmentDialog from './Appointment/AppointmentDialog';
+
 const testimonials = [{
-  quote: "Sunrise Human Care Services has been a huge help for my teenage daughter. The therapist really connected with her, and we've seen such a positive change. So grateful for their support!",
+  quote: "Sunrise Human Care Services has been a huge help for my teenage daughter. Their mental health care in Havertown is exceptional - the therapist really connected with her, and we've seen such a positive change. So grateful for their support!",
   author: "Emily T., Havertown",
   rating: 5
 }, {
-  quote: "I was hesitant to start therapy, but from my first session, I felt truly heard and understood. The staff is kind, professional, and really invested in helping you heal.",
+  quote: "I was hesitant to start therapy, but from my first session at their Havertown clinic, I felt truly heard and understood. The staff is kind, professional, and really invested in helping you heal. Worth the short drive from Drexel Hill.",
   author: "James W., Drexel Hill, PA",
   rating: 5
 }, {
-  quote: "My father has difficulty leaving the house, so finding a clinic that offers home sessions was a relief. The therapist visits us in Broomall, and it has made such a difference in his well-being!",
+  quote: "My father has difficulty leaving the house, so finding a clinic that offers home sessions was a relief. The therapist visits us in Broomall, and their mental health care has made such a difference in his well-being!",
   author: "Sarah W., Broomall, PA",
   rating: 5
 }];
@@ -55,13 +59,13 @@ const WarmTestimonialsSection = () => {
         }} transition={{
           duration: 0.4
         }}>
-            <SectionTag>Testimonials</SectionTag>
+            <SectionTag>Client Testimonials</SectionTag>
           </motion.div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-merriweather">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-merriweather">What Our Clients Say About Our Mental Health Care</h2>
           
           <p className="text-amber-800 max-w-2xl mx-auto">
-            Real stories from people whose lives have been transformed through compassionate care and therapy.
+            Real stories from people whose lives have been transformed through compassionate mental health care and therapy in Havertown and surrounding areas.
           </p>
           
           <div className="mx-auto mt-6 mb-10 w-24">
@@ -100,6 +104,15 @@ const WarmTestimonialsSection = () => {
                 
               </div>
             </motion.div>)}
+        </div>
+        
+        <div className="mt-12 flex justify-center">
+          <AppointmentDialog>
+            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300">
+              <Calendar className="mr-2 h-4 w-4" />
+              Schedule Your Mental Health Consultation
+            </Button>
+          </AppointmentDialog>
         </div>
       </div>
     </section>;
