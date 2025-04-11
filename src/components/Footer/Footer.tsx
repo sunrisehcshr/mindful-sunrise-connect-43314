@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -18,11 +17,9 @@ const Footer: React.FC = () => {
                 <span className="text-xs text-muted-foreground leading-tight font-normal">Human Care Services</span>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground py-0 my-0">
-              Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. 
-              Our dedicated team provides counseling, therapy, psychiatry, and medication management for 
-              anxiety, depression, ADHD, trauma, and more.
-            </p>
+            <p className="text-sm text-muted-foreground py-0 my-0">Sunrise Human Care Services Inc is a registered healthcare organization committed to delivering compassionate and high-quality behavioral health services.
+
+We are officially listed in the National Plan and Provider Enumeration System (NPPES) under NPI Number: 1528784568, affirming our commitment to compliance, transparency, and patient trust.</p>
             <SocialLinks />
           </div>
 
