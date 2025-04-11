@@ -1,14 +1,28 @@
 
+# Sunrise Human Care Services - Robots.txt
+# https://sunrisehumancare.com
+
 User-agent: *
 Allow: /
 
 # Disallow admin pages
 Disallow: /admin/
 Disallow: /wp-admin/
+Disallow: /login
+Disallow: /logout
+Disallow: /api/
 
 # Disallow specific files
 Disallow: /*.pdf$
 Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /cgi-bin/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: *?*
+
+# Crawl delay directive for bots to prevent server overload
+Crawl-delay: 10
 
 # Sitemap location
 Sitemap: https://sunrisehumancare.com/sitemap.xml

@@ -13,6 +13,13 @@ interface SEOHeadProps {
   modifiedTime?: string;
   author?: string;
   type?: string;
+  serviceSchema?: {
+    name: string;
+    description: string;
+    provider: string;
+    serviceType: string;
+    areaServed: string;
+  };
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
@@ -25,8 +32,46 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   publishedTime,
   modifiedTime,
   author = "Sunrise Human Care Services",
-  type = "website"
+  type = "website",
+  serviceSchema
 }) => {
+  // Generate service-specific schema if provided
+  const serviceSchemaScript = serviceSchema ? {
+    "@context": "https://schema.org/",
+    "@type": "MedicalService",
+    "name": serviceSchema.name,
+    "description": serviceSchema.description,
+    "provider": {
+      "@type": "MedicalOrganization",
+      "name": serviceSchema.provider,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2050 West Chester Pike",
+        "addressLocality": "Havertown",
+        "addressRegion": "PA",
+        "postalCode": "19083",
+        "addressCountry": "US"
+      },
+      "telephone": "+18146202162"
+    },
+    "serviceType": serviceSchema.serviceType,
+    "areaServed": {
+      "@type": "GeoCircle",
+      "name": serviceSchema.areaServed,
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.9707",
+        "longitude": "-75.3151"
+      },
+      "geoRadius": "15000"
+    },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": canonicalUrl,
+      "servicePhone": "+18146202162"
+    }
+  } : null;
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -75,6 +120,13 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+
+      {/* Service schema markup if provided */}
+      {serviceSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchemaScript)}
+        </script>
+      )}
 
       {/* Preload critical fonts - optimizing font loading */}
       <link
