@@ -2,9 +2,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
-import { User, Users, Baby, HeartHandshake, Stethoscope, Pill } from 'lucide-react';
+import { User, Users, Baby, HeartHandshake, Stethoscope, Pill, Calendar } from 'lucide-react';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
+import { Button } from '../ui/button';
+import AppointmentDialog from '../Appointment/AppointmentDialog';
+
 const ServicesSection: React.FC = () => {
   const services = [{
     icon: <User className="h-6 w-6" />,
