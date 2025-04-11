@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -7,36 +6,28 @@ import AppointmentDialog from './Appointment/AppointmentDialog';
 import SectionTag from './ui/section-tag';
 import ImageOptimizer from './ui/ImageOptimizer';
 import AnimatedGradientBackground from './ui/animated-gradient-background';
-
 const WarmHeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   // Yellow shades for gradient
-  const yellowGradientColors = [
-    "#ffffff",                // White
-    "rgba(255, 249, 219, 0.7)", // Very light yellow (transparent)
-    "rgba(254, 240, 138, 0.6)", // Light yellow (transparent)
-    "rgba(253, 224, 71, 0.5)",  // Medium yellow (transparent)
-    "rgba(251, 191, 36, 0.3)",  // Amber yellow (transparent)
-    "rgba(245, 158, 11, 0.1)",  // Dark yellow (transparent)
-    "rgba(255, 255, 255, 0)"    // Transparent
+  const yellowGradientColors = ["#ffffff",
+  // White
+  "rgba(255, 249, 219, 0.7)",
+  // Very light yellow (transparent)
+  "rgba(254, 240, 138, 0.6)",
+  // Light yellow (transparent)
+  "rgba(253, 224, 71, 0.5)",
+  // Medium yellow (transparent)
+  "rgba(251, 191, 36, 0.3)",
+  // Amber yellow (transparent)
+  "rgba(245, 158, 11, 0.1)",
+  // Dark yellow (transparent)
+  "rgba(255, 255, 255, 0)" // Transparent
   ];
-  
   const gradientStops = [0, 30, 50, 65, 80, 90, 100];
-
-  return (
-    <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32" id="home">
+  return <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32" id="home">
       {/* Animated Gradient Background */}
-      <AnimatedGradientBackground 
-        gradientColors={yellowGradientColors}
-        gradientStops={gradientStops}
-        startingGap={130}
-        Breathing={true}
-        breathingRange={8}
-        animationSpeed={0.015}
-        topOffset={-10}
-        containerClassName="opacity-80 z-0"
-      />
+      <AnimatedGradientBackground gradientColors={yellowGradientColors} gradientStops={gradientStops} startingGap={130} Breathing={true} breathingRange={8} animationSpeed={0.015} topOffset={-10} containerClassName="opacity-80 z-0" />
       
       {/* Pattern overlay */}
       <div className="absolute inset-0 -z-10">
@@ -94,9 +85,7 @@ const WarmHeroSection = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.4
-          }}>
-              Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health services with licensed therapists, psychologists, counselors, and psychiatrists.
-            </motion.p>
+          }}>Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health care with licensed therapists, psychologists, counselors, and psychiatrists.</motion.p>
             
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" initial={{
             opacity: 0,
@@ -132,32 +121,18 @@ const WarmHeroSection = () => {
           delay: 0.3
         }}>
             <div className="relative">
-              <motion.div 
-                className={`rounded-2xl overflow-hidden shadow-lg h-64 md:h-[400px] relative warm-glow ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} 
-                whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }} 
-                transition={{
-                  duration: 0.4
-                }} 
-                initial={{
-                  y: 20
-                }} 
-                animate={{
-                  y: 0
-                }}
-              >
+              <motion.div className={`rounded-2xl overflow-hidden shadow-lg h-64 md:h-[400px] relative warm-glow ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} whileHover={{
+              scale: 1.02,
+              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+            }} transition={{
+              duration: 0.4
+            }} initial={{
+              y: 20
+            }} animate={{
+              y: 0
+            }}>
                 <div className=""></div>
-                <ImageOptimizer 
-                  src="/images/family-counseling-havertown.webp" 
-                  alt="Expert family counseling services in Havertown, PA" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  priority={true}
-                  width={600}
-                  height={400}
-                  onLoad={() => setImageLoaded(true)}
-                />
+                <ImageOptimizer src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" priority={true} width={600} height={400} onLoad={() => setImageLoaded(true)} />
               </motion.div>
               
               {/* Enhanced decorative elements with vibrant yellow */}
@@ -167,8 +142,6 @@ const WarmHeroSection = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WarmHeroSection;
