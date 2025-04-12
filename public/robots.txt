@@ -48,6 +48,19 @@ Crawl-delay: 10
 # Crawl delay directive for generic bots to prevent server overload
 Crawl-delay: 10
 
+# Important service pages
+Allow: /services
+Allow: /conditions
+Allow: /individual-therapy-havertown-pa
+Allow: /family-therapy-havertown-pa
+Allow: /anxiety-therapy-havertown-pa
+Allow: /depression-therapy-havertown-pa
+Allow: /ptsd-therapy-havertown-pa
+Allow: /ocd-therapy-havertown-pa
+Allow: /psychiatric-evaluations-havertown-pa
+Allow: /medication-management-havertown-pa
+Allow: /adhd-treatment-havertown-pa
+
 # Sitemap locations
 Sitemap: https://sunrisehumancare.com/sitemap.xml
 Sitemap: https://sunrisehumancare.com/sitemap-posts.xml

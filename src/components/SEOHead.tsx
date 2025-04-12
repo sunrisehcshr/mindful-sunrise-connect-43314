@@ -52,7 +52,13 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         "postalCode": "19083",
         "addressCountry": "US"
       },
-      "telephone": "+18146202162"
+      "telephone": "+18146202162",
+      "url": "https://sunrisehumancare.com",
+      "logo": "https://sunrisehumancare.com/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/sunrisehumancare",
+        "https://www.linkedin.com/company/sunrise-human-care-services"
+      ]
     },
     "serviceType": serviceSchema.serviceType,
     "areaServed": {
@@ -71,6 +77,49 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       "servicePhone": "+18146202162"
     }
   } : null;
+
+  // Local business schema for the organization
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Sunrise Human Care Services",
+    "image": "https://sunrisehumancare.com/logo.png",
+    "url": "https://sunrisehumancare.com",
+    "@id": "https://sunrisehumancare.com",
+    "telephone": "+18146202162",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2050 West Chester Pike",
+      "addressLocality": "Havertown",
+      "addressRegion": "PA",
+      "postalCode": "19083",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "39.9707",
+      "longitude": "-75.3151"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "15:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/sunrisehumancare",
+      "https://www.linkedin.com/company/sunrise-human-care-services"
+    ]
+  };
 
   return (
     <Helmet>
@@ -127,6 +176,45 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           {JSON.stringify(serviceSchemaScript)}
         </script>
       )}
+
+      {/* Local business schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(localBusinessSchema)}
+      </script>
+
+      {/* Breadcrumbs schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://sunrisehumancare.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": canonicalUrl.includes("/services/") || canonicalUrl.includes("/conditions/") ? 
+                (canonicalUrl.includes("/services/") ? "Services" : "Conditions") : 
+                canonicalUrl.split("/").pop()?.replace(/-/g, " ")?.replace(/\b\w/g, l => l.toUpperCase()),
+              "item": canonicalUrl.includes("/services/") ? 
+                "https://sunrisehumancare.com/services" : 
+                (canonicalUrl.includes("/conditions/") ? "https://sunrisehumancare.com/conditions" : canonicalUrl)
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": (canonicalUrl.includes("/services/") || canonicalUrl.includes("/conditions/")) ? 
+                canonicalUrl.split("/").pop()?.replace(/-/g, " ")?.replace(/\b\w/g, l => l.toUpperCase()) : 
+                null,
+              "item": canonicalUrl
+            }
+          ].filter(item => item.name !== null)
+        })}
+      </script>
 
       {/* Preload critical fonts - optimizing font loading */}
       <link
@@ -191,6 +279,42 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Pre-connect to analytics domains to speed up their loading */}
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
+      
+      {/* Structured data for FAQ pages when applicable */}
+      {canonicalUrl.includes("therapy") || canonicalUrl.includes("treatment") || canonicalUrl.includes("counseling") ? (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does Sunrise Human Care accept insurance?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we accept most major insurance plans including Aetna, Blue Cross Blue Shield, Cigna, and more. We also offer affordable self-pay options. Please call our office to verify your specific coverage."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long are therapy sessions at Sunrise Human Care?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Initial evaluations are typically 60 minutes, while standard therapy sessions are 45-50 minutes. Specialized services may vary in length. We'll discuss the recommended session duration for your specific needs during your consultation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What areas does Sunrise Human Care serve?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We proudly serve Havertown, PA and surrounding communities in Delaware County, including Drexel Hill, Broomall, Ardmore, Springfield, Upper Darby, and Newtown Square."
+                }
+              }
+            ]
+          })}
+        </script>
+      ) : null}
     </Helmet>
   );
 };
