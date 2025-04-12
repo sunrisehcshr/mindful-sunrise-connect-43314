@@ -1,91 +1,63 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const SleepDisordersTherapy = () => {
-  const benefits = [
-    "Improved sleep quality and duration",
-    "Reduced time to fall asleep",
-    "Fewer nighttime awakenings",
-    "Decreased sleep-related anxiety",
-    "Increased daytime energy and functioning",
-    "Sustainable sleep habits without medication dependence",
-    "Better overall mental and physical health"
-  ];
-  
-  const approaches = [
-    {
-      title: "Cognitive-Behavioral Therapy for Insomnia (CBT-I)",
-      description: "The gold standard treatment for insomnia that addresses thoughts and behaviors that interfere with sleep through techniques like sleep restriction, stimulus control, and cognitive restructuring."
-    },
-    {
-      title: "Sleep Hygiene Education",
-      description: "Guidance on creating optimal sleep conditions and habits, including bedroom environment, bedtime routines, and lifestyle factors that impact sleep."
-    },
-    {
-      title: "Relaxation Training",
-      description: "Techniques such as progressive muscle relaxation, deep breathing, and guided imagery to reduce physical tension and mental arousal that interfere with sleep."
-    },
-    {
-      title: "Mindfulness for Sleep",
-      description: "Mindfulness practices specifically adapted for sleep problems to help quiet the racing mind and reduce sleep-related worry and rumination."
-    },
-    {
-      title: "Circadian Rhythm Management",
-      description: "Strategies to realign disrupted sleep-wake cycles and optimize your body's natural timing system for better sleep quality."
-    }
-  ];
-  
-  const faqs = [
-    {
-      question: "How do I know if I have a sleep disorder?",
-      answer: "Common signs include difficulty falling or staying asleep, excessive daytime sleepiness, irregular sleep patterns, unusual behaviors during sleep, and feeling unrefreshed after sleep. If sleep problems persist for more than a few weeks or interfere with daily functioning, our sleep disorder treatment in Havertown can help with a professional assessment and personalized recommendations."
-    },
-    {
-      question: "Is medication necessary for treating sleep disorders?",
-      answer: "Not always. While medication may be helpful in some cases, many sleep disorders can be effectively treated with non-medication approaches like CBT-I at our Havertown sleep therapy center. This evidence-based treatment has been shown to produce long-lasting improvements in sleep quality without the side effects or dependencies associated with sleep medications. Our sleep specialists in Havertown will discuss all treatment options based on your specific situation."
-    },
-    {
-      question: "How long does sleep therapy take to work?",
-      answer: "Many people seeking sleep disorder treatment in Havertown begin to see improvements in their sleep within 2-4 weeks of starting CBT-I or other behavioral sleep treatments. Full benefits of our sleep therapy typically develop over 6-8 weeks of consistent practice of the recommended strategies. Clients throughout Havertown, Drexel Hill, and Broomall report significant improvements in sleep quality with our structured approach."
-    }
-  ];
-  
-  const relatedServices = [
-    { title: "Anxiety Therapy in Havertown", url: "/anxiety-therapy-havertown-pa" },
-    { title: "Depression Therapy in Havertown", url: "/depression-therapy-havertown-pa" },
-    { title: "Stress Management in Havertown", url: "/stress-management-havertown-pa" }
-  ];
-  
-  return (
-    <ServicePageLayout
-      title="Sleep Disorders Treatment in Havertown, PA"
-      description="Effective treatment for insomnia, sleep anxiety, and other sleep-related issues in Havertown, PA."
-      pageTitle="Sleep Disorders Treatment in Havertown, PA | Insomnia Therapy | Sunrise Human Care Services"
-      metaDescription="Effective sleep disorder treatment in Havertown, PA for insomnia and sleep-related issues. Evidence-based approaches including CBT-I serving Delaware County residents. Sleep therapy for Havertown, Drexel Hill, and Broomall."
-      serviceType="Sleep Disorders Treatment"
-      canonicalUrl="/sleep-disorders-treatment-havertown-pa"
-      benefits={benefits}
-      approaches={approaches}
-      faqs={faqs}
-      relatedServices={relatedServices}
-    >
+  const benefits = ["Improved sleep quality and duration", "Reduced time to fall asleep", "Fewer nighttime awakenings", "Decreased sleep-related anxiety", "Increased daytime energy and functioning", "Sustainable sleep habits without medication dependence", "Better overall mental and physical health"];
+  const approaches = [{
+    title: "Cognitive-Behavioral Therapy for Insomnia (CBT-I)",
+    description: "The gold standard treatment for insomnia that addresses thoughts and behaviors that interfere with sleep through techniques like sleep restriction, stimulus control, and cognitive restructuring."
+  }, {
+    title: "Sleep Hygiene Education",
+    description: "Guidance on creating optimal sleep conditions and habits, including bedroom environment, bedtime routines, and lifestyle factors that impact sleep."
+  }, {
+    title: "Relaxation Training",
+    description: "Techniques such as progressive muscle relaxation, deep breathing, and guided imagery to reduce physical tension and mental arousal that interfere with sleep."
+  }, {
+    title: "Mindfulness for Sleep",
+    description: "Mindfulness practices specifically adapted for sleep problems to help quiet the racing mind and reduce sleep-related worry and rumination."
+  }, {
+    title: "Circadian Rhythm Management",
+    description: "Strategies to realign disrupted sleep-wake cycles and optimize your body's natural timing system for better sleep quality."
+  }];
+  const faqs = [{
+    question: "How do I know if I have a sleep disorder?",
+    answer: "Common signs include difficulty falling or staying asleep, excessive daytime sleepiness, irregular sleep patterns, unusual behaviors during sleep, and feeling unrefreshed after sleep. If sleep problems persist for more than a few weeks or interfere with daily functioning, our sleep disorder treatment in Havertown can help with a professional assessment and personalized recommendations."
+  }, {
+    question: "Is medication necessary for treating sleep disorders?",
+    answer: "Not always. While medication may be helpful in some cases, many sleep disorders can be effectively treated with non-medication approaches like CBT-I at our Havertown sleep therapy center. This evidence-based treatment has been shown to produce long-lasting improvements in sleep quality without the side effects or dependencies associated with sleep medications. Our sleep specialists in Havertown will discuss all treatment options based on your specific situation."
+  }, {
+    question: "How long does sleep therapy take to work?",
+    answer: "Many people seeking sleep disorder treatment in Havertown begin to see improvements in their sleep within 2-4 weeks of starting CBT-I or other behavioral sleep treatments. Full benefits of our sleep therapy typically develop over 6-8 weeks of consistent practice of the recommended strategies. Clients throughout Havertown, Drexel Hill, and Broomall report significant improvements in sleep quality with our structured approach."
+  }];
+  const relatedServices = [{
+    title: "Anxiety Therapy in Havertown",
+    url: "/anxiety-therapy-havertown-pa"
+  }, {
+    title: "Depression Therapy in Havertown",
+    url: "/depression-therapy-havertown-pa"
+  }, {
+    title: "Stress Management in Havertown",
+    url: "/stress-management-havertown-pa"
+  }];
+  return <ServicePageLayout title="Sleep Disorders Treatment in Havertown, PA" description="Effective treatment for insomnia, sleep anxiety, and other sleep-related issues in Havertown, PA." pageTitle="Sleep Disorders Treatment in Havertown, PA | Insomnia Therapy | Sunrise Human Care Services" metaDescription="Effective sleep disorder treatment in Havertown, PA for insomnia and sleep-related issues. Evidence-based approaches including CBT-I serving Delaware County residents. Sleep therapy for Havertown, Drexel Hill, and Broomall." serviceType="Sleep Disorders Treatment" canonicalUrl="/sleep-disorders-treatment-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
       {/* Enhanced service-specific content */}
-      <ServiceContentSection
-        title="Our Sleep Disorders Treatment Approach in Havertown"
-        hasBgPattern={true}
-      >
+      <ServiceContentSection title="Our Sleep Disorders Treatment Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: -20
+        }} whileInView={{
+          opacity: 1,
+          x: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5,
+          delay: 0.2
+        }}>
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed">
                 At Sunrise Human Care Services in Havertown, PA, we provide evidence-based treatment for a range of sleep disorders. Our sleep therapy begins with a comprehensive sleep assessment to understand your specific sleep patterns, habits, and factors that may be interfering with restful sleep.
@@ -105,40 +77,35 @@ const SleepDisordersTherapy = () => {
             </div>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: 20
+        }} whileInView={{
+          opacity: 1,
+          x: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5,
+          delay: 0.4
+        }} className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300">
             <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
               Our Sleep Disorders Treatment in Havertown Helps With:
             </h3>
             
             <ul className="space-y-3.5">
-              {[
-                "Insomnia (difficulty falling or staying asleep)",
-                "Sleep anxiety and worry about sleep",
-                "Nightmares and disturbing dreams",
-                "Circadian rhythm disorders",
-                "Psychological aspects of sleep apnea",
-                "Sleep-related behaviors",
-                "Sleep disruption due to stress or lifestyle",
-                "Sleep issues related to depression or anxiety"
-              ].map((item, index) => (
-                <motion.li 
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index }}
-                  className="flex items-start gap-3"
-                >
+              {["Insomnia (difficulty falling or staying asleep)", "Sleep anxiety and worry about sleep", "Nightmares and disturbing dreams", "Circadian rhythm disorders", "Psychological aspects of sleep apnea", "Sleep-related behaviors", "Sleep disruption due to stress or lifestyle", "Sleep issues related to depression or anxiety"].map((item, index) => <motion.li key={index} initial={{
+              opacity: 0
+            }} whileInView={{
+              opacity: 1
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: 0.1 * index
+            }} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">{item}</span>
-                </motion.li>
-              ))}
+                </motion.li>)}
             </ul>
             
             <div className="mt-7 pt-5 border-t border-orange-100">
@@ -147,18 +114,21 @@ const SleepDisordersTherapy = () => {
               </h4>
               
               <ul className="space-y-3">
-                {[
-                  { name: "Sleep and Anxiety Connection", url: "/anxiety-therapy-havertown-pa" },
-                  { name: "Depression and Sleep Problems", url: "/depression-therapy-havertown-pa" },
-                  { name: "Sleep Hygiene Basics", url: "/blog/sleep-hygiene-tips" }
-                ].map((resource, index) => (
-                  <li key={index}>
+                {[{
+                name: "Sleep and Anxiety Connection",
+                url: "/anxiety-therapy-havertown-pa"
+              }, {
+                name: "Depression and Sleep Problems",
+                url: "/depression-therapy-havertown-pa"
+              }, {
+                name: "Sleep Hygiene Basics",
+                url: "/blog/sleep-hygiene-tips"
+              }].map((resource, index) => <li key={index}>
                     <Link to={resource.url} className="flex items-center text-orange-500 hover:text-orange-700 transition-colors">
                       <ArrowRight className="h-4 w-4 mr-2" />
                       <span>{resource.name}</span>
                     </Link>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </motion.div>
@@ -167,42 +137,8 @@ const SleepDisordersTherapy = () => {
       
       {/* New testimonial section specifically for sleep disorders treatment */}
       <ServiceContentSection title="What Our Sleep Therapy Clients in Havertown Say" hasBgPattern={false}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
-          >
-            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
-              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-            </svg>
-            <div className="pl-6 pt-6">
-              <p className="italic text-amber-900">After struggling with insomnia for years and trying multiple medications, the sleep disorder treatment at Sunrise Human Care in Havertown was life-changing. Their CBT-I approach taught me skills that actually worked. For the first time in a decade, I'm falling asleep naturally and waking refreshed. The sleep therapy was worth every minute.</p>
-              <p className="mt-4 font-medium text-amber-800">- Former insomnia client, Havertown</p>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
-          >
-            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
-              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-            </svg>
-            <div className="pl-6 pt-6">
-              <p className="italic text-amber-900">My work schedule had completely destroyed my sleep patterns, leaving me exhausted but unable to sleep properly. The sleep specialists at Sunrise in Havertown created a personalized plan for my circadian rhythm disorder that worked with my shift work. The difference in my sleep quality, energy levels, and overall health has been remarkable.</p>
-              <p className="mt-4 font-medium text-amber-800">- Sleep therapy client, Drexel Hill</p>
-            </div>
-          </motion.div>
-        </div>
+        
       </ServiceContentSection>
-    </ServicePageLayout>
-  );
+    </ServicePageLayout>;
 };
-
 export default SleepDisordersTherapy;
