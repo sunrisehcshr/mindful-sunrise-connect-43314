@@ -1,100 +1,75 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const BipolarDisorderTherapy = () => {
-  const benefits = [
-    "Improved mood stability and decreased frequency of episodes",
-    "Better understanding of your condition and triggers",
-    "Enhanced coping skills for managing mood fluctuations",
-    "Decreased hospitalization rates and improved functioning",
-    "Improved interpersonal relationships and quality of life",
-    "Coordinated care approach involving therapy and medication management"
-  ];
-  
-  const approaches = [
-    {
-      title: "Cognitive Behavioral Therapy (CBT)",
-      description: "Identify and change negative thought patterns that contribute to mood episodes, focusing on developing coping strategies for both manic and depressive phases."
-    },
-    {
-      title: "Interpersonal and Social Rhythm Therapy (IPSRT)",
-      description: "Stabilize daily routines, improve medication adherence, and enhance interpersonal functioning to reduce mood episodes."
-    },
-    {
-      title: "Family-Focused Therapy",
-      description: "Educate family members about bipolar disorder, improve family communication, and develop problem-solving skills to better support the individual."
-    },
-    {
-      title: "Medication Management Coordination",
-      description: "Collaborate with psychiatric providers to ensure optimal medication treatment, which is typically a cornerstone of successful bipolar disorder management."
-    },
-    {
-      title: "Psychoeducation",
-      description: "Learn about bipolar disorder, its causes, treatments, and early warning signs of mood episodes to support better self-management."
-    }
-  ];
-  
-  const faqs = [
-    {
-      question: "What is the difference between Bipolar I and Bipolar II Disorder?",
-      answer: "Bipolar I Disorder involves manic episodes that last at least 7 days or are severe enough to require hospitalization, often with depressive episodes as well. Bipolar II Disorder involves less severe hypomanic episodes alternating with depressive episodes. Our bipolar disorder treatment in Havertown is tailored to address the specific type and symptoms you're experiencing."
-    },
-    {
-      question: "Is medication always necessary to treat bipolar disorder?",
-      answer: "Medication is typically considered a cornerstone of bipolar disorder treatment in Havertown, as it helps stabilize mood and prevent episodes. However, therapy is an essential complement to medication, and treatment plans at our Havertown mental health clinic are always personalized to each individual's needs, preferences, and specific bipolar symptoms."
-    },
-    {
-      question: "How long does bipolar disorder treatment take?",
-      answer: "Bipolar disorder is typically a lifelong condition requiring ongoing management. While acute episodes may resolve within weeks to months with proper treatment at our Havertown clinic, many individuals benefit from long-term maintenance treatment to prevent future episodes. We serve clients throughout Havertown, Drexel Hill, and Broomall with comprehensive bipolar disorder care plans."
-    },
-    {
-      question: "Can therapy alone manage bipolar disorder?",
-      answer: "While therapy provides critical skills and support, most research indicates that a combination of medication and therapy offers the best outcomes for bipolar disorder. Our bipolar disorder treatment in Havertown works collaboratively with psychiatrists to provide comprehensive care. We focus on helping clients throughout Delaware County develop effective self-management strategies alongside appropriate medical treatment."
-    },
-    {
-      question: "What should family members know about supporting someone with bipolar disorder?",
-      answer: "Family support is crucial for successful bipolar disorder treatment in Havertown. Learning about the condition, recognizing warning signs of episodes, encouraging treatment adherence, maintaining calm during mood fluctuations, and participating in family therapy can all be tremendously helpful. Our Havertown therapists provide education and support for family members as part of our comprehensive approach."
-    }
-  ];
-  
-  const relatedServices = [
-    { title: "Depression Therapy in Havertown", url: "/depression-therapy-havertown-pa" },
-    { title: "Anxiety Therapy in Havertown", url: "/anxiety-therapy-havertown-pa" },
-    { title: "Medication Management in Havertown", url: "/medication-management-havertown-pa" },
-    { title: "Family Therapy in Havertown", url: "/family-therapy-havertown-pa" },
-    { title: "Individual Therapy in Havertown", url: "/individual-therapy-havertown-pa" }
-  ];
-  
-  return (
-    <ServicePageLayout
-      title="Bipolar Disorder Treatment in Havertown, PA"
-      description="Evidence-based bipolar disorder therapy to help manage mood episodes, maintain stability, and improve quality of life."
-      pageTitle="Bipolar Disorder Treatment in Havertown, PA | Mood Stability | Sunrise Human Care Services"
-      metaDescription="Effective bipolar disorder therapy in Havertown, PA serving Delaware County. Our specialized approach helps stabilize mood, manage symptoms, and build a balanced lifestyle. Bipolar treatment for Havertown, Drexel Hill, and Broomall."
-      serviceType="Bipolar Disorder Treatment"
-      canonicalUrl="/bipolar-disorder-therapy-havertown-pa"
-      benefits={benefits}
-      approaches={approaches}
-      faqs={faqs}
-      relatedServices={relatedServices}
-    >
+  const benefits = ["Improved mood stability and decreased frequency of episodes", "Better understanding of your condition and triggers", "Enhanced coping skills for managing mood fluctuations", "Decreased hospitalization rates and improved functioning", "Improved interpersonal relationships and quality of life", "Coordinated care approach involving therapy and medication management"];
+  const approaches = [{
+    title: "Cognitive Behavioral Therapy (CBT)",
+    description: "Identify and change negative thought patterns that contribute to mood episodes, focusing on developing coping strategies for both manic and depressive phases."
+  }, {
+    title: "Interpersonal and Social Rhythm Therapy (IPSRT)",
+    description: "Stabilize daily routines, improve medication adherence, and enhance interpersonal functioning to reduce mood episodes."
+  }, {
+    title: "Family-Focused Therapy",
+    description: "Educate family members about bipolar disorder, improve family communication, and develop problem-solving skills to better support the individual."
+  }, {
+    title: "Medication Management Coordination",
+    description: "Collaborate with psychiatric providers to ensure optimal medication treatment, which is typically a cornerstone of successful bipolar disorder management."
+  }, {
+    title: "Psychoeducation",
+    description: "Learn about bipolar disorder, its causes, treatments, and early warning signs of mood episodes to support better self-management."
+  }];
+  const faqs = [{
+    question: "What is the difference between Bipolar I and Bipolar II Disorder?",
+    answer: "Bipolar I Disorder involves manic episodes that last at least 7 days or are severe enough to require hospitalization, often with depressive episodes as well. Bipolar II Disorder involves less severe hypomanic episodes alternating with depressive episodes. Our bipolar disorder treatment in Havertown is tailored to address the specific type and symptoms you're experiencing."
+  }, {
+    question: "Is medication always necessary to treat bipolar disorder?",
+    answer: "Medication is typically considered a cornerstone of bipolar disorder treatment in Havertown, as it helps stabilize mood and prevent episodes. However, therapy is an essential complement to medication, and treatment plans at our Havertown mental health clinic are always personalized to each individual's needs, preferences, and specific bipolar symptoms."
+  }, {
+    question: "How long does bipolar disorder treatment take?",
+    answer: "Bipolar disorder is typically a lifelong condition requiring ongoing management. While acute episodes may resolve within weeks to months with proper treatment at our Havertown clinic, many individuals benefit from long-term maintenance treatment to prevent future episodes. We serve clients throughout Havertown, Drexel Hill, and Broomall with comprehensive bipolar disorder care plans."
+  }, {
+    question: "Can therapy alone manage bipolar disorder?",
+    answer: "While therapy provides critical skills and support, most research indicates that a combination of medication and therapy offers the best outcomes for bipolar disorder. Our bipolar disorder treatment in Havertown works collaboratively with psychiatrists to provide comprehensive care. We focus on helping clients throughout Delaware County develop effective self-management strategies alongside appropriate medical treatment."
+  }, {
+    question: "What should family members know about supporting someone with bipolar disorder?",
+    answer: "Family support is crucial for successful bipolar disorder treatment in Havertown. Learning about the condition, recognizing warning signs of episodes, encouraging treatment adherence, maintaining calm during mood fluctuations, and participating in family therapy can all be tremendously helpful. Our Havertown therapists provide education and support for family members as part of our comprehensive approach."
+  }];
+  const relatedServices = [{
+    title: "Depression Therapy in Havertown",
+    url: "/depression-therapy-havertown-pa"
+  }, {
+    title: "Anxiety Therapy in Havertown",
+    url: "/anxiety-therapy-havertown-pa"
+  }, {
+    title: "Medication Management in Havertown",
+    url: "/medication-management-havertown-pa"
+  }, {
+    title: "Family Therapy in Havertown",
+    url: "/family-therapy-havertown-pa"
+  }, {
+    title: "Individual Therapy in Havertown",
+    url: "/individual-therapy-havertown-pa"
+  }];
+  return <ServicePageLayout title="Bipolar Disorder Treatment in Havertown, PA" description="Evidence-based bipolar disorder therapy to help manage mood episodes, maintain stability, and improve quality of life." pageTitle="Bipolar Disorder Treatment in Havertown, PA | Mood Stability | Sunrise Human Care Services" metaDescription="Effective bipolar disorder therapy in Havertown, PA serving Delaware County. Our specialized approach helps stabilize mood, manage symptoms, and build a balanced lifestyle. Bipolar treatment for Havertown, Drexel Hill, and Broomall." serviceType="Bipolar Disorder Treatment" canonicalUrl="/bipolar-disorder-therapy-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
       {/* Enhanced service-specific content */}
-      <ServiceContentSection
-        title="Our Bipolar Disorder Treatment Approach in Havertown"
-        hasBgPattern={true}
-      >
+      <ServiceContentSection title="Our Bipolar Disorder Treatment Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: -20
+        }} whileInView={{
+          opacity: 1,
+          x: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5,
+          delay: 0.2
+        }}>
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed">
                 At Sunrise Human Care Services in Havertown, PA, we understand the unique challenges of living with bipolar disorder. Our compassionate team provides specialized bipolar disorder treatment to help you manage mood fluctuations, maintain stability, and improve your overall quality of life.
@@ -114,40 +89,35 @@ const BipolarDisorderTherapy = () => {
             </div>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: 20
+        }} whileInView={{
+          opacity: 1,
+          x: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5,
+          delay: 0.4
+        }} className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300">
             <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
               Our Bipolar Disorder Treatment in Havertown Helps With:
             </h3>
             
             <ul className="space-y-3.5">
-              {[
-                "Bipolar I Disorder",
-                "Bipolar II Disorder",
-                "Cyclothymic Disorder",
-                "Managing manic or hypomanic episodes",
-                "Addressing bipolar depression",
-                "Mood tracking and early intervention",
-                "Medication adherence support",
-                "Life adjustments to support stability"
-              ].map((item, index) => (
-                <motion.li 
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index }}
-                  className="flex items-start gap-3"
-                >
+              {["Bipolar I Disorder", "Bipolar II Disorder", "Cyclothymic Disorder", "Managing manic or hypomanic episodes", "Addressing bipolar depression", "Mood tracking and early intervention", "Medication adherence support", "Life adjustments to support stability"].map((item, index) => <motion.li key={index} initial={{
+              opacity: 0
+            }} whileInView={{
+              opacity: 1
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: 0.1 * index
+            }} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">{item}</span>
-                </motion.li>
-              ))}
+                </motion.li>)}
             </ul>
             
             <div className="mt-7 pt-5 border-t border-orange-100">
@@ -156,18 +126,21 @@ const BipolarDisorderTherapy = () => {
               </h4>
               
               <ul className="space-y-3">
-                {[
-                  { name: "Understanding Bipolar Episodes", url: "/blog/bipolar-episode-management" },
-                  { name: "Medication Options for Bipolar Disorder", url: "/medication-management-havertown-pa" },
-                  { name: "Supporting a Loved One with Bipolar", url: "/family-therapy-havertown-pa" }
-                ].map((resource, index) => (
-                  <li key={index}>
+                {[{
+                name: "Understanding Bipolar Episodes",
+                url: "/blog/bipolar-episode-management"
+              }, {
+                name: "Medication Options for Bipolar Disorder",
+                url: "/medication-management-havertown-pa"
+              }, {
+                name: "Supporting a Loved One with Bipolar",
+                url: "/family-therapy-havertown-pa"
+              }].map((resource, index) => <li key={index}>
                     <Link to={resource.url} className="flex items-center text-orange-500 hover:text-orange-700 transition-colors">
                       <ArrowRight className="h-4 w-4 mr-2" />
                       <span>{resource.name}</span>
                     </Link>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </motion.div>
@@ -176,42 +149,8 @@ const BipolarDisorderTherapy = () => {
       
       {/* New testimonial section specifically for bipolar disorder treatment */}
       <ServiceContentSection title="What Our Bipolar Disorder Treatment Clients in Havertown Say" hasBgPattern={false}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
-          >
-            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
-              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-            </svg>
-            <div className="pl-6 pt-6">
-              <p className="italic text-amber-900">Living with Bipolar II Disorder felt like an endless rollercoaster before I found Sunrise Human Care. Their integrated approach combining therapy with medication management has given me stability I didn't think was possible. I've now gone over a year without a significant mood episode thanks to their bipolar disorder treatment in Havertown.</p>
-              <p className="mt-4 font-medium text-amber-800">- Bipolar disorder client, Havertown</p>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white p-6 rounded-xl shadow-sm border border-amber-100 relative"
-          >
-            <svg className="h-8 w-8 text-amber-300 absolute top-4 left-4 opacity-40" fill="currentColor" viewBox="0 0 32 32">
-              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-            </svg>
-            <div className="pl-6 pt-6">
-              <p className="italic text-amber-900">As a family member of someone with Bipolar I Disorder, I was struggling to understand and support my sister. The family component of Sunrise's bipolar disorder treatment in Havertown was invaluable. They educated us about the condition, helped us identify warning signs, and showed us how to be supportive without enabling. It's made a world of difference for our entire family.</p>
-              <p className="mt-4 font-medium text-amber-800">- Family member of client, Broomall</p>
-            </div>
-          </motion.div>
-        </div>
+        
       </ServiceContentSection>
-    </ServicePageLayout>
-  );
+    </ServicePageLayout>;
 };
-
 export default BipolarDisorderTherapy;
