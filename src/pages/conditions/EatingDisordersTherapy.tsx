@@ -1,6 +1,7 @@
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
+
 const EatingDisordersTherapy = () => {
   const pageData = {
     title: "Eating Disorders Treatment",
@@ -48,15 +49,34 @@ const EatingDisordersTherapy = () => {
       url: "/family-therapy-havertown-pa"
     }]
   };
+
   return <>
-      <SEOHead title="Eating Disorders Treatment in Havertown, PA | Sunrise Human Care" description="Specialized eating disorder therapy in Havertown for anorexia, bulimia, binge eating, and ARFID. Evidence-based treatment combining psychological therapy and nutritional guidance. Personalized recovery plans. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/eating-disorders-treatment-havertown-pa" keywords="eating disorder treatment Havertown, anorexia therapy Pennsylvania, bulimia counseling, binge eating disorder help, ARFID treatment, body image therapy, nutritional counseling Delaware County" serviceSchema={{
-      name: "Eating Disorders Treatment",
-      description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating patterns, addressing both psychological and physical aspects.",
-      provider: "Sunrise Human Care Services",
-      serviceType: "Eating Disorder Therapy",
-      areaServed: "Havertown, PA and Delaware County"
-    }} />
-      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
+      <SEOHead 
+        title="Eating Disorders Treatment in Havertown, PA | Sunrise Human Care" 
+        description="Specialized eating disorder therapy in Havertown for anorexia, bulimia, binge eating, and ARFID. Evidence-based treatment combining psychological therapy and nutritional guidance. Personalized recovery plans. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/eating-disorders-treatment-havertown-pa" 
+        keywords="eating disorder treatment Havertown, anorexia therapy Pennsylvania, bulimia counseling, binge eating disorder help, ARFID treatment, body image therapy, nutritional counseling Delaware County" 
+        serviceSchema={{
+          name: "Eating Disorders Treatment",
+          description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating patterns, addressing both psychological and physical aspects.",
+          provider: "Sunrise Human Care Services",
+          serviceType: "Eating Disorder Therapy",
+          areaServed: "Havertown, PA and Delaware County"
+        }} 
+      />
+      <ServicePageLayout 
+        title={pageData.title} 
+        description={pageData.description} 
+        pageTitle={pageData.pageTitle} 
+        metaDescription={pageData.metaDescription} 
+        serviceType={pageData.serviceType} 
+        canonicalUrl={pageData.canonicalUrl} 
+        heroImage={pageData.heroImage} 
+        benefits={pageData.benefits} 
+        approaches={pageData.approaches} 
+        faqs={pageData.faqs} 
+        relatedServices={pageData.relatedServices}
+      >
         {/* Service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
@@ -82,8 +102,6 @@ const EatingDisordersTherapy = () => {
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-                
-                
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-sunrise-500 mr-2">✓</span>
@@ -123,28 +141,10 @@ const EatingDisordersTherapy = () => {
           </div>
         </section>
         
-        {/* Testimonial Section - Adding social proof */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center font-playfair">
-              Recovery Stories from Havertown
-            </h2>
-            
-            <blockquote className="border-l-4 border-orange-400 pl-6 py-3 mb-8 italic">
-              <p className="mb-4">"The eating disorder treatment team at Sunrise Human Care helped me regain control of my life. Their compassionate approach and specialized techniques gave me tools to manage my relationship with food and rebuild my self-image. I'm forever grateful for their support on my recovery journey."</p>
-              <footer className="text-sm text-gray-600">— Former client, Eating Disorder Treatment Program</footer>
-            </blockquote>
-            
-            <blockquote className="border-l-4 border-orange-400 pl-6 py-3 italic">
-              <p className="mb-4">"As a parent, watching my teenager struggle with an eating disorder was devastating. The team at Sunrise provided not only excellent care for my child but also guidance for our whole family. Their comprehensive approach made all the difference in our journey toward healing."</p>
-              <footer className="text-sm text-gray-600">— Parent of adolescent client, Havertown</footer>
-            </blockquote>
-          </div>
-        </section>
-        
         {/* Local Resources Section */}
         
       </ServicePageLayout>
     </>;
 };
+
 export default EatingDisordersTherapy;
