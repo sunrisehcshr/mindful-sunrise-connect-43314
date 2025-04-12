@@ -80,6 +80,13 @@ const BPDTherapy = () => {
         description="Specialized BPD treatment in Havertown using Dialectical Behavior Therapy (DBT) and evidence-based approaches. Expert help with emotional regulation, relationship skills, and distress tolerance. Insurance accepted. Call (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/bpd-therapy-havertown-pa"
         keywords="BPD therapy Havertown, Borderline Personality Disorder treatment PA, DBT therapy Delaware County, emotional regulation counseling, relationship skills therapy, distress tolerance training"
+        serviceSchema={{
+          name: "Borderline Personality Disorder Treatment",
+          description: "Specialized therapy for Borderline Personality Disorder (BPD) using DBT and evidence-based approaches for emotion regulation and interpersonal effectiveness.",
+          provider: "Sunrise Human Care Services",
+          serviceType: "BPD Therapy",
+          areaServed: "Havertown, PA and Delaware County"
+        }}
       />
       <ServicePageLayout 
         title={pageData.title}
@@ -162,6 +169,79 @@ const BPDTherapy = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* DBT Skills Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center font-playfair">
+              Core DBT Skills for BPD Treatment
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-3 text-orange-600">Mindfulness</h3>
+                <p>Learning to be present in the moment without judgment, increasing awareness of emotions and thoughts, and developing greater control over attention.</p>
+              </div>
+              
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-3 text-orange-600">Distress Tolerance</h3>
+                <p>Building skills to tolerate painful emotions without acting impulsively, using crisis survival strategies, and accepting reality as it is.</p>
+              </div>
+              
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-3 text-orange-600">Emotion Regulation</h3>
+                <p>Understanding emotions, reducing emotional vulnerability, decreasing emotional suffering, and increasing positive emotional experiences.</p>
+              </div>
+              
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-3 text-orange-600">Interpersonal Effectiveness</h3>
+                <p>Developing skills to navigate relationships, communicate needs effectively, set boundaries, and build self-respect while maintaining relationships.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Local Resources Section */}
+        <section className="py-16 bg-orange-50">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center font-playfair">
+              BPD Resources in Havertown and Delaware County
+            </h2>
+            
+            <p className="mb-6">In addition to our professional treatment services at Sunrise Human Care Services, these resources may be helpful for individuals with BPD and their families in the Havertown area:</p>
+            
+            <ul className="space-y-4 mb-8">
+              <li className="flex items-start">
+                <span className="text-orange-500 mr-2">•</span>
+                <div>
+                  <strong className="block">National Education Alliance for Borderline Personality Disorder</strong>
+                  <a href="https://www.borderlinepersonalitydisorder.org" className="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">www.borderlinepersonalitydisorder.org</a>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-orange-500 mr-2">•</span>
+                <div>
+                  <strong className="block">Delaware County NAMI</strong>
+                  <span>Support groups and resources for individuals with mental health conditions and their families</span>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-orange-500 mr-2">•</span>
+                <div>
+                  <strong className="block">Family Connections Program</strong>
+                  <span>Education and support program for families of people with BPD, available in various locations throughout the Philadelphia area</span>
+                </div>
+              </li>
+            </ul>
+            
+            <div className="text-center">
+              <p className="mb-6">If you or a loved one is in crisis, please use these emergency resources:</p>
+              <p className="font-bold">National Suicide Prevention Lifeline: 988</p>
+              <p className="font-bold">Crisis Text Line: Text HOME to 741741</p>
+              <p className="mt-4">For non-emergency information about our BPD treatment program in Havertown, call us at (814) 620-2162.</p>
             </div>
           </div>
         </section>

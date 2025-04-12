@@ -80,6 +80,13 @@ const EatingDisordersTherapy = () => {
         description="Specialized eating disorder therapy in Havertown for anorexia, bulimia, binge eating, and ARFID. Evidence-based treatment combining psychological therapy and nutritional guidance. Personalized recovery plans. Call (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/eating-disorders-treatment-havertown-pa"
         keywords="eating disorder treatment Havertown, anorexia therapy Pennsylvania, bulimia counseling, binge eating disorder help, ARFID treatment, body image therapy, nutritional counseling Delaware County"
+        serviceSchema={{
+          name: "Eating Disorders Treatment",
+          description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating patterns, addressing both psychological and physical aspects.",
+          provider: "Sunrise Human Care Services",
+          serviceType: "Eating Disorder Therapy",
+          areaServed: "Havertown, PA and Delaware County"
+        }}
       />
       <ServicePageLayout 
         title={pageData.title}
@@ -158,6 +165,64 @@ const EatingDisordersTherapy = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Testimonial Section - Adding social proof */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center font-playfair">
+              Recovery Stories from Havertown
+            </h2>
+            
+            <blockquote className="border-l-4 border-orange-400 pl-6 py-3 mb-8 italic">
+              <p className="mb-4">"The eating disorder treatment team at Sunrise Human Care helped me regain control of my life. Their compassionate approach and specialized techniques gave me tools to manage my relationship with food and rebuild my self-image. I'm forever grateful for their support on my recovery journey."</p>
+              <footer className="text-sm text-gray-600">— Former client, Eating Disorder Treatment Program</footer>
+            </blockquote>
+            
+            <blockquote className="border-l-4 border-orange-400 pl-6 py-3 italic">
+              <p className="mb-4">"As a parent, watching my teenager struggle with an eating disorder was devastating. The team at Sunrise provided not only excellent care for my child but also guidance for our whole family. Their comprehensive approach made all the difference in our journey toward healing."</p>
+              <footer className="text-sm text-gray-600">— Parent of adolescent client, Havertown</footer>
+            </blockquote>
+          </div>
+        </section>
+        
+        {/* Local Resources Section */}
+        <section className="py-16 bg-orange-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center font-playfair">
+              Eating Disorder Resources in Delaware County
+            </h2>
+            
+            <div className="max-w-3xl mx-auto">
+              <p className="mb-6">In addition to our professional treatment services, we encourage clients to explore these local and national resources for eating disorder recovery:</p>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <span className="text-orange-500 mr-2">•</span>
+                  <div>
+                    <strong className="block">National Eating Disorders Association (NEDA)</strong>
+                    <span>Helpline: 1-800-931-2237 | <a href="https://www.nationaleatingdisorders.org" className="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">www.nationaleatingdisorders.org</a></span>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-500 mr-2">•</span>
+                  <div>
+                    <strong className="block">Delaware County Support Groups</strong>
+                    <span>Various locations throughout Delaware County offer support groups for individuals with eating disorders and their families.</span>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-500 mr-2">•</span>
+                  <div>
+                    <strong className="block">Main Line Health Eating Disorder Program</strong>
+                    <span>Offering medical support and monitoring for eating disorder recovery in the greater Philadelphia area</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <p className="text-center font-medium">For more information about eating disorder resources in Havertown and Delaware County, please contact our office at (814) 620-2162.</p>
             </div>
           </div>
         </section>

@@ -80,6 +80,13 @@ const GriefTherapy = () => {
         description="Compassionate grief counseling in Havertown for bereavement, complicated grief, and significant losses. Professional support for processing emotions, creating meaningful rituals, and adapting to life changes. Call (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/grief-therapy-havertown-pa"
         keywords="grief counseling Havertown, bereavement therapy Pennsylvania, loss support Delaware County, complicated grief treatment, anniversary reaction help, memorial rituals counseling"
+        serviceSchema={{
+          name: "Grief & Loss Therapy",
+          description: "Compassionate support for bereavement, complicated grief, and adapting to significant losses through evidence-based therapy approaches.",
+          provider: "Sunrise Human Care Services",
+          serviceType: "Grief Counseling",
+          areaServed: "Havertown, PA and Delaware County"
+        }}
       />
       <ServicePageLayout 
         title={pageData.title}
@@ -162,6 +169,88 @@ const GriefTherapy = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Types of Loss Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center font-playfair">
+              Different Types of Loss We Help With
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-orange-600">Death of a Loved One</h3>
+                <p>Support for those grieving the loss of family members, partners, friends, and other significant relationships.</p>
+              </div>
+              
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-orange-600">Relationship Endings</h3>
+                <p>Help processing grief from divorce, separation, breakups, and estrangement from family members.</p>
+              </div>
+              
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-orange-600">Health-Related Losses</h3>
+                <p>Support for those grieving changes in health, abilities, independence, or anticipated future due to illness or disability.</p>
+              </div>
+              
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-orange-600">Pregnancy and Reproductive Loss</h3>
+                <p>Compassionate care for those experiencing miscarriage, stillbirth, infertility, or adoption disruptions.</p>
+              </div>
+              
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-orange-600">Major Life Transitions</h3>
+                <p>Support through grief related to retirement, empty nest, relocation, career changes, and other significant life shifts.</p>
+              </div>
+              
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-orange-600">Ambiguous Loss</h3>
+                <p>Help with unclear or unresolved losses such as missing persons, dementia, or when a loved one is physically present but psychologically absent.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Local Grief Resources */}
+        <section className="py-16 bg-orange-50">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center font-playfair">
+              Grief Resources in Delaware County
+            </h2>
+            
+            <p className="mb-6">In addition to our professional grief therapy services at Sunrise Human Care Services, these local resources may provide additional support:</p>
+            
+            <ul className="space-y-4 mb-8">
+              <li className="flex items-start">
+                <span className="text-orange-500 mr-2">•</span>
+                <div>
+                  <strong className="block">Delaware County Bereavement Support Groups</strong>
+                  <span>Various organizations in Havertown and surrounding communities offer free or low-cost grief support groups.</span>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-orange-500 mr-2">•</span>
+                <div>
+                  <strong className="block">Local Hospice Bereavement Programs</strong>
+                  <span>Many hospice organizations offer bereavement support for community members, not just families of hospice patients.</span>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-orange-500 mr-2">•</span>
+                <div>
+                  <strong className="block">Compassionate Friends</strong>
+                  <span>Support group for parents who have lost a child, with chapter meetings in Delaware County.</span>
+                </div>
+              </li>
+            </ul>
+            
+            <div className="text-center">
+              <a href="/contact" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-orange-600 text-white shadow hover:bg-orange-700 h-10 px-6 py-2">
+                Contact Us for More Resources
+              </a>
             </div>
           </div>
         </section>

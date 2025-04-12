@@ -1,6 +1,6 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
+import SEOHead from '../../components/SEOHead';
 
 const ADHDTreatment = () => {
   const benefits = [
@@ -57,90 +57,104 @@ const ADHDTreatment = () => {
   ];
   
   return (
-    <ServicePageLayout
-      title="ADHD Treatment in Havertown, PA"
-      description="Comprehensive ADHD assessment and treatment for children, adolescents, and adults, helping you manage symptoms and reach your full potential."
-      pageTitle="Expert ADHD Treatment in Havertown, PA - Assessment & Management | Sunrise Human Care"
-      metaDescription="Specialized ADHD treatment in Havertown, PA for children, teens, and adults. Comprehensive assessment, therapy, and medication management to improve focus, organization, and productivity."
-      serviceType="ADHD Treatment"
-      canonicalUrl="/adhd-treatment-havertown-pa"
-      benefits={benefits}
-      approaches={approaches}
-      faqs={faqs}
-      relatedServices={relatedServices}
-    >
-      {/* Service-specific content */}
-      <section className="py-16 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                Our Approach to ADHD Treatment
-              </h2>
+    <>
+      <SEOHead 
+        title="ADHD Treatment Havertown, PA | Child & Adult ADHD Therapy | Sunrise Human Care" 
+        description="Expert ADHD treatment in Havertown for children, teens, and adults. Comprehensive assessment, therapy, medication management, and practical strategies to improve focus, organization, and daily functioning. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/adhd-treatment-havertown-pa"
+        keywords="ADHD treatment Havertown, ADHD therapy Delaware County, ADHD medication management, adult ADHD treatment PA, childhood ADHD assessment, executive functioning skills training"
+        serviceSchema={{
+          name: "ADHD Treatment",
+          description: "Comprehensive ADHD assessment and treatment for children, adolescents, and adults, helping you manage symptoms and reach your full potential.",
+          provider: "Sunrise Human Care Services",
+          serviceType: "ADHD Therapy",
+          areaServed: "Havertown, PA and Delaware County"
+        }}
+      />
+      <ServicePageLayout
+        title="ADHD Treatment in Havertown, PA"
+        description="Comprehensive ADHD assessment and treatment for children, adolescents, and adults, helping you manage symptoms and reach your full potential."
+        pageTitle="Expert ADHD Treatment in Havertown, PA - Assessment & Management | Sunrise Human Care"
+        metaDescription="Specialized ADHD treatment in Havertown, PA for children, teens, and adults. Comprehensive assessment, therapy, and medication management to improve focus, organization, and productivity."
+        serviceType="ADHD Treatment"
+        canonicalUrl="/adhd-treatment-havertown-pa"
+        benefits={benefits}
+        approaches={approaches}
+        faqs={faqs}
+        relatedServices={relatedServices}
+      >
+        <section className="py-16 bg-secondary/10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
+                  Our Approach to ADHD Treatment
+                </h2>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services in Havertown, PA, we take a comprehensive approach to ADHD treatment, beginning with a thorough evaluation to confirm diagnosis, identify specific challenges, and understand your unique strengths and weaknesses.
+                  </p>
+                  
+                  <p>
+                    We recognize that ADHD affects different people in different ways. Our treatment plans are individualized, focusing on the specific areas where ADHD is impacting your life, whether it's academic performance, work productivity, relationships, or daily functioning.
+                  </p>
+                  
+                  <p>
+                    Our approach combines evidence-based therapies with practical skill-building. We'll help you develop effective strategies for organization, time management, and planning while addressing any emotional challenges that often accompany ADHD, such as frustration, low self-esteem, or anxiety.
+                  </p>
+                  
+                  <p>
+                    When appropriate, we work closely with our psychiatric providers to integrate medication into your treatment plan. This multimodal approach—combining behavioral strategies, skill development, and potentially medication—provides the most effective ADHD management.
+                  </p>
+                </div>
+              </div>
               
-              <div className="space-y-4">
-                <p>
-                  At Sunrise Human Care Services in Havertown, PA, we take a comprehensive approach to ADHD treatment, beginning with a thorough evaluation to confirm diagnosis, identify specific challenges, and understand your unique strengths and weaknesses.
-                </p>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 font-playfair">
+                  Our ADHD Treatment Services Include:
+                </h3>
                 
-                <p>
-                  We recognize that ADHD affects different people in different ways. Our treatment plans are individualized, focusing on the specific areas where ADHD is impacting your life, whether it's academic performance, work productivity, relationships, or daily functioning.
-                </p>
-                
-                <p>
-                  Our approach combines evidence-based therapies with practical skill-building. We'll help you develop effective strategies for organization, time management, and planning while addressing any emotional challenges that often accompany ADHD, such as frustration, low self-esteem, or anxiety.
-                </p>
-                
-                <p>
-                  When appropriate, we work closely with our psychiatric providers to integrate medication into your treatment plan. This multimodal approach—combining behavioral strategies, skill development, and potentially medication—provides the most effective ADHD management.
-                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Comprehensive ADHD assessments and diagnosis</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Individual therapy for children, teens, and adults with ADHD</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Executive functioning skills training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Parent training for managing child ADHD</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Academic and workplace accommodations guidance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Organizational and time management coaching</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Medication evaluation and management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-sunrise-500 mr-2">✓</span>
+                    <span>Treatment for co-occurring conditions (anxiety, depression)</span>
+                  </li>
+                </ul>
               </div>
             </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
-              <h3 className="text-xl font-semibold mb-4 font-playfair">
-                Our ADHD Treatment Services Include:
-              </h3>
-              
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Comprehensive ADHD assessments and diagnosis</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Individual therapy for children, teens, and adults with ADHD</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Executive functioning skills training</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Parent training for managing child ADHD</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Academic and workplace accommodations guidance</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Organizational and time management coaching</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Medication evaluation and management</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sunrise-500 mr-2">✓</span>
-                  <span>Treatment for co-occurring conditions (anxiety, depression)</span>
-                </li>
-              </ul>
-            </div>
           </div>
-        </div>
-      </section>
-    </ServicePageLayout>
+        </section>
+      </ServicePageLayout>
+    </>
   );
 };
 

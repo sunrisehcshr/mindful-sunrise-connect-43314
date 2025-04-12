@@ -1,9 +1,9 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import SEOHead from '../../components/SEOHead';
 
 const TraumaPTSDTherapy = () => {
   const benefits = [
@@ -60,88 +60,102 @@ const TraumaPTSDTherapy = () => {
   ];
   
   return (
-    <ServicePageLayout
-      title="Trauma & PTSD Therapy in Havertown, PA"
-      description="Specialized therapeutic approaches for healing from trauma and PTSD, including EMDR therapy and trauma-focused counseling."
-      pageTitle="Expert Trauma & PTSD Therapy in Havertown, PA - EMDR & Trauma Treatment | Sunrise Human Care"
-      metaDescription="Effective trauma and PTSD treatment in Havertown, PA. Specialized approaches including EMDR therapy help you process traumatic experiences and reclaim your life. Schedule today."
-      serviceType="Trauma & PTSD Therapy"
-      canonicalUrl="/ptsd-therapy-havertown-pa"
-      benefits={benefits}
-      approaches={approaches}
-      faqs={faqs}
-      relatedServices={relatedServices}
-    >
-      {/* Enhanced service-specific content */}
-      <ServiceContentSection
-        title="Our Approach to Trauma Treatment"
-        hasBgPattern={true}
+    <>
+      <SEOHead 
+        title="Trauma & PTSD Therapy in Havertown, PA | EMDR Therapy | Sunrise Human Care" 
+        description="Specialized trauma and PTSD treatment in Havertown, PA including EMDR therapy. Our trauma-informed therapists help you process traumatic experiences and reduce symptoms like flashbacks, nightmares, and anxiety. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/ptsd-therapy-havertown-pa"
+        keywords="trauma therapy Havertown, PTSD treatment Pennsylvania, EMDR therapy Delaware County, trauma-focused CBT, childhood trauma counseling, complex PTSD therapy, trauma recovery"
+        serviceSchema={{
+          name: "Trauma & PTSD Therapy",
+          description: "Specialized therapeutic approaches for healing from trauma and PTSD, including EMDR therapy and trauma-focused counseling.",
+          provider: "Sunrise Human Care Services",
+          serviceType: "Trauma Treatment",
+          areaServed: "Havertown, PA and Delaware County"
+        }}
+      />
+      <ServicePageLayout
+        title="Trauma & PTSD Therapy in Havertown, PA"
+        description="Specialized therapeutic approaches for healing from trauma and PTSD, including EMDR therapy and trauma-focused counseling."
+        pageTitle="Expert Trauma & PTSD Therapy in Havertown, PA - EMDR & Trauma Treatment | Sunrise Human Care"
+        metaDescription="Effective trauma and PTSD treatment in Havertown, PA. Specialized approaches including EMDR therapy help you process traumatic experiences and reclaim your life. Schedule today."
+        serviceType="Trauma & PTSD Therapy"
+        canonicalUrl="/ptsd-therapy-havertown-pa"
+        benefits={benefits}
+        approaches={approaches}
+        faqs={faqs}
+        relatedServices={relatedServices}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="space-y-5 text-muted-foreground">
-              <p className="leading-relaxed">
-                At Sunrise Human Care Services in Havertown, PA, we understand that trauma can profoundly impact every aspect of your life. Our trauma-informed therapists specialize in evidence-based approaches specifically designed to help you process traumatic experiences and reduce their impact on your daily life.
-              </p>
-              
-              <p className="leading-relaxed">
-                We begin with a thorough assessment to understand your specific trauma history, symptoms, and treatment goals. Based on this assessment, we'll recommend the most appropriate therapeutic approach for your particular situation, whether that's EMDR, trauma-focused CBT, or another specialized approach.
-              </p>
-              
-              <p className="leading-relaxed">
-                Safety and stabilization come first—we'll help you develop skills to manage overwhelming emotions and establish a sense of security before processing traumatic material. Throughout treatment, we work at your pace, respecting your boundaries and ensuring you feel in control of the therapeutic process.
-              </p>
-              
-              <p className="leading-relaxed">
-                Our goal is not just symptom reduction but helping you integrate traumatic experiences in a way that allows you to move forward with renewed strength and resilience. Many clients find that effective trauma treatment leads to not only relief from PTSD symptoms but also personal growth and a deeper connection to themselves and others.
-              </p>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
-          >
-            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Our Trauma Services Help With:
-            </h3>
+        <ServiceContentSection
+          title="Our Approach to Trauma Treatment"
+          hasBgPattern={true}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="space-y-5 text-muted-foreground">
+                <p className="leading-relaxed">
+                  At Sunrise Human Care Services in Havertown, PA, we understand that trauma can profoundly impact every aspect of your life. Our trauma-informed therapists specialize in evidence-based approaches specifically designed to help you process traumatic experiences and reduce their impact on your daily life.
+                </p>
+                
+                <p className="leading-relaxed">
+                  We begin with a thorough assessment to understand your specific trauma history, symptoms, and treatment goals. Based on this assessment, we'll recommend the most appropriate therapeutic approach for your particular situation, whether that's EMDR, trauma-focused CBT, or another specialized approach.
+                </p>
+                
+                <p className="leading-relaxed">
+                  Safety and stabilization come first—we'll help you develop skills to manage overwhelming emotions and establish a sense of security before processing traumatic material. Throughout treatment, we work at your pace, respecting your boundaries and ensuring you feel in control of the therapeutic process.
+                </p>
+                
+                <p className="leading-relaxed">
+                  Our goal is not just symptom reduction but helping you integrate traumatic experiences in a way that allows you to move forward with renewed strength and resilience. Many clients find that effective trauma treatment leads to not only relief from PTSD symptoms but also personal growth and a deeper connection to themselves and others.
+                </p>
+              </div>
+            </motion.div>
             
-            <ul className="space-y-3.5">
-              {[
-                "Post-Traumatic Stress Disorder (PTSD)",
-                "Complex trauma and C-PTSD",
-                "Childhood trauma and adverse experiences",
-                "Single-incident trauma (accidents, assaults, etc.)",
-                "Medical trauma",
-                "Combat trauma and military experiences",
-                "Interpersonal trauma and abuse",
-                "Traumatic grief and loss"
-              ].map((item, index) => (
-                <motion.li 
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index }}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </ServiceContentSection>
-    </ServicePageLayout>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+            >
+              <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+                Our Trauma Services Help With:
+              </h3>
+              
+              <ul className="space-y-3.5">
+                {[
+                  "Post-Traumatic Stress Disorder (PTSD)",
+                  "Complex trauma and C-PTSD",
+                  "Childhood trauma and adverse experiences",
+                  "Single-incident trauma (accidents, assaults, etc.)",
+                  "Medical trauma",
+                  "Combat trauma and military experiences",
+                  "Interpersonal trauma and abuse",
+                  "Traumatic grief and loss"
+                ].map((item, index) => (
+                  <motion.li 
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </ServiceContentSection>
+      </ServicePageLayout>
+    </>
   );
 };
 

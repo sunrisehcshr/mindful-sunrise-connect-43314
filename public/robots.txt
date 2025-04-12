@@ -21,8 +21,35 @@ Disallow: /*.json$
 Disallow: /*.xml$
 Disallow: *?*
 
-# Crawl delay directive for bots to prevent server overload
+# Disallow development and test environments
+Disallow: /dev/
+Disallow: /test/
+Disallow: /staging/
+
+# Disallow specific parameters
+Disallow: /*?s=*
+Disallow: /*?p=*
+Disallow: /*&p=*
+Disallow: /*?utm_*
+
+# Allow major search engines specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 10
 
-# Sitemap location
+User-agent: Yandex
+Allow: /
+Crawl-delay: 10
+
+# Crawl delay directive for generic bots to prevent server overload
+Crawl-delay: 10
+
+# Sitemap locations
 Sitemap: https://sunrisehumancare.com/sitemap.xml
+Sitemap: https://sunrisehumancare.com/sitemap-posts.xml
+Sitemap: https://sunrisehumancare.com/sitemap-services.xml
+Sitemap: https://sunrisehumancare.com/sitemap-conditions.xml

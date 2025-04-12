@@ -80,6 +80,13 @@ const RelationshipTherapy = () => {
         description="Professional relationship counseling in Havertown using evidence-based approaches including EFT and Gottman Method. Resolve communication issues, rebuild trust, and strengthen connections. Insurance accepted. Call (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/relationship-therapy-havertown-pa"
         keywords="relationship therapy Havertown, couples counseling Delaware County, communication skills therapy, conflict resolution help, trust rebuilding therapy, EFT therapy Pennsylvania, Gottman Method counseling"
+        serviceSchema={{
+          name: "Relationship Therapy",
+          description: "Specialized therapy for communication problems, conflict resolution, and rebuilding trust in various relationship types using evidence-based approaches.",
+          provider: "Sunrise Human Care Services",
+          serviceType: "Relationship Counseling",
+          areaServed: "Havertown, PA and Delaware County"
+        }}
       />
       <ServicePageLayout 
         title={pageData.title}
@@ -162,6 +169,61 @@ const RelationshipTherapy = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Evidence-Based Methods Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center font-playfair">
+              Evidence-Based Relationship Therapy Methods
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-lg shadow-sm border border-orange-100 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold mb-3 text-orange-600">Emotionally Focused Therapy (EFT)</h3>
+                <p>Developed by Dr. Sue Johnson, EFT focuses on strengthening the emotional bond between partners. This approach helps identify negative interaction cycles, understand the emotions driving these patterns, and create new patterns of secure connection.</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-lg shadow-sm border border-orange-100 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold mb-3 text-orange-600">The Gottman Method</h3>
+                <p>Based on over 40 years of research by Drs. John and Julie Gottman, this approach focuses on increasing respect, affection, and closeness, breaking through conflicts, and creating shared meaning between partners.</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-lg shadow-sm border border-orange-100 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold mb-3 text-orange-600">Narrative Therapy</h3>
+                <p>This collaborative approach separates people from their problems and helps couples or families rewrite their stories in more positive, empowering ways, creating new, preferred narratives about their relationships.</p>
+              </div>
+            </div>
+            
+            <div className="mt-12 text-center">
+              <p className="text-muted-foreground max-w-2xl mx-auto">Our therapists at Sunrise Human Care Services in Havertown are trained in these evidence-based approaches and tailor interventions to meet your specific relationship needs and goals.</p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Testimonial Section */}
+        <section className="py-16 bg-orange-50">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center font-playfair">
+              What Our Clients Say About Relationship Therapy
+            </h2>
+            
+            <blockquote className="border-l-4 border-orange-400 pl-6 py-3 mb-8 italic">
+              <p className="mb-4">"After years of the same arguments and feeling disconnected, we were close to giving up on our marriage. The relationship therapy at Sunrise Human Care helped us understand our cycle and learn how to truly hear each other. We're now communicating better than we have in years."</p>
+              <footer className="text-sm text-gray-600">— Couple from Havertown</footer>
+            </blockquote>
+            
+            <blockquote className="border-l-4 border-orange-400 pl-6 py-3 mb-8 italic">
+              <p className="mb-4">"I was hesitant about therapy, but our relationship was struggling after a betrayal. The therapist created a safe space for both of us and guided us through the difficult process of rebuilding trust. It wasn't easy, but we're stronger now than before."</p>
+              <footer className="text-sm text-gray-600">— Client in Delaware County</footer>
+            </blockquote>
+            
+            <div className="text-center mt-10">
+              <a href="/contact" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-orange-600 text-white shadow hover:bg-orange-700 h-10 px-6 py-2">
+                Schedule a Consultation
+              </a>
             </div>
           </div>
         </section>

@@ -76,9 +76,17 @@ const SomaticDisordersTherapy = () => {
   return (
     <>
       <SEOHead 
-        title={pageData.pageTitle}
-        description={pageData.metaDescription}
-        canonicalUrl={pageData.canonicalUrl}
+        title="Somatic Symptom Disorders Treatment in Havertown, PA | Sunrise Human Care" 
+        description="Specialized therapy for somatic symptom disorders in Havertown, PA. Our mind-body approach addresses persistent physical symptoms, health anxiety, and medically unexplained conditions. Evidence-based treatments to improve daily functioning. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/somatic-disorders-treatment-havertown-pa"
+        keywords="somatic symptom disorder treatment Havertown, health anxiety therapy Delaware County, illness anxiety help, functional neurological symptoms, mind-body therapy PA, medically unexplained symptoms treatment"
+        serviceSchema={{
+          name: "Somatic Symptom Disorders Treatment",
+          description: "Specialized treatment for somatic symptom disorders and related conditions, addressing both physical symptoms and psychological factors.",
+          provider: "Sunrise Human Care Services",
+          serviceType: "Mind-Body Therapy",
+          areaServed: "Havertown, PA and Delaware County"
+        }}
       />
       <ServicePageLayout 
         title={pageData.title}
@@ -161,6 +169,49 @@ const SomaticDisordersTherapy = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Additional Educational Content */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center font-playfair">
+              Understanding the Mind-Body Connection
+            </h2>
+            
+            <div className="prose max-w-none">
+              <p>Physical symptoms and emotional experiences are deeply interconnected. When we experience stress, anxiety, or trauma, our bodies often respond with physical reactions like muscle tension, digestive issues, pain, or fatigue. These physical symptoms are real, not imagined, and can cause significant distress and disruption to daily life.</p>
+              
+              <h3>The Science Behind Somatic Symptoms</h3>
+              <p>Research has shown that the brain and body are in constant communication through complex networks involving the nervous system, immune system, and endocrine (hormone) system. Psychological factors can influence how the brain processes and interprets sensations from the body, sometimes amplifying normal bodily sensations or creating a heightened state of alert to physical symptoms.</p>
+              
+              <h3>Breaking the Cycle</h3>
+              <p>For many individuals with somatic symptom disorders, a cycle develops: physical symptoms cause anxiety, which increases bodily arousal and attention to symptoms, which then intensifies the symptoms further. Our treatment approaches focus on breaking this cycle by addressing both physical symptoms and psychological responses.</p>
+              
+              <h3>Collaborative Care</h3>
+              <p>At Sunrise Human Care Services in Havertown, we believe in a collaborative approach to treating somatic symptom disorders. This often involves working with your primary care physician, specialists, and other healthcare providers to ensure comprehensive care that addresses both physical and psychological aspects of your condition.</p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Local Context */}
+        <section className="py-16 bg-orange-50">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center font-playfair">
+              Somatic Symptom Disorder Treatment in Havertown and Delaware County
+            </h2>
+            
+            <p className="mb-4">Finding specialized care for somatic symptom disorders can be challenging. At Sunrise Human Care Services, we're proud to offer evidence-based treatment for these often misunderstood conditions right here in Havertown, PA.</p>
+            
+            <p className="mb-4">Our practice serves clients throughout Delaware County and the greater Philadelphia area, providing accessible care for individuals struggling with persistent physical symptoms and health-related anxiety.</p>
+            
+            <p className="mb-8">Our location at 2050 West Chester Pike in Havertown is easily accessible from surrounding communities including Broomall, Springfield, Upper Darby, and other Delaware County areas.</p>
+            
+            <div className="text-center">
+              <a href="/contact" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-orange-600 text-white shadow hover:bg-orange-700 h-10 px-6 py-2">
+                Schedule a Consultation
+              </a>
             </div>
           </div>
         </section>
