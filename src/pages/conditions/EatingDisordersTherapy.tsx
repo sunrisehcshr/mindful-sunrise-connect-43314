@@ -1,8 +1,6 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
-
 const EatingDisordersTherapy = () => {
   const pageData = {
     title: "Eating Disorders Treatment",
@@ -12,95 +10,53 @@ const EatingDisordersTherapy = () => {
     serviceType: "Eating Disorders Treatment",
     canonicalUrl: "/eating-disorders-treatment-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
-    benefits: [
-      "Comprehensive assessment and diagnosis",
-      "Personalized treatment planning",
-      "Individual therapy using evidence-based approaches",
-      "Nutritional counseling coordination",
-      "Body image work",
-      "Family involvement when appropriate",
-      "Medical monitoring coordination"
-    ],
-    approaches: [
-      {
-        title: "Understanding Eating Disorders",
-        description: "Eating disorders are serious mental health conditions characterized by disturbed eating behaviors and distressing thoughts and emotions. They include anorexia nervosa, bulimia nervosa, binge eating disorder, and other specified feeding or eating disorders. These conditions can have severe physical and emotional consequences, but recovery is possible with proper treatment."
-      },
-      {
-        title: "Our Approach to Eating Disorder Treatment",
-        description: "At Sunrise Human Care Services, we provide specialized eating disorder treatment that addresses both the psychological and physical aspects of these complex conditions. Our multidisciplinary approach combines evidence-based psychotherapy with nutritional guidance and medical monitoring when needed. We focus on improving eating behaviors, addressing underlying emotional issues, and developing a healthier relationship with food and body image."
-      },
-      {
-        title: "Treatment Methods",
-        description: "Our treatment methods include cognitive-behavioral therapy (CBT), dialectical behavior therapy (DBT), acceptance and commitment therapy (ACT), and family-based treatment when appropriate. We work collaboratively with nutritionists, physicians, and other specialists to ensure comprehensive care. Our goal is to help you develop sustainable skills for recovery and long-term well-being."
-      },
-      {
-        title: "Addressing Body Image",
-        description: "Body image disturbance is a central feature of many eating disorders. Our therapists help clients explore and challenge negative body image, develop body acceptance, and reduce body-checking behaviors. We work to shift focus from appearance to body functionality and overall health, supporting a more positive relationship with your body."
-      },
-      {
-        title: "Your Path to Recovery",
-        description: "Recovery from an eating disorder is possible. Our compassionate team provides the support, skills, and guidance needed to overcome disordered eating patterns and develop a healthier relationship with food and your body. We recognize that each person's journey is unique, and we tailor our approach to your specific needs, challenges, and goals."
-      }
-    ],
-    faqs: [
-      {
-        question: "How do I know if I or my loved one has an eating disorder?",
-        answer: "Warning signs include preoccupation with weight, food, and body image; restrictive eating; binge eating; purging behaviors; excessive exercise; and body dissatisfaction. A comprehensive assessment by a healthcare professional is important for diagnosis."
-      },
-      {
-        question: "How long does eating disorder treatment take?",
-        answer: "The duration of treatment varies based on the severity of the eating disorder, individual needs, and treatment response. Recovery is typically a gradual process that can take months to years, with ongoing support often being beneficial."
-      },
-      {
-        question: "Can someone fully recover from an eating disorder?",
-        answer: "Yes, full recovery is possible. Many people with eating disorders recover completely with proper treatment. Recovery involves not only changes in eating behaviors but also addressing underlying psychological issues and developing a healthier relationship with food and body image."
-      }
-    ],
-    relatedServices: [
-      {
-        title: "Depression Therapy",
-        url: "/depression-therapy-havertown-pa"
-      },
-      {
-        title: "Anxiety Therapy",
-        url: "/anxiety-therapy-havertown-pa"
-      },
-      {
-        title: "Family Therapy",
-        url: "/family-therapy-havertown-pa"
-      }
-    ]
+    benefits: ["Comprehensive assessment and diagnosis", "Personalized treatment planning", "Individual therapy using evidence-based approaches", "Nutritional counseling coordination", "Body image work", "Family involvement when appropriate", "Medical monitoring coordination"],
+    approaches: [{
+      title: "Understanding Eating Disorders",
+      description: "Eating disorders are serious mental health conditions characterized by disturbed eating behaviors and distressing thoughts and emotions. They include anorexia nervosa, bulimia nervosa, binge eating disorder, and other specified feeding or eating disorders. These conditions can have severe physical and emotional consequences, but recovery is possible with proper treatment."
+    }, {
+      title: "Our Approach to Eating Disorder Treatment",
+      description: "At Sunrise Human Care Services, we provide specialized eating disorder treatment that addresses both the psychological and physical aspects of these complex conditions. Our multidisciplinary approach combines evidence-based psychotherapy with nutritional guidance and medical monitoring when needed. We focus on improving eating behaviors, addressing underlying emotional issues, and developing a healthier relationship with food and body image."
+    }, {
+      title: "Treatment Methods",
+      description: "Our treatment methods include cognitive-behavioral therapy (CBT), dialectical behavior therapy (DBT), acceptance and commitment therapy (ACT), and family-based treatment when appropriate. We work collaboratively with nutritionists, physicians, and other specialists to ensure comprehensive care. Our goal is to help you develop sustainable skills for recovery and long-term well-being."
+    }, {
+      title: "Addressing Body Image",
+      description: "Body image disturbance is a central feature of many eating disorders. Our therapists help clients explore and challenge negative body image, develop body acceptance, and reduce body-checking behaviors. We work to shift focus from appearance to body functionality and overall health, supporting a more positive relationship with your body."
+    }, {
+      title: "Your Path to Recovery",
+      description: "Recovery from an eating disorder is possible. Our compassionate team provides the support, skills, and guidance needed to overcome disordered eating patterns and develop a healthier relationship with food and your body. We recognize that each person's journey is unique, and we tailor our approach to your specific needs, challenges, and goals."
+    }],
+    faqs: [{
+      question: "How do I know if I or my loved one has an eating disorder?",
+      answer: "Warning signs include preoccupation with weight, food, and body image; restrictive eating; binge eating; purging behaviors; excessive exercise; and body dissatisfaction. A comprehensive assessment by a healthcare professional is important for diagnosis."
+    }, {
+      question: "How long does eating disorder treatment take?",
+      answer: "The duration of treatment varies based on the severity of the eating disorder, individual needs, and treatment response. Recovery is typically a gradual process that can take months to years, with ongoing support often being beneficial."
+    }, {
+      question: "Can someone fully recover from an eating disorder?",
+      answer: "Yes, full recovery is possible. Many people with eating disorders recover completely with proper treatment. Recovery involves not only changes in eating behaviors but also addressing underlying psychological issues and developing a healthier relationship with food and body image."
+    }],
+    relatedServices: [{
+      title: "Depression Therapy",
+      url: "/depression-therapy-havertown-pa"
+    }, {
+      title: "Anxiety Therapy",
+      url: "/anxiety-therapy-havertown-pa"
+    }, {
+      title: "Family Therapy",
+      url: "/family-therapy-havertown-pa"
+    }]
   };
-
-  return (
-    <>
-      <SEOHead 
-        title="Eating Disorders Treatment in Havertown, PA | Sunrise Human Care" 
-        description="Specialized eating disorder therapy in Havertown for anorexia, bulimia, binge eating, and ARFID. Evidence-based treatment combining psychological therapy and nutritional guidance. Personalized recovery plans. Call (814) 620-2162." 
-        canonicalUrl="https://sunrisehumancare.com/eating-disorders-treatment-havertown-pa"
-        keywords="eating disorder treatment Havertown, anorexia therapy Pennsylvania, bulimia counseling, binge eating disorder help, ARFID treatment, body image therapy, nutritional counseling Delaware County"
-        serviceSchema={{
-          name: "Eating Disorders Treatment",
-          description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating patterns, addressing both psychological and physical aspects.",
-          provider: "Sunrise Human Care Services",
-          serviceType: "Eating Disorder Therapy",
-          areaServed: "Havertown, PA and Delaware County"
-        }}
-      />
-      <ServicePageLayout 
-        title={pageData.title}
-        description={pageData.description}
-        pageTitle={pageData.pageTitle}
-        metaDescription={pageData.metaDescription}
-        serviceType={pageData.serviceType}
-        canonicalUrl={pageData.canonicalUrl}
-        heroImage={pageData.heroImage}
-        benefits={pageData.benefits}
-        approaches={pageData.approaches}
-        faqs={pageData.faqs}
-        relatedServices={pageData.relatedServices}
-      >
+  return <>
+      <SEOHead title="Eating Disorders Treatment in Havertown, PA | Sunrise Human Care" description="Specialized eating disorder therapy in Havertown for anorexia, bulimia, binge eating, and ARFID. Evidence-based treatment combining psychological therapy and nutritional guidance. Personalized recovery plans. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/eating-disorders-treatment-havertown-pa" keywords="eating disorder treatment Havertown, anorexia therapy Pennsylvania, bulimia counseling, binge eating disorder help, ARFID treatment, body image therapy, nutritional counseling Delaware County" serviceSchema={{
+      name: "Eating Disorders Treatment",
+      description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating patterns, addressing both psychological and physical aspects.",
+      provider: "Sunrise Human Care Services",
+      serviceType: "Eating Disorder Therapy",
+      areaServed: "Havertown, PA and Delaware County"
+    }} />
+      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
         {/* Service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
@@ -189,46 +145,8 @@ const EatingDisordersTherapy = () => {
         </section>
         
         {/* Local Resources Section */}
-        <section className="py-16 bg-orange-50">
-          <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center font-playfair">
-              Eating Disorder Resources in Delaware County
-            </h2>
-            
-            <div className="max-w-3xl mx-auto">
-              <p className="mb-6">In addition to our professional treatment services, we encourage clients to explore these local and national resources for eating disorder recovery:</p>
-              
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
-                  <div>
-                    <strong className="block">National Eating Disorders Association (NEDA)</strong>
-                    <span>Helpline: 1-800-931-2237 | <a href="https://www.nationaleatingdisorders.org" className="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">www.nationaleatingdisorders.org</a></span>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
-                  <div>
-                    <strong className="block">Delaware County Support Groups</strong>
-                    <span>Various locations throughout Delaware County offer support groups for individuals with eating disorders and their families.</span>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
-                  <div>
-                    <strong className="block">Main Line Health Eating Disorder Program</strong>
-                    <span>Offering medical support and monitoring for eating disorder recovery in the greater Philadelphia area</span>
-                  </div>
-                </li>
-              </ul>
-              
-              <p className="text-center font-medium">For more information about eating disorder resources in Havertown and Delaware County, please contact our office at (814) 620-2162.</p>
-            </div>
-          </div>
-        </section>
+        
       </ServicePageLayout>
-    </>
-  );
+    </>;
 };
-
 export default EatingDisordersTherapy;
