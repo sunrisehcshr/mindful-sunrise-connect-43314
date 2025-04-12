@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -69,17 +68,11 @@ const ServicePageLayout = ({
 
   // For approach and card items - enhanced soft background
   const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
-  
+
   // Extract service name for schema
   const serviceName = serviceType || title.split('in')[0].trim();
-  
   return <>
-      <SEOHead 
-        title={pageTitle} 
-        description={metaDescription} 
-        canonicalUrl={canonicalUrl} 
-        keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`}
-      />
+      <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`} />
       <SchemaMarkup />
 
       <div className="flex flex-col min-h-screen">
@@ -175,39 +168,7 @@ const ServicePageLayout = ({
           </section>
           
           {/* Approaches Section - With warm gradient background properly applied */}
-          <section className={`py-12 md:py-16 ${warmGradientBg}`}>
-            {warmGradientOverlay}
-            
-            <div className="container relative z-10 mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Our {serviceType} Approach in Havertown</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
-                <p className="text-amber-900 mb-6 md:mb-8">
-                  We utilize various evidence-based therapies tailored to your specific needs. Our mental health care in Havertown serves clients from throughout Delaware County.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {approaches.map((approach, index) => <motion.div key={index} initial={{
-                opacity: 0,
-                y: 20
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }} className={`relative overflow-hidden rounded-lg p-5 md:p-6 ${itemBgClass}`}>
-                    <div className="relative z-10">
-                      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-amber-900">{approach.title}</h3>
-                      <p className="text-amber-800 text-sm md:text-base">{approach.description}</p>
-                    </div>
-                  </motion.div>)}
-              </div>
-            </div>
-          </section>
+          
           
           {/* CTA Section - Fixed button alignment */}
           <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
