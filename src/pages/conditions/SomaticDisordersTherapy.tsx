@@ -1,8 +1,6 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
-
 const SomaticDisordersTherapy = () => {
   const pageData = {
     title: "Somatic Symptom Disorders Treatment",
@@ -12,95 +10,53 @@ const SomaticDisordersTherapy = () => {
     serviceType: "Somatic Symptom Disorders Treatment",
     canonicalUrl: "/somatic-disorders-treatment-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
-    benefits: [
-      "Comprehensive biopsychosocial assessment",
-      "Cognitive-behavioral therapy for somatic symptoms",
-      "Mind-body techniques and somatic awareness",
-      "Stress reduction and relaxation training",
-      "Coping skills for physical discomfort",
-      "Communication strategies with healthcare providers",
-      "Functional improvement focus"
-    ],
-    approaches: [
-      {
-        title: "Understanding Somatic Symptom Disorders",
-        description: "Somatic symptom disorders involve physical symptoms that cause significant distress and disruption to daily functioning. These conditions are characterized by excessive thoughts, feelings, and behaviors related to physical symptoms, regardless of whether a medical cause can be identified. The physical symptoms are real and not intentionally produced, though psychological factors play an important role in how they're experienced and managed."
-      },
-      {
-        title: "Our Approach to Somatic Symptom Disorders",
-        description: "At Sunrise Human Care Services, we provide specialized treatment for somatic symptom disorders that addresses the complex interaction between physical experiences and psychological processes. Our approach validates the reality of physical symptoms while helping clients develop more adaptive ways of understanding and responding to bodily sensations. We work collaboratively with medical providers to ensure comprehensive care."
-      },
-      {
-        title: "Evidence-Based Treatment Methods",
-        description: "Our treatment utilizes cognitive-behavioral therapy specifically adapted for somatic symptoms, along with mindfulness-based interventions and acceptance-based approaches. These methods help reduce symptom-related distress, correct misinterpretations of bodily sensations, decrease hypervigilance to physical symptoms, and develop more effective coping strategies."
-      },
-      {
-        title: "Mind-Body Connection",
-        description: "Understanding the connection between mind and body is essential in treating somatic symptom disorders. We help clients recognize how thoughts, emotions, behaviors, and physical sensations interact and influence each other. Through various techniques, clients learn to regulate their nervous system, reduce physiological arousal, and process emotions in healthier ways."
-      },
-      {
-        title: "Your Path to Improved Quality of Life",
-        description: "Living with persistent physical symptoms can be challenging and isolating. Our goal is to help you reduce symptom-related distress, improve daily functioning, and enhance your quality of life. With appropriate treatment, individuals with somatic symptom disorders can experience meaningful improvements in both physical comfort and emotional well-being."
-      }
-    ],
-    faqs: [
-      {
-        question: "Are somatic symptoms 'all in my head'?",
-        answer: "No, somatic symptoms are real physical experiences, not imagined or fabricated. The pain, fatigue, or other physical sensations you feel are genuine. Somatic symptom disorders involve how the brain processes and responds to physical sensations, not whether the sensations exist. Our approach validates your physical experience while addressing psychological factors that may be intensifying symptoms."
-      },
-      {
-        question: "How is psychological treatment helpful for physical symptoms?",
-        answer: "Psychological treatment helps by addressing how you interpret, respond to, and cope with physical symptoms. It can reduce symptom-related anxiety, break cycles of symptom focusing and avoidance, develop skills for managing discomfort, address emotional factors that may exacerbate symptoms, and improve overall functioning despite persistent symptoms."
-      },
-      {
-        question: "Will I still need medical care while in therapy for somatic symptoms?",
-        answer: "Yes, continuing appropriate medical care is important. We work collaboratively with your healthcare providers to ensure comprehensive care. Psychological treatment for somatic symptoms complements rather than replaces medical care. We can help you communicate effectively with medical providers and make informed decisions about your health care."
-      }
-    ],
-    relatedServices: [
-      {
-        title: "Anxiety Therapy",
-        url: "/anxiety-therapy-havertown-pa"
-      },
-      {
-        title: "Depression Therapy",
-        url: "/depression-therapy-havertown-pa"
-      },
-      {
-        title: "Trauma & PTSD Therapy",
-        url: "/ptsd-therapy-havertown-pa"
-      }
-    ]
+    benefits: ["Comprehensive biopsychosocial assessment", "Cognitive-behavioral therapy for somatic symptoms", "Mind-body techniques and somatic awareness", "Stress reduction and relaxation training", "Coping skills for physical discomfort", "Communication strategies with healthcare providers", "Functional improvement focus"],
+    approaches: [{
+      title: "Understanding Somatic Symptom Disorders",
+      description: "Somatic symptom disorders involve physical symptoms that cause significant distress and disruption to daily functioning. These conditions are characterized by excessive thoughts, feelings, and behaviors related to physical symptoms, regardless of whether a medical cause can be identified. The physical symptoms are real and not intentionally produced, though psychological factors play an important role in how they're experienced and managed."
+    }, {
+      title: "Our Approach to Somatic Symptom Disorders",
+      description: "At Sunrise Human Care Services, we provide specialized treatment for somatic symptom disorders that addresses the complex interaction between physical experiences and psychological processes. Our approach validates the reality of physical symptoms while helping clients develop more adaptive ways of understanding and responding to bodily sensations. We work collaboratively with medical providers to ensure comprehensive care."
+    }, {
+      title: "Evidence-Based Treatment Methods",
+      description: "Our treatment utilizes cognitive-behavioral therapy specifically adapted for somatic symptoms, along with mindfulness-based interventions and acceptance-based approaches. These methods help reduce symptom-related distress, correct misinterpretations of bodily sensations, decrease hypervigilance to physical symptoms, and develop more effective coping strategies."
+    }, {
+      title: "Mind-Body Connection",
+      description: "Understanding the connection between mind and body is essential in treating somatic symptom disorders. We help clients recognize how thoughts, emotions, behaviors, and physical sensations interact and influence each other. Through various techniques, clients learn to regulate their nervous system, reduce physiological arousal, and process emotions in healthier ways."
+    }, {
+      title: "Your Path to Improved Quality of Life",
+      description: "Living with persistent physical symptoms can be challenging and isolating. Our goal is to help you reduce symptom-related distress, improve daily functioning, and enhance your quality of life. With appropriate treatment, individuals with somatic symptom disorders can experience meaningful improvements in both physical comfort and emotional well-being."
+    }],
+    faqs: [{
+      question: "Are somatic symptoms 'all in my head'?",
+      answer: "No, somatic symptoms are real physical experiences, not imagined or fabricated. The pain, fatigue, or other physical sensations you feel are genuine. Somatic symptom disorders involve how the brain processes and responds to physical sensations, not whether the sensations exist. Our approach validates your physical experience while addressing psychological factors that may be intensifying symptoms."
+    }, {
+      question: "How is psychological treatment helpful for physical symptoms?",
+      answer: "Psychological treatment helps by addressing how you interpret, respond to, and cope with physical symptoms. It can reduce symptom-related anxiety, break cycles of symptom focusing and avoidance, develop skills for managing discomfort, address emotional factors that may exacerbate symptoms, and improve overall functioning despite persistent symptoms."
+    }, {
+      question: "Will I still need medical care while in therapy for somatic symptoms?",
+      answer: "Yes, continuing appropriate medical care is important. We work collaboratively with your healthcare providers to ensure comprehensive care. Psychological treatment for somatic symptoms complements rather than replaces medical care. We can help you communicate effectively with medical providers and make informed decisions about your health care."
+    }],
+    relatedServices: [{
+      title: "Anxiety Therapy",
+      url: "/anxiety-therapy-havertown-pa"
+    }, {
+      title: "Depression Therapy",
+      url: "/depression-therapy-havertown-pa"
+    }, {
+      title: "Trauma & PTSD Therapy",
+      url: "/ptsd-therapy-havertown-pa"
+    }]
   };
-
-  return (
-    <>
-      <SEOHead 
-        title="Somatic Symptom Disorders Treatment in Havertown, PA | Sunrise Human Care" 
-        description="Specialized therapy for somatic symptom disorders in Havertown, PA. Our mind-body approach addresses persistent physical symptoms, health anxiety, and medically unexplained conditions. Evidence-based treatments to improve daily functioning. Call (814) 620-2162." 
-        canonicalUrl="https://sunrisehumancare.com/somatic-disorders-treatment-havertown-pa"
-        keywords="somatic symptom disorder treatment Havertown, health anxiety therapy Delaware County, illness anxiety help, functional neurological symptoms, mind-body therapy PA, medically unexplained symptoms treatment"
-        serviceSchema={{
-          name: "Somatic Symptom Disorders Treatment",
-          description: "Specialized treatment for somatic symptom disorders and related conditions, addressing both physical symptoms and psychological factors.",
-          provider: "Sunrise Human Care Services",
-          serviceType: "Mind-Body Therapy",
-          areaServed: "Havertown, PA and Delaware County"
-        }}
-      />
-      <ServicePageLayout 
-        title={pageData.title}
-        description={pageData.description}
-        pageTitle={pageData.pageTitle}
-        metaDescription={pageData.metaDescription}
-        serviceType={pageData.serviceType}
-        canonicalUrl={pageData.canonicalUrl}
-        heroImage={pageData.heroImage}
-        benefits={pageData.benefits}
-        approaches={pageData.approaches}
-        faqs={pageData.faqs}
-        relatedServices={pageData.relatedServices}
-      >
+  return <>
+      <SEOHead title="Somatic Symptom Disorders Treatment in Havertown, PA | Sunrise Human Care" description="Specialized therapy for somatic symptom disorders in Havertown, PA. Our mind-body approach addresses persistent physical symptoms, health anxiety, and medically unexplained conditions. Evidence-based treatments to improve daily functioning. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/somatic-disorders-treatment-havertown-pa" keywords="somatic symptom disorder treatment Havertown, health anxiety therapy Delaware County, illness anxiety help, functional neurological symptoms, mind-body therapy PA, medically unexplained symptoms treatment" serviceSchema={{
+      name: "Somatic Symptom Disorders Treatment",
+      description: "Specialized treatment for somatic symptom disorders and related conditions, addressing both physical symptoms and psychological factors.",
+      provider: "Sunrise Human Care Services",
+      serviceType: "Mind-Body Therapy",
+      areaServed: "Havertown, PA and Delaware County"
+    }} />
+      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
         {/* Service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
@@ -196,28 +152,8 @@ const SomaticDisordersTherapy = () => {
         </section>
         
         {/* Local Context */}
-        <section className="py-16 bg-orange-50">
-          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center font-playfair">
-              Somatic Symptom Disorder Treatment in Havertown and Delaware County
-            </h2>
-            
-            <p className="mb-4">Finding specialized care for somatic symptom disorders can be challenging. At Sunrise Human Care Services, we're proud to offer evidence-based treatment for these often misunderstood conditions right here in Havertown, PA.</p>
-            
-            <p className="mb-4">Our practice serves clients throughout Delaware County and the greater Philadelphia area, providing accessible care for individuals struggling with persistent physical symptoms and health-related anxiety.</p>
-            
-            <p className="mb-8">Our location at 2050 West Chester Pike in Havertown is easily accessible from surrounding communities including Broomall, Springfield, Upper Darby, and other Delaware County areas.</p>
-            
-            <div className="text-center">
-              <a href="/contact" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-orange-600 text-white shadow hover:bg-orange-700 h-10 px-6 py-2">
-                Schedule a Consultation
-              </a>
-            </div>
-          </div>
-        </section>
+        
       </ServicePageLayout>
-    </>
-  );
+    </>;
 };
-
 export default SomaticDisordersTherapy;
