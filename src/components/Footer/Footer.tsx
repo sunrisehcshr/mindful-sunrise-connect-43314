@@ -17,9 +17,7 @@ const Footer: React.FC = () => {
                 <span className="text-xs text-muted-foreground leading-tight font-normal">Human Care Services</span>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground py-0 my-0">Sunrise Human Care Services Inc is a registered healthcare organization committed to delivering compassionate and high-quality behavioral health services.
-
-We are officially listed in the National Plan and Provider Enumeration System (NPPES) under NPI Number: 1528784568, affirming our commitment to compliance, transparency, and patient trust.</p>
+            <p className="text-sm text-muted-foreground py-0 my-0">Sunrise Human Care Services Inc is a registered health care organization committed to delivering compassionate and high-quality behavioral health services. We are officially listed in the National Plan and Provider Enumeration System (NPPES) under NPI Number: 1528784568, affirming our commitment to compliance, transparency, and patient trust.</p>
             <SocialLinks />
           </div>
 
