@@ -1,8 +1,6 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
-
 const BPDTherapy = () => {
   const pageData = {
     title: "Borderline Personality Disorder Treatment",
@@ -12,95 +10,53 @@ const BPDTherapy = () => {
     serviceType: "Borderline Personality Disorder Treatment",
     canonicalUrl: "/bpd-therapy-havertown-pa",
     heroImage: "/images/Therapy-in-havertown.webp",
-    benefits: [
-      "Comprehensive psychiatric assessment",
-      "Dialectical Behavior Therapy (DBT)",
-      "Schema Therapy when appropriate",
-      "Emotional regulation skills training",
-      "Interpersonal effectiveness development",
-      "Mindfulness and distress tolerance techniques",
-      "Crisis management strategies"
-    ],
-    approaches: [
-      {
-        title: "Understanding Borderline Personality Disorder",
-        description: "Borderline Personality Disorder (BPD) is a mental health condition characterized by difficulties with emotion regulation, impulse control, interpersonal relationships, and self-image. Individuals with BPD often experience intense emotions, fear of abandonment, unstable relationships, and identity disturbances. While challenging, BPD is treatable with specialized therapeutic approaches."
-      },
-      {
-        title: "Our Approach to BPD Treatment",
-        description: "At Sunrise Human Care Services, we provide evidence-based treatment for Borderline Personality Disorder using approaches specifically developed to address its complex symptoms. Our therapists are specially trained in Dialectical Behavior Therapy (DBT) and Schema Therapy, which have shown effectiveness in treating BPD. We create a validating, supportive environment where clients can develop new skills and insights."
-      },
-      {
-        title: "Dialectical Behavior Therapy",
-        description: "DBT is a comprehensive treatment that combines individual therapy, skills training, and coaching to help individuals manage intense emotions, reduce self-destructive behaviors, and improve relationships. Core skills include mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness. This approach helps clients build a life worth living by balancing acceptance and change strategies."
-      },
-      {
-        title: "Building Relationship Skills",
-        description: "Relationship difficulties are central to BPD. Our therapists help clients understand their relationship patterns, develop healthier communication styles, set appropriate boundaries, and build more stable, satisfying connections with others. We address fears of abandonment and rejection while fostering greater interpersonal security and trust."
-      },
-      {
-        title: "Your Path to Stability",
-        description: "Recovery from BPD involves gradual progress toward better emotional regulation, more stable relationships, and a stronger sense of self. Our compassionate team is committed to supporting your journey toward greater stability and fulfillment. With consistent treatment, individuals with BPD can experience significant improvement in symptoms and quality of life."
-      }
-    ],
-    faqs: [
-      {
-        question: "How is Borderline Personality Disorder diagnosed?",
-        answer: "BPD is diagnosed through a comprehensive psychological assessment conducted by a qualified mental health professional. The assessment includes evaluating symptoms, personal history, and the impact of symptoms on daily functioning. BPD diagnosis is based on specific criteria outlined in diagnostic manuals like the DSM-5."
-      },
-      {
-        question: "Is recovery from BPD possible?",
-        answer: "Yes, recovery from BPD is definitely possible. With appropriate treatment, particularly Dialectical Behavior Therapy (DBT) or Schema Therapy, many individuals experience significant reduction in symptoms and improved quality of life. The recovery process typically involves learning new skills for emotional regulation, interpersonal effectiveness, and distress tolerance."
-      },
-      {
-        question: "How long does treatment for BPD usually take?",
-        answer: "Treatment for BPD is typically longer-term, often lasting a year or more. Standard DBT programs usually run for at least six months to a year, with many individuals benefiting from continued therapy afterward. The timeline varies based on individual needs, symptom severity, and progress in treatment."
-      }
-    ],
-    relatedServices: [
-      {
-        title: "Depression Therapy",
-        url: "/depression-therapy-havertown-pa"
-      },
-      {
-        title: "Anxiety Therapy",
-        url: "/anxiety-therapy-havertown-pa"
-      },
-      {
-        title: "Trauma & PTSD Therapy",
-        url: "/ptsd-therapy-havertown-pa"
-      }
-    ]
+    benefits: ["Comprehensive psychiatric assessment", "Dialectical Behavior Therapy (DBT)", "Schema Therapy when appropriate", "Emotional regulation skills training", "Interpersonal effectiveness development", "Mindfulness and distress tolerance techniques", "Crisis management strategies"],
+    approaches: [{
+      title: "Understanding Borderline Personality Disorder",
+      description: "Borderline Personality Disorder (BPD) is a mental health condition characterized by difficulties with emotion regulation, impulse control, interpersonal relationships, and self-image. Individuals with BPD often experience intense emotions, fear of abandonment, unstable relationships, and identity disturbances. While challenging, BPD is treatable with specialized therapeutic approaches."
+    }, {
+      title: "Our Approach to BPD Treatment",
+      description: "At Sunrise Human Care Services, we provide evidence-based treatment for Borderline Personality Disorder using approaches specifically developed to address its complex symptoms. Our therapists are specially trained in Dialectical Behavior Therapy (DBT) and Schema Therapy, which have shown effectiveness in treating BPD. We create a validating, supportive environment where clients can develop new skills and insights."
+    }, {
+      title: "Dialectical Behavior Therapy",
+      description: "DBT is a comprehensive treatment that combines individual therapy, skills training, and coaching to help individuals manage intense emotions, reduce self-destructive behaviors, and improve relationships. Core skills include mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness. This approach helps clients build a life worth living by balancing acceptance and change strategies."
+    }, {
+      title: "Building Relationship Skills",
+      description: "Relationship difficulties are central to BPD. Our therapists help clients understand their relationship patterns, develop healthier communication styles, set appropriate boundaries, and build more stable, satisfying connections with others. We address fears of abandonment and rejection while fostering greater interpersonal security and trust."
+    }, {
+      title: "Your Path to Stability",
+      description: "Recovery from BPD involves gradual progress toward better emotional regulation, more stable relationships, and a stronger sense of self. Our compassionate team is committed to supporting your journey toward greater stability and fulfillment. With consistent treatment, individuals with BPD can experience significant improvement in symptoms and quality of life."
+    }],
+    faqs: [{
+      question: "How is Borderline Personality Disorder diagnosed?",
+      answer: "BPD is diagnosed through a comprehensive psychological assessment conducted by a qualified mental health professional. The assessment includes evaluating symptoms, personal history, and the impact of symptoms on daily functioning. BPD diagnosis is based on specific criteria outlined in diagnostic manuals like the DSM-5."
+    }, {
+      question: "Is recovery from BPD possible?",
+      answer: "Yes, recovery from BPD is definitely possible. With appropriate treatment, particularly Dialectical Behavior Therapy (DBT) or Schema Therapy, many individuals experience significant reduction in symptoms and improved quality of life. The recovery process typically involves learning new skills for emotional regulation, interpersonal effectiveness, and distress tolerance."
+    }, {
+      question: "How long does treatment for BPD usually take?",
+      answer: "Treatment for BPD is typically longer-term, often lasting a year or more. Standard DBT programs usually run for at least six months to a year, with many individuals benefiting from continued therapy afterward. The timeline varies based on individual needs, symptom severity, and progress in treatment."
+    }],
+    relatedServices: [{
+      title: "Depression Therapy",
+      url: "/depression-therapy-havertown-pa"
+    }, {
+      title: "Anxiety Therapy",
+      url: "/anxiety-therapy-havertown-pa"
+    }, {
+      title: "Trauma & PTSD Therapy",
+      url: "/ptsd-therapy-havertown-pa"
+    }]
   };
-
-  return (
-    <>
-      <SEOHead 
-        title="Borderline Personality Disorder Treatment Havertown | Sunrise Human Care" 
-        description="Specialized BPD treatment in Havertown using Dialectical Behavior Therapy (DBT) and evidence-based approaches. Expert help with emotional regulation, relationship skills, and distress tolerance. Insurance accepted. Call (814) 620-2162." 
-        canonicalUrl="https://sunrisehumancare.com/bpd-therapy-havertown-pa"
-        keywords="BPD therapy Havertown, Borderline Personality Disorder treatment PA, DBT therapy Delaware County, emotional regulation counseling, relationship skills therapy, distress tolerance training"
-        serviceSchema={{
-          name: "Borderline Personality Disorder Treatment",
-          description: "Specialized therapy for Borderline Personality Disorder (BPD) using DBT and evidence-based approaches for emotion regulation and interpersonal effectiveness.",
-          provider: "Sunrise Human Care Services",
-          serviceType: "BPD Therapy",
-          areaServed: "Havertown, PA and Delaware County"
-        }}
-      />
-      <ServicePageLayout 
-        title={pageData.title}
-        description={pageData.description}
-        pageTitle={pageData.pageTitle}
-        metaDescription={pageData.metaDescription}
-        serviceType={pageData.serviceType}
-        canonicalUrl={pageData.canonicalUrl}
-        heroImage={pageData.heroImage}
-        benefits={pageData.benefits}
-        approaches={pageData.approaches}
-        faqs={pageData.faqs}
-        relatedServices={pageData.relatedServices}
-      >
+  return <>
+      <SEOHead title="Borderline Personality Disorder Treatment Havertown | Sunrise Human Care" description="Specialized BPD treatment in Havertown using Dialectical Behavior Therapy (DBT) and evidence-based approaches. Expert help with emotional regulation, relationship skills, and distress tolerance. Insurance accepted. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/bpd-therapy-havertown-pa" keywords="BPD therapy Havertown, Borderline Personality Disorder treatment PA, DBT therapy Delaware County, emotional regulation counseling, relationship skills therapy, distress tolerance training" serviceSchema={{
+      name: "Borderline Personality Disorder Treatment",
+      description: "Specialized therapy for Borderline Personality Disorder (BPD) using DBT and evidence-based approaches for emotion regulation and interpersonal effectiveness.",
+      provider: "Sunrise Human Care Services",
+      serviceType: "BPD Therapy",
+      areaServed: "Havertown, PA and Delaware County"
+    }} />
+      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
         {/* Service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
@@ -205,49 +161,8 @@ const BPDTherapy = () => {
         </section>
         
         {/* Local Resources Section */}
-        <section className="py-16 bg-orange-50">
-          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center font-playfair">
-              BPD Resources in Havertown and Delaware County
-            </h2>
-            
-            <p className="mb-6">In addition to our professional treatment services at Sunrise Human Care Services, these resources may be helpful for individuals with BPD and their families in the Havertown area:</p>
-            
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="text-orange-500 mr-2">•</span>
-                <div>
-                  <strong className="block">National Education Alliance for Borderline Personality Disorder</strong>
-                  <a href="https://www.borderlinepersonalitydisorder.org" className="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">www.borderlinepersonalitydisorder.org</a>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-orange-500 mr-2">•</span>
-                <div>
-                  <strong className="block">Delaware County NAMI</strong>
-                  <span>Support groups and resources for individuals with mental health conditions and their families</span>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-orange-500 mr-2">•</span>
-                <div>
-                  <strong className="block">Family Connections Program</strong>
-                  <span>Education and support program for families of people with BPD, available in various locations throughout the Philadelphia area</span>
-                </div>
-              </li>
-            </ul>
-            
-            <div className="text-center">
-              <p className="mb-6">If you or a loved one is in crisis, please use these emergency resources:</p>
-              <p className="font-bold">National Suicide Prevention Lifeline: 988</p>
-              <p className="font-bold">Crisis Text Line: Text HOME to 741741</p>
-              <p className="mt-4">For non-emergency information about our BPD treatment program in Havertown, call us at (814) 620-2162.</p>
-            </div>
-          </div>
-        </section>
+        
       </ServicePageLayout>
-    </>
-  );
+    </>;
 };
-
 export default BPDTherapy;
