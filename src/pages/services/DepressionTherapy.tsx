@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const DepressionTherapy = () => {
   const benefits = ["Reduce symptoms of depression and improve mood", "Regain interest and enjoyment in activities", "Develop healthy coping strategies for managing difficult emotions", "Break negative thought patterns that fuel depression", "Improve energy levels and daily functioning", "Build resilience to prevent future depressive episodes"];
   const approaches = [{
@@ -42,8 +43,8 @@ const DepressionTherapy = () => {
     title: "Medication Management in Havertown",
     url: "/medication-management-havertown-pa"
   }];
+
   return <ServicePageLayout title="Depression Therapy in Havertown, PA" description="Effective, compassionate treatment for depression, helping you rediscover joy, purpose, and connection in your life." pageTitle="Expert Depression Therapy in Havertown, PA - Evidence-Based Treatment | Sunrise Human Care" metaDescription="Specialized depression treatment in Havertown, PA serving Delaware County, including Drexel Hill and Broomall. Our experienced therapists provide evidence-based depression therapy to help you overcome depression and regain joy. Schedule today." serviceType="Depression Therapy" canonicalUrl="/depression-therapy-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      {/* Enhanced service-specific content */}
       <ServiceContentSection title="Our Depression Treatment Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -134,11 +135,7 @@ const DepressionTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for depression therapy */}
-      <ServiceContentSection title="What Our Depression Therapy Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default DepressionTherapy;

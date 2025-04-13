@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const CouplesCounseling = () => {
   const benefits = ["Improve communication and resolve recurring conflicts", "Rebuild trust and repair relationship after breaches", "Deepen emotional intimacy and connection", "Navigate major life transitions together", "Learn to recognize and break unhealthy patterns", "Develop skills for long-term relationship success"];
   const approaches = [{
@@ -42,8 +43,8 @@ const CouplesCounseling = () => {
     title: "Anxiety Therapy in Havertown",
     url: "/anxiety-therapy-havertown-pa"
   }];
+
   return <ServicePageLayout title="Couples Counseling in Havertown, PA" description="Specialized therapy to help couples improve communication, resolve conflicts, and strengthen their relationship with professional guidance." pageTitle="Expert Couples Counseling in Havertown, PA - Relationship Therapy | Sunrise Human Care Services" metaDescription="Professional couples counseling in Havertown, PA serving Delaware County communities. Improve communication, resolve conflicts, and rebuild intimacy with our experienced relationship therapists. Couples therapy for Havertown, Drexel Hill, and Broomall." serviceType="Couples Counseling" canonicalUrl="/couples-counseling-havertown-pa" heroImage="/images/couple-counseling-havertown-pa.webp" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      {/* Enhanced service-specific content */}
       <ServiceContentSection title="Our Couples Counseling Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -134,11 +135,7 @@ const CouplesCounseling = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for couples counseling */}
-      <ServiceContentSection title="What Our Couples Counseling Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default CouplesCounseling;

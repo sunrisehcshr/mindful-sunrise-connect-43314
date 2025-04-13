@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const MedicationManagement = () => {
   const benefits = ["Expert psychiatric medication guidance tailored to your specific needs", "Comprehensive monitoring to minimize side effects and maximize benefits", "Personalized medication adjustments based on your response and needs", "Integrated approach combining medication with therapy for optimal outcomes", "Educational resources about your condition and medication options", "Ongoing support throughout your medication management journey in Havertown"];
   const approaches = [{
@@ -45,8 +46,8 @@ const MedicationManagement = () => {
     title: "ADHD Treatment in Havertown",
     url: "/adhd-treatment-havertown-pa"
   }];
+
   return <ServicePageLayout title="Medication Management in Havertown, PA" description="Expert psychiatric medication services to help manage mental health conditions effectively, with personalized care and ongoing support." pageTitle="Expert Medication Management in Havertown, PA - Psychiatric Medication Services | Sunrise Human Care" metaDescription="Professional psychiatric medication management in Havertown, PA serving Delaware County. Personalized medication services for depression, anxiety, ADHD, and other mental health conditions with expert psychiatrists. Schedule today." serviceType="Medication Management" canonicalUrl="/medication-management-havertown-pa" schemaType="MedicalService" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      {/* Enhanced service-specific content with improved keyword density */}
       <ServiceContentSection title="Our Medication Management Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -142,12 +143,6 @@ const MedicationManagement = () => {
         </div>
       </ServiceContentSection>
 
-      {/* New testimonial section specifically for medication management */}
-      <ServiceContentSection title="What Our Medication Management Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
-
-      {/* Additional local service area information */}
       <ServiceContentSection title="Medication Management Services Throughout Delaware County" hasBgPattern={true}>
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-muted-foreground mb-6">
@@ -167,4 +162,5 @@ const MedicationManagement = () => {
       </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default MedicationManagement;

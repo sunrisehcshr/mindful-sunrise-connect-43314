@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const FamilyTherapy = () => {
   const benefits = ["Improve communication among all family members", "Resolve conflicts and reduce family tension", "Strengthen family bonds and relationships", "Develop healthy boundaries and family roles", "Navigate major life transitions as a united family", "Create a more supportive and nurturing home environment"];
   const approaches = [{
@@ -42,8 +43,8 @@ const FamilyTherapy = () => {
     title: "Individual Therapy in Havertown",
     url: "/individual-therapy-havertown-pa"
   }];
+
   return <ServicePageLayout title="Family Therapy in Havertown, PA" description="Comprehensive family counseling to improve communication, resolve conflicts, and strengthen relationships among all family members." pageTitle="Expert Family Therapy in Havertown, PA | Improve Communication & Resolve Conflicts | Sunrise Human Care" metaDescription="Professional family therapy in Havertown, PA serving Delaware County families. Our experienced therapists help families improve communication, resolve conflicts, and strengthen bonds. Family counseling for Havertown, Drexel Hill, and Broomall." serviceType="Family Therapy" canonicalUrl="/family-therapy-havertown-pa" heroImage="/images/family-counseling-havertown.webp" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices} schemaType="TherapeuticProcedure">
-      {/* Enhanced service-specific content */}
       <ServiceContentSection title="Our Family Therapy Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -134,11 +135,7 @@ const FamilyTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for family therapy */}
-      <ServiceContentSection title="What Our Family Therapy Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default FamilyTherapy;

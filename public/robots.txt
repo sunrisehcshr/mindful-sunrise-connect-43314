@@ -5,6 +5,9 @@
 User-agent: *
 Allow: /
 
+# Allow Google Maps
+Allow: https://www.google.com/maps/
+
 # Disallow admin pages
 Disallow: /admin/
 Disallow: /wp-admin/
@@ -35,6 +38,7 @@ Disallow: /*?utm_*
 # Allow major search engines specific directives
 User-agent: Googlebot
 Allow: /
+Allow: https://www.google.com/maps/
 Crawl-delay: 5
 
 User-agent: Bingbot

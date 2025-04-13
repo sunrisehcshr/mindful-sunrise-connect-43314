@@ -4,6 +4,7 @@ import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+
 const IndividualTherapy = () => {
   const benefits = ["Personalized one-on-one attention from a dedicated therapist in Havertown", "Safe, confidential space to explore your thoughts and feelings", "Customized treatment approaches tailored to your specific needs", "Flexibility in addressing multiple concerns in a single session", "Develop coping strategies specific to your life circumstances", "Build self-awareness and personal growth at your own pace"];
   const approaches = [{
@@ -42,8 +43,8 @@ const IndividualTherapy = () => {
     title: "ADHD Treatment in Havertown",
     url: "/adhd-treatment-havertown-pa"
   }];
+
   return <ServicePageLayout title="Individual Therapy in Havertown, PA" description="Personalized one-on-one therapy sessions tailored to your unique needs, helping you navigate life's challenges with professional guidance and support." pageTitle="Expert Individual Therapy in Havertown, PA - Personalized Mental Health Support | Sunrise Human Care Services" metaDescription="Compassionate individual therapy in Havertown, PA for anxiety, depression, trauma, and personal growth. Private, confidential sessions with experienced therapists. Schedule today." serviceType="Individual Therapy" canonicalUrl="/individual-therapy-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      {/* Enhanced service-specific content with additional keywords and local context */}
       <ServiceContentSection title="What to Expect in Individual Therapy in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -134,11 +135,7 @@ const IndividualTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for individual therapy */}
-      <ServiceContentSection title="What Our Individual Therapy Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default IndividualTherapy;
