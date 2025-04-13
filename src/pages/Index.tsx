@@ -12,7 +12,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
-import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
 
 const Index = () => {
   // Home page breadcrumbs
@@ -47,7 +46,6 @@ const Index = () => {
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
-          <WarmTestimonialsSection />
           <FAQSection />
           <AppointmentSection />
         </main>

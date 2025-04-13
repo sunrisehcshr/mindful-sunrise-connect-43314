@@ -5,7 +5,6 @@ import ServicesSection from '../components/services/ServicesSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
-import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
 
 const Services = () => {
   // Services page breadcrumbs
@@ -97,10 +96,6 @@ const Services = () => {
               </div>
             </div>
           </section>
-          
-          {/* Add Testimonials Section */}
-          <WarmTestimonialsSection />
-          
         </main>
         <Footer />
       </div>

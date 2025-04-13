@@ -8,6 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 interface ServicePageLayoutProps {
   children: React.ReactNode;
   title: string;
@@ -31,7 +32,13 @@ interface ServicePageLayoutProps {
     url: string;
   }[];
   schemaType?: string;
+  breadcrumbs?: {
+    name: string;
+    url: string;
+    position: number;
+  }[];
 }
+
 const ServicePageLayout = ({
   children,
   title,
@@ -45,7 +52,8 @@ const ServicePageLayout = ({
   approaches,
   faqs,
   relatedServices,
-  schemaType
+  schemaType,
+  breadcrumbs
 }: ServicePageLayoutProps) => {
   // Warm gradient background classes with improved styling
   const warmGradientBg = "relative overflow-hidden bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90";
@@ -72,7 +80,7 @@ const ServicePageLayout = ({
   // Extract service name for schema
   const serviceName = serviceType || title.split('in')[0].trim();
   return <>
-      <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`} />
+      <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`} breadcrumbs={breadcrumbs} />
       <SchemaMarkup />
 
       <div className="flex flex-col min-h-screen">
@@ -166,9 +174,6 @@ const ServicePageLayout = ({
               </div>
             </div>
           </section>
-          
-          {/* Approaches Section - With warm gradient background properly applied */}
-          
           
           {/* CTA Section - Fixed button alignment */}
           <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
