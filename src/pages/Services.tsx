@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServicesSection from '../components/services/ServicesSection';
@@ -5,7 +6,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import { Separator } from '@/components/ui/separator';
-import { Calendar, FileText, Clock, Wallet, MapPin } from 'lucide-react';
+import { Calendar, FileText, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 const Services = () => {
@@ -124,9 +125,6 @@ const Services = () => {
           </section>
           
           <ServicesSection />
-          
-          {/* Insurance Section */}
-          
           
           {/* Local Context Section - Enhanced with more specific content */}
           <section className="py-16 bg-white">

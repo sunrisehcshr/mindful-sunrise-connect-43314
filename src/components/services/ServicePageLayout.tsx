@@ -235,65 +235,6 @@ const ServicePageLayout = ({
             </div>
           </section>
 
-          {/* Insurance & Payment Section */}
-          <section className="py-12 bg-orange-50">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-amber-950">Insurance & Payment Options</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
-              </div>
-              
-              <div className="max-w-3xl mx-auto">
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <p className="mb-4">Sunrise Human Care Services is committed to making quality mental health care accessible. We accept many major insurance plans and offer various payment options to accommodate your financial situation.</p>
-                  
-                  <h3 className="text-lg font-semibold mb-3 text-amber-900">Insurance Plans We Accept</h3>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-                    {["Aetna", "Blue Cross Blue Shield", "Cigna", "UnitedHealthcare", "Medicare", "Medicaid", "Independence Blue Cross", "AmeriHealth"].map((plan, index) => (
-                      <li key={index} className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-orange-500 mr-2">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {plan}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <h3 className="text-lg font-semibold mb-3 text-amber-900">Additional Payment Options</h3>
-                  <ul className="mb-6 space-y-2">
-                    <li className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-orange-500 mr-2 mt-0.5">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span><strong>Self-Pay Options:</strong> We offer competitive rates for those paying out-of-pocket.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-orange-500 mr-2 mt-0.5">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span><strong>Sliding Scale:</strong> Based on financial need, we may provide adjusted fees.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-orange-500 mr-2 mt-0.5">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span><strong>HSA/FSA:</strong> We accept Health Savings Account and Flexible Spending Account payments.</span>
-                    </li>
-                  </ul>
-                  
-                  <p className="text-sm italic">We're happy to verify your insurance benefits before your first appointment. Please contact our office with your insurance information, and we'll help determine your coverage for our services.</p>
-                </div>
-                
-                <div className="mt-6 text-center">
-                  <Link to="/appointment" className="inline-flex items-center text-orange-600 font-medium hover:underline">
-                    <Calendar className="mr-2 h-4 w-4" /> Schedule an appointment to discuss payment options
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
-          
           <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
