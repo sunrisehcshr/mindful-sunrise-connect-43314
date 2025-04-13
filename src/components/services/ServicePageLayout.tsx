@@ -55,10 +55,8 @@ const ServicePageLayout = ({
   schemaType,
   breadcrumbs
 }: ServicePageLayoutProps) => {
-  // Warm gradient background classes with improved styling
   const warmGradientBg = "relative overflow-hidden bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90";
 
-  // SVG pattern overlay (more visible now)
   const warmGradientOverlay = <>
       <div className="absolute inset-0 -z-10">
         <svg className="h-full w-full opacity-30" xmlns="http://www.w3.org/2000/svg">
@@ -74,10 +72,8 @@ const ServicePageLayout = ({
       </div>
     </>;
 
-  // For approach and card items - enhanced soft background
   const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
 
-  // Extract service name for schema
   const serviceName = serviceType || title.split('in')[0].trim();
   return <>
       <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`} breadcrumbs={breadcrumbs} />
@@ -87,11 +83,9 @@ const ServicePageLayout = ({
         <Navbar />
         
         <main className="flex-grow pt-24 bg-white">
-          {/* Hero Section - Updated with gradient background, grid removed */}
           <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
             
-            {/* Subtle texture overlay instead of grid */}
             <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
@@ -138,10 +132,6 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Custom Content Section */}
-          {children}
-          
-          {/* Benefits Section - With warm gradient background properly applied */}
           <section className="py-[50px] bg-white">
             {warmGradientOverlay}
             
@@ -175,7 +165,6 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* CTA Section - Fixed button alignment */}
           <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
@@ -201,7 +190,6 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* FAQs Section - With warm gradient background properly applied */}
           <section className="py-[50px] bg-white">
             {warmGradientOverlay}
             
@@ -231,7 +219,6 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Related Services Section - With warm gradient background properly applied */}
           <section className={`py-12 md:py-16 ${warmGradientBg}`}>
             {warmGradientOverlay}
             
