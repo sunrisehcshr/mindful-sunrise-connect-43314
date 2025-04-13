@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
@@ -44,7 +45,41 @@ const FamilyTherapy = () => {
     url: "/individual-therapy-havertown-pa"
   }];
 
-  return <ServicePageLayout title="Family Therapy in Havertown, PA" description="Comprehensive family counseling to improve communication, resolve conflicts, and strengthen relationships among all family members." pageTitle="Expert Family Therapy in Havertown, PA | Improve Communication & Resolve Conflicts | Sunrise Human Care" metaDescription="Professional family therapy in Havertown, PA serving Delaware County families. Our experienced therapists help families improve communication, resolve conflicts, and strengthen bonds. Family counseling for Havertown, Drexel Hill, and Broomall." serviceType="Family Therapy" canonicalUrl="/family-therapy-havertown-pa" heroImage="/images/family-counseling-havertown.webp" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices} schemaType="TherapeuticProcedure">
+  // Custom breadcrumbs for Family Therapy page
+  const familyTherapyBreadcrumbs = [
+    {
+      name: "Home",
+      url: "https://sunrisehumancare.com",
+      position: 1
+    },
+    {
+      name: "Services",
+      url: "https://sunrisehumancare.com/services",
+      position: 2
+    },
+    {
+      name: "Family Therapy",
+      url: "https://sunrisehumancare.com/family-therapy-havertown-pa",
+      position: 3
+    }
+  ];
+
+  return (
+    <ServicePageLayout 
+      title="Family Therapy in Havertown, PA" 
+      description="Comprehensive family counseling to improve communication, resolve conflicts, and strengthen relationships among all family members." 
+      pageTitle="Expert Family Therapy in Havertown, PA | Improve Communication & Resolve Conflicts | Sunrise Human Care" 
+      metaDescription="Professional family therapy in Havertown, PA serving Delaware County families. Our experienced therapists help families improve communication, resolve conflicts, and strengthen bonds. Family counseling for Havertown, Drexel Hill, and Broomall." 
+      serviceType="Family Therapy" 
+      canonicalUrl="/family-therapy-havertown-pa" 
+      heroImage="/images/family-counseling-havertown.webp" 
+      benefits={benefits} 
+      approaches={approaches} 
+      faqs={faqs} 
+      relatedServices={relatedServices} 
+      schemaType="TherapeuticProcedure"
+      breadcrumbs={familyTherapyBreadcrumbs}
+    >
       <ServiceContentSection title="Our Family Therapy Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -135,7 +170,8 @@ const FamilyTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-    </ServicePageLayout>;
+    </ServicePageLayout>
+  );
 };
 
 export default FamilyTherapy;

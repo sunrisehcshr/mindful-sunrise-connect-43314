@@ -6,7 +6,10 @@ User-agent: *
 Allow: /
 
 # Allow Google Maps
+Allow: /maps/
 Allow: https://www.google.com/maps/
+Allow: https://maps.google.com/
+Allow: https://maps.googleapis.com/
 
 # Disallow admin pages
 Disallow: /admin/
@@ -38,11 +41,15 @@ Disallow: /*?utm_*
 # Allow major search engines specific directives
 User-agent: Googlebot
 Allow: /
+Allow: /maps/
 Allow: https://www.google.com/maps/
+Allow: https://maps.google.com/
+Allow: https://maps.googleapis.com/
 Crawl-delay: 5
 
 User-agent: Bingbot
 Allow: /
+Allow: /maps/
 Crawl-delay: 10
 
 User-agent: Yandex

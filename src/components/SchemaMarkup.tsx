@@ -285,30 +285,6 @@ const SchemaMarkup = () => {
         }
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://sunrisehumancare.com/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://sunrisehumancare.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://sunrisehumancare.com/services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "All Services",
-            "item": "https://sunrisehumancare.com/services"
-          }
-        ]
-      },
-      {
         "@type": "FAQPage",
         "@id": "https://sunrisehumancare.com/#faq",
         "mainEntity": [

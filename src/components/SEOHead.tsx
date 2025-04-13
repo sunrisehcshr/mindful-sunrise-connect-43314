@@ -2,6 +2,12 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+  position: number;
+}
+
 interface SEOHeadProps {
   title?: string;
   description?: string;
@@ -20,6 +26,7 @@ interface SEOHeadProps {
     serviceType: string;
     areaServed: string;
   };
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
@@ -33,7 +40,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   modifiedTime,
   author = "Sunrise Human Care Services",
   type = "website",
-  serviceSchema
+  serviceSchema,
+  breadcrumbs
 }) => {
   // Generate service-specific schema if provided
   const serviceSchemaScript = serviceSchema ? {
@@ -121,6 +129,21 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     ]
   };
 
+  // Generate breadcrumb items or use provided ones
+  const breadcrumbItems = breadcrumbs || generateBreadcrumbsFromUrl(canonicalUrl);
+  
+  // Breadcrumbs schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems.map(item => ({
+      "@type": "ListItem",
+      "position": item.position,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -182,38 +205,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         {JSON.stringify(localBusinessSchema)}
       </script>
 
-      {/* Breadcrumbs schema */}
+      {/* Breadcrumbs schema - Using structured BreadcrumbItem[] */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://sunrisehumancare.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": canonicalUrl.includes("/services/") || canonicalUrl.includes("/conditions/") ? 
-                (canonicalUrl.includes("/services/") ? "Services" : "Conditions") : 
-                canonicalUrl.split("/").pop()?.replace(/-/g, " ")?.replace(/\b\w/g, l => l.toUpperCase()),
-              "item": canonicalUrl.includes("/services/") ? 
-                "https://sunrisehumancare.com/services" : 
-                (canonicalUrl.includes("/conditions/") ? "https://sunrisehumancare.com/conditions" : canonicalUrl)
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": (canonicalUrl.includes("/services/") || canonicalUrl.includes("/conditions/")) ? 
-                canonicalUrl.split("/").pop()?.replace(/-/g, " ")?.replace(/\b\w/g, l => l.toUpperCase()) : 
-                null,
-              "item": canonicalUrl
-            }
-          ].filter(item => item.name !== null)
-        })}
+        {JSON.stringify(breadcrumbSchema)}
       </script>
 
       {/* Font display optimization - removed problematic preloads */}
@@ -304,5 +298,72 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     </Helmet>
   );
 };
+
+// Helper function to generate breadcrumbs from URL
+function generateBreadcrumbsFromUrl(url: string): BreadcrumbItem[] {
+  // Always start with home
+  const breadcrumbs: BreadcrumbItem[] = [
+    {
+      name: "Home",
+      url: "https://sunrisehumancare.com",
+      position: 1
+    }
+  ];
+
+  // Remove protocol and domain if present
+  let path = url.replace(/^(https?:\/\/)?(www\.)?sunrisehumancare\.com\/?/, '/');
+  
+  // If it's the homepage, just return the home breadcrumb
+  if (path === '/' || path === '') {
+    return breadcrumbs;
+  }
+
+  // Remove trailing slash if present
+  path = path.replace(/\/$/, '');
+  
+  // Split the path into segments
+  const segments = path.split('/').filter(segment => segment !== '');
+  
+  // Special handling for services and conditions
+  if (segments[0] === 'services' || segments[0] === 'conditions') {
+    breadcrumbs.push({
+      name: segments[0].charAt(0).toUpperCase() + segments[0].slice(1),
+      url: `https://sunrisehumancare.com/${segments[0]}`,
+      position: 2
+    });
+    
+    if (segments.length > 1) {
+      // Format service/condition name from slug
+      const name = segments[1]
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, char => char.toUpperCase())
+        .replace(/\bPa\b/g, 'PA')
+        .replace(/\bPtsd\b/gi, 'PTSD')
+        .replace(/\bOcd\b/gi, 'OCD')
+        .replace(/\bAdhd\b/gi, 'ADHD')
+        .replace(/\bBpd\b/gi, 'BPD');
+        
+      breadcrumbs.push({
+        name: name,
+        url: `https://sunrisehumancare.com/${segments[0]}/${segments[1]}`,
+        position: 3
+      });
+    }
+  } else if (segments.length > 0) {
+    // Handle other pages
+    const finalSegment = segments[segments.length - 1];
+    const name = finalSegment
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, char => char.toUpperCase());
+      
+    breadcrumbs.push({
+      name: name,
+      url: url,
+      position: 2
+    });
+  }
+  
+  return breadcrumbs;
+}
 
 export default SEOHead;

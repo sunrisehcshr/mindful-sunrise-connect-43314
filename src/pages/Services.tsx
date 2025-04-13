@@ -5,9 +5,25 @@ import ServicesSection from '../components/services/ServicesSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
+import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
 
 const Services = () => {
-  return <>
+  // Services page breadcrumbs
+  const servicesBreadcrumbs = [
+    {
+      name: "Home",
+      url: "https://sunrisehumancare.com",
+      position: 1
+    },
+    {
+      name: "Services",
+      url: "https://sunrisehumancare.com/services",
+      position: 2
+    }
+  ];
+  
+  return (
+    <>
       <SEOHead 
         title="Mental Health Services in Havertown, PA | Therapy & Counseling | Sunrise Human Care" 
         description="Comprehensive mental health services in Havertown, PA. We offer therapy for anxiety, depression, ADHD, trauma, and more for children, teens, adults, and seniors. Call (814) 620-2162." 
@@ -20,6 +36,7 @@ const Services = () => {
           serviceType: "Mental Health Care",
           areaServed: "Havertown, PA and Delaware County"
         }}
+        breadcrumbs={servicesBreadcrumbs}
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -81,9 +98,13 @@ const Services = () => {
             </div>
           </section>
           
+          {/* Add Testimonials Section */}
+          <WarmTestimonialsSection />
+          
         </main>
         <Footer />
       </div>
     </>;
 };
+
 export default Services;

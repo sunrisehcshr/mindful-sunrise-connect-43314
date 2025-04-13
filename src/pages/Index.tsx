@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import WarmHeroSection from '../components/WarmHeroSection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
@@ -12,10 +12,17 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
-import { Separator } from '@/components/ui/separator';
+import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
 
 const Index = () => {
-  // Removed preloading code that was causing warnings
+  // Home page breadcrumbs
+  const homeBreadcrumbs = [
+    {
+      name: "Home",
+      url: "https://sunrisehumancare.com",
+      position: 1
+    }
+  ];
   
   return (
     <>
@@ -23,7 +30,8 @@ const Index = () => {
         title="Mental Health Therapy & Psychiatry in Havertown, PA | Sunrise Human Care Services" 
         description="Expert mental health care in Havertown, PA for anxiety, depression, ADHD, and trauma. In-person and telehealth sessions available with licensed therapists and psychiatrists. Schedule your appointment today: (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/" 
-        keywords="mental health care in Havertown, mental health Havertown, anxiety therapy Delaware County, depression counseling Havertown, ADHD treatment PA, psychiatrist near me, therapist Havertown PA, telehealth therapy, in-person counseling" 
+        keywords="mental health care in Havertown, mental health Havertown, anxiety therapy Delaware County, depression counseling Havertown, ADHD treatment PA, psychiatrist near me, therapist Havertown PA, telehealth therapy, in-person counseling"
+        breadcrumbs={homeBreadcrumbs}
       />
       <SchemaMarkup />
       <motion.div 
@@ -39,6 +47,7 @@ const Index = () => {
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
+          <WarmTestimonialsSection />
           <FAQSection />
           <AppointmentSection />
         </main>
