@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const BipolarDisorderTherapy = () => {
   const benefits = ["Improved mood stability and decreased frequency of episodes", "Better understanding of your condition and triggers", "Enhanced coping skills for managing mood fluctuations", "Decreased hospitalization rates and improved functioning", "Improved interpersonal relationships and quality of life", "Coordinated care approach involving therapy and medication management"];
   const approaches = [{
@@ -54,8 +55,8 @@ const BipolarDisorderTherapy = () => {
     title: "Individual Therapy in Havertown",
     url: "/individual-therapy-havertown-pa"
   }];
+
   return <ServicePageLayout title="Bipolar Disorder Treatment in Havertown, PA" description="Evidence-based bipolar disorder therapy to help manage mood episodes, maintain stability, and improve quality of life." pageTitle="Bipolar Disorder Treatment in Havertown, PA | Mood Stability | Sunrise Human Care Services" metaDescription="Effective bipolar disorder therapy in Havertown, PA serving Delaware County. Our specialized approach helps stabilize mood, manage symptoms, and build a balanced lifestyle. Bipolar treatment for Havertown, Drexel Hill, and Broomall." serviceType="Bipolar Disorder Treatment" canonicalUrl="/bipolar-disorder-therapy-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      {/* Enhanced service-specific content */}
       <ServiceContentSection title="Our Bipolar Disorder Treatment Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -146,11 +147,7 @@ const BipolarDisorderTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for bipolar disorder treatment */}
-      <ServiceContentSection title="What Our Bipolar Disorder Treatment Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default BipolarDisorderTherapy;

@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const AnxietyTherapy = () => {
   const benefits = ["Reduce excessive worry, fear, and panic symptoms", "Develop effective strategies to manage anxiety in daily life", "Identify and change anxious thought patterns", "Learn physical relaxation techniques", "Build confidence in facing anxiety-provoking situations", "Improve quality of life and functioning"];
   const approaches = [{
@@ -42,6 +43,7 @@ const AnxietyTherapy = () => {
     title: "ADHD Treatment in Havertown",
     url: "/adhd-treatment-havertown-pa"
   }];
+
   return <ServicePageLayout title="Anxiety Treatment in Havertown, PA" description="Evidence-based therapy for all types of anxiety disorders, including generalized anxiety, social anxiety, panic disorder, and phobias." pageTitle="Expert Anxiety Treatment in Havertown, PA - Effective Therapy | Sunrise Human Care Services" metaDescription="Specialized anxiety treatment in Havertown, PA. Evidence-based therapy for panic attacks, generalized anxiety, social anxiety, and phobias. Serving Delaware County including Drexel Hill and Broomall. Find relief today." serviceType="Anxiety Therapy" canonicalUrl="/anxiety-therapy-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
       {/* Service-specific content */}
       <ServiceContentSection title="Our Anxiety Treatment Approach in Havertown" hasBgPattern={true}>
@@ -134,11 +136,7 @@ const AnxietyTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for anxiety therapy */}
-      <ServiceContentSection title="What Our Anxiety Therapy Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default AnxietyTherapy;

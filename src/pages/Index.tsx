@@ -5,7 +5,6 @@ import WarmHeroSection from '../components/WarmHeroSection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
 import ServicesSection from '../components/services/ServicesSection';
 import ConditionsSection from '../components/conditions/ConditionsSection';
-import WarmTestimonialsSection from '../components/WarmTestimonialsSection';
 import AboutSection from '../components/AboutSection';
 import FAQSection from '../components/FAQSection';
 import AppointmentSection from '../components/Appointment/AppointmentSection';
@@ -40,7 +39,6 @@ const Index = () => {
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
-          <WarmTestimonialsSection />
           <FAQSection />
           <AppointmentSection />
         </main>

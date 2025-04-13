@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const ChildTherapy = () => {
   const benefits = ["Age-appropriate therapeutic approaches for children and teens", "Development of healthy coping skills and emotional regulation", "Improved communication between children and parents", "Support through developmental changes and transitions", "Early intervention for emerging mental health concerns", "Increased self-esteem and confidence"];
   const approaches = [{
@@ -42,6 +43,7 @@ const ChildTherapy = () => {
     title: "Anxiety Therapy in Havertown",
     url: "/anxiety-therapy-havertown-pa"
   }];
+
   return <ServicePageLayout title="Child & Adolescent Therapy in Havertown, PA" description="Specialized therapeutic approaches for children and teens facing emotional, behavioral, or developmental challenges." pageTitle="Child & Adolescent Therapy in Havertown, PA - Youth Mental Health Services | Sunrise Human Care" metaDescription="Professional child and adolescent therapy in Havertown, PA serving Delaware County families. Age-appropriate counseling for anxiety, depression, behavioral issues, and developmental challenges. Child therapists for Havertown, Drexel Hill, and Broomall." serviceType="Child & Adolescent Therapy" canonicalUrl="/child-therapy-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
       {/* Service-specific content */}
       <ServiceContentSection title="Our Child Therapy Approach in Havertown" hasBgPattern={true}>
@@ -134,11 +136,7 @@ const ChildTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for child therapy */}
-      <ServiceContentSection title="What Our Child Therapy Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default ChildTherapy;

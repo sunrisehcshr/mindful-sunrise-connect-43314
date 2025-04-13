@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const SleepDisordersTherapy = () => {
   const benefits = ["Improved sleep quality and duration", "Reduced time to fall asleep", "Fewer nighttime awakenings", "Decreased sleep-related anxiety", "Increased daytime energy and functioning", "Sustainable sleep habits without medication dependence", "Better overall mental and physical health"];
   const approaches = [{
@@ -42,8 +43,8 @@ const SleepDisordersTherapy = () => {
     title: "Stress Management in Havertown",
     url: "/stress-management-havertown-pa"
   }];
+
   return <ServicePageLayout title="Sleep Disorders Treatment in Havertown, PA" description="Effective treatment for insomnia, sleep anxiety, and other sleep-related issues in Havertown, PA." pageTitle="Sleep Disorders Treatment in Havertown, PA | Insomnia Therapy | Sunrise Human Care Services" metaDescription="Effective sleep disorder treatment in Havertown, PA for insomnia and sleep-related issues. Evidence-based approaches including CBT-I serving Delaware County residents. Sleep therapy for Havertown, Drexel Hill, and Broomall." serviceType="Sleep Disorders Treatment" canonicalUrl="/sleep-disorders-treatment-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      {/* Enhanced service-specific content */}
       <ServiceContentSection title="Our Sleep Disorders Treatment Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -134,11 +135,7 @@ const SleepDisordersTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for sleep disorders treatment */}
-      <ServiceContentSection title="What Our Sleep Therapy Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default SleepDisordersTherapy;

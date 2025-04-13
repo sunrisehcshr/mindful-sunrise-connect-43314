@@ -4,6 +4,7 @@ import ServiceContentSection from '../../components/services/ServiceContentSecti
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const SubstanceUseTherapy = () => {
   const benefits = ["Comprehensive assessment and evaluation", "Individualized treatment planning", "Evidence-based therapeutic approaches", "Dual diagnosis treatment for co-occurring disorders", "Relapse prevention strategies", "Family involvement and education", "Aftercare planning and ongoing support"];
   const approaches = [{
@@ -42,8 +43,8 @@ const SubstanceUseTherapy = () => {
     title: "Trauma & PTSD Therapy in Havertown",
     url: "/ptsd-therapy-havertown-pa"
   }];
+
   return <ServicePageLayout title="Substance Use Treatment in Havertown, PA" description="Evidence-based treatment for alcohol and drug addiction, recovery support, and relapse prevention in Havertown, PA." pageTitle="Substance Use Treatment in Havertown, PA | Addiction Recovery | Sunrise Human Care Services" metaDescription="Comprehensive substance use and addiction treatment in Havertown, PA serving Delaware County. Evidence-based approaches for alcohol and drug recovery with personalized care. Serving Havertown, Drexel Hill, and Broomall." serviceType="Substance Use Counseling" canonicalUrl="/substance-use-treatment-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      {/* Enhanced service-specific content */}
       <ServiceContentSection title="Our Substance Use Treatment Approach in Havertown" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -134,11 +135,7 @@ const SubstanceUseTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
-      
-      {/* New testimonial section specifically for substance use treatment */}
-      <ServiceContentSection title="What Our Substance Use Treatment Clients in Havertown Say" hasBgPattern={false}>
-        
-      </ServiceContentSection>
     </ServicePageLayout>;
 };
+
 export default SubstanceUseTherapy;
