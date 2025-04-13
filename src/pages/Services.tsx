@@ -5,6 +5,10 @@ import ServicesSection from '../components/services/ServicesSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
+import { Separator } from '@/components/ui/separator';
+import { Calendar, FileText, Clock, Wallet, MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   // Services page breadcrumbs
@@ -75,24 +79,180 @@ const Services = () => {
             </div>
           </section>
           
+          {/* How We Work Section */}
+          <section className="py-16 bg-orange-50">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="max-w-3xl mx-auto text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-amber-950">How We Work</h2>
+                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
+                <p className="text-lg text-amber-900 mb-6">
+                  Our process is designed to provide personalized, effective mental health care for all our Havertown clients.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                {[
+                  {
+                    icon: <Calendar className="h-8 w-8 text-orange-500" />,
+                    title: "1. Initial Consultation",
+                    description: "Begin with a thorough assessment to understand your needs and goals for therapy."
+                  },
+                  {
+                    icon: <FileText className="h-8 w-8 text-orange-500" />,
+                    title: "2. Personalized Plan",
+                    description: "We create a customized treatment plan that addresses your specific concerns and objectives."
+                  },
+                  {
+                    icon: <Clock className="h-8 w-8 text-orange-500" />,
+                    title: "3. Regular Sessions",
+                    description: "Engage in ongoing therapy sessions with a consistent schedule that works for you."
+                  },
+                  {
+                    icon: <MapPin className="h-8 w-8 text-orange-500" />,
+                    title: "4. Progress Review",
+                    description: "Regularly evaluate your progress and adjust treatment approaches as needed."
+                  }
+                ].map((step, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{opacity: 0, y: 20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.5, delay: index * 0.1}}
+                    className="text-center bg-white p-6 rounded-lg shadow-sm"
+                  >
+                    <div className="mx-auto mb-4 rounded-full bg-orange-100 p-3 w-16 h-16 flex items-center justify-center">
+                      {step.icon}
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 text-amber-900">{step.title}</h3>
+                    <p className="text-amber-800">{step.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+              
+              <div className="max-w-3xl mx-auto mt-10 text-center">
+                <Link to="/appointment">
+                  <Button className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white">
+                    Schedule Your Initial Consultation
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </section>
+          
           <ServicesSection />
           
-          {/* Local Context Section */}
+          {/* Insurance Section */}
           <section className="py-16 bg-orange-50">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="max-w-3xl mx-auto text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-amber-950">Insurance & Payment Options</h2>
+                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
+                <p className="text-lg text-amber-900 mb-6">
+                  We work with many insurance providers to make mental health care accessible to our Havertown community.
+                </p>
+              </div>
+              
+              <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
+                <div className="p-6 md:p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-bold mb-4 text-amber-900 flex items-center">
+                        <Wallet className="h-5 w-5 mr-2" /> Insurance Plans Accepted
+                      </h3>
+                      <ul className="space-y-2">
+                        {["Aetna", "Blue Cross Blue Shield", "Cigna", "UnitedHealthcare", "Medicare", "Medicaid", "Independence Blue Cross", "AmeriHealth", "Keystone First", "Magellan"].map((plan, index) => (
+                          <li key={index} className="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-orange-500 mr-2">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            {plan}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-bold mb-4 text-amber-900">Additional Payment Options</h3>
+                      <div className="space-y-4">
+                        <div className="border-l-4 border-orange-500 pl-4">
+                          <h4 className="font-semibold mb-1">Self-Pay Rates</h4>
+                          <p className="text-amber-800">Competitive rates for those without insurance or preferring not to use insurance.</p>
+                        </div>
+                        
+                        <div className="border-l-4 border-orange-500 pl-4">
+                          <h4 className="font-semibold mb-1">Sliding Scale</h4>
+                          <p className="text-amber-800">Income-based fee adjustments available for qualifying individuals.</p>
+                        </div>
+                        
+                        <div className="border-l-4 border-orange-500 pl-4">
+                          <h4 className="font-semibold mb-1">HSA/FSA</h4>
+                          <p className="text-amber-800">We accept Health Savings Account and Flexible Spending Account payments.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <p className="text-amber-900 font-medium">
+                      Have questions about insurance coverage or payment options? Our staff is happy to help verify your benefits.
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-4 justify-center">
+                      <a href="tel:+18146202162">
+                        <Button variant="outline" className="border-orange-500 text-orange-600">
+                          Call (814) 620-2162
+                        </Button>
+                      </a>
+                      
+                      <Link to="/contact">
+                        <Button className="bg-orange-500 text-white hover:bg-orange-600">
+                          Contact Us About Insurance
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          {/* Local Context Section - Enhanced with more specific content */}
+          <section className="py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 font-playfair">
                   Mental Health Services in Havertown, Pennsylvania
                 </h2>
-                <p className="mb-4">
-                  At Sunrise Human Care Services, we're proud to provide comprehensive mental health services to Havertown and surrounding communities in Delaware County. Our practice at 2050 West Chester Pike offers a convenient location for residents seeking high-quality mental health care close to home.
-                </p>
-                <p className="mb-4">
-                  We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Havertown area. Whether you're coming from Haverford Township, Springfield, Upper Darby, Broomall, or other nearby areas, our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.
-                </p>
-                <p>
-                  Our full range of mental health services in Havertown includes individual therapy, family counseling, anxiety treatment, depression therapy, and specialized care for conditions like ADHD, trauma, and OCD. We welcome clients of all ages and backgrounds to experience the compassionate care that has made us a trusted provider in Delaware County.
-                </p>
+                
+                <div className="space-y-4">
+                  <p>
+                    At Sunrise Human Care Services, we're proud to provide comprehensive mental health services to Havertown and surrounding communities in Delaware County. Our practice at 2050 West Chester Pike offers a convenient location for residents seeking high-quality mental health care close to home.
+                  </p>
+                  
+                  <p>
+                    We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Havertown area. Whether you're coming from Haverford Township, Springfield, Upper Darby, Broomall, or other nearby areas, our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.
+                  </p>
+                  
+                  <p>
+                    Our full range of mental health services in Havertown includes individual therapy, family counseling, anxiety treatment, depression therapy, and specialized care for conditions like ADHD, trauma, and OCD. We welcome clients of all ages and backgrounds to experience the compassionate care that has made us a trusted provider in Delaware County.
+                  </p>
+                  
+                  <p>
+                    As a locally owned and operated practice, we're invested in the wellbeing of our community. We regularly participate in local mental health initiatives, provide educational workshops in schools and community centers, and collaborate with other healthcare providers to create a robust network of support for our clients.
+                  </p>
+                  
+                  <p>
+                    If you're searching for mental health services in Havertown or the surrounding area, we invite you to reach out. Our friendly staff is ready to answer your questions and help you take the first step toward improved mental wellbeing.
+                  </p>
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <Link to="/appointment">
+                    <Button className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white">
+                      Schedule Your Appointment Today
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
