@@ -1,6 +1,11 @@
+
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import SEOHead from '../../components/SEOHead';
+import ImageOptimizer from '../../components/ui/ImageOptimizer';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const EatingDisordersTherapy = () => {
   const pageData = {
@@ -83,7 +88,7 @@ const EatingDisordersTherapy = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                  Our Approach to Eating Disorder Treatment
+                  Our Approach to Eating Disorder Treatment in Havertown
                 </h2>
                 
                 <div className="space-y-4">
@@ -98,10 +103,25 @@ const EatingDisordersTherapy = () => {
                   <p>
                     Throughout treatment, we focus not only on normalizing eating behaviors but also addressing the underlying psychological issues that maintain the eating disorder. We help you develop a healthier relationship with food, your body, and your emotions, while building skills for long-term recovery.
                   </p>
+                  
+                  <p>
+                    Serving clients across Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities, our eating disorder specialists provide compassionate care close to home.
+                  </p>
+                </div>
+                
+                <div className="mt-8">
+                  <Link to="/appointment" className="inline-block">
+                    <Button className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white">
+                      Schedule an Eating Disorder Assessment <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
+                <h3 className="text-xl font-semibold mb-4 text-amber-900">
+                  We Treat All Types of Eating Disorders in Havertown
+                </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-sunrise-500 mr-2">✓</span>
@@ -142,7 +162,27 @@ const EatingDisordersTherapy = () => {
         </section>
         
         {/* Local Resources Section */}
-        
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-amber-950">
+                Eating Disorder Treatment for Delaware County Residents
+              </h2>
+              
+              <p className="mb-4">
+                At Sunrise Human Care, we're proud to offer specialized eating disorder treatment services to residents throughout Delaware County, including Havertown, Broomall, Drexel Hill, Springfield, and surrounding areas. Our conveniently located Havertown office makes quality eating disorder care accessible to the entire community.
+              </p>
+              
+              <p className="mb-4">
+                We understand that eating disorders can affect people of all ages, genders, and backgrounds. Whether you're a parent concerned about your teenager, a young adult struggling with body image issues, or someone who has been battling an eating disorder for years, our team provides compassionate, evidence-based care tailored to your specific needs.
+              </p>
+              
+              <p>
+                Don't let an eating disorder control your life or your loved one's life any longer. Early intervention leads to better outcomes, so <Link to="/appointment" className="text-orange-600 hover:text-orange-700 underline">reach out today</Link> to begin your journey toward a healthier relationship with food and your body.
+              </p>
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>;
 };

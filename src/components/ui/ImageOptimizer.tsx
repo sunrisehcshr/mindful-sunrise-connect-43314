@@ -35,6 +35,7 @@ const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
       loading={priority ? 'eager' : 'lazy'} 
       decoding={priority ? 'sync' : 'async'}
       onLoad={onLoad}
+      fetchPriority={priority ? 'high' : 'auto'}
     />
   );
 };

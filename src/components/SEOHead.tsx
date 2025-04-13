@@ -216,21 +216,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         })}
       </script>
 
-      {/* Preload critical fonts - optimizing font loading */}
-      <link
-        rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-        as="style"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload" 
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
-        as="style"
-        crossOrigin="anonymous"
-      />
-
-      {/* Font display optimization */}
+      {/* Font display optimization - removed problematic preloads */}
       <style>
         {`
           /* Font display swap to prevent invisible text during font loading */
@@ -272,7 +258,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="msapplication-TileImage" content="/lovable-uploads/947ba080-a4e6-428b-a1cd-41a174bfe001.png" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
 
-      {/* Performance Optimization */}
+      {/* Performance Optimization - proper preconnect */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       

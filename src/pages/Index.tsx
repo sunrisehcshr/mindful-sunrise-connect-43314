@@ -16,26 +16,8 @@ import SchemaMarkup from '../components/SchemaMarkup';
 import { Separator } from '@/components/ui/separator';
 
 const Index = () => {
-  useEffect(() => {
-    // Preload critical images
-    const preloadImages = () => {
-      const imagesToPreload = [
-        '/images/family-counseling-havertown.webp',
-        '/images/Therapy-in-havertown.webp'
-      ];
-      
-      imagesToPreload.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-      });
-    };
-    
-    preloadImages();
-  }, []);
-
+  // Removed preloading code that was causing warnings
+  
   return (
     <>
       <SEOHead 

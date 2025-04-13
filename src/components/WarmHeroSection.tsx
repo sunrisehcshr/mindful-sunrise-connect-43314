@@ -7,6 +7,7 @@ import AppointmentDialog from './Appointment/AppointmentDialog';
 import SectionTag from './ui/section-tag';
 import ImageOptimizer from './ui/ImageOptimizer';
 import AnimatedGradientBackground from './ui/animated-gradient-background';
+
 const WarmHeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -26,6 +27,7 @@ const WarmHeroSection = () => {
   "rgba(255, 255, 255, 0)" // Transparent
   ];
   const gradientStops = [0, 30, 50, 65, 80, 90, 100];
+  
   return <section className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32" id="home">
       {/* Animated Gradient Background */}
       <AnimatedGradientBackground gradientColors={yellowGradientColors} gradientStops={gradientStops} startingGap={130} Breathing={true} breathingRange={8} animationSpeed={0.015} topOffset={-10} containerClassName="opacity-80 z-0" />
@@ -132,8 +134,15 @@ const WarmHeroSection = () => {
             }} animate={{
               y: 0
             }}>
-                <div className=""></div>
-                <ImageOptimizer src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" priority={true} width={600} height={400} onLoad={() => setImageLoaded(true)} />
+                <ImageOptimizer 
+                  src="/images/family-counseling-havertown.webp" 
+                  alt="Expert family counseling services in Havertown, PA" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+                  priority={true} 
+                  width={600} 
+                  height={400} 
+                  onLoad={() => setImageLoaded(true)} 
+                />
               </motion.div>
               
               {/* Enhanced decorative elements with vibrant yellow */}
@@ -145,4 +154,5 @@ const WarmHeroSection = () => {
       </div>
     </section>;
 };
+
 export default WarmHeroSection;
