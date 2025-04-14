@@ -11,11 +11,10 @@ Allow: /mental-health-havertown-pa
 Allow: /services
 Allow: /conditions
 
-# Allow Google Maps
+# Allow Google Maps - Fixed pattern syntax
 Allow: /maps/
-Allow: https://www.google.com/maps/
-Allow: https://maps.google.com/
-Allow: https://maps.googleapis.com/
+Allow: /google-maps/
+Allow: /maps-api/
 
 # Disallow admin pages
 Disallow: /admin/
@@ -48,9 +47,6 @@ Disallow: /*?utm_*
 User-agent: Googlebot
 Allow: /
 Allow: /maps/
-Allow: https://www.google.com/maps/
-Allow: https://maps.google.com/
-Allow: https://maps.googleapis.com/
 Crawl-delay: 5
 
 User-agent: Bingbot

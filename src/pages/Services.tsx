@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import { MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import LinkOptimizer from '../components/ui/LinkOptimizer';
 
 const Services = () => {
   // Services page breadcrumbs
@@ -44,7 +44,7 @@ const Services = () => {
         <main className="flex-grow pt-24 py-0 bg-white">
           {/* Hero Section - Optimized with local keywords and clear CTA */}
           <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-600 to-amber-500"></div>
             
             {/* Subtle texture overlay */}
             <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
@@ -66,16 +66,16 @@ const Services = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 md:gap-4">
-                  <a href="#individual-therapy" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-600 shadow hover:bg-white/90 h-9 px-4 py-2">
+                  <a href="#individual-therapy" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-700 shadow hover:bg-white/90 h-9 px-4 py-2">
                     Individual Therapy
                   </a>
-                  <a href="#family-therapy" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-600 shadow hover:bg-white/90 h-9 px-4 py-2">
+                  <a href="#family-therapy" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-700 shadow hover:bg-white/90 h-9 px-4 py-2">
                     Family Therapy
                   </a>
-                  <a href="#anxiety-treatment" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-600 shadow hover:bg-white/90 h-9 px-4 py-2">
+                  <a href="#anxiety-treatment" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-700 shadow hover:bg-white/90 h-9 px-4 py-2">
                     Anxiety Treatment
                   </a>
-                  <a href="#depression-therapy" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-600 shadow hover:bg-white/90 h-9 px-4 py-2">
+                  <a href="#depression-therapy" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-700 shadow hover:bg-white/90 h-9 px-4 py-2">
                     Depression Therapy
                   </a>
                 </div>
@@ -102,13 +102,17 @@ const Services = () => {
                   Our full range of mental health services in Havertown includes individual therapy, family counseling, anxiety treatment, depression therapy, and specialized care for conditions like ADHD, trauma, and OCD. We welcome clients of all ages and backgrounds to experience the compassionate care that has made us a trusted provider in Delaware County.
                 </p>
                 
-                {/* Add local areas served section */}
+                {/* Add local areas served section - updated with LinkOptimizer */}
                 <div className="mt-8 bg-white rounded-lg p-6 shadow-sm border border-amber-200/30">
                   <h3 className="text-xl font-semibold mb-4 text-amber-900">Areas We Serve in Delaware County</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    <Link to="/mental-health-havertown-pa" className="px-3 py-2 bg-amber-50 hover:bg-amber-100 transition-colors rounded text-center">
+                    <LinkOptimizer 
+                      to="/mental-health-havertown-pa" 
+                      className="px-3 py-2 bg-amber-50 hover:bg-amber-100 transition-colors rounded text-center"
+                      descriptiveTitle="Mental Health Services in Havertown, PA"
+                    >
                       Havertown
-                    </Link>
+                    </LinkOptimizer>
                     <div className="px-3 py-2 bg-amber-50 rounded text-center">
                       Broomall
                     </div>
@@ -128,7 +132,7 @@ const Services = () => {
                 </div>
                 
                 {/* Add ZIP codes served section for direct matches */}
-                <div className="mt-6 text-sm text-amber-700">
+                <div className="mt-6 text-sm text-amber-800"> {/* Improved contrast */}
                   <p>Proudly serving ZIP codes: 19083 (Havertown), 19008 (Broomall), 19003 (Ardmore), 19026 (Drexel Hill), 19064 (Springfield), 19073 (Newtown Square), and surrounding areas in Delaware County, Pennsylvania.</p>
                 </div>
               </div>

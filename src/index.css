@@ -15,24 +15,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 25 20% 25%;
  
-    --primary: 25 85% 58%;
+    --primary: 25 85% 45%;
     --primary-foreground: 210 40% 98%;
  
     --secondary: 45 70% 94%;
     --secondary-foreground: 25 20% 25%;
  
     --muted: 45 50% 94%;
-    --muted-foreground: 25 20% 45%;
+    --muted-foreground: 25 18% 35%;
  
     --accent: 48 70% 94%;
     --accent-foreground: 25 20% 25%;
  
-    --destructive: 0 74% 65%;
+    --destructive: 0 74% 42%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 45 50% 85%;
     --input: 45 50% 85%;
-    --ring: 25 85% 58%;
+    --ring: 25 85% 45%;
  
     --radius: 0.5rem;
   }
@@ -55,6 +55,19 @@
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-inter;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-orange-600;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -86,25 +99,23 @@
     @apply py-12 md:py-16 lg:py-24;
   }
 
-  /* Button and tag styles */
   .btn-sunrise {
-    @apply px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-primary-foreground font-medium rounded-md 
-    hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-sm hover:shadow-md inline-flex items-center gap-2 text-sm;
+    @apply px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-orange-600 to-amber-600 text-primary-foreground font-medium rounded-md 
+    hover:from-orange-700 hover:to-amber-700 transition-all duration-300 shadow-sm hover:shadow-md inline-flex items-center gap-2 text-sm;
   }
 
   .btn-outline-sunrise {
-    @apply px-3 py-1.5 md:px-4 md:py-2 bg-white/30 text-orange-600 font-medium rounded-md border border-orange-200
+    @apply px-3 py-1.5 md:px-4 md:py-2 bg-white/30 text-orange-700 font-medium rounded-md border border-orange-300
     hover:bg-orange-50 transition-all duration-300 inline-flex items-center gap-2 text-sm shadow-sm hover:shadow-md;
   }
 
-  /* Updated consistent section tag */
   .section-tag {
-    @apply inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-white
-    border border-orange-400 mb-3 md:mb-4 shadow-sm;
+    @apply inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium bg-gradient-to-r from-orange-600 to-amber-600 text-white
+    border border-orange-500 mb-3 md:mb-4 shadow-sm;
   }
   
   .orange-tag {
-    @apply bg-orange-500 text-white px-2 py-0.5 md:px-3 md:py-1 rounded-md text-xs;
+    @apply bg-orange-600 text-white px-2 py-0.5 md:px-3 md:py-1 rounded-md text-xs;
   }
   
   .orange-dot {
@@ -115,7 +126,6 @@
     @apply bg-orange-500 text-white font-semibold;
   }
   
-  /* Enhanced dividers */
   .sunrise-divider {
     @apply relative py-4 my-8;
   }
@@ -125,7 +135,6 @@
     @apply absolute w-24 h-[2px] bg-gradient-to-r from-amber-300 to-orange-400 left-1/2 -translate-x-1/2;
   }
   
-  /* Star decoration classes */
   .star-subtle {
     @apply relative;
   }
@@ -145,40 +154,33 @@
     background-size: 64px 64px;
   }
   
-  /* Mobile optimization */
   input, select, textarea {
     @apply text-sm;
   }
   
   @media (max-width: 640px) {
-    /* Additional mobile-specific adjustments */
     .ui-container {
       @apply px-3;
     }
     
-    /* Making forms more compact on mobile */
     form .space-y-4 {
       @apply space-y-3;
     }
     
-    /* Ensure dialogs don't cover the whole screen */
     [data-state="open"] {
       max-height: 90vh;
       overflow-y: auto;
     }
   }
 
-  /* Smooth scroll */
   html {
     scroll-behavior: smooth;
   }
   
-  /* Transition for page elements */
   .page-transition {
     @apply transition-all duration-500 ease-in-out;
   }
   
-  /* Enhanced floating animation */
   .float-animation {
     animation: floating 6s ease-in-out infinite;
   }
@@ -195,7 +197,6 @@
     }
   }
 
-  /* New vibrant yellow styles */
   .yellow-gradient-bg {
     background: linear-gradient(135deg, #fff8c9, #ffee93, #fffacd);
   }

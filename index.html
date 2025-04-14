@@ -19,6 +19,11 @@
     <link rel="alternate" hreflang="en-us" href="https://sunrisehumancare.com/" />
     <link rel="canonical" href="https://sunrisehumancare.com/" />
 
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    
     <!-- Critical CSS inline for above-the-fold content -->
     <style>
       /* Basic critical styles for quick rendering */
@@ -52,15 +57,27 @@
       @keyframes spin {
         to { transform: rotate(360deg); }
       }
+      
+      /* Improved contrast for accessibility */
+      .text-orange-400 {
+        color: #ea580c !important; /* Higher contrast orange */
+      }
+      .bg-sunrise-500 {
+        background-color: #ea580c !important; /* Higher contrast button background */
+      }
+      .hover\:bg-sunrise-600:hover {
+        background-color: #c2410c !important;
+      }
     </style>
-
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
     
-    <!-- Font loading optimized with correct attributes -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" />
+    <!-- Font loading optimized with display=swap for better performance -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" />
+    </noscript>
+    
+    <!-- Preload critical LCP image -->
+    <link rel="preload" as="image" href="/images/family-counseling-havertown.webp" fetchpriority="high" />
     
     <!-- Open Graph (OG) for Social Media -->
     <meta property="og:title" content="Sunrise Human Care Services | Mental Health Clinic in Havertown, PA" />
@@ -125,8 +142,8 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     
-    <!-- Google Analytics - load async with minimal blocking -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L46C72W6FN"></script>
+    <!-- Defer non-critical scripts -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-L46C72W6FN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -149,7 +166,7 @@
       });
     </script>
     
-    <!-- Main application script - defer loading -->
+    <!-- Main application script - with defer attribute -->
     <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>

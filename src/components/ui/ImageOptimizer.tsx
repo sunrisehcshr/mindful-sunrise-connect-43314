@@ -10,6 +10,7 @@ interface ImageOptimizerProps {
   className?: string;
   priority?: boolean;
   onLoad?: () => void;
+  isLCP?: boolean; // New prop to mark Largest Contentful Paint images
 }
 
 const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
@@ -20,10 +21,14 @@ const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
   className,
   priority = false,
   onLoad,
+  isLCP = false,
 }) => {
   // Default dimensions if not provided
   const defaultWidth = width || 800;
   const defaultHeight = height || 600;
+  
+  // Calculate aspect ratio for better layout stability
+  const aspectRatio = defaultWidth && defaultHeight ? defaultWidth / defaultHeight : undefined;
   
   return (
     <img
@@ -32,10 +37,13 @@ const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
       width={defaultWidth}
       height={defaultHeight}
       className={cn('transition-opacity', className)}
-      loading={priority ? 'eager' : 'lazy'} 
-      decoding={priority ? 'sync' : 'async'}
+      loading={priority || isLCP ? 'eager' : 'lazy'} 
+      decoding={priority || isLCP ? 'sync' : 'async'}
       onLoad={onLoad}
-      fetchPriority={priority ? 'high' : 'auto'}
+      fetchPriority={priority || isLCP ? 'high' : 'auto'}
+      style={{
+        aspectRatio: aspectRatio ? `${aspectRatio}` : 'auto',
+      }}
     />
   );
 };
