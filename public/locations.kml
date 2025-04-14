@@ -1,0 +1,56 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Sunrise Human Care Services Locations</name>
+    <description>Mental health services locations in Havertown, PA and surrounding areas</description>
+    
+    <!-- Main Office Location -->
+    <Placemark>
+      <name>Sunrise Human Care Services - Main Office</name>
+      <description>
+        <![CDATA[
+          Mental health clinic providing therapy, counseling, and psychiatric services.
+          Address: 2050 West Chester Pike, Havertown, PA 19083
+          Phone: (814) 620-2162
+          Website: https://sunrisehumancare.com
+        ]]>
+      </description>
+      <address>2050 West Chester Pike, Havertown, PA 19083</address>
+      <Point>
+        <coordinates>-75.3151,39.9707,0</coordinates>
+      </Point>
+      <ExtendedData>
+        <Data name="type">
+          <value>Main Office</value>
+        </Data>
+        <Data name="services">
+          <value>Individual Therapy, Couples Counseling, Family Therapy, Psychiatric Services</value>
+        </Data>
+        <Data name="hours">
+          <value>Monday-Friday: 9:00 AM - 5:00 PM</value>
+        </Data>
+      </ExtendedData>
+    </Placemark>
+    
+    <!-- Service Area Boundary -->
+    <Placemark>
+      <name>Primary Service Area</name>
+      <description>Main service area covering Havertown and surrounding communities</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -75.3351,39.9907,0
+              -75.2951,39.9907,0
+              -75.2951,39.9507,0
+              -75.3351,39.9507,0
+              -75.3351,39.9907,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+  </Document>
+</kml>
+
