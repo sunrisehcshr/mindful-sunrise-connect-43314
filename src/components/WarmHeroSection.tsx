@@ -33,18 +33,6 @@ const WarmHeroSection = () => {
       <div className="absolute inset-0 -z-10 opacity-15 sunshine-pattern"></div>
       
       <div className="container mx-auto px-4">
-        {/* Floating box that appears above the image on all devices */}
-        <motion.div 
-          className="relative z-10 mx-auto mb-6 max-w-xs"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-sm border border-amber-200/50 text-center">
-            <span className="text-amber-900 font-medium text-xs md:text-sm">Step into brighter tomorrow with Sunrise</span>
-          </div>
-        </motion.div>
-        
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div 
@@ -84,22 +72,15 @@ const WarmHeroSection = () => {
                 </Link>
               </div>
               
-              <div className="mt-5 md:mt-6 flex flex-col sm:flex-row items-center flex-wrap gap-2.5 text-xs md:text-sm text-amber-800 justify-center md:justify-start">
+              <div className="mt-5 md:mt-6 flex items-center flex-wrap gap-2 text-xs md:text-sm text-amber-800 justify-center md:justify-start">
                 <span className="flex items-center gap-1.5">
                   <span className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-green-100 flex items-center justify-center">
                     <span className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></span>
                   </span>
                   Now accepting new patients
                 </span>
-                
-                <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                
-                <span className="flex items-center gap-1.5">
-                  <span className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-amber-100 flex items-center justify-center sm:hidden">
-                    <span className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-amber-400"></span>
-                  </span>
-                  In-person & virtual
-                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-300 hidden md:block"></span>
+                <span>In-person & virtual</span>
               </div>
             </div>
           </motion.div>
@@ -127,6 +108,9 @@ const WarmHeroSection = () => {
               
               {/* Decorative overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-sm border border-amber-200/50">
+                <span className="text-amber-900 font-medium text-xs md:text-sm">Step into brighter tomorrow with Sunrise</span>
+              </div>
             </div>
           </motion.div>
         </div>
