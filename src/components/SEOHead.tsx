@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
@@ -230,9 +231,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Canonical URL (Fixing Duplicate Issue) */}
       <link rel="canonical" href={canonicalUrl} />
       
-      {/* hreflang tags */}
-      <link rel="alternate" hreflang="en-us" href={canonicalUrl} />
-      <link rel="alternate" hreflang="x-default" href="https://sunrisehumancare.com/" />
+      {/* hreflang tags - FIX: Changed 'hreflang' to 'hrefLang' (with capital L) */}
+      <link rel="alternate" hrefLang="en-us" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="x-default" href="https://sunrisehumancare.com/" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={article ? 'article' : type} />
