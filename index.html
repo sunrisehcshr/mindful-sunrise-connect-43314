@@ -22,16 +22,11 @@
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="preconnect" href="https://cdn.gpteng.co" crossorigin />
     
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/images/family-counseling-havertown.webp" as="image" fetchpriority="high" />
-    <link rel="preload" href="/assets/index-CN9dzNZ1.css" as="style" />
-    
-    <!-- Critical CSS inline for above-the-fold content -->
+    <!-- Critical CSS inlined -->
     <style>
-      /* Basic critical styles for quick rendering */
+      /* Critical CSS for fast initial render */
       body {
         margin: 0;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -62,23 +57,26 @@
       @keyframes spin {
         to { transform: rotate(360deg); }
       }
-      
       /* Improved contrast for accessibility */
-      .text-orange-400 {
-        color: #c2410c !important; /* Higher contrast orange */
-      }
-      .bg-sunrise-500 {
-        background-color: #c2410c !important; /* Higher contrast button background */
-      }
-      .hover\:bg-sunrise-600:hover {
-        background-color: #9a3412 !important;
-      }
+      .text-orange-400 { color: #c2410c !important; }
+      .bg-sunrise-500 { background-color: #c2410c !important; }
+      .hover\:bg-sunrise-600:hover { background-color: #9a3412 !important; }
     </style>
     
-    <!-- Font loading optimized with display=swap for better performance -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <!-- Preload critical image -->
+    <link rel="preload" href="/images/family-counseling-havertown.webp" as="image" fetchpriority="high" />
+    
+    <!-- Font loading optimized -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
+    
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="stylesheet" href="/assets/index-CN9dzNZ1.css" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="/assets/index-CN9dzNZ1.css" />
     </noscript>
     
     <!-- Open Graph (OG) for Social Media -->
@@ -144,34 +142,40 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer></script>
     
-    <!-- Defer non-critical scripts -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L46C72W6FN"></script>
-    <script>
-      // Defer analytics execution
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-L46C72W6FN', { 
-            'send_page_view': false,
-            'cookie_domain': 'sunrisehumancare.com',
-            'cookie_flags': 'SameSite=None;Secure',
-            'geo_granularity': 'city',
-            'region_code': 'US-PA'  
-          });
-          // Defer sending pageview until after page loads
-          gtag('event', 'page_view', {
-            'page_location': window.location.href,
-            'page_path': window.location.pathname,
-            'page_title': document.title,
-            'region_code': 'US-PA'
-          });
-        }, 2000); // Delay analytics by 2 seconds
-      });
-    </script>
-    
     <!-- Main application script - with type="module" and defer -->
     <script type="module" src="/src/main.tsx" defer></script>
+    
+    <!-- Defer non-critical scripts -->
+    <script>
+      // Defer analytics execution
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          const analyticsScript = document.createElement('script');
+          analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-L46C72W6FN';
+          analyticsScript.async = true;
+          document.body.appendChild(analyticsScript);
+          
+          analyticsScript.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L46C72W6FN', { 
+              'send_page_view': false,
+              'cookie_domain': 'sunrisehumancare.com',
+              'cookie_flags': 'SameSite=None;Secure',
+              'geo_granularity': 'city',
+              'region_code': 'US-PA'  
+            });
+            // Delay sending pageview until after critical content loads
+            gtag('event', 'page_view', {
+              'page_location': window.location.href,
+              'page_path': window.location.pathname,
+              'page_title': document.title,
+              'region_code': 'US-PA'
+            });
+          };
+        }, 3000); // Delay loading analytics by 3 seconds
+      });
+    </script>
   </body>
 </html>
