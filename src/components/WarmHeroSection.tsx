@@ -28,12 +28,12 @@ const WarmHeroSection = () => {
   }, []);
   
   return (
-    <section className="relative py-8 md:py-20 lg:py-24 xl:py-28 overflow-hidden bg-inherit">
+    <section className="relative pt-20 md:pt-28 pb-8 md:py-20 lg:py-24 xl:py-28 overflow-hidden bg-inherit">
       {/* Background pattern */}
       <div className="absolute inset-0 -z-10 opacity-15 sunshine-pattern"></div>
       
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-4 md:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div 
             className="order-2 md:order-1"
@@ -41,7 +41,7 @@ const WarmHeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="max-w-lg mx-auto md:mx-0 text-center md:text-left px-2 md:px-0">
+            <div className="w-full max-w-lg mx-auto md:mx-0 text-center md:text-left px-2 md:px-0">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -53,7 +53,7 @@ const WarmHeroSection = () => {
                 </SectionTag>
               </motion.div>
               
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-amber-900 mb-3 md:mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-amber-900 mb-4 md:mb-4">
                 Compassionate Mental Health Care in <span className="text-orange-600">Havertown</span>
               </h1>
               
@@ -72,7 +72,7 @@ const WarmHeroSection = () => {
                 </Link>
               </div>
               
-              <div className="mt-4 md:mt-6 flex items-center flex-wrap gap-2 text-xs md:text-sm text-amber-800 justify-center md:justify-start">
+              <div className="mt-5 md:mt-6 flex items-center flex-wrap gap-2 text-xs md:text-sm text-amber-800 justify-center md:justify-start">
                 <span className="flex items-center gap-1.5">
                   <span className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-green-100 flex items-center justify-center">
                     <span className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></span>
@@ -87,12 +87,12 @@ const WarmHeroSection = () => {
           
           {/* Right side - Image */}
           <motion.div 
-            className="order-1 md:order-2 mx-auto md:mx-0 w-full mb-6 md:mb-0"
+            className="order-1 md:order-2 mx-auto md:mx-0 w-full mb-4 md:mb-0"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-xl shadow-lg w-full max-w-md mx-auto">
+            <div className="relative h-[200px] sm:h-[250px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-xl shadow-lg w-full max-w-md mx-auto">
               {/* LCP Image - Optimized */}
               <ImageLoader
                 src="/images/family-counseling-havertown.webp"
