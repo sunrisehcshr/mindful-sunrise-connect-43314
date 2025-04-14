@@ -120,9 +120,9 @@ const WarmHeroSection = () => {
               {/* Decorative overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent"></div>
               
-              {/* Text box overlapping image */}
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-sm border border-amber-200/50">
-                <span className="text-amber-900 font-medium text-xs md:text-sm">Step into brighter tomorrow with Sunrise</span>
+              {/* Text box overlapping image - Updated for center alignment and transparent background */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/70 backdrop-blur-sm px-2 py-1 md:px-4 md:py-2 rounded-lg shadow-sm border border-amber-200/50 w-auto max-w-[90%]">
+                <span className="text-amber-900 font-medium text-[10px] md:text-sm">Step into brighter tomorrow with Sunrise</span>
               </div>
             </div>
           </motion.div>
