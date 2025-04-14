@@ -5,48 +5,51 @@ import { Link } from 'react-router-dom';
 import ImageLoader from './ui/ImageLoader';
 import SectionTag from './ui/section-tag';
 import { useIsMobile } from '@/hooks/use-mobile';
-
 const WarmHeroSection = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const isMobile = useIsMobile();
-  
   useEffect(() => {
     // Mark the largest contentful paint for performance monitoring
-    const lcpObserver = new PerformanceObserver((entryList) => {
+    const lcpObserver = new PerformanceObserver(entryList => {
       for (const entry of entryList.getEntries()) {
         // Log LCP timing for debugging
         console.log('LCP:', entry.startTime);
       }
     });
-    
-    lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-    
+    lcpObserver.observe({
+      type: 'largest-contentful-paint',
+      buffered: true
+    });
     return () => {
       lcpObserver.disconnect();
     };
   }, []);
-  
-  return (
-    <section className="relative pt-20 md:pt-28 pb-8 md:py-20 lg:py-24 xl:py-28 overflow-hidden bg-inherit">
+  return <section className="relative pt-20 md:pt-28 pb-8 md:py-20 lg:py-24 xl:py-28 overflow-hidden bg-inherit">
       {/* Background pattern */}
       <div className="absolute inset-0 -z-10 opacity-15 sunshine-pattern"></div>
       
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Text content */}
-          <motion.div 
-            className="order-2 md:order-1"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <motion.div className="order-2 md:order-1" initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }}>
             <div className="w-full max-w-lg mx-auto md:mx-0 text-center md:text-left px-2 md:px-0">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
-                className="mb-3"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              scale: 0.9
+            }} animate={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.3
+            }} className="mb-3">
                 <SectionTag className="inline-block" icon={null}>
                   Havertown, PA Mental Health Services
                 </SectionTag>
@@ -82,7 +85,7 @@ const WarmHeroSection = () => {
                 </span>
                 
                 {/* Hidden separator on mobile */}
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-300 hidden md:block order-2 md:order-3"></span>
+                
                 
                 {/* Now accepting new patients */}
                 <span className="flex items-center gap-1.5 order-2 md:order-1">
@@ -96,39 +99,31 @@ const WarmHeroSection = () => {
           </motion.div>
           
           {/* Right side - Image */}
-          <motion.div 
-            className="order-1 md:order-2 mx-auto md:mx-0 w-full mb-4 md:mb-0"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          <motion.div className="order-1 md:order-2 mx-auto md:mx-0 w-full mb-4 md:mb-0" initial={{
+          opacity: 0,
+          scale: 0.95
+        }} animate={{
+          opacity: 1,
+          scale: 1
+        }} transition={{
+          duration: 0.5,
+          delay: 0.1
+        }}>
             <div className="relative h-[200px] sm:h-[250px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-xl shadow-lg w-full max-w-md mx-auto">
               {/* LCP Image - Optimized */}
-              <ImageLoader
-                src="/images/family-counseling-havertown.webp"
-                alt="Expert family counseling services in Havertown, PA"
-                width={600}
-                height={400}
-                className="w-full h-full"
-                objectFit="cover"
-                priority={true}
-                isLCP={true}
-                ref={imageRef}
-              />
+              <ImageLoader src="/images/family-counseling-havertown.webp" alt="Expert family counseling services in Havertown, PA" width={600} height={400} className="w-full h-full" objectFit="cover" priority={true} isLCP={true} ref={imageRef} />
               
               {/* Decorative overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent"></div>
               
-              {/* Text box overlapping image - Updated for one-line text, orange color, and bold */}
+              {/* Text box overlapping image - Updated for center alignment and transparent background */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/70 backdrop-blur-sm px-2 py-1 md:px-4 md:py-2 rounded-lg shadow-sm border border-amber-200/50 w-auto max-w-[90%]">
-                <span className="text-orange-600 font-bold text-[10px] md:text-sm">Step into brighter tomorrow with Sunrise</span>
+                <span className="text-amber-900 font-medium text-[10px] md:text-sm">Step into brighter tomorrow with Sunrise</span>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WarmHeroSection;
