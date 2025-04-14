@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, CircleDot, ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
@@ -151,11 +152,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1.5">
-            <div className="group">
+            <div>
               <img 
                 src="/logo.svg" 
                 alt="Sunrise Logo" 
-                className="h-10 w-12 object-contain transition-transform duration-300 group-hover:-translate-y-1" 
+                className="h-10 w-12 object-contain transition-transform duration-300 hover:-translate-y-1" 
               />
             </div>
             <div className="flex flex-col">
