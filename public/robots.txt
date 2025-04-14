@@ -11,7 +11,7 @@ Allow: /mental-health-havertown-pa
 Allow: /services
 Allow: /conditions
 
-# Allow Google Maps
+# Allow Google Maps (corrected format)
 Allow: /maps/
 Allow: /google-maps/
 Allow: /maps-api/

@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState, memo } from 'react';
+import React, { useEffect, useState, memo, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ImageLoaderProps {
@@ -16,7 +16,7 @@ interface ImageLoaderProps {
   lazyBoundary?: string;
 }
 
-const ImageLoader: React.FC<ImageLoaderProps> = memo(({
+const ImageLoader = forwardRef<HTMLImageElement, ImageLoaderProps>(({
   src,
   alt,
   width,
@@ -28,7 +28,7 @@ const ImageLoader: React.FC<ImageLoaderProps> = memo(({
   objectFit = 'cover',
   placeholderColor = '#f3f4f6',
   lazyBoundary = '200px',
-}) => {
+}, ref) => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
   
@@ -106,6 +106,7 @@ const ImageLoader: React.FC<ImageLoaderProps> = memo(({
           width: '100%',
           height: '100%',
         }}
+        ref={ref}
       />
       
       {/* Error fallback */}
