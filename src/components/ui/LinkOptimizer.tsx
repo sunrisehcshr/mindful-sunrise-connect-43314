@@ -45,12 +45,12 @@ const LinkOptimizer: React.FC<LinkOptimizerProps> = ({
     }
   }, [to, external, prefetch]);
 
+  // Handle cases where children is just "Learn more" - replace with descriptiveTitle
+  const displayText = (children === "Learn more") ? descriptiveTitle : children;
+
   const content = (
     <>
-      {descriptiveTitle !== children ? (
-        <span className="sr-only">{descriptiveTitle}</span>
-      ) : null}
-      <span aria-hidden={descriptiveTitle !== children ? "true" : undefined}>{children}</span>
+      <span>{displayText}</span>
       {showArrow && <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />}
     </>
   );

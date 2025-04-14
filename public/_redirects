@@ -2,3 +2,4 @@
 /*    /index.html   200
 /resources    /blog    301
 /resources/*  /blog/:splat  301
+/service-area/*  /mental-health-havertown-pa  301
