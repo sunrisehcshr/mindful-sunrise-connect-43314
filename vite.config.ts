@@ -24,17 +24,60 @@ export default defineConfig(({ mode }) => ({
     // Use code splitting to improve initial load time
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split vendor code into separate chunks
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['@/components/ui'],
-          'framer-motion': ['framer-motion'],
-          'data-fetching': ['@tanstack/react-query'],
-        },
+        manualChunks: (id) => {
+          // Split page components into separate chunks
+          if (id.includes('/pages/')) {
+            // Get the page name for better chunk naming
+            const match = id.match(/\/pages\/([^/]+)/);
+            if (match && match[1]) {
+              return `page-${match[1].toLowerCase()}`;
+            }
+          }
+          
+          // Vendor chunks
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor-react';
+            }
+            if (id.includes('@radix-ui')) {
+              return 'vendor-radix';
+            }
+            if (id.includes('framer-motion')) {
+              return 'vendor-framer';
+            }
+            if (id.includes('tanstack')) {
+              return 'vendor-tanstack';
+            }
+            if (id.includes('lucide')) {
+              return 'vendor-lucide';
+            }
+            return 'vendor'; // Other dependencies
+          }
+          
+          // Component chunks
+          if (id.includes('/components/ui/')) {
+            return 'ui-components';
+          }
+          if (id.includes('/components/')) {
+            return 'components';
+          }
+          
+          // Lib and utils
+          if (id.includes('/lib/')) {
+            return 'lib';
+          }
+        }
       },
     },
     // Minify code in production
     minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console logs
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug']
+      }
+    },
     // Generate source maps for debugging
     sourcemap: mode !== 'production',
     // Configure CSS output

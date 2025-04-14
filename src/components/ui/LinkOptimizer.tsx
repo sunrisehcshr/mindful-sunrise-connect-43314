@@ -8,9 +8,11 @@ interface LinkOptimizerProps {
   to: string;
   children?: React.ReactNode;
   className?: string;
-  descriptiveTitle: string; // Always require descriptive title for SEO
+  descriptiveTitle: string; // Required descriptive title for SEO
   showArrow?: boolean;
   external?: boolean;
+  onClick?: () => void;
+  prefetch?: boolean; // Optional prefetching for internal links
 }
 
 /**
@@ -23,11 +25,32 @@ const LinkOptimizer: React.FC<LinkOptimizerProps> = ({
   descriptiveTitle,
   showArrow = false,
   external = false,
+  onClick,
+  prefetch = false,
 }) => {
+  // Prefetch logic for internal links
+  React.useEffect(() => {
+    if (prefetch && !external && typeof window !== 'undefined') {
+      // Create a link element for prefetching
+      const linkElement = document.createElement('link');
+      linkElement.rel = 'prefetch';
+      linkElement.href = to;
+      linkElement.as = 'document';
+      
+      document.head.appendChild(linkElement);
+      
+      return () => {
+        document.head.removeChild(linkElement);
+      };
+    }
+  }, [to, external, prefetch]);
+
   const content = (
     <>
-      <span className="sr-only">{descriptiveTitle}</span>
-      <span aria-hidden="true">{children}</span>
+      {descriptiveTitle !== children ? (
+        <span className="sr-only">{descriptiveTitle}</span>
+      ) : null}
+      <span aria-hidden={descriptiveTitle !== children ? "true" : undefined}>{children}</span>
       {showArrow && <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />}
     </>
   );
@@ -40,6 +63,7 @@ const LinkOptimizer: React.FC<LinkOptimizerProps> = ({
         target="_blank" 
         rel="noopener noreferrer" 
         aria-label={descriptiveTitle}
+        onClick={onClick}
       >
         {content}
       </a>
@@ -51,6 +75,7 @@ const LinkOptimizer: React.FC<LinkOptimizerProps> = ({
       to={to} 
       className={cn("group", className)} 
       aria-label={descriptiveTitle}
+      onClick={onClick}
     >
       {content}
     </Link>

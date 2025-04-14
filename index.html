@@ -20,9 +20,14 @@
     <link rel="canonical" href="https://sunrisehumancare.com/" />
 
     <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.gpteng.co" crossorigin />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/images/family-counseling-havertown.webp" as="image" fetchpriority="high" />
+    <link rel="preload" href="/assets/index-CN9dzNZ1.css" as="style" />
     
     <!-- Critical CSS inline for above-the-fold content -->
     <style>
@@ -51,7 +56,7 @@
         height: 50px;
         border: 5px solid rgba(236, 177, 66, 0.2);
         border-radius: 50%;
-        border-top-color: #F7913E;
+        border-top-color: #c2410c;
         animation: spin 1s ease-in-out infinite;
       }
       @keyframes spin {
@@ -60,13 +65,13 @@
       
       /* Improved contrast for accessibility */
       .text-orange-400 {
-        color: #ea580c !important; /* Higher contrast orange */
+        color: #c2410c !important; /* Higher contrast orange */
       }
       .bg-sunrise-500 {
-        background-color: #ea580c !important; /* Higher contrast button background */
+        background-color: #c2410c !important; /* Higher contrast button background */
       }
       .hover\:bg-sunrise-600:hover {
-        background-color: #c2410c !important;
+        background-color: #9a3412 !important;
       }
     </style>
     
@@ -75,9 +80,6 @@
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" />
     </noscript>
-    
-    <!-- Preload critical LCP image -->
-    <link rel="preload" as="image" href="/images/family-counseling-havertown.webp" fetchpriority="high" />
     
     <!-- Open Graph (OG) for Social Media -->
     <meta property="og:title" content="Sunrise Human Care Services | Mental Health Clinic in Havertown, PA" />
@@ -93,11 +95,11 @@
     <meta name="twitter:description" content="Compassionate mental health care in Havertown, PA. Therapy for anxiety, depression, and emotional well-being." />
     <meta name="twitter:image" content="/og-image.png" />
 
-    <!-- Standard Favicon for Modern Browsers -->
+    <!-- Standard Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Apple Touch Icon (iOS) - URL-Encoded SVG -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='80 10 180 180'%3E%3Cpath d='M180.98 16.996c6.28 4.006 10.576 10.331 12.457 17.504 1.23 7.213.272 15.114-3.437 21.5-2.483 2.883-5.188 5.443-8 8a576 576 0 0 0-3 3l1.836.328c6.228 1.17 12.163 2.77 18.164 4.797l2.745.924C216.165 78.016 229.682 84.614 243 92l-1 3-3.813-.125c-14.287.09-25.62 4.949-35.945 14.844-15.072 15.334-23.76 34.776-31.086 54.771-1.964 5.318-1.964 5.318-4.156 7.51-5.683.541-5.683.541-8 0-2.414-2.756-3.646-5.357-4.762-8.824l-.939-2.843-.987-3.02C147.07 141.831 140.931 128.041 131 115l-1.55-2.11c-6.243-7.947-15.315-13.827-25.333-15.32-5.898-.606-11.28-.58-17.117.43 0-4 0-4 1.259-5.397l1.792-1.267 2.027-1.447 2.234-1.514 2.307-1.586C109.902 77.849 123.486 71.043 139 67l2.207-.617c2.916-.623 5.825-.44 8.793-.383l-2.125-2c-6.8-6.839-11.105-13.334-11.313-23.25.166-8.547 2.937-14.675 9.063-20.625 10.721-8.557 23.287-9.199 35.355-3.129' fill='%23EB5757'/%3E%3C/svg%3E" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='80 10 180 180'%3E%3Cpath d='M180.98 16.996c6.28 4.006 10.576 10.331 12.457 17.504 1.23 7.213.272 15.114-3.437 21.5-2.483 2.883-5.188 5.443-8 8a576 576 0 0 0-3 3l1.836.328c6.228 1.17 12.163 2.77 18.164 4.797l2.745.924C216.165 78.016 229.682 84.614 243 92l-1 3-3.813-.125c-14.287.09-25.62 4.949-35.945 14.844-15.072 15.334-23.76 34.776-31.086 54.771-1.964 5.318-1.964 5.318-4.156 7.51-5.683.541-5.683.541-8 0-2.414-2.756-3.646-5.357-4.762-8.824l-.939-2.843-.987-3.02C147.07 141.831 140.931 128.041 131 115l-1.55-2.11c-6.243-7.947-15.315-13.827-25.333-15.32-5.898-.606-11.28-.58-17.117.43 0-4 0-4 1.259-5.397l1.792-1.267 2.027-1.447 2.234-1.514 2.307-1.586C109.902 77.849 123.486 71.043 139 67l2.207-.617c2.916-.623 5.825-.44 8.793-.383l-2.125-2c-6.8-6.839-11.105-13.334-11.313-23.25.166-8.547 2.937-14.675 9.063-20.625 10.721-8.557 23.287-9.199 35.355-3.129' fill='%23c2410c'/%3E%3C/svg%3E" />
 
     <!-- Microsoft Edge and Windows Compatibility -->
     <meta name="msapplication-TileImage" content="/favicon.svg" />
@@ -140,33 +142,36 @@
     </div>
     
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer></script>
     
     <!-- Defer non-critical scripts -->
-    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-L46C72W6FN"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L46C72W6FN"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-L46C72W6FN', { 
-        'send_page_view': false,
-        'cookie_domain': 'sunrisehumancare.com',
-        'cookie_flags': 'SameSite=None;Secure',
-        'geo_granularity': 'city',
-        'region_code': 'US-PA'  
-      });
-      // Defer sending pageview until after page loads
+      // Defer analytics execution
       window.addEventListener('load', function() {
-        gtag('event', 'page_view', {
-          'page_location': window.location.href,
-          'page_path': window.location.pathname,
-          'page_title': document.title,
-          'region_code': 'US-PA'
-        });
+        setTimeout(function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-L46C72W6FN', { 
+            'send_page_view': false,
+            'cookie_domain': 'sunrisehumancare.com',
+            'cookie_flags': 'SameSite=None;Secure',
+            'geo_granularity': 'city',
+            'region_code': 'US-PA'  
+          });
+          // Defer sending pageview until after page loads
+          gtag('event', 'page_view', {
+            'page_location': window.location.href,
+            'page_path': window.location.pathname,
+            'page_title': document.title,
+            'region_code': 'US-PA'
+          });
+        }, 2000); // Delay analytics by 2 seconds
       });
     </script>
     
-    <!-- Main application script - with defer attribute -->
+    <!-- Main application script - with type="module" and defer -->
     <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>

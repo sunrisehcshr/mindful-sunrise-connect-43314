@@ -1,18 +1,28 @@
 
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import WarmHeroSection from '../components/WarmHeroSection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
 import ServicesSection from '../components/services/ServicesSection';
-import ConditionsSection from '../components/conditions/ConditionsSection';
-import AboutSection from '../components/AboutSection';
-import FAQSection from '../components/FAQSection';
-import AppointmentSection from '../components/Appointment/AppointmentSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
 import { Helmet } from 'react-helmet-async';
+import ImageOptimizer from '../components/ui/ImageOptimizer';
+
+// Lazily load non-critical components
+const ConditionsSection = lazy(() => import('../components/conditions/ConditionsSection'));
+const AboutSection = lazy(() => import('../components/AboutSection'));
+const FAQSection = lazy(() => import('../components/FAQSection'));
+const AppointmentSection = lazy(() => import('../components/Appointment/AppointmentSection'));
+
+// Loading fallback
+const SectionLoader = () => (
+  <div className="flex justify-center py-12">
+    <div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 const Index = () => {
   // Home page breadcrumbs
@@ -101,17 +111,29 @@ const Index = () => {
         className="flex flex-col min-h-screen relative overflow-hidden" 
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
       >
         <Navbar />
         <main className="flex-grow">
           <WarmHeroSection />
           <WhyChooseUsSection />
           <ServicesSection />
-          <ConditionsSection />
-          <AboutSection />
-          <FAQSection />
-          <AppointmentSection />
+          
+          <Suspense fallback={<SectionLoader />}>
+            <ConditionsSection />
+          </Suspense>
+          
+          <Suspense fallback={<SectionLoader />}>
+            <AboutSection />
+          </Suspense>
+          
+          <Suspense fallback={<SectionLoader />}>
+            <FAQSection />
+          </Suspense>
+          
+          <Suspense fallback={<SectionLoader />}>
+            <AppointmentSection />
+          </Suspense>
         </main>
         <Footer />
       </motion.div>
