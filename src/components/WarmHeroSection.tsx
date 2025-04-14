@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ImageLoader from './ui/ImageLoader';
+import SectionTag from './ui/section-tag';
 
 const WarmHeroSection = () => {
   const imageRef = useRef<HTMLImageElement>(null);
@@ -25,12 +26,12 @@ const WarmHeroSection = () => {
   }, []);
   
   return (
-    <section className="relative py-12 md:py-20 lg:py-24 xl:py-28 overflow-hidden bg-gradient-to-tr from-orange-50 via-white/70 to-amber-100/70">
+    <section className="relative py-12 md:py-20 lg:py-24 xl:py-28 overflow-hidden bg-inherit">
       {/* Background pattern */}
       <div className="absolute inset-0 -z-10 opacity-15 sunshine-pattern"></div>
       
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div 
             className="order-2 md:order-1"
@@ -39,14 +40,16 @@ const WarmHeroSection = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="max-w-lg">
-              <motion.span 
-                className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-orange-700 to-amber-600 text-white border border-orange-500 mb-3 md:mb-4"
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
+                className="mb-3 md:mb-4"
               >
-                Havertown, PA Mental Health Services
-              </motion.span>
+                <SectionTag className="inline-block" icon={null}>
+                  Havertown, PA Mental Health Services
+                </SectionTag>
+              </motion.div>
               
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-900 mb-4">
                 Compassionate Mental Health Care in <span className="text-orange-600">Havertown</span>
@@ -82,12 +85,12 @@ const WarmHeroSection = () => {
           
           {/* Right side - Image */}
           <motion.div 
-            className="order-1 md:order-2"
+            className="order-1 md:order-2 mx-auto md:mx-0 w-full"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="relative h-[350px] md:h-[400px] overflow-hidden rounded-xl shadow-lg">
+            <div className="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden rounded-xl shadow-lg w-full max-w-md mx-auto md:max-w-none">
               {/* LCP Image - Optimized */}
               <ImageLoader
                 src="/images/family-counseling-havertown.webp"
@@ -104,7 +107,7 @@ const WarmHeroSection = () => {
               {/* Decorative overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent"></div>
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm border border-amber-200/50">
-                <span className="text-amber-900 font-medium text-sm">Family therapy that strengthens bonds</span>
+                <span className="text-amber-900 font-medium text-sm">Step into brighter tomorrow with Sunrise</span>
               </div>
             </div>
           </motion.div>
