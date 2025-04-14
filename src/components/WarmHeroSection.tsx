@@ -33,13 +33,6 @@ const WarmHeroSection = () => {
       <div className="absolute inset-0 -z-10 opacity-15 sunshine-pattern"></div>
       
       <div className="container mx-auto px-4">
-        {/* Centered text box on all devices */}
-        <div className="relative mx-auto mb-4 md:mb-6 w-full max-w-sm">
-          <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-sm border border-amber-200/50 text-center">
-            <span className="text-amber-900 font-medium text-xs md:text-sm">Step into brighter tomorrow with Sunrise</span>
-          </div>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div 
@@ -126,6 +119,11 @@ const WarmHeroSection = () => {
               
               {/* Decorative overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent"></div>
+              
+              {/* Text box overlapping image */}
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-sm border border-amber-200/50">
+                <span className="text-amber-900 font-medium text-xs md:text-sm">Step into brighter tomorrow with Sunrise</span>
+              </div>
             </div>
           </motion.div>
         </div>
