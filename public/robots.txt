@@ -79,6 +79,6 @@ Allow: /locations.kml
 
 # Sitemap locations
 Sitemap: https://sunrisehumancare.com/sitemap.xml
-Sitemap: https://sunrisehumancare.com/sitemap-posts.xml
+Sitemap: https://sunrisehumancare.com/sitemap-main.xml
 Sitemap: https://sunrisehumancare.com/sitemap-services.xml
 Sitemap: https://sunrisehumancare.com/sitemap-conditions.xml
