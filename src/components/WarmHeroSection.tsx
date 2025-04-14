@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ImageLoader from './ui/ImageLoader';
 import SectionTag from './ui/section-tag';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const WarmHeroSection = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const isMobile = useIsMobile();
@@ -76,16 +77,13 @@ const WarmHeroSection = () => {
               
               {/* Status indicators - Stacked on mobile */}
               <div className="mt-5 md:mt-6 flex flex-col md:flex-row items-center flex-wrap gap-2 text-xs md:text-sm text-amber-800 justify-center md:justify-start">
-                {/* In-person & virtual indicator - Now shown above "Now accepting" on mobile */}
+                {/* In-person & virtual indicator */}
                 <span className="flex items-center gap-1.5 order-1 md:order-2">
                   <span className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-amber-100 flex items-center justify-center">
                     <span className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-amber-500"></span>
                   </span>
                   In-person & virtual
                 </span>
-                
-                {/* Hidden separator on mobile */}
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-300 hidden md:block order-2 md:order-3"></span>
                 
                 {/* Now accepting new patients */}
                 <span className="flex items-center gap-1.5 order-2 md:order-1">
@@ -126,4 +124,5 @@ const WarmHeroSection = () => {
       </div>
     </section>;
 };
+
 export default WarmHeroSection;
