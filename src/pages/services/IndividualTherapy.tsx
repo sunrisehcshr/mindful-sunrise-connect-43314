@@ -25,27 +25,27 @@ const IndividualTherapy = () => {
     {
       title: "Cognitive Behavioral Therapy (CBT)",
       description: "Understand and change unhelpful thought patterns to improve emotional regulation and behavior.",
-      icon: <Brain className="h-5 w-5" />
+      icon: <Brain className="h-5 w-5 text-orange-500" />
     },
     {
       title: "Trauma-Informed Therapy",
       description: "Heal from past experiences in a safe, supportive environment with trust and empowerment.",
-      icon: <Heart className="h-5 w-5" />
+      icon: <Heart className="h-5 w-5 text-orange-500" />
     },
     {
       title: "Mindfulness-Based Therapy",
       description: "Develop present-moment awareness to manage anxiety and enhance emotional resilience.",
-      icon: <Lightbulb className="h-5 w-5" />
+      icon: <Lightbulb className="h-5 w-5 text-orange-500" />
     },
     {
       title: "Solution-Focused Brief Therapy",
       description: "Identify practical strategies and leverage personal strengths for quick, effective change.",
-      icon: <Star className="h-5 w-5" />
+      icon: <Star className="h-5 w-5 text-orange-500" />
     },
     {
       title: "Dialectical Behavior Therapy (DBT)",
       description: "Build skills to regulate emotions, improve relationships, and manage distress.",
-      icon: <Shield className="h-5 w-5" />
+      icon: <Shield className="h-5 w-5 text-orange-500" />
     }
   ];
 
@@ -406,7 +406,9 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-amber-950 text-center mb-8">Benefits of Individual Therapy</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mb-10 border-b-2 border-amber-200 pb-4">
+              Benefits of Individual Therapy
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, index) => (
                 <motion.div
@@ -427,7 +429,9 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-amber-950 text-center mb-8">Our Therapeutic Approaches</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mb-10 border-b-2 border-amber-200 pb-4">
+              Our Therapeutic Approaches
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {approaches.map((approach, index) => (
                 <motion.div
@@ -455,7 +459,9 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-amber-950 text-center mb-8">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mb-10 border-b-2 border-amber-200 pb-4">
+              Frequently Asked Questions
+            </h2>
             <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
               {faqs.map((faq, index) => (
                 <AccordionItem value={`faq-${index}`} key={index}>
@@ -473,7 +479,9 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-amber-950 text-center mb-8">Related Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mb-10 border-b-2 border-amber-200 pb-4">
+              Related Services
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedServices.map((service, index) => (
                 <motion.div
