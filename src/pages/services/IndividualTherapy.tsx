@@ -163,6 +163,7 @@ const IndividualTherapy = () => {
           title="Why Choose Individual Therapy in Havertown, PA"
           hasBgPattern={true}
         >
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -266,6 +267,7 @@ const IndividualTherapy = () => {
           title="Types of Individual Therapy in Havertown"
           className="bg-white"
         >
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown, PA is tailored to meet diverse needs, from immediate support to long-term growth. Licensed therapists use evidence-based therapy to help you thrive.
@@ -306,6 +308,7 @@ const IndividualTherapy = () => {
           title="Mental Health Conditions Treated in Havertown"
           hasBgPattern={true}
         >
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-8 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown addresses mental health conditions with evidence-based techniques. Licensed therapists in Havertown help you find relief and build resilience.
@@ -337,6 +340,7 @@ const IndividualTherapy = () => {
           title="The Value of Therapy in Pennsylvania"
           className="bg-white"
         >
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
               <motion.div
@@ -406,9 +410,10 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mb-10 border-b-2 border-amber-200 pb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
               Benefits of Individual Therapy
             </h2>
+            <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, index) => (
                 <motion.div
@@ -429,9 +434,10 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mb-10 border-b-2 border-amber-200 pb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
               Our Therapeutic Approaches
             </h2>
+            <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {approaches.map((approach, index) => (
                 <motion.div
@@ -459,9 +465,10 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mb-10 border-b-2 border-amber-200 pb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
               Frequently Asked Questions
             </h2>
+            <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
               {faqs.map((faq, index) => (
                 <AccordionItem value={`faq-${index}`} key={index}>
@@ -479,9 +486,10 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mb-10 border-b-2 border-amber-200 pb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
               Related Services
             </h2>
+            <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedServices.map((service, index) => (
                 <motion.div
