@@ -75,21 +75,21 @@ const FooterNav: React.FC = () => {
                   {link.children?.map((child, childIndex) => (
                     <li key={childIndex}>
                       <Link to={child.to} className="text-xs text-muted-foreground hover:text-foreground transition-colors block py-1">
-                        {child.label} in Havertown
+                        {child.label}
                       </Link>
                     </li>
                   ))}
                   {link.label === "Our Services" && (
                     <li>
                       <Link to="/services" className="text-xs text-orange-500 hover:text-orange-600 font-medium transition-colors flex items-center py-1">
-                        View All Mental Health Services <ChevronRight className="h-3 w-3 ml-1" />
+                        All Services <ChevronRight className="h-3 w-3 ml-1" />
                       </Link>
                     </li>
                   )}
                   {link.label === "Conditions We Treat" && (
                     <li>
                       <Link to="/conditions" className="text-xs text-orange-500 hover:text-orange-600 font-medium transition-colors flex items-center py-1">
-                        View All Mental Health Conditions <ChevronRight className="h-3 w-3 ml-1" />
+                        All Conditions <ChevronRight className="h-3 w-3 ml-1" />
                       </Link>
                     </li>
                   )}
@@ -103,7 +103,7 @@ const FooterNav: React.FC = () => {
               </a>
             ) : (
               <Link to={link.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors block py-1">
-                {link.label} {link.to !== "/" && "Page"}
+                {link.label}
               </Link>
             )
           )}

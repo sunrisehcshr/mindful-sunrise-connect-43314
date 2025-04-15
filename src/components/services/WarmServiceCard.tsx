@@ -19,9 +19,6 @@ const WarmServiceCard: React.FC<WarmServiceCardProps> = ({
   url = "/services",
   delay = 0 
 }) => {
-  // Extract service name for descriptive link text
-  const serviceName = title.split(" in ")[0].trim();
-  
   return (
     <motion.div 
       className="warm-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 bg-white border border-amber-100"
@@ -45,7 +42,7 @@ const WarmServiceCard: React.FC<WarmServiceCardProps> = ({
           to={url}
           className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group mt-2 shadow-sm"
         >
-          Explore {serviceName} options 
+          Learn more 
           <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>

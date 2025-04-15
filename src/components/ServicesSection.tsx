@@ -108,9 +108,8 @@ const ServicesSection = () => {
               <Link
                 to={service.url}
                 className="mt-4 inline-flex items-center text-sm font-medium text-sunrise-700 hover:text-sunrise-800 transition-colors duration-200"
-                aria-label={`Learn about ${service.title} in Havertown, PA`}
               >
-                Discover {service.title} options <ArrowRight className="ml-1 h-4 w-4" />
+                Learn more <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </motion.div>
           ))}
@@ -118,7 +117,7 @@ const ServicesSection = () => {
         
         <div className="mt-12 text-center">
           <Link to="/services" className="btn-sunrise inline-flex items-center">
-            Explore All Mental Health Services in Havertown
+            View All Services
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>

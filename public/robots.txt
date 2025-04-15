@@ -1,3 +1,4 @@
+
 # Sunrise Human Care Services - Robots.txt
 # https://sunrisehumancare.com
 # Location: Havertown, PA 19083, United States
@@ -10,10 +11,11 @@ Allow: /mental-health-havertown-pa
 Allow: /services
 Allow: /conditions
 
-# Allow Google Maps (corrected format)
+# Allow Google Maps
 Allow: /maps/
-Allow: /google-maps/
-Allow: /maps-api/
+Allow: https://www.google.com/maps/
+Allow: https://maps.google.com/
+Allow: https://maps.googleapis.com/
 
 # Disallow admin pages
 Disallow: /admin/
@@ -28,7 +30,8 @@ Disallow: /*.doc$
 Disallow: /*.docx$
 Disallow: /cgi-bin/
 Disallow: /*.json$
-Disallow: /*?*
+Disallow: /*.xml$
+Disallow: *?*
 
 # Disallow development and test environments
 Disallow: /dev/
@@ -44,10 +47,15 @@ Disallow: /*?utm_*
 # Allow major search engines specific directives
 User-agent: Googlebot
 Allow: /
+Allow: /maps/
+Allow: https://www.google.com/maps/
+Allow: https://maps.google.com/
+Allow: https://maps.googleapis.com/
 Crawl-delay: 5
 
 User-agent: Bingbot
 Allow: /
+Allow: /maps/
 Crawl-delay: 10
 
 User-agent: Yandex
@@ -75,3 +83,6 @@ Allow: /adhd-treatment-havertown-pa
 
 # Sitemap locations
 Sitemap: https://sunrisehumancare.com/sitemap.xml
+Sitemap: https://sunrisehumancare.com/sitemap-posts.xml
+Sitemap: https://sunrisehumancare.com/sitemap-services.xml
+Sitemap: https://sunrisehumancare.com/sitemap-conditions.xml

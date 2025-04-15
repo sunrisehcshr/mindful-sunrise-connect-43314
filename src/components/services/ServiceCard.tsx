@@ -24,9 +24,6 @@ const ServiceCard: React.FC<ServiceProps> = ({
   // Ensure we're linking to the hero section by appending #home to the URL
   const linkUrl = service.url ? `${service.url}#home` : "/services";
   
-  // Extract the service name from the title for more descriptive link text
-  const serviceName = service.title.split("in")[0].trim();
-  
   return (
     <motion.div 
       initial={{
@@ -72,7 +69,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
       
       {/* Button container */}
       <div className="flex flex-col gap-3 mt-auto">
-        {/* Learn More button - now with white styling and descriptive text */}
+        {/* Learn More button - now with white styling */}
         <Link 
           to={linkUrl} 
           className="inline-flex items-center justify-center text-sm font-medium bg-white border border-amber-400 
@@ -80,7 +77,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
                    relative shadow-sm hover:shadow"
           aria-label={`Learn more about ${service.title}`}
         >
-          Learn about {serviceName} in Havertown
+          Learn more
           <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
         </Link>
         

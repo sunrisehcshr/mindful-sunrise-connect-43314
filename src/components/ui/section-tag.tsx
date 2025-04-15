@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 interface SectionTagProps {
   children: React.ReactNode;
   className?: string;
-  icon?: React.ReactNode | null;
+  icon?: React.ReactNode;
 }
 
 const SectionTag = ({ children, className, icon = <Sparkles className="h-3 w-3" /> }: SectionTagProps) => {
@@ -17,7 +17,7 @@ const SectionTag = ({ children, className, icon = <Sparkles className="h-3 w-3" 
         className
       )}
     >
-      {icon !== null && icon} {children}
+      {icon} {children}
     </span>
   );
 };
