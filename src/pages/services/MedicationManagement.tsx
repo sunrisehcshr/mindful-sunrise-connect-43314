@@ -3,7 +3,7 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight, Pills, Clipboard, Brain, Shield } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Pill, Brain, Shield } from 'lucide-react'; // Changed Pills to Pill
 import { Link } from 'react-router-dom';
 import SectionTag from '@/components/ui/section-tag';
 
