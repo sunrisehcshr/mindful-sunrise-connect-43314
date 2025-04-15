@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CheckCircle2, ArrowRight, Brain, Shield, Lightbulb, Star, MessageCircle, FileCheck, Heart, Clock3 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import SEOHead from '../../components/SEOHead';
+import WarmServiceCard from '../../components/services/WarmServiceCard';
 import { Link } from 'react-router-dom';
 
 const IndividualTherapy = () => {
@@ -85,15 +86,21 @@ const IndividualTherapy = () => {
   const conditions = [
     {
       title: "Anxiety Disorders",
-      description: "Individual therapy in Havertown helps manage generalized anxiety, social anxiety, or panic through targeted strategies."
+      description: "Havertown therapy for anxiety, including generalized anxiety, social anxiety, and panic disorders.",
+      url: "/anxiety-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
     },
     {
       title: "Depression",
-      description: "Counseling in Havertown supports improved mood and daily functioning with personalized, evidence-based methods."
+      description: "Depression therapy in Havertown to improve mood and daily functioning with evidence-based methods.",
+      url: "/depression-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
     },
     {
       title: "Trauma & PTSD",
-      description: "Therapy in Havertown fosters healing from past experiences using gentle, trauma-informed techniques."
+      description: "Trauma therapy in Havertown to heal from past experiences using trauma-informed care.",
+      url: "/trauma-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
     }
   ];
 
@@ -195,7 +202,7 @@ const IndividualTherapy = () => {
                     ]
                   },
                   {
-                    title: "Why Choose Sunrise in Havertown for Therapy?",
+                    title: "Why Choose Havertown for Therapy?",
                     items: [
                       "Compassionate, licensed professionals",
                       "Convenient Delaware County location",
@@ -346,32 +353,30 @@ const IndividualTherapy = () => {
           </div>
         </ServiceContentSection>
 
-        <ServiceContentSection title="Mental Health Conditions Addressed in Havertown" className="bg-white">
+        <ServiceContentSection title="Mental Health Conditions Addressed in Havertown" hasBgPattern={true}>
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Individual therapy in Havertown addresses a range of mental health challenges with compassionate, evidence-based care, helping you find relief and strength.
+              Our individual therapy in Havertown addresses mental health challenges with evidence-based techniques. Licensed therapists help you find relief and build resilience.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {conditions.map((condition, index) => (
-              <motion.div
+              <WarmServiceCard
                 key={index}
-                className="bg-amber-50/50 border border-amber-100 rounded-lg p-6 shadow-sm"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-amber-900 mb-2">{condition.title}</h3>
-                    <p className="text-sm text-muted-foreground">{condition.description}</p>
-                  </div>
-                </div>
-              </motion.div>
+                title={condition.title}
+                description={condition.description}
+                imageSrc={condition.imageSrc}
+                url={condition.url}
+                delay={index * 0.1}
+              />
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link to="/conditions" className="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
+              View all mental health conditions we treat
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
           </div>
         </ServiceContentSection>
 
