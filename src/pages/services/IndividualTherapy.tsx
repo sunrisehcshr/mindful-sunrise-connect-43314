@@ -165,7 +165,12 @@ const IndividualTherapy = () => {
           hasBgPattern={true}
         >
           <div className="mb-6 flex justify-center">
-            <SectionTag icon={<Brain className="h-3 w-3" />}>Professional Care</SectionTag>
+            <SectionTag 
+              icon={<Brain className="h-3 w-3" />} 
+              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+            >
+              Professional Care
+            </SectionTag>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             <motion.div
@@ -271,7 +276,12 @@ const IndividualTherapy = () => {
           className="bg-white"
         >
           <div className="mb-6 flex justify-center">
-            <SectionTag icon={<Brain className="h-3 w-3" />}>Tailored Therapy</SectionTag>
+            <SectionTag 
+              icon={<Brain className="h-3 w-3" />} 
+              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+            >
+              Tailored Therapy
+            </SectionTag>
           </div>
           <div className="mb-10 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
@@ -314,7 +324,12 @@ const IndividualTherapy = () => {
           hasBgPattern={true}
         >
           <div className="mb-6 flex justify-center">
-            <SectionTag icon={<Brain className="h-3 w-3" />}>Condition Support</SectionTag>
+            <SectionTag 
+              icon={<Brain className="h-3 w-3" />} 
+              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+            >
+              Condition Support
+            </SectionTag>
           </div>
           <div className="mb-8 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
@@ -348,7 +363,12 @@ const IndividualTherapy = () => {
           className="bg-white"
         >
           <div className="mb-6 flex justify-center">
-            <SectionTag icon={<Brain className="h-3 w-3" />}>Holistic Wellness</SectionTag>
+            <SectionTag 
+              icon={<Brain className="h-3 w-3" />} 
+              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+            >
+              Holistic Wellness
+            </SectionTag>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
