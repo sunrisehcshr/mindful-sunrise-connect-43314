@@ -52,31 +52,31 @@ const IndividualTherapy = () => {
 
   const faqs = [
     {
-      question: "What is individual therapy in Havertown like?", // Optimized for primary keyword
+      question: "What is individual therapy in Havertown like?",
       answer: "Individual therapy in Havertown at Sunrise Human Care involves a personalized, confidential process where licensed therapists help you address your goals, whether it’s managing anxiety or fostering growth."
     },
     {
-      question: "How often should I attend therapy sessions in Havertown?", // Added location keyword
+      question: "How often should I attend therapy sessions in Havertown?",
       answer: "Weekly sessions are common for individual therapy in Havertown to build momentum. As progress is made, we may adjust to bi-weekly or monthly based on your needs."
     },
     {
-      question: "How long does mental health counseling in Delaware County last?", // Optimized for primary keyword
+      question: "How long does mental health counseling in Delaware County last?",
       answer: "The duration of mental health counseling in Delaware County varies—some clients meet goals in 8-12 sessions, while others benefit from longer support. We tailor your plan."
     },
     {
-      question: "Do you accept insurance for therapy in Pennsylvania?", // Optimized for primary keyword
+      question: "Do you accept insurance for therapy in Pennsylvania?",
       answer: "Yes, we accept most major insurance plans for therapy in Pennsylvania, including Medicaid. We’ll verify coverage before your first session."
     },
     {
-      question: "Is everything I share with a therapist near me confidential?", // Optimized for secondary keyword
+      question: "Is everything I share with a therapist near me confidential?",
       answer: "Yes, confidentiality is protected in therapy, except in cases of safety concerns or legal requirements, which your therapist near me will explain upfront."
     },
     {
-      question: "Can I switch therapists if it’s not a good fit?", 
+      question: "Can I switch therapists if it’s not a good fit?",
       answer: "Absolutely. A strong therapeutic relationship is key in individual therapy in Havertown. We’ll help you find a better match within our team."
     },
     {
-      question: "What if I’m unsure about starting Havertown therapy for anxiety?", // Optimized for long-tail
+      question: "What if I’m unsure about starting Havertown therapy for anxiety?",
       answer: "It’s normal to feel hesitant. We offer a free consultation for Havertown therapy for anxiety to discuss concerns and see if it’s right for you."
     }
   ];
@@ -90,19 +90,19 @@ const IndividualTherapy = () => {
   const conditions = [
     {
       title: "Anxiety Disorders",
-      description: "Havertown therapy for anxiety, including generalized anxiety, social anxiety, and panic disorders.", // Optimized for long-tail
+      description: "Havertown therapy for anxiety, including generalized anxiety, social anxiety, and panic disorders.",
       url: "/anxiety-therapy-havertown-pa",
       imageSrc: "/therapy-in-havertown.jpg"
     },
     {
       title: "Depression",
-      description: "Depression therapy in Havertown to improve mood and daily functioning with evidence-based methods.", // Optimized for secondary
+      description: "Depression therapy in Havertown to improve mood and daily functioning with evidence-based methods.",
       url: "/depression-therapy-havertown-pa",
       imageSrc: "/therapy-in-havertown.jpg"
     },
     {
       title: "Trauma & PTSD",
-      description: "Trauma therapy in Havertown to heal from past experiences using trauma-informed care.", // Optimized for secondary
+      description: "Trauma therapy in Havertown to heal from past experiences using trauma-informed care.",
       url: "/trauma-therapy-havertown-pa",
       imageSrc: "/therapy-in-havertown.jpg"
     }
@@ -111,31 +111,31 @@ const IndividualTherapy = () => {
   const therapyTypes = [
     {
       title: "Short-Term Therapy",
-      description: "Focused CBT therapy in Havertown for specific challenges or immediate goals.", // Optimized for secondary
+      description: "Focused CBT therapy in Havertown for specific challenges or immediate goals.",
       icon: <Clock3 className="h-6 w-6 text-orange-500" />
     },
     {
       title: "Long-Term Therapy",
-      description: "In-depth mental health counseling in Delaware County for complex issues or growth.", // Optimized for primary
+      description: "In-depth mental health counseling in Delaware County for complex issues or growth.",
       icon: <FileCheck className="h-6 w-6 text-orange-500" />
     },
     {
       title: "Crisis Intervention",
-      description: "Immediate support from licensed therapists in Havertown for acute distress.", // Optimized for long-tail
+      description: "Immediate support from licensed therapists in Havertown for acute distress.",
       icon: <Shield className="h-6 w-6 text-orange-500" />
     },
     {
       title: "Maintenance Therapy",
-      description: "Periodic therapy in Pennsylvania to sustain progress and prevent relapse.", // Optimized for primary
-      icon: <MessageCircle className="h-6 w-6 text-orange-500" />
+      description: "Periodic therapy in Pennsylvania to sustain progress and prevent relapse.",
+      icon: <MessageCircle Disabled className="h-6 w-6 text-orange-500" />
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="Expert Individual Therapy in Havertown, PA | Licensed Therapists" // Tweaked for secondary keyword
-        description="Individual therapy in Havertown, PA with licensed therapists for anxiety, depression, and trauma. Evidence-based counseling, same-day appointments, insurance accepted." // Added USP
+        title="Expert Individual Therapy in Havertown, PA | Licensed Therapists"
+        description="Individual therapy in Havertown, PA with licensed therapists for anxiety, depression, and trauma. Evidence-based counseling, same-day appointments, insurance accepted."
         canonicalUrl="https://sunrisehumancare.com/individual-therapy-havertown-pa"
         keywords="individual therapy Havertown, therapy in Pennsylvania, mental health counseling Delaware County, therapist near me, anxiety treatment Havertown, CBT therapy Havertown"
         serviceSchema={{
@@ -149,7 +149,7 @@ const IndividualTherapy = () => {
 
       <ServicePageLayout
         title="Individual Therapy in Havertown, PA"
-        description="Discover individual therapy in Havertown, PA with licensed therapists helping adults, teens, and seniors navigate mental health conditions using evidence-based approaches." // Optimized for primary/secondary
+        description="Discover individual therapy in Havertown, PA with licensed therapists helping adults, teens, and seniors navigate mental health conditions using evidence-based approaches."
         pageTitle="Expert Individual Therapy in Havertown, PA | Evidence-Based Counseling"
         metaDescription="Individual therapy in Havertown, PA with licensed therapists for anxiety, depression, and trauma. Evidence-based counseling, same-day appointments, insurance accepted."
         serviceType="Individual Therapy"
@@ -161,7 +161,7 @@ const IndividualTherapy = () => {
         relatedServices={relatedServices}
       >
         <ServiceContentSection
-          title="Why Choose Individual Therapy in Havertown, PA" // Optimized for primary
+          title="Why Choose Individual Therapy in Havertown, PA"
           hasBgPattern={true}
         >
           <div className="mb-6">
@@ -186,7 +186,7 @@ const IndividualTherapy = () => {
                   We use evidence-based therapy like CBT therapy in Havertown and trauma-informed care, customized to your situation. Our therapists help you develop strategies for lasting change, whether in-person or via telehealth.
                 </p>
                 <p className="leading-relaxed">
-                  Therapy is a collaborative journey. We assess progress regularly, ensuring you feel supported in mental health counseling in Delaware County. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Schedule your session today</Link>. // Added CTA
+                  Therapy is a collaborative journey. We assess progress regularly, ensuring you feel supported in mental health counseling in Delaware County. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Schedule your session today</Link>.
                 </p>
               </div>
             </motion.div>
@@ -200,7 +200,7 @@ const IndividualTherapy = () => {
               <Accordion type="single" collapsible className="w-full">
                 {[
                   {
-                    title: "What Does Individual Therapy in Havertown Involve?", // Optimized for primary
+                    title: "What Does Individual Therapy in Havertown Involve?",
                     items: [
                       "Addressing mental health conditions like anxiety",
                       "Setting personal goals with your therapist",
@@ -213,7 +213,7 @@ const IndividualTherapy = () => {
                     ]
                   },
                   {
-                    title: "Therapy Formats in Havertown, PA", // Optimized for primary
+                    title: "Therapy Formats in Havertown, PA",
                     items: [
                       "In-person individual therapy in Havertown",
                       "Telehealth for therapy in Pennsylvania",
@@ -226,7 +226,7 @@ const IndividualTherapy = () => {
                     ]
                   },
                   {
-                    title: "Benefits of Therapy with a Therapist Near Me", // Optimized for secondary
+                    title: "Benefits of Therapy with a Therapist Near Me",
                     items: [
                       "Safe, non-judgmental environment",
                       "Clear, achievable goal-setting",
@@ -268,12 +268,12 @@ const IndividualTherapy = () => {
         </ServiceContentSection>
 
         <ServiceContentSection
-          title="Types of Individual Therapy in Havertown" // Optimized for primary
+          title="Types of Individual Therapy in Havertown"
           className="bg-white"
         >
           <div className="mb-10 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Our individual therapy in Havertown, PA is tailored to meet diverse needs, from immediate support to long-term growth. Licensed therapists use evidence-based therapy to help you thrive. // Optimized for primary/secondary
+              Our individual therapy in Havertown, PA is tailored to meet diverse needs, from immediate support to long-term growth. Licensed therapists use evidence-based therapy to help you thrive.
             </p>
           </div>
 
@@ -308,12 +308,12 @@ const IndividualTherapy = () => {
         </ServiceContentSection>
 
         <ServiceContentSection
-          title="Mental Health Conditions Treated in Havertown" // Optimized for primary
+          title="Mental Health Conditions Treated in Havertown"
           hasBgPattern={true}
         >
           <div className="mb-8 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Our individual therapy in Havertown addresses mental health conditions with evidence-based techniques. Licensed therapists in Havertown help you find relief and build resilience. // Optimized for primary/secondary
+              Our individual therapy in Havertown addresses mental health conditions with evidence-based techniques. Licensed therapists in Havertown help you find relief and build resilience.
             </p>
           </div>
 
@@ -333,13 +333,13 @@ const IndividualTherapy = () => {
           <div className="mt-10 text-center">
             <Link to="/conditions" className="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
               View all mental health conditions we treat
-              <ArrowRight className="ml-1 h-4 w-4" /> // Optimized link text
+              <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
         </ServiceContentSection>
 
         <ServiceContentSection
-          title="The Value of Therapy in Pennsylvania" // Optimized for primary
+          title="The Value of Therapy in Pennsylvania"
           className="bg-white"
         >
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -352,16 +352,16 @@ const IndividualTherapy = () => {
                 className="space-y-5"
               >
                 <p className="text-muted-foreground">
-                  Individual therapy in Havertown, PA is a powerful tool for addressing mental health conditions and fostering growth. At Sunrise Human Care Services, our licensed therapists in Havertown empower you with evidence-based therapy. // Optimized for primary/secondary
+                  Individual therapy in Havertown, PA is a powerful tool for addressing mental health conditions and fostering growth. At Sunrise Human Care Services, our licensed therapists in Havertown empower you with evidence-based therapy.
                 </p>
                 <p className="text-muted-foreground">
-                  Therapy in Pennsylvania helps uncover patterns contributing to distress, offering new coping strategies. Our therapists collaborate to create a plan tailored to your life, whether for anxiety treatment in Havertown or trauma therapy. // Optimized for primary/secondary
+                  Therapy in Pennsylvania helps uncover patterns contributing to distress, offering new coping strategies. Our therapists collaborate to create a plan tailored to your life, whether for anxiety treatment in Havertown or trauma therapy.
                 </p>
                 <p className="text-muted-foreground">
-                  Beyond relief, mental health counseling in Delaware County builds resilience and self-awareness. We consider biological, psychological, and social factors for holistic care, ensuring lasting change with CBT therapy in Havertown or other methods. // Optimized for primary/secondary
+                  Beyond relief, mental health counseling in Delaware County builds resilience and self-awareness. We consider biological, psychological, and social factors for holistic care, ensuring lasting change with CBT therapy in Havertown or other methods.
                 </p>
                 <p className="text-muted-foreground">
-                  For those facing challenges or seeking to thrive, therapy in Pennsylvania offers a path forward. Contact us for Havertown therapy for anxiety or other needs, and start your journey today. // Optimized for primary/long-tail
+                  For those facing challenges or seeking to thrive, therapy in Pennsylvania offers a path forward. Contact us for Havertown therapy for anxiety or other needs, and start your journey today.
                 </p>
               </motion.div>
             </div>
@@ -378,12 +378,12 @@ const IndividualTherapy = () => {
                 <Separator className="bg-amber-200 mb-4" />
                 <ul className="space-y-4">
                   {[
-                    "Improved emotional regulation with CBT therapy", // Optimized for secondary
-                    "Enhanced self-esteem through trauma therapy", // Optimized for secondary
+                    "Improved emotional regulation with CBT therapy",
+                    "Enhanced self-esteem through trauma therapy",
                     "Stronger relationships via counseling",
-                    "Relief from mental health conditions like anxiety", // Optimized for secondary
+                    "Relief from mental health conditions like anxiety",
                     "Support during life transitions or crises",
-                    "Foundation for sustained wellness in Havertown" // Optimized for primary
+                    "Foundation for sustained wellness in Havertown"
                   ].map((item, idx) => (
                     <motion.li
                       key={idx}
@@ -404,7 +404,7 @@ const IndividualTherapy = () => {
           <div className="mt-6 text-center">
             <Link to="/contact" className="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
               Book Your Havertown Therapy Session
-              <ArrowRight className="ml-1 h-4 w-4" /> // Added CTA
+              <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
         </ServiceContentSection>
