@@ -164,7 +164,7 @@ const IndividualTherapy = () => {
           title="Why Choose Individual Therapy in Havertown, PA"
           hasBgPattern={true}
         >
-          <div className="mb-6">
+          <div className="mb-6 flex justify-center">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Professional Care</SectionTag>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -270,7 +270,7 @@ const IndividualTherapy = () => {
           title="Types of Individual Therapy in Havertown"
           className="bg-white"
         >
-          <div className="mb-6">
+          <div className="mb-6 flex justify-center">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Tailored Therapy</SectionTag>
           </div>
           <div className="mb-10 max-w-3xl mx-auto text-center">
@@ -313,7 +313,7 @@ const IndividualTherapy = () => {
           title="Mental Health Conditions Treated in Havertown"
           hasBgPattern={true}
         >
-          <div className="mb-6">
+          <div className="mb-6 flex justify-center">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Condition Support</SectionTag>
           </div>
           <div className="mb-8 max-w-3xl mx-auto text-center">
@@ -347,7 +347,7 @@ const IndividualTherapy = () => {
           title="The Value of Therapy in Pennsylvania"
           className="bg-white"
         >
-          <div className="mb-6">
+          <div className="mb-6 flex justify-center">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Holistic Wellness</SectionTag>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
