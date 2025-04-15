@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CheckCircle2, ArrowRight, Heart, Users, MessageCircle, Star, Shield } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import SEOHead from '../../components/SEOHead';
+import WarmServiceCard from '../../components/services/WarmServiceCard';
 import { Link } from 'react-router-dom';
 
 const CouplesCounseling = () => {
@@ -43,19 +44,19 @@ const CouplesCounseling = () => {
   const faqs = [
     {
       question: "What is couples counseling in Havertown like?",
-      answer: "Couples counseling in Havertown at Sunrise Human Care involves a personalized process where licensed therapists help partners improve communication, resolve conflicts, and strengthen their bond in a safe, confidential setting."
+      answer: "Couples counseling in Havertown at Sunrise Human Care involves a personalized process where licensed therapists help partners improve communication, resolve conflicts, and strengthen their bond in a safe setting."
     },
     {
       question: "Do both partners need to attend every session?",
-      answer: "Couples counseling in Havertown works best with both partners present, but our marriage therapists may include individual sessions to support your relationship’s goals."
+      answer: "Couples counseling in Havertown works best with both partners, but our marriage therapists may include individual sessions to support your goals."
     },
     {
       question: "Is couples counseling suitable for unmarried couples?",
-      answer: "Yes, couples counseling in Havertown supports all committed relationships, helping partners in Delaware County build stronger connections, regardless of marital status."
+      answer: "Yes, relationship therapy in Delaware County supports all committed relationships, helping partners build stronger connections."
     },
     {
       question: "How long does couples counseling take?",
-      answer: "The duration of couples counseling in Havertown varies—some couples see progress in 8-12 sessions, while others benefit from longer relationship therapy in Delaware County."
+      answer: "Couples therapy near me varies—some couples see progress in 8-12 sessions, while others benefit from longer support."
     }
   ];
 
@@ -68,22 +69,22 @@ const CouplesCounseling = () => {
   const counselingTypes = [
     {
       title: "Communication-Focused Counseling",
-      description: "Improves dialogue and understanding in your relationship.",
+      description: "Enhances dialogue and mutual understanding between partners.",
       icon: <MessageCircle className="h-6 w-6 text-orange-500" />
     },
     {
       title: "Premarital Counseling",
-      description: "Strengthens your foundation before marriage.",
+      description: "Builds a strong foundation for couples planning marriage.",
       icon: <Star className="h-6 w-6 text-orange-500" />
     },
     {
       title: "Trust-Building Counseling",
-      description: "Rebuilds trust after infidelity or challenges.",
+      description: "Restores trust after challenges like infidelity.",
       icon: <Shield className="h-6 w-6 text-orange-500" />
     },
     {
       title: "Transition Support Counseling",
-      description: "Navigates life changes like parenthood or retirement.",
+      description: "Guides couples through life changes like parenthood.",
       icon: <Heart className="h-6 w-6 text-orange-500" />
     }
   ];
@@ -148,16 +149,16 @@ const CouplesCounseling = () => {
             >
               <div className="space-y-5 text-muted-foreground">
                 <p className="leading-relaxed">
-                  Couples counseling in Havertown, PA at Sunrise Human Care Services offers a supportive space to strengthen your relationship. Our licensed marriage therapists in Havertown guide partners through challenges, fostering communication and trust.
+                  Couples counseling in Havertown, PA at Sunrise Human Care Services provides a nurturing space to enhance your relationship. Our licensed therapists guide partners through challenges, promoting trust and understanding.
                 </p>
                 <p className="leading-relaxed">
-                  Starting couples therapy near me can feel daunting. Our Havertown team creates a welcoming environment, tailoring relationship therapy in Delaware County to your goals, whether resolving conflicts or deepening intimacy.
+                  Beginning couples therapy near me may feel overwhelming. Our Havertown team offers a warm, supportive environment, customizing relationship therapy in Delaware County to your unique needs.
                 </p>
                 <p className="leading-relaxed">
-                  We use evidence-based approaches like EFT and The Gottman Method in our couples counseling in Havertown, offering tools for lasting change, available in-person or via telehealth.
+                  We employ proven methods like Emotionally Focused Therapy and The Gottman Method, tailored to foster lasting change, available in-person or via telehealth for marriage counseling PA.
                 </p>
                 <p className="leading-relaxed">
-                  Therapy is a collaborative journey. Our marriage counseling PA ensures you feel supported. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Schedule your session today</Link>.
+                  Therapy is a partnership. We work with you to ensure progress feels meaningful. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Start your journey today</Link>.
                 </p>
               </div>
             </motion.div>
@@ -171,29 +172,29 @@ const CouplesCounseling = () => {
               <Accordion type="single" collapsible className="w-full">
                 {[
                   {
-                    title: "What Does Couples Counseling in Havertown Involve?",
+                    title: "What Does Couples Counseling Involve?",
                     items: [
-                      "Improving communication between partners",
-                      "Setting shared relationship goals",
-                      "Resolving conflicts effectively",
-                      "Rebuilding trust and intimacy",
-                      "Navigating life transitions together",
-                      "Strengthening emotional connection",
-                      "Learning practical relationship skills",
-                      "Preparing for marriage or commitment"
+                      "Enhancing partner communication",
+                      "Setting mutual goals",
+                      "Resolving relationship conflicts",
+                      "Building emotional intimacy",
+                      "Navigating life transitions",
+                      "Strengthening connection",
+                      "Learning practical skills",
+                      "Preparing for commitment"
                     ]
                   },
                   {
-                    title: "Counseling Formats in Havertown, PA",
+                    title: "Counseling Formats in Havertown",
                     items: [
-                      "In-person couples counseling in Havertown",
-                      "Telehealth for marriage counseling PA",
-                      "Short-term focused therapy sessions",
+                      "In-person sessions in Havertown",
+                      "Telehealth for Pennsylvania couples",
+                      "Short-term focused counseling",
                       "Long-term relationship support",
-                      "Premarital counseling programs",
-                      "Crisis intervention for urgent issues",
-                      "Flexible session scheduling",
-                      "Combination with individual therapy"
+                      "Premarital guidance programs",
+                      "Crisis support for urgent needs",
+                      "Flexible scheduling options",
+                      "Integration with individual therapy"
                     ]
                   }
                 ].map((section, index) => (
@@ -229,7 +230,7 @@ const CouplesCounseling = () => {
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Our couples counseling in Havertown, PA is tailored to meet diverse relationship needs, from communication to premarital preparation, with evidence-based therapy.
+              Our couples counseling in Havertown, PA addresses diverse relationship needs, from communication to preparing for marriage, using evidence-based techniques.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -264,7 +265,7 @@ const CouplesCounseling = () => {
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-8 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Our couples counseling in Havertown addresses relationship challenges with evidence-based techniques to foster connection and resilience.
+              Our couples counseling in Havertown tackles common relationship issues with proven methods to restore connection and resilience.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -299,16 +300,16 @@ const CouplesCounseling = () => {
                 className="space-y-5"
               >
                 <p className="leading-relaxed text-muted-foreground">
-                  Couples counseling in Havertown, PA is a powerful tool for strengthening relationships. Our licensed marriage therapists in Havertown empower couples with evidence-based therapy.
+                  Couples counseling in Havertown, PA empowers partners to build stronger relationships. Our licensed therapists offer tailored guidance for lasting change.
                 </p>
                 <p className="leading-relaxed text-muted-foreground">
-                  Relationship therapy in Delaware County uncovers patterns causing distress, offering strategies to improve communication and trust. Our counselors tailor plans for your needs.
+                  Relationship therapy in Delaware County helps identify patterns causing distress, providing tools to enhance communication and trust in a supportive setting.
                 </p>
                 <p className="leading-relaxed text-muted-foreground">
-                  Beyond resolving conflicts, couples therapy near me builds resilience and connection. We ensure holistic care for lasting change through marriage counseling PA.
+                  Beyond resolving conflicts, couples therapy near me fosters resilience and deeper connection, ensuring holistic support through marriage counseling PA.
                 </p>
                 <p className="leading-relaxed text-muted-foreground">
-                  Whether rebuilding trust or deepening intimacy, couples counseling in Havertown offers a path forward. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Contact us today</Link>.
+                  Whether addressing trust issues or enhancing intimacy, our Havertown counseling offers a clear path forward. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Contact us today</Link>.
                 </p>
               </motion.div>
             </div>
@@ -324,11 +325,11 @@ const CouplesCounseling = () => {
                 <Separator className="bg-amber-200 mb-4" />
                 <ul className="space-y-4">
                   {[
-                    "Improved communication with your partner",
-                    "Restored trust and emotional intimacy",
-                    "Effective conflict resolution skills",
-                    "Stronger foundation for marriage",
-                    "Support through life’s transitions",
+                    "Enhanced partner communication",
+                    "Restored trust and intimacy",
+                    "Effective conflict resolution",
+                    "Stronger relationship foundation",
+                    "Support for life transitions",
                     "Lasting connection in Havertown"
                   ].map((item, idx) => (
                     <motion.li
