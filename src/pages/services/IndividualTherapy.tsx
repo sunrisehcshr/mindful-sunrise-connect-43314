@@ -9,6 +9,7 @@ import SEOHead from '../../components/SEOHead';
 import WarmServiceCard from '../../components/services/WarmServiceCard';
 import { Link } from 'react-router-dom';
 import SectionTag from '@/components/ui/section-tag';
+import { BadgeCheck } from 'lucide-react';
 
 const IndividualTherapy = () => {
   const benefits = [
@@ -164,8 +165,13 @@ const IndividualTherapy = () => {
           title="Why Choose Individual Therapy in Havertown, PA"
           hasBgPattern={true}
         >
-          <div className="mb-6">
-            <SectionTag icon={<Brain className="h-3 w-3" />}>Professional Care</SectionTag>
+          <div className="flex flex-col items-center mb-6">
+            <SectionTag 
+              icon={<BadgeCheck className="h-4 w-4" />} 
+              className="bg-purple-100 text-purple-800 border-purple-200"
+            >
+              Selected Service
+            </SectionTag>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             <motion.div
