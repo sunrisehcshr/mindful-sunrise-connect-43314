@@ -1,10 +1,10 @@
+
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SchemaMarkup from "./components/SchemaMarkup"; // Import Schema
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -47,10 +47,10 @@ import RelationshipTherapy from "./pages/conditions/RelationshipTherapy";
 import GriefTherapy from "./pages/conditions/GriefTherapy";
 
 const queryClient = new QueryClient();
+const helmetContext = {}; // Create a context object for react-helmet-async
 
 const App = () => (
-  <HelmetProvider>
-    <SchemaMarkup /> {/* Ensures structured data is included */}
+  <HelmetProvider context={helmetContext}>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <TooltipProvider>
