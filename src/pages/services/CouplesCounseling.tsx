@@ -6,7 +6,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CheckCircle2, ArrowRight, Heart, Users, MessageCircle, Star, Shield, Calendar } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import SEOHead from '../../components/SEOHead';
-import WarmServiceCard from '../../components/services/WarmServiceCard';
 import { Link } from 'react-router-dom';
 
 const CouplesCounseling = () => {
@@ -96,23 +95,19 @@ const CouplesCounseling = () => {
   const challenges = [
     {
       title: "Communication Breakdowns",
-      description: "Couples counseling in Havertown helps partners overcome misunderstandings and improve dialogue.",
-      imageSrc: "/therapy-in-havertown.jpg"
+      description: "Couples counseling in Havertown helps partners clarify misunderstandings, develop active listening skills, and express needs openly to strengthen their connection."
     },
     {
       title: "Trust and Infidelity Issues",
-      description: "Relationship therapy in Delaware County rebuilds trust after emotional or physical betrayals.",
-      imageSrc: "/therapy-in-havertown.jpg"
+      description: "Relationship therapy in Delaware County supports couples in rebuilding trust after betrayals, fostering transparency and emotional safety."
     },
     {
       title: "Emotional Disconnection",
-      description: "Couples therapy near me fosters intimacy and rekindles emotional bonds.",
-      imageSrc: "/therapy-in-havertown.jpg"
+      description: "Couples therapy near me guides partners to rekindle intimacy, rediscover shared interests, and deepen their emotional bond."
     },
     {
       title: "Conflict Over Life Goals",
-      description: "Marriage counseling PA aligns partners on shared visions for the future.",
-      imageSrc: "/therapy-in-havertown.jpg"
+      description: "Marriage counseling PA assists couples in aligning their visions for the future, balancing individual and shared aspirations."
     }
   ];
 
@@ -346,25 +341,28 @@ const CouplesCounseling = () => {
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Every relationship faces hurdles, but couples counseling in Havertown provides targeted support to overcome them. Our therapists help partners address common challenges with compassion and expertise.
+              Relationships face unique challenges, and couples counseling in Havertown provides targeted support to help partners overcome obstacles and grow stronger together.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {challenges.map((challenge, index) => (
-              <WarmServiceCard
+              <motion.div
                 key={index}
-                title={challenge.title}
-                description={challenge.description}
-                imageSrc={challenge.imageSrc}
-                delay={index * 0.1}
-              />
+                className="bg-amber-50/50 border border-amber-100 rounded-lg p-6 shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="flex items-start gap-4">
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-amber-900 mb-2">{challenge.title}</h3>
+                    <p className="text-sm text-muted-foreground">{challenge.description}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Link to="/services" className="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
-              Explore More Counseling Options
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
           </div>
         </ServiceContentSection>
 
