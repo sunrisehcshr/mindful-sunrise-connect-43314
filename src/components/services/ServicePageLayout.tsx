@@ -160,30 +160,7 @@ const ServicePageLayout = ({
           <section className="py-[50px] bg-white">
             {warmGradientOverlay}
             
-            <div className="container relative z-10 mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Frequently Asked Questions About {serviceType} in Havertown</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
-              </div>
-              
-              <div className="max-w-3xl mx-auto">
-                {faqs.map((faq, index) => <motion.div key={index} initial={{
-                opacity: 0,
-                y: 20
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }} className={`mb-5 md:mb-6 rounded-lg p-5 md:p-6 ${itemBgClass}`}>
-                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-amber-900">{faq.question}</h3>
-                    <p className="text-amber-800 text-sm md:text-base">{faq.answer}</p>
-                  </motion.div>)}
-              </div>
-            </div>
+            
           </section>
           
           <section className={`py-12 md:py-16 ${warmGradientBg}`}>
