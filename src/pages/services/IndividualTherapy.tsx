@@ -195,7 +195,7 @@ const IndividualTherapy = () => {
                     ]
                   },
                   {
-                    title: "Why Choose Havertown for Therapy?",
+                    title: "Why Choose Sunrise in Havertown for Therapy?",
                     items: [
                       "Compassionate, licensed professionals",
                       "Convenient Delaware County location",
