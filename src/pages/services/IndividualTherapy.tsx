@@ -52,7 +52,7 @@ const IndividualTherapy = () => {
   const faqs = [
     {
       question: "What is individual therapy in Havertown like?",
-      answer: "Individual therapy in Havertown at Sunrise Human Care involves a personalized, confidential process where licensed therapists help you address your goals, whether it’s managing anxiety or fostering growth"
+      answer: "Individual therapy in Havertown at Sunrise Human Care involves a personalized, confidential process where licensed therapists help you address your goals, whether it’s managing anxiety or fostering growth."
     },
     {
       question: "How often should I attend therapy sessions in Havertown?",
@@ -160,7 +160,7 @@ const IndividualTherapy = () => {
         relatedServices={relatedServices}
       >
         <ServiceContentSection
-          title="Why <span class='font-bold text-orange-600'>Choose</span> Individual <span class='font-bold text-orange-600'>Therapy</span> in <span class='font-bold text-orange-600'>Havertown</span>, PA"
+          title="Why Choose Individual Therapy in Havertown, PA"
           hasBgPattern={true}
         >
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
@@ -264,7 +264,7 @@ const IndividualTherapy = () => {
         </ServiceContentSection>
 
         <ServiceContentSection
-          title="<span class='font-bold text-orange-600'>Types</span> of Individual <span class='font-bold text-orange-600'>Therapy</span> in <span class='font-bold text-orange-600'>Havertown</span>"
+          title="Types of Individual Therapy in Havertown"
           className="bg-white"
         >
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
@@ -305,7 +305,7 @@ const IndividualTherapy = () => {
         </ServiceContentSection>
 
         <ServiceContentSection
-          title="Mental Health <span class='font-bold text-orange-600'>Conditions</span> Treated in <span class='font-bold text-orange-600'>Havertown</span>"
+          title="Mental Health Conditions Treated in Havertown"
           hasBgPattern={true}
         >
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
@@ -337,7 +337,7 @@ const IndividualTherapy = () => {
         </ServiceContentSection>
 
         <ServiceContentSection
-          title="The <span class='font-bold text-orange-600'>Value</span> of <span class='font-bold text-orange-600'>Therapy</span> in Pennsylvania"
+          title="The Value of Therapy in Pennsylvania"
           className="bg-white"
         >
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
@@ -411,7 +411,7 @@ const IndividualTherapy = () => {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
-              <span className="font-bold text-orange-600">Benefits</span> of Individual <span className="font-bold text-orange-600">Therapy</span>
+              Benefits of Individual Therapy
             </h2>
             <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -435,7 +435,7 @@ const IndividualTherapy = () => {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
-              Our Therapeutic <span className="font-bold text-orange-600">Approaches</span>
+              Our Therapeutic Approaches
             </h2>
             <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -466,7 +466,7 @@ const IndividualTherapy = () => {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
-              <span className="font-bold text-orange-600">Frequently Asked Questions</span>
+              Frequently Asked Questions
             </h2>
             <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
@@ -487,7 +487,7 @@ const IndividualTherapy = () => {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
-              <span className="font-bold text-orange-600">Related</span> Services
+              Related Services
             </h2>
             <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
