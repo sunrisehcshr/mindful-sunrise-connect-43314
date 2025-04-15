@@ -4,8 +4,11 @@ import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle2, Brain, ClipboardCheck, MessageCircle, Activity } from 'lucide-react';
+import { CheckCircle2, Brain, ClipboardCheck, MessageCircle, Activity, FileCheck, Stethoscope, ScrollText, Clock3 } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
 import SEOHead from '../../components/SEOHead';
+import WarmServiceCard from '../../components/services/WarmServiceCard';
+import { Link } from 'react-router-dom';
 
 const PsychiatricEvaluations = () => {
   const benefits = [
@@ -62,6 +65,14 @@ const PsychiatricEvaluations = () => {
     {
       question: "Are psychiatric evaluations covered by insurance?",
       answer: "Many insurance plans cover psychiatric evaluations. We work with several major insurance providers and can verify your coverage before your appointment. We also offer self-pay options and can provide documentation for reimbursement."
+    },
+    {
+      question: "How often will I need to return for follow-up appointments?",
+      answer: "The frequency of follow-up appointments depends on your specific situation, diagnosis, and treatment plan. Initially, we might recommend more frequent visits, which may decrease as your symptoms improve or stabilize. We'll create a personalized follow-up schedule together."
+    },
+    {
+      question: "Can I request specific testing during my evaluation?",
+      answer: "Yes, you can discuss specific testing concerns with your provider. We'll consider your requests along with clinical recommendations to determine which assessments would be most beneficial for your situation."
     }
   ];
   
@@ -69,6 +80,50 @@ const PsychiatricEvaluations = () => {
     { title: "Medication Management", url: "/medication-management-havertown-pa" },
     { title: "Individual Therapy", url: "/individual-therapy-havertown-pa" },
     { title: "Child Therapy", url: "/child-therapy-havertown-pa" }
+  ];
+  
+  const conditions = [
+    {
+      title: "Anxiety Disorders",
+      description: "Comprehensive evaluation for generalized anxiety, social anxiety, panic disorder, and phobias.",
+      url: "/anxiety-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
+    },
+    {
+      title: "Mood Disorders",
+      description: "Expert assessment for depression, bipolar disorder, and other mood-related conditions.",
+      url: "/depression-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
+    },
+    {
+      title: "ADHD",
+      description: "Thorough evaluation for attention deficit hyperactivity disorder in children and adults.",
+      url: "/adhd-treatment-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
+    }
+  ];
+  
+  const evaluationTypes = [
+    {
+      title: "Initial Psychiatric Assessment",
+      description: "A comprehensive first-time evaluation to establish diagnoses and develop treatment recommendations.",
+      icon: <FileCheck className="h-6 w-6 text-orange-500" />
+    },
+    {
+      title: "Medication Evaluation",
+      description: "Assessment focused on determining if medication would be beneficial and which options might be most appropriate.",
+      icon: <Stethoscope className="h-6 w-6 text-orange-500" />
+    },
+    {
+      title: "Psychological Testing",
+      description: "Specialized assessments to evaluate specific conditions, cognitive functioning, or personality factors.",
+      icon: <ScrollText className="h-6 w-6 text-orange-500" />
+    },
+    {
+      title: "Follow-Up Evaluations",
+      description: "Ongoing assessments to monitor treatment effectiveness and make necessary adjustments.",
+      icon: <Clock3 className="h-6 w-6 text-orange-500" />
+    }
   ];
 
   return (
@@ -205,10 +260,143 @@ const PsychiatricEvaluations = () => {
             </motion.div>
           </div>
         </ServiceContentSection>
+        
+        <ServiceContentSection
+          title="Types of Psychiatric Evaluations We Offer"
+          className="bg-white"
+        >
+          <div className="mb-10 max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              Our practice provides a range of specialized psychiatric evaluation services to meet diverse needs. Each evaluation type is tailored to address specific concerns and provide actionable insights for treatment planning.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {evaluationTypes.map((type, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-amber-50/50 border border-amber-100 rounded-lg p-6 shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">
+                    {type.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-amber-900 mb-2">{type.title}</h3>
+                    <p className="text-sm text-muted-foreground">{type.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </ServiceContentSection>
+        
+        <ServiceContentSection
+          title="Common Conditions We Evaluate"
+          hasBgPattern={true}
+        >
+          <div className="mb-8 max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              Our psychiatric evaluations can help assess and diagnose a wide range of mental health conditions. Our experienced team uses evidence-based methods to provide accurate diagnosis and treatment recommendations.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {conditions.map((condition, index) => (
+              <WarmServiceCard
+                key={index}
+                title={condition.title}
+                description={condition.description}
+                imageSrc={condition.imageSrc}
+                url={condition.url}
+                delay={index * 0.1}
+              />
+            ))}
+          </div>
+          
+          <div className="mt-10 text-center">
+            <Link to="/conditions" className="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
+              View all conditions we treat
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </div>
+        </ServiceContentSection>
+        
+        <ServiceContentSection
+          title="The Importance of Comprehensive Psychiatric Evaluation"
+          className="bg-white"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-3">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="space-y-5"
+              >
+                <p className="text-muted-foreground">
+                  A thorough psychiatric evaluation is the foundation of effective mental health treatment. At Sunrise Human Care Services, we believe in the importance of accurate diagnosis and personalized care planning to address your unique needs.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  Many mental health conditions share similar symptoms, making careful assessment critical for proper diagnosis. Our evaluation process helps distinguish between conditions that may present in similar ways, ensuring you receive the most appropriate and effective treatment.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  Beyond diagnosis, our evaluations provide valuable insights into your overall mental health, identifying strengths and resources that can support your recovery. We consider biological factors, psychological aspects, and social influences to create a holistic understanding of your well-being.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  For individuals who have struggled with persistent symptoms or have tried multiple treatments without success, a comprehensive psychiatric evaluation can offer new perspectives and treatment approaches. Our team stays current with the latest research and diagnostic methods to provide the most up-to-date care.
+                </p>
+              </motion.div>
+            </div>
+            
+            <div className="lg:col-span-2">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-amber-50 border border-amber-100 rounded-lg p-6 shadow-sm"
+              >
+                <h3 className="text-xl font-semibold text-amber-900 mb-4">Benefits of Early Evaluation</h3>
+                <Separator className="bg-amber-200 mb-4" />
+                
+                <ul className="space-y-4">
+                  {[
+                    "Early intervention often leads to better treatment outcomes",
+                    "Prevents symptoms from becoming more severe or chronic",
+                    "Reduces the impact of mental health conditions on daily functioning",
+                    "Helps identify co-occurring conditions that may affect treatment",
+                    "Provides clarity and understanding about symptoms and experiences",
+                    "Creates a foundation for a personalized treatment approach"
+                  ].map((item, idx) => (
+                    <motion.li 
+                      key={idx}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * idx }}
+                      className="flex items-start gap-3"
+                    >
+                      <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-amber-800 text-sm">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          </div>
+        </ServiceContentSection>
       </ServicePageLayout>
     </>
   );
 };
 
 export default PsychiatricEvaluations;
-
