@@ -167,7 +167,6 @@ const IndividualTherapy = () => {
           <div className="mb-6">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Professional Care</SectionTag>
           </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -274,7 +273,6 @@ const IndividualTherapy = () => {
           <div className="mb-6">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Tailored Therapy</SectionTag>
           </div>
-
           <div className="mb-10 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown, PA is tailored to meet diverse needs, from immediate support to long-term growth. Licensed therapists use evidence-based therapy to help you thrive.
@@ -318,7 +316,6 @@ const IndividualTherapy = () => {
           <div className="mb-6">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Condition Support</SectionTag>
           </div>
-
           <div className="mb-8 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown addresses mental health conditions with evidence-based techniques. Licensed therapists in Havertown help you find relief and build resilience.
@@ -353,7 +350,6 @@ const IndividualTherapy = () => {
           <div className="mb-6">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Holistic Wellness</SectionTag>
           </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
               <motion.div
@@ -363,16 +359,16 @@ const IndividualTherapy = () => {
                 transition={{ duration: 0.5 }}
                 className="space-y-5"
               >
-                <p className="text-muted-foreground">
+                <p className="leading-relaxed text-muted-foreground">
                   Individual therapy in Havertown, PA is a powerful tool for addressing mental health conditions and fostering growth. At Sunrise Human Care Services, our licensed therapists in Havertown empower you with evidence-based therapy.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="leading-relaxed text-muted-foreground">
                   Therapy in Pennsylvania helps uncover patterns contributing to distress, offering new coping strategies. Our therapists collaborate to create a plan tailored to your life, whether for anxiety treatment in Havertown or trauma therapy.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="leading-relaxed text-muted-foreground">
                   Beyond relief, mental health counseling in Delaware County builds resilience and self-awareness. We consider biological, psychological, and social factors for holistic care, ensuring lasting change with CBT therapy in Havertown or other methods.
                 </p>
-                <p className="text-muted-foreground">
+                <p className="leading-relaxed text-muted-foreground">
                   For those facing challenges or seeking to thrive, therapy in Pennsylvania offers a path forward. Contact us for Havertown therapy for anxiety or other needs, and start your journey today.
                 </p>
               </motion.div>
