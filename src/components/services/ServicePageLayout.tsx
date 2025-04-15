@@ -157,11 +157,7 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          <section className="py-[50px] bg-white">
-            {warmGradientOverlay}
-            
-            
-          </section>
+          
           
           <section className={`py-12 md:py-16 ${warmGradientBg}`}>
             {warmGradientOverlay}
