@@ -303,7 +303,7 @@ const IndividualTherapy = () => {
             <Link to="/contact" className="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
               Start Your Therapy Journey
               <ArrowRight className="ml-1 h-4 w-4" />
-            </Link> // Added CTA
+            </Link>
           </div>
         </ServiceContentSection>
 
