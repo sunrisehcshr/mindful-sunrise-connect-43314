@@ -8,7 +8,6 @@ import { Separator } from '@/components/ui/separator';
 import SEOHead from '../../components/SEOHead';
 import WarmServiceCard from '../../components/services/WarmServiceCard';
 import { Link } from 'react-router-dom';
-import SectionTag from '@/components/ui/section-tag';
 
 const IndividualTherapy = () => {
   const benefits = [
@@ -164,14 +163,6 @@ const IndividualTherapy = () => {
           title="Why Choose Individual Therapy in Havertown, PA"
           hasBgPattern={true}
         >
-          <div className="mb-6 flex justify-center">
-            <SectionTag 
-              icon={<Brain className="h-3 w-3" />} 
-              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors"
-            >
-              Professional Care
-            </SectionTag>
-          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -275,14 +266,6 @@ const IndividualTherapy = () => {
           title="Types of Individual Therapy in Havertown"
           className="bg-white"
         >
-          <div className="mb-6 flex justify-center">
-            <SectionTag 
-              icon={<Brain className="h-3 w-3" />} 
-              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors"
-            >
-              Tailored Therapy
-            </SectionTag>
-          </div>
           <div className="mb-10 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown, PA is tailored to meet diverse needs, from immediate support to long-term growth. Licensed therapists use evidence-based therapy to help you thrive.
@@ -323,14 +306,6 @@ const IndividualTherapy = () => {
           title="Mental Health Conditions Treated in Havertown"
           hasBgPattern={true}
         >
-          <div className="mb-6 flex justify-center">
-            <SectionTag 
-              icon={<Brain className="h-3 w-3" />} 
-              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors"
-            >
-              Condition Support
-            </SectionTag>
-          </div>
           <div className="mb-8 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown addresses mental health conditions with evidence-based techniques. Licensed therapists in Havertown help you find relief and build resilience.
@@ -362,14 +337,6 @@ const IndividualTherapy = () => {
           title="The Value of Therapy in Pennsylvania"
           className="bg-white"
         >
-          <div className="mb-6 flex justify-center">
-            <SectionTag 
-              icon={<Brain className="h-3 w-3" />} 
-              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors"
-            >
-              Holistic Wellness
-            </SectionTag>
-          </div>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
               <motion.div
@@ -436,6 +403,100 @@ const IndividualTherapy = () => {
             </Link>
           </div>
         </ServiceContentSection>
+
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-amber-950 text-center mb-8">Benefits of Individual Therapy</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-amber-50 border border-amber-100 rounded-lg p-6 shadow-sm"
+                >
+                  <CheckCircle2 className="h-6 w-6 text-orange-500 mb-4" />
+                  <p className="text-amber-800 text-sm">{benefit}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-amber-950 text-center mb-8">Our Therapeutic Approaches</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {approaches.map((approach, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white border border-amber-100 rounded-lg p-6 shadow-sm"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">
+                      {approach.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-amber-900 mb-2">{approach.title}</h3>
+                      <p className="text-sm text-muted-foreground">{approach.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-amber-950 text-center mb-8">Frequently Asked Questions</h2>
+            <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+              {faqs.map((faq, index) => (
+                <AccordionItem value={`faq-${index}`} key={index}>
+                  <AccordionTrigger className="text-lg font-semibold text-amber-950 text-left">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-amber-950 text-center mb-8">Related Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedServices.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white border border-amber-100 rounded-lg p-6 shadow-sm text-center"
+                >
+                  <h3 className="text-lg font-semibold text-amber-900 mb-2">{service.title}</h3>
+                  <Link
+                    to={service.url}
+                    className="inline-flex items-center text-orange-600 hover:text-orange-700 transition-colors"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
       </ServicePageLayout>
     </>
   );
