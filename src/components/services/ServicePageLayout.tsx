@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -131,6 +132,9 @@ const ServicePageLayout = ({
               </div>
             </div>
           </section>
+          
+          {/* Render the content sections */}
+          {children}
           
           <section className="py-[50px] bg-white">
             {warmGradientOverlay}
