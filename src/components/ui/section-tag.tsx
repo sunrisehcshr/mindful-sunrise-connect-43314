@@ -9,15 +9,11 @@ interface SectionTagProps {
   icon?: React.ReactNode;
 }
 
-const SectionTag = ({ 
-  children, 
-  className, 
-  icon = <Sparkles className="h-3 w-3" /> 
-}: SectionTagProps) => {
+const SectionTag = ({ children, className, icon = <Sparkles className="h-3 w-3" /> }: SectionTagProps) => {
   return (
     <span 
       className={cn(
-        "section-tag inline-flex items-center gap-1.5 font-semibold text-sm px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400 shadow-sm hover:from-orange-600 hover:to-amber-600 transition-colors",
+        "section-tag inline-flex items-center gap-1.5 font-semibold text-sm px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400 shadow-sm",
         className
       )}
     >

@@ -1,15 +1,9 @@
 
 # Sunrise Human Care Services - Robots.txt
 # https://sunrisehumancare.com
-# Location: Havertown, PA 19083, United States
 
 User-agent: *
 Allow: /
-
-# Geo-specific pages
-Allow: /mental-health-havertown-pa
-Allow: /services
-Allow: /conditions
 
 # Allow Google Maps
 Allow: /maps/
@@ -77,9 +71,6 @@ Allow: /ocd-therapy-havertown-pa
 Allow: /psychiatric-evaluations-havertown-pa
 Allow: /medication-management-havertown-pa
 Allow: /adhd-treatment-havertown-pa
-
-# Geographic focus: Havertown, PA and Delaware County
-# Primary ZIP code: 19083
 
 # Sitemap locations
 Sitemap: https://sunrisehumancare.com/sitemap.xml

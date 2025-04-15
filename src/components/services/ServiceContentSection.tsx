@@ -38,8 +38,8 @@ const ServiceContentSection: React.FC<ServiceContentSectionProps> = ({
         once: true
       }} transition={{
         duration: 0.5
-      }} className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-10 text-amber-950 font-playfair text-center">{title}</h2>
+      }} className="max-w-4xl mx-auto">
+          
           {children}
         </motion.div>
       </div>

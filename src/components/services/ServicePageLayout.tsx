@@ -18,12 +18,25 @@ interface ServicePageLayoutProps {
   serviceType: string;
   canonicalUrl: string;
   heroImage?: string;
-  benefits?: string[]; // Marked optional, not rendered
-  approaches?: { title: string; description: string; icon?: React.ReactNode }[]; // Marked optional
-  faqs?: { question: string; answer: string }[]; // Marked optional
-  relatedServices: { title: string; url: string }[];
+  benefits: string[];
+  approaches: {
+    title: string;
+    description: string;
+  }[];
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
+  relatedServices: {
+    title: string;
+    url: string;
+  }[];
   schemaType?: string;
-  breadcrumbs?: { name: string; url: string; position: number }[];
+  breadcrumbs?: {
+    name: string;
+    url: string;
+    position: number;
+  }[];
 }
 
 const ServicePageLayout = ({
@@ -35,40 +48,35 @@ const ServicePageLayout = ({
   serviceType,
   canonicalUrl,
   heroImage = '/therapy-in-havertown.jpg',
-  benefits, // Not rendered, passed for potential metadata use
-  approaches, // Not rendered
-  faqs, // Not rendered
+  benefits,
+  approaches,
+  faqs,
   relatedServices,
   schemaType,
   breadcrumbs
 }: ServicePageLayoutProps) => {
   const warmGradientBg = "relative overflow-hidden bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90";
-  const warmGradientOverlay = (
-    <div className="absolute inset-0 -z-10">
-      <svg className="h-full w-full opacity-30" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
-            <rect x="0" y="0" width="100%" height="100%" fill="none" />
-            <path d="M100 0H0V100" stroke="rgba(252, 211, 77, 0.4)" fill="none" strokeWidth="1" />
-            <path d="M0 50H100M50 0V100" stroke="rgba(252, 211, 77, 0.3)" fill="none" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#warm-pattern)" />
-      </svg>
-    </div>
-  );
-  const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
-  const serviceName = serviceType || title.split('in')[0].trim();
 
-  return (
-    <>
-      <SEOHead
-        title={pageTitle}
-        description={metaDescription}
-        canonicalUrl={canonicalUrl}
-        keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`}
-        breadcrumbs={breadcrumbs}
-      />
+  const warmGradientOverlay = <>
+      <div className="absolute inset-0 -z-10">
+        <svg className="h-full w-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
+              <rect x="0" y="0" width="100%" height="100%" fill="none" />
+              <path d="M100 0H0V100" stroke="rgba(252, 211, 77, 0.4)" fill="none" strokeWidth="1" />
+              <path d="M0 50H100M50 0V100" stroke="rgba(252, 211, 77, 0.3)" fill="none" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#warm-pattern)" />
+        </svg>
+      </div>
+    </>;
+
+  const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
+
+  const serviceName = serviceType || title.split('in')[0].trim();
+  return <>
+      <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`} breadcrumbs={breadcrumbs} />
       <SchemaMarkup />
 
       <div className="flex flex-col min-h-screen">
@@ -77,25 +85,33 @@ const ServicePageLayout = ({
         <main className="flex-grow pt-24 bg-white">
           <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
+            
             <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
-              <div className="max-w-3xl">
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white"
-                >
+              <div className="max-w-3xl">                
+                <motion.h1 initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5
+              }} className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
                   {title}
                 </motion.h1>
                 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-base md:text-xl text-white/90 mb-6 md:mb-8"
-                >
+                <motion.p initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5,
+                delay: 0.1
+              }} className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
                   {description}
                 </motion.p>
                 
@@ -116,8 +132,38 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Render main content sections (e.g., Why Choose, Types) */}
-          {children}
+          <section className="py-[50px] bg-white">
+            {warmGradientOverlay}
+            
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
+              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Benefits of {serviceType} in Havertown, PA</h2>
+                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                {benefits.map((benefit, index) => <motion.div key={index} initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }} className="flex items-start space-x-4">
+                    <div className="mt-1 text-orange-600 rounded-full p-1 bg-orange-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-white">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p className="text-base md:text-lg text-inherit">{benefit}</p>
+                  </motion.div>)}
+              </div>
+            </div>
+          </section>
           
           <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
             <div className="container mx-auto px-4 md:px-6">
@@ -144,6 +190,35 @@ const ServicePageLayout = ({
             </div>
           </section>
           
+          <section className="py-[50px] bg-white">
+            {warmGradientOverlay}
+            
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
+              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Frequently Asked Questions About {serviceType} in Havertown</h2>
+                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
+              </div>
+              
+              <div className="max-w-3xl mx-auto">
+                {faqs.map((faq, index) => <motion.div key={index} initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }} className={`mb-5 md:mb-6 rounded-lg p-5 md:p-6 ${itemBgClass}`}>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-amber-900">{faq.question}</h3>
+                    <p className="text-amber-800 text-sm md:text-base">{faq.answer}</p>
+                  </motion.div>)}
+              </div>
+            </div>
+          </section>
+          
           <section className={`py-12 md:py-16 ${warmGradientBg}`}>
             {warmGradientOverlay}
             
@@ -157,14 +232,18 @@ const ServicePageLayout = ({
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-                {relatedServices.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
+                {relatedServices.map((service, index) => <motion.div key={index} initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }}>
                     <Link to={service.url} className={`block rounded-lg p-5 md:p-6 h-full ${itemBgClass}`}>
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-amber-900">{service.title}</h3>
                       <div className="flex items-center text-orange-500 mt-3 md:mt-4">
@@ -172,8 +251,7 @@ const ServicePageLayout = ({
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </Link>
-                  </motion.div>
-                ))}
+                  </motion.div>)}
               </div>
             </div>
           </section>
@@ -181,8 +259,6 @@ const ServicePageLayout = ({
         
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default ServicePageLayout;
