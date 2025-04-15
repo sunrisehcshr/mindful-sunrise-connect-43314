@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
@@ -9,7 +8,6 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 interface ServicePageLayoutProps {
   children: React.ReactNode;
   title: string;
@@ -39,7 +37,6 @@ interface ServicePageLayoutProps {
     position: number;
   }[];
 }
-
 const ServicePageLayout = ({
   children,
   title,
@@ -57,7 +54,6 @@ const ServicePageLayout = ({
   breadcrumbs
 }: ServicePageLayoutProps) => {
   const warmGradientBg = "relative overflow-hidden bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90";
-
   const warmGradientOverlay = <>
       <div className="absolute inset-0 -z-10">
         <svg className="h-full w-full opacity-30" xmlns="http://www.w3.org/2000/svg">
@@ -72,9 +68,7 @@ const ServicePageLayout = ({
         </svg>
       </div>
     </>;
-
   const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
-
   const serviceName = serviceType || title.split('in')[0].trim();
   return <>
       <SEOHead title={pageTitle} description={metaDescription} canonicalUrl={canonicalUrl} keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`} breadcrumbs={breadcrumbs} />
@@ -136,38 +130,7 @@ const ServicePageLayout = ({
           {/* Render the content sections */}
           {children}
           
-          <section className="py-[50px] bg-white">
-            {warmGradientOverlay}
-            
-            <div className="container relative z-10 mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Benefits of {serviceType} in Havertown, PA</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {benefits.map((benefit, index) => <motion.div key={index} initial={{
-                opacity: 0,
-                y: 20
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }} className="flex items-start space-x-4">
-                    <div className="mt-1 text-orange-600 rounded-full p-1 bg-orange-500">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-white">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <p className="text-base md:text-lg text-inherit">{benefit}</p>
-                  </motion.div>)}
-              </div>
-            </div>
-          </section>
+          
           
           <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
             <div className="container mx-auto px-4 md:px-6">
