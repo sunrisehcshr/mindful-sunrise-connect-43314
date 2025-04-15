@@ -186,7 +186,7 @@ const CouplesCounseling = () => {
                     ]
                   },
                   {
-                    title: "Why Havertown for Couples Counseling?",
+                    title: "Why Sunrise in Havertown for Couples Counseling?",
                     items: [
                       "Compassionate, licensed therapists in Havertown",
                       "Convenient access for Delaware County couples",
