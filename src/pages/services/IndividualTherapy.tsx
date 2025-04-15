@@ -127,7 +127,7 @@ const IndividualTherapy = () => {
     {
       title: "Maintenance Therapy",
       description: "Periodic therapy in Pennsylvania to sustain progress and prevent relapse.",
-      icon: <MessageCircle Disabled className="h-6 w-6 text-orange-500" />
+      icon: <MessageCircle className="h-6 w-6 text-orange-500" />
     }
   ];
 
@@ -271,6 +271,10 @@ const IndividualTherapy = () => {
           title="Types of Individual Therapy in Havertown"
           className="bg-white"
         >
+          <div className="mb-6">
+            <SectionTag icon={<Brain className="h-3 w-3" />}>Tailored Therapy</SectionTag>
+          </div>
+
           <div className="mb-10 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown, PA is tailored to meet diverse needs, from immediate support to long-term growth. Licensed therapists use evidence-based therapy to help you thrive.
@@ -311,6 +315,10 @@ const IndividualTherapy = () => {
           title="Mental Health Conditions Treated in Havertown"
           hasBgPattern={true}
         >
+          <div className="mb-6">
+            <SectionTag icon={<Brain className="h-3 w-3" />}>Condition Support</SectionTag>
+          </div>
+
           <div className="mb-8 max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown addresses mental health conditions with evidence-based techniques. Licensed therapists in Havertown help you find relief and build resilience.
@@ -342,6 +350,10 @@ const IndividualTherapy = () => {
           title="The Value of Therapy in Pennsylvania"
           className="bg-white"
         >
+          <div className="mb-6">
+            <SectionTag icon={<Brain className="h-3 w-3" />}>Holistic Wellness</SectionTag>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
               <motion.div
