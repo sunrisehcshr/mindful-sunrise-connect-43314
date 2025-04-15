@@ -38,6 +38,15 @@ const IndividualTherapy = () => {
     }
   ];
 
+  const whoCanBenefit = [
+    "Adults dealing with anxiety, depression, or stress",
+    "Individuals navigating life transitions or relationship issues",
+    "People seeking personal growth and self-discovery",
+    "Those coping with trauma or past experiences",
+    "Professionals managing work-related stress",
+    "Anyone looking to improve their mental well-being"
+  ];
+
   const faqs = [
     {
       question: "What happens during my first session?",
@@ -183,6 +192,62 @@ const IndividualTherapy = () => {
                 ))}
               </ul>
             </div>
+          </motion.div>
+        </div>
+      </ServiceContentSection>
+
+      <ServiceContentSection
+        title="Who Can Benefit from Individual Therapy?"
+        hasBgPattern={false}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-5 text-muted-foreground">
+              <p className="leading-relaxed">
+                Individual therapy can be beneficial for anyone seeking to improve their mental health, work through challenges, or pursue personal growth. Our Havertown therapy services are designed to support individuals from all walks of life.
+              </p>
+              
+              <p className="leading-relaxed">
+                Whether you're experiencing specific mental health concerns, going through a difficult life transition, or simply want to better understand yourself, our experienced therapists are here to help guide you on your journey.
+              </p>
+              
+              <p className="leading-relaxed">
+                We create a safe, non-judgmental space where you can explore your thoughts, feelings, and experiences while developing practical tools for personal growth and healing.
+              </p>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              Individual Therapy Can Help With:
+            </h3>
+            
+            <ul className="space-y-3.5">
+              {whoCanBenefit.map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
           </motion.div>
         </div>
       </ServiceContentSection>
