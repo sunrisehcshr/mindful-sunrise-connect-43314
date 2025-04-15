@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
+import SectionTag from '@/components/ui/section-tag';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Brain, Users, Lightbulb, Star } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const IndividualTherapy = () => {
   const benefits = [
@@ -97,6 +99,10 @@ const IndividualTherapy = () => {
         title="What to Expect in Individual Therapy in Havertown"
         hasBgPattern={true}
       >
+        <div className="mb-6">
+          <SectionTag icon={<Brain className="h-3 w-3" />}>Understanding Your Journey</SectionTag>
+        </div>
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -128,11 +134,14 @@ const IndividualTherapy = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
           >
-            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Our Individual Therapy Services Help With:
-            </h3>
+            <div className="flex items-center gap-2 mb-5">
+              <Star className="h-5 w-5 text-orange-500" />
+              <h3 className="text-xl font-semibold text-orange-600 font-playfair">
+                Our Individual Therapy Services Help With:
+              </h3>
+            </div>
             
             <ul className="space-y-3.5">
               {[
@@ -199,6 +208,16 @@ const IndividualTherapy = () => {
         title="Who Can Benefit from Individual Therapy?"
         hasBgPattern={false}
       >
+        <div className="mb-6">
+          <SectionTag icon={<Users className="h-3 w-3" />}>For Everyone's Growth</SectionTag>
+        </div>
+        
+        <div className="flex items-center gap-2 mb-6">
+          <Badge variant="secondary" className="bg-orange-100 text-orange-700 hover:bg-orange-200">Personal Growth</Badge>
+          <Badge variant="secondary" className="bg-amber-100 text-amber-700 hover:bg-amber-200">Mental Wellness</Badge>
+          <Badge variant="secondary" className="bg-yellow-100 text-yellow-700 hover:bg-yellow-200">Life Changes</Badge>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -226,7 +245,7 @@ const IndividualTherapy = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
           >
             <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
               Individual Therapy Can Help With:
@@ -255,6 +274,19 @@ const IndividualTherapy = () => {
         title="Our Therapy Approach"
         hasBgPattern={false}
       >
+        <div className="mb-6">
+          <SectionTag icon={<Lightbulb className="h-3 w-3" />}>Evidence-Based Methods</SectionTag>
+        </div>
+        
+        <div className="relative mb-8">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg opacity-10"></div>
+          <div className="relative p-6 text-center">
+            <p className="text-lg font-medium text-amber-900">
+              "Our approach combines proven therapeutic techniques with personalized care to help you achieve lasting positive change."
+            </p>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -286,7 +318,7 @@ const IndividualTherapy = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
           >
             <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
               Our Therapeutic Methods Include:
