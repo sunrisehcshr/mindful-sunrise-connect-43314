@@ -17,7 +17,7 @@ const SectionTag = ({
   return (
     <span 
       className={cn(
-        "section-tag inline-flex items-center gap-1.5 font-semibold text-sm px-3 py-1 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white border border-purple-400 shadow-sm hover:from-purple-600 hover:to-purple-700 transition-colors",
+        "section-tag inline-flex items-center gap-1.5 font-semibold text-sm px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400 shadow-sm hover:from-orange-600 hover:to-amber-600 transition-colors",
         className
       )}
     >
