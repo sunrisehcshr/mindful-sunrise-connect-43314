@@ -1,9 +1,8 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight, Pill, Brain, Shield } from 'lucide-react'; // Changed Pills to Pill
+import { CheckCircle2, ArrowRight, Pill, Brain, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SectionTag from '@/components/ui/section-tag';
 
@@ -102,7 +101,7 @@ const MedicationManagement = () => {
         hasBgPattern={true}
       >
         <div className="mb-6">
-          <SectionTag icon={<Pills className="h-3 w-3" />}>Expert Care</SectionTag>
+          <SectionTag icon={<Pill className="h-3 w-3" />}>Expert Care</SectionTag>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
