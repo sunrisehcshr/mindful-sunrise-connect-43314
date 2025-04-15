@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
@@ -7,6 +6,12 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, Brain, HeartHandshake, Users, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
+import { 
+  Accordion, 
+  AccordionContent, 
+  AccordionItem, 
+  AccordionTrigger 
+} from '@/components/ui/accordion';
 
 const ChildTherapy = () => {
   const benefits = [
@@ -277,7 +282,7 @@ const ChildTherapy = () => {
         </div>
       </ServiceContentSection>
 
-      <ServiceContentSection title="Our Child Therapy Methods" hasBgPattern={false}>
+      <ServiceContentSection title="Our Child Therapy Methods" hasBgPattern={true}>
         <div className="mb-6">
           <SectionTag icon={<Lightbulb className="h-3 w-3" />}>Evidence-Based Approaches</SectionTag>
         </div>
@@ -328,23 +333,22 @@ const ChildTherapy = () => {
               Our Therapeutic Methods Include:
             </h3>
             
-            <ul className="space-y-4">
+            <Accordion type="single" collapsible className="w-full">
               {approaches.map((approach, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index }}
-                  className="border-b border-orange-100 pb-4 last:border-b-0 last:pb-0"
+                <AccordionItem 
+                  key={index} 
+                  value={`approach-${index}`} 
+                  className="border-b border-orange-100 last:border-b-0"
                 >
-                  <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-amber-900 text-base lg:text-lg">{approach.title}</span>
-                    <span className="text-muted-foreground text-sm lg:text-base">{approach.description}</span>
-                  </div>
-                </motion.li>
+                  <AccordionTrigger className="text-amber-900 font-medium text-base lg:text-lg py-3 hover:text-orange-600 hover:no-underline">
+                    {approach.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-sm lg:text-base pb-4">
+                    {approach.description}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </ul>
+            </Accordion>
             
             <div className="mt-7 pt-5 border-t border-orange-100">
               <p className="text-sm lg:text-base text-muted-foreground italic">
