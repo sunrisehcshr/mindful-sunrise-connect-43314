@@ -11,7 +11,6 @@ import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 
 const MentalHealthHavertown = () => {
-  // Animation variants for staggered children
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,10 +29,10 @@ const MentalHealthHavertown = () => {
   return (
     <>
       <SEOHead 
-        title="Mental Health Care in Havertown, PA | Trusted Local Therapy & Counseling" 
-        description="Expert mental health care in Havertown, PA. Our licensed therapists provide evidence-based treatment for anxiety, depression, ADHD & more. Convenient location, insurance accepted. Call (814) 620-2162." 
+        title="Medicare-Accepted Mental Health Care in Havertown, PA | Sunrise Human Care" 
+        description="Trusted Medicare-approved mental health services in Havertown, PA. Expert therapy, counseling & psychiatric care for anxiety, depression & more. Medicare accepted. Schedule your consultation: (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/mental-health-havertown-pa"
-        keywords="mental health care Havertown, therapy Havertown PA, counseling Delaware County, psychiatrist Havertown, anxiety treatment Havertown, depression therapy near me, licensed therapists Havertown"
+        keywords="medicare mental health havertown, medicare therapy havertown pa, medicare psychiatrist delaware county, medicare counseling havertown, mental health medicare provider havertown, anxiety therapy medicare, depression counseling medicare, psychiatric care medicare havertown"
       />
       <SchemaMarkup />
       <div className="flex flex-col min-h-screen">
@@ -52,22 +51,22 @@ const MentalHealthHavertown = () => {
                   transition={{ duration: 0.7 }}
                 >
                   <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 mb-4 text-white text-xs font-semibold shadow-sm">
-                    Leading Mental Health Provider in Havertown
+                    Medicare-Accepted Mental Health Provider in Havertown
                   </span>
                   <h1 className="text-4xl md:text-5xl font-bold text-amber-900 mb-6">
-                    Comprehensive Mental Health Care in Havertown, PA
+                    Medicare-Covered Mental Health Care in Havertown, PA
                   </h1>
                   <p className="text-lg text-amber-800 mb-8">
-                    At Sunrise Human Care, we provide expert mental health services in Havertown with a team of licensed therapists, psychologists, and psychiatrists. Our evidence-based approach ensures personalized care for anxiety, depression, ADHD, and more.
+                    At Sunrise Human Care, we're proud to be a Medicare-approved mental health provider serving Havertown and Delaware County. Our team of licensed therapists, psychologists, and psychiatrists provides comprehensive mental health care covered by Medicare.
                   </p>
                   <div className="flex flex-wrap gap-4 mb-8">
                     <div className="flex items-center bg-white/70 px-3 py-2 rounded-lg border border-amber-200 shadow-sm">
                       <Check className="h-5 w-5 text-orange-500 mr-2" />
-                      <span className="text-amber-800 font-medium">Insurance Accepted</span>
+                      <span className="text-amber-800 font-medium">Medicare Accepted</span>
                     </div>
                     <div className="flex items-center bg-white/70 px-3 py-2 rounded-lg border border-amber-200 shadow-sm">
                       <Check className="h-5 w-5 text-orange-500 mr-2" />
-                      <span className="text-amber-800 font-medium">Licensed Therapists</span>
+                      <span className="text-amber-800 font-medium">Licensed Medicare Providers</span>
                     </div>
                     <div className="flex items-center bg-white/70 px-3 py-2 rounded-lg border border-amber-200 shadow-sm">
                       <Check className="h-5 w-5 text-orange-500 mr-2" />
@@ -155,13 +154,13 @@ const MentalHealthHavertown = () => {
             </div>
           </section>
 
-          {/* Local Context Section */}
-          <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
+          {/* Medicare Coverage Section */}
+          <section className="py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 text-amber-900">
-                    Your Trusted Mental Health Provider in Havertown
+                    Medicare Mental Health Coverage in Havertown
                   </h2>
                   <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5" />
                 </div>
@@ -169,13 +168,79 @@ const MentalHealthHavertown = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-6">
                     <p className="text-amber-800">
-                      Located in the heart of Havertown at 2050 West Chester Pike, Sunrise Human Care is Delaware County's premier mental health care provider. We serve residents from Havertown, Broomall, Ardmore, and surrounding communities with comprehensive mental health services.
+                      As a Medicare-approved mental health provider in Havertown, we understand the importance of accessible mental health care for our Medicare beneficiaries. Our team is committed to providing high-quality, evidence-based treatment while ensuring a seamless Medicare billing experience.
                     </p>
                     <p className="text-amber-800">
-                      Our Havertown mental health clinic combines clinical excellence with a warm, welcoming environment. Every member of our team is licensed in Pennsylvania and committed to providing evidence-based mental health care that makes a real difference in our patients' lives.
+                      Medicare Part B covers many essential mental health services, including individual therapy, psychiatric evaluations, medication management, and group therapy. Our experienced staff will help you understand your Medicare benefits and maximize your coverage.
                     </p>
                     <div className="pt-4">
-                      <h3 className="text-xl font-semibold mb-3 text-amber-900">Areas We Serve</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-amber-900">Medicare-Covered Services</h3>
+                      <ul className="grid grid-cols-1 gap-2 text-amber-800">
+                        <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Individual Therapy Sessions</li>
+                        <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Psychiatric Evaluations</li>
+                        <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Medication Management</li>
+                        <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Depression Screening</li>
+                        <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Annual Wellness Visits</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white/80 backdrop-blur-sm border border-amber-200 rounded-xl p-6 shadow-sm">
+                    <h3 className="text-xl font-semibold mb-4 text-amber-900">Understanding Your Medicare Coverage</h3>
+                    <p className="text-amber-800 mb-4">
+                      As a Medicare beneficiary seeking mental health care in Havertown, you're entitled to various covered services:
+                    </p>
+                    <ul className="space-y-3 text-amber-800">
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-orange-500 mr-2 mt-1" />
+                        <span>Medicare Part B covers 80% of approved mental health services after meeting your annual deductible</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-orange-500 mr-2 mt-1" />
+                        <span>One depression screening per year at no cost to you</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-orange-500 mr-2 mt-1" />
+                        <span>Coverage for both in-person and telehealth mental health visits</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-orange-500 mr-2 mt-1" />
+                        <span>Medication management and psychiatric services when medically necessary</span>
+                      </li>
+                    </ul>
+                    <div className="mt-6">
+                      <Link to="/appointment" className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 py-3 rounded-lg shadow-md transition-colors font-medium flex items-center justify-center">
+                        Verify Your Medicare Coverage
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Local Context Section */}
+          <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-amber-900">
+                    Your Trusted Medicare Mental Health Provider in Havertown
+                  </h2>
+                  <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5" />
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <p className="text-amber-800">
+                      Located at 2050 West Chester Pike in Havertown, Sunrise Human Care is Delaware County's premier Medicare-approved mental health care provider. We serve Medicare beneficiaries from Havertown, Broomall, Ardmore, and surrounding communities with comprehensive mental health services.
+                    </p>
+                    <p className="text-amber-800">
+                      Our Havertown mental health clinic combines clinical excellence with a warm, welcoming environment. Every member of our team is licensed in Pennsylvania, Medicare-approved, and committed to providing evidence-based mental health care that makes a real difference in our patients' lives.
+                    </p>
+                    <div className="pt-4">
+                      <h3 className="text-xl font-semibold mb-3 text-amber-900">Communities We Serve</h3>
                       <ul className="grid grid-cols-2 gap-2 text-amber-800">
                         <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Havertown</li>
                         <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Broomall</li>
@@ -188,20 +253,19 @@ const MentalHealthHavertown = () => {
                   </div>
                   
                   <div className="bg-white/80 backdrop-blur-sm border border-amber-200 rounded-xl p-6 shadow-sm">
-                    <h3 className="text-xl font-semibold mb-4 text-amber-900">Insurance & Payment Options</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-amber-900">Medicare & Payment Information</h3>
                     <p className="text-amber-800 mb-4">
-                      We accept most major insurance plans to make mental health care accessible to our Havertown community:
+                      We're committed to making mental health care accessible to Medicare beneficiaries in Havertown:
                     </p>
                     <ul className="space-y-2 text-amber-800">
-                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Aetna</li>
-                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Blue Cross Blue Shield</li>
-                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Cigna</li>
-                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />United Healthcare</li>
-                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Medicare</li>
+                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Medicare Part B Accepted</li>
+                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Medicare Advantage Plans</li>
+                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Assistance with Medicare Claims</li>
+                      <li className="flex items-center"><Check className="h-4 w-4 text-orange-500 mr-2" />Transparent Billing Process</li>
                     </ul>
                     <div className="mt-6">
                       <Link to="/appointment" className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 py-3 rounded-lg shadow-md transition-colors font-medium flex items-center justify-center">
-                        Verify Your Insurance
+                        Schedule Your Medicare Consultation
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </div>
@@ -402,14 +466,14 @@ const MentalHealthHavertown = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-                  Start Your Mental Health Journey in Havertown Today
+                  Start Your Medicare-Covered Mental Health Journey in Havertown Today
                 </h2>
                 <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
                   Our team of compassionate mental health professionals in Havertown is ready to help you 
                   overcome challenges and improve your wellbeing.
                 </p>
                 <Link to="/appointment" className="bg-white text-amber-600 hover:bg-yellow-50 px-8 py-4 rounded-lg shadow-lg transition-colors font-medium text-lg inline-block">
-                  Book an Appointment in Havertown Today!
+                  Schedule Your Medicare Consultation Today!
                 </Link>
               </motion.div>
             </div>
