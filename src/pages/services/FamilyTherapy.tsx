@@ -126,7 +126,7 @@ const FamilyTherapy = () => {
           <SectionTag icon={<HeartHandshake className="h-3 w-3" />}>Strengthening Family Bonds</SectionTag>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 xl:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -134,19 +134,19 @@ const FamilyTherapy = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="space-y-5 text-muted-foreground">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 At Sunrise Human Care Services in Havertown, our family therapy program begins with understanding your family's unique dynamics, strengths, and challenges. We create a welcoming environment where every family member feels safe to express themselves.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 Our experienced family therapists work with families from diverse backgrounds, helping them navigate various challenges such as communication difficulties, behavioral issues, life transitions, and relationship conflicts. We understand that every family is unique, and we tailor our approach to meet your specific needs.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 During sessions, we focus on improving communication patterns, resolving conflicts constructively, and strengthening the emotional bonds between family members. Our therapists help families develop practical tools and strategies they can use in their daily lives.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 Whether you're dealing with parenting challenges, adjusting to changes in family structure, or working through generational differences, our <Link to="/about" className="text-orange-600 hover:underline">skilled therapists</Link> are here to support your family's journey toward healing and growth.
               </p>
             </div>
@@ -157,9 +157,9 @@ const FamilyTherapy = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
+            className="bg-white p-7 lg:p-8 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
           >
-            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+            <h3 className="text-xl lg:text-2xl font-semibold mb-5 text-orange-600 font-playfair">
               Our Family Therapy Services Help With:
             </h3>
             
@@ -183,13 +183,13 @@ const FamilyTherapy = () => {
                   className="flex items-start gap-3"
                 >
                   <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{item}</span>
+                  <span className="text-muted-foreground text-base lg:text-lg">{item}</span>
                 </motion.li>
               ))}
             </ul>
             
             <div className="mt-7 pt-5 border-t border-orange-100">
-              <h4 className="text-lg font-medium mb-3 text-orange-600">
+              <h4 className="text-lg lg:text-xl font-medium mb-3 text-orange-600">
                 Family Resources
               </h4>
               
@@ -211,7 +211,7 @@ const FamilyTherapy = () => {
                   <li key={index}>
                     <Link
                       to={resource.url}
-                      className="flex items-center text-orange-500 hover:text-orange-700 transition-colors"
+                      className="flex items-center text-orange-500 hover:text-orange-700 transition-colors text-base lg:text-lg"
                     >
                       <ArrowRight className="h-4 w-4 mr-2" />
                       <span>{resource.name}</span>
@@ -235,7 +235,7 @@ const FamilyTherapy = () => {
           <Badge variant="secondary" className="bg-yellow-100 text-yellow-700 hover:bg-yellow-200">Stronger Bonds</Badge>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 xl:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -243,15 +243,15 @@ const FamilyTherapy = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="space-y-5 text-muted-foreground">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 Family therapy is beneficial for families at any stage of their journey together. Whether you're experiencing specific challenges or simply want to strengthen your family bonds, our therapeutic approach can help create positive change.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 We work with traditional families, blended families, single-parent families, multigenerational households, and families of all cultural backgrounds. Our inclusive approach ensures that every family member feels valued and understood.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 Family therapy can be particularly helpful during times of transition or stress, but it's also valuable for families who want to proactively build stronger relationships and improve their communication patterns.
               </p>
             </div>
@@ -262,9 +262,9 @@ const FamilyTherapy = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
+            className="bg-white p-7 lg:p-8 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
           >
-            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+            <h3 className="text-xl lg:text-2xl font-semibold mb-5 text-orange-600 font-playfair">
               Who Benefits from Family Therapy:
             </h3>
             
@@ -279,7 +279,7 @@ const FamilyTherapy = () => {
                   className="flex items-start gap-3"
                 >
                   <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{item}</span>
+                  <span className="text-muted-foreground text-base lg:text-lg">{item}</span>
                 </motion.li>
               ))}
             </ul>
@@ -292,16 +292,16 @@ const FamilyTherapy = () => {
           <SectionTag icon={<Lightbulb className="h-3 w-3" />}>Evidence-Based Approaches</SectionTag>
         </div>
         
-        <div className="relative mb-8">
+        <div className="relative mb-8 mx-auto max-w-4xl">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg opacity-10"></div>
           <div className="relative p-6 text-center">
-            <p className="text-lg font-medium text-amber-900">
+            <p className="text-lg lg:text-xl font-medium text-amber-900">
               "Every family has unique strengths and challenges. We use proven therapeutic approaches tailored to your family's specific needs."
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 xl:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -309,19 +309,19 @@ const FamilyTherapy = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="space-y-5 text-muted-foreground">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 Our family therapy approaches are grounded in evidence-based practices that have been proven effective in helping families overcome challenges and build stronger relationships. We combine different therapeutic methods to create a comprehensive treatment plan that addresses your family's specific needs.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 Each session is structured to maximize engagement and progress, while remaining flexible enough to address immediate concerns as they arise. We help families identify and understand their patterns of interaction, develop new ways of communicating, and create lasting positive change.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 Our therapists are trained in multiple therapeutic modalities, allowing us to adapt our approach as needed. We focus on building upon your family's existing strengths while developing new skills and strategies for managing challenges.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-base lg:text-lg">
                 Throughout the therapy process, we work collaboratively with your family to ensure that the strategies and tools we develop together are practical and can be effectively implemented in your daily life.
               </p>
             </div>
@@ -332,9 +332,9 @@ const FamilyTherapy = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
+            className="bg-white p-7 lg:p-8 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
           >
-            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+            <h3 className="text-xl lg:text-2xl font-semibold mb-5 text-orange-600 font-playfair">
               Our Therapeutic Methods Include:
             </h3>
             
@@ -349,15 +349,15 @@ const FamilyTherapy = () => {
                   className="border-b border-orange-100 pb-4 last:border-b-0 last:pb-0"
                 >
                   <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-amber-900">{approach.title}</span>
-                    <span className="text-muted-foreground text-sm">{approach.description}</span>
+                    <span className="font-semibold text-amber-900 text-base lg:text-lg">{approach.title}</span>
+                    <span className="text-muted-foreground text-sm lg:text-base">{approach.description}</span>
                   </div>
                 </motion.li>
               ))}
             </ul>
             
             <div className="mt-7 pt-5 border-t border-orange-100">
-              <p className="text-sm text-muted-foreground italic">
+              <p className="text-sm lg:text-base text-muted-foreground italic">
                 We continuously update our methods based on the latest research in family therapy and mental health.
               </p>
             </div>

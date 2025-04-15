@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -38,7 +39,7 @@ const ServiceContentSection: React.FC<ServiceContentSectionProps> = ({
         once: true
       }} transition={{
         duration: 0.5
-      }} className="max-w-4xl mx-auto">
+      }} className="max-w-6xl xl:max-w-7xl mx-auto">
           
           {children}
         </motion.div>
