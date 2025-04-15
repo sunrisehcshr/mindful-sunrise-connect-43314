@@ -186,6 +186,74 @@ const IndividualTherapy = () => {
           </motion.div>
         </div>
       </ServiceContentSection>
+
+      <ServiceContentSection
+        title="Our Therapy Approach"
+        hasBgPattern={false}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-5 text-muted-foreground">
+              <p className="leading-relaxed">
+                We use evidence-based practices to deliver results-oriented care. Each therapy session is customized based on your unique goals, preferences, and needs.
+              </p>
+              
+              <p className="leading-relaxed">
+                Our licensed clinicians are experienced in multiple therapeutic modalities, allowing us to adapt our approach to what works best for you. Whether you respond well to structured cognitive techniques or more exploratory approaches, we tailor the experience to maximize your progress.
+              </p>
+              
+              <p className="leading-relaxed">
+                At Sunrise Human Care, we believe in therapy that feels collaborative and empowering. Our approach focuses not just on understanding problems, but on building practical skills and strategies you can use in your everyday life.
+              </p>
+              
+              <p className="leading-relaxed">
+                No two people are the same—neither are their therapy sessions. We pride ourselves on personalized care that recognizes your individual experiences, background, and goals for treatment.
+              </p>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              Our Therapeutic Methods Include:
+            </h3>
+            
+            <ul className="space-y-4">
+              {approaches.map((approach, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  className="border-b border-orange-100 pb-4 last:border-b-0 last:pb-0"
+                >
+                  <div className="flex flex-col gap-1">
+                    <span className="font-semibold text-amber-900">{approach.title}</span>
+                    <span className="text-muted-foreground text-sm">{approach.description}</span>
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
+            
+            <div className="mt-7 pt-5 border-t border-orange-100">
+              <p className="text-sm text-muted-foreground italic">
+                We continue to stay current with the latest research and therapeutic techniques to provide the most effective care possible.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </ServiceContentSection>
     </ServicePageLayout>
   );
 };
