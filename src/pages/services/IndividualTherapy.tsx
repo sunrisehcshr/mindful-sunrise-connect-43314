@@ -1,269 +1,403 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight, Brain, Shield, Lightbulb, Star } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { CheckCircle2, ArrowRight, Brain, Shield, Lightbulb, Star, MessageCircle, FileCheck, Heart, Clock3 } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
+import SEOHead from '../../components/SEOHead';
+import WarmServiceCard from '../../components/services/WarmServiceCard';
 import { Link } from 'react-router-dom';
 import SectionTag from '@/components/ui/section-tag';
 
 const IndividualTherapy = () => {
   const benefits = [
-    "Licensed Havertown Therapists with years of experience",
-    "Convenient Location on West Chester Pike with easy parking",
-    "In-Person & Telehealth Options for flexibility",
-    "Most Insurance Plans Accepted including Medicaid & commercial providers",
-    "Multilingual Staff Available upon request",
-    "Evening and weekend appointments available"
+    "Accurate diagnosis and personalized treatment planning",
+    "Understanding root causes of symptoms and behaviors",
+    "Evidence-based therapeutic approaches",
+    "Safe, confidential environment for sharing",
+    "Flexible in-person and telehealth options",
+    "Coordination with other healthcare providers",
+    "Evening and weekend appointments available",
+    "Most insurance plans accepted, including Medicaid"
   ];
 
   const approaches = [
     {
       title: "Cognitive Behavioral Therapy (CBT)",
-      description: "Understand and change unhelpful thought patterns"
+      description: "Understand and change unhelpful thought patterns to improve emotional regulation and behavior.",
+      icon: <Brain className="h-5 w-5" />
     },
     {
       title: "Trauma-Informed Therapy",
-      description: "Heal from past experiences with safety and trust"
+      description: "Heal from past experiences in a safe, supportive environment with trust and empowerment.",
+      icon: <Heart className="h-5 w-5" />
     },
     {
       title: "Mindfulness-Based Therapy",
-      description: "Manage anxiety through present-moment awareness"
+      description: "Develop present-moment awareness to manage anxiety and enhance emotional resilience.",
+      icon: <Lightbulb className="h-5 w-5" />
     },
     {
       title: "Solution-Focused Brief Therapy",
-      description: "Identify practical strategies and strengths"
+      description: "Identify practical strategies and leverage personal strengths for quick, effective change.",
+      icon: <Star className="h-5 w-5" />
     },
     {
       title: "Dialectical Behavior Therapy (DBT)",
-      description: "Regulate emotions and improve communication"
+      description: "Build skills to regulate emotions, improve relationships, and manage distress.",
+      icon: <Shield className="h-5 w-5" />
     }
   ];
 
   const faqs = [
     {
       question: "What happens during my first therapy session?",
-      answer: "Your first session is an intake assessment where we get to know you and your goals. We'll discuss your background, current concerns, and what you hope to achieve through therapy. It's also your chance to ask questions and ensure you feel comfortable with your therapist."
+      answer: "Your first session involves an intake assessment where we discuss your background, concerns, and goals. We’ll explore what you hope to achieve and ensure you feel comfortable with your therapist."
     },
     {
       question: "How often should I attend therapy sessions?",
-      answer: "Most clients start with weekly sessions to build momentum and establish a strong therapeutic relationship. As you progress, we can adjust the frequency based on your needs and goals. Some clients later transition to bi-weekly or monthly sessions for maintenance."
+      answer: "Weekly sessions are common initially to build momentum. As progress is made, we may adjust to bi-weekly or monthly sessions based on your needs."
     },
     {
       question: "How long does therapy usually last?",
-      answer: "The duration of therapy varies for each person. Some clients achieve their goals in 8-12 sessions, while others benefit from longer-term support. We'll regularly review your progress and adjust the treatment plan as needed."
+      answer: "Therapy duration varies—some clients meet their goals in 8-12 sessions, while others benefit from longer-term support. We’ll regularly review progress to tailor your plan."
     },
     {
       question: "Do you accept insurance for individual therapy?",
-      answer: "Yes, we accept most major insurance plans, including Medicaid and commercial providers. Our staff will verify your coverage and discuss any copays or out-of-pocket costs before your first session."
+      answer: "Yes, we accept most major insurance plans, including Medicaid. We’ll verify coverage and discuss costs before your first session."
     },
     {
       question: "Is everything I share in therapy confidential?",
-      answer: "Yes, confidentiality is a fundamental part of therapy. Everything you share is protected by law and professional ethics. The only exceptions are situations involving immediate safety concerns or when required by law, which we'll discuss in detail during your first session."
+      answer: "Yes, confidentiality is protected by law and ethics, except in cases of immediate safety concerns or legal requirements, which we’ll explain upfront."
+    },
+    {
+      question: "Can I switch therapists if it’s not a good fit?",
+      answer: "Absolutely. A strong therapeutic relationship is key. If you feel it’s not working, we’ll help you find a better match within our team."
+    },
+    {
+      question: "What if I’m unsure about starting therapy?",
+      answer: "It’s normal to feel hesitant. We offer a free consultation to discuss your concerns and see if therapy feels right for you."
     }
   ];
 
   const relatedServices = [
+    { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-havertown-pa" },
+    { title: "Medication Management", url: "/medication-management-havertown-pa" },
+    { title: "Child Therapy", url: "/child-therapy-havertown-pa" }
+  ];
+
+  const conditions = [
     {
-      title: "Anxiety Treatment in Havertown",
-      url: "/anxiety-therapy-havertown-pa"
+      title: "Anxiety Disorders",
+      description: "Therapy for generalized anxiety, social anxiety, panic disorders, and phobias.",
+      url: "/anxiety-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
     },
     {
-      title: "Depression Treatment in Havertown",
-      url: "/depression-therapy-havertown-pa"
+      title: "Depression",
+      description: "Support for managing depression and improving mood and daily functioning.",
+      url: "/depression-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
     },
     {
-      title: "ADHD Treatment in Havertown",
-      url: "/adhd-treatment-havertown-pa"
+      title: "Trauma & PTSD",
+      description: "Trauma-informed care to heal from past experiences and regain control.",
+      url: "/trauma-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
+    }
+  ];
+
+  const therapyTypes = [
+    {
+      title: "Short-Term Therapy",
+      description: "Focused sessions to address specific challenges or immediate goals.",
+      icon: <Clock3 className="h-6 w-6 text-orange-500" />
+    },
+    {
+      title: "Long-Term Therapy",
+      description: "In-depth support for complex issues or ongoing personal growth.",
+      icon: <FileCheck className="h-6 w-6 text-orange-500" />
+    },
+    {
+      title: "Crisis Intervention",
+      description: "Immediate support for acute emotional distress or life challenges.",
+      icon: <Shield className="h-6 w-6 text-orange-500" />
+    },
+    {
+      title: "Maintenance Therapy",
+      description: "Periodic sessions to sustain progress and prevent relapse.",
+      icon: <MessageCircle className="h-6 w-6 text-orange-500" />
     }
   ];
 
   return (
-    <ServicePageLayout
-      title="Individual Therapy in Havertown, PA"
-      description="Professional individual therapy in Havertown, PA. Our experienced therapists help adults, teens, and seniors navigate life's challenges with evidence-based therapeutic approaches."
-      pageTitle="Expert Individual Therapy in Havertown, PA | Evidence-Based Treatment | Sunrise Human Care"
-      metaDescription="Compassionate individual therapy in Havertown, PA. Licensed therapists providing evidence-based treatment for anxiety, depression, trauma, and personal growth. Convenient location, insurance accepted."
-      serviceType="Individual Therapy"
-      canonicalUrl="/individual-therapy-havertown-pa"
-      benefits={benefits}
-      approaches={approaches}
-      faqs={faqs}
-      relatedServices={relatedServices}
-    >
-      <ServiceContentSection 
-        title="What to Expect in Individual Therapy" 
-        hasBgPattern={true}
+    <>
+      <SEOHead
+        title="Expert Individual Therapy in Havertown, PA | Evidence-Based Treatment"
+        description="Compassionate individual therapy in Havertown, PA. Licensed therapists providing evidence-based treatment for anxiety, depression, trauma, and personal growth. Schedule today."
+        canonicalUrl="https://sunrisehumancare.com/individual-therapy-havertown-pa"
+        keywords="individual therapy Havertown, therapy in Pennsylvania, mental health counseling Delaware County, therapist near me, anxiety treatment Havertown"
+        serviceSchema={{
+          name: "Individual Therapy",
+          description: "Professional individual therapy services in Havertown, PA for adults, teens, and seniors",
+          provider: "Sunrise Human Care Services",
+          serviceType: "Mental Health Counseling",
+          areaServed: "Havertown, PA and Delaware County"
+        }}
+      />
+
+      <ServicePageLayout
+        title="Individual Therapy in Havertown, PA"
+        description="Professional individual therapy in Havertown, PA. Our experienced therapists help adults, teens, and seniors navigate life's challenges with evidence-based therapeutic approaches."
+        pageTitle="Expert Individual Therapy in Havertown, PA | Evidence-Based Treatment | Sunrise Human Care"
+        metaDescription="Compassionate individual therapy in Havertown, PA. Licensed therapists providing evidence-based treatment for anxiety, depression, trauma, and personal growth. Convenient location, insurance accepted."
+        serviceType="Individual Therapy"
+        canonicalUrl="/individual-therapy-havertown-pa"
+        schemaType="MedicalService"
+        benefits={benefits}
+        approaches={approaches}
+        faqs={faqs}
+        relatedServices={relatedServices}
       >
-        <div className="mb-6">
-          <SectionTag icon={<Brain className="h-3 w-3" />}>Professional Care</SectionTag>
-        </div>
+        <ServiceContentSection
+          title="Understanding Our Individual Therapy Process"
+          hasBgPattern={true}
+        >
+          <div className="mb-6">
+            <SectionTag icon={<Brain className="h-3 w-3" />}>Professional Care</SectionTag>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="space-y-5 text-muted-foreground">
-              <p className="leading-relaxed">
-                Individual therapy at Sunrise Human Care Services provides a safe, confidential space where you can explore your thoughts, feelings, and challenges with a licensed therapist. Our approach is collaborative and person-centered, focusing on your unique needs and goals.
-              </p>
-              
-              <p className="leading-relaxed">
-                During your sessions, we'll work together to identify patterns, develop coping strategies, and create positive change in your life. Whether you're dealing with anxiety, depression, relationship issues, or seeking personal growth, our experienced therapists are here to support you.
-              </p>
-              
-              <p className="leading-relaxed">
-                We use evidence-based therapeutic approaches tailored to your specific situation. Our therapists are trained in various modalities, including Cognitive Behavioral Therapy (CBT), mindfulness-based approaches, and trauma-informed care.
-              </p>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="space-y-5 text-muted-foreground">
+                <p className="leading-relaxed">
+                  At Sunrise Human Care Services in Havertown, PA, our individual therapy offers a compassionate, confidential space to explore your thoughts, emotions, and challenges. Our licensed therapists tailor sessions to your unique needs, fostering growth and resilience.
+                </p>
+                <p className="leading-relaxed">
+                  We understand that starting therapy can feel intimidating. Our team creates a welcoming environment, taking time to listen and understand your goals. Whether you’re addressing anxiety, depression, or seeking personal growth, we’re here to guide you.
+                </p>
+                <p className="leading-relaxed">
+                  Our evidence-based approaches, like Cognitive Behavioral Therapy (CBT) and trauma-informed care, are customized to your situation. We incorporate your strengths and preferences to develop effective strategies for lasting change.
+                </p>
+                <p className="leading-relaxed">
+                  Therapy is a collaborative journey. We regularly assess progress, adjust plans as needed, and ensure you feel supported every step of the way, with flexible options for in-person or telehealth sessions.
+                </p>
+              </div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
-          >
-            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Our Individual Therapy Services Include:
-            </h3>
-
-            <ul className="space-y-3.5">
-              {[
-                "One-on-one sessions with licensed therapists",
-                "Personalized treatment planning",
-                "Evidence-based therapeutic approaches",
-                "Regular progress assessments",
-                "Flexible scheduling options",
-                "Both in-person and telehealth sessions",
-                "Crisis support when needed",
-                "Coordination with other healthcare providers"
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index }}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </ServiceContentSection>
-
-      <ServiceContentSection 
-        title="Our Therapeutic Approach" 
-        hasBgPattern={false}
-      >
-        <div className="mb-6">
-          <SectionTag icon={<Lightbulb className="h-3 w-3" />}>Evidence-Based Methods</SectionTag>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-5 text-muted-foreground"
-          >
-            <p className="leading-relaxed">
-              At Sunrise Human Care Services, we believe in providing evidence-based therapy that's tailored to your unique needs. Our therapists are trained in multiple therapeutic modalities, allowing us to adapt our approach based on what works best for you.
-            </p>
-
-            <p className="leading-relaxed">
-              We take a holistic view of mental health, considering how various aspects of your life - including relationships, work, physical health, and personal history - impact your well-being. This comprehensive approach helps us develop more effective treatment strategies.
-            </p>
-
-            <div className="mt-6">
-              <h4 className="text-lg font-semibold mb-4 text-orange-600">Why Choose Our Individual Therapy Services:</h4>
-              <ul className="space-y-3">
-                {[
-                  "Evidence-based treatment approaches",
-                  "Experienced, licensed therapists",
-                  "Personalized care plans",
-                  "Flexible scheduling options",
-                  "Insurance accepted"
-                ].map((item, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 * index }}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0" />
-                    <span>{item}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
-          >
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-orange-600 font-playfair mb-4">
-                Treatment Areas We Specialize In:
-              </h3>
-
-              <ul className="space-y-4">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <Accordion type="single" collapsible className="w-full">
                 {[
                   {
-                    title: "Anxiety & Depression",
-                    description: "Evidence-based treatment for mood disorders"
+                    title: "Key Focus Areas",
+                    items: [
+                      "Emotional and behavioral challenges",
+                      "Personal goals and aspirations",
+                      "Relationship and communication skills",
+                      "Stress and coping mechanisms",
+                      "Trauma and past experiences",
+                      "Life transitions and adjustments",
+                      "Self-esteem and identity",
+                      "Daily functioning and routines"
+                    ]
                   },
                   {
-                    title: "Trauma & PTSD",
-                    description: "Trauma-informed therapy approaches"
+                    title: "Therapy Formats",
+                    items: [
+                      "In-person sessions in Havertown",
+                      "Telehealth for remote access",
+                      "Short-term goal-focused therapy",
+                      "Long-term in-depth support",
+                      "Crisis intervention sessions",
+                      "Maintenance and follow-up care",
+                      "Individualized session pacing",
+                      "Group therapy referrals if needed"
+                    ]
                   },
                   {
-                    title: "Life Transitions",
-                    description: "Support during major life changes"
-                  },
-                  {
-                    title: "Relationship Issues",
-                    description: "Improving interpersonal relationships"
-                  },
-                  {
-                    title: "Stress Management",
-                    description: "Developing healthy coping strategies"
+                    title: "What to Expect",
+                    items: [
+                      "Non-judgmental, safe space",
+                      "Clear goal-setting process",
+                      "Regular progress check-ins",
+                      "Customized therapeutic techniques",
+                      "Flexible scheduling options",
+                      "Confidentiality assurance",
+                      "Supportive therapist-client bond",
+                      "Practical tools for daily life"
+                    ]
                   }
-                ].map((item, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 * index }}
-                    className="border-b border-orange-100 pb-4 last:border-b-0 last:pb-0"
-                  >
-                    <h4 className="font-semibold text-amber-900">{item.title}</h4>
-                    <p className="text-muted-foreground text-sm mt-1">{item.description}</p>
-                  </motion.li>
+                ].map((section, index) => (
+                  <AccordionItem value={`item-${index}`} key={index}>
+                    <AccordionTrigger className="text-lg font-semibold text-amber-950">
+                      {section.title}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 pt-2">
+                        {section.items.map((item, idx) => (
+                          <motion.li
+                            key={idx}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 * idx }}
+                            className="flex items-start gap-3"
+                          >
+                            <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">{item}</span>
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </ul>
+              </Accordion>
+            </motion.div>
+          </div>
+        </ServiceContentSection>
+
+        <ServiceContentSection
+          title="Types of Individual Therapy We Offer"
+          className="bg-white"
+        >
+          <div className="mb-10 max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              Our individual therapy services are designed to meet a variety of needs, from immediate support to long-term growth. Each type is tailored to help you achieve your mental health goals effectively.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {therapyTypes.map((type, index) => (
+              <motion.div
+                key={index}
+                className="bg-amber-50/50 border border-amber-100 rounded-lg p-6 shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">
+                    {type.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-amber-900 mb-2">{type.title}</h3>
+                    <p className="text-sm text-muted-foreground">{type.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </ServiceContentSection>
+
+        <ServiceContentSection
+          title="Common Conditions We Treat"
+          hasBgPattern={true}
+        >
+          <div className="mb-8 max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              Our individual therapy addresses a wide range of mental health challenges using evidence-based techniques. We help clients find relief and build resilience for lasting well-being.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {conditions.map((condition, index) => (
+              <WarmServiceCard
+                key={index}
+                title={condition.title}
+                description={condition.description}
+                imageSrc={condition.imageSrc}
+                url={condition.url}
+                delay={index * 0.1}
+              />
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link to="/conditions" className="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
+              View all conditions we treat
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </div>
+        </ServiceContentSection>
+
+        <ServiceContentSection
+          title="The Importance of Individual Therapy"
+          className="bg-white"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-3">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="space-y-5"
+              >
+                <p className="text-muted-foreground">
+                  Individual therapy is a powerful tool for addressing mental health challenges and fostering personal growth. At Sunrise Human Care Services, we believe in empowering you to navigate life’s complexities with confidence and clarity.
+                </p>
+                <p className="text-muted-foreground">
+                  Therapy helps uncover underlying patterns that may contribute to distress, offering new perspectives and coping strategies. Our therapists work collaboratively to create a plan that aligns with your goals and lifestyle.
+                </p>
+                <p className="text-muted-foreground">
+                  Beyond symptom relief, therapy builds resilience, enhances self-awareness, and strengthens relationships. We consider biological, psychological, and social factors to provide holistic care that supports lasting change.
+                </p>
+                <p className="text-muted-foreground">
+                  For those facing persistent struggles or seeking to thrive, individual therapy offers a path forward. Our team stays current with the latest therapeutic advancements to deliver the highest quality care.
+                </p>
+              </motion.div>
             </div>
-          </motion.div>
-        </div>
-      </ServiceContentSection>
-    </ServicePageLayout>
+
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-amber-50 border border-amber-100 rounded-lg p-6 shadow-sm"
+              >
+                <h3 className="text-xl font-semibold text-amber-900 mb-4">Benefits of Starting Therapy</h3>
+                <Separator className="bg-amber-200 mb-4" />
+                <ul className="space-y-4">
+                  {[
+                    "Improved emotional regulation and coping skills",
+                    "Enhanced self-esteem and personal insight",
+                    "Stronger relationships and communication",
+                    "Relief from anxiety, depression, or trauma",
+                    "Support during life transitions or crises",
+                    "Foundation for sustained mental wellness"
+                  ].map((item, idx) => (
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * idx }}
+                      className="flex items-start gap-3"
+                    >
+                      <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-amber-800 text-sm">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          </div>
+        </ServiceContentSection>
+      </ServicePageLayout>
+    </>
   );
 };
 
