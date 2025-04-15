@@ -4,7 +4,7 @@ import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle2, Brain, ClipboardCheck, MessageCircle, Activity, FileCheck, Stethoscope, ScrollText, Clock3 } from 'lucide-react';
+import { CheckCircle2, Brain, ClipboardCheck, MessageCircle, Activity, FileCheck, Stethoscope, ScrollText, Clock3, ArrowRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import SEOHead from '../../components/SEOHead';
 import WarmServiceCard from '../../components/services/WarmServiceCard';
