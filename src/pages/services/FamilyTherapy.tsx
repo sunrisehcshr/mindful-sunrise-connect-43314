@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
@@ -86,7 +85,6 @@ const FamilyTherapy = () => {
     }
   ];
 
-  // Custom breadcrumbs for Family Therapy page
   const familyTherapyBreadcrumbs = [
     {
       name: "Home",

@@ -1,11 +1,12 @@
+
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
-import SectionTag from '@/components/ui/section-tag';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight, Brain, Users, Lightbulb, Star } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Brain, Shield, Lightbulb, Star } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
+import SectionTag from '@/components/ui/section-tag';
 
 const IndividualTherapy = () => {
   const benefits = [
@@ -13,7 +14,8 @@ const IndividualTherapy = () => {
     "Convenient Location on West Chester Pike with easy parking",
     "In-Person & Telehealth Options for flexibility",
     "Most Insurance Plans Accepted including Medicaid & commercial providers",
-    "Multilingual Staff Available upon request"
+    "Multilingual Staff Available upon request",
+    "Evening and weekend appointments available"
   ];
 
   const approaches = [
@@ -39,31 +41,26 @@ const IndividualTherapy = () => {
     }
   ];
 
-  const whoCanBenefit = [
-    "Adults dealing with anxiety, depression, or stress",
-    "Individuals navigating life transitions or relationship issues",
-    "People seeking personal growth and self-discovery",
-    "Those coping with trauma or past experiences",
-    "Professionals managing work-related stress",
-    "Anyone looking to improve their mental well-being"
-  ];
-
   const faqs = [
     {
-      question: "What happens during my first session?",
-      answer: "Your first session is an intake. Your therapist will ask questions about your background, current concerns, and therapy goals. It's a chance for you to get comfortable and ask questions too."
+      question: "What happens during my first therapy session?",
+      answer: "Your first session is an intake assessment where we get to know you and your goals. We'll discuss your background, current concerns, and what you hope to achieve through therapy. It's also your chance to ask questions and ensure you feel comfortable with your therapist."
     },
     {
-      question: "How often should I attend therapy?",
-      answer: "Many clients start with weekly sessions, then adjust based on progress. We'll recommend a schedule based on your needs."
+      question: "How often should I attend therapy sessions?",
+      answer: "Most clients start with weekly sessions to build momentum and establish a strong therapeutic relationship. As you progress, we can adjust the frequency based on your needs and goals. Some clients later transition to bi-weekly or monthly sessions for maintenance."
     },
     {
-      question: "Do you accept insurance?",
-      answer: "Yes. We accept most major plans. Our staff will verify your coverage and discuss any copays or out-of-pocket costs before you begin."
+      question: "How long does therapy usually last?",
+      answer: "The duration of therapy varies for each person. Some clients achieve their goals in 8-12 sessions, while others benefit from longer-term support. We'll regularly review your progress and adjust the treatment plan as needed."
     },
     {
-      question: "Is therapy confidential?",
-      answer: "Absolutely. Everything shared in session is strictly confidential, in compliance with HIPAA."
+      question: "Do you accept insurance for individual therapy?",
+      answer: "Yes, we accept most major insurance plans, including Medicaid and commercial providers. Our staff will verify your coverage and discuss any copays or out-of-pocket costs before your first session."
+    },
+    {
+      question: "Is everything I share in therapy confidential?",
+      answer: "Yes, confidentiality is a fundamental part of therapy. Everything you share is protected by law and professional ethics. The only exceptions are situations involving immediate safety concerns or when required by law, which we'll discuss in detail during your first session."
     }
   ];
 
@@ -85,9 +82,9 @@ const IndividualTherapy = () => {
   return (
     <ServicePageLayout
       title="Individual Therapy in Havertown, PA"
-      description="At Sunrise Human Care, we provide compassionate and effective individual therapy in Havertown, PA, for teens, adults, and seniors. Whether you're facing anxiety, depression, relationship issues, or just need someone to talk to, our licensed therapists are here to help you feel seen, heard, and supported."
-      pageTitle="Expert Individual Therapy in Havertown, PA - Personalized Mental Health Support | Sunrise Human Care Services"
-      metaDescription="Compassionate individual therapy in Havertown, PA for anxiety, depression, trauma, and personal growth. Private, confidential sessions with experienced therapists. Schedule today."
+      description="Professional individual therapy in Havertown, PA. Our experienced therapists help adults, teens, and seniors navigate life's challenges with evidence-based therapeutic approaches."
+      pageTitle="Expert Individual Therapy in Havertown, PA | Evidence-Based Treatment | Sunrise Human Care"
+      metaDescription="Compassionate individual therapy in Havertown, PA. Licensed therapists providing evidence-based treatment for anxiety, depression, trauma, and personal growth. Convenient location, insurance accepted."
       serviceType="Individual Therapy"
       canonicalUrl="/individual-therapy-havertown-pa"
       benefits={benefits}
@@ -95,64 +92,57 @@ const IndividualTherapy = () => {
       faqs={faqs}
       relatedServices={relatedServices}
     >
-      <ServiceContentSection
-        title="What to Expect in Individual Therapy in Havertown"
+      <ServiceContentSection 
+        title="What to Expect in Individual Therapy" 
         hasBgPattern={true}
       >
         <div className="mb-6">
-          <SectionTag icon={<Brain className="h-3 w-3" />}>Understanding Your Journey</SectionTag>
+          <SectionTag icon={<Brain className="h-3 w-3" />}>Professional Care</SectionTag>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed">
-                Individual therapy—sometimes called talk therapy or counseling—is a one-on-one therapeutic process between you and a trained mental health professional. It provides a safe, private space to explore your emotions, thoughts, behaviors, and life events.
+                Individual therapy at Sunrise Human Care Services provides a safe, confidential space where you can explore your thoughts, feelings, and challenges with a licensed therapist. Our approach is collaborative and person-centered, focusing on your unique needs and goals.
               </p>
               
               <p className="leading-relaxed">
-                At Sunrise, therapy is about more than just talking. It's about discovering patterns, building new habits, and moving toward emotional resilience. Whether you're navigating a specific issue or want long-term personal growth, we tailor the experience to meet your needs.
+                During your sessions, we'll work together to identify patterns, develop coping strategies, and create positive change in your life. Whether you're dealing with anxiety, depression, relationship issues, or seeking personal growth, our experienced therapists are here to support you.
               </p>
               
               <p className="leading-relaxed">
-                We support clients facing anxiety and panic attacks, depression and mood disorders, trauma and PTSD, grief and loss, work or school stress, life transitions, relationship challenges, self-esteem issues, and identity exploration.
-              </p>
-              
-              <p className="leading-relaxed">
-                Our Havertown therapists work with clients from all walks of life—including young adults, professionals, caregivers, veterans, and retirees—to create positive, lasting change. Visit our office at 2050 West Chester Pike, Havertown, PA 19083 or call us at (814) 620-2162.
+                We use evidence-based therapeutic approaches tailored to your specific situation. Our therapists are trained in various modalities, including Cognitive Behavioral Therapy (CBT), mindfulness-based approaches, and trauma-informed care.
               </p>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
           >
-            <div className="flex items-center gap-2 mb-5">
-              <Star className="h-5 w-5 text-orange-500" />
-              <h3 className="text-xl font-semibold text-orange-600 font-playfair">
-                Our Individual Therapy Services Help With:
-              </h3>
-            </div>
-            
+            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
+              Our Individual Therapy Services Include:
+            </h3>
+
             <ul className="space-y-3.5">
               {[
-                "Anxiety and panic attacks",
-                "Depression and mood disorders",
-                "Trauma recovery and PTSD",
-                "Grief and loss",
-                "Life transitions and adjustments",
-                "Self-esteem and personal growth",
-                "Stress management",
-                "Relationship issues"
+                "One-on-one sessions with licensed therapists",
+                "Personalized treatment planning",
+                "Evidence-based therapeutic approaches",
+                "Regular progress assessments",
+                "Flexible scheduling options",
+                "Both in-person and telehealth sessions",
+                "Crisis support when needed",
+                "Coordination with other healthcare providers"
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -167,185 +157,108 @@ const IndividualTherapy = () => {
                 </motion.li>
               ))}
             </ul>
-            
-            <div className="mt-7 pt-5 border-t border-orange-100">
-              <h4 className="text-lg font-medium mb-3 text-orange-600">
-                Related Mental Health Resources
-              </h4>
-              
-              <ul className="space-y-3">
-                {[
-                  {
-                    name: "Anxiety Treatment Options in Havertown",
-                    url: "/anxiety-therapy-havertown-pa"
-                  },
-                  {
-                    name: "Depression Treatment in Havertown",
-                    url: "/depression-therapy-havertown-pa"
-                  },
-                  {
-                    name: "When to Consider Medication Management",
-                    url: "/medication-management-havertown-pa"
-                  }
-                ].map((resource, index) => (
-                  <li key={index}>
-                    <Link
-                      to={resource.url}
-                      className="flex items-center text-orange-500 hover:text-orange-700 transition-colors"
-                    >
-                      <ArrowRight className="h-4 w-4 mr-2" />
-                      <span>{resource.name}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </motion.div>
         </div>
       </ServiceContentSection>
 
-      <ServiceContentSection
-        title="Who Can Benefit from Individual Therapy?"
-        hasBgPattern={false}
-      >
-        <div className="mb-6">
-          <SectionTag icon={<Users className="h-3 w-3" />}>For Everyone's Growth</SectionTag>
-        </div>
-        
-        <div className="flex items-center gap-2 mb-6">
-          <Badge variant="secondary" className="bg-orange-100 text-orange-700 hover:bg-orange-200">Personal Growth</Badge>
-          <Badge variant="secondary" className="bg-amber-100 text-amber-700 hover:bg-amber-200">Mental Wellness</Badge>
-          <Badge variant="secondary" className="bg-yellow-100 text-yellow-700 hover:bg-yellow-200">Life Changes</Badge>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="space-y-5 text-muted-foreground">
-              <p className="leading-relaxed">
-                Individual therapy can be beneficial for anyone seeking to improve their mental health, work through challenges, or pursue personal growth. Our Havertown therapy services are designed to support individuals from all walks of life.
-              </p>
-              
-              <p className="leading-relaxed">
-                Whether you're experiencing specific mental health concerns, going through a difficult life transition, or simply want to better understand yourself, our experienced therapists are here to help guide you on your journey.
-              </p>
-              
-              <p className="leading-relaxed">
-                We create a safe, non-judgmental space where you can explore your thoughts, feelings, and experiences while developing practical tools for personal growth and healing.
-              </p>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
-          >
-            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Individual Therapy Can Help With:
-            </h3>
-            
-            <ul className="space-y-3.5">
-              {whoCanBenefit.map((item, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index }}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </ServiceContentSection>
-
-      <ServiceContentSection
-        title="Our Therapy Approach"
+      <ServiceContentSection 
+        title="Our Therapeutic Approach" 
         hasBgPattern={false}
       >
         <div className="mb-6">
           <SectionTag icon={<Lightbulb className="h-3 w-3" />}>Evidence-Based Methods</SectionTag>
         </div>
-        
-        <div className="relative mb-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg opacity-10"></div>
-          <div className="relative p-6 text-center">
-            <p className="text-lg font-medium text-amber-900">
-              "Our approach combines proven therapeutic techniques with personalized care to help you achieve lasting positive change."
-            </p>
-          </div>
-        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-5 text-muted-foreground"
           >
-            <div className="space-y-5 text-muted-foreground">
-              <p className="leading-relaxed">
-                We use evidence-based practices to deliver results-oriented care. Each therapy session is customized based on your unique goals, preferences, and needs.
-              </p>
-              
-              <p className="leading-relaxed">
-                Our licensed clinicians are experienced in multiple therapeutic modalities, allowing us to adapt our approach to what works best for you. Whether you respond well to structured cognitive techniques or more exploratory approaches, we tailor the experience to maximize your progress.
-              </p>
-              
-              <p className="leading-relaxed">
-                At Sunrise Human Care, we believe in therapy that feels collaborative and empowering. Our approach focuses not just on understanding problems, but on building practical skills and strategies you can use in your everyday life.
-              </p>
-              
-              <p className="leading-relaxed">
-                No two people are the same—neither are their therapy sessions. We pride ourselves on personalized care that recognizes your individual experiences, background, and goals for treatment.
-              </p>
+            <p className="leading-relaxed">
+              At Sunrise Human Care Services, we believe in providing evidence-based therapy that's tailored to your unique needs. Our therapists are trained in multiple therapeutic modalities, allowing us to adapt our approach based on what works best for you.
+            </p>
+
+            <p className="leading-relaxed">
+              We take a holistic view of mental health, considering how various aspects of your life - including relationships, work, physical health, and personal history - impact your well-being. This comprehensive approach helps us develop more effective treatment strategies.
+            </p>
+
+            <div className="mt-6">
+              <h4 className="text-lg font-semibold mb-4 text-orange-600">Why Choose Our Individual Therapy Services:</h4>
+              <ul className="space-y-3">
+                {[
+                  "Evidence-based treatment approaches",
+                  "Experienced, licensed therapists",
+                  "Personalized care plans",
+                  "Flexible scheduling options",
+                  "Insurance accepted"
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index }}
+                    className="flex items-center gap-3"
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0" />
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white p-7 rounded-xl shadow-md border border-orange-100/50 hover:shadow-lg transition-all duration-300"
           >
-            <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Our Therapeutic Methods Include:
-            </h3>
-            
-            <ul className="space-y-4">
-              {approaches.map((approach, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index }}
-                  className="border-b border-orange-100 pb-4 last:border-b-0 last:pb-0"
-                >
-                  <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-amber-900">{approach.title}</span>
-                    <span className="text-muted-foreground text-sm">{approach.description}</span>
-                  </div>
-                </motion.li>
-              ))}
-            </ul>
-            
-            <div className="mt-7 pt-5 border-t border-orange-100">
-              <p className="text-sm text-muted-foreground italic">
-                We continue to stay current with the latest research and therapeutic techniques to provide the most effective care possible.
-              </p>
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-orange-600 font-playfair mb-4">
+                Treatment Areas We Specialize In:
+              </h3>
+
+              <ul className="space-y-4">
+                {[
+                  {
+                    title: "Anxiety & Depression",
+                    description: "Evidence-based treatment for mood disorders"
+                  },
+                  {
+                    title: "Trauma & PTSD",
+                    description: "Trauma-informed therapy approaches"
+                  },
+                  {
+                    title: "Life Transitions",
+                    description: "Support during major life changes"
+                  },
+                  {
+                    title: "Relationship Issues",
+                    description: "Improving interpersonal relationships"
+                  },
+                  {
+                    title: "Stress Management",
+                    description: "Developing healthy coping strategies"
+                  }
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index }}
+                    className="border-b border-orange-100 pb-4 last:border-b-0 last:pb-0"
+                  >
+                    <h4 className="font-semibold text-amber-900">{item.title}</h4>
+                    <p className="text-muted-foreground text-sm mt-1">{item.description}</p>
+                  </motion.li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>
