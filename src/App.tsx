@@ -1,3 +1,4 @@
+
 import { Suspense, lazy } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,7 +11,7 @@ import SchemaMarkup from "./components/SchemaMarkup";
 // Eagerly load critical components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer/Footer";
-import Index from "./pages/Index";
+import HomePage from "./pages/Index"; // Renamed import to avoid conflict
 
 // Configure React Query with performance optimizations
 const queryClient = new QueryClient({
@@ -42,7 +43,7 @@ const App = () => (
           <Navbar />
           <Suspense fallback={<PageLoader />}>
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<HomePage />} />
               
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
@@ -94,7 +95,7 @@ const App = () => (
 export default App;
 
 // Lazy load page components with prefetching
-const Index = lazy(() => {
+const LazyIndex = lazy(() => { // Renamed from Index to LazyIndex to avoid conflict
   // Prefetch service components after main page loads
   const prefetchServices = () => {
     import("./pages/services/IndividualTherapy");
