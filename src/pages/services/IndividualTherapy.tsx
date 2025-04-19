@@ -87,20 +87,17 @@ const IndividualTherapy = () => {
     {
       title: "Anxiety Disorders",
       description: "Havertown therapy for anxiety, including generalized anxiety, social anxiety, and panic disorders.",
-      url: "/anxiety-therapy-havertown-pa",
-      imageSrc: "/therapy-in-havertown.jpg"
+      url: "/anxiety-therapy-havertown-pa"
     },
     {
       title: "Depression",
       description: "Depression therapy in Havertown to improve mood and daily functioning with evidence-based methods.",
-      url: "/depression-therapy-havertown-pa",
-      imageSrc: "/therapy-in-havertown.jpg"
+      url: "/depression-therapy-havertown-pa"
     },
     {
       title: "Trauma & PTSD",
       description: "Trauma therapy in Havertown to heal from past experiences using trauma-informed care.",
-      url: "/trauma-therapy-havertown-pa",
-      imageSrc: "/therapy-in-havertown.jpg"
+      url: "/trauma-therapy-havertown-pa"
     }
   ];
 
@@ -362,14 +359,28 @@ const IndividualTherapy = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {conditions.map((condition, index) => (
-              <WarmServiceCard
+              <motion.div
                 key={index}
-                title={condition.title}
-                description={condition.description}
-                imageSrc={condition.imageSrc}
-                url={condition.url}
-                delay={index * 0.1}
-              />
+                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-amber-100 p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <h3 className="text-xl font-semibold text-amber-900 mb-3 font-opensans">
+                  {condition.title}
+                </h3>
+                <p className="text-amber-800 mb-4 text-sm">
+                  {condition.description}
+                </p>
+                <Link
+                  to={condition.url}
+                  className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group mt-2 shadow-sm"
+                >
+                  Learn more
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </motion.div>
             ))}
           </div>
           <div className="mt-10 text-center">
