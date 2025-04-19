@@ -1,7 +1,8 @@
 
+import React from "react";
 import { Helmet } from "react-helmet-async";
 
-const SchemaMarkup = () => {
+const SchemaMarkup: React.FC = () => {
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -90,236 +91,18 @@ const SchemaMarkup = () => {
                 "name": "Individual Therapy",
                 "url": "https://sunrisehumancare.com/individual-therapy-havertown-pa"
               }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Medication Management",
-                "url": "https://sunrisehumancare.com/medication-management-havertown-pa"
-              }
             }
           ]
         }
-      },
-      {
-        "@type": "MedicalClinic",
-        "@id": "https://sunrisehumancare.com/#MedicalClinic",
-        "name": "Sunrise Human Care Services - Mental Health Clinic",
-        "url": "https://sunrisehumancare.com/mental-health-havertown-pa",
-        "image": "https://sunrisehumancare.com/therapy-in-havertown.jpg",
-        "description": "A trusted mental health clinic in Havertown, PA, providing therapy and psychiatric services.",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2050 West Chester Pike",
-          "addressLocality": "Havertown",
-          "addressRegion": "PA",
-          "postalCode": "19083",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "39.9707",
-          "longitude": "-75.3151"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "17:00"
-          }
-        ],
-        "telephone": "+18146202162",
-        "priceRange": "$$",
-        "medicalSpecialty": ["Psychiatry", "Psychotherapy", "Mental Health"],
-        "availableService": [
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "Individual Therapy",
-            "url": "https://sunrisehumancare.com/individual-therapy-havertown-pa",
-            "description": "Personalized one-on-one therapy sessions tailored to your unique needs"
-          },
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "Couples Counseling",
-            "url": "https://sunrisehumancare.com/couples-counseling-havertown-pa",
-            "description": "Specialized therapy to help couples improve communication and resolve conflicts"
-          },
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "Family Therapy",
-            "url": "https://sunrisehumancare.com/family-therapy-havertown-pa",
-            "description": "Comprehensive family counseling to improve relationships among all family members"
-          },
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "Child & Adolescent Therapy",
-            "url": "https://sunrisehumancare.com/child-therapy-havertown-pa",
-            "description": "Specialized therapeutic approaches for children and teens"
-          },
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "Anxiety Therapy",
-            "url": "https://sunrisehumancare.com/anxiety-therapy-havertown-pa",
-            "description": "Evidence-based therapy for all types of anxiety disorders"
-          },
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "Depression Therapy",
-            "url": "https://sunrisehumancare.com/depression-therapy-havertown-pa",
-            "description": "Effective, compassionate treatment for depression"
-          },
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "ADHD Treatment",
-            "url": "https://sunrisehumancare.com/adhd-treatment-havertown-pa",
-            "description": "Comprehensive ADHD assessment and treatment for children, adolescents, and adults"
-          },
-          {
-            "@type": "MedicalTest",
-            "name": "Psychiatric Evaluations",
-            "url": "https://sunrisehumancare.com/psychiatric-evaluations-havertown-pa",
-            "description": "Comprehensive mental health assessments for accurate diagnosis"
-          },
-          {
-            "@type": "MedicalProcedure",
-            "name": "Medication Management",
-            "url": "https://sunrisehumancare.com/medication-management-havertown-pa",
-            "description": "Expert psychiatric medication services to manage mental health conditions"
-          },
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "Trauma & PTSD Therapy",
-            "url": "https://sunrisehumancare.com/ptsd-therapy-havertown-pa",
-            "description": "Specialized treatment for trauma and PTSD"
-          },
-          {
-            "@type": "TherapeuticProcedure",
-            "name": "Substance Use Treatment",
-            "url": "https://sunrisehumancare.com/substance-use-treatment-havertown-pa",
-            "description": "Evidence-based treatment for alcohol and drug addiction"
-          }
-        ],
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://sunrisehumancare.com/mental-health-havertown-pa"
-        },
-        "parentOrganization": {
-          "@type": "MedicalOrganization",
-          "@id": "https://sunrisehumancare.com/#MedicalOrganization"
-        }
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://sunrisehumancare.com/#LocalBusiness",
-        "name": "Sunrise Human Care Services",
-        "image": "https://sunrisehumancare.com/og-image.png",
-        "url": "https://sunrisehumancare.com",
-        "telephone": "+18146202162",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2050 West Chester Pike",
-          "addressLocality": "Havertown",
-          "addressRegion": "PA",
-          "postalCode": "19083",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "39.9707",
-          "longitude": "-75.3151"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "17:00"
-          }
-        ],
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Havertown",
-            "containedInPlace": {
-              "@type": "AdministrativeArea",
-              "name": "Delaware County"
-            }
-          },
-          {
-            "@type": "City",
-            "name": "Drexel Hill"
-          },
-          {
-            "@type": "City",
-            "name": "Broomall"
-          },
-          {
-            "@type": "City",
-            "name": "Ardmore"
-          }
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Mental Health Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Therapy Services",
-                "url": "https://sunrisehumancare.com/services"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Psychiatric Services",
-                "url": "https://sunrisehumancare.com/psychiatric-evaluations-havertown-pa"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://sunrisehumancare.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What mental health services do you offer in Havertown?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We offer a comprehensive range of mental health services in Havertown including individual therapy, couples counseling, family therapy, psychiatric evaluations, medication management, and specialized treatments for depression, anxiety, ADHD, trauma, and more."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you accept insurance for therapy and psychiatric services?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we accept a wide range of insurance plans for both therapy and psychiatric services in Havertown. We also offer self-pay options and can provide superbills for out-of-network reimbursement."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I schedule an appointment at Sunrise Human Care?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can schedule an appointment by calling us at (814) 620-2162, using our online appointment request form, or emailing us. We offer both in-person appointments at our Havertown office and telehealth options."
-            }
-          }
-        ]
       }
     ]
   };
 
   return (
     <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaData)}
+      </script>
     </Helmet>
   );
 };

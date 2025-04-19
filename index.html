@@ -1,12 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mental Health Clinic in Havertown, PA</title>
     <meta name="description" content="Mental health services for children, teens, adults, and seniors in Havertown, PA. Expert therapy for anxiety, depression, and well-being." />
     <meta name="author" content="Sunrise Human Care Services INC" />
+    
+    <!-- Geo-targeting tags -->
+    <meta name="geo.region" content="US-PA" />
+    <meta name="geo.placename" content="Havertown" />
+    <meta name="geo.position" content="39.9707;-75.3151" />
+    <meta name="ICBM" content="39.9707, -75.3151" />
+    <meta name="language" content="English" />
+    
+    <!-- hreflang tags -->
+    <link rel="alternate" hreflang="en-us" href="https://sunrisehumancare.com/" />
+    <link rel="canonical" href="https://sunrisehumancare.com/" />
 
     <!-- Critical CSS inline for above-the-fold content -->
     <style>
@@ -57,6 +68,7 @@
     <meta property="og:image" content="/og-image.png" />
     <meta property="og:url" content="https://www.sunrisehumancare.com" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -119,10 +131,21 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-L46C72W6FN', { 'send_page_view': false });
+      gtag('config', 'G-L46C72W6FN', { 
+        'send_page_view': false,
+        'cookie_domain': 'sunrisehumancare.com',
+        'cookie_flags': 'SameSite=None;Secure',
+        'geo_granularity': 'city',
+        'region_code': 'US-PA'  
+      });
       // Defer sending pageview until after page loads
       window.addEventListener('load', function() {
-        gtag('event', 'page_view');
+        gtag('event', 'page_view', {
+          'page_location': window.location.href,
+          'page_path': window.location.pathname,
+          'page_title': document.title,
+          'region_code': 'US-PA'
+        });
       });
     </script>
     

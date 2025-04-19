@@ -5,6 +5,8 @@ import ServicesSection from '../components/services/ServicesSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
+import { MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   // Services page breadcrumbs
@@ -25,12 +27,12 @@ const Services = () => {
     <>
       <SEOHead 
         title="Mental Health Services in Havertown, PA | Therapy & Counseling | Sunrise Human Care" 
-        description="Comprehensive mental health services in Havertown, PA. We offer therapy for anxiety, depression, ADHD, trauma, and more for children, teens, adults, and seniors. Call (814) 620-2162." 
+        description="Comprehensive mental health services in Havertown, PA. We offer therapy for anxiety, depression, ADHD, trauma, and more for children, teens, adults, and seniors in Delaware County. Call (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/services"
         keywords="mental health services Havertown, therapy Delaware County PA, counseling services Pennsylvania, psychiatry Havertown, anxiety therapy PA, depression treatment Havertown"
         serviceSchema={{
           name: "Mental Health Services",
-          description: "Comprehensive mental health services including therapy, counseling, and psychiatric care for individuals, families, and couples.",
+          description: "Comprehensive mental health services including therapy, counseling, and psychiatric care for individuals, families, and couples in Havertown and Delaware County.",
           provider: "Sunrise Human Care Services",
           serviceType: "Mental Health Care",
           areaServed: "Havertown, PA and Delaware County"
@@ -48,7 +50,13 @@ const Services = () => {
             <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
             
             <div className="container relative z-10 mx-auto px-4 md:px-6">
-              <div className="max-w-3xl">                
+              <div className="max-w-3xl">
+                {/* Location indicator */}
+                <div className="flex items-center mb-4 text-white/90">
+                  <MapPin className="h-5 w-5 mr-1" />
+                  <span>Havertown, PA • Delaware County • 19083</span>
+                </div>
+                
                 <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
                   Mental Health Services in Havertown, PA
                 </h1>
@@ -77,7 +85,7 @@ const Services = () => {
           
           <ServicesSection />
           
-          {/* Local Context Section */}
+          {/* Enhanced Local Context Section with nearby cities */}
           <section className="py-16 bg-orange-50">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto">
@@ -90,9 +98,39 @@ const Services = () => {
                 <p className="mb-4">
                   We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Havertown area. Whether you're coming from Haverford Township, Springfield, Upper Darby, Broomall, or other nearby areas, our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.
                 </p>
-                <p>
+                <p className="mb-6">
                   Our full range of mental health services in Havertown includes individual therapy, family counseling, anxiety treatment, depression therapy, and specialized care for conditions like ADHD, trauma, and OCD. We welcome clients of all ages and backgrounds to experience the compassionate care that has made us a trusted provider in Delaware County.
                 </p>
+                
+                {/* Add local areas served section */}
+                <div className="mt-8 bg-white rounded-lg p-6 shadow-sm border border-amber-200/30">
+                  <h3 className="text-xl font-semibold mb-4 text-amber-900">Areas We Serve in Delaware County</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <Link to="/mental-health-havertown-pa" className="px-3 py-2 bg-amber-50 hover:bg-amber-100 transition-colors rounded text-center">
+                      Havertown
+                    </Link>
+                    <div className="px-3 py-2 bg-amber-50 rounded text-center">
+                      Broomall
+                    </div>
+                    <div className="px-3 py-2 bg-amber-50 rounded text-center">
+                      Ardmore
+                    </div>
+                    <div className="px-3 py-2 bg-amber-50 rounded text-center">
+                      Drexel Hill
+                    </div>
+                    <div className="px-3 py-2 bg-amber-50 rounded text-center">
+                      Springfield
+                    </div>
+                    <div className="px-3 py-2 bg-amber-50 rounded text-center">
+                      Newtown Square
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Add ZIP codes served section for direct matches */}
+                <div className="mt-6 text-sm text-amber-700">
+                  <p>Proudly serving ZIP codes: 19083 (Havertown), 19008 (Broomall), 19003 (Ardmore), 19026 (Drexel Hill), 19064 (Springfield), 19073 (Newtown Square), and surrounding areas in Delaware County, Pennsylvania.</p>
+                </div>
               </div>
             </div>
           </section>

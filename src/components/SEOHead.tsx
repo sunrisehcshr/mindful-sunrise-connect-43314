@@ -126,7 +126,17 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "sameAs": [
       "https://www.facebook.com/sunrisehumancare",
       "https://www.linkedin.com/company/sunrise-human-care-services"
-    ]
+    ],
+    "areaServed": {
+      "@type": "GeoCircle",
+      "name": "Havertown, PA and Delaware County",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.9707",
+        "longitude": "-75.3151"
+      },
+      "geoRadius": "15000"
+    }
   };
 
   // Generate breadcrumb items or use provided ones
@@ -144,6 +154,62 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     }))
   };
 
+  // Local service areas schema
+  const localServiceAreasSchema = {
+    "@context": "https://schema.org",
+    "@type": "ServiceAreas",
+    "serviceArea": [
+      {
+        "@type": "City",
+        "name": "Havertown",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Delaware County",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Pennsylvania",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Broomall",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Delaware County"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Ardmore",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Delaware County"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Drexel Hill",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Delaware County"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Springfield",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Delaware County"
+        }
+      }
+    ]
+  };
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -159,9 +225,15 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="geo.position" content="39.9707;-75.3151" />
       <meta name="ICBM" content="39.9707, -75.3151" />
       <meta name="google" content="notranslate" />
+      <meta name="language" content="English" />
+      <meta name="content-language" content="en-US" />
 
       {/* Canonical URL (Fixing Duplicate Issue) */}
       <link rel="canonical" href={canonicalUrl} />
+      
+      {/* hreflang tags - FIX: Changed 'hreflang' to 'hrefLang' (with capital L) */}
+      <link rel="alternate" hrefLang="en-us" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="x-default" href="https://sunrisehumancare.com/" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={article ? 'article' : type} />
@@ -208,6 +280,11 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Breadcrumbs schema - Using structured BreadcrumbItem[] */}
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchema)}
+      </script>
+      
+      {/* Local Service Areas schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(localServiceAreasSchema)}
       </script>
 
       {/* Font display optimization - removed problematic preloads */}
