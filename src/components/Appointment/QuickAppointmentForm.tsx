@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { CalendarIcon, Phone, Mail, Hospital, Video, Clock } from 'lucide-react';
 import { format } from 'date-fns';
@@ -22,7 +23,7 @@ const QuickAppointmentForm: React.FC<QuickAppointmentFormProps> = ({ defaultServ
     phone: '',
     date: undefined as Date | undefined,
     time: '',
-    service: '',
+    service: defaultService || '',
     sessionType: '',
     preferredContact: '',
     message: '',

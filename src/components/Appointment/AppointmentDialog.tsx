@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -7,23 +7,35 @@ import {
   DialogHeader,
   DialogTitle,
   DialogClose,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import QuickAppointmentForm from './QuickAppointmentForm';
 import { X } from 'lucide-react';
 
 interface AppointmentDialogProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
+  children?: React.ReactNode;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
   defaultServiceName?: string;
 }
 
 const AppointmentDialog: React.FC<AppointmentDialogProps> = ({ 
-  open, 
+  children,
+  open,
   onOpenChange,
   defaultServiceName
 }) => {
+  // Internal state for uncontrolled mode (when children trigger is used)
+  const [internalOpen, setInternalOpen] = useState(false);
+  
+  // Determine if we're in controlled or uncontrolled mode
+  const isControlled = open !== undefined && onOpenChange !== undefined;
+  const isOpen = isControlled ? open : internalOpen;
+  const handleOpenChange = isControlled ? onOpenChange : setInternalOpen;
+  
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
+      {children && <DialogTrigger asChild>{children}</DialogTrigger>}
       <DialogContent className="sm:max-w-[500px] p-0 overflow-hidden w-[95vw] max-h-[90vh]">
         <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
           <X className="h-4 w-4" />
