@@ -9,7 +9,7 @@ import SEOHead from "@/components/SEOHead";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import ImageOptimizer from "@/components/ui/ImageOptimizer";
 import { cn } from "@/lib/utils";
-import { AppointmentDialog } from "@/components/Appointment/AppointmentDialog";
+import AppointmentDialog from "@/components/Appointment/AppointmentDialog";
 import ServiceContentSection from "@/components/services/ServiceContentSection";
 
 interface ServicePageTemplateProps {
