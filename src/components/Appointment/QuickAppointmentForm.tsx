@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { toast } from 'sonner';
 import { CalendarIcon, Phone, Mail, Hospital, Video, Clock } from 'lucide-react';
 import { format } from 'date-fns';
@@ -12,7 +11,11 @@ import {
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
-const QuickAppointmentForm: React.FC = () => {
+interface QuickAppointmentFormProps {
+  defaultService?: string;
+}
+
+const QuickAppointmentForm: React.FC<QuickAppointmentFormProps> = ({ defaultService }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
