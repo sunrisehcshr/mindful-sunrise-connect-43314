@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 import ServiceContentSection from '../../components/services/ServiceContentSection';
@@ -7,10 +6,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CheckCircle2, ArrowRight, Brain, Shield, Lightbulb, Star, MessageCircle, FileCheck, Heart, Clock3 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import SEOHead from '../../components/SEOHead';
-import SectionTag from '@/components/ui/section-tag';
+import WarmServiceCard from '../../components/services/WarmServiceCard';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 
 const IndividualTherapy = () => {
   const benefits = [
@@ -72,10 +69,10 @@ const IndividualTherapy = () => {
     },
     {
       question: "Can I change therapists if needed?",
-      answer: "Yes, we'll help you find a better match if the connection isn't right, ensuring effective therapy."
+      answer: "Yes, we’ll help you find a better match if the connection isn’t right, ensuring effective therapy."
     },
     {
-      question: "What if I'm nervous about starting therapy?",
+      question: "What if I’m nervous about starting therapy?",
       answer: "Feeling hesitant is common. We offer a free consultation to discuss concerns and explore if therapy suits you."
     }
   ];
@@ -90,17 +87,20 @@ const IndividualTherapy = () => {
     {
       title: "Anxiety Disorders",
       description: "Havertown therapy for anxiety, including generalized anxiety, social anxiety, and panic disorders.",
-      url: "/anxiety-therapy-havertown-pa"
+      url: "/anxiety-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
     },
     {
       title: "Depression",
       description: "Depression therapy in Havertown to improve mood and daily functioning with evidence-based methods.",
-      url: "/depression-therapy-havertown-pa"
+      url: "/depression-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
     },
     {
       title: "Trauma & PTSD",
       description: "Trauma therapy in Havertown to heal from past experiences using trauma-informed care.",
-      url: "/trauma-therapy-havertown-pa"
+      url: "/trauma-therapy-havertown-pa",
+      imageSrc: "/therapy-in-havertown.jpg"
     }
   ];
 
@@ -155,11 +155,8 @@ const IndividualTherapy = () => {
         faqs={faqs}
         relatedServices={relatedServices}
       >
-        <ServiceContentSection 
-          title="Why Choose Individual Therapy in Havertown, PA" 
-          hasBgPattern={true}
-          tagText="Expert Care"
-        >
+        <ServiceContentSection title="Why Choose Individual Therapy in Havertown, PA" hasBgPattern={true}>
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -246,15 +243,11 @@ const IndividualTherapy = () => {
           </div>
         </ServiceContentSection>
 
-        <ServiceContentSection 
-          title="How Individual Therapy Works in Havertown" 
-          className="bg-white"
-          variant="default"
-          tagText="Our Process"
-        >
+        <ServiceContentSection title="How Individual Therapy Works in Havertown" className="bg-white">
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Individual therapy in Havertown is a personalized process designed to support your mental health goals. Here's how our licensed therapists guide you at Sunrise Human Care Services.
+              Individual therapy in Havertown is a personalized process designed to support your mental health goals. Here’s how our licensed therapists guide you at Sunrise Human Care Services.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
@@ -280,7 +273,7 @@ const IndividualTherapy = () => {
               <div>
                 <h3 className="text-xl font-semibold text-amber-900 mb-3">Ongoing Support</h3>
                 <p className="leading-relaxed">
-                  Regular sessions provide consistent guidance, with progress reviews to refine strategies. You'll gain tools to manage stress and improve daily life.
+                  Regular sessions provide consistent guidance, with progress reviews to refine strategies. You’ll gain tools to manage stress and improve daily life.
                 </p>
               </div>
             </motion.div>
@@ -325,12 +318,8 @@ const IndividualTherapy = () => {
           </div>
         </ServiceContentSection>
 
-        <ServiceContentSection 
-          title="Types of Individual Therapy in Havertown" 
-          hasBgPattern={true}
-          variant="alternate"
-          tagText="Therapy Options"
-        >
+        <ServiceContentSection title="Types of Individual Therapy in Havertown" hasBgPattern={true}>
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our therapy in Havertown is designed to meet varied needs, from quick solutions to deep exploration, with licensed therapists guiding your path to wellness.
@@ -340,22 +329,19 @@ const IndividualTherapy = () => {
             {therapyTypes.map((type, index) => (
               <motion.div
                 key={index}
+                className="bg-amber-50/50 border border-amber-100 rounded-lg p-6 shadow-sm"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card variant="glass" hover="lift" className="h-full">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start gap-4">
-                      <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">{type.icon}</div>
-                      <CardTitle decorative>{type.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-amber-700">{type.description}</CardDescription>
-                  </CardContent>
-                </Card>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">{type.icon}</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-amber-900 mb-2">{type.title}</h3>
+                    <p className="text-sm text-muted-foreground">{type.description}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -367,11 +353,8 @@ const IndividualTherapy = () => {
           </div>
         </ServiceContentSection>
 
-        <ServiceContentSection 
-          title="Mental Health Conditions Addressed in Havertown" 
-          variant="highlight"
-          tagText="Conditions We Treat" 
-        >
+        <ServiceContentSection title="Mental Health Conditions Addressed in Havertown" hasBgPattern={true}>
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
               Our individual therapy in Havertown addresses mental health challenges with evidence-based techniques. Licensed therapists help you find relief and build resilience.
@@ -379,29 +362,14 @@ const IndividualTherapy = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {conditions.map((condition, index) => (
-              <motion.div
+              <WarmServiceCard
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card variant="filled" hover="glow" className="h-full">
-                  <CardHeader>
-                    <CardTitle decorative>{condition.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-2">
-                    <CardDescription className="text-amber-700 mb-4">{condition.description}</CardDescription>
-                    <Link
-                      to={condition.url}
-                      className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-3 py-1.5 rounded-md transition-colors duration-200 group shadow-sm"
-                    >
-                      Learn more
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                title={condition.title}
+                description={condition.description}
+                imageSrc={condition.imageSrc}
+                url={condition.url}
+                delay={index * 0.1}
+              />
             ))}
           </div>
           <div className="mt-10 text-center">
@@ -412,12 +380,8 @@ const IndividualTherapy = () => {
           </div>
         </ServiceContentSection>
 
-        <ServiceContentSection 
-          title="The Value of Therapy in Pennsylvania" 
-          hasBgPattern={true}
-          variant="default"
-          tagText="Transform Your Life"
-        >
+        <ServiceContentSection title="The Value of Therapy in Pennsylvania" hasBgPattern={true}>
+          <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
               <motion.div
@@ -437,7 +401,7 @@ const IndividualTherapy = () => {
                   Beyond immediate relief, therapy builds resilience and self-awareness. Our holistic approach considers your unique needs, fostering lasting wellness through personalized sessions.
                 </p>
                 <p className="leading-relaxed">
-                  If you're ready to take the next step, our team is here to support you. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Book a session today</Link> to begin.
+                  If you’re ready to take the next step, our team is here to support you. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Book a session today</Link> to begin.
                 </p>
               </motion.div>
             </div>
@@ -457,7 +421,7 @@ const IndividualTherapy = () => {
                     "Stronger sense of self",
                     "Healthier relationships",
                     "Relief from anxiety or depression",
-                    "Tools for life's challenges",
+                    "Tools for life’s challenges",
                     "Sustained personal growth"
                   ].map((item, idx) => (
                     <motion.li
@@ -486,14 +450,11 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-              <SectionTag>Key Benefits</SectionTag>
-              <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mt-4">
-                Benefits of Individual Therapy
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto mt-4"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
+              Benefits of Individual Therapy
+            </h2>
+            <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
@@ -501,15 +462,10 @@ const IndividualTherapy = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
+                  className="bg-amber-50 border border-amber-100 rounded-lg p-6 shadow-sm"
                 >
-                  <Card variant="glass" hover="lift" className="h-full">
-                    <CardHeader>
-                      <CheckCircle2 className="h-6 w-6 text-orange-500" />
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-amber-800">{benefit}</CardDescription>
-                    </CardContent>
-                  </Card>
+                  <CheckCircle2 className="h-6 w-6 text-orange-500 mb-4" />
+                  <p className="text-amber-800 text-sm">{benefit}</p>
                 </motion.div>
               ))}
             </div>
@@ -518,14 +474,11 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-              <SectionTag>Therapy Methods</SectionTag>
-              <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight mt-4">
-                Our Therapeutic Approaches
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto mt-4"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
+              Our Therapeutic Approaches
+            </h2>
+            <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {approaches.map((approach, index) => (
                 <motion.div
                   key={index}
@@ -533,18 +486,15 @@ const IndividualTherapy = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
+                  className="bg-white border border-amber-100 rounded-lg p-6 shadow-sm"
                 >
-                  <Card variant="glass" hover="lift" className="h-full">
-                    <CardHeader>
-                      <div className="flex items-start gap-4">
-                        <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">{approach.icon}</div>
-                        <CardTitle decorative>{approach.title}</CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-amber-700">{approach.description}</CardDescription>
-                    </CardContent>
-                  </Card>
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">{approach.icon}</div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-amber-900 mb-2">{approach.title}</h3>
+                      <p className="text-sm text-muted-foreground">{approach.description}</p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -553,13 +503,10 @@ const IndividualTherapy = () => {
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-              <Badge variant="tag" className="mb-4">Common Questions</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
-                Frequently Asked Questions
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto mt-4 mb-8"></div>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-950 text-center tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
             <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
               {faqs.map((faq, index) => (
                 <AccordionItem value={`faq-${index}`} key={index}>

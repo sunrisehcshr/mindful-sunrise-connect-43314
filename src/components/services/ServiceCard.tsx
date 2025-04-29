@@ -10,8 +10,8 @@ interface ServiceProps {
     icon: React.ReactNode;
     title: string;
     description: string;
-    color?: string;
-    bgColor?: string;
+    color: string;
+    bgColor: string;
     url?: string;
   };
   index: number;

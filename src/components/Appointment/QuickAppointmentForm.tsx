@@ -12,18 +12,14 @@ import {
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
-interface QuickAppointmentFormProps {
-  defaultService?: string;
-}
-
-const QuickAppointmentForm: React.FC<QuickAppointmentFormProps> = ({ defaultService }) => {
+const QuickAppointmentForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     date: undefined as Date | undefined,
     time: '',
-    service: defaultService || '',
+    service: '',
     sessionType: '',
     preferredContact: '',
     message: '',
