@@ -219,8 +219,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
       
       {/* Appointment Dialog */}
       <AppointmentDialog 
-        onOpenChange={setOpenAppointment} 
-        open={openAppointment} 
+        open={openAppointment}
+        onOpenChange={setOpenAppointment}
         defaultServiceName={title}
       />
     </>
