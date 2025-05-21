@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { Phone, Mail, Hospital, Video } from 'lucide-react';
+
 const AppointmentForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -42,7 +42,7 @@ const AppointmentForm: React.FC = () => {
         body: JSON.stringify({
           ...formData,
           _subject: "New Appointment Request",
-          _cc: "shweta.s@sunrisehumancare.com"
+          _cc: "info@sunrisehumancare.com"
         })
       });
       if (response.ok) {

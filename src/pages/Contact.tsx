@@ -35,7 +35,7 @@ const Contact = () => {
       const formspreeData = {
         ...formData,
         _subject: "Contact Form Message",
-        _cc: "shweta.s@sunrisehumancare.com"
+        _cc: "info@sunrisehumancare.com"
       };
       
       const response = await fetch("https://formspree.io/f/xzzeaeql", {
