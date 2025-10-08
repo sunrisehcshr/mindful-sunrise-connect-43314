@@ -12,7 +12,7 @@ const teamMembers = [
     name: "Michael Thevar",
     role: "Founder & Clinical Director",
     specialties: ["Anxiety", "Depression", "ADHD"],
-    bio: Mr. Michael Thevar built his successful career in the mental health industry over twenty years ago as a drug and alcohol counsellor. He has a long-standing history with the healthcare sector due to his previous experience of serving as a clinical service manager, along with establishing a successful healthcare staffing agency and co-founding Omni Staffing. Most recently, he established Omni Cares, a 501c3 charitable organisation. Mr Michael Thevar, aspires to change the landscape and language used to describe mental health universally.",
+    bio: "Mr Michael Thevar built his successful career in the mental health industry over twenty years ago as a drug and alcohol counsellor. He has a long-standing history with the healthcare sector due to his previous experience of serving as a clinical service manager, along with establishing a successful healthcare staffing agency and co-founding Omni Staffing. Most recently, he established Omni Cares, a 501c3 charitable organisation. Mr Michael Thevar, aspires to change the landscape and language used to describe mental health universally.",
     image: ""
   },
   {
