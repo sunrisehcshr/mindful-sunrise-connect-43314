@@ -59,19 +59,6 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               </p>
             </div>
 
-            <div className="w-full">
-              <div className="flex flex-wrap gap-2 justify-center mb-4">
-                {specialties.map((specialty, idx) => (
-                  <span
-                    key={idx}
-                    className="text-xs px-2 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200"
-                  >
-                    {specialty}
-                  </span>
-                ))}
-              </div>
-            </div>
-
             <div className="w-full pt-3 border-t border-amber-100">
               <motion.div
                 initial={false}
