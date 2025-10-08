@@ -9,10 +9,10 @@ import { Users, ArrowRight } from 'lucide-react';
 
 const teamMembers = [
   {
-    name: "Dr. Michael Thevar",
+    name: "Michael Thevar",
     role: "Founder & Clinical Director",
     specialties: ["Anxiety", "Depression", "ADHD"],
-    bio: "Dr. Thevar founded Sunrise Human Care Services with a vision to provide accessible, compassionate mental health care to the Havertown community. With over 30 years of experience in clinical psychology, he specializes in evidence-based treatments for anxiety, depression, and ADHD. His patient-centered approach focuses on empowering individuals to achieve lasting mental wellness.",
+    bio: Mr. Michael Thevar built his successful career in the mental health industry over twenty years ago as a drug and alcohol counsellor. He has a long-standing history with the healthcare sector due to his previous experience of serving as a clinical service manager, along with establishing a successful healthcare staffing agency and co-founding Omni Staffing. Most recently, he established Omni Cares, a 501c3 charitable organisation. Mr Michael Thevar, aspires to change the landscape and language used to describe mental health universally.",
     image: ""
   },
   {
