@@ -1,6 +1,7 @@
 
 import React from 'react';
 import AboutSection from '../components/AboutSection';
+import FullTeamSection from '../components/team/FullTeamSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
@@ -18,6 +19,7 @@ const About = () => {
         <Navbar />
         <main className="flex-grow pt-24">
           <AboutSection />
+          <FullTeamSection />
         </main>
         <Footer />
       </div>
