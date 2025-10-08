@@ -10,23 +10,23 @@ import { Users, ArrowRight } from 'lucide-react';
 const teamMembers = [
   {
     name: "Michael Thevar",
-    role: "Founder & Clinical Director",
+    role: "President",
     specialties: ["Anxiety", "Depression", "ADHD"],
     bio: "Mr Michael Thevar built his successful career in the mental health industry over twenty years ago as a drug and alcohol counsellor. He has a long-standing history with the healthcare sector due to his previous experience of serving as a clinical service manager, along with establishing a successful healthcare staffing agency and co-founding Omni Staffing. Most recently, he established Omni Cares, a 501c3 charitable organisation. Mr Michael Thevar, aspires to change the landscape and language used to describe mental health universally.",
     image: ""
   },
   {
-    name: "Dr. Sarah Johnson",
-    role: "Licensed Psychologist",
+    name: "Pamela Martin",
+    role: "CEO",
     specialties: ["Trauma", "PTSD", "Family Therapy"],
-    bio: "Dr. Johnson brings extensive expertise in trauma-informed care and family systems therapy. She has dedicated her career to helping individuals and families heal from traumatic experiences and build stronger, healthier relationships. Her warm, empathetic approach creates a safe space for clients to process difficult emotions and develop effective coping strategies.",
+    bio: "Pam Martin is the CEO of Sunrise Human Care. She received her Masters in Business Administration from Shippensburg University and is a graduate of Bloomsburg University with a BA in political science. Her professional career has focused on public services for children. Pam has extensive knowledge of behavioral health services in the tri county area with a specialization in Behavioral Health Rehabilitative Services (BHRS) for children.",
     image: ""
   },
   {
-    name: "Dr. James Chen",
-    role: "Psychiatrist",
+    name: "Holli O'Donnell",
+    role: "Clinical Director",
     specialties: ["Medication Management", "Bipolar", "OCD"],
-    bio: "Dr. Chen is a board-certified psychiatrist with specialized training in psychopharmacology and complex mood disorders. He takes a holistic approach to medication management, carefully considering each patient's unique needs and circumstances. Dr. Chen works collaboratively with clients to find the most effective treatment plans that improve quality of life.",
+    bio: "Holli O’Donnell is the Clinical Director for Sunrise Human Care. She is a Licensed Clinical Social Worker with over 25 years of experience in the behavioral health field, receiving her MSW from New York University. Her most recent position, as a Clinical Director, Holli provided administrative duties and clinical supervision to clinicians and interns working in various levels of care. Throughout her career she has worked with children and adolescents in multiple settings including BHRS, outpatient, residential treatment and acute hospital programs. Holli is trained in TFCBT and focuses on providing and supervising around trauma informed care.",
     image: ""
   }
 ];
