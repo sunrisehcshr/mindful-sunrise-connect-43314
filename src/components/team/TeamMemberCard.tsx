@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '../ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar';
-import { Mail, Phone } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Button } from '../ui/button';
 
 interface TeamMemberCardProps {
   name: string;
   role: string;
   specialties: string[];
+  bio: string;
   image?: string;
-  email?: string;
-  phone?: string;
   index: number;
 }
 
@@ -18,11 +18,12 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   name,
   role,
   specialties,
+  bio,
   image,
-  email,
-  phone,
   index
 }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   // Generate initials from name
   const getInitials = (name: string) => {
     return name
@@ -71,28 +72,34 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               </div>
             </div>
 
-            {(email || phone) && (
-              <div className="w-full pt-3 border-t border-amber-100 space-y-2">
-                {email && (
-                  <a
-                    href={`mailto:${email}`}
-                    className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Mail className="h-4 w-4" />
-                    <span className="text-xs">{email}</span>
-                  </a>
+            <div className="w-full pt-3 border-t border-amber-100">
+              <motion.div
+                initial={false}
+                animate={{ height: isExpanded ? 'auto' : '60px' }}
+                className="overflow-hidden"
+              >
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {bio}
+                </p>
+              </motion.div>
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="mt-2 w-full text-primary hover:text-primary hover:bg-amber-50"
+              >
+                {isExpanded ? (
+                  <>
+                    Show Less <ChevronUp className="ml-1 h-4 w-4" />
+                  </>
+                ) : (
+                  <>
+                    Read More <ChevronDown className="ml-1 h-4 w-4" />
+                  </>
                 )}
-                {phone && (
-                  <a
-                    href={`tel:${phone}`}
-                    className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Phone className="h-4 w-4" />
-                    <span className="text-xs">{phone}</span>
-                  </a>
-                )}
-              </div>
-            )}
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>

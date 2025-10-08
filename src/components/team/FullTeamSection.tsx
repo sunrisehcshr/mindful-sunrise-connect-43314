@@ -10,65 +10,57 @@ const fullTeamMembers = [
     name: "Dr. Michael Thevar",
     role: "Founder & Clinical Director",
     specialties: ["Anxiety", "Depression", "ADHD"],
-    image: "",
-    email: "michael@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Thevar founded Sunrise Human Care Services with a vision to provide accessible, compassionate mental health care to the Havertown community. With over 30 years of experience in clinical psychology, he specializes in evidence-based treatments for anxiety, depression, and ADHD. His patient-centered approach focuses on empowering individuals to achieve lasting mental wellness.",
+    image: ""
   },
   {
     name: "Dr. Sarah Johnson",
     role: "Licensed Psychologist",
     specialties: ["Trauma", "PTSD", "Family Therapy"],
-    image: "",
-    email: "sarah@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Johnson brings extensive expertise in trauma-informed care and family systems therapy. She has dedicated her career to helping individuals and families heal from traumatic experiences and build stronger, healthier relationships. Her warm, empathetic approach creates a safe space for clients to process difficult emotions and develop effective coping strategies.",
+    image: ""
   },
   {
     name: "Dr. James Chen",
     role: "Psychiatrist",
     specialties: ["Medication Management", "Bipolar", "OCD"],
-    image: "",
-    email: "james@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Chen is a board-certified psychiatrist with specialized training in psychopharmacology and complex mood disorders. He takes a holistic approach to medication management, carefully considering each patient's unique needs and circumstances. Dr. Chen works collaboratively with clients to find the most effective treatment plans that improve quality of life.",
+    image: ""
   },
   {
     name: "Dr. Emily Rodriguez",
     role: "Licensed Clinical Psychologist",
     specialties: ["Child Therapy", "Adolescent Care", "Behavioral Issues"],
-    image: "",
-    email: "emily@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Rodriguez specializes in child and adolescent psychology, helping young people navigate developmental challenges and behavioral concerns. With a playful yet professional approach, she creates a comfortable environment where children and teens feel heard and understood. Her work with families focuses on building communication skills and fostering positive relationships.",
+    image: ""
   },
   {
     name: "Dr. David Kumar",
     role: "Psychiatrist",
     specialties: ["Schizophrenia", "Mood Disorders", "Geriatric Care"],
-    image: "",
-    email: "david@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Kumar brings specialized expertise in treating complex psychiatric conditions and geriatric mental health. His compassionate approach to care emphasizes dignity, respect, and quality of life for all patients. With years of experience in both inpatient and outpatient settings, he provides comprehensive psychiatric evaluations and medication management.",
+    image: ""
   },
   {
     name: "Dr. Lisa Martinez",
     role: "Marriage & Family Therapist",
     specialties: ["Couples Counseling", "Relationship Issues", "Communication"],
-    image: "",
-    email: "lisa@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Martinez is a licensed marriage and family therapist who helps couples and families strengthen their relationships and improve communication. She uses evidence-based approaches including Emotionally Focused Therapy and the Gottman Method to help partners reconnect and build lasting intimacy. Her practice focuses on creating healthy, fulfilling relationships.",
+    image: ""
   },
   {
     name: "Dr. Robert Thompson",
     role: "Licensed Professional Counselor",
     specialties: ["Substance Abuse", "Grief Counseling", "Life Transitions"],
-    image: "",
-    email: "robert@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Thompson specializes in addiction recovery, grief counseling, and helping individuals navigate major life transitions. His compassionate, non-judgmental approach provides a supportive environment for clients to work through difficult challenges. He integrates cognitive-behavioral techniques with mindfulness-based practices to promote healing and personal growth.",
+    image: ""
   },
   {
     name: "Dr. Amanda Foster",
     role: "Clinical Psychologist",
     specialties: ["Eating Disorders", "Body Image", "Women's Health"],
-    image: "",
-    email: "amanda@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Foster is dedicated to helping individuals overcome eating disorders and develop healthy relationships with food and their bodies. She specializes in women's mental health issues including perinatal mood disorders, body image concerns, and life transitions. Her integrative approach combines evidence-based therapies with mindfulness and self-compassion practices.",
+    image: ""
   }
 ];
 

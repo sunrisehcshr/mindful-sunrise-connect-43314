@@ -1,32 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
 import TeamMemberCard from './TeamMemberCard';
-import { Users } from 'lucide-react';
+import { Button } from '../ui/button';
+import { Users, ArrowRight } from 'lucide-react';
 
 const teamMembers = [
   {
     name: "Dr. Michael Thevar",
     role: "Founder & Clinical Director",
     specialties: ["Anxiety", "Depression", "ADHD"],
-    image: "",
-    email: "michael@sunrisehumancare.com",
-    phone: "(814) 620-2162"
+    bio: "Dr. Thevar founded Sunrise Human Care Services with a vision to provide accessible, compassionate mental health care to the Havertown community. With over 30 years of experience in clinical psychology, he specializes in evidence-based treatments for anxiety, depression, and ADHD. His patient-centered approach focuses on empowering individuals to achieve lasting mental wellness.",
+    image: ""
   },
   {
     name: "Dr. Sarah Johnson",
     role: "Licensed Psychologist",
     specialties: ["Trauma", "PTSD", "Family Therapy"],
-    image: "",
-    email: "sarah@sunrisehumancare.com"
+    bio: "Dr. Johnson brings extensive expertise in trauma-informed care and family systems therapy. She has dedicated her career to helping individuals and families heal from traumatic experiences and build stronger, healthier relationships. Her warm, empathetic approach creates a safe space for clients to process difficult emotions and develop effective coping strategies.",
+    image: ""
   },
   {
     name: "Dr. James Chen",
     role: "Psychiatrist",
     specialties: ["Medication Management", "Bipolar", "OCD"],
-    image: "",
-    email: "james@sunrisehumancare.com"
+    bio: "Dr. Chen is a board-certified psychiatrist with specialized training in psychopharmacology and complex mood disorders. He takes a holistic approach to medication management, carefully considering each patient's unique needs and circumstances. Dr. Chen works collaboratively with clients to find the most effective treatment plans that improve quality of life.",
+    image: ""
   }
 ];
 
@@ -86,6 +87,24 @@ const TeamSection = () => {
             />
           ))}
         </div>
+
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <Link to="/about">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              View All Team Members
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
