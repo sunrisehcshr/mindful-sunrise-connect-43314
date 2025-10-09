@@ -55,7 +55,16 @@ const fullTeamMembers = [
     bio: "Ekalavya Amrute serves as the Office Manager at Sunrise Human Care Services, where he ensures the smooth functioning of daily operations and supports the team in delivering quality care. His responsibilities include managing administrative processes, coordinating schedules, maintaining records, and overseeing compliance to keep organizational workflows efficient. Through his strong organizational skills and dedication, Ekalavya creates a supportive environment for staff and contributes directly to the productivity of the team and the overall mission of Sunrise Human Care Services.",
     image: ""
   },
- +
+  {
+    name: "Dr. Amanda Foster",
+    role: "Clinical Psychologist",
+    specialties: ["Eating Disorders", "Body Image", "Women's Health"],
+    bio: "Dr. Foster is dedicated to helping individuals overcome eating disorders and develop healthy relationships with food and their bodies. She specializes in women's mental health issues including perinatal mood disorders, body image concerns, and life transitions. Her integrative approach combines evidence-based therapies with mindfulness and self-compassion practices.",
+    image: ""
+  }
+];
+
+ 
 const FullTeamSection = () => {
   return (
     <section id="team" className="py-16 md:py-24 bg-inherit">
