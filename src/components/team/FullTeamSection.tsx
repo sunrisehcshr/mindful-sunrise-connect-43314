@@ -55,7 +55,7 @@ const fullTeamMembers = [
     bio: "Ekalavya Amrute serves as the Office Manager at Sunrise Human Care Services, where he ensures the smooth functioning of daily operations and supports the team in delivering quality care. His responsibilities include managing administrative processes, coordinating schedules, maintaining records, and overseeing compliance to keep organizational workflows efficient. Through his strong organizational skills and dedication, Ekalavya creates a supportive environment for staff and contributes directly to the productivity of the team and the overall mission of Sunrise Human Care Services.",
     image: ""
   },
- 
+ +
 const FullTeamSection = () => {
   return (
     <section id="team" className="py-16 md:py-24 bg-inherit">
