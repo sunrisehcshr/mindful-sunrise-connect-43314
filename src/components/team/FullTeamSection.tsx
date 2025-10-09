@@ -11,21 +11,21 @@ const fullTeamMembers = [
     role: "President",
     specialties: ["Anxiety", "Depression", "ADHD"],
     bio: "Mr Michael Thevar built his successful career in the mental health industry over twenty years ago as a drug and alcohol counsellor. He has a long-standing history with the healthcare sector due to his previous experience of serving as a clinical service manager, along with establishing a successful healthcare staffing agency and co-founding Omni Staffing. Most recently, he established Omni Cares, a 501c3 charitable organisation. Mr Michael Thevar, aspires to change the landscape and language used to describe mental health universally.",
-    image: "public/images/michael.jpg"
+    image: "/images/michael.jpg"
   },
   {
     name: "Pamela Martin",
     role: "CEO",
     specialties: ["Trauma", "PTSD", "Family Therapy"],
     bio: "Pam Martin is the CEO of Sunrise Human Care. She received her Masters in Business Administration from Shippensburg University and is a graduate of Bloomsburg University with a BA in political science. Her professional career has focused on public services for children. Pam has extensive knowledge of behavioral health services in the tri county area with a specialization in Behavioral Health Rehabilitative Services (BHRS) for children.",
-    image: ""
+    image: "/images/pam.jpg"
   },
   {
-    name: "Holli O’Donnell",
+    name: "Holli O'Donnell",
     role: "Clinical Director",
     specialties: ["Medication Management", "Bipolar", "OCD"],
-    bio: "Holli O’Donnell is the Clinical Director for Sunrise Human Care. She is a Licensed Clinical Social Worker with over 25 years of experience in the behavioral health field, receiving her MSW from New York University. Her most recent position, as a Clinical Director, Holli provided administrative duties and clinical supervision to clinicians and interns working in various levels of care. Throughout her career she has worked with children and adolescents in multiple settings including BHRS, outpatient, residential treatment and acute hospital programs. Holli is trained in TFCBT and focuses on providing and supervising around trauma informed care.",
-    image: ""
+    bio: "Holli O'Donnell is the Clinical Director for Sunrise Human Care. She is a Licensed Clinical Social Worker with over 25 years of experience in the behavioral health field, receiving her MSW from New York University. Her most recent position, as a Clinical Director, Holli provided administrative duties and clinical supervision to clinicians and interns working in various levels of care. Throughout her career she has worked with children and adolescents in multiple settings including BHRS, outpatient, residential treatment and acute hospital programs. Holli is trained in TFCBT and focuses on providing and supervising around trauma informed care.",
+    image: "/images/holly.jpg"
   },
   {
     name: "Dr. Farah Khan",
@@ -38,29 +38,22 @@ const fullTeamMembers = [
     name: "Anthony Obi",
     role: "Outpatient Therapist",
     specialties: ["Schizophrenia", "Mood Disorders", "Geriatric Care"],
-    bio: "Anthony Obi works as an Outpatient Therapist at Sunrise Human Care Services, providing compassionate, client-centered counseling to individuals, families, and groups. His responsibilities include assessing mental health needs, creating personalized treatment plans, and guiding clients through therapies that promote resilience and emotional well-being. By partnering with healthcare providers and community resources, Anthony ensures each client receives comprehensive support. Through his dedication, Anthony helps clients achieve personal growth and stability while contributing to Sunrise Human Care Services’ mission of strengthening lives and uplifting the community.",
-    image: ""
+    bio: "Anthony Obi works as an Outpatient Therapist at Sunrise Human Care Services, providing compassionate, client-centered counseling to individuals, families, and groups. His responsibilities include assessing mental health needs, creating personalized treatment plans, and guiding clients through therapies that promote resilience and emotional well-being. By partnering with healthcare providers and community resources, Anthony ensures each client receives comprehensive support. Through his dedication, Anthony helps clients achieve personal growth and stability while contributing to Sunrise Human Care Services' mission of strengthening lives and uplifting the community.",
+    image: "/images/Toni Obi's Profile Picture.jpeg"
   },
   {
     name: "Shanada Anderson",
     role: "Outpatient Therapist",
     specialties: ["Couples Counseling", "Relationship Issues", "Communication"],
-    bio: "Shanada Anderson, MS, is a therapist dedicated to creating safe, affirming spaces where clients feel seen and supported. She provides culturally competent, client-centered care that empowers individuals to build resilience and navigate life’s challenges with confidence. Shanada is committed to not only supporting her clients, but also transforming the culture of care with authenticity, strength, and heart. Shanada holds a Master's in Science in Professional Counseling ",
-    image: ""
+    bio: "Shanada Anderson, MS, is a therapist dedicated to creating safe, affirming spaces where clients feel seen and supported. She provides culturally competent, client-centered care that empowers individuals to build resilience and navigate life's challenges with confidence. Shanada is committed to not only supporting her clients, but also transforming the culture of care with authenticity, strength, and heart. Shanada holds a Master's in Science in Professional Counseling ",
+    image: "/images/Shanada Anderson.jpeg"
   },
   {
     name: "Ekalavya Amrute",
     role: "Office Manager",
     specialties: ["Substance Abuse", "Grief Counseling", "Life Transitions"],
     bio: "Ekalavya Amrute serves as the Office Manager at Sunrise Human Care Services, where he ensures the smooth functioning of daily operations and supports the team in delivering quality care. His responsibilities include managing administrative processes, coordinating schedules, maintaining records, and overseeing compliance to keep organizational workflows efficient. Through his strong organizational skills and dedication, Ekalavya creates a supportive environment for staff and contributes directly to the productivity of the team and the overall mission of Sunrise Human Care Services.",
-    image: ""
-  },
-  {
-    name: "Dr. Amanda Foster",
-    role: "Clinical Psychologist",
-    specialties: ["Eating Disorders", "Body Image", "Women's Health"],
-    bio: "Dr. Foster is dedicated to helping individuals overcome eating disorders and develop healthy relationships with food and their bodies. She specializes in women's mental health issues including perinatal mood disorders, body image concerns, and life transitions. Her integrative approach combines evidence-based therapies with mindfulness and self-compassion practices.",
-    image: ""
+    image: "/images/Ekalavya Amrute.jpeg"
   }
 ];
 
