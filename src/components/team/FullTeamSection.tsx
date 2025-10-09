@@ -32,7 +32,7 @@ const fullTeamMembers = [
     role: "Psychiatrist",
     specialties: ["Child Therapy", "Adolescent Care", "Behavioral Issues"],
     bio: "Specialized in children with ASD ( Autism spectrum disorder) ADHD and other behavioral problems. Learning how to treat children with behavioral problems has equipped me with a unique perspective and an invaluable tool with which I can provide the best care for my patients. A good psychiatrist not only needs to be competent and knowledgeable in the discipline, but also empathetic and sensitive towards patients. My training from New York Medical College and Robert Wood Johnson University hospital has enhanced my the ability and given me the experience to deal with diverse patient population ranging from children to adolescents and adults.",
-    image: ""
+    image: "/images/dr-farah-khan.jpeg"
   },
   {
     name: "Anthony Obi",

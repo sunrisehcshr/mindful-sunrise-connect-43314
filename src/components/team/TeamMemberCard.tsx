@@ -60,29 +60,33 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
             </div>
 
             <div className="w-full pt-3 border-t border-amber-100">
-              <motion.div
-                initial={false}
-                animate={{ height: isExpanded ? 'auto' : '60px' }}
-                className="overflow-hidden"
-              >
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {bio}
-                </p>
-              </motion.div>
+              {isExpanded && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mb-3"
+                >
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {bio}
+                  </p>
+                </motion.div>
+              )}
               
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="mt-2 w-full text-primary hover:text-primary hover:bg-amber-50"
+                className="w-full text-primary hover:text-primary hover:bg-amber-50"
               >
                 {isExpanded ? (
                   <>
-                    Show Less <ChevronUp className="ml-1 h-4 w-4" />
+                    Close Bio <ChevronUp className="ml-1 h-4 w-4" />
                   </>
                 ) : (
                   <>
-                    Read More <ChevronDown className="ml-1 h-4 w-4" />
+                    Read Bio <ChevronDown className="ml-1 h-4 w-4" />
                   </>
                 )}
               </Button>
