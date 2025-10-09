@@ -7,63 +7,55 @@ import { Users } from 'lucide-react';
 
 const fullTeamMembers = [
   {
-    name: "Dr. Michael Thevar",
-    role: "Founder & Clinical Director",
+    name: "Michael Thevar",
+    role: "President",
     specialties: ["Anxiety", "Depression", "ADHD"],
-    bio: "Dr. Thevar founded Sunrise Human Care Services with a vision to provide accessible, compassionate mental health care to the Havertown community. With over 30 years of experience in clinical psychology, he specializes in evidence-based treatments for anxiety, depression, and ADHD. His patient-centered approach focuses on empowering individuals to achieve lasting mental wellness.",
+    bio: "Mr Michael Thevar built his successful career in the mental health industry over twenty years ago as a drug and alcohol counsellor. He has a long-standing history with the healthcare sector due to his previous experience of serving as a clinical service manager, along with establishing a successful healthcare staffing agency and co-founding Omni Staffing. Most recently, he established Omni Cares, a 501c3 charitable organisation. Mr Michael Thevar, aspires to change the landscape and language used to describe mental health universally.",
     image: ""
   },
   {
-    name: "Dr. Sarah Johnson",
-    role: "Licensed Psychologist",
+    name: "Pamela Martin",
+    role: "CEO",
     specialties: ["Trauma", "PTSD", "Family Therapy"],
-    bio: "Dr. Johnson brings extensive expertise in trauma-informed care and family systems therapy. She has dedicated her career to helping individuals and families heal from traumatic experiences and build stronger, healthier relationships. Her warm, empathetic approach creates a safe space for clients to process difficult emotions and develop effective coping strategies.",
+    bio: "Pam Martin is the CEO of Sunrise Human Care. She received her Masters in Business Administration from Shippensburg University and is a graduate of Bloomsburg University with a BA in political science. Her professional career has focused on public services for children. Pam has extensive knowledge of behavioral health services in the tri county area with a specialization in Behavioral Health Rehabilitative Services (BHRS) for children.",
     image: ""
   },
   {
-    name: "Dr. James Chen",
-    role: "Psychiatrist",
+    name: "Holli O’Donnell",
+    role: "Clinical Director",
     specialties: ["Medication Management", "Bipolar", "OCD"],
-    bio: "Dr. Chen is a board-certified psychiatrist with specialized training in psychopharmacology and complex mood disorders. He takes a holistic approach to medication management, carefully considering each patient's unique needs and circumstances. Dr. Chen works collaboratively with clients to find the most effective treatment plans that improve quality of life.",
+    bio: "Holli O’Donnell is the Clinical Director for Sunrise Human Care. She is a Licensed Clinical Social Worker with over 25 years of experience in the behavioral health field, receiving her MSW from New York University. Her most recent position, as a Clinical Director, Holli provided administrative duties and clinical supervision to clinicians and interns working in various levels of care. Throughout her career she has worked with children and adolescents in multiple settings including BHRS, outpatient, residential treatment and acute hospital programs. Holli is trained in TFCBT and focuses on providing and supervising around trauma informed care.",
     image: ""
   },
   {
-    name: "Dr. Emily Rodriguez",
-    role: "Licensed Clinical Psychologist",
-    specialties: ["Child Therapy", "Adolescent Care", "Behavioral Issues"],
-    bio: "Dr. Rodriguez specializes in child and adolescent psychology, helping young people navigate developmental challenges and behavioral concerns. With a playful yet professional approach, she creates a comfortable environment where children and teens feel heard and understood. Her work with families focuses on building communication skills and fostering positive relationships.",
-    image: ""
-  },
-  {
-    name: "Dr. David Kumar",
+    name: "Dr. Farah Khan",
     role: "Psychiatrist",
+    specialties: ["Child Therapy", "Adolescent Care", "Behavioral Issues"],
+    bio: "Specialized in children with ASD ( Autism spectrum disorder) ADHD and other behavioral problems. Learning how to treat children with behavioral problems has equipped me with a unique perspective and an invaluable tool with which I can provide the best care for my patients. A good psychiatrist not only needs to be competent and knowledgeable in the discipline, but also empathetic and sensitive towards patients. My training from New York Medical College and Robert Wood Johnson University hospital has enhanced my the ability and given me the experience to deal with diverse patient population ranging from children to adolescents and adults.",
+    image: ""
+  },
+  {
+    name: "Anthony Obi",
+    role: "Outpatient Therapist",
     specialties: ["Schizophrenia", "Mood Disorders", "Geriatric Care"],
-    bio: "Dr. Kumar brings specialized expertise in treating complex psychiatric conditions and geriatric mental health. His compassionate approach to care emphasizes dignity, respect, and quality of life for all patients. With years of experience in both inpatient and outpatient settings, he provides comprehensive psychiatric evaluations and medication management.",
+    bio: "Anthony Obi works as an Outpatient Therapist at Sunrise Human Care Services, providing compassionate, client-centered counseling to individuals, families, and groups. His responsibilities include assessing mental health needs, creating personalized treatment plans, and guiding clients through therapies that promote resilience and emotional well-being. By partnering with healthcare providers and community resources, Anthony ensures each client receives comprehensive support. Through his dedication, Anthony helps clients achieve personal growth and stability while contributing to Sunrise Human Care Services’ mission of strengthening lives and uplifting the community.",
     image: ""
   },
   {
-    name: "Dr. Lisa Martinez",
-    role: "Marriage & Family Therapist",
+    name: "Shanada Anderson",
+    role: "Outpatient Therapist",
     specialties: ["Couples Counseling", "Relationship Issues", "Communication"],
-    bio: "Dr. Martinez is a licensed marriage and family therapist who helps couples and families strengthen their relationships and improve communication. She uses evidence-based approaches including Emotionally Focused Therapy and the Gottman Method to help partners reconnect and build lasting intimacy. Her practice focuses on creating healthy, fulfilling relationships.",
+    bio: "Shanada Anderson, MS, is a therapist dedicated to creating safe, affirming spaces where clients feel seen and supported. She provides culturally competent, client-centered care that empowers individuals to build resilience and navigate life’s challenges with confidence. Shanada is committed to not only supporting her clients, but also transforming the culture of care with authenticity, strength, and heart. Shanada holds a Master's in Science in Professional Counseling ",
     image: ""
   },
   {
-    name: "Dr. Robert Thompson",
-    role: "Licensed Professional Counselor",
+    name: "Ekalavya Amrute",
+    role: "Office Manager",
     specialties: ["Substance Abuse", "Grief Counseling", "Life Transitions"],
-    bio: "Dr. Thompson specializes in addiction recovery, grief counseling, and helping individuals navigate major life transitions. His compassionate, non-judgmental approach provides a supportive environment for clients to work through difficult challenges. He integrates cognitive-behavioral techniques with mindfulness-based practices to promote healing and personal growth.",
+    bio: "Ekalavya Amrute serves as the Office Manager at Sunrise Human Care Services, where he ensures the smooth functioning of daily operations and supports the team in delivering quality care. His responsibilities include managing administrative processes, coordinating schedules, maintaining records, and overseeing compliance to keep organizational workflows efficient. Through his strong organizational skills and dedication, Ekalavya creates a supportive environment for staff and contributes directly to the productivity of the team and the overall mission of Sunrise Human Care Services.",
     image: ""
   },
-  {
-    name: "Dr. Amanda Foster",
-    role: "Clinical Psychologist",
-    specialties: ["Eating Disorders", "Body Image", "Women's Health"],
-    bio: "Dr. Foster is dedicated to helping individuals overcome eating disorders and develop healthy relationships with food and their bodies. She specializes in women's mental health issues including perinatal mood disorders, body image concerns, and life transitions. Her integrative approach combines evidence-based therapies with mindfulness and self-compassion practices.",
-    image: ""
-  }
-];
-
+ 
 const FullTeamSection = () => {
   return (
     <section id="team" className="py-16 md:py-24 bg-inherit">
