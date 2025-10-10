@@ -42,6 +42,13 @@ const fullTeamMembers = [
     image: "/images/Toni Obi's Profile Picture.jpeg"
   },
   {
+    name: "Michael Flynn",
+    role: "Outpatient Therapist",
+    specialties: ["Social Work", "Evidence-Based Care", "Emotional Well-being"],
+    bio: "Michael Flynn works as an Outpatient Therapist at Sunrise Human Care Services. He is a licensed social worker with a passion for supporting individuals throughout life's challenges with empathy, insight, and evidence-based care. His therapeutic approach is grounded in creating a safe, nonjudgmental space where clients feel heard and empowered to make meaningful change. He draws from a range of modalities tailored to each person's unique needs, with a focus on fostering resilience, self-awareness, and emotional well-being.",
+    image: "/images/michael-flynn.jpg"
+  },
+  {
     name: "Shanada Anderson",
     role: "Outpatient Therapist",
     specialties: ["Couples Counseling", "Relationship Issues", "Communication"],
@@ -54,13 +61,6 @@ const fullTeamMembers = [
     specialties: ["Substance Abuse", "Grief Counseling", "Life Transitions"],
     bio: "Ekalavya Amrute serves as the Office Manager at Sunrise Human Care Services, where he ensures the smooth functioning of daily operations and supports the team in delivering quality care. His responsibilities include managing administrative processes, coordinating schedules, maintaining records, and overseeing compliance to keep organizational workflows efficient. Through his strong organizational skills and dedication, Ekalavya creates a supportive environment for staff and contributes directly to the productivity of the team and the overall mission of Sunrise Human Care Services.",
     image: "/images/ekalavya-amrute.jpeg"
-  },
-  {
-    name: "Michael Flynn",
-    role: "Outpatient Therapist",
-    specialties: ["Social Work", "Evidence-Based Care", "Emotional Well-being"],
-    bio: "Michael Flynn works as an Outpatient Therapist at Sunrise Human Care Services. He is a licensed social worker with a passion for supporting individuals throughout life's challenges with empathy, insight, and evidence-based care. His therapeutic approach is grounded in creating a safe, nonjudgmental space where clients feel heard and empowered to make meaningful change. He draws from a range of modalities tailored to each person's unique needs, with a focus on fostering resilience, self-awareness, and emotional well-being.",
-    image: "/images/michael-flynn.jpg"
   }
 ];
 

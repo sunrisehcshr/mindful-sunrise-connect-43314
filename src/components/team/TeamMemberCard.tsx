@@ -47,7 +47,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               <AvatarImage 
                 src={image} 
                 alt={name} 
-                className={`object-cover ${name === 'Shanada Anderson' ? 'scale-125 translate-y-2' : name === 'Anthony Obi' ? 'scale-125' : ''}`}
+                className={`object-cover ${name === 'Shanada Anderson' ? 'scale-125 translate-y-2' : name === 'Anthony Obi' ? 'scale-125' : name === 'Michael Flynn' ? 'scale-110' : ''}`}
               />
               <AvatarFallback className="bg-gradient-to-br from-orange-400 to-amber-500 text-white text-xl font-semibold">
                 {getInitials(name)}
