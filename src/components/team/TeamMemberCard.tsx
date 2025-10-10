@@ -44,7 +44,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
         <CardContent className="p-6">
           <div className="flex flex-col items-center text-center space-y-4">
             <Avatar className="h-24 w-24 border-4 border-amber-100">
-              <AvatarImage src={image} alt={name} />
+              <AvatarImage src={image} alt={name} className="object-cover" />
               <AvatarFallback className="bg-gradient-to-br from-orange-400 to-amber-500 text-white text-xl font-semibold">
                 {getInitials(name)}
               </AvatarFallback>
