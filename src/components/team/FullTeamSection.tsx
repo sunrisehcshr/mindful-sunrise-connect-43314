@@ -35,6 +35,13 @@ const fullTeamMembers = [
     image: "/images/dr-farah-khan.jpeg"
   },
   {
+    name: "Chevonne Worthy",
+    role: "Outpatient Therapist",
+    specialties: ["Individual Therapy", "Couples Counseling", "Family Therapy"],
+    bio: "Chevonne is a compassionate and curious therapist providing Outpatient Therapeutic services at Sunrise Human Care Services. She provides client centered counseling to individuals, couples and families. Chevonne specializes in providing space and calm for individuals to learn, grow, grieve, laugh, cry and process the big and small moments in life. Chevonne holds a Master's Degree in Clinical and Counseling Psychology with a Concentration in Marriage and Family Therapy. She uses her 10+ years of experience and creativity to provide a wide range of modalities catered to the needs of the persons or families needing support.",
+    image: "/images/chevonne-worthy.jpg"
+  },
+  {
     name: "Anthony Obi",
     role: "Outpatient Therapist",
     specialties: ["Schizophrenia", "Mood Disorders", "Geriatric Care"],
