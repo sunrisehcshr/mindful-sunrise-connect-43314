@@ -8,6 +8,8 @@ import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Separator } from '@/components/ui/separator';
+import { useFormProtection } from '@/hooks/useFormProtection';
+import { contactFormSchema } from '@/lib/formValidation';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +21,10 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
+    requireRecaptcha: false,
+    checkContent: true 
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -29,8 +35,27 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate with spam protection
+    const validation = validateSubmission(formData.message);
+    if (!validation.valid) {
+      return;
+    }
+
+    // Validate with Zod schema
+    const result = contactFormSchema.safeParse({ 
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      honeypot 
+    });
+    if (!result.success) {
+      toast.error(result.error.errors[0]?.message || "Please check your information");
+      return;
+    }
+
     setIsSubmitting(true);
-    
+
     try {
       const formspreeData = {
         ...formData,
@@ -204,6 +229,23 @@ const Contact = () => {
                     
                     <div className="bg-gradient-to-br from-amber-50 to-white p-6 rounded-xl border border-amber-200 shadow-sm hover:shadow-md transition-shadow duration-300">
                       <form className="space-y-4" onSubmit={handleSubmit}>
+                        {/* Honeypot field - hidden from users */}
+                        <input
+                          type="text"
+                          name="website"
+                          value={honeypot}
+                          onChange={(e) => setHoneypot(e.target.value)}
+                          tabIndex={-1}
+                          autoComplete="off"
+                          style={{
+                            position: 'absolute',
+                            left: '-9999px',
+                            width: '1px',
+                            height: '1px',
+                            opacity: 0
+                          }}
+                          aria-hidden="true"
+                        />
                         <div>
                           <label htmlFor="name" className="block text-amber-800 text-sm mb-1">Your Name*</label>
                           <input 

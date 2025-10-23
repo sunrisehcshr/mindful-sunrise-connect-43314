@@ -12,6 +12,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
+import { useFormProtection } from '@/hooks/useFormProtection';
+import { appointmentFormSchema } from '@/lib/formValidation';
 
 // Available time slots
 const timeSlots = [
@@ -50,6 +52,10 @@ const AppointmentForm = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
+    requireRecaptcha: false,
+    checkContent: true 
+  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -59,9 +65,34 @@ const AppointmentForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validate with spam protection
+    const validation = validateSubmission(formData.message);
+    if (!validation.valid) {
+      return;
+    }
+
     // Form validation
     if (!selectedDate || !selectedTime || !selectedService || !formData.name || !formData.email || !formData.phone) {
       toast.error("Please fill in all required fields");
+      return;
+    }
+
+    // Validate with Zod schema
+    const dateStr = format(selectedDate, 'yyyy-MM-dd');
+    const result = appointmentFormSchema.safeParse({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      date: dateStr,
+      time: selectedTime,
+      service: selectedService,
+      sessionType: appointmentType,
+      preferredContact: 'email',
+      message: formData.message,
+      honeypot
+    });
+    if (!result.success) {
+      toast.error(result.error.errors[0]?.message || "Please check your information");
       return;
     }
     
@@ -127,6 +158,23 @@ const AppointmentForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot field - hidden from users */}
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        style={{
+          position: 'absolute',
+          left: '-9999px',
+          width: '1px',
+          height: '1px',
+          opacity: 0
+        }}
+        aria-hidden="true"
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <Label htmlFor="name">Full Name <span className="text-red-500">*</span></Label>

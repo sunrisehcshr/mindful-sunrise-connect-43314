@@ -1,13 +1,33 @@
 
 import React, { useState } from 'react';
 import { toast } from 'sonner';
+import { useFormProtection } from '@/hooks/useFormProtection';
+import { newsletterFormSchema } from '@/lib/formValidation';
 
 const NewsletterForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
+    requireRecaptcha: false,
+    checkContent: false 
+  });
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate with spam protection
+    const validation = validateSubmission();
+    if (!validation.valid) {
+      return;
+    }
+
+    // Validate with Zod schema
+    const result = newsletterFormSchema.safeParse({ email, honeypot });
+    if (!result.success) {
+      toast.error(result.error.errors[0]?.message || "Please enter a valid email address");
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
@@ -47,6 +67,23 @@ const NewsletterForm: React.FC = () => {
         Subscribe to our newsletter for helpful mental health tips and updates.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+        {/* Honeypot field - hidden from users */}
+        <input
+          type="text"
+          name="website"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          style={{
+            position: 'absolute',
+            left: '-9999px',
+            width: '1px',
+            height: '1px',
+            opacity: 0
+          }}
+          aria-hidden="true"
+        />
         <input 
           type="email" 
           placeholder="Your email address" 

@@ -11,6 +11,8 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
+import { useFormProtection } from '@/hooks/useFormProtection';
+import { appointmentFormSchema } from '@/lib/formValidation';
 
 const QuickAppointmentForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +27,10 @@ const QuickAppointmentForm: React.FC = () => {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
+    requireRecaptcha: false,
+    checkContent: true 
+  });
 
   const services = [
     "Individual Therapy",
@@ -76,6 +82,13 @@ const QuickAppointmentForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate with spam protection
+    const validation = validateSubmission(formData.message);
+    if (!validation.valid) {
+      return;
+    }
+
     if (!formData.date) {
       toast.error('Please select a preferred date');
       return;
@@ -83,6 +96,18 @@ const QuickAppointmentForm: React.FC = () => {
     
     if (!formData.time) {
       toast.error('Please select a preferred time');
+      return;
+    }
+
+    // Validate with Zod schema
+    const dateStr = formData.date ? format(formData.date, 'yyyy-MM-dd') : '';
+    const result = appointmentFormSchema.safeParse({ 
+      ...formData, 
+      date: dateStr,
+      honeypot 
+    });
+    if (!result.success) {
+      toast.error(result.error.errors[0]?.message || "Please check your information");
       return;
     }
     
@@ -136,6 +161,23 @@ const QuickAppointmentForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3 text-sm max-h-[80vh] overflow-y-auto px-1">
+      {/* Honeypot field - hidden from users */}
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        style={{
+          position: 'absolute',
+          left: '-9999px',
+          width: '1px',
+          height: '1px',
+          opacity: 0
+        }}
+        aria-hidden="true"
+      />
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-1">
           Full Name*

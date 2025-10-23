@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { Phone, Mail, Hospital, Video } from 'lucide-react';
+import { useFormProtection } from '@/hooks/useFormProtection';
+import { appointmentFormSchema } from '@/lib/formValidation';
 
 const AppointmentForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +17,10 @@ const AppointmentForm: React.FC = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
+    requireRecaptcha: false,
+    checkContent: true 
+  });
 
   // Updated comprehensive list of all services
   const services = ["Individual Therapy", "Couples Counseling", "Family Therapy", "Child & Adolescent Therapy", "Group Therapy", "Anxiety Therapy", "Depression Therapy", "Trauma & PTSD Therapy", "ADHD Treatment", "Psychiatric Evaluation", "Medication Management", "Substance Use Counseling", "Grief Counseling", "Life Transitions Counseling", "Therapy for Older Adults", "Behavioral Health Services", "Stress Management", "Mental Health Assessment", "Crisis Intervention", "Cognitive Behavioral Therapy (CBT)", "Dialectical Behavior Therapy (DBT)", "Mindfulness-Based Therapy", "Other"];
@@ -31,6 +37,20 @@ const AppointmentForm: React.FC = () => {
   // Form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate with spam protection
+    const validation = validateSubmission(formData.message);
+    if (!validation.valid) {
+      return;
+    }
+
+    // Validate with Zod schema
+    const result = appointmentFormSchema.safeParse({ ...formData, honeypot });
+    if (!result.success) {
+      toast.error(result.error.errors[0]?.message || "Please check your information");
+      return;
+    }
+    
     setIsSubmitting(true);
     try {
       // Using the updated Formspree endpoint
@@ -70,6 +90,23 @@ const AppointmentForm: React.FC = () => {
     }
   };
   return <form onSubmit={handleSubmit} className="space-y-4 p-4 sm:p-6 rounded-lg shadow-sm border border-sunrise-100/50 warm-glow bg-white">
+      {/* Honeypot field - hidden from users */}
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        style={{
+          position: 'absolute',
+          left: '-9999px',
+          width: '1px',
+          height: '1px',
+          opacity: 0
+        }}
+        aria-hidden="true"
+      />
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Full Name</label>
         <input id="name" name="name" type="text" value={formData.name} onChange={handleChange} className="w-full px-3 py-2 text-sm rounded-md border border-sunrise-200/70 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent" required />
