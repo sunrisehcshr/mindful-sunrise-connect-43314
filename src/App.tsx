@@ -18,6 +18,11 @@ import TermsOfService from "./pages/TermsOfService";
 import MentalHealthHavertown from "./pages/MentalHealthHavertown"; 
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import FindingTherapistHavertown from "./pages/blog/FindingTherapistHavertown";
+import AnxietyTreatmentDelawareCounty from "./pages/blog/AnxietyTreatmentDelawareCounty";
+import DepressionTherapyHavertown from "./pages/blog/DepressionTherapyHavertown";
+import FamilyTherapyHavertown from "./pages/blog/FamilyTherapyHavertown";
+import ADHDTreatmentHavertown from "./pages/blog/ADHDTreatmentHavertown";
 
 // Import service pages
 import IndividualTherapy from "./pages/services/IndividualTherapy";
