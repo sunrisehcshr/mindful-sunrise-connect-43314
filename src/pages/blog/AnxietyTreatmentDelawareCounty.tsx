@@ -86,7 +86,7 @@ const AnxietyTreatmentDelawareCounty = () => {
             </header>
 
             <img 
-              src="/images/Therapy-in-havertown.webp" 
+              src="/images/anxiety-treatment-delaware-county.webp" 
               alt="Anxiety therapy session in Havertown, PA mental health clinic"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />

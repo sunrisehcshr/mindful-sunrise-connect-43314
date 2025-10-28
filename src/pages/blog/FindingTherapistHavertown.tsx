@@ -97,7 +97,7 @@ const FindingTherapistHavertown = () => {
 
             {/* Featured Image */}
             <img 
-              src="/images/Therapy-in-havertown.webp" 
+              src="/images/finding-therapist-havertown.webp" 
               alt="Professional therapy office in Havertown, PA showing comfortable counseling environment"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />

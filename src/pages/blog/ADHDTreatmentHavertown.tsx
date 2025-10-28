@@ -78,7 +78,7 @@ const ADHDTreatmentHavertown = () => {
             </header>
 
             <img 
-              src="/images/Therapy-in-havertown.webp" 
+              src="/images/adhd-treatment-havertown.webp" 
               alt="ADHD treatment and evaluation services at Sunrise Human Care in Havertown, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />

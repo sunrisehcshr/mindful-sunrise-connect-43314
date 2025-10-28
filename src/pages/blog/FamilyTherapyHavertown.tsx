@@ -78,7 +78,7 @@ const FamilyTherapyHavertown = () => {
             </header>
 
             <img 
-              src="/images/family-counseling-havertown.webp" 
+              src="/images/family-therapy-havertown-guide.webp" 
               alt="Family therapy session at Sunrise Human Care Services in Havertown, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />

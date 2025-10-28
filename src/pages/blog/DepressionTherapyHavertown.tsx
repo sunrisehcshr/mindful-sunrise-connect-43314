@@ -78,7 +78,7 @@ const DepressionTherapyHavertown = () => {
             </header>
 
             <img 
-              src="/images/Therapy-in-havertown.webp" 
+              src="/images/depression-therapy-havertown.webp" 
               alt="Compassionate depression therapy session at Sunrise Human Care in Havertown, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />

@@ -16,31 +16,31 @@ const Blog = () => {
     excerpt: "Discover how to find the perfect therapist in Havertown, PA. Learn about therapy types, insurance options, and what to look for in a mental health professional in Delaware County.",
     date: "October 28, 2025",
     readTime: "12 min read",
-    image: "/images/Therapy-in-havertown.webp",
-    altText: "Therapy session in Havertown, PA"
+    image: "/images/finding-therapist-havertown.webp",
+    altText: "Professional therapy consultation in Havertown, PA"
   }, {
     id: "anxiety-treatment-delaware-county-pa",
     title: "Anxiety Treatment Options in Delaware County, PA: What You Need to Know",
     excerpt: "Comprehensive guide to anxiety treatment in Delaware County. Learn about therapy approaches, medication options, and local resources available in Havertown and surrounding areas.",
     date: "October 27, 2025",
     readTime: "10 min read",
-    image: "/images/Therapy-in-havertown.webp",
-    altText: "Anxiety treatment in Delaware County, PA"
+    image: "/images/anxiety-treatment-delaware-county.webp",
+    altText: "Calm anxiety therapy session in Delaware County, PA"
   }, {
     id: "depression-therapy-havertown-pa-complete-guide",
     title: "Depression Therapy in Havertown, PA: Your Complete Guide to Recovery",
     excerpt: "Understanding depression treatment options in Havertown, PA. From evidence-based therapies to medication management, find the right path to recovery.",
     date: "October 26, 2025",
     readTime: "11 min read",
-    image: "/images/Therapy-in-havertown.webp",
-    altText: "Depression therapy in Havertown, PA"
+    image: "/images/depression-therapy-havertown.webp",
+    altText: "Hopeful depression recovery therapy in Havertown, PA"
   }, {
     id: "family-therapy-havertown-pa-guide",
     title: "Family Therapy in Havertown, PA: Strengthening Your Family Bonds",
     excerpt: "Learn how family therapy in Havertown can help resolve conflicts, improve communication, and strengthen relationships. Expert guidance for Delaware County families.",
     date: "October 25, 2025",
     readTime: "9 min read",
-    image: "/images/family-counseling-havertown.webp",
+    image: "/images/family-therapy-havertown-guide.webp",
     altText: "Family therapy session in Havertown, PA"
   }, {
     id: "adhd-treatment-havertown-pa-comprehensive-guide",
@@ -48,8 +48,8 @@ const Blog = () => {
     excerpt: "Complete guide to ADHD treatment in Havertown, PA. Explore therapy options, medication management, and local resources for children and adults with ADHD.",
     date: "October 24, 2025",
     readTime: "13 min read",
-    image: "/images/Therapy-in-havertown.webp",
-    altText: "ADHD treatment in Havertown, PA"
+    image: "/images/adhd-treatment-havertown.webp",
+    altText: "Child focused in ADHD therapy in Havertown, PA"
   }];
 
   return (
