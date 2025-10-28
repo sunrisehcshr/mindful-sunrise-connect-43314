@@ -73,6 +73,11 @@ const App = () => (
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/mental-health-havertown-pa" element={<MentalHealthHavertown />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/finding-therapist-havertown-pa-guide" element={<FindingTherapistHavertown />} />
+            <Route path="/blog/anxiety-treatment-delaware-county-pa" element={<AnxietyTreatmentDelawareCounty />} />
+            <Route path="/blog/depression-therapy-havertown-pa-complete-guide" element={<DepressionTherapyHavertown />} />
+            <Route path="/blog/family-therapy-havertown-pa-guide" element={<FamilyTherapyHavertown />} />
+            <Route path="/blog/adhd-treatment-havertown-pa-comprehensive-guide" element={<ADHDTreatmentHavertown />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             
             {/* Service pages */}
