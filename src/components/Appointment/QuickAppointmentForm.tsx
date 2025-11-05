@@ -1,403 +1,176 @@
-
 import React, { useState } from 'react';
-import { toast } from 'sonner';
-import { CalendarIcon, Phone, Mail, Hospital, Video, Clock } from 'lucide-react';
-import { format } from 'date-fns';
-import { Button } from '@/components/ui/button';
-import { Calendar } from '@/components/ui/calendar';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
-import { cn } from '@/lib/utils';
-import { useFormProtection } from '@/hooks/useFormProtection';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
 import { appointmentFormSchema } from '@/lib/formValidation';
+import { useFormProtection } from '@/hooks/useFormProtection';
 
-const QuickAppointmentForm: React.FC = () => {
+const QuickAppointmentForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
     email: '',
     phone: '',
-    date: undefined as Date | undefined,
-    time: '',
-    service: '',
-    sessionType: '',
-    preferredContact: '',
-    message: '',
+    preferredDateTime: '',
+    serviceInterest: '' as 'Counselling' | 'Psychiatric Consultation' | 'General Inquiry' | '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
-    requireRecaptcha: false,
-    checkContent: true 
-  });
-
-  const services = [
-    "Individual Therapy",
-    "Couples Counseling",
-    "Family Therapy",
-    "Child & Adolescent Therapy",
-    "Group Therapy",
-    "Anxiety Therapy",
-    "Depression Therapy",
-    "Trauma & PTSD Therapy",
-    "ADHD Treatment",
-    "Psychiatric Evaluation",
-    "Medication Management",
-    "Substance Use Counseling",
-    "Grief Counseling",
-    "Life Transitions Counseling",
-    "Other"
-  ];
   
-  const timeSlots = [
-    '9:00 AM', 
-    '10:00 AM', 
-    '11:00 AM', 
-    '12:00 PM', 
-    '1:00 PM', 
-    '2:00 PM', 
-    '3:00 PM', 
-    '4:00 PM', 
-    '5:00 PM'
-  ];
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { honeypot, setHoneypot, validateSubmission } = useFormProtection();
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const handleDateChange = (date: Date | undefined) => {
-    setFormData({
-      ...formData,
-      date,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Validate with spam protection
-    const validation = validateSubmission(formData.message);
-    if (!validation.valid) {
-      return;
-    }
-
-    if (!formData.date) {
-      toast.error('Please select a preferred date');
-      return;
-    }
-    
-    if (!formData.time) {
-      toast.error('Please select a preferred time');
-      return;
-    }
-
-    // Validate with Zod schema
-    const dateStr = formData.date ? format(formData.date, 'yyyy-MM-dd') : '';
-    const result = appointmentFormSchema.safeParse({ 
-      ...formData, 
-      date: dateStr,
-      honeypot 
-    });
-    if (!result.success) {
-      toast.error(result.error.errors[0]?.message || "Please check your information");
-      return;
-    }
-    
     setIsSubmitting(true);
 
     try {
-      const formattedData = {
+      // Spam protection
+      const validation = validateSubmission();
+      if (!validation.valid) {
+        toast.error(validation.error || 'Submission blocked');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Validate form data
+      const validatedData = appointmentFormSchema.parse({
         ...formData,
-        date: formData.date ? format(formData.date, 'PPP') : '',
-        _subject: "Quick Appointment Request",
-        _cc: "info@sunrisehumancare.com"
-      };
-      
+        honeypot
+      });
+
       const response = await fetch('https://formspree.io/f/xzzeaeql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formattedData),
+        body: JSON.stringify(validatedData),
       });
-      
+
       if (response.ok) {
-        toast.success('Thank you! Your appointment request has been submitted. We will contact you shortly to confirm.');
+        toast.success('Request submitted successfully! We\'ll contact you soon.');
         setFormData({
-          name: '',
+          firstName: '',
           email: '',
           phone: '',
-          date: undefined,
-          time: '',
-          service: '',
-          sessionType: '',
-          preferredContact: '',
-          message: '',
+          preferredDateTime: '',
+          serviceInterest: '',
         });
-        
-        const closeButton = document.querySelector('[data-state="open"] button[data-state="closed"]');
-        if (closeButton && closeButton instanceof HTMLElement) {
-          closeButton.click();
-        }
       } else {
-        console.error("Form submission failed:", await response.text());
-        throw new Error('Form submission failed');
+        toast.error('Failed to submit request. Please try again.');
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      toast.error('Something went wrong. Please try again.');
+      console.error('Form submission error:', error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error('Please check your information and try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3 text-sm max-h-[80vh] overflow-y-auto px-1">
-      {/* Honeypot field - hidden from users */}
+    <form onSubmit={handleSubmit} className="space-y-4">
       <input
         type="text"
-        name="website"
+        name="honeypot"
         value={honeypot}
         onChange={(e) => setHoneypot(e.target.value)}
+        style={{ display: 'none' }}
         tabIndex={-1}
         autoComplete="off"
-        style={{
-          position: 'absolute',
-          left: '-9999px',
-          width: '1px',
-          height: '1px',
-          opacity: 0
-        }}
-        aria-hidden="true"
       />
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-1">
-          Full Name*
-        </label>
-        <input
-          id="name"
-          name="name"
+      
+      <div className="space-y-2">
+        <Label htmlFor="firstName" className="text-sm">First Name *</Label>
+        <Input
+          id="firstName"
+          name="firstName"
           type="text"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
           required
+          value={formData.firstName}
+          onChange={handleChange}
+          placeholder="Enter your first name"
+          className="h-9"
         />
       </div>
 
-      <div className="space-y-3">
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-1">
-            Email*
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium mb-1">
-            Phone Number*
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
-            required
-          />
-        </div>
-      </div>
-
-      <div className="space-y-3">
-        <div>
-          <label htmlFor="date" className="block text-sm font-medium mb-1">
-            Preferred Date*
-          </label>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                variant={"outline"}
-                className={cn(
-                  "w-full justify-start text-left text-xs font-normal border-sunrise-200/70 px-3 py-1.5 h-auto",
-                  !formData.date && "text-muted-foreground"
-                )}
-              >
-                <CalendarIcon className="mr-2 h-3 w-3" />
-                {formData.date ? format(formData.date, "PPP") : <span>Select a date</span>}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
-              <Calendar
-                mode="single"
-                selected={formData.date}
-                onSelect={handleDateChange}
-                initialFocus
-                disabled={(date) => date < new Date()}
-                className={cn("p-2 pointer-events-auto")}
-              />
-            </PopoverContent>
-          </Popover>
-        </div>
-        
-        <div>
-          <label htmlFor="time" className="block text-sm font-medium mb-1">
-            Preferred Time*
-          </label>
-          <div className="relative">
-            <select
-              id="time"
-              name="time"
-              value={formData.time}
-              onChange={handleChange}
-              className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent appearance-none"
-              required
-            >
-              <option value="" disabled>Select a time...</option>
-              {timeSlots.map((timeSlot, index) => (
-                <option key={index} value={timeSlot}>{timeSlot}</option>
-              ))}
-            </select>
-            <Clock className="absolute right-3 top-1/2 transform -translate-y-1/2 h-3 w-3 text-muted-foreground pointer-events-none" />
-          </div>
-        </div>
-        
-        <div>
-          <label htmlFor="service" className="block text-sm font-medium mb-1">
-            Service Type*
-          </label>
-          <select
-            id="service"
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
-            required
-          >
-            <option value="" disabled>
-              Select a service...
-            </option>
-            {services.map((svc, index) => (
-              <option key={index} value={svc}>
-                {svc}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-1">
-          Session Type*
-        </label>
-        <div className="flex flex-wrap gap-3">
-          <label className="flex items-center space-x-1 cursor-pointer">
-            <input
-              type="radio"
-              name="sessionType"
-              value="in-clinic"
-              onChange={handleChange}
-              checked={formData.sessionType === 'in-clinic'}
-              className="h-3 w-3 text-orange-500 focus:ring-orange-500"
-              required
-            />
-            <span className="flex items-center text-xs">
-              <Hospital className="h-3 w-3 text-orange-500 mr-1" /> In-Clinic
-            </span>
-          </label>
-          <label className="flex items-center space-x-1 cursor-pointer">
-            <input
-              type="radio"
-              name="sessionType"
-              value="online"
-              onChange={handleChange}
-              checked={formData.sessionType === 'online'}
-              className="h-3 w-3 text-orange-500 focus:ring-orange-500"
-            />
-            <span className="flex items-center text-xs">
-              <Video className="h-3 w-3 text-orange-500 mr-1" /> Online
-            </span>
-          </label>
-        </div>
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-1">
-          Preferred Contact Method*
-        </label>
-        <div className="flex flex-wrap gap-3">
-          <label className="flex items-center space-x-1 cursor-pointer">
-            <input
-              type="radio"
-              name="preferredContact"
-              value="phone"
-              onChange={handleChange}
-              checked={formData.preferredContact === 'phone'}
-              className="h-3 w-3 text-orange-500 focus:ring-orange-500"
-              required
-            />
-            <span className="flex items-center text-xs">
-              <Phone className="h-3 w-3 text-orange-500 mr-1" /> Phone
-            </span>
-          </label>
-          <label className="flex items-center space-x-1 cursor-pointer">
-            <input
-              type="radio"
-              name="preferredContact"
-              value="email"
-              onChange={handleChange}
-              checked={formData.preferredContact === 'email'}
-              className="h-3 w-3 text-orange-500 focus:ring-orange-500"
-            />
-            <span className="flex items-center text-xs">
-              <Mail className="h-3 w-3 text-orange-500 mr-1" /> Email
-            </span>
-          </label>
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1">
-          Your Message (Optional)
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={2}
-          value={formData.message}
+      <div className="space-y-2">
+        <Label htmlFor="email" className="text-sm">Email *</Label>
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          required
+          value={formData.email}
           onChange={handleChange}
-          className="w-full px-3 py-1.5 text-sm rounded-md border border-sunrise-200/70 bg-white focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:border-transparent"
-          placeholder="Any specific concerns or questions?"
-        ></textarea>
+          placeholder="your.email@example.com"
+          className="h-9"
+        />
       </div>
 
-      <div className="pt-1">
-        <Button
-          type="submit"
-          className="w-full bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm py-1 h-auto"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? "Submitting..." : "Request Appointment"}
-        </Button>
-        <p className="text-xs text-muted-foreground mt-1 text-center">
-          We'll confirm your appointment within 24 hours.
-        </p>
+      <div className="space-y-2">
+        <Label htmlFor="phone" className="text-sm">Phone Number (Optional)</Label>
+        <Input
+          id="phone"
+          name="phone"
+          type="tel"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="(123) 456-7890"
+          className="h-9"
+        />
       </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="preferredDateTime" className="text-sm">Preferred Date or Time</Label>
+        <Input
+          id="preferredDateTime"
+          name="preferredDateTime"
+          type="text"
+          value={formData.preferredDateTime}
+          onChange={handleChange}
+          placeholder="e.g., Next Tuesday afternoon"
+          className="h-9"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="serviceInterest" className="text-sm">Service Interest *</Label>
+        <select
+          id="serviceInterest"
+          name="serviceInterest"
+          required
+          value={formData.serviceInterest}
+          onChange={handleChange}
+          className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="">Select a service</option>
+          <option value="Counselling">Counselling</option>
+          <option value="Psychiatric Consultation">Psychiatric Consultation</option>
+          <option value="General Inquiry">General Inquiry</option>
+        </select>
+      </div>
+
+      <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded-md">
+        This form is for general scheduling and inquiries only. Please do not include personal health details.
+      </div>
+
+      <Button
+        type="submit"
+        className="w-full"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Submitting...' : 'Submit Request'}
+      </Button>
     </form>
   );
 };

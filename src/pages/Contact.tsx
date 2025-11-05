@@ -9,16 +9,15 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Separator } from '@/components/ui/separator';
 import { useFormProtection } from '@/hooks/useFormProtection';
-import { contactFormSchema } from '@/lib/formValidation';
+import { appointmentFormSchema } from '@/lib/formValidation';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
     email: '',
     phone: '',
-    sessionType: '',
-    preferredContact: '',
-    message: ''
+    preferredDateTime: '',
+    serviceInterest: '' as 'Counselling' | 'Psychiatric Consultation' | 'General Inquiry' | '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
@@ -26,68 +25,60 @@ const Contact = () => {
     checkContent: true 
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Validate with spam protection
-    const validation = validateSubmission(formData.message);
-    if (!validation.valid) {
-      return;
-    }
-
-    // Validate with Zod schema
-    const result = contactFormSchema.safeParse({ 
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-      honeypot 
-    });
-    if (!result.success) {
-      toast.error(result.error.errors[0]?.message || "Please check your information");
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
-      const formspreeData = {
+      // Spam protection
+      const validation = validateSubmission();
+      if (!validation.valid) {
+        toast.error(validation.error || 'Submission blocked');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Validate form data
+      const validatedData = appointmentFormSchema.parse({
         ...formData,
-        _subject: "Contact Form Message",
-        _cc: "info@sunrisehumancare.com"
-      };
-      
-      const response = await fetch("https://formspree.io/f/xzzeaeql", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formspreeData)
+        honeypot
       });
-      
+
+      const response = await fetch('https://formspree.io/f/xzzeaeql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(validatedData),
+      });
+
       if (response.ok) {
-        toast.success("Thank you! Your message has been sent. We'll get back to you shortly.");
+        toast.success('Request submitted successfully! We\'ll contact you soon.');
         setFormData({
-          name: '',
+          firstName: '',
           email: '',
           phone: '',
-          sessionType: '',
-          preferredContact: '',
-          message: ''
+          preferredDateTime: '',
+          serviceInterest: '',
         });
       } else {
-        console.error("Form submission failed:", await response.text());
-        toast.error("Something went wrong. Please try again.");
+        toast.error('Failed to submit request. Please try again.');
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error("Network error. Please check your connection and try again.");
+      console.error('Form submission error:', error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error('Please check your information and try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -247,21 +238,22 @@ const Contact = () => {
                           aria-hidden="true"
                         />
                         <div>
-                          <label htmlFor="name" className="block text-amber-800 text-sm mb-1">Your Name*</label>
+                          <label htmlFor="firstName" className="block text-amber-800 text-sm mb-1">First Name*</label>
                           <input 
                             type="text" 
-                            id="name"
-                            name="name"
-                            value={formData.name}
+                            id="firstName"
+                            name="firstName"
+                            value={formData.firstName}
                             onChange={handleChange}
                             className="w-full p-2.5 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent bg-white/70"
+                            placeholder="Enter your first name"
                             required
                           />
                         </div>
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label htmlFor="email" className="block text-amber-800 text-sm mb-1">Email Address*</label>
+                            <label htmlFor="email" className="block text-amber-800 text-sm mb-1">Email*</label>
                             <input 
                               type="email" 
                               id="email"
@@ -269,12 +261,13 @@ const Contact = () => {
                               value={formData.email}
                               onChange={handleChange}
                               className="w-full p-2.5 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent bg-white/70"
+                              placeholder="your.email@example.com"
                               required
                             />
                           </div>
                           
                           <div>
-                            <label htmlFor="phone" className="block text-amber-800 text-sm mb-1">Phone Number*</label>
+                            <label htmlFor="phone" className="block text-amber-800 text-sm mb-1">Phone Number (Optional)</label>
                             <input 
                               type="tel" 
                               id="phone"
@@ -282,89 +275,43 @@ const Contact = () => {
                               value={formData.phone}
                               onChange={handleChange}
                               className="w-full p-2.5 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent bg-white/70"
-                              required
+                              placeholder="(123) 456-7890"
                             />
                           </div>
                         </div>
                         
                         <div>
-                          <label className="block text-amber-800 text-sm mb-1">Preferred Session Type*</label>
-                          <div className="flex flex-wrap gap-4">
-                            <label className="flex items-center space-x-2 cursor-pointer p-2 border border-amber-200 rounded-md bg-white/70 hover:bg-amber-50 transition-colors">
-                              <input
-                                type="radio"
-                                name="sessionType"
-                                value="in-clinic"
-                                onChange={handleChange}
-                                checked={formData.sessionType === 'in-clinic'}
-                                className="h-4 w-4 text-amber-500 focus:ring-amber-500"
-                                required
-                              />
-                              <span className="flex items-center text-sm text-amber-800">
-                                <Hospital className="h-4 w-4 text-amber-500 mr-1.5" /> In-Clinic
-                              </span>
-                            </label>
-                            <label className="flex items-center space-x-2 cursor-pointer p-2 border border-amber-200 rounded-md bg-white/70 hover:bg-amber-50 transition-colors">
-                              <input
-                                type="radio"
-                                name="sessionType"
-                                value="online"
-                                onChange={handleChange}
-                                checked={formData.sessionType === 'online'}
-                                className="h-4 w-4 text-amber-500 focus:ring-amber-500"
-                              />
-                              <span className="flex items-center text-sm text-amber-800">
-                                <Video className="h-4 w-4 text-amber-500 mr-1.5" /> Online
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <label className="block text-amber-800 text-sm mb-1">Preferred Contact Method*</label>
-                          <div className="flex flex-wrap gap-4">
-                            <label className="flex items-center space-x-2 cursor-pointer p-2 border border-amber-200 rounded-md bg-white/70 hover:bg-amber-50 transition-colors">
-                              <input
-                                type="radio"
-                                name="preferredContact"
-                                value="phone"
-                                onChange={handleChange}
-                                checked={formData.preferredContact === 'phone'}
-                                className="h-4 w-4 text-amber-500 focus:ring-amber-500"
-                                required
-                              />
-                              <span className="flex items-center text-sm text-amber-800">
-                                <Phone className="h-4 w-4 text-amber-500 mr-1.5" /> Phone
-                              </span>
-                            </label>
-                            <label className="flex items-center space-x-2 cursor-pointer p-2 border border-amber-200 rounded-md bg-white/70 hover:bg-amber-50 transition-colors">
-                              <input
-                                type="radio"
-                                name="preferredContact"
-                                value="email"
-                                onChange={handleChange}
-                                checked={formData.preferredContact === 'email'}
-                                className="h-4 w-4 text-amber-500 focus:ring-amber-500"
-                              />
-                              <span className="flex items-center text-sm text-amber-800">
-                                <Mail className="h-4 w-4 text-amber-500 mr-1.5" /> Email
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <label htmlFor="message" className="block text-amber-800 text-sm mb-1">Message*</label>
-                          <textarea 
-                            id="message"
-                            name="message"
-                            value={formData.message}
+                          <label htmlFor="preferredDateTime" className="block text-amber-800 text-sm mb-1">Preferred Date or Time</label>
+                          <input 
+                            type="text" 
+                            id="preferredDateTime"
+                            name="preferredDateTime"
+                            value={formData.preferredDateTime}
                             onChange={handleChange}
-                            rows={4}
                             className="w-full p-2.5 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent bg-white/70"
-                            placeholder="Please share any specific concerns or questions you have."
+                            placeholder="e.g., Next Tuesday afternoon, or any weekday morning"
+                          />
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="serviceInterest" className="block text-amber-800 text-sm mb-1">Service Interest*</label>
+                          <select
+                            id="serviceInterest"
+                            name="serviceInterest"
                             required
-                          ></textarea>
+                            value={formData.serviceInterest}
+                            onChange={handleChange}
+                            className="w-full p-2.5 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent bg-white/70"
+                          >
+                            <option value="">Select a service</option>
+                            <option value="Counselling">Counselling</option>
+                            <option value="Psychiatric Consultation">Psychiatric Consultation</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                          </select>
+                        </div>
+                        
+                        <div className="text-sm text-amber-900 bg-amber-50 p-3 rounded-md border border-amber-200">
+                          This form is for general scheduling and inquiries only. Please do not include personal health details.
                         </div>
                         
                         <Button 
@@ -372,7 +319,7 @@ const Contact = () => {
                           className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium py-2.5 px-4 rounded-md transition-colors"
                           disabled={isSubmitting}
                         >
-                          {isSubmitting ? "Sending..." : "Send Message"}
+                          {isSubmitting ? "Submitting..." : "Submit Request"}
                         </Button>
                       </form>
                     </div>

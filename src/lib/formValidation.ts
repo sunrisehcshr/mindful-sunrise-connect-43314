@@ -50,17 +50,28 @@ export const contactFormSchema = z.object({
   honeypot: z.string().max(0, { message: "Bot detected" }).optional(),
 });
 
-// Appointment form schema
+// Simplified HIPAA-safe appointment form schema
 export const appointmentFormSchema = z.object({
-  name: nameValidation,
+  firstName: z.string()
+    .trim()
+    .min(2, { message: "First name must be at least 2 characters" })
+    .max(100, { message: "First name must be less than 100 characters" })
+    .regex(/^[a-zA-Z\s\-'.]+$/, { message: "First name contains invalid characters" }),
   email: emailValidation,
-  phone: phoneValidation,
-  date: z.string().min(1, { message: "Please select a date" }),
-  time: z.string().min(1, { message: "Please select a time" }),
-  service: z.string().min(1, { message: "Please select a service" }),
-  sessionType: z.enum(['in-person', 'online', 'in-clinic']),
-  preferredContact: z.enum(['phone', 'email']),
-  message: optionalMessageValidation,
+  phone: z.string()
+    .trim()
+    .regex(/^[\d\s\-\(\)\+]*$/, { message: "Invalid phone number format" })
+    .max(20, { message: "Phone number is too long" })
+    .optional()
+    .or(z.literal('')),
+  preferredDateTime: z.string()
+    .trim()
+    .max(200, { message: "Preferred date/time must be less than 200 characters" })
+    .optional()
+    .or(z.literal('')),
+  serviceInterest: z.enum(['Counselling', 'Psychiatric Consultation', 'General Inquiry'], {
+    errorMap: () => ({ message: "Please select a service interest" })
+  }),
   honeypot: z.string().max(0, { message: "Bot detected" }).optional(),
 });
 

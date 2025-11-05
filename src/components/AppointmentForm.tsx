@@ -1,339 +1,172 @@
-
-import { useState } from "react";
-import { Calendar as CalendarIcon, Clock, Info } from "lucide-react";
-import { Calendar } from "@/components/ui/calendar";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
-import { useFormProtection } from '@/hooks/useFormProtection';
 import { appointmentFormSchema } from '@/lib/formValidation';
-
-// Available time slots
-const timeSlots = [
-  "9:00 AM", "10:00 AM", "11:00 AM", 
-  "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"
-];
-
-// Comprehensive list of all services from the service pages
-const services = [
-  "Individual Therapy",
-  "Couples Counseling",
-  "Family Therapy",
-  "Child & Adolescent Therapy",
-  "Group Therapy",
-  "Anxiety Therapy",
-  "Depression Therapy",
-  "Trauma & PTSD Therapy",
-  "ADHD Treatment",
-  "Psychiatric Evaluation",
-  "Medication Management",
-  "Substance Use Counseling",
-  "Grief Counseling", 
-  "Life Transitions Counseling",
-  "Other"
-];
+import { useFormProtection } from '@/hooks/useFormProtection';
 
 const AppointmentForm = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
-  const [selectedTime, setSelectedTime] = useState<string>("");
-  const [selectedService, setSelectedService] = useState<string>("");
-  const [appointmentType, setAppointmentType] = useState<string>("in-person");
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    firstName: '',
+    email: '',
+    phone: '',
+    preferredDateTime: '',
+    serviceInterest: '' as 'Counselling' | 'Psychiatric Consultation' | 'General Inquiry' | '',
   });
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
-    requireRecaptcha: false,
-    checkContent: true 
-  });
+  const { honeypot, setHoneypot, validateSubmission } = useFormProtection();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Validate with spam protection
-    const validation = validateSubmission(formData.message);
-    if (!validation.valid) {
-      return;
-    }
-
-    // Form validation
-    if (!selectedDate || !selectedTime || !selectedService || !formData.name || !formData.email || !formData.phone) {
-      toast.error("Please fill in all required fields");
-      return;
-    }
-
-    // Validate with Zod schema
-    const dateStr = format(selectedDate, 'yyyy-MM-dd');
-    const result = appointmentFormSchema.safeParse({
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      date: dateStr,
-      time: selectedTime,
-      service: selectedService,
-      sessionType: appointmentType,
-      preferredContact: 'email',
-      message: formData.message,
-      honeypot
-    });
-    if (!result.success) {
-      toast.error(result.error.errors[0]?.message || "Please check your information");
-      return;
-    }
-    
     setIsSubmitting(true);
-    
+
     try {
-      // Prepare data for submission
-      const submissionData = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        date: selectedDate ? format(selectedDate, "PPP") : "",
-        time: selectedTime,
-        service: selectedService,
-        appointmentType: appointmentType,
-        message: formData.message,
-        _subject: "New Appointment Request",
-        _cc: "info@sunrisehumancare.com"
-      };
-      
-      // Send to Formspree
-      const response = await fetch("https://formspree.io/f/xzzeaeql", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(submissionData)
+      // Spam protection
+      const validation = validateSubmission();
+      if (!validation.valid) {
+        toast.error(validation.error || 'Submission blocked');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Validate form data
+      const validatedData = appointmentFormSchema.parse({
+        ...formData,
+        honeypot
       });
-      
+
+      const response = await fetch('https://formspree.io/f/xzzeaeql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(validatedData),
+      });
+
       if (response.ok) {
-        toast.success("Thank you! Your appointment request has been submitted. We'll contact you shortly to confirm your appointment.");
-        
-        // Reset form
-        setSelectedDate(undefined);
-        setSelectedTime("");
-        setSelectedService("");
-        setAppointmentType("in-person");
+        toast.success('Request submitted successfully! We\'ll contact you soon.');
         setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
+          firstName: '',
+          email: '',
+          phone: '',
+          preferredDateTime: '',
+          serviceInterest: '',
         });
       } else {
-        console.error("Form submission error:", await response.text());
-        toast.error("Something went wrong. Please try again or contact us directly.");
+        toast.error('Failed to submit request. Please try again.');
       }
     } catch (error) {
-      console.error("Submission error:", error);
-      toast.error("Network error. Please check your connection and try again.");
+      console.error('Form submission error:', error);
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error('Please check your information and try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Calculate the minimum date (tomorrow)
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-
-  // Calculate the maximum date (3 months from now)
-  const maxDate = new Date();
-  maxDate.setMonth(maxDate.getMonth() + 3);
-
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Honeypot field - hidden from users */}
       <input
         type="text"
-        name="website"
+        name="honeypot"
         value={honeypot}
         onChange={(e) => setHoneypot(e.target.value)}
+        style={{ display: 'none' }}
         tabIndex={-1}
         autoComplete="off"
-        style={{
-          position: 'absolute',
-          left: '-9999px',
-          width: '1px',
-          height: '1px',
-          opacity: 0
-        }}
-        aria-hidden="true"
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="name">Full Name <span className="text-red-500">*</span></Label>
-          <Input
-            id="name"
-            name="name"
-            placeholder="Enter your full name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Enter your email address"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="phone">Phone Number <span className="text-red-500">*</span></Label>
-          <Input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="Enter your phone number"
-            value={formData.phone}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="service">Service Needed <span className="text-red-500">*</span></Label>
-          <Select value={selectedService} onValueChange={setSelectedService} required>
-            <SelectTrigger id="service" className="w-full">
-              <SelectValue placeholder="Select a service" />
-            </SelectTrigger>
-            <SelectContent>
-              {services.map((service) => (
-                <SelectItem key={service} value={service}>
-                  {service}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        
-        <div className="space-y-2">
-          <Label>Preferred Date <span className="text-red-500">*</span></Label>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                variant="outline"
-                className={cn(
-                  "w-full justify-start text-left font-normal",
-                  !selectedDate && "text-muted-foreground"
-                )}
-              >
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                {selectedDate ? format(selectedDate, "PPP") : "Select a date"}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
-              <Calendar
-                mode="single"
-                selected={selectedDate}
-                onSelect={setSelectedDate}
-                disabled={(date) => 
-                  date < tomorrow || 
-                  date > maxDate || 
-                  date.getDay() === 0 // Sundays disabled
-                }
-                initialFocus
-              />
-            </PopoverContent>
-          </Popover>
-        </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="time">Preferred Time <span className="text-red-500">*</span></Label>
-          <Select value={selectedTime} onValueChange={setSelectedTime} required>
-            <SelectTrigger id="time" className="w-full">
-              <SelectValue placeholder="Select a time">
-                {selectedTime ? (
-                  <div className="flex items-center">
-                    <Clock className="mr-2 h-4 w-4" />
-                    {selectedTime}
-                  </div>
-                ) : (
-                  "Select a time"
-                )}
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent>
-              {timeSlots.map((time) => (
-                <SelectItem key={time} value={time}>
-                  {time}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
       
       <div className="space-y-2">
-        <Label>Appointment Type <span className="text-red-500">*</span></Label>
-        <RadioGroup
-          value={appointmentType}
-          onValueChange={setAppointmentType}
-          className="flex space-x-4"
-        >
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="in-person" id="in-person" />
-            <Label htmlFor="in-person" className="font-normal">In-Person</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="virtual" id="virtual" />
-            <Label htmlFor="virtual" className="font-normal">Virtual (Telehealth)</Label>
-          </div>
-        </RadioGroup>
-      </div>
-      
-      <div className="space-y-2">
-        <Label htmlFor="message">Additional Information</Label>
-        <Textarea
-          id="message"
-          name="message"
-          placeholder="Tell us about your needs or any specific concerns"
-          value={formData.message}
-          onChange={handleInputChange}
-          className="min-h-[120px]"
+        <Label htmlFor="firstName">First Name *</Label>
+        <Input
+          id="firstName"
+          name="firstName"
+          type="text"
+          required
+          value={formData.firstName}
+          onChange={handleChange}
+          placeholder="Enter your first name"
         />
       </div>
-      
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start space-x-3">
-        <Info className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
-        <div className="text-sm text-blue-700">
-          <p className="font-medium">Insurance Information</p>
-          <p className="mt-1">We accept most major insurance plans. We will contact you to verify your insurance coverage after receiving your appointment request.</p>
-        </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="email">Email *</Label>
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="your.email@example.com"
+        />
       </div>
-      
-      <div className="flex justify-center">
-        <Button
-          type="submit"
-          className="btn-sunrise w-full max-w-md"
-          disabled={isSubmitting}
+
+      <div className="space-y-2">
+        <Label htmlFor="phone">Phone Number (Optional)</Label>
+        <Input
+          id="phone"
+          name="phone"
+          type="tel"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="(123) 456-7890"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="preferredDateTime">Preferred Date or Time</Label>
+        <Input
+          id="preferredDateTime"
+          name="preferredDateTime"
+          type="text"
+          value={formData.preferredDateTime}
+          onChange={handleChange}
+          placeholder="e.g., Next Tuesday afternoon, or any weekday morning"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="serviceInterest">Service Interest *</Label>
+        <select
+          id="serviceInterest"
+          name="serviceInterest"
+          required
+          value={formData.serviceInterest}
+          onChange={handleChange}
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {isSubmitting ? "Submitting..." : "Request Appointment"}
-        </Button>
+          <option value="">Select a service</option>
+          <option value="Counselling">Counselling</option>
+          <option value="Psychiatric Consultation">Psychiatric Consultation</option>
+          <option value="General Inquiry">General Inquiry</option>
+        </select>
       </div>
+
+      <div className="text-sm text-muted-foreground bg-muted/50 p-3 rounded-md">
+        This form is for general scheduling and inquiries only. Please do not include personal health details.
+      </div>
+
+      <Button
+        type="submit"
+        className="w-full"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Submitting...' : 'Submit Request'}
+      </Button>
     </form>
   );
 };
