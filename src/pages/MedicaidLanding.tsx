@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
 import { Helmet } from 'react-helmet-async';
-import { Phone, CheckCircle, Users, Calendar, Clock, Star, ArrowRight, Shield } from 'lucide-react';
+import { Phone, CheckCircle, Users, Calendar, Clock, Star, ArrowRight, Shield, Award } from 'lucide-react';
+import TeamMemberCard from '@/components/team/TeamMemberCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
 import FAQSection from '@/components/FAQSection';
@@ -422,6 +423,79 @@ const MedicaidLanding = () => {
                   trackConversion('scroll_to_form', { method: 'cta_button' });
                 }}>
                   Start Your Journey Today
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Therapist Profiles Section */}
+          <section className="section-padding bg-gradient-to-br from-orange-50/30 to-amber-50/30">
+            <div className="container mx-auto px-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center mb-12"
+              >
+                <span className="section-tag">Expert Care Team</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-4">
+                  Meet our Medicaid providers
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Experienced, licensed professionals dedicated to your mental health journey
+                </p>
+              </motion.div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <TeamMemberCard
+                  name="Dr. Farah Khan"
+                  role="Psychiatrist"
+                  specialties={["Child Therapy", "ADHD", "Behavioral Issues"]}
+                  bio="Specialized in children with ASD (Autism spectrum disorder), ADHD and other behavioral problems. Training from New York Medical College and Robert Wood Johnson University hospital has enhanced my ability to deal with diverse patient populations ranging from children to adolescents and adults."
+                  image="/images/dr-farah-khan.jpeg"
+                  index={0}
+                />
+                <TeamMemberCard
+                  name="Chevonne Worthy"
+                  role="Outpatient Therapist"
+                  specialties={["Individual Therapy", "Couples Counseling", "Family Therapy"]}
+                  bio="Compassionate therapist providing client centered counseling to individuals, couples and families. Specializes in providing space and calm for individuals to learn, grow, grieve, laugh, cry and process the big and small moments in life. 10+ years of experience."
+                  image="/images/chevonne-worthy.jpg"
+                  index={1}
+                />
+                <TeamMemberCard
+                  name="Anthony Obi"
+                  role="Outpatient Therapist"
+                  specialties={["Schizophrenia", "Mood Disorders", "Geriatric Care"]}
+                  bio="Licensed therapist specializing in working with individuals experiencing serious mental health challenges. Dedicated to providing compassionate, evidence-based care to help clients manage symptoms and improve their quality of life."
+                  image="/images/Toni Obi's Profile Picture.jpeg"
+                  index={2}
+                />
+                <TeamMemberCard
+                  name="Holli O'Donnell"
+                  role="Clinical Director"
+                  specialties={["Trauma", "TFCBT", "Clinical Supervision"]}
+                  bio="Licensed Clinical Social Worker with over 25 years of experience. MSW from New York University. Trained in TFCBT and focuses on providing trauma informed care. Experience with children and adolescents in multiple settings including outpatient and residential treatment."
+                  image="/images/holly.jpg"
+                  index={3}
+                />
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-center mt-12"
+              >
+                <p className="text-muted-foreground mb-4">All of our providers accept Medicaid and are here to support you</p>
+                <Button size="lg" variant="outline" onClick={() => {
+                  document.getElementById('appointment-form')?.scrollIntoView({ behavior: 'smooth' });
+                  trackConversion('scroll_to_form', { method: 'meet_team_cta' });
+                }}>
+                  Schedule with a Provider
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </motion.div>
