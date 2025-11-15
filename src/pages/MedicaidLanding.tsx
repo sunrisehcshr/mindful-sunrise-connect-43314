@@ -448,7 +448,7 @@ const MedicaidLanding = () => {
                 </p>
               </motion.div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <TeamMemberCard
                   name="Dr. Farah Khan"
                   role="Psychiatrist"
@@ -474,12 +474,20 @@ const MedicaidLanding = () => {
                   index={2}
                 />
                 <TeamMemberCard
-                  name="Holli O'Donnell"
-                  role="Clinical Director"
-                  specialties={["Trauma", "TFCBT", "Clinical Supervision"]}
-                  bio="Licensed Clinical Social Worker with over 25 years of experience. MSW from New York University. Trained in TFCBT and focuses on providing trauma informed care. Experience with children and adolescents in multiple settings including outpatient and residential treatment."
-                  image="/images/holly.jpg"
+                  name="Michael Flynn"
+                  role="Outpatient Therapist"
+                  specialties={["Social Work", "Evidence-Based Care", "Emotional Well-being"]}
+                  bio="Licensed social worker with a passion for supporting individuals throughout life's challenges with empathy, insight, and evidence-based care. Creates a safe, nonjudgmental space where clients feel heard and empowered to make meaningful change."
+                  image="/images/michael-flynn.jpg"
                   index={3}
+                />
+                <TeamMemberCard
+                  name="Shanada Anderson"
+                  role="Outpatient Therapist"
+                  specialties={["Couples Counseling", "Relationship Issues", "Communication"]}
+                  bio="Therapist dedicated to creating safe, affirming spaces where clients feel seen and supported. Provides culturally competent, client-centered care that empowers individuals to build resilience and navigate life's challenges with confidence."
+                  image="/images/Shanada Anderson.jpeg"
+                  index={4}
                 />
               </div>
 
