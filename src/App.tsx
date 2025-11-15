@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import MentalHealthHavertown from "./pages/MentalHealthHavertown"; 
+import MedicaidLanding from "./pages/MedicaidLanding";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import FindingTherapistHavertown from "./pages/blog/FindingTherapistHavertown";
@@ -62,8 +63,9 @@ const App = () => (
           <Toaster />
           <Sonner />
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/medicaid-therapy" element={<MedicaidLanding />} />
+          <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/conditions" element={<Conditions />} />
             <Route path="/faq" element={<FAQ />} />
