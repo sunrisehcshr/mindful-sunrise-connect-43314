@@ -113,6 +113,15 @@ const WarmHeroSection = () => {
                 </Button>
               </AppointmentDialog>
             </motion.div>
+            
+            <motion.p 
+              className="text-sm text-amber-700/80 mt-4 text-center lg:text-left"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              We accept Medicaid insurance
+            </motion.p>
           </motion.div>
           
           <motion.div className="w-full lg:w-1/2" initial={{
