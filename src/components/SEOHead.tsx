@@ -349,7 +349,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
                 "name": "Does Sunrise Human Care accept insurance?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, we accept most major insurance plans including Aetna, Blue Cross Blue Shield, Cigna, and more. We also offer affordable self-pay options. Please call our office to verify your specific coverage."
+                  "text": "We currently accept Medicaid for our mental health services. Our team specializes in serving the Medicaid community with quality mental health treatment. Please call our office to verify your Medicaid benefits."
                 }
               },
               {

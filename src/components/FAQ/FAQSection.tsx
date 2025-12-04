@@ -6,7 +6,7 @@ const FAQSection: React.FC = () => {
     answer: "We provide comprehensive mental health services, including individual therapy, couple Counseling, group therapy, family counseling, psychiatric evaluations, and medication management. Our team addresses various conditions such as anxiety, depression, PTSD, and substance use disorders."
   }, {
     question: "Which insurance plans are currently accepted at your Havertown clinic?",
-    answer: "At present, we accept Medicare for our services. We understand the importance of accessible care and are actively working to expand our accepted insurance plans in the near future."
+    answer: "We currently accept Medicaid for our mental health services. We understand the importance of accessible care and are committed to serving the Medicaid community with quality mental health treatment."
   }, {
     question: "How do I know if I need to seek help from a mental health professional?",
     answer: "If you're experiencing persistent feelings of sadness, anxiety, anger, or if these emotions interfere with daily activities and relationships, it may be beneficial to consult a mental health professional."

@@ -88,7 +88,7 @@ const Contact = () => {
     <>
       <SEOHead
         title="Contact Our Mental Health Clinic | Sunrise Human Care Services Havertown"
-        description="Reach our mental health team in Havertown, PA. Phone: (814) 620-2162. Located at 2050 West Chester Pike. In-person and telehealth appointments available. Easy online contact form. Most insurance accepted."
+        description="Reach our mental health team in Havertown, PA. Phone: (814) 620-2162. Located at 2050 West Chester Pike. In-person and telehealth appointments available. Easy online contact form. Medicaid accepted."
         canonicalUrl="https://sunrisehumancare.com/contact"
         keywords="contact therapist Havertown, mental health clinic address, therapy phone number, counseling office hours, psychiatrist directions, telehealth therapy consultation"
       />
