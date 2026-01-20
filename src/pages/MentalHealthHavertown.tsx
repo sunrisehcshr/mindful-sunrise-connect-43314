@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
 import SchemaMarkup from "../components/SchemaMarkup";
@@ -94,6 +95,20 @@ const MentalHealthHavertown = () => {
     }
   ];
 
+  // FAQPage Schema for rich results
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <>
       <SEOHead 
@@ -103,6 +118,11 @@ const MentalHealthHavertown = () => {
         keywords="mental health Havertown PA, mental health services Havertown, therapy Havertown PA, mental health clinic Havertown, counseling Havertown Pennsylvania"
       />
       <SchemaMarkup />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-20">
@@ -138,7 +158,8 @@ const MentalHealthHavertown = () => {
                       (814) 620-2162
                     </a>
                   </div>
-                  <p className="text-sm text-amber-600 mt-4">We accept Medicaid insurance</p>
+                  <p className="text-sm text-amber-600 mt-4">Confidential care • Licensed providers • No referral required</p>
+                  <p className="text-sm text-amber-600 mt-2">We accept Medicaid insurance</p>
                 </motion.div>
               </div>
             </div>
@@ -184,7 +205,7 @@ const MentalHealthHavertown = () => {
                   variants={fadeInUp}
                 >
                   <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8">
-                    Why Havertown Residents Choose Sunrise Human Care
+                    Licensed Mental Health Clinic Serving Havertown, PA
                   </h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -251,9 +272,18 @@ const MentalHealthHavertown = () => {
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4">
                     Mental Health Services Available in Havertown
                   </h2>
+                  <p className="text-lg text-amber-800 mb-8">
+                    Our Havertown clinic provides structured mental health and psychiatric services for individuals, couples, families, and children.
+                  </p>
+                  
+                  <div className="prose prose-lg text-amber-800 mb-8">
+                    <p>
+                      Whether you're looking for <Link to="/individual-therapy-havertown-pa" className="text-orange-600 hover:text-orange-700 underline underline-offset-2">individual therapy in Havertown</Link> to work through personal challenges, or need <Link to="/psychiatric-evaluations-havertown-pa" className="text-orange-600 hover:text-orange-700 underline underline-offset-2">psychiatric evaluations</Link> to better understand your mental health needs, our licensed team is here to help.
+                    </p>
+                  </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {services.map((service, index) => (
@@ -331,13 +361,16 @@ const MentalHealthHavertown = () => {
                   variants={fadeInUp}
                 >
                   <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-6">
-                    Accessible Mental Health Care in Havertown, PA
+                    In-Clinic Mental Health Services in Havertown, Pennsylvania
                   </h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4 text-amber-800">
                       <p>
-                        We've designed our clinic to be a comfortable, private space where you can focus on your well-being. Located in Havertown, our office is easily accessible for residents throughout the area, including those coming from Upper Darby, Ardmore, and Bryn Mawr.
+                        Our clinic is located in Havertown, Pennsylvania, serving residents across Delaware County. We've designed our space to be a comfortable, private environment where you can focus on your well-being.
+                      </p>
+                      <p>
+                        The office is easily accessible for residents throughout the area, including those coming from Upper Darby, Ardmore, and Bryn Mawr.
                       </p>
                       <p>
                         Our in-clinic sessions take place in a professional, welcoming environment where your comfort and privacy are our priority. We offer flexible scheduling options to accommodate your work, school, or family commitments.
