@@ -149,7 +149,7 @@ const MentalHealthHavertown = () => {
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
                     Mental Health Services in Havertown, PA
                   </h1>
-                  <p className="text-lg md:text-xl text-amber-100 mb-8 max-w-3xl mx-auto drop-shadow-md">
+                  <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto drop-shadow-md">
                     Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Havertown and the surrounding community.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -169,14 +169,14 @@ const MentalHealthHavertown = () => {
                     </a>
                   </div>
                   <div className="mt-6 space-y-2">
-                    <p className="text-sm text-amber-200 flex items-center justify-center gap-3 flex-wrap">
+                    <p className="text-sm text-white/80 flex items-center justify-center gap-3 flex-wrap">
                       <span className="inline-flex items-center gap-1"><Shield className="h-4 w-4" /> Confidential care</span>
-                      <span className="text-amber-300">•</span>
+                      <span className="text-white/50">•</span>
                       <span className="inline-flex items-center gap-1"><Users className="h-4 w-4" /> Licensed providers</span>
-                      <span className="text-amber-300">•</span>
+                      <span className="text-white/50">•</span>
                       <span className="inline-flex items-center gap-1"><CheckCircle className="h-4 w-4" /> Accepting new patients</span>
                     </p>
-                    <p className="text-sm text-amber-200">We accept Medicaid insurance</p>
+                    <p className="text-sm text-white/80">We accept Medicaid insurance</p>
                   </div>
                 </motion.div>
               </div>
@@ -492,10 +492,10 @@ const MentalHealthHavertown = () => {
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
                     Schedule a Mental Health Appointment in Havertown
                   </h2>
-                  <p className="text-lg text-amber-100 mb-8 drop-shadow-md">
+                  <p className="text-lg text-white/90 mb-8 drop-shadow-md">
                     Taking the first step toward better mental health is an act of courage. At Sunrise Human Care, we're ready to walk alongside you on your journey. Our compassionate team is here to listen, support, and guide you toward the well-being you deserve—all within a confidential, caring environment.
                   </p>
-                  <p className="text-amber-100 mb-8 drop-shadow-md">
+                  <p className="text-white/90 mb-8 drop-shadow-md">
                     Contact us today to schedule your appointment. We look forward to welcoming you.
                   </p>
                   
