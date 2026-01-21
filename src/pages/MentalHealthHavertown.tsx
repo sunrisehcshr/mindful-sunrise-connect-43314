@@ -5,7 +5,7 @@ import SEOHead from "../components/SEOHead";
 import SchemaMarkup from "../components/SchemaMarkup";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer/Footer";
-import { ArrowRight, Phone, Users, Heart, Shield, Calendar, MapPin, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone, Users, Heart, Shield, Calendar, MapPin, MessageCircle, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import {
   Accordion,
@@ -174,7 +174,7 @@ const MentalHealthHavertown = () => {
                       <span className="text-amber-300">•</span>
                       <span className="inline-flex items-center gap-1"><Users className="h-4 w-4" /> Licensed providers</span>
                       <span className="text-amber-300">•</span>
-                      <span className="inline-flex items-center gap-1"><Calendar className="h-4 w-4" /> No referral required</span>
+                      <span className="inline-flex items-center gap-1"><CheckCircle className="h-4 w-4" /> Accepting new patients</span>
                     </p>
                     <p className="text-sm text-amber-200">We accept Medicaid insurance</p>
                   </div>
