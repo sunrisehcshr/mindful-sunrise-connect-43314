@@ -169,12 +169,12 @@ const MentalHealthHavertown = () => {
                     </a>
                   </div>
                   <div className="mt-6 space-y-2">
-                    <p className="text-sm text-amber-200 flex items-center justify-center gap-2 flex-wrap">
+                    <p className="text-sm text-amber-200 flex items-center justify-center gap-3 flex-wrap">
                       <span className="inline-flex items-center gap-1"><Shield className="h-4 w-4" /> Confidential care</span>
                       <span className="text-amber-300">•</span>
-                      <span>Licensed providers</span>
+                      <span className="inline-flex items-center gap-1"><Users className="h-4 w-4" /> Licensed providers</span>
                       <span className="text-amber-300">•</span>
-                      <span>No referral required</span>
+                      <span className="inline-flex items-center gap-1"><Calendar className="h-4 w-4" /> No referral required</span>
                     </p>
                     <p className="text-sm text-amber-200">We accept Medicaid insurance</p>
                   </div>
