@@ -467,8 +467,21 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Conversion CTA */}
-          <section className="py-16 md:py-20 bg-gradient-to-r from-amber-600 to-orange-500">
-            <div className="container mx-auto px-4 md:px-6">
+          <section className="relative py-20 md:py-24 overflow-hidden">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: "url('/images/havertown-aerial.png')" }}
+            />
+            
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+            
+            {/* Top fade from previous section */}
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-amber-50 to-transparent" />
+            
+            {/* Content */}
+            <div className="relative z-10 container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto text-center">
                 <motion.div
                   initial="hidden"
@@ -476,27 +489,27 @@ const MentalHealthHavertown = () => {
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
                     Schedule a Mental Health Appointment in Havertown
                   </h2>
-                  <p className="text-lg text-amber-100 mb-8">
+                  <p className="text-lg text-amber-100 mb-8 drop-shadow-md">
                     Taking the first step toward better mental health is an act of courage. At Sunrise Human Care, we're ready to walk alongside you on your journey. Our compassionate team is here to listen, support, and guide you toward the well-being you deserve—all within a confidential, caring environment.
                   </p>
-                  <p className="text-amber-100 mb-8">
+                  <p className="text-amber-100 mb-8 drop-shadow-md">
                     Contact us today to schedule your appointment. We look forward to welcoming you.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link 
                       to="/appointment" 
-                      className="bg-white text-amber-700 hover:bg-amber-50 px-8 py-4 rounded-lg shadow-md transition-colors font-medium inline-flex items-center justify-center"
+                      className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium inline-flex items-center justify-center hover:scale-105"
                     >
                       Book Your Appointment
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                     <a 
                       href="tel:+18146202162" 
-                      className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg transition-colors font-medium inline-flex items-center justify-center"
+                      className="bg-white/10 backdrop-blur-sm border-2 border-white/40 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all duration-300 font-medium inline-flex items-center justify-center hover:scale-105"
                     >
                       <Phone className="mr-2 h-5 w-5" />
                       (814) 620-2162
