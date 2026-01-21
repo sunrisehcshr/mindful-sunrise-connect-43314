@@ -136,7 +136,7 @@ const MentalHealthHavertown = () => {
             />
             
             {/* Gradient Overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-amber-900/70 via-amber-900/60 to-amber-950/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
             
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 md:px-6 py-16 md:py-20">
