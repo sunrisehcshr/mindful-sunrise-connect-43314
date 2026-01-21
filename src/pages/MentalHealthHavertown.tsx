@@ -128,41 +128,62 @@ const MentalHealthHavertown = () => {
         <main className="flex-grow pt-20">
           
           {/* Hero Section with H1 */}
-          <section className="bg-gradient-to-br from-amber-50 to-orange-50 py-16 md:py-20 lg:py-24">
-            <div className="container mx-auto px-4 md:px-6">
+          <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[80vh] flex items-center overflow-hidden">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: "url('/images/havertown-aerial.png')" }}
+            />
+            
+            {/* Gradient Overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-amber-900/70 via-amber-900/60 to-amber-950/80" />
+            
+            {/* Content */}
+            <div className="relative z-10 container mx-auto px-4 md:px-6 py-16 md:py-20">
               <div className="max-w-4xl mx-auto text-center">
                 <motion.div
                   initial="hidden"
                   animate="visible"
                   variants={fadeInUp}
                 >
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 mb-6">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
                     Mental Health Services in Havertown, PA
                   </h1>
-                  <p className="text-lg md:text-xl text-amber-800 mb-8 max-w-3xl mx-auto">
+                  <p className="text-lg md:text-xl text-amber-100 mb-8 max-w-3xl mx-auto drop-shadow-md">
                     Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Havertown and the surrounding community.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link 
                       to="/appointment" 
-                      className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-lg shadow-md transition-colors font-medium inline-flex items-center justify-center"
+                      className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium inline-flex items-center justify-center hover:scale-105"
                     >
                       Schedule an Appointment
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                     <a 
                       href="tel:+18146202162" 
-                      className="border-2 border-amber-400 hover:bg-amber-50 text-amber-700 px-8 py-4 rounded-lg transition-colors font-medium inline-flex items-center justify-center"
+                      className="bg-white/10 backdrop-blur-sm border-2 border-white/40 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all duration-300 font-medium inline-flex items-center justify-center hover:scale-105"
                     >
                       <Phone className="mr-2 h-5 w-5" />
                       (814) 620-2162
                     </a>
                   </div>
-                  <p className="text-sm text-amber-600 mt-4">Confidential care • Licensed providers • No referral required</p>
-                  <p className="text-sm text-amber-600 mt-2">We accept Medicaid insurance</p>
+                  <div className="mt-6 space-y-2">
+                    <p className="text-sm text-amber-200 flex items-center justify-center gap-2 flex-wrap">
+                      <span className="inline-flex items-center gap-1"><Shield className="h-4 w-4" /> Confidential care</span>
+                      <span className="text-amber-300">•</span>
+                      <span>Licensed providers</span>
+                      <span className="text-amber-300">•</span>
+                      <span>No referral required</span>
+                    </p>
+                    <p className="text-sm text-amber-200">We accept Medicaid insurance</p>
+                  </div>
                 </motion.div>
               </div>
             </div>
+            
+            {/* Bottom fade to blend with next section */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
           </section>
 
           {/* Local Introduction */}
