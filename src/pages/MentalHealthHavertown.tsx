@@ -131,7 +131,7 @@ const MentalHealthHavertown = () => {
           <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[80vh] flex items-center overflow-hidden">
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
+              className="absolute inset-0 bg-cover bg-top bg-no-repeat"
               style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')" }}
             />
             
