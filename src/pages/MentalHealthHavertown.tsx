@@ -470,8 +470,8 @@ const MentalHealthHavertown = () => {
           <section className="relative py-20 md:py-24 overflow-hidden">
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-              style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')" }}
+              className="absolute inset-0 bg-cover bg-no-repeat"
+              style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')", backgroundPosition: "center 25%" }}
             />
             
             {/* Gradient Overlay */}
