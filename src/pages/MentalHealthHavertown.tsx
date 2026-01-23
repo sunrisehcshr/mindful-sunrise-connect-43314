@@ -131,8 +131,8 @@ const MentalHealthHavertown = () => {
           <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[80vh] flex items-center overflow-hidden">
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: "url('/images/havertown-aerial.png')" }}
+              className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
+              style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')" }}
             />
             
             {/* Gradient Overlay for text readability */}
