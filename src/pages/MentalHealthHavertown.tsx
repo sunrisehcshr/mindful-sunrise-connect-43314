@@ -471,7 +471,7 @@ const MentalHealthHavertown = () => {
             {/* Background Image */}
             <div 
               className="absolute inset-0 bg-cover bg-no-repeat"
-              style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')", backgroundPosition: "center 25%" }}
+              style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')", backgroundPosition: "center 15%" }}
             />
             
             {/* Gradient Overlay */}
