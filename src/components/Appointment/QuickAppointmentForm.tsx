@@ -12,7 +12,7 @@ const QuickAppointmentForm = () => {
     email: '',
     phone: '',
     preferredDateTime: '',
-    serviceInterest: '' as 'Counselling' | 'Psychiatric Consultation' | 'General Inquiry' | '',
+    serviceInterest: '' as 'Counseling' | 'Psychiatric Consultation' | 'General Inquiry' | '',
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -154,7 +154,7 @@ const QuickAppointmentForm = () => {
           className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         >
           <option value="">Select a service</option>
-          <option value="Counselling">Counselling</option>
+          <option value="Counseling">Counseling</option>
           <option value="Psychiatric Consultation">Psychiatric Consultation</option>
           <option value="General Inquiry">General Inquiry</option>
         </select>
