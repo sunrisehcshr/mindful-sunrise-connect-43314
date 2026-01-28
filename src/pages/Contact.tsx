@@ -304,7 +304,7 @@ const Contact = () => {
                             className="w-full p-2.5 text-sm border border-amber-200 rounded-md focus:ring-2 focus:ring-amber-400 focus:border-transparent bg-white/70"
                           >
                             <option value="">Select a service</option>
-                            <option value="Counselling">Counselling</option>
+                            <option value="Counseling">Counseling</option>
                             <option value="Psychiatric Consultation">Psychiatric Consultation</option>
                             <option value="General Inquiry">General Inquiry</option>
                           </select>
