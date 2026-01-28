@@ -17,7 +17,7 @@ const Contact = () => {
     email: '',
     phone: '',
     preferredDateTime: '',
-    serviceInterest: '' as 'Counselling' | 'Psychiatric Consultation' | 'General Inquiry' | '',
+    serviceInterest: '' as 'Counseling' | 'Psychiatric Consultation' | 'General Inquiry' | '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { honeypot, setHoneypot, validateSubmission } = useFormProtection({ 
