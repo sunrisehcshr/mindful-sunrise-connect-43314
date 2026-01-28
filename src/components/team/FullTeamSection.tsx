@@ -14,13 +14,6 @@ const fullTeamMembers = [
     image: "/images/michael.jpg"
   },
   {
-    name: "Pamela Martin",
-    role: "CEO",
-    specialties: ["Trauma", "PTSD", "Family Therapy"],
-    bio: "Pam Martin is the CEO of Sunrise Human Care. She received her Masters in Business Administration from Shippensburg University and is a graduate of Bloomsburg University with a BA in political science. Her professional career has focused on public services for children. Pam has extensive knowledge of behavioral health services in the tri county area with a specialization in Behavioral Health Rehabilitative Services (BHRS) for children.",
-    image: "/images/pam.jpg"
-  },
-  {
     name: "Holli O'Donnell",
     role: "Clinical Director",
     specialties: ["Medication Management", "Bipolar", "OCD"],
