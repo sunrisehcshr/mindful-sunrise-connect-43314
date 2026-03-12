@@ -127,8 +127,11 @@ const MentalHealthHavertown = () => {
         {/* Custom floating nav for this page */}
         <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl bg-white/95 backdrop-blur-md rounded-[16px] shadow-lg px-4 md:px-6 py-3 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src="/logo.svg" alt="Sunrise Human Care" className="h-8 w-8" />
-            <span className="font-barlow font-semibold text-zinc-900 text-sm md:text-base hidden sm:inline">Sunrise Human Care</span>
+            <img src="/logo.svg" alt="Sunrise Logo" className="h-10 w-12 object-contain" />
+            <div className="flex flex-col">
+              <span className="leading-tight text-base bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text font-extrabold">Sunrise</span>
+              <span className="text-xs text-muted-foreground leading-tight font-normal">Human Care Services</span>
+            </div>
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <a href="#about" className="font-barlow font-medium text-sm text-zinc-600 hover:text-zinc-900 transition-colors">About</a>
@@ -172,10 +175,10 @@ const MentalHealthHavertown = () => {
                 className="max-w-4xl"
               >
                 <h1 className="mb-6">
-                  <span className="block font-barlow font-semibold text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
+                  <span className="block font-barlow font-semibold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
                     Step into a brighter tomorrow
                   </span>
-                  <span className="block font-instrument-serif italic text-sunrise-400 text-4xl sm:text-5xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
+                  <span className="block font-instrument-serif italic text-yellow-300 text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
                     with sunrise
                   </span>
                 </h1>
