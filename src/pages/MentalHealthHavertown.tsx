@@ -125,10 +125,10 @@ const MentalHealthHavertown = () => {
       </Helmet>
       <div className="flex flex-col min-h-screen">
         {/* Custom floating nav for this page */}
-        <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl bg-white/95 backdrop-blur-md rounded-[16px] shadow-lg px-6 py-3 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+        <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl bg-white/95 backdrop-blur-md rounded-[16px] shadow-lg px-4 md:px-6 py-3 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 shrink-0">
             <img src="/logo.svg" alt="Sunrise Human Care" className="h-8 w-8" />
-            <span className="font-barlow font-semibold text-zinc-900 text-base">Sunrise Human Care</span>
+            <span className="font-barlow font-semibold text-zinc-900 text-sm md:text-base hidden sm:inline">Sunrise Human Care</span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <a href="#about" className="font-barlow font-medium text-sm text-zinc-600 hover:text-zinc-900 transition-colors">About</a>
@@ -138,11 +138,11 @@ const MentalHealthHavertown = () => {
           </div>
           <Link
             to="/appointment"
-            className="flex items-center gap-2 bg-[#222] text-white font-barlow font-medium text-sm px-5 py-2.5 rounded-full hover:bg-zinc-800 transition-colors"
+            className="flex items-center gap-2 bg-[#222] text-white font-barlow font-medium text-xs md:text-sm px-4 md:px-5 py-2 md:py-2.5 rounded-full hover:bg-zinc-800 transition-colors shrink-0"
           >
-            Book Appointment
-            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
-              <ArrowRight className="h-3.5 w-3.5 rotate-[-45deg]" />
+            <span className="hidden sm:inline">Book</span> Appointment
+            <span className="flex items-center justify-center w-5 h-5 md:w-6 md:h-6 rounded-full bg-white/20">
+              <ArrowRight className="h-3 w-3 md:h-3.5 md:w-3.5 rotate-[-45deg]" />
             </span>
           </Link>
         </nav>
@@ -160,6 +160,9 @@ const MentalHealthHavertown = () => {
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
 
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/30" />
+
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center">
               <motion.div
@@ -169,10 +172,10 @@ const MentalHealthHavertown = () => {
                 className="max-w-4xl"
               >
                 <h1 className="mb-6">
-                  <span className="block font-barlow font-semibold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
+                  <span className="block font-barlow font-semibold text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
                     Step into a brighter tomorrow
                   </span>
-                  <span className="block font-instrument-serif italic text-white text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
+                  <span className="block font-instrument-serif italic text-sunrise-400 text-4xl sm:text-5xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
                     with sunrise
                   </span>
                 </h1>
@@ -181,7 +184,7 @@ const MentalHealthHavertown = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
-                  className="font-barlow font-medium text-white/90 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md"
+                  className="font-barlow font-medium text-white text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
                 >
                   Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Havertown and the surrounding community.
                 </motion.p>
