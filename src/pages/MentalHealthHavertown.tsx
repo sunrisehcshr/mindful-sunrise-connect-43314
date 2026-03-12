@@ -160,6 +160,9 @@ const MentalHealthHavertown = () => {
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
 
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/30" />
+
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center">
               <motion.div
@@ -169,10 +172,10 @@ const MentalHealthHavertown = () => {
                 className="max-w-4xl"
               >
                 <h1 className="mb-6">
-                  <span className="block font-barlow font-semibold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
+                  <span className="block font-barlow font-semibold text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
                     Step into a brighter tomorrow
                   </span>
-                  <span className="block font-instrument-serif italic text-white text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
+                  <span className="block font-instrument-serif italic text-sunrise-400 text-4xl sm:text-5xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
                     with sunrise
                   </span>
                 </h1>
@@ -181,7 +184,7 @@ const MentalHealthHavertown = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
-                  className="font-barlow font-medium text-white/90 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md"
+                  className="font-barlow font-medium text-white text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
                 >
                   Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Havertown and the surrounding community.
                 </motion.p>
