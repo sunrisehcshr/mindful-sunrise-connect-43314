@@ -127,63 +127,62 @@ const MentalHealthHavertown = () => {
         <Navbar />
         <main className="flex-grow pt-20">
           
-          {/* Hero Section with H1 */}
-          <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[80vh] flex items-center overflow-hidden">
-            {/* Background Image */}
-            <div 
-              className="absolute inset-0 bg-cover bg-no-repeat"
-              style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')", backgroundPosition: "center 5%" }}
+          {/* Premium Video Hero Section */}
+          <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+            {/* Video Background */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
-            
-            {/* Gradient Overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
-            
+
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 md:px-6 py-16 md:py-20">
-              <div className="max-w-4xl mx-auto text-center">
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={fadeInUp}
+            <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="max-w-4xl"
+              >
+                <h1 className="mb-6">
+                  <span className="block font-barlow font-semibold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
+                    Step into a brighter tomorrow
+                  </span>
+                  <span className="block font-instrument-serif italic text-white text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
+                    with sunrise
+                  </span>
+                </h1>
+
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  className="font-barlow font-medium text-white/90 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md"
                 >
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-                    Mental Health Services in Havertown, PA
-                  </h1>
-                  <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto drop-shadow-md">
-                    Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Havertown and the surrounding community.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link 
-                      to="/appointment" 
-                      className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium inline-flex items-center justify-center hover:scale-105"
-                    >
-                      Schedule an Appointment
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                    <a 
-                      href="tel:+18146202162" 
-                      className="bg-white/10 backdrop-blur-sm border-2 border-white/40 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all duration-300 font-medium inline-flex items-center justify-center hover:scale-105"
-                    >
-                      <Phone className="mr-2 h-5 w-5" />
-                      (814) 620-2162
-                    </a>
-                  </div>
-                  <div className="mt-6 space-y-2">
-                    <p className="text-sm text-white/80 flex items-center justify-center gap-3 flex-wrap">
-                      <span className="inline-flex items-center gap-1"><Shield className="h-4 w-4" /> Confidential care</span>
-                      <span className="text-white/50">•</span>
-                      <span className="inline-flex items-center gap-1"><Users className="h-4 w-4" /> Licensed providers</span>
-                      <span className="text-white/50">•</span>
-                      <span className="inline-flex items-center gap-1"><CheckCircle className="h-4 w-4" /> Accepting new patients</span>
-                    </p>
-                    <p className="text-sm text-white/80">We accept Medicaid insurance</p>
-                  </div>
+                  Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Havertown and the surrounding community.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
+                >
+                  <Link
+                    to="/appointment"
+                    className="inline-flex items-center gap-2 bg-white text-zinc-900 font-barlow font-semibold text-base md:text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  >
+                    <Calendar className="h-5 w-5" />
+                    Schedule an Appointment
+                  </Link>
                 </motion.div>
-              </div>
+              </motion.div>
             </div>
-            
-            {/* Bottom fade to blend with next section */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+
+            {/* Bottom fade */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
           </section>
 
           {/* Local Introduction */}

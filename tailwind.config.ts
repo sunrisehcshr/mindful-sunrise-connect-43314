@@ -145,7 +145,9 @@ export default {
 				serif: ['Georgia', 'serif'],
 				opensans: ['Open Sans', 'sans-serif'],
 				lato: ['Lato', 'sans-serif'],
-				inter: ['Inter', 'sans-serif']
+				inter: ['Inter', 'sans-serif'],
+				barlow: ['Barlow', 'sans-serif'],
+				'instrument-serif': ['"Instrument Serif"', 'serif']
 			}
 		}
 	},
