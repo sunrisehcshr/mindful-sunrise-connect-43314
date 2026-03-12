@@ -175,10 +175,10 @@ const MentalHealthHavertown = () => {
                 className="max-w-4xl"
               >
                 <h1 className="mb-6">
-                  <span className="block font-barlow font-semibold text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
+                  <span className="block font-barlow font-semibold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
                     Step into a brighter tomorrow
                   </span>
-                  <span className="block font-instrument-serif italic text-sunrise-400 text-4xl sm:text-5xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
+                  <span className="block font-instrument-serif italic text-yellow-300 text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
                     with sunrise
                   </span>
                 </h1>
