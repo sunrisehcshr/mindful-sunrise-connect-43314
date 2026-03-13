@@ -32,6 +32,7 @@ import FamilyTherapy from "./pages/services/FamilyTherapy";
 import ChildTherapy from "./pages/services/ChildTherapy";
 import PsychiatricEvaluations from "./pages/services/PsychiatricEvaluations";
 import MedicationManagement from "./pages/services/MedicationManagement";
+import IBHSServices from "./pages/services/IBHSServices";
 
 // Import condition pages
 import AnxietyTherapy from "./pages/services/AnxietyTherapy";
