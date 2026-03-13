@@ -90,6 +90,7 @@ const App = () => (
             <Route path="/child-therapy-havertown-pa" element={<ChildTherapy />} />
             <Route path="/psychiatric-evaluations-havertown-pa" element={<PsychiatricEvaluations />} />
             <Route path="/medication-management-havertown-pa" element={<MedicationManagement />} />
+            <Route path="/ibhs-havertown-pa" element={<IBHSServices />} />
             
             {/* Condition pages */}
             <Route path="/anxiety-therapy-havertown-pa" element={<AnxietyTherapy />} />
