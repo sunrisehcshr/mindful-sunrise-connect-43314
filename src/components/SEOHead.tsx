@@ -50,23 +50,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "name": serviceSchema.name,
     "description": serviceSchema.description,
     "provider": {
-      "@type": "MedicalOrganization",
-      "name": serviceSchema.provider,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2050 West Chester Pike",
-        "addressLocality": "Havertown",
-        "addressRegion": "PA",
-        "postalCode": "19083",
-        "addressCountry": "US"
-      },
-      "telephone": "+18146202162",
-      "url": "https://sunrisehumancare.com",
-      "logo": "https://sunrisehumancare.com/logo.png",
-      "sameAs": [
-        "https://www.facebook.com/sunrisehumancare",
-        "https://www.linkedin.com/company/sunrise-human-care-services"
-      ]
+      "@id": "https://sunrisehumancare.com/#MedicalOrganization"
     },
     "serviceType": serviceSchema.serviceType,
     "areaServed": {
@@ -86,14 +70,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     }
   } : null;
 
-  // Local business schema for the organization
+  // Local business schema — consolidated with @id reference
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
+    "@id": "https://sunrisehumancare.com/#MedicalBusiness",
     "name": "Sunrise Human Care Services",
-    "image": "https://sunrisehumancare.com/logo.png",
+    "image": "https://sunrisehumancare.com/logo.svg",
     "url": "https://sunrisehumancare.com",
-    "@id": "https://sunrisehumancare.com",
     "telephone": "+18146202162",
     "priceRange": "$$$",
     "address": {
@@ -127,16 +111,25 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       "https://www.facebook.com/sunrisehumancare",
       "https://www.linkedin.com/company/sunrise-human-care-services"
     ],
-    "areaServed": {
-      "@type": "GeoCircle",
-      "name": "Havertown, PA and Delaware County",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "39.9707",
-        "longitude": "-75.3151"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Havertown",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Delaware County",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Pennsylvania"
+          }
+        }
       },
-      "geoRadius": "15000"
-    }
+      { "@type": "City", "name": "Broomall" },
+      { "@type": "City", "name": "Ardmore" },
+      { "@type": "City", "name": "Drexel Hill" },
+      { "@type": "City", "name": "Springfield" }
+    ],
+    "hasMap": "https://www.google.com/maps?q=39.9707,-75.3151"
   };
 
   // Generate breadcrumb items or use provided ones
@@ -152,62 +145,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       "name": item.name,
       "item": item.url
     }))
-  };
-
-  // Local service areas schema
-  const localServiceAreasSchema = {
-    "@context": "https://schema.org",
-    "@type": "ServiceAreas",
-    "serviceArea": [
-      {
-        "@type": "City",
-        "name": "Havertown",
-        "containedInPlace": {
-          "@type": "AdministrativeArea",
-          "name": "Delaware County",
-          "containedInPlace": {
-            "@type": "AdministrativeArea",
-            "name": "Pennsylvania",
-            "containedInPlace": {
-              "@type": "Country",
-              "name": "United States"
-            }
-          }
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Broomall",
-        "containedInPlace": {
-          "@type": "AdministrativeArea",
-          "name": "Delaware County"
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Ardmore",
-        "containedInPlace": {
-          "@type": "AdministrativeArea",
-          "name": "Delaware County"
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Drexel Hill",
-        "containedInPlace": {
-          "@type": "AdministrativeArea",
-          "name": "Delaware County"
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Springfield",
-        "containedInPlace": {
-          "@type": "AdministrativeArea",
-          "name": "Delaware County"
-        }
-      }
-    ]
   };
 
   return (
@@ -228,10 +165,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="language" content="English" />
       <meta name="content-language" content="en-US" />
 
-      {/* Canonical URL (Fixing Duplicate Issue) */}
+      {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
       
-      {/* hreflang tags - FIX: Changed 'hreflang' to 'hrefLang' (with capital L) */}
       <link rel="alternate" hrefLang="en-us" href={canonicalUrl} />
       <link rel="alternate" hrefLang="x-default" href="https://sunrisehumancare.com/" />
 
@@ -277,20 +213,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         {JSON.stringify(localBusinessSchema)}
       </script>
 
-      {/* Breadcrumbs schema - Using structured BreadcrumbItem[] */}
+      {/* Breadcrumbs schema */}
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchema)}
       </script>
-      
-      {/* Local Service Areas schema */}
-      <script type="application/ld+json">
-        {JSON.stringify(localServiceAreasSchema)}
-      </script>
 
-      {/* Font display optimization - removed problematic preloads */}
+      {/* Font display optimization */}
       <style>
         {`
-          /* Font display swap to prevent invisible text during font loading */
           @font-face {
             font-family: 'Inter';
             font-style: normal;
@@ -329,15 +259,13 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="msapplication-TileImage" content="/lovable-uploads/947ba080-a4e6-428b-a1cd-41a174bfe001.png" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
 
-      {/* Performance Optimization - proper preconnect */}
+      {/* Performance Optimization */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      
-      {/* Pre-connect to analytics domains to speed up their loading */}
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       
-      {/* Structured data for FAQ pages when applicable */}
+      {/* FAQ schema for therapy/treatment pages */}
       {canonicalUrl.includes("therapy") || canonicalUrl.includes("treatment") || canonicalUrl.includes("counseling") ? (
         <script type="application/ld+json">
           {JSON.stringify({
@@ -378,7 +306,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 
 // Helper function to generate breadcrumbs from URL
 function generateBreadcrumbsFromUrl(url: string): BreadcrumbItem[] {
-  // Always start with home
   const breadcrumbs: BreadcrumbItem[] = [
     {
       name: "Home",
@@ -387,21 +314,15 @@ function generateBreadcrumbsFromUrl(url: string): BreadcrumbItem[] {
     }
   ];
 
-  // Remove protocol and domain if present
   let path = url.replace(/^(https?:\/\/)?(www\.)?sunrisehumancare\.com\/?/, '/');
   
-  // If it's the homepage, just return the home breadcrumb
   if (path === '/' || path === '') {
     return breadcrumbs;
   }
 
-  // Remove trailing slash if present
   path = path.replace(/\/$/, '');
-  
-  // Split the path into segments
   const segments = path.split('/').filter(segment => segment !== '');
   
-  // Special handling for services and conditions
   if (segments[0] === 'services' || segments[0] === 'conditions') {
     breadcrumbs.push({
       name: segments[0].charAt(0).toUpperCase() + segments[0].slice(1),
@@ -410,7 +331,6 @@ function generateBreadcrumbsFromUrl(url: string): BreadcrumbItem[] {
     });
     
     if (segments.length > 1) {
-      // Format service/condition name from slug
       const name = segments[1]
         .replace(/-/g, ' ')
         .replace(/\b\w/g, char => char.toUpperCase())
@@ -427,7 +347,6 @@ function generateBreadcrumbsFromUrl(url: string): BreadcrumbItem[] {
       });
     }
   } else if (segments.length > 0) {
-    // Handle other pages
     const finalSegment = segments[segments.length - 1];
     const name = finalSegment
       .replace(/-/g, ' ')

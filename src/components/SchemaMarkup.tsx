@@ -80,6 +80,9 @@ const SchemaMarkup: React.FC = () => {
           "postalCode": "19083",
           "addressCountry": "US"
         },
+        "parentOrganization": {
+          "@id": "https://sunrisehumancare.com/#MedicalBusiness"
+        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Mental Health Services",
@@ -90,6 +93,14 @@ const SchemaMarkup: React.FC = () => {
                 "@type": "MedicalService",
                 "name": "Individual Therapy",
                 "url": "https://sunrisehumancare.com/individual-therapy-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "IBHS Services",
+                "url": "https://sunrisehumancare.com/ibhs-havertown-pa"
               }
             }
           ]
