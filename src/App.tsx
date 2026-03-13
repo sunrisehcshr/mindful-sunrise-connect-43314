@@ -32,6 +32,7 @@ import FamilyTherapy from "./pages/services/FamilyTherapy";
 import ChildTherapy from "./pages/services/ChildTherapy";
 import PsychiatricEvaluations from "./pages/services/PsychiatricEvaluations";
 import MedicationManagement from "./pages/services/MedicationManagement";
+import IBHSServices from "./pages/services/IBHSServices";
 
 // Import condition pages
 import AnxietyTherapy from "./pages/services/AnxietyTherapy";
@@ -89,6 +90,7 @@ const App = () => (
             <Route path="/child-therapy-havertown-pa" element={<ChildTherapy />} />
             <Route path="/psychiatric-evaluations-havertown-pa" element={<PsychiatricEvaluations />} />
             <Route path="/medication-management-havertown-pa" element={<MedicationManagement />} />
+            <Route path="/ibhs-havertown-pa" element={<IBHSServices />} />
             
             {/* Condition pages */}
             <Route path="/anxiety-therapy-havertown-pa" element={<AnxietyTherapy />} />

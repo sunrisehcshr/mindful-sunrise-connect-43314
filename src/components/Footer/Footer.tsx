@@ -80,7 +80,14 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-6 pt-6 border-t border-border/50">
+        <div className="mt-4 pt-4 border-t border-border/50">
+          <p className="text-xs text-muted-foreground text-center mb-4">
+            Sunrise Human Care Services is committed to protecting your privacy in accordance with HIPAA regulations. All patient information is kept strictly confidential. Read our{' '}
+            <a href="/privacy-policy" className="underline hover:text-foreground transition-colors">Privacy Policy</a> for details on how we handle your protected health information.
+          </p>
+        </div>
+
+        <div className="mt-2 pt-4 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Sunrise Human Care Services. All rights reserved.
