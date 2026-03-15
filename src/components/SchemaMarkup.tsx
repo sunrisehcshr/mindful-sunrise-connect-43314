@@ -13,14 +13,6 @@ const SchemaMarkup: React.FC = () => {
         "name": "Sunrise Human Care Services | Mental Health Services in Havertown, PA",
         "description": "Comprehensive mental health care in Havertown, PA, offering therapy and psychiatry services for anxiety, depression, ADHD, and more.",
         "publisher": { "@id": "https://sunrisehumancare.com/#MedicalOrganization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://sunrisehumancare.com/?s={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        },
         "inLanguage": "en-US",
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -48,10 +40,8 @@ const SchemaMarkup: React.FC = () => {
           "caption": "Sunrise Human Care Services Logo"
         },
         "sameAs": [
-          "https://www.facebook.com/sunrisehcs",
-          "https://twitter.com/sunrisehcs",
-          "https://instagram.com/sunrisehcs",
-          "https://www.linkedin.com/company/sunrisehcs"
+          "https://www.facebook.com/sunrisehumancare",
+          "https://www.linkedin.com/company/sunrise-human-care-services"
         ],
         "contactPoint": {
           "@type": "ContactPoint",

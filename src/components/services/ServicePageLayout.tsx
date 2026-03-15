@@ -59,13 +59,14 @@ const ServicePageLayout = ({
   );
   const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
   const serviceName = serviceType || title.split('in')[0].trim();
+  const absoluteCanonicalUrl = canonicalUrl.startsWith('http') ? canonicalUrl : `https://sunrisehumancare.com${canonicalUrl}`;
 
   return (
     <>
       <SEOHead
         title={pageTitle}
         description={metaDescription}
-        canonicalUrl={canonicalUrl}
+        canonicalUrl={absoluteCanonicalUrl}
         keywords={`${serviceName.toLowerCase()} havertown pa, ${serviceName.toLowerCase()} delaware county, mental health havertown, therapy havertown pa`}
         breadcrumbs={breadcrumbs}
       />
