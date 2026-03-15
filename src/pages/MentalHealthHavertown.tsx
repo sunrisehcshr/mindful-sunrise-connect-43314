@@ -213,27 +213,32 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Local Introduction */}
-          <section className="py-16 bg-white">
+          <section className="py-20 md:py-28 bg-white">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center"
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-6">
-                    Compassionate Mental Health Care for Havertown Residents
-                  </h2>
-                  <div className="prose prose-lg text-amber-800 space-y-4">
+                  <div>
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">About Our Practice</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight mb-6">
+                      Compassionate care for
+                      <span className="block font-instrument-serif italic text-zinc-500 font-normal">Havertown residents</span>
+                    </h2>
+                  </div>
+                  <div className="space-y-5 font-barlow text-zinc-600 text-base md:text-lg leading-relaxed">
                     <p>
-                      At Sunrise Human Care, we understand that seeking mental health support can feel like a significant step. That's why we've created a welcoming, confidential environment where Havertown residents can receive the care they deserve. Our clinic serves individuals and families throughout Delaware County who are looking for professional, personalized mental health services.
+                      At Sunrise Human Care, we understand that seeking mental health support can feel like a significant step. That's why we've created a welcoming, confidential environment where Havertown residents can receive the care they deserve.
                     </p>
                     <p>
-                      We believe everyone's path to wellness is unique. Our licensed mental health professionals take the time to listen, understand your concerns, and work with you to develop a treatment approach that fits your life. Whether you're navigating a difficult transition, managing ongoing mental health concerns, or simply seeking a safe space to talk, we're here to support you.
+                      We believe everyone's path to wellness is unique. Our licensed mental health professionals take the time to listen, understand your concerns, and work with you to develop a treatment approach that fits your life.
                     </p>
                     <p>
-                      Our commitment is to provide ethical, respectful care that honors your privacy and meets you where you are. From your first phone call to every session that follows, you can expect to be treated with dignity and compassion by a team that genuinely cares about your well-being.
+                      From your first phone call to every session that follows, you can expect to be treated with dignity and compassion by a team that genuinely cares about your well-being.
                     </p>
                   </div>
                 </motion.div>
@@ -242,67 +247,47 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Trust & Differentiation */}
-          <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
+          <section className="py-20 md:py-28 bg-zinc-950">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8">
-                    Licensed Mental Health Clinic Serving Havertown, PA
-                  </h2>
+                  <div className="text-center mb-14">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-500 mb-4">Why Choose Us</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-tight">
+                      Licensed mental health clinic
+                      <span className="block font-instrument-serif italic text-yellow-300 font-normal">serving Havertown, PA</span>
+                    </h2>
+                  </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-amber-100 text-amber-600">
-                          <Shield className="h-6 w-6" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {[
+                      { icon: <Shield className="h-5 w-5" />, title: "Licensed Professionals", desc: "Our team consists of fully licensed mental health professionals with extensive training and experience in evidence-based treatment approaches." },
+                      { icon: <Heart className="h-5 w-5" />, title: "Personalized Care", desc: "We prioritize quality over volume. Each client receives individualized attention and a treatment plan tailored to their specific needs and goals." },
+                      { icon: <MessageCircle className="h-5 w-5" />, title: "Confidential Treatment", desc: "Your privacy matters. We maintain strict confidentiality standards and provide a safe, judgment-free space for you to share openly." },
+                      { icon: <MapPin className="h-5 w-5" />, title: "Local Presence", desc: "As part of the Havertown community, we understand the local culture and are committed to serving our neighbors with integrity and care." }
+                    ].map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="group bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/10 transition-all duration-300"
+                      >
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-300/10 text-yellow-300">
+                            {item.icon}
+                          </div>
+                          <h3 className="font-barlow font-semibold text-lg text-white">{item.title}</h3>
                         </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-amber-900 mb-2">Licensed Professionals</h3>
-                          <p className="text-amber-700">Our team consists of fully licensed mental health professionals with extensive training and experience in evidence-based treatment approaches.</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-amber-100 text-amber-600">
-                          <Heart className="h-6 w-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-amber-900 mb-2">Personalized Care</h3>
-                          <p className="text-amber-700">We prioritize quality over volume. Each client receives individualized attention and a treatment plan tailored to their specific needs and goals.</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-amber-100 text-amber-600">
-                          <MessageCircle className="h-6 w-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-amber-900 mb-2">Confidential Treatment</h3>
-                          <p className="text-amber-700">Your privacy matters. We maintain strict confidentiality standards and provide a safe, judgment-free space for you to share openly.</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-amber-100 text-amber-600">
-                          <MapPin className="h-6 w-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-amber-900 mb-2">Local Presence</h3>
-                          <p className="text-amber-700">As part of the Havertown community, we understand the local culture and are committed to serving our neighbors with integrity and care.</p>
-                        </div>
-                      </div>
-                    </div>
+                        <p className="font-barlow text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+                      </motion.div>
+                    ))}
                   </div>
                 </motion.div>
               </div>
@@ -310,29 +295,27 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Services Overview */}
-          <section className="py-16 bg-white">
+          <section id="services" className="py-20 md:py-28 bg-white">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-4">
-                    Mental Health Services Available in Havertown
-                  </h2>
-                  <p className="text-lg text-amber-800 mb-8">
-                    Our Havertown clinic provides structured mental health and psychiatric services for individuals, couples, families, and children.
-                  </p>
-                  
-                  <div className="prose prose-lg text-amber-800 mb-8">
-                    <p>
-                      Whether you're looking for <Link to="/individual-therapy-havertown-pa" className="text-orange-600 hover:text-orange-700 underline underline-offset-2">individual therapy in Havertown</Link> to work through personal challenges, or need <Link to="/psychiatric-evaluations-havertown-pa" className="text-orange-600 hover:text-orange-700 underline underline-offset-2">psychiatric evaluations</Link> to better understand your mental health needs, our licensed team is here to help.
+                  <div className="text-center mb-14">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">Our Services</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight">
+                      Mental health services
+                      <span className="block font-instrument-serif italic text-zinc-400 font-normal">available in Havertown</span>
+                    </h2>
+                    <p className="font-barlow text-zinc-500 text-base md:text-lg mt-5 max-w-2xl mx-auto">
+                      Our Havertown clinic provides structured mental health and psychiatric services for individuals, couples, families, and children.
                     </p>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {services.map((service, index) => (
                       <motion.div
                         key={index}
@@ -340,18 +323,22 @@ const MentalHealthHavertown = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.05 }}
-                        className="group"
                       >
                         <Link 
                           to={service.link}
-                          className="block bg-gradient-to-br from-white to-amber-50 rounded-xl p-6 border border-amber-100 hover:border-amber-300 hover:shadow-md transition-all duration-300"
+                          className="group flex items-start gap-5 rounded-2xl p-6 border border-zinc-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 bg-white"
                         >
-                          <h3 className="text-lg font-semibold text-amber-900 mb-2 group-hover:text-orange-600 transition-colors">
-                            {service.title}
-                          </h3>
-                          <p className="text-amber-700 text-sm">
-                            {service.description}
-                          </p>
+                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mt-0.5 group-hover:bg-yellow-400 transition-colors duration-300">
+                            <ArrowRight className="h-4 w-4 text-white rotate-[-45deg] group-hover:text-zinc-900 transition-colors duration-300" />
+                          </div>
+                          <div>
+                            <h3 className="font-barlow font-semibold text-lg text-zinc-900 mb-1.5 group-hover:text-zinc-700 transition-colors">
+                              {service.title}
+                            </h3>
+                            <p className="font-barlow text-zinc-500 text-sm leading-relaxed">
+                              {service.description}
+                            </p>
+                          </div>
                         </Link>
                       </motion.div>
                     ))}
@@ -362,35 +349,43 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Conditions Supported */}
-          <section className="py-16 bg-gradient-to-br from-amber-50 to-orange-50">
+          <section id="conditions" className="py-20 md:py-28 bg-zinc-50">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-6">
-                    Mental Health Concerns We Commonly Support
-                  </h2>
-                  <p className="text-lg text-amber-800 mb-8">
-                    Our therapists are experienced in helping individuals and families navigate a wide range of mental health challenges. We provide supportive, evidence-based care for concerns including:
-                  </p>
+                  <div className="text-center mb-14">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">Conditions</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight">
+                      Concerns we
+                      <span className="font-instrument-serif italic text-zinc-400 font-normal"> commonly support</span>
+                    </h2>
+                    <p className="font-barlow text-zinc-500 text-base md:text-lg mt-5 max-w-2xl mx-auto">
+                      Our therapists are experienced in helping individuals and families navigate a wide range of mental health challenges.
+                    </p>
+                  </div>
                   
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {conditions.map((condition, index) => (
-                      <div 
+                      <motion.div
                         key={index}
-                        className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border border-amber-200 text-center"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        className="bg-white rounded-2xl p-5 md:p-6 border border-zinc-100 text-center hover:shadow-md hover:border-zinc-200 transition-all duration-300"
                       >
-                        <span className="text-amber-800 font-medium">{condition}</span>
-                      </div>
+                        <span className="font-barlow font-semibold text-zinc-800 text-base">{condition}</span>
+                      </motion.div>
                     ))}
                   </div>
                   
-                  <p className="text-amber-700 mt-8">
-                    If you're unsure whether we can help with your specific concern, please reach out. Our team is happy to discuss your situation and help you find the right support.
+                  <p className="font-barlow text-zinc-500 mt-8 text-center text-sm">
+                    If you're unsure whether we can help with your specific concern, please reach out. Our team is happy to discuss your situation.
                   </p>
                 </motion.div>
               </div>
@@ -398,57 +393,51 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Local Accessibility */}
-          <section className="py-16 bg-white">
+          <section className="py-20 md:py-28 bg-white">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-6">
-                    In-Clinic Mental Health Services in Havertown, Pennsylvania
-                  </h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="space-y-4 text-amber-800">
-                      <p>
-                        Our clinic is located in Havertown, Pennsylvania, serving residents across Delaware County. We've designed our space to be a comfortable, private environment where you can focus on your well-being.
-                      </p>
-                      <p>
-                        The office is easily accessible for residents throughout the area, including those coming from Upper Darby, Ardmore, and Bryn Mawr.
-                      </p>
-                      <p>
-                        Our in-clinic sessions take place in a professional, welcoming environment where your comfort and privacy are our priority. We offer flexible scheduling options to accommodate your work, school, or family commitments.
-                      </p>
-                      <p>
-                        Scheduling an appointment is straightforward. You can call us directly or submit a request through our website, and our team will work with you to find a time that fits your schedule.
-                      </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                    <div>
+                      <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">Visit Us</span>
+                      <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight mb-6">
+                        In-clinic services in
+                        <span className="block font-instrument-serif italic text-zinc-500 font-normal">Havertown, Pennsylvania</span>
+                      </h2>
+                      <div className="space-y-4 font-barlow text-zinc-600 text-base leading-relaxed">
+                        <p>
+                          Our clinic is located in Havertown, Pennsylvania, serving residents across Delaware County. We've designed our space to be a comfortable, private environment where you can focus on your well-being.
+                        </p>
+                        <p>
+                          The office is easily accessible for residents throughout the area, including those coming from Upper Darby, Ardmore, and Bryn Mawr.
+                        </p>
+                      </div>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Calendar className="h-6 w-6 text-orange-500" />
-                        <h3 className="text-lg font-semibold text-amber-900">Convenient Access</h3>
+                    <div className="bg-zinc-950 rounded-2xl p-8 text-white">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-300/10">
+                          <Calendar className="h-5 w-5 text-yellow-300" />
+                        </div>
+                        <h3 className="font-barlow font-semibold text-lg">Convenient Access</h3>
                       </div>
-                      <ul className="space-y-3 text-amber-700">
-                        <li className="flex items-start gap-2">
-                          <span className="text-orange-500 mt-1">•</span>
-                          In-clinic appointments in Havertown, PA
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-orange-500 mt-1">•</span>
-                          Comfortable, private clinical setting
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-orange-500 mt-1">•</span>
-                          Flexible scheduling for your convenience
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-orange-500 mt-1">•</span>
-                          Easy appointment booking process
-                        </li>
+                      <ul className="space-y-4">
+                        {[
+                          "In-clinic appointments in Havertown, PA",
+                          "Comfortable, private clinical setting",
+                          "Flexible scheduling for your convenience",
+                          "Easy appointment booking process"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-center gap-3 font-barlow text-zinc-300 text-sm">
+                            <CheckCircle className="h-4 w-4 text-yellow-300 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -458,30 +447,34 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* FAQs */}
-          <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
+          <section id="faq" className="py-20 md:py-28 bg-zinc-50">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-3xl mx-auto">
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-8">
-                    Mental Health Services in Havertown – FAQs
-                  </h2>
+                  <div className="text-center mb-14">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">FAQ</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight">
+                      Frequently asked
+                      <span className="font-instrument-serif italic text-zinc-400 font-normal"> questions</span>
+                    </h2>
+                  </div>
                   
-                  <Accordion type="single" collapsible className="space-y-4">
+                  <Accordion type="single" collapsible className="space-y-3">
                     {faqs.map((faq, index) => (
                       <AccordionItem 
                         key={index} 
                         value={`faq-${index}`}
-                        className="bg-white/80 backdrop-blur-sm rounded-xl border border-amber-200 px-6"
+                        className="bg-white rounded-2xl border border-zinc-100 px-6 data-[state=open]:shadow-md transition-shadow duration-300"
                       >
-                        <AccordionTrigger className="text-left text-amber-900 font-medium hover:text-orange-600 hover:no-underline py-5">
+                        <AccordionTrigger className="text-left font-barlow font-semibold text-zinc-900 hover:text-zinc-600 hover:no-underline py-5 text-base">
                           {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-amber-700 pb-5">
+                        <AccordionContent className="font-barlow text-zinc-500 pb-5 text-sm leading-relaxed">
                           {faq.answer}
                         </AccordionContent>
                       </AccordionItem>
@@ -493,18 +486,15 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Conversion CTA */}
-          <section className="relative py-20 md:py-24 overflow-hidden">
+          <section className="relative py-24 md:py-32 overflow-hidden">
             {/* Background Image */}
             <div 
               className="absolute inset-0 bg-cover bg-no-repeat"
               style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')", backgroundPosition: "center 5%" }}
             />
             
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
-            
-            {/* Top fade from previous section */}
-            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-amber-50 to-transparent" />
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/50" />
             
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 md:px-6">
@@ -515,29 +505,27 @@ const MentalHealthHavertown = () => {
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-                    Schedule a Mental Health Appointment in Havertown
+                  <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-tight mb-4 drop-shadow-lg">
+                    Ready for a
+                    <span className="font-instrument-serif italic text-yellow-300 font-normal"> brighter tomorrow?</span>
                   </h2>
-                  <p className="text-lg text-white/90 mb-8 drop-shadow-md">
-                    Taking the first step toward better mental health is an act of courage. At Sunrise Human Care, we're ready to walk alongside you on your journey. Our compassionate team is here to listen, support, and guide you toward the well-being you deserve—all within a confidential, caring environment.
-                  </p>
-                  <p className="text-white/90 mb-8 drop-shadow-md">
-                    Contact us today to schedule your appointment. We look forward to welcoming you.
+                  <p className="font-barlow text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed drop-shadow-md">
+                    Taking the first step toward better mental health is an act of courage. Our compassionate team is here to listen, support, and guide you.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link 
                       to="/appointment" 
-                      className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium inline-flex items-center justify-center hover:scale-105"
+                      className="inline-flex items-center justify-center gap-2 bg-white text-zinc-900 font-barlow font-semibold text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                     >
+                      <Calendar className="h-5 w-5" />
                       Book Your Appointment
-                      <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                     <a 
                       href="tel:+18146202162" 
-                      className="bg-white/10 backdrop-blur-sm border-2 border-white/40 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all duration-300 font-medium inline-flex items-center justify-center hover:scale-105"
+                      className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-barlow font-semibold text-base px-8 py-4 rounded-full hover:bg-white/20 transition-all duration-300"
                     >
-                      <Phone className="mr-2 h-5 w-5" />
+                      <Phone className="h-5 w-5" />
                       (814) 620-2162
                     </a>
                   </div>
