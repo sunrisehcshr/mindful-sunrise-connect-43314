@@ -40,10 +40,8 @@ const SchemaMarkup: React.FC = () => {
           "caption": "Sunrise Human Care Services Logo"
         },
         "sameAs": [
-          "https://www.facebook.com/sunrisehcs",
-          "https://twitter.com/sunrisehcs",
-          "https://instagram.com/sunrisehcs",
-          "https://www.linkedin.com/company/sunrisehcs"
+          "https://www.facebook.com/sunrisehumancare",
+          "https://www.linkedin.com/company/sunrise-human-care-services"
         ],
         "contactPoint": {
           "@type": "ContactPoint",
