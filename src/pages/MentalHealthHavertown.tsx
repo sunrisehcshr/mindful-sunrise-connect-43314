@@ -152,22 +152,22 @@ const MentalHealthHavertown = () => {
         <main className="flex-grow">
           
           {/* Premium Video Hero Section */}
-          <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-            {/* Video Background */}
+           <section className="relative min-h-[90vh] flex items-end justify-center overflow-hidden pb-16 md:pb-24">
+            {/* Video Background - shifted down to show sky/mountains at top */}
             <video
               autoPlay
               muted
               loop
               playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
 
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-black/30" />
+            {/* Gradient overlay - lighter at top to show blue sky, darker at bottom for text */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/50" />
 
-            {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center">
+            {/* Content - positioned at the bottom */}
+            <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-end text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -213,7 +213,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Local Introduction */}
-          <section id="about" className="py-20 md:py-28 bg-gradient-to-b from-white to-amber-50/40">
+          <section className="py-20 md:py-28 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-5xl mx-auto">
                 <motion.div
@@ -224,13 +224,13 @@ const MentalHealthHavertown = () => {
                   className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center"
                 >
                   <div>
-                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600 mb-4">About Our Practice</span>
-                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-amber-950 tracking-tight leading-tight mb-6">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">About Our Practice</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight mb-6">
                       Compassionate care for
-                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">Havertown residents</span>
+                      <span className="block font-instrument-serif italic text-zinc-500 font-normal">Havertown residents</span>
                     </h2>
                   </div>
-                  <div className="space-y-5 font-barlow text-amber-900/70 text-base md:text-lg leading-relaxed">
+                  <div className="space-y-5 font-barlow text-zinc-600 text-base md:text-lg leading-relaxed">
                     <p>
                       At Sunrise Human Care, we understand that seeking mental health support can feel like a significant step. That's why we've created a welcoming, confidential environment where Havertown residents can receive the care they deserve.
                     </p>
@@ -247,7 +247,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Trust & Differentiation */}
-          <section className="py-20 md:py-28 bg-gradient-to-b from-amber-50/40 via-orange-50/30 to-amber-50/20">
+          <section className="py-20 md:py-28 bg-zinc-950">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-5xl mx-auto">
                 <motion.div
@@ -257,10 +257,10 @@ const MentalHealthHavertown = () => {
                   variants={fadeInUp}
                 >
                   <div className="text-center mb-14">
-                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600 mb-4">Why Choose Us</span>
-                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-amber-950 tracking-tight leading-tight">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-500 mb-4">Why Choose Us</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-tight">
                       Licensed mental health clinic
-                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">serving Havertown, PA</span>
+                      <span className="block font-instrument-serif italic text-yellow-300 font-normal">serving Havertown, PA</span>
                     </h2>
                   </div>
                   
@@ -277,15 +277,15 @@ const MentalHealthHavertown = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group bg-white/80 backdrop-blur-sm border border-amber-200/50 rounded-2xl p-7 hover:bg-white hover:shadow-md hover:border-amber-300/60 transition-all duration-300"
+                        className="group bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/10 transition-all duration-300"
                       >
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 text-amber-600">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-300/10 text-yellow-300">
                             {item.icon}
                           </div>
-                          <h3 className="font-barlow font-semibold text-lg text-amber-950">{item.title}</h3>
+                          <h3 className="font-barlow font-semibold text-lg text-white">{item.title}</h3>
                         </div>
-                        <p className="font-barlow text-amber-900/60 text-sm leading-relaxed">{item.desc}</p>
+                        <p className="font-barlow text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -295,7 +295,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Services Overview */}
-          <section id="services" className="py-20 md:py-28 bg-gradient-to-b from-amber-50/20 to-white">
+          <section id="services" className="py-20 md:py-28 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-5xl mx-auto">
                 <motion.div
@@ -305,12 +305,12 @@ const MentalHealthHavertown = () => {
                   variants={fadeInUp}
                 >
                   <div className="text-center mb-14">
-                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600 mb-4">Our Services</span>
-                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-amber-950 tracking-tight leading-tight">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">Our Services</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight">
                       Mental health services
-                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">available in Havertown</span>
+                      <span className="block font-instrument-serif italic text-zinc-400 font-normal">available in Havertown</span>
                     </h2>
-                    <p className="font-barlow text-amber-900/60 text-base md:text-lg mt-5 max-w-2xl mx-auto">
+                    <p className="font-barlow text-zinc-500 text-base md:text-lg mt-5 max-w-2xl mx-auto">
                       Our Havertown clinic provides structured mental health and psychiatric services for individuals, couples, families, and children.
                     </p>
                   </div>
@@ -326,16 +326,16 @@ const MentalHealthHavertown = () => {
                       >
                         <Link 
                           to={service.link}
-                          className="group flex items-start gap-5 rounded-2xl p-6 border border-amber-100 hover:border-amber-300 hover:shadow-lg transition-all duration-300 bg-white"
+                          className="group flex items-start gap-5 rounded-2xl p-6 border border-zinc-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 bg-white"
                         >
-                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center mt-0.5 group-hover:bg-amber-600 transition-colors duration-300">
-                            <ArrowRight className="h-4 w-4 text-white rotate-[-45deg]" />
+                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mt-0.5 group-hover:bg-yellow-400 transition-colors duration-300">
+                            <ArrowRight className="h-4 w-4 text-white rotate-[-45deg] group-hover:text-zinc-900 transition-colors duration-300" />
                           </div>
                           <div>
-                            <h3 className="font-barlow font-semibold text-lg text-amber-950 mb-1.5 group-hover:text-amber-800 transition-colors">
+                            <h3 className="font-barlow font-semibold text-lg text-zinc-900 mb-1.5 group-hover:text-zinc-700 transition-colors">
                               {service.title}
                             </h3>
-                            <p className="font-barlow text-amber-900/60 text-sm leading-relaxed">
+                            <p className="font-barlow text-zinc-500 text-sm leading-relaxed">
                               {service.description}
                             </p>
                           </div>
@@ -349,7 +349,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Conditions Supported */}
-          <section id="conditions" className="py-20 md:py-28 bg-gradient-to-b from-white via-orange-50/20 to-amber-50/30">
+          <section id="conditions" className="py-20 md:py-28 bg-zinc-50">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-5xl mx-auto">
                 <motion.div
@@ -359,12 +359,12 @@ const MentalHealthHavertown = () => {
                   variants={fadeInUp}
                 >
                   <div className="text-center mb-14">
-                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600 mb-4">Conditions</span>
-                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-amber-950 tracking-tight leading-tight">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">Conditions</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight">
                       Concerns we
-                      <span className="font-instrument-serif italic text-amber-700/70 font-normal"> commonly support</span>
+                      <span className="font-instrument-serif italic text-zinc-400 font-normal"> commonly support</span>
                     </h2>
-                    <p className="font-barlow text-amber-900/60 text-base md:text-lg mt-5 max-w-2xl mx-auto">
+                    <p className="font-barlow text-zinc-500 text-base md:text-lg mt-5 max-w-2xl mx-auto">
                       Our therapists are experienced in helping individuals and families navigate a wide range of mental health challenges.
                     </p>
                   </div>
@@ -377,14 +377,14 @@ const MentalHealthHavertown = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
-                        className="bg-white rounded-2xl p-5 md:p-6 border border-amber-100 text-center hover:shadow-md hover:border-amber-200 transition-all duration-300"
+                        className="bg-white rounded-2xl p-5 md:p-6 border border-zinc-100 text-center hover:shadow-md hover:border-zinc-200 transition-all duration-300"
                       >
-                        <span className="font-barlow font-semibold text-amber-900 text-base">{condition}</span>
+                        <span className="font-barlow font-semibold text-zinc-800 text-base">{condition}</span>
                       </motion.div>
                     ))}
                   </div>
                   
-                  <p className="font-barlow text-amber-900/50 mt-8 text-center text-sm">
+                  <p className="font-barlow text-zinc-500 mt-8 text-center text-sm">
                     If you're unsure whether we can help with your specific concern, please reach out. Our team is happy to discuss your situation.
                   </p>
                 </motion.div>
@@ -393,7 +393,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Local Accessibility */}
-          <section className="py-20 md:py-28 bg-gradient-to-b from-amber-50/30 to-white">
+          <section className="py-20 md:py-28 bg-white">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-5xl mx-auto">
                 <motion.div
@@ -404,12 +404,12 @@ const MentalHealthHavertown = () => {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
                     <div>
-                      <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600 mb-4">Visit Us</span>
-                      <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-amber-950 tracking-tight leading-tight mb-6">
+                      <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">Visit Us</span>
+                      <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight mb-6">
                         In-clinic services in
-                        <span className="block font-instrument-serif italic text-amber-700/70 font-normal">Havertown, Pennsylvania</span>
+                        <span className="block font-instrument-serif italic text-zinc-500 font-normal">Havertown, Pennsylvania</span>
                       </h2>
-                      <div className="space-y-4 font-barlow text-amber-900/70 text-base leading-relaxed">
+                      <div className="space-y-4 font-barlow text-zinc-600 text-base leading-relaxed">
                         <p>
                           Our clinic is located in Havertown, Pennsylvania, serving residents across Delaware County. We've designed our space to be a comfortable, private environment where you can focus on your well-being.
                         </p>
@@ -419,12 +419,12 @@ const MentalHealthHavertown = () => {
                       </div>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-200/60">
+                    <div className="bg-zinc-950 rounded-2xl p-8 text-white">
                       <div className="flex items-center gap-3 mb-6">
-                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100">
-                          <Calendar className="h-5 w-5 text-amber-600" />
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-300/10">
+                          <Calendar className="h-5 w-5 text-yellow-300" />
                         </div>
-                        <h3 className="font-barlow font-semibold text-lg text-amber-950">Convenient Access</h3>
+                        <h3 className="font-barlow font-semibold text-lg">Convenient Access</h3>
                       </div>
                       <ul className="space-y-4">
                         {[
@@ -433,8 +433,8 @@ const MentalHealthHavertown = () => {
                           "Flexible scheduling for your convenience",
                           "Easy appointment booking process"
                         ].map((item, i) => (
-                          <li key={i} className="flex items-center gap-3 font-barlow text-amber-900/70 text-sm">
-                            <CheckCircle className="h-4 w-4 text-amber-500 flex-shrink-0" />
+                          <li key={i} className="flex items-center gap-3 font-barlow text-zinc-300 text-sm">
+                            <CheckCircle className="h-4 w-4 text-yellow-300 flex-shrink-0" />
                             {item}
                           </li>
                         ))}
@@ -447,7 +447,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* FAQs */}
-          <section id="faq" className="py-20 md:py-28 bg-gradient-to-b from-white to-amber-50/30">
+          <section id="faq" className="py-20 md:py-28 bg-zinc-50">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto">
                 <motion.div
@@ -457,10 +457,10 @@ const MentalHealthHavertown = () => {
                   variants={fadeInUp}
                 >
                   <div className="text-center mb-14">
-                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600 mb-4">FAQ</span>
-                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-amber-950 tracking-tight leading-tight">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-400 mb-4">FAQ</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight">
                       Frequently asked
-                      <span className="font-instrument-serif italic text-amber-700/70 font-normal"> questions</span>
+                      <span className="font-instrument-serif italic text-zinc-400 font-normal"> questions</span>
                     </h2>
                   </div>
                   
@@ -469,12 +469,12 @@ const MentalHealthHavertown = () => {
                       <AccordionItem 
                         key={index} 
                         value={`faq-${index}`}
-                        className="bg-white rounded-2xl border border-amber-100 px-6 data-[state=open]:shadow-md transition-shadow duration-300"
+                        className="bg-white rounded-2xl border border-zinc-100 px-6 data-[state=open]:shadow-md transition-shadow duration-300"
                       >
-                        <AccordionTrigger className="text-left font-barlow font-semibold text-amber-950 hover:text-amber-700 hover:no-underline py-5 text-base">
+                        <AccordionTrigger className="text-left font-barlow font-semibold text-zinc-900 hover:text-zinc-600 hover:no-underline py-5 text-base">
                           {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="font-barlow text-amber-900/60 pb-5 text-sm leading-relaxed">
+                        <AccordionContent className="font-barlow text-zinc-500 pb-5 text-sm leading-relaxed">
                           {faq.answer}
                         </AccordionContent>
                       </AccordionItem>
@@ -493,8 +493,8 @@ const MentalHealthHavertown = () => {
               style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')", backgroundPosition: "center 5%" }}
             />
             
-            {/* Warm Overlay */}
-            <div className="absolute inset-0 bg-amber-950/60" />
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/50" />
             
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 md:px-6">
@@ -507,7 +507,7 @@ const MentalHealthHavertown = () => {
                 >
                   <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-tight mb-4 drop-shadow-lg">
                     Ready for a
-                    <span className="font-instrument-serif italic text-amber-200 font-normal"> brighter tomorrow?</span>
+                    <span className="font-instrument-serif italic text-yellow-300 font-normal"> brighter tomorrow?</span>
                   </h2>
                   <p className="font-barlow text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed drop-shadow-md">
                     Taking the first step toward better mental health is an act of courage. Our compassionate team is here to listen, support, and guide you.
@@ -516,7 +516,7 @@ const MentalHealthHavertown = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link 
                       to="/appointment" 
-                      className="inline-flex items-center justify-center gap-2 bg-white text-amber-950 font-barlow font-semibold text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 bg-white text-zinc-900 font-barlow font-semibold text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                     >
                       <Calendar className="h-5 w-5" />
                       Book Your Appointment
