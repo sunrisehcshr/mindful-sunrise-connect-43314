@@ -349,7 +349,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Conditions Supported */}
-          <section id="conditions" className="py-20 md:py-28 bg-zinc-50">
+          <section id="conditions" className="py-20 md:py-28 bg-gradient-to-b from-white via-orange-50/20 to-amber-50/30">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-5xl mx-auto">
                 <motion.div
