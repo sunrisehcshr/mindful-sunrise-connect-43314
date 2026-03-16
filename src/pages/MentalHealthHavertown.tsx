@@ -152,22 +152,22 @@ const MentalHealthHavertown = () => {
         <main className="flex-grow">
           
           {/* Premium Video Hero Section */}
-          <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-            {/* Video Background */}
+           <section className="relative min-h-[90vh] flex items-end justify-center overflow-hidden pb-16 md:pb-24">
+            {/* Video Background - shifted down to show sky/mountains at top */}
             <video
               autoPlay
               muted
               loop
               playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
 
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-black/30" />
+            {/* Gradient overlay - lighter at top to show blue sky, darker at bottom for text */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/50" />
 
-            {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center">
+            {/* Content - positioned at the bottom */}
+            <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-end text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
