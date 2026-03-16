@@ -384,7 +384,7 @@ const MentalHealthHavertown = () => {
                     ))}
                   </div>
                   
-                  <p className="font-barlow text-zinc-500 mt-8 text-center text-sm">
+                  <p className="font-barlow text-amber-900/50 mt-8 text-center text-sm">
                     If you're unsure whether we can help with your specific concern, please reach out. Our team is happy to discuss your situation.
                   </p>
                 </motion.div>
