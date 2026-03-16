@@ -447,7 +447,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* FAQs */}
-          <section id="faq" className="py-20 md:py-28 bg-zinc-50">
+          <section id="faq" className="py-20 md:py-28 bg-gradient-to-b from-white to-amber-50/30">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto">
                 <motion.div
