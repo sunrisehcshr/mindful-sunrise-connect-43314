@@ -152,22 +152,21 @@ const MentalHealthHavertown = () => {
         <main className="flex-grow">
           
           {/* Premium Video Hero Section */}
-           <section className="relative min-h-[90vh] flex items-end justify-center overflow-hidden pb-16 md:pb-24">
-            {/* Video Background - shifted down to show sky/mountains at top */}
+           <section className="relative min-h-[90vh] flex items-start justify-center overflow-hidden pt-32 md:pt-40">
+            {/* Video Background - pushed down so sky/mountains visible at top behind text */}
             <video
               autoPlay
               muted
               loop
               playsInline
-              className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
+              className="absolute inset-0 w-full h-full object-cover object-bottom"
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
 
-            {/* Gradient overlay - lighter at top to show blue sky, darker at bottom for text */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/50" />
+            {/* No dark overlay - clean like reference */}
 
-            {/* Content - positioned at the bottom */}
-            <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-end text-center">
+            {/* Content - positioned at the top over the sky portion */}
+            <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -175,10 +174,10 @@ const MentalHealthHavertown = () => {
                 className="max-w-4xl"
               >
                 <h1 className="mb-6">
-                  <span className="block font-barlow font-semibold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight drop-shadow-lg">
+                  <span className="block font-barlow font-semibold text-zinc-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight">
                     Step into a brighter tomorrow
                   </span>
-                  <span className="block font-instrument-serif italic text-yellow-300 text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-none mt-2 drop-shadow-lg">
+                  <span className="block font-instrument-serif italic text-zinc-900 text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-none mt-2">
                     with sunrise
                   </span>
                 </h1>
@@ -187,7 +186,7 @@ const MentalHealthHavertown = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
-                  className="font-barlow font-medium text-white text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
+                  className="font-barlow font-medium text-zinc-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
                   Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Havertown and the surrounding community.
                 </motion.p>
@@ -199,7 +198,7 @@ const MentalHealthHavertown = () => {
                 >
                   <Link
                     to="/appointment"
-                    className="inline-flex items-center gap-2 bg-white text-zinc-900 font-barlow font-semibold text-base md:text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-white text-zinc-900 font-barlow font-semibold text-base md:text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-zinc-200"
                   >
                     <Calendar className="h-5 w-5" />
                     Schedule an Appointment
