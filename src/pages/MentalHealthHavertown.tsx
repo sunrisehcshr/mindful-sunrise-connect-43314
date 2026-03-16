@@ -247,7 +247,7 @@ const MentalHealthHavertown = () => {
           </section>
 
           {/* Trust & Differentiation */}
-          <section className="py-20 md:py-28 bg-zinc-950">
+          <section className="py-20 md:py-28 bg-gradient-to-b from-amber-50/40 via-orange-50/30 to-amber-50/20">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-5xl mx-auto">
                 <motion.div
@@ -257,10 +257,10 @@ const MentalHealthHavertown = () => {
                   variants={fadeInUp}
                 >
                   <div className="text-center mb-14">
-                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-zinc-500 mb-4">Why Choose Us</span>
-                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-tight">
+                    <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600 mb-4">Why Choose Us</span>
+                    <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-amber-950 tracking-tight leading-tight">
                       Licensed mental health clinic
-                      <span className="block font-instrument-serif italic text-yellow-300 font-normal">serving Havertown, PA</span>
+                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">serving Havertown, PA</span>
                     </h2>
                   </div>
                   
@@ -277,15 +277,15 @@ const MentalHealthHavertown = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/10 transition-all duration-300"
+                        className="group bg-white/80 backdrop-blur-sm border border-amber-200/50 rounded-2xl p-7 hover:bg-white hover:shadow-md hover:border-amber-300/60 transition-all duration-300"
                       >
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-300/10 text-yellow-300">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 text-amber-600">
                             {item.icon}
                           </div>
-                          <h3 className="font-barlow font-semibold text-lg text-white">{item.title}</h3>
+                          <h3 className="font-barlow font-semibold text-lg text-amber-950">{item.title}</h3>
                         </div>
-                        <p className="font-barlow text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+                        <p className="font-barlow text-amber-900/60 text-sm leading-relaxed">{item.desc}</p>
                       </motion.div>
                     ))}
                   </div>
