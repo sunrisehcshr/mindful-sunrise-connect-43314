@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
@@ -15,6 +15,17 @@ import {
 } from "@/components/ui/accordion";
 
 const MentalHealthHavertown = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay blocked — silent fallback
+      });
+    }
+  }, []);
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -155,10 +166,13 @@ const MentalHealthHavertown = () => {
            <section className="relative min-h-[90vh] flex items-end justify-center overflow-hidden pb-16 md:pb-24">
             {/* Video Background - shifted down to show sky/mountains at top */}
             <video
+              ref={videoRef}
               autoPlay
               muted
               loop
               playsInline
+              preload="auto"
+              webkit-playsinline="true"
               className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
