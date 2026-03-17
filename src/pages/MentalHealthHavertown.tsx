@@ -166,10 +166,13 @@ const MentalHealthHavertown = () => {
            <section className="relative min-h-[90vh] flex items-end justify-center overflow-hidden pb-16 md:pb-24">
             {/* Video Background - shifted down to show sky/mountains at top */}
             <video
+              ref={videoRef}
               autoPlay
               muted
               loop
               playsInline
+              preload="auto"
+              webkit-playsinline="true"
               className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
