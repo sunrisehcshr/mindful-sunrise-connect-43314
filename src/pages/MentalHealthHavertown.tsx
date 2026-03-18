@@ -177,8 +177,8 @@ const MentalHealthHavertown = () => {
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"
             />
 
-            {/* Gradient overlay - lighter at top to show blue sky, darker at bottom for text */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/50" />
+            {/* Gradient overlay - transparent most of the way, only fading in at the very bottom for text */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-black/50" />
 
             {/* Content - positioned at the bottom */}
             <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-end text-center">
