@@ -163,7 +163,7 @@ const MentalHealthHavertown = () => {
         <main className="flex-grow">
           
           {/* Premium Video Hero Section */}
-           <section className="relative min-h-[90vh] flex items-end justify-center overflow-hidden pb-16 md:pb-24">
+           <section className="relative min-h-[90vh] flex items-center md:items-end justify-center overflow-hidden md:pb-24">
             {/* Video Background - shifted down to show sky/mountains at top */}
             <video
               ref={videoRef}
