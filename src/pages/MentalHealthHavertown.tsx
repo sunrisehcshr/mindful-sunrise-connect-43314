@@ -163,7 +163,7 @@ const MentalHealthHavertown = () => {
         <main className="flex-grow">
           
           {/* Premium Video Hero Section */}
-           <section className="relative min-h-[90vh] flex items-end justify-center overflow-hidden pb-16 md:pb-24">
+           <section className="relative min-h-[90vh] flex items-center md:items-end justify-center overflow-hidden md:pb-24">
             {/* Video Background - shifted down to show sky/mountains at top */}
             <video
               ref={videoRef}
@@ -178,7 +178,7 @@ const MentalHealthHavertown = () => {
             />
 
             {/* Gradient overlay - transparent most of the way, only fading in at the very bottom for text */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-85% to-black/50" />
 
             {/* Content - positioned at the bottom */}
             <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-end text-center">
