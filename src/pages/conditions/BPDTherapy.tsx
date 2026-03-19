@@ -2,7 +2,7 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 const BPDTherapy = () => {
   const pageData = {
-    title: "Borderline Personality Disorder Treatment",
+    title: "Borderline Personality Disorder Treatment in Havertown, PA",
     description: "Specialized therapy for Borderline Personality Disorder (BPD) and emotional regulation in Havertown, PA.",
     pageTitle: "Borderline Personality Disorder Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for Borderline Personality Disorder in Havertown, PA. Dialectical Behavior Therapy (DBT) and evidence-based approaches for emotional regulation.",
