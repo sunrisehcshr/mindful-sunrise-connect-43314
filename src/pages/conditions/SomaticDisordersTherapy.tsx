@@ -1,6 +1,5 @@
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import SEOHead from '../../components/SEOHead';
 const SomaticDisordersTherapy = () => {
   const pageData = {
     title: "Somatic Symptom Disorders Treatment",
