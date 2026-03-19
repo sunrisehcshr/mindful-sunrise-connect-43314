@@ -128,21 +128,6 @@ const IndividualTherapy = () => {
   ];
 
   return (
-    <>
-      <SEOHead
-        title="Individual Therapy in Havertown, PA | Licensed Therapists"
-        description="Individual therapy in Havertown, PA with licensed therapists for anxiety, depression, and trauma. Personalized counseling, flexible scheduling, insurance accepted."
-        canonicalUrl="https://sunrisehumancare.com/individual-therapy-havertown-pa"
-        keywords="individual therapy Havertown, therapy in Pennsylvania, mental health counseling Delaware County, therapist near me, anxiety treatment Havertown, CBT therapy Havertown"
-        serviceSchema={{
-          name: "Individual Therapy",
-          description: "Personalized therapy in Havertown, PA for mental health challenges like anxiety and depression.",
-          provider: "Sunrise Human Care Services",
-          serviceType: "Mental Health Counseling",
-          areaServed: "Havertown, PA and Delaware County"
-        }}
-      />
-
       <ServicePageLayout
         title="Individual Therapy in Havertown, PA"
         description="Personalized individual therapy in Havertown, PA with licensed therapists helping you navigate anxiety, depression, and trauma using proven counseling methods."
