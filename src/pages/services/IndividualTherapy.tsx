@@ -100,7 +100,7 @@ const IndividualTherapy = () => {
     {
       title: "Trauma & PTSD",
       description: "Trauma therapy in Havertown to heal from past experiences using trauma-informed care.",
-      url: "/trauma-therapy-havertown-pa"
+      url: "/ptsd-therapy-havertown-pa"
     }
   ];
 
