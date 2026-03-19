@@ -2,7 +2,7 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 const SomaticDisordersTherapy = () => {
   const pageData = {
-    title: "Somatic Symptom Disorders Treatment",
+    title: "Somatic Symptom Disorders Treatment in Havertown, PA",
     description: "Specialized treatment for somatic symptom disorders and related conditions in Havertown, PA.",
     pageTitle: "Somatic Symptom Disorders Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for somatic symptom disorders in Havertown, PA. Mind-body approaches to reduce symptom distress and improve functioning.",
