@@ -560,7 +560,6 @@ const IndividualTherapy = () => {
           </div>
         </section>
       </ServicePageLayout>
-    </>
   );
 };
 

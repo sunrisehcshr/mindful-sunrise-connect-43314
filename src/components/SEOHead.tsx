@@ -265,41 +265,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       
-      {/* FAQ schema for therapy/treatment pages */}
-      {canonicalUrl.includes("therapy") || canonicalUrl.includes("treatment") || canonicalUrl.includes("counseling") ? (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Does Sunrise Human Care accept insurance?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We currently accept Medicaid for our mental health services. Our team specializes in serving the Medicaid community with quality mental health treatment. Please call our office to verify your Medicaid benefits."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How long are therapy sessions at Sunrise Human Care?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Initial evaluations are typically 60 minutes, while standard therapy sessions are 45-50 minutes. Specialized services may vary in length. We'll discuss the recommended session duration for your specific needs during your consultation."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What areas does Sunrise Human Care serve?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We proudly serve Havertown, PA and surrounding communities in Delaware County, including Drexel Hill, Broomall, Ardmore, Springfield, Upper Darby, and Newtown Square."
-                }
-              }
-            ]
-          })}
-        </script>
-      ) : null}
+      {/* FAQ schema removed - now handled per-page in ServicePageLayout */}
     </Helmet>
   );
 };

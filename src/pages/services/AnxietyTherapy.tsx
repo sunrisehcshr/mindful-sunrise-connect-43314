@@ -117,8 +117,8 @@ const AnxietyTherapy = () => {
               
               <ul className="space-y-3">
                 {[{
-                name: "Managing Panic Attacks",
-                url: "/blog/managing-panic-attacks"
+                name: "Understanding Anxiety Treatment Options",
+                url: "/blog/anxiety-treatment-delaware-county"
               }, {
                 name: "When to Consider Medication for Anxiety",
                 url: "/medication-management-havertown-pa"
