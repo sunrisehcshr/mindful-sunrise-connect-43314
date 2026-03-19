@@ -3,7 +3,7 @@ import ServicePageLayout from '../../components/services/ServicePageLayout';
 import { motion } from 'framer-motion';
 const SchizophreniaTherapy = () => {
   const pageData = {
-    title: "Schizophrenia Treatment",
+    title: "Schizophrenia Treatment in Havertown, PA",
     description: "Specialized treatment for schizophrenia and other psychotic disorders in Havertown, PA.",
     pageTitle: "Schizophrenia Treatment | Sunrise Human Care Services",
     metaDescription: "Comprehensive treatment for schizophrenia and psychotic disorders in Havertown, PA. Evidence-based therapy approaches, medication management, and family support.",
