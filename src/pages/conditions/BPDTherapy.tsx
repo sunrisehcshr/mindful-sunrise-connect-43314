@@ -47,15 +47,7 @@ const BPDTherapy = () => {
       url: "/ptsd-therapy-havertown-pa"
     }]
   };
-  return <>
-      <SEOHead title="Borderline Personality Disorder Treatment Havertown | Sunrise Human Care" description="Specialized BPD treatment in Havertown using Dialectical Behavior Therapy (DBT) and evidence-based approaches. Expert help with emotional regulation, relationship skills, and distress tolerance. Insurance accepted. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/bpd-therapy-havertown-pa" keywords="BPD therapy Havertown, Borderline Personality Disorder treatment PA, DBT therapy Delaware County, emotional regulation counseling, relationship skills therapy, distress tolerance training" serviceSchema={{
-      name: "Borderline Personality Disorder Treatment",
-      description: "Specialized therapy for Borderline Personality Disorder (BPD) using DBT and evidence-based approaches for emotion regulation and interpersonal effectiveness.",
-      provider: "Sunrise Human Care Services",
-      serviceType: "BPD Therapy",
-      areaServed: "Havertown, PA and Delaware County"
-    }} />
-      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
+  return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
         {/* Service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
