@@ -47,15 +47,7 @@ const GriefTherapy = () => {
       url: "/ptsd-therapy-havertown-pa"
     }]
   };
-  return <>
-      <SEOHead title="Grief & Loss Therapy in Havertown, PA | Sunrise Human Care Services" description="Compassionate grief counseling in Havertown for bereavement, complicated grief, and significant losses. Professional support for processing emotions, creating meaningful rituals, and adapting to life changes. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/grief-therapy-havertown-pa" keywords="grief counseling Havertown, bereavement therapy Pennsylvania, loss support Delaware County, complicated grief treatment, anniversary reaction help, memorial rituals counseling" serviceSchema={{
-      name: "Grief & Loss Therapy",
-      description: "Compassionate support for bereavement, complicated grief, and adapting to significant losses through evidence-based therapy approaches.",
-      provider: "Sunrise Human Care Services",
-      serviceType: "Grief Counseling",
-      areaServed: "Havertown, PA and Delaware County"
-    }} />
-      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
+  return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
         {/* Service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
