@@ -1,7 +1,6 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import SEOHead from '../../components/SEOHead';
 import ImageOptimizer from '../../components/ui/ImageOptimizer';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,7 @@ import { ArrowRight } from 'lucide-react';
 
 const EatingDisordersTherapy = () => {
   const pageData = {
-    title: "Eating Disorders Treatment",
+    title: "Eating Disorders Treatment in Havertown, PA",
     description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating in Havertown, PA.",
     pageTitle: "Eating Disorders Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for anorexia, bulimia, binge eating disorder and disordered eating in Havertown, PA. Comprehensive therapy and nutritional support.",
@@ -55,21 +54,7 @@ const EatingDisordersTherapy = () => {
     }]
   };
 
-  return <>
-      <SEOHead 
-        title="Eating Disorders Treatment in Havertown, PA | Sunrise Human Care" 
-        description="Specialized eating disorder therapy in Havertown for anorexia, bulimia, binge eating, and ARFID. Evidence-based treatment combining psychological therapy and nutritional guidance. Personalized recovery plans. Call (814) 620-2162." 
-        canonicalUrl="https://sunrisehumancare.com/eating-disorders-treatment-havertown-pa" 
-        keywords="eating disorder treatment Havertown, anorexia therapy Pennsylvania, bulimia counseling, binge eating disorder help, ARFID treatment, body image therapy, nutritional counseling Delaware County" 
-        serviceSchema={{
-          name: "Eating Disorders Treatment",
-          description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating patterns, addressing both psychological and physical aspects.",
-          provider: "Sunrise Human Care Services",
-          serviceType: "Eating Disorder Therapy",
-          areaServed: "Havertown, PA and Delaware County"
-        }} 
-      />
-      <ServicePageLayout 
+  return <ServicePageLayout 
         title={pageData.title} 
         description={pageData.description} 
         pageTitle={pageData.pageTitle} 
@@ -183,8 +168,7 @@ const EatingDisordersTherapy = () => {
             </div>
           </div>
         </section>
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 
 export default EatingDisordersTherapy;

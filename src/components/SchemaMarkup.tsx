@@ -89,8 +89,96 @@ const SchemaMarkup: React.FC = () => {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "MedicalService",
+                "name": "Couples Counseling",
+                "url": "https://sunrisehumancare.com/couples-counseling-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "Family Therapy",
+                "url": "https://sunrisehumancare.com/family-therapy-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "Child & Adolescent Therapy",
+                "url": "https://sunrisehumancare.com/child-therapy-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "Psychiatric Evaluations",
+                "url": "https://sunrisehumancare.com/psychiatric-evaluations-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "Medication Management",
+                "url": "https://sunrisehumancare.com/medication-management-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
                 "name": "IBHS Services",
                 "url": "https://sunrisehumancare.com/ibhs-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "Anxiety Treatment",
+                "url": "https://sunrisehumancare.com/anxiety-therapy-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "Depression Therapy",
+                "url": "https://sunrisehumancare.com/depression-therapy-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "ADHD Treatment",
+                "url": "https://sunrisehumancare.com/adhd-treatment-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "Bipolar Disorder Therapy",
+                "url": "https://sunrisehumancare.com/bipolar-disorder-therapy-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "OCD Therapy",
+                "url": "https://sunrisehumancare.com/ocd-therapy-havertown-pa"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalService",
+                "name": "Trauma & PTSD Therapy",
+                "url": "https://sunrisehumancare.com/ptsd-therapy-havertown-pa"
               }
             }
           ]

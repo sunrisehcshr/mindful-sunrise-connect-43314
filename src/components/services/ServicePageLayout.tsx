@@ -6,8 +6,10 @@ import SchemaMarkup from '../SchemaMarkup';
 import { motion } from 'framer-motion';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar, PhoneCall } from 'lucide-react';
+import { ArrowRight, Calendar, PhoneCall, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Helmet } from 'react-helmet-async';
 
 interface ServicePageLayoutProps {
   children: React.ReactNode;
@@ -18,9 +20,9 @@ interface ServicePageLayoutProps {
   serviceType: string;
   canonicalUrl: string;
   heroImage?: string;
-  benefits?: string[]; // Marked optional, not rendered
-  approaches?: { title: string; description: string; icon?: React.ReactNode }[]; // Marked optional
-  faqs?: { question: string; answer: string }[]; // Marked optional
+  benefits?: string[];
+  approaches?: { title: string; description: string; icon?: React.ReactNode }[];
+  faqs?: { question: string; answer: string }[];
   relatedServices: { title: string; url: string }[];
   schemaType?: string;
   breadcrumbs?: { name: string; url: string; position: number }[];
@@ -35,9 +37,9 @@ const ServicePageLayout = ({
   serviceType,
   canonicalUrl,
   heroImage = '/therapy-in-havertown.jpg',
-  benefits, // Not rendered, passed for potential metadata use
-  approaches, // Not rendered
-  faqs, // Not rendered
+  benefits,
+  approaches,
+  faqs,
   relatedServices,
   schemaType,
   breadcrumbs
@@ -61,6 +63,20 @@ const ServicePageLayout = ({
   const serviceName = serviceType || title.split('in')[0].trim();
   const absoluteCanonicalUrl = canonicalUrl.startsWith('http') ? canonicalUrl : `https://sunrisehumancare.com${canonicalUrl}`;
 
+  // Generate page-specific FAQ schema
+  const faqSchema = faqs && faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
   return (
     <>
       <SEOHead
@@ -71,6 +87,15 @@ const ServicePageLayout = ({
         breadcrumbs={breadcrumbs}
       />
       <SchemaMarkup />
+
+      {/* Page-specific FAQ schema */}
+      {faqSchema && (
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        </Helmet>
+      )}
 
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -119,6 +144,109 @@ const ServicePageLayout = ({
           
           {/* Render main content sections (e.g., Why Choose, Types) */}
           {children}
+
+          {/* Benefits Section */}
+          {benefits && benefits.length > 0 && (
+            <section className={`py-12 md:py-16 ${warmGradientBg}`}>
+              {warmGradientOverlay}
+              <div className="container relative z-10 mx-auto px-4 md:px-6">
+                <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">
+                    Benefits of {serviceType} in Havertown
+                  </h2>
+                  <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
+                  <p className="text-amber-900">
+                    Our {serviceType.toLowerCase()} in Havertown, PA is designed to help you achieve meaningful, lasting improvements in your mental health and daily life.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto">
+                  {benefits.map((benefit, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: index * 0.08 }}
+                      className={`flex items-start gap-3 rounded-lg p-5 ${itemBgClass}`}
+                    >
+                      <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-amber-900 text-sm leading-relaxed">{benefit}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Treatment Approaches Section */}
+          {approaches && approaches.length > 0 && (
+            <section className="py-12 md:py-16 bg-white">
+              <div className="container mx-auto px-4 md:px-6">
+                <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">
+                    Our Treatment Approaches for {serviceType}
+                  </h2>
+                  <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
+                  <p className="text-muted-foreground">
+                    We use evidence-based therapeutic methods tailored to your unique needs at our Havertown, PA clinic.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+                  {approaches.map((approach, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="bg-amber-50/60 border border-amber-100/50 rounded-xl p-6 md:p-7 hover:shadow-md transition-all duration-300"
+                    >
+                      <div className="flex items-start gap-4">
+                        {approach.icon && (
+                          <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">
+                            {approach.icon}
+                          </div>
+                        )}
+                        <div>
+                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-amber-900">{approach.title}</h3>
+                          <p className="text-muted-foreground text-sm leading-relaxed">{approach.description}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* FAQ Section */}
+          {faqs && faqs.length > 0 && (
+            <section className={`py-12 md:py-16 ${warmGradientBg}`}>
+              {warmGradientOverlay}
+              <div className="container relative z-10 mx-auto px-4 md:px-6">
+                <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">
+                    Frequently Asked Questions About {serviceType}
+                  </h2>
+                  <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
+                </div>
+                <div className="max-w-3xl mx-auto">
+                  <Accordion type="single" collapsible className="w-full">
+                    {faqs.map((faq, index) => (
+                      <AccordionItem value={`faq-${index}`} key={index} className="border-amber-200/50">
+                        <AccordionTrigger className="text-base md:text-lg font-medium text-amber-950 text-left hover:no-underline">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </div>
+            </section>
+          )}
           
           <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
             <div className="container mx-auto px-4 md:px-6">

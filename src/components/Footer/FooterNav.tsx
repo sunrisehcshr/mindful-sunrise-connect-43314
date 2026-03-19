@@ -23,6 +23,7 @@ const FooterNav: React.FC = () => {
         { to: "/child-therapy-havertown-pa", label: "Child Therapy" },
         { to: "/psychiatric-evaluations-havertown-pa", label: "Psychiatric Evaluations" },
         { to: "/medication-management-havertown-pa", label: "Medication Management" },
+        { to: "/ibhs-havertown-pa", label: "IBHS Services" },
       ]
     },
     { 

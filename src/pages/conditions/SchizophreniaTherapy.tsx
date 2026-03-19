@@ -1,10 +1,9 @@
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import SEOHead from '../../components/SEOHead';
 import { motion } from 'framer-motion';
 const SchizophreniaTherapy = () => {
   const pageData = {
-    title: "Schizophrenia Treatment",
+    title: "Schizophrenia Treatment in Havertown, PA",
     description: "Specialized treatment for schizophrenia and other psychotic disorders in Havertown, PA.",
     pageTitle: "Schizophrenia Treatment | Sunrise Human Care Services",
     metaDescription: "Comprehensive treatment for schizophrenia and psychotic disorders in Havertown, PA. Evidence-based therapy approaches, medication management, and family support.",
@@ -49,15 +48,7 @@ const SchizophreniaTherapy = () => {
       url: "/family-therapy-havertown-pa"
     }]
   };
-  return <>
-      <SEOHead title="Schizophrenia & Psychotic Disorders Treatment Havertown | Sunrise Human Care" description="Comprehensive schizophrenia treatment in Havertown, PA. Our integrated approach includes therapy, medication management, family support, and skills training for improved daily functioning and quality of life. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/schizophrenia-treatment-havertown-pa" keywords="schizophrenia treatment Havertown, psychotic disorders therapy PA, CBT for psychosis Delaware County, family therapy schizophrenia, psychoeducation for families, early psychosis intervention, hallucination treatment" serviceSchema={{
-      name: "Schizophrenia Treatment",
-      description: "Specialized treatment for schizophrenia and other psychotic disorders using an integrated approach of therapy, medication management, and family support.",
-      provider: "Sunrise Human Care Services",
-      serviceType: "Schizophrenia Therapy",
-      areaServed: "Havertown, PA and Delaware County"
-    }} />
-      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
+  return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
         {/* Enhanced service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
@@ -209,7 +200,6 @@ const SchizophreniaTherapy = () => {
         
         {/* Resources Section */}
         
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 export default SchizophreniaTherapy;

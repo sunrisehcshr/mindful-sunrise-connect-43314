@@ -1,6 +1,5 @@
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import SEOHead from '../../components/SEOHead';
 
 const ADHDTreatment = () => {
   const benefits = [
@@ -57,20 +56,6 @@ const ADHDTreatment = () => {
   ];
   
   return (
-    <>
-      <SEOHead 
-        title="ADHD Treatment Havertown, PA | Child & Adult ADHD Therapy | Sunrise Human Care" 
-        description="Expert ADHD treatment in Havertown for children, teens, and adults. Comprehensive assessment, therapy, medication management, and practical strategies to improve focus, organization, and daily functioning. Call (814) 620-2162." 
-        canonicalUrl="https://sunrisehumancare.com/adhd-treatment-havertown-pa"
-        keywords="ADHD treatment Havertown, ADHD therapy Delaware County, ADHD medication management, adult ADHD treatment PA, childhood ADHD assessment, executive functioning skills training"
-        serviceSchema={{
-          name: "ADHD Treatment",
-          description: "Comprehensive ADHD assessment and treatment for children, adolescents, and adults, helping you manage symptoms and reach your full potential.",
-          provider: "Sunrise Human Care Services",
-          serviceType: "ADHD Therapy",
-          areaServed: "Havertown, PA and Delaware County"
-        }}
-      />
       <ServicePageLayout
         title="ADHD Treatment in Havertown, PA"
         description="Comprehensive ADHD assessment and treatment for children, adolescents, and adults, helping you manage symptoms and reach your full potential."
@@ -154,7 +139,6 @@ const ADHDTreatment = () => {
           </div>
         </section>
       </ServicePageLayout>
-    </>
   );
 };
 

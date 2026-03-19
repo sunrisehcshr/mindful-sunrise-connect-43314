@@ -1,9 +1,8 @@
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import SEOHead from '../../components/SEOHead';
 const SomaticDisordersTherapy = () => {
   const pageData = {
-    title: "Somatic Symptom Disorders Treatment",
+    title: "Somatic Symptom Disorders Treatment in Havertown, PA",
     description: "Specialized treatment for somatic symptom disorders and related conditions in Havertown, PA.",
     pageTitle: "Somatic Symptom Disorders Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for somatic symptom disorders in Havertown, PA. Mind-body approaches to reduce symptom distress and improve functioning.",
@@ -48,15 +47,7 @@ const SomaticDisordersTherapy = () => {
       url: "/ptsd-therapy-havertown-pa"
     }]
   };
-  return <>
-      <SEOHead title="Somatic Symptom Disorders Treatment in Havertown, PA | Sunrise Human Care" description="Specialized therapy for somatic symptom disorders in Havertown, PA. Our mind-body approach addresses persistent physical symptoms, health anxiety, and medically unexplained conditions. Evidence-based treatments to improve daily functioning. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/somatic-disorders-treatment-havertown-pa" keywords="somatic symptom disorder treatment Havertown, health anxiety therapy Delaware County, illness anxiety help, functional neurological symptoms, mind-body therapy PA, medically unexplained symptoms treatment" serviceSchema={{
-      name: "Somatic Symptom Disorders Treatment",
-      description: "Specialized treatment for somatic symptom disorders and related conditions, addressing both physical symptoms and psychological factors.",
-      provider: "Sunrise Human Care Services",
-      serviceType: "Mind-Body Therapy",
-      areaServed: "Havertown, PA and Delaware County"
-    }} />
-      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
+  return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
         {/* Service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
@@ -153,7 +144,6 @@ const SomaticDisordersTherapy = () => {
         
         {/* Local Context */}
         
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 export default SomaticDisordersTherapy;

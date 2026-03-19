@@ -1,9 +1,8 @@
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import SEOHead from '../../components/SEOHead';
 const RelationshipTherapy = () => {
   const pageData = {
-    title: "Relationship Therapy",
+    title: "Relationship Therapy in Havertown, PA",
     description: "Effective therapy for communication problems, conflict resolution, and rebuilding trust in Havertown, PA.",
     pageTitle: "Relationship Therapy | Sunrise Human Care Services",
     metaDescription: "Effective therapy for relationship issues, communication problems, and conflict resolution in Havertown, PA.",
@@ -48,15 +47,7 @@ const RelationshipTherapy = () => {
       url: "/individual-therapy-havertown-pa"
     }]
   };
-  return <>
-      <SEOHead title="Relationship Therapy in Havertown, PA | Sunrise Human Care Services" description="Professional relationship counseling in Havertown using evidence-based approaches including EFT and Gottman Method. Resolve communication issues, rebuild trust, and strengthen connections. Insurance accepted. Call (814) 620-2162." canonicalUrl="https://sunrisehumancare.com/relationship-therapy-havertown-pa" keywords="relationship therapy Havertown, couples counseling Delaware County, communication skills therapy, conflict resolution help, trust rebuilding therapy, EFT therapy Pennsylvania, Gottman Method counseling" serviceSchema={{
-      name: "Relationship Therapy",
-      description: "Specialized therapy for communication problems, conflict resolution, and rebuilding trust in various relationship types using evidence-based approaches.",
-      provider: "Sunrise Human Care Services",
-      serviceType: "Relationship Counseling",
-      areaServed: "Havertown, PA and Delaware County"
-    }} />
-      <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
+  return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
         {/* Service-specific content */}
         <section className="py-16 bg-secondary/10">
           <div className="container mx-auto px-4 md:px-6">
@@ -161,7 +152,6 @@ const RelationshipTherapy = () => {
         
         {/* Testimonial Section */}
         
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 export default RelationshipTherapy;
