@@ -2,7 +2,7 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 const GriefTherapy = () => {
   const pageData = {
-    title: "Grief & Loss Therapy",
+    title: "Grief & Loss Therapy in Havertown, PA",
     description: "Compassionate support for bereavement, complicated grief, and adapting to significant losses in Havertown, PA.",
     pageTitle: "Grief & Loss Therapy | Sunrise Human Care Services",
     metaDescription: "Compassionate grief counseling and bereavement support in Havertown, PA. Professional therapy for coping with loss and complicated grief.",
