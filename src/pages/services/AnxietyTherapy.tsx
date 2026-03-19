@@ -74,7 +74,7 @@ const AnxietyTherapy = () => {
               </p>
               
               <p className="leading-relaxed">
-                We proudly serve clients seeking anxiety therapy throughout Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities. Whether you're dealing with <Link to="/conditions/panic-disorder" className="text-orange-600 hover:underline">panic attacks</Link>, <Link to="/conditions/generalized-anxiety-disorder" className="text-orange-600 hover:underline">persistent worry</Link>, or <Link to="/conditions/social-anxiety-disorder" className="text-orange-600 hover:underline">social anxiety</Link>, our licensed therapists provide effective anxiety treatment in Havertown tailored to your specific needs.
+                We proudly serve clients seeking anxiety therapy throughout Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities. Whether you're dealing with panic attacks, persistent worry, or social anxiety, our licensed therapists provide effective <Link to="/anxiety-therapy-havertown-pa" className="text-orange-600 hover:underline">anxiety treatment in Havertown</Link> tailored to your specific needs.
               </p>
             </div>
           </motion.div>
