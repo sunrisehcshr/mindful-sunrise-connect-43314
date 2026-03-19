@@ -200,7 +200,6 @@ const SchizophreniaTherapy = () => {
         
         {/* Resources Section */}
         
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 export default SchizophreniaTherapy;

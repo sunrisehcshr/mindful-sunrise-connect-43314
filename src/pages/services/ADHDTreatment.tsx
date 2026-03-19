@@ -139,7 +139,6 @@ const ADHDTreatment = () => {
           </div>
         </section>
       </ServicePageLayout>
-    </>
   );
 };
 

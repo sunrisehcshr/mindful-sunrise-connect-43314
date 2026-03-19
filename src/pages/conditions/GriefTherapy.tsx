@@ -163,7 +163,6 @@ const GriefTherapy = () => {
         
         {/* Local Grief Resources */}
         
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 export default GriefTherapy;

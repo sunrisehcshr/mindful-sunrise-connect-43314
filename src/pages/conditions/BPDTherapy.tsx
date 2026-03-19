@@ -153,7 +153,6 @@ const BPDTherapy = () => {
         
         {/* Local Resources Section */}
         
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 export default BPDTherapy;
