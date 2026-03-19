@@ -1,7 +1,6 @@
 
 import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
-import SEOHead from '../../components/SEOHead';
 
 const DissociativeDisordersTherapy = () => {
   const pageData = {
