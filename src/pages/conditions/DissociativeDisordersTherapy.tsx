@@ -4,7 +4,7 @@ import ServicePageLayout from '../../components/services/ServicePageLayout';
 
 const DissociativeDisordersTherapy = () => {
   const pageData = {
-    title: "Dissociative Disorders Treatment",
+    title: "Dissociative Disorders Treatment in Havertown, PA",
     description: "Specialized treatment for dissociative identity disorder and related conditions in Havertown, PA.",
     pageTitle: "Dissociative Disorders Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for dissociative disorders in Havertown, PA. Trauma-informed therapy focusing on safety, stabilization, and integration.",
