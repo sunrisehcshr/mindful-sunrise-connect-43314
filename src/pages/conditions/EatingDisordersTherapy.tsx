@@ -168,8 +168,7 @@ const EatingDisordersTherapy = () => {
             </div>
           </div>
         </section>
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 
 export default EatingDisordersTherapy;

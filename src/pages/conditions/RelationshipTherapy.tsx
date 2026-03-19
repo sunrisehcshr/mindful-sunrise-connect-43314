@@ -152,7 +152,6 @@ const RelationshipTherapy = () => {
         
         {/* Testimonial Section */}
         
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 export default RelationshipTherapy;

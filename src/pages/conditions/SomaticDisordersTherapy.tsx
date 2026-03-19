@@ -144,7 +144,6 @@ const SomaticDisordersTherapy = () => {
         
         {/* Local Context */}
         
-      </ServicePageLayout>
-    </>;
+      </ServicePageLayout>;
 };
 export default SomaticDisordersTherapy;

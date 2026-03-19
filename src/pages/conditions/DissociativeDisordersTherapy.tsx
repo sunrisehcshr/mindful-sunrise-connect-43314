@@ -158,7 +158,6 @@ const DissociativeDisordersTherapy = () => {
           </div>
         </section>
       </ServicePageLayout>
-    </>
   );
 };
 
