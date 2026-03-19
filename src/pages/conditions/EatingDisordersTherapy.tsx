@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react';
 
 const EatingDisordersTherapy = () => {
   const pageData = {
-    title: "Eating Disorders Treatment",
+    title: "Eating Disorders Treatment in Havertown, PA",
     description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating in Havertown, PA.",
     pageTitle: "Eating Disorders Treatment | Sunrise Human Care Services",
     metaDescription: "Specialized treatment for anorexia, bulimia, binge eating disorder and disordered eating in Havertown, PA. Comprehensive therapy and nutritional support.",
