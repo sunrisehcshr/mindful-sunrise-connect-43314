@@ -1,7 +1,8 @@
 
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, X } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { MapPin } from 'lucide-react';
+import { Banner } from '../components/ui/banner';
 import WarmHeroSection from '../components/WarmHeroSection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
 import ServicesSection from '../components/services/ServicesSection';
@@ -16,22 +17,7 @@ import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
 
-const BANNER_KEY = 'nd-banner-new-location-2025';
-
 const Index = () => {
-  const [showNotification, setShowNotification] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem(BANNER_KEY) === 'true') return;
-    const timer = setTimeout(() => setShowNotification(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const dismissNotification = () => {
-    setShowNotification(false);
-    localStorage.setItem(BANNER_KEY, 'true');
-  };
-
   const homeBreadcrumbs = [
     {
       name: "Home",
@@ -59,7 +45,12 @@ const Index = () => {
       >
         <Navbar />
         <main className="flex-grow">
-          <div className="pt-20" />
+          <div className="pt-20">
+            <Banner id="new-location-2025" variant="rainbow">
+              <MapPin className="h-4 w-4 flex-shrink-0" />
+              <span>We've moved! Visit us at our new location: <strong>869 Main Street, Darby, PA 19023</strong></span>
+            </Banner>
+          </div>
           <WarmHeroSection />
           <WhyChooseUsSection />
           <ServicesSection />
@@ -71,41 +62,6 @@ const Index = () => {
           <AppointmentSection />
         </main>
         <Footer />
-
-        {/* Notification popup */}
-        <AnimatePresence>
-          {showNotification && (
-            <motion.div
-              initial={{ opacity: 0, y: -30, x: 30, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-              className="fixed top-24 right-4 z-50 max-w-sm w-full bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-border overflow-hidden"
-            >
-              <div className="bg-gradient-to-r from-orange-500 to-amber-500 h-1" />
-              <div className="p-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 mt-0.5 w-9 h-9 rounded-full bg-accent flex items-center justify-center">
-                    <MapPin className="h-4 w-4 text-orange-500" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-foreground">We've moved!</p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Visit us at our new location: <strong className="text-foreground">869 Main Street, Darby, PA 19023</strong>
-                    </p>
-                  </div>
-                  <button
-                    onClick={dismissNotification}
-                    className="flex-shrink-0 rounded-full p-1 hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
-                    aria-label="Dismiss notification"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.div>
     </>
   );
