@@ -34,7 +34,7 @@ const SchemaMarkup: React.FC = () => {
         "logo": {
           "@type": "ImageObject",
           "@id": "https://sunrisehumancare.com/#logo",
-          "url": "https://sunrisehumancare.com/logo.svg",
+          "url": "https://sunrisehumancare.com/images/logo.png",
           "width": 512,
           "height": 512,
           "caption": "Sunrise Human Care Services Logo"

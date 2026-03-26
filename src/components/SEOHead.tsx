@@ -76,7 +76,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "@type": "MedicalBusiness",
     "@id": "https://sunrisehumancare.com/#MedicalBusiness",
     "name": "Sunrise Human Care Services",
-    "image": "https://sunrisehumancare.com/logo.svg",
+    "image": "https://sunrisehumancare.com/images/logo.png",
     "url": "https://sunrisehumancare.com",
     "telephone": "+18146202162",
     "priceRange": "$$$",
