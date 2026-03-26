@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MapPin } from 'lucide-react';
+import { Banner } from '../components/ui/banner';
 import WarmHeroSection from '../components/WarmHeroSection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
 import ServicesSection from '../components/services/ServicesSection';
