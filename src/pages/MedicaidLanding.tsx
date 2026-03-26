@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
-import { Helmet } from 'react-helmet-async';
+import SEOHead from '@/components/SEOHead';
 import { Phone, CheckCircle, Users, Calendar, Clock, Star, ArrowRight, Shield, Award } from 'lucide-react';
 import TeamMemberCard from '@/components/team/TeamMemberCard';
 import Navbar from '@/components/Navbar';
@@ -127,19 +127,11 @@ const MedicaidLanding = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Mental Health Care Covered by Medicaid | Sunrise Human Care Services</title>
-        <meta name="description" content="Quality mental health therapy and psychiatry services covered by Medicaid in Darby, PA. Book your appointment today - we accept Medicaid insurance." />
-        
-        {/* Google Ads Conversion Tracking - Replace CONVERSION_ID with your actual ID */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
-        <script>{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-CONVERSION_ID');
-        `}</script>
-      </Helmet>
+      <SEOHead
+        title="Mental Health Care Covered by Medicaid | Sunrise Human Care Services"
+        description="Quality mental health therapy and psychiatry services covered by Medicaid in Darby, PA. Book your appointment today - we accept Medicaid insurance."
+        canonicalUrl="https://sunrisehumancare.com/medicaid-therapy"
+      />
 
       <div className="flex flex-col min-h-screen">
         <Navbar />

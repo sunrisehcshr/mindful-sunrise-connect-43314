@@ -5,7 +5,7 @@ import SEOHead from '../components/SEOHead';
 import { motion } from 'framer-motion';
 const TermsOfService = () => {
   return <>
-      <SEOHead title="Terms of Service | Sunrise Human Care Services" description="Our terms of service outline the rules, guidelines, and agreements for using Sunrise Human Care Services' website and services." />
+      <SEOHead title="Terms of Service | Sunrise Human Care Services" description="Our terms of service outline the rules, guidelines, and agreements for using Sunrise Human Care Services' website and services." canonicalUrl="https://sunrisehumancare.com/terms-of-service" />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow py-12 md:py-16">
