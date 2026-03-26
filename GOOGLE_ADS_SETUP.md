@@ -77,7 +77,7 @@ https://sunrisehumancare.com/medicaid-therapy
 ### 2. Recommended Campaign Structure
 - **Campaign Type**: Search
 - **Goal**: Leads
-- **Location**: Delaware County, PA (Darby, Broomall, Drexel Hill, Ardmore, Springfield)
+- **Location**: Delaware County, PA (Darby, Yeadon, Upper Darby, Lansdowne, Collingdale)
 - **Budget**: Start with $30-50/day
 
 ### 3. Keyword Suggestions
