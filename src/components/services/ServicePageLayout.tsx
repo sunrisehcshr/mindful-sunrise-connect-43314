@@ -36,7 +36,7 @@ const ServicePageLayout = ({
   metaDescription,
   serviceType,
   canonicalUrl,
-  heroImage = '/therapy-in-darby.jpg',
+  heroImage = '/images/Therapy-in-havertown.webp',
   benefits,
   approaches,
   faqs,

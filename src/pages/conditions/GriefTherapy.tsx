@@ -8,7 +8,7 @@ const GriefTherapy = () => {
     metaDescription: "Compassionate grief counseling and bereavement support in Darby, PA. Professional therapy for coping with loss and complicated grief.",
     serviceType: "Grief & Loss Therapy",
     canonicalUrl: "/grief-therapy-darby-pa",
-    heroImage: "/images/Therapy-in-darby.webp",
+    heroImage: "/images/Therapy-in-havertown.webp",
     benefits: ["Grief assessment and education", "Processing complex emotions", "Making meaning of your loss", "Coping with anniversary reactions", "Adapting to life changes", "Memorial rituals and continuing bonds", "Building resilience through loss"],
     approaches: [{
       title: "Understanding Grief and Loss",

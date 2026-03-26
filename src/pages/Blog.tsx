@@ -16,7 +16,7 @@ const Blog = () => {
     excerpt: "Discover how to find the perfect therapist in Darby, PA. Learn about therapy types, insurance options, and what to look for in a mental health professional in Delaware County.",
     date: "October 28, 2025",
     readTime: "12 min read",
-    image: "/images/finding-therapist-darby.webp",
+    image: "/images/finding-therapist-havertown.webp",
     altText: "Professional therapy consultation in Darby, PA"
   }, {
     id: "anxiety-treatment-delaware-county-pa",
@@ -32,7 +32,7 @@ const Blog = () => {
     excerpt: "Understanding depression treatment options in Darby, PA. From evidence-based therapies to medication management, find the right path to recovery.",
     date: "October 26, 2025",
     readTime: "11 min read",
-    image: "/images/depression-therapy-darby.webp",
+    image: "/images/depression-therapy-havertown.webp",
     altText: "Hopeful depression recovery therapy in Darby, PA"
   }, {
     id: "family-therapy-darby-pa-guide",
@@ -40,7 +40,7 @@ const Blog = () => {
     excerpt: "Learn how family therapy in Darby can help resolve conflicts, improve communication, and strengthen relationships. Expert guidance for Delaware County families.",
     date: "October 25, 2025",
     readTime: "9 min read",
-    image: "/images/family-therapy-darby-guide.webp",
+    image: "/images/family-therapy-havertown-guide.webp",
     altText: "Family therapy session in Darby, PA"
   }, {
     id: "adhd-treatment-darby-pa-comprehensive-guide",
@@ -48,7 +48,7 @@ const Blog = () => {
     excerpt: "Complete guide to ADHD treatment in Darby, PA. Explore therapy options, medication management, and local resources for children and adults with ADHD.",
     date: "October 24, 2025",
     readTime: "13 min read",
-    image: "/images/adhd-treatment-darby.webp",
+    image: "/images/adhd-treatment-havertown.webp",
     altText: "Child focused in ADHD therapy in Darby, PA"
   }];
 

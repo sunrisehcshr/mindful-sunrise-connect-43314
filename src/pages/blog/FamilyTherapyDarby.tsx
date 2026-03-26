@@ -47,7 +47,7 @@ const FamilyTherapyDarby = () => {
         description="Discover how family therapy can improve communication and resolve conflicts. Serving Darby, Upper Darby, and Yeadon families at Sunrise Human Care Services."
         canonicalUrl="https://sunrisehumancare.com/blog/family-therapy-darby-pa-strengthening-relationships"
         keywords="family therapy Darby PA, family counseling Delaware County, couples therapy Darby, family therapist for teens Darby, blended family counseling near me"
-        ogImage="https://sunrisehumancare.com/images/family-counseling-darby.webp"
+        ogImage="https://sunrisehumancare.com/images/family-counseling-havertown.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -78,7 +78,7 @@ const FamilyTherapyDarby = () => {
             </header>
 
             <img 
-              src="/images/family-therapy-darby-guide.webp" 
+              src="/images/family-therapy-havertown-guide.webp" 
               alt="Family therapy session at Sunrise Human Care Services in Darby, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />

@@ -47,7 +47,7 @@ const ADHDTreatmentDarby = () => {
         description="Expert ADHD treatment in Darby for all ages. Therapy, psychiatric evaluations, and medication management at Sunrise Human Care Services in Delaware County."
         canonicalUrl="https://sunrisehumancare.com/blog/adhd-treatment-darby-pa-children-adults"
         keywords="ADHD treatment Darby PA, ADHD therapist Delaware County, adult ADHD treatment near me, child ADHD psychiatrist Darby, ADHD medication management Pennsylvania"
-        ogImage="https://sunrisehumancare.com/images/Therapy-in-darby.webp"
+        ogImage="https://sunrisehumancare.com/images/Therapy-in-havertown.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -78,7 +78,7 @@ const ADHDTreatmentDarby = () => {
             </header>
 
             <img 
-              src="/images/adhd-treatment-darby.webp" 
+              src="/images/adhd-treatment-havertown.webp" 
               alt="ADHD treatment and evaluation services at Sunrise Human Care in Darby, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />

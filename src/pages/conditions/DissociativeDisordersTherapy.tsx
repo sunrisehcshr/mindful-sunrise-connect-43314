@@ -10,7 +10,7 @@ const DissociativeDisordersTherapy = () => {
     metaDescription: "Specialized treatment for dissociative disorders in Darby, PA. Trauma-informed therapy focusing on safety, stabilization, and integration.",
     serviceType: "Dissociative Disorders Treatment",
     canonicalUrl: "/dissociative-disorders-treatment-darby-pa",
-    heroImage: "/images/Therapy-in-darby.webp",
+    heroImage: "/images/Therapy-in-havertown.webp",
     benefits: [
       "Comprehensive psychological assessment",
       "Phase-oriented trauma treatment",

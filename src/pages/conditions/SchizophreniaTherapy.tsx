@@ -9,7 +9,7 @@ const SchizophreniaTherapy = () => {
     metaDescription: "Comprehensive treatment for schizophrenia and psychotic disorders in Darby, PA. Evidence-based therapy approaches, medication management, and family support.",
     serviceType: "Schizophrenia Treatment",
     canonicalUrl: "/schizophrenia-treatment-darby-pa",
-    heroImage: "/images/Therapy-in-darby.webp",
+    heroImage: "/images/Therapy-in-havertown.webp",
     benefits: ["Comprehensive assessment and diagnosis", "Medication management coordination", "Individual therapy using evidence-based approaches", "Family education and support", "Skills training for daily functioning", "Crisis intervention planning", "Ongoing symptom monitoring and management"],
     approaches: [{
       title: "Understanding Schizophrenia",

@@ -8,7 +8,7 @@ const BPDTherapy = () => {
     metaDescription: "Specialized treatment for Borderline Personality Disorder in Darby, PA. Dialectical Behavior Therapy (DBT) and evidence-based approaches for emotional regulation.",
     serviceType: "Borderline Personality Disorder Treatment",
     canonicalUrl: "/bpd-therapy-darby-pa",
-    heroImage: "/images/Therapy-in-darby.webp",
+    heroImage: "/images/Therapy-in-havertown.webp",
     benefits: ["Comprehensive psychiatric assessment", "Dialectical Behavior Therapy (DBT)", "Schema Therapy when appropriate", "Emotional regulation skills training", "Interpersonal effectiveness development", "Mindfulness and distress tolerance techniques", "Crisis management strategies"],
     approaches: [{
       title: "Understanding Borderline Personality Disorder",

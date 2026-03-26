@@ -111,7 +111,7 @@ const FamilyTherapy = () => {
       metaDescription="Professional family therapy in Darby, PA serving Delaware County families. Our experienced therapists help families improve communication, resolve conflicts, and strengthen bonds. Family counseling for Darby, Upper Darby, and Yeadon." 
       serviceType="Family Therapy" 
       canonicalUrl="/family-therapy-darby-pa" 
-      heroImage="/images/family-counseling-darby.webp" 
+      heroImage="/images/family-counseling-havertown.webp" 
       benefits={benefits} 
       approaches={approaches} 
       faqs={faqs} 
