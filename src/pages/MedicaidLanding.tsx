@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
-import { Helmet } from 'react-helmet-async';
+import SEOHead from '@/components/SEOHead';
 import { Phone, CheckCircle, Users, Calendar, Clock, Star, ArrowRight, Shield, Award } from 'lucide-react';
 import TeamMemberCard from '@/components/team/TeamMemberCard';
 import Navbar from '@/components/Navbar';
