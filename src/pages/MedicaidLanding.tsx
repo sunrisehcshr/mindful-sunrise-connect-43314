@@ -535,12 +535,12 @@ const MedicaidLanding = () => {
                   {
                     quote: "Finally found quality mental health care that accepts Medicaid. The therapists here really care about their patients.",
                     author: "James R.",
-                    location: "Drexel Hill, PA"
+                    location: "Upper Darby, PA"
                   },
                   {
                     quote: "No hidden fees, no surprises. Just excellent care covered by my insurance. Highly recommend!",
                     author: "Maria L.",
-                    location: "Broomall, PA"
+                    location: "Yeadon, PA"
                   },
                 ].map((testimonial, index) => (
                   <motion.div

@@ -50,7 +50,7 @@ const FindingTherapistDarby = () => {
         "name": "Is online therapy available in Darby?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Sunrise Human Care Services offers both in-person and teletherapy options for residents of Darby, Drexel Hill, Broomall, and surrounding Delaware County areas."
+          "text": "Yes, Sunrise Human Care Services offers both in-person and teletherapy options for residents of Darby, Upper Darby, Yeadon, and surrounding Delaware County areas."
         }
       }
     ]
@@ -116,7 +116,7 @@ const FindingTherapistDarby = () => {
                 Choosing a therapist in Darby offers significant advantages over traveling to Center City Philadelphia or other distant locations. When your therapy office is conveniently located on Main Street, you're more likely to maintain consistent appointments—a critical factor in treatment success.
               </p>
               <p className="mb-4 text-foreground/90 leading-relaxed">
-                Local therapists understand the unique challenges facing Delaware County residents, from the stresses of suburban family life to the specific community resources available in Darby, Drexel Hill, Broomall, and Ardmore. At Sunrise Human Care Services, we're embedded in the community we serve, making us more than just healthcare providers—we're your neighbors.
+                Local therapists understand the unique challenges facing Delaware County residents, from the stresses of suburban family life to the specific community resources available in Darby, Upper Darby, Yeadon, and Lansdowne. At Sunrise Human Care Services, we're embedded in the community we serve, making us more than just healthcare providers—we're your neighbors.
               </p>
               <Card className="p-6 bg-accent/50 border-accent">
                 <div className="flex items-start gap-3">
@@ -282,7 +282,7 @@ const FindingTherapistDarby = () => {
                 <AccordionItem value="item-5">
                   <AccordionTrigger className="text-left">Is online therapy available in Darby?</AccordionTrigger>
                   <AccordionContent className="text-foreground/80">
-                    Yes, Sunrise Human Care Services offers both in-person and teletherapy options for residents of Darby, Drexel Hill, Broomall, and surrounding Delaware County areas.
+                    Yes, Sunrise Human Care Services offers both in-person and teletherapy options for residents of Darby, Upper Darby, Yeadon, and surrounding Delaware County areas.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

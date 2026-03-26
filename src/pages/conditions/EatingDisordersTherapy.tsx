@@ -90,7 +90,7 @@ const EatingDisordersTherapy = () => {
                   </p>
                   
                   <p>
-                    Serving clients across Darby, Drexel Hill, Broomall, and surrounding Delaware County communities, our eating disorder specialists provide compassionate care close to home.
+                    Serving clients across Darby, Upper Darby, Yeadon, and surrounding Delaware County communities, our eating disorder specialists provide compassionate care close to home.
                   </p>
                 </div>
                 
@@ -155,7 +155,7 @@ const EatingDisordersTherapy = () => {
               </h2>
               
               <p className="mb-4">
-                At Sunrise Human Care, we're proud to offer specialized eating disorder treatment services to residents throughout Delaware County, including Darby, Broomall, Drexel Hill, Springfield, and surrounding areas. Our conveniently located Darby office makes quality eating disorder care accessible to the entire community.
+                At Sunrise Human Care, we're proud to offer specialized eating disorder treatment services to residents throughout Delaware County, including Darby, Yeadon, Upper Darby, Collingdale, and surrounding areas. Our conveniently located Darby office makes quality eating disorder care accessible to the entire community.
               </p>
               
               <p className="mb-4">

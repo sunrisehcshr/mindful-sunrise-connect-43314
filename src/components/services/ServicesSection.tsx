@@ -26,7 +26,7 @@ const ServicesSection: React.FC = () => {
   }, {
     icon: <Users className="h-6 w-6" />,
     title: "Family Therapy in Darby, PA",
-    description: "Therapy sessions focused on improving family relationships and communication. We help families from Darby, Broomall, and surrounding areas navigate conflicts, adjust to changes, and develop healthier patterns of interaction for lasting family harmony.",
+    description: "Therapy sessions focused on improving family relationships and communication. We help families from Darby, Yeadon, and surrounding areas navigate conflicts, adjust to changes, and develop healthier patterns of interaction for lasting family harmony.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/family-therapy-darby-pa"

@@ -414,7 +414,7 @@ const getBlogPostDataById = (id: string) => {
           <ul className="list-disc pl-6 space-y-2">
             <li>Utilize indoor facilities like the Darby YMCA or local fitness centers</li>
             <li>Take advantage of winter weather breaks to walk the Pennsy Trail or Haverford Reserve trails</li>
-            <li>Consider weather-appropriate outdoor activities like the sledding hill at South Ardmore Park after snowfalls</li>
+            <li>Consider weather-appropriate outdoor activities like the sledding hill at South Lansdowne Park after snowfalls</li>
             <li>Join community classes at the Darby Community Recreation Center to combine exercise with social connection</li>
           </ul>
           

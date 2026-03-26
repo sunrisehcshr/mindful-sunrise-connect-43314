@@ -62,7 +62,7 @@ const DepressionTherapy = () => {
           areaServed: "Darby, PA and Delaware County"
         }}
       />
-      <ServicePageLayout title="Depression Therapy in Darby, PA" description="Effective, compassionate treatment for depression, helping you rediscover joy, purpose, and connection in your life." pageTitle="Expert Depression Therapy in Darby, PA - Evidence-Based Treatment | Sunrise Human Care" metaDescription="Specialized depression treatment in Darby, PA serving Delaware County, including Drexel Hill and Broomall. Our experienced therapists provide evidence-based depression therapy to help you overcome depression and regain joy. Schedule today." serviceType="Depression Therapy" canonicalUrl="/depression-therapy-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
+      <ServicePageLayout title="Depression Therapy in Darby, PA" description="Effective, compassionate treatment for depression, helping you rediscover joy, purpose, and connection in your life." pageTitle="Expert Depression Therapy in Darby, PA - Evidence-Based Treatment | Sunrise Human Care" metaDescription="Specialized depression treatment in Darby, PA serving Delaware County, including Upper Darby and Yeadon. Our experienced therapists provide evidence-based depression therapy to help you overcome depression and regain joy. Schedule today." serviceType="Depression Therapy" canonicalUrl="/depression-therapy-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
         <ServiceContentSection title="Expert Depression Treatment in Darby" hasBgPattern={true}>
           <div className="mb-6">
             <SectionTag icon={<Brain className="h-3 w-3" />}>Understanding Depression</SectionTag>
@@ -110,7 +110,7 @@ const DepressionTherapy = () => {
                 </p>
                 
                 <p className="leading-relaxed">
-                  Our depression treatment services are available to residents throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities. Whether you're experiencing a first episode of depression or have been struggling for years, our <Link to="/individual-therapy-darby-pa" className="text-orange-600 hover:underline">individual therapy</Link> approaches can help you find relief and renewed hope.
+                  Our depression treatment services are available to residents throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities. Whether you're experiencing a first episode of depression or have been struggling for years, our <Link to="/individual-therapy-darby-pa" className="text-orange-600 hover:underline">individual therapy</Link> approaches can help you find relief and renewed hope.
                 </p>
               </div>
             </motion.div>
@@ -192,7 +192,7 @@ const DepressionTherapy = () => {
             </p>
             
             <p className="leading-relaxed">
-              Our depression treatment services are available to residents throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities. Whether you're experiencing a first episode of depression or have been struggling for years, our <Link to="/individual-therapy-darby-pa" className="text-orange-600 hover:underline">individual therapy</Link> approaches can help you find relief and renewed hope.
+              Our depression treatment services are available to residents throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities. Whether you're experiencing a first episode of depression or have been struggling for years, our <Link to="/individual-therapy-darby-pa" className="text-orange-600 hover:underline">individual therapy</Link> approaches can help you find relief and renewed hope.
             </p>
           </div>
         </ServiceContentSection>
@@ -216,7 +216,7 @@ const DepressionTherapy = () => {
             </p>
             
             <p className="leading-relaxed">
-              Our depression treatment services are available to residents throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities. Whether you're experiencing a first episode of depression or have been struggling for years, our <Link to="/individual-therapy-darby-pa" className="text-orange-600 hover:underline">individual therapy</Link> approaches can help you find relief and renewed hope.
+              Our depression treatment services are available to residents throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities. Whether you're experiencing a first episode of depression or have been struggling for years, our <Link to="/individual-therapy-darby-pa" className="text-orange-600 hover:underline">individual therapy</Link> approaches can help you find relief and renewed hope.
             </p>
           </div>
         </ServiceContentSection>

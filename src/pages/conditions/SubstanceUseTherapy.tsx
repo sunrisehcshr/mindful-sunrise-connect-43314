@@ -28,7 +28,7 @@ const SubstanceUseTherapy = () => {
     answer: "Signs include using more of a substance than intended, unsuccessful attempts to cut down or stop use, spending significant time obtaining or using the substance, experiencing cravings, failing to fulfill obligations due to use, continuing use despite problems, and developing tolerance or withdrawal symptoms. Our substance use treatment in Darby provides comprehensive assessments to help determine if you would benefit from professional support."
   }, {
     question: "Can I recover from addiction without residential treatment?",
-    answer: "Yes, many people successfully recover through outpatient substance use treatment in Darby, especially when their substance use is caught early or is not severe. The appropriate level of care depends on factors like the severity of addiction, presence of co-occurring disorders, and available support system. Our Darby addiction therapists will help determine the right treatment approach for clients throughout Delaware County, including Drexel Hill and Broomall."
+    answer: "Yes, many people successfully recover through outpatient substance use treatment in Darby, especially when their substance use is caught early or is not severe. The appropriate level of care depends on factors like the severity of addiction, presence of co-occurring disorders, and available support system. Our Darby addiction therapists will help determine the right treatment approach for clients throughout Delaware County, including Upper Darby and Yeadon."
   }, {
     question: "How do you handle relapse during treatment?",
     answer: "At our substance use treatment center in Darby, we view relapse as part of the recovery process rather than a failure. If relapse occurs, we work together to understand triggers, strengthen coping skills, and adjust the treatment plan accordingly. Our non-judgmental approach to addiction treatment focuses on learning from setbacks to prevent future relapses and support your continued recovery journey."
@@ -44,7 +44,7 @@ const SubstanceUseTherapy = () => {
     url: "/ptsd-therapy-darby-pa"
   }];
 
-  return <ServicePageLayout title="Substance Use Treatment in Darby, PA" description="Evidence-based treatment for alcohol and drug addiction, recovery support, and relapse prevention in Darby, PA." pageTitle="Substance Use Treatment in Darby, PA | Addiction Recovery | Sunrise Human Care Services" metaDescription="Comprehensive substance use and addiction treatment in Darby, PA serving Delaware County. Evidence-based approaches for alcohol and drug recovery with personalized care. Serving Darby, Drexel Hill, and Broomall." serviceType="Substance Use Counseling" canonicalUrl="/substance-use-treatment-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
+  return <ServicePageLayout title="Substance Use Treatment in Darby, PA" description="Evidence-based treatment for alcohol and drug addiction, recovery support, and relapse prevention in Darby, PA." pageTitle="Substance Use Treatment in Darby, PA | Addiction Recovery | Sunrise Human Care Services" metaDescription="Comprehensive substance use and addiction treatment in Darby, PA serving Delaware County. Evidence-based approaches for alcohol and drug recovery with personalized care. Serving Darby, Upper Darby, and Yeadon." serviceType="Substance Use Counseling" canonicalUrl="/substance-use-treatment-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
       <ServiceContentSection title="Our Substance Use Treatment Approach in Darby" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -73,7 +73,7 @@ const SubstanceUseTherapy = () => {
               </p>
               
               <p className="leading-relaxed">
-                Our substance use treatment services are available to residents throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities. Our dual diagnosis capability ensures that co-occurring mental health conditions receive appropriate attention alongside addiction treatment. This integrated approach leads to better outcomes and more sustainable recovery.
+                Our substance use treatment services are available to residents throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities. Our dual diagnosis capability ensures that co-occurring mental health conditions receive appropriate attention alongside addiction treatment. This integrated approach leads to better outcomes and more sustainable recovery.
               </p>
             </div>
           </motion.div>

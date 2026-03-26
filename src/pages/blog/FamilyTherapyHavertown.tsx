@@ -44,7 +44,7 @@ const FamilyTherapyDarby = () => {
     <>
       <SEOHead
         title="Family Therapy in Darby, PA | Strengthen Your Family"
-        description="Discover how family therapy can improve communication and resolve conflicts. Serving Darby, Drexel Hill, and Broomall families at Sunrise Human Care Services."
+        description="Discover how family therapy can improve communication and resolve conflicts. Serving Darby, Upper Darby, and Yeadon families at Sunrise Human Care Services."
         canonicalUrl="https://sunrisehumancare.com/blog/family-therapy-darby-pa-strengthening-relationships"
         keywords="family therapy Darby PA, family counseling Delaware County, couples therapy Darby, family therapist for teens Darby, blended family counseling near me"
         ogImage="https://sunrisehumancare.com/images/family-counseling-darby.webp"
@@ -85,7 +85,7 @@ const FamilyTherapyDarby = () => {
 
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-lg leading-relaxed text-foreground/90">
-                Every family faces challenges—whether it's navigating a teenager's difficult behavior, coping with divorce, blending two families together, or simply feeling disconnected from one another. For families in Darby, Drexel Hill, Broomall, and throughout Delaware County, family therapy offers a path to healthier communication, stronger bonds, and lasting resolution of conflicts. At Sunrise Human Care Services, we understand that when one family member struggles, the entire family feels the impact. Our experienced family therapists are here to help your family thrive.
+                Every family faces challenges—whether it's navigating a teenager's difficult behavior, coping with divorce, blending two families together, or simply feeling disconnected from one another. For families in Darby, Upper Darby, Yeadon, and throughout Delaware County, family therapy offers a path to healthier communication, stronger bonds, and lasting resolution of conflicts. At Sunrise Human Care Services, we understand that when one family member struggles, the entire family feels the impact. Our experienced family therapists are here to help your family thrive.
               </p>
             </div>
 

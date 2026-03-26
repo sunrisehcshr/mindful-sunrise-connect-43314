@@ -253,7 +253,7 @@ const ServicePageLayout = ({
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Take the First Step?</h2>
                 <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
-                  Our compassionate team is here to support you on your mental health journey in Darby, Broomall, and Drexel Hill.
+                  Our compassionate team is here to support you on your mental health journey in Darby, Yeadon, and Upper Darby.
                 </p>
                 
                 <div className="flex flex-row flex-wrap sm:flex-nowrap justify-center gap-3 sm:gap-4">

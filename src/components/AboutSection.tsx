@@ -101,7 +101,7 @@ Founded by Michael Thevar, Sunrise Human Care Services has grown into a leading 
 Our team of experienced therapists and psychiatric providers brings diverse backgrounds and specialties to Darby, PA, united by a shared commitment to compassionate, evidence-based care. We believe in treating the whole person, not just symptoms, and in creating individualized treatment plans that respect each client's unique needs and goals.
           </p>
           <p className="text-muted-foreground">
-Whether you're seeking support for anxiety, depression, ADHD, or working toward personal growth, our mental health care in Darby is designed to walk alongside you on your journey. We're proud to serve residents from Drexel Hill, Broomall, and throughout Delaware County with accessible, high-quality mental health services.
+Whether you're seeking support for anxiety, depression, ADHD, or working toward personal growth, our mental health care in Darby is designed to walk alongside you on your journey. We're proud to serve residents from Upper Darby, Yeadon, and throughout Delaware County with accessible, high-quality mental health services.
           </p>
         </motion.div>
       </div>

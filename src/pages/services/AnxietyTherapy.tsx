@@ -44,7 +44,7 @@ const AnxietyTherapy = () => {
     url: "/adhd-treatment-darby-pa"
   }];
 
-  return <ServicePageLayout title="Anxiety Treatment in Darby, PA" description="Evidence-based therapy for all types of anxiety disorders, including generalized anxiety, social anxiety, panic disorder, and phobias." pageTitle="Expert Anxiety Treatment in Darby, PA - Effective Therapy | Sunrise Human Care Services" metaDescription="Specialized anxiety treatment in Darby, PA. Evidence-based therapy for panic attacks, generalized anxiety, social anxiety, and phobias. Serving Delaware County including Drexel Hill and Broomall. Find relief today." serviceType="Anxiety Therapy" canonicalUrl="/anxiety-therapy-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
+  return <ServicePageLayout title="Anxiety Treatment in Darby, PA" description="Evidence-based therapy for all types of anxiety disorders, including generalized anxiety, social anxiety, panic disorder, and phobias." pageTitle="Expert Anxiety Treatment in Darby, PA - Effective Therapy | Sunrise Human Care Services" metaDescription="Specialized anxiety treatment in Darby, PA. Evidence-based therapy for panic attacks, generalized anxiety, social anxiety, and phobias. Serving Delaware County including Upper Darby and Yeadon. Find relief today." serviceType="Anxiety Therapy" canonicalUrl="/anxiety-therapy-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
       {/* Service-specific content */}
       <ServiceContentSection title="Our Anxiety Treatment Approach in Darby" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -74,7 +74,7 @@ const AnxietyTherapy = () => {
               </p>
               
               <p className="leading-relaxed">
-                We proudly serve clients seeking anxiety therapy throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities. Whether you're dealing with panic attacks, persistent worry, or social anxiety, our licensed therapists provide effective <Link to="/anxiety-therapy-darby-pa" className="text-orange-600 hover:underline">anxiety treatment in Darby</Link> tailored to your specific needs.
+                We proudly serve clients seeking anxiety therapy throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities. Whether you're dealing with panic attacks, persistent worry, or social anxiety, our licensed therapists provide effective <Link to="/anxiety-therapy-darby-pa" className="text-orange-600 hover:underline">anxiety treatment in Darby</Link> tailored to your specific needs.
               </p>
             </div>
           </motion.div>

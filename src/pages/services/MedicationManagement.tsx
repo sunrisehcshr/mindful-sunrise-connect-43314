@@ -125,7 +125,7 @@ const MedicationManagement = () => {
               </p>
 
               <p className="leading-relaxed">
-                We serve clients throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities, providing accessible, evidence-based medication management services for various mental health conditions.
+                We serve clients throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities, providing accessible, evidence-based medication management services for various mental health conditions.
               </p>
             </div>
           </motion.div>

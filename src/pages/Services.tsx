@@ -96,7 +96,7 @@ const Services = () => {
                   At Sunrise Human Care Services, we're proud to provide comprehensive mental health services to Darby and surrounding communities in Delaware County. Our practice at 869 Main Street offers a convenient location for residents seeking high-quality mental health care close to home.
                 </p>
                 <p className="mb-4">
-                  We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Darby area. Whether you're coming from Haverford Township, Springfield, Upper Darby, Broomall, or other nearby areas, our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.
+                  We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Darby area. Whether you're coming from Haverford Township, Collingdale, Upper Darby, Yeadon, or other nearby areas, our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.
                 </p>
                 <p className="mb-6">
                   Our full range of mental health services in Darby includes individual therapy, family counseling, anxiety treatment, depression therapy, and specialized care for conditions like ADHD, trauma, and OCD. We welcome clients of all ages and backgrounds to experience the compassionate care that has made us a trusted provider in Delaware County.
@@ -110,26 +110,26 @@ const Services = () => {
                       Darby
                     </Link>
                     <div className="px-3 py-2 bg-amber-50 rounded text-center">
-                      Broomall
+                      Yeadon
                     </div>
                     <div className="px-3 py-2 bg-amber-50 rounded text-center">
-                      Ardmore
+                      Lansdowne
                     </div>
                     <div className="px-3 py-2 bg-amber-50 rounded text-center">
-                      Drexel Hill
+                      Upper Darby
                     </div>
                     <div className="px-3 py-2 bg-amber-50 rounded text-center">
-                      Springfield
+                      Collingdale
                     </div>
                     <div className="px-3 py-2 bg-amber-50 rounded text-center">
-                      Newtown Square
+                      Sharon Hill
                     </div>
                   </div>
                 </div>
                 
                 {/* Add ZIP codes served section for direct matches */}
                 <div className="mt-6 text-sm text-amber-700">
-                  <p>Proudly serving ZIP codes: 19023 (Darby), 19008 (Broomall), 19003 (Ardmore), 19026 (Drexel Hill), 19064 (Springfield), 19073 (Newtown Square), and surrounding areas in Delaware County, Pennsylvania.</p>
+                  <p>Proudly serving ZIP codes: 19023 (Darby), 19008 (Yeadon), 19003 (Lansdowne), 19026 (Upper Darby), 19064 (Collingdale), 19073 (Sharon Hill), and surrounding areas in Delaware County, Pennsylvania.</p>
                 </div>
               </div>
             </div>

@@ -88,7 +88,7 @@ const WarmHeroSection = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.4
-          }}>Step into a brighter tomorrow with Sunrise Human Care—offering comprehensive mental health care in Darby with licensed therapists, psychologists, counselors, and psychiatrists for residents of Darby, Broomall, and Drexel Hill.</motion.p>
+          }}>Step into a brighter tomorrow with Sunrise Human Care—offering comprehensive mental health care in Darby with licensed therapists, psychologists, counselors, and psychiatrists for residents of Darby, Yeadon, and Upper Darby.</motion.p>
             
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" initial={{
             opacity: 0,

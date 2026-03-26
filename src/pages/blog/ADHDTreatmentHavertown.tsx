@@ -85,7 +85,7 @@ const ADHDTreatmentDarby = () => {
 
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-lg leading-relaxed text-foreground/90">
-                Attention-Deficit/Hyperactivity Disorder (ADHD) affects approximately 10% of children and 4% of adults in the United States. For families and individuals in Darby, Drexel Hill, Broomall, and throughout Delaware County, untreated ADHD can create significant challenges at school, work, and home. The good news? ADHD is highly treatable. At Sunrise Human Care Services, our comprehensive ADHD treatment program combines expert diagnosis, evidence-based therapy, and careful medication management to help children and adults with ADHD thrive.
+                Attention-Deficit/Hyperactivity Disorder (ADHD) affects approximately 10% of children and 4% of adults in the United States. For families and individuals in Darby, Upper Darby, Yeadon, and throughout Delaware County, untreated ADHD can create significant challenges at school, work, and home. The good news? ADHD is highly treatable. At Sunrise Human Care Services, our comprehensive ADHD treatment program combines expert diagnosis, evidence-based therapy, and careful medication management to help children and adults with ADHD thrive.
               </p>
             </div>
 

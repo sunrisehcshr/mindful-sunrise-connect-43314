@@ -57,9 +57,9 @@ const SchemaMarkup: React.FC = () => {
                 "name": "Delaware County"
               }
             },
-            { "@type": "City", "name": "Drexel Hill" },
-            { "@type": "City", "name": "Broomall" },
-            { "@type": "City", "name": "Ardmore" }
+            { "@type": "City", "name": "Upper Darby" },
+            { "@type": "City", "name": "Yeadon" },
+            { "@type": "City", "name": "Lansdowne" }
           ]
         },
         "address": {

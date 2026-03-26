@@ -98,7 +98,7 @@ const ChildTherapy = () => {
       title="Child & Adolescent Therapy in Darby, PA"
       description="Specialized therapeutic approaches for children and teens facing emotional, behavioral, or developmental challenges. Our experienced child therapists create a safe, nurturing environment for growth."
       pageTitle="Child & Adolescent Therapy in Darby, PA - Youth Mental Health Services | Sunrise Human Care"
-      metaDescription="Professional child and adolescent therapy in Darby, PA serving Delaware County families. Age-appropriate counseling for anxiety, depression, behavioral issues, and developmental challenges. Child therapists for Darby, Drexel Hill, and Broomall."
+      metaDescription="Professional child and adolescent therapy in Darby, PA serving Delaware County families. Age-appropriate counseling for anxiety, depression, behavioral issues, and developmental challenges. Child therapists for Darby, Upper Darby, and Yeadon."
       serviceType="Child & Adolescent Therapy"
       canonicalUrl="/child-therapy-darby-pa"
       heroImage="/images/child-counseling-darby.webp"
@@ -139,7 +139,7 @@ const ChildTherapy = () => {
               </p>
               
               <p className="leading-relaxed text-base lg:text-lg">
-                Our child therapy services support families throughout Darby, Drexel Hill, and Broomall. Whether your child is struggling with <Link to="/anxiety-therapy-darby-pa" className="text-orange-600 hover:underline">anxiety</Link>, <Link to="/adhd-treatment-darby-pa" className="text-orange-600 hover:underline">ADHD</Link>, or emotional challenges, our experienced child therapists provide specialized care tailored to their unique needs.
+                Our child therapy services support families throughout Darby, Upper Darby, and Yeadon. Whether your child is struggling with <Link to="/anxiety-therapy-darby-pa" className="text-orange-600 hover:underline">anxiety</Link>, <Link to="/adhd-treatment-darby-pa" className="text-orange-600 hover:underline">ADHD</Link>, or emotional challenges, our experienced child therapists provide specialized care tailored to their unique needs.
               </p>
             </div>
           </motion.div>

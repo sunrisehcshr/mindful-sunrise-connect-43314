@@ -31,7 +31,7 @@ const SleepDisordersTherapy = () => {
     answer: "Not always. While medication may be helpful in some cases, many sleep disorders can be effectively treated with non-medication approaches like CBT-I at our Darby sleep therapy center. This evidence-based treatment has been shown to produce long-lasting improvements in sleep quality without the side effects or dependencies associated with sleep medications. Our sleep specialists in Darby will discuss all treatment options based on your specific situation."
   }, {
     question: "How long does sleep therapy take to work?",
-    answer: "Many people seeking sleep disorder treatment in Darby begin to see improvements in their sleep within 2-4 weeks of starting CBT-I or other behavioral sleep treatments. Full benefits of our sleep therapy typically develop over 6-8 weeks of consistent practice of the recommended strategies. Clients throughout Darby, Drexel Hill, and Broomall report significant improvements in sleep quality with our structured approach."
+    answer: "Many people seeking sleep disorder treatment in Darby begin to see improvements in their sleep within 2-4 weeks of starting CBT-I or other behavioral sleep treatments. Full benefits of our sleep therapy typically develop over 6-8 weeks of consistent practice of the recommended strategies. Clients throughout Darby, Upper Darby, and Yeadon report significant improvements in sleep quality with our structured approach."
   }];
   const relatedServices = [{
     title: "Anxiety Therapy in Darby",
@@ -44,7 +44,7 @@ const SleepDisordersTherapy = () => {
     url: "/stress-management-darby-pa"
   }];
 
-  return <ServicePageLayout title="Sleep Disorders Treatment in Darby, PA" description="Effective treatment for insomnia, sleep anxiety, and other sleep-related issues in Darby, PA." pageTitle="Sleep Disorders Treatment in Darby, PA | Insomnia Therapy | Sunrise Human Care Services" metaDescription="Effective sleep disorder treatment in Darby, PA for insomnia and sleep-related issues. Evidence-based approaches including CBT-I serving Delaware County residents. Sleep therapy for Darby, Drexel Hill, and Broomall." serviceType="Sleep Disorders Treatment" canonicalUrl="/sleep-disorders-treatment-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
+  return <ServicePageLayout title="Sleep Disorders Treatment in Darby, PA" description="Effective treatment for insomnia, sleep anxiety, and other sleep-related issues in Darby, PA." pageTitle="Sleep Disorders Treatment in Darby, PA | Insomnia Therapy | Sunrise Human Care Services" metaDescription="Effective sleep disorder treatment in Darby, PA for insomnia and sleep-related issues. Evidence-based approaches including CBT-I serving Delaware County residents. Sleep therapy for Darby, Upper Darby, and Yeadon." serviceType="Sleep Disorders Treatment" canonicalUrl="/sleep-disorders-treatment-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
       <ServiceContentSection title="Our Sleep Disorders Treatment Approach in Darby" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -73,7 +73,7 @@ const SleepDisordersTherapy = () => {
               </p>
               
               <p className="leading-relaxed">
-                We provide sleep therapy services to clients throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities. Our goal is to help you develop healthy sleep habits and thought patterns that support natural, restorative sleep without ongoing reliance on medication or therapy.
+                We provide sleep therapy services to clients throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities. Our goal is to help you develop healthy sleep habits and thought patterns that support natural, restorative sleep without ongoing reliance on medication or therapy.
               </p>
             </div>
           </motion.div>

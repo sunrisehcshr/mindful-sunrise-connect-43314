@@ -108,7 +108,7 @@ const FamilyTherapy = () => {
       title="Family Therapy in Darby, PA" 
       description="Expert family therapy in Darby to improve communication, resolve conflicts, and strengthen relationships. Our experienced therapists help families navigate challenges and build stronger bonds." 
       pageTitle="Expert Family Therapy in Darby, PA | Build Stronger Family Bonds | Sunrise Human Care" 
-      metaDescription="Professional family therapy in Darby, PA serving Delaware County families. Our experienced therapists help families improve communication, resolve conflicts, and strengthen bonds. Family counseling for Darby, Drexel Hill, and Broomall." 
+      metaDescription="Professional family therapy in Darby, PA serving Delaware County families. Our experienced therapists help families improve communication, resolve conflicts, and strengthen bonds. Family counseling for Darby, Upper Darby, and Yeadon." 
       serviceType="Family Therapy" 
       canonicalUrl="/family-therapy-darby-pa" 
       heroImage="/images/family-counseling-darby.webp" 

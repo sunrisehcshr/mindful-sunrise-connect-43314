@@ -68,7 +68,7 @@ const Conditions = () => {
                 <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 font-playfair">Mental Health Care in Darby, Pennsylvania</h2>
                 <p className="mb-4">At Sunrise Human Care Services, we're proud to serve the Darby community and surrounding areas in Delaware County with comprehensive mental health care. Our practice is conveniently located at 869 Main Street, making quality mental health treatment accessible to residents throughout the region.</p>
                 <p className="mb-4">We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Darby area. Our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.</p>
-                <p>Whether you're coming from Haverford Township, Springfield, Upper Darby, Broomall, or other nearby communities, we provide a welcoming environment where you can receive expert care for a wide range of mental health conditions.</p>
+                <p>Whether you're coming from Haverford Township, Collingdale, Upper Darby, Yeadon, or other nearby communities, we provide a welcoming environment where you can receive expert care for a wide range of mental health conditions.</p>
               </div>
             </div>
           </section>

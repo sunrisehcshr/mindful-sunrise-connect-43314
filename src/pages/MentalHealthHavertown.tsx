@@ -428,7 +428,7 @@ const MentalHealthDarby = () => {
                           Our clinic is located in Darby, Pennsylvania, serving residents across Delaware County. We've designed our space to be a comfortable, private environment where you can focus on your well-being.
                         </p>
                         <p>
-                          The office is easily accessible for residents throughout the area, including those coming from Upper Darby, Ardmore, and Bryn Mawr.
+                          The office is easily accessible for residents throughout the area, including those coming from Upper Darby, Lansdowne, and Folcroft.
                         </p>
                       </div>
                     </div>

@@ -43,7 +43,7 @@ const ContactInfo: React.FC = () => {
         
         <div className="text-sm text-gray-500 mt-2 border-t border-gray-100 pt-3">
           <p>Serving Darby and surrounding communities in Delaware County, Pennsylvania:</p>
-          <p className="mt-1">Broomall • Ardmore • Drexel Hill • Springfield • Newtown Square</p>
+          <p className="mt-1">Yeadon • Lansdowne • Upper Darby • Collingdale • Sharon Hill</p>
         </div>
       </div>
     </div>

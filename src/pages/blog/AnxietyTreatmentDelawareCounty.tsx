@@ -255,7 +255,7 @@ const AnxietyTreatmentDelawareCounty = () => {
 
                 <Card className="p-5">
                   <h4 className="font-semibold mb-2 text-foreground">Anxiety Support Groups</h4>
-                  <p className="text-sm text-foreground/80">Connect with others managing anxiety in peer-led support groups meeting monthly at various locations in Darby, Broomall, and surrounding areas.</p>
+                  <p className="text-sm text-foreground/80">Connect with others managing anxiety in peer-led support groups meeting monthly at various locations in Darby, Yeadon, and surrounding areas.</p>
                 </Card>
               </div>
             </section>

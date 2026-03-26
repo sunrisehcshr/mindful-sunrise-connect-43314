@@ -31,7 +31,7 @@ const BipolarDisorderTherapy = () => {
     answer: "Medication is typically considered a cornerstone of bipolar disorder treatment in Darby, as it helps stabilize mood and prevent episodes. However, therapy is an essential complement to medication, and treatment plans at our Darby mental health clinic are always personalized to each individual's needs, preferences, and specific bipolar symptoms."
   }, {
     question: "How long does bipolar disorder treatment take?",
-    answer: "Bipolar disorder is typically a lifelong condition requiring ongoing management. While acute episodes may resolve within weeks to months with proper treatment at our Darby clinic, many individuals benefit from long-term maintenance treatment to prevent future episodes. We serve clients throughout Darby, Drexel Hill, and Broomall with comprehensive bipolar disorder care plans."
+    answer: "Bipolar disorder is typically a lifelong condition requiring ongoing management. While acute episodes may resolve within weeks to months with proper treatment at our Darby clinic, many individuals benefit from long-term maintenance treatment to prevent future episodes. We serve clients throughout Darby, Upper Darby, and Yeadon with comprehensive bipolar disorder care plans."
   }, {
     question: "Can therapy alone manage bipolar disorder?",
     answer: "While therapy provides critical skills and support, most research indicates that a combination of medication and therapy offers the best outcomes for bipolar disorder. Our bipolar disorder treatment in Darby works collaboratively with psychiatrists to provide comprehensive care. We focus on helping clients throughout Delaware County develop effective self-management strategies alongside appropriate medical treatment."
@@ -56,7 +56,7 @@ const BipolarDisorderTherapy = () => {
     url: "/individual-therapy-darby-pa"
   }];
 
-  return <ServicePageLayout title="Bipolar Disorder Treatment in Darby, PA" description="Evidence-based bipolar disorder therapy to help manage mood episodes, maintain stability, and improve quality of life." pageTitle="Bipolar Disorder Treatment in Darby, PA | Mood Stability | Sunrise Human Care Services" metaDescription="Effective bipolar disorder therapy in Darby, PA serving Delaware County. Our specialized approach helps stabilize mood, manage symptoms, and build a balanced lifestyle. Bipolar treatment for Darby, Drexel Hill, and Broomall." serviceType="Bipolar Disorder Treatment" canonicalUrl="/bipolar-disorder-therapy-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
+  return <ServicePageLayout title="Bipolar Disorder Treatment in Darby, PA" description="Evidence-based bipolar disorder therapy to help manage mood episodes, maintain stability, and improve quality of life." pageTitle="Bipolar Disorder Treatment in Darby, PA | Mood Stability | Sunrise Human Care Services" metaDescription="Effective bipolar disorder therapy in Darby, PA serving Delaware County. Our specialized approach helps stabilize mood, manage symptoms, and build a balanced lifestyle. Bipolar treatment for Darby, Upper Darby, and Yeadon." serviceType="Bipolar Disorder Treatment" canonicalUrl="/bipolar-disorder-therapy-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
       <ServiceContentSection title="Our Bipolar Disorder Treatment Approach in Darby" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
@@ -85,7 +85,7 @@ const BipolarDisorderTherapy = () => {
               </p>
               
               <p className="leading-relaxed">
-                We provide bipolar disorder treatment services to clients throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities. Our integrated approach addresses all aspects of bipolar disorder management, including <Link to="/medication-management-darby-pa" className="text-orange-600 hover:underline">medication support</Link>, <Link to="/individual-therapy-darby-pa" className="text-orange-600 hover:underline">individual therapy</Link>, and family education.
+                We provide bipolar disorder treatment services to clients throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities. Our integrated approach addresses all aspects of bipolar disorder management, including <Link to="/medication-management-darby-pa" className="text-orange-600 hover:underline">medication support</Link>, <Link to="/individual-therapy-darby-pa" className="text-orange-600 hover:underline">individual therapy</Link>, and family education.
               </p>
             </div>
           </motion.div>

@@ -124,10 +124,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           }
         }
       },
-      { "@type": "City", "name": "Broomall" },
-      { "@type": "City", "name": "Ardmore" },
-      { "@type": "City", "name": "Drexel Hill" },
-      { "@type": "City", "name": "Springfield" }
+      { "@type": "City", "name": "Yeadon" },
+      { "@type": "City", "name": "Lansdowne" },
+      { "@type": "City", "name": "Upper Darby" },
+      { "@type": "City", "name": "Collingdale" }
     ],
     "hasMap": "https://www.google.com/maps?q=39.9707,-75.3151"
   };
