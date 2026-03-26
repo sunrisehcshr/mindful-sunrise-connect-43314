@@ -23,7 +23,7 @@ const AnxietyTreatmentDelawareCounty = () => {
       },
       {
         "@type": "Question",
-        "name": "How much does anxiety treatment cost in Havertown?",
+        "name": "How much does anxiety treatment cost in Darby?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Cost varies based on insurance coverage. Most major insurance plans cover mental health services. Contact Sunrise Human Care Services at (814) 620-2162 to discuss pricing and insurance options."
@@ -52,10 +52,10 @@ const AnxietyTreatmentDelawareCounty = () => {
     <>
       <SEOHead
         title="Anxiety Treatment in Delaware County, PA | Effective Care"
-        description="Explore proven anxiety treatment options in Havertown and Delaware County. Learn about therapy approaches, medication management, and local support resources."
+        description="Explore proven anxiety treatment options in Darby and Delaware County. Learn about therapy approaches, medication management, and local support resources."
         canonicalUrl="https://sunrisehumancare.com/blog/anxiety-treatment-options-delaware-county-pa"
-        keywords="anxiety treatment Havertown, anxiety therapy Delaware County PA, treating anxiety near me, best anxiety therapist in Havertown, medication management for anxiety Havertown"
-        ogImage="https://sunrisehumancare.com/images/Therapy-in-havertown.webp"
+        keywords="anxiety treatment Darby, anxiety therapy Delaware County PA, treating anxiety near me, best anxiety therapist in Darby, medication management for anxiety Darby"
+        ogImage="https://sunrisehumancare.com/images/Therapy-in-darby.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -87,13 +87,13 @@ const AnxietyTreatmentDelawareCounty = () => {
 
             <img 
               src="/images/anxiety-treatment-delaware-county.webp" 
-              alt="Anxiety therapy session in Havertown, PA mental health clinic"
+              alt="Anxiety therapy session in Darby, PA mental health clinic"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />
 
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-lg leading-relaxed text-foreground/90">
-                Anxiety disorders affect over 40 million adults in the United States, and residents of Delaware County, PA are no exception. If you're experiencing persistent worry, panic attacks, or overwhelming fear that interferes with daily life, you're not alone—and effective treatment is available right here in Havertown. This comprehensive guide explores evidence-based anxiety treatment options that can help you regain control and find peace of mind.
+                Anxiety disorders affect over 40 million adults in the United States, and residents of Delaware County, PA are no exception. If you're experiencing persistent worry, panic attacks, or overwhelming fear that interferes with daily life, you're not alone—and effective treatment is available right here in Darby. This comprehensive guide explores evidence-based anxiety treatment options that can help you regain control and find peace of mind.
               </p>
             </div>
 
@@ -118,7 +118,7 @@ const AnxietyTreatmentDelawareCounty = () => {
               </Card>
 
               <p className="text-foreground/90 leading-relaxed">
-                Physical symptoms often accompany anxiety, including rapid heartbeat, sweating, trembling, shortness of breath, dizziness, and gastrointestinal issues. If you're experiencing these symptoms regularly, seeking professional anxiety treatment in Havertown can provide significant relief.
+                Physical symptoms often accompany anxiety, including rapid heartbeat, sweating, trembling, shortness of breath, dizziness, and gastrointestinal issues. If you're experiencing these symptoms regularly, seeking professional anxiety treatment in Darby can provide significant relief.
               </p>
             </section>
 
@@ -170,7 +170,7 @@ const AnxietyTreatmentDelawareCounty = () => {
               </div>
 
               <div className="mt-6">
-                <Link to="/anxiety-therapy-havertown-pa">
+                <Link to="/anxiety-therapy-darby-pa">
                   <Button className="w-full sm:w-auto">
                     Learn More About Our Anxiety Therapy Services
                   </Button>
@@ -206,7 +206,7 @@ const AnxietyTreatmentDelawareCounty = () => {
                 Our psychiatrists conduct thorough evaluations to determine if medication is appropriate for your situation. We consider factors including symptom severity, previous treatment responses, medical history, and personal preferences. Regular follow-up appointments ensure optimal dosing and monitor for side effects.
               </p>
 
-              <Link to="/medication-management-havertown-pa">
+              <Link to="/medication-management-darby-pa">
                 <Button variant="outline">Explore Medication Management Services</Button>
               </Link>
             </section>
@@ -255,7 +255,7 @@ const AnxietyTreatmentDelawareCounty = () => {
 
                 <Card className="p-5">
                   <h4 className="font-semibold mb-2 text-foreground">Anxiety Support Groups</h4>
-                  <p className="text-sm text-foreground/80">Connect with others managing anxiety in peer-led support groups meeting monthly at various locations in Havertown, Broomall, and surrounding areas.</p>
+                  <p className="text-sm text-foreground/80">Connect with others managing anxiety in peer-led support groups meeting monthly at various locations in Darby, Yeadon, and surrounding areas.</p>
                 </Card>
               </div>
             </section>
@@ -270,7 +270,7 @@ const AnxietyTreatmentDelawareCounty = () => {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className="text-left">How much does anxiety treatment cost in Havertown?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">How much does anxiety treatment cost in Darby?</AccordionTrigger>
                   <AccordionContent className="text-foreground/80">
                     Cost varies based on insurance coverage. Most major insurance plans cover mental health services. Contact Sunrise Human Care Services at (814) 620-2162 to discuss pricing and insurance options.
                   </AccordionContent>
@@ -294,7 +294,7 @@ const AnxietyTreatmentDelawareCounty = () => {
               <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
                 <h2 className="text-2xl font-bold mb-4 text-center text-foreground">Start Your Anxiety Treatment Journey Today</h2>
                 <p className="text-center mb-6 text-foreground/80">
-                  Don't let anxiety control your life. Expert, compassionate care is available at Sunrise Human Care Services in Havertown.
+                  Don't let anxiety control your life. Expert, compassionate care is available at Sunrise Human Care Services in Darby.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link to="/appointment">
@@ -319,15 +319,15 @@ const AnxietyTreatmentDelawareCounty = () => {
             <section>
               <h3 className="text-2xl font-bold mb-4 text-foreground">Related Articles</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                <Link to="/blog/depression-therapy-havertown-signs-to-seek-help">
+                <Link to="/blog/depression-therapy-darby-signs-to-seek-help">
                   <Card className="p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2 text-foreground">Depression Therapy: When to Seek Help</h4>
                     <p className="text-sm text-foreground/70">Learn about depression signs and treatment options.</p>
                   </Card>
                 </Link>
-                <Link to="/blog/finding-therapist-havertown-pa-guide">
+                <Link to="/blog/finding-therapist-darby-pa-guide">
                   <Card className="p-4 hover:shadow-lg transition-shadow">
-                    <h4 className="font-semibold mb-2 text-foreground">Finding the Right Therapist in Havertown</h4>
+                    <h4 className="font-semibold mb-2 text-foreground">Finding the Right Therapist in Darby</h4>
                     <p className="text-sm text-foreground/70">Complete guide to choosing a mental health provider.</p>
                   </Card>
                 </Link>

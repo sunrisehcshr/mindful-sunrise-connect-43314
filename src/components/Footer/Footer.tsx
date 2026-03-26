@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-orange-500 mt-0.5" />
                 <span className="text-sm text-muted-foreground">
-                  2050 West Chester Pike, Havertown, PA 19083, United States
+                  869 Main Street, Darby, PA 19023, United States
                 </span>
               </li>
               <li className="flex items-center space-x-3">

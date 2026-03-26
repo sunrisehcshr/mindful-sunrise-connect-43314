@@ -11,54 +11,54 @@ import { CalendarIcon, Clock3 } from "lucide-react";
 
 const Blog = () => {
   const blogPosts = [{
-    id: "finding-therapist-havertown-pa-guide",
-    title: "Finding the Right Therapist in Havertown, PA: A Complete Guide",
-    excerpt: "Discover how to find the perfect therapist in Havertown, PA. Learn about therapy types, insurance options, and what to look for in a mental health professional in Delaware County.",
+    id: "finding-therapist-darby-pa-guide",
+    title: "Finding the Right Therapist in Darby, PA: A Complete Guide",
+    excerpt: "Discover how to find the perfect therapist in Darby, PA. Learn about therapy types, insurance options, and what to look for in a mental health professional in Delaware County.",
     date: "October 28, 2025",
     readTime: "12 min read",
-    image: "/images/finding-therapist-havertown.webp",
-    altText: "Professional therapy consultation in Havertown, PA"
+    image: "/images/finding-therapist-darby.webp",
+    altText: "Professional therapy consultation in Darby, PA"
   }, {
     id: "anxiety-treatment-delaware-county-pa",
     title: "Anxiety Treatment Options in Delaware County, PA: What You Need to Know",
-    excerpt: "Comprehensive guide to anxiety treatment in Delaware County. Learn about therapy approaches, medication options, and local resources available in Havertown and surrounding areas.",
+    excerpt: "Comprehensive guide to anxiety treatment in Delaware County. Learn about therapy approaches, medication options, and local resources available in Darby and surrounding areas.",
     date: "October 27, 2025",
     readTime: "10 min read",
     image: "/images/anxiety-treatment-delaware-county.webp",
     altText: "Calm anxiety therapy session in Delaware County, PA"
   }, {
-    id: "depression-therapy-havertown-pa-complete-guide",
-    title: "Depression Therapy in Havertown, PA: Your Complete Guide to Recovery",
-    excerpt: "Understanding depression treatment options in Havertown, PA. From evidence-based therapies to medication management, find the right path to recovery.",
+    id: "depression-therapy-darby-pa-complete-guide",
+    title: "Depression Therapy in Darby, PA: Your Complete Guide to Recovery",
+    excerpt: "Understanding depression treatment options in Darby, PA. From evidence-based therapies to medication management, find the right path to recovery.",
     date: "October 26, 2025",
     readTime: "11 min read",
-    image: "/images/depression-therapy-havertown.webp",
-    altText: "Hopeful depression recovery therapy in Havertown, PA"
+    image: "/images/depression-therapy-darby.webp",
+    altText: "Hopeful depression recovery therapy in Darby, PA"
   }, {
-    id: "family-therapy-havertown-pa-guide",
-    title: "Family Therapy in Havertown, PA: Strengthening Your Family Bonds",
-    excerpt: "Learn how family therapy in Havertown can help resolve conflicts, improve communication, and strengthen relationships. Expert guidance for Delaware County families.",
+    id: "family-therapy-darby-pa-guide",
+    title: "Family Therapy in Darby, PA: Strengthening Your Family Bonds",
+    excerpt: "Learn how family therapy in Darby can help resolve conflicts, improve communication, and strengthen relationships. Expert guidance for Delaware County families.",
     date: "October 25, 2025",
     readTime: "9 min read",
-    image: "/images/family-therapy-havertown-guide.webp",
-    altText: "Family therapy session in Havertown, PA"
+    image: "/images/family-therapy-darby-guide.webp",
+    altText: "Family therapy session in Darby, PA"
   }, {
-    id: "adhd-treatment-havertown-pa-comprehensive-guide",
-    title: "ADHD Treatment in Havertown, PA: A Comprehensive Guide for Families",
-    excerpt: "Complete guide to ADHD treatment in Havertown, PA. Explore therapy options, medication management, and local resources for children and adults with ADHD.",
+    id: "adhd-treatment-darby-pa-comprehensive-guide",
+    title: "ADHD Treatment in Darby, PA: A Comprehensive Guide for Families",
+    excerpt: "Complete guide to ADHD treatment in Darby, PA. Explore therapy options, medication management, and local resources for children and adults with ADHD.",
     date: "October 24, 2025",
     readTime: "13 min read",
-    image: "/images/adhd-treatment-havertown.webp",
-    altText: "Child focused in ADHD therapy in Havertown, PA"
+    image: "/images/adhd-treatment-darby.webp",
+    altText: "Child focused in ADHD therapy in Darby, PA"
   }];
 
   return (
     <>
       <SEOHead 
-        title="Mental Health Resources & Blog | Sunrise Human Care Services Havertown" 
-        description="Expert mental health insights for Havertown residents. Read our professional articles on anxiety management, depression treatment, family support strategies, and seasonal affective disorder. Evidence-based guidance from licensed therapists." 
+        title="Mental Health Resources & Blog | Sunrise Human Care Services Darby" 
+        description="Expert mental health insights for Darby residents. Read our professional articles on anxiety management, depression treatment, family support strategies, and seasonal affective disorder. Evidence-based guidance from licensed therapists." 
         canonicalUrl="https://sunrisehumancare.com/blog"
-        keywords="mental health blog Havertown, anxiety tips Pennsylvania, depression resources Delaware County, SAD treatment, family mental health support, therapist advice, psychology articles"
+        keywords="mental health blog Darby, anxiety tips Pennsylvania, depression resources Delaware County, SAD treatment, family mental health support, therapist advice, psychology articles"
         article={true}
       />
       <SchemaMarkup />
@@ -70,7 +70,7 @@ const Blog = () => {
             <div className="max-w-5xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Resources</h1>
               <p className="text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Mental health insights and resources for Havertown residents from the experts at Sunrise Human Care Services.
+                Mental health insights and resources for Darby residents from the experts at Sunrise Human Care Services.
               </p>
               
               <div className="grid gap-10 mt-12">
@@ -104,7 +104,7 @@ const Blog = () => {
               </div>
               
               <div className="mt-20 text-center p-8 rounded-lg backdrop-blur-sm border border-border/30 bg-white">
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4">Need Professional Mental Health Support in Havertown?</h2>
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4">Need Professional Mental Health Support in Darby?</h2>
                 <p className="mb-8 text-lg max-w-2xl mx-auto leading-relaxed">Our team of licensed therapists and psychiatrists is ready to help you navigate your mental health journey.</p>
                 <Button asChild size="lg" className="btn-sunrise">
                   <Link to="/appointment">Book Your Appointment Today</Link>

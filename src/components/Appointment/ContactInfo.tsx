@@ -12,8 +12,8 @@ const ContactInfo: React.FC = () => {
           <MapPin className="h-5 w-5 text-orange-500 mt-0.5" />
           <div>
             <p className="text-muted-foreground">
-              2050 West Chester Pike<br />
-              Havertown, PA 19083<br />
+              869 Main Street<br />
+              Darby, PA 19023<br />
               United States
             </p>
             <p className="text-sm text-muted-foreground/80 mt-1">
@@ -36,14 +36,14 @@ const ContactInfo: React.FC = () => {
         
         <div className="flex items-center space-x-3">
           <Globe className="h-5 w-5 text-orange-500" />
-          <a href="https://www.google.com/maps?q=39.9707,-75.3151" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-sunrise-700 transition-colors">
+          <a href="https://www.google.com/maps?q=39.9184,-75.2590" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-sunrise-700 transition-colors">
             View on Google Maps
           </a>
         </div>
         
         <div className="text-sm text-gray-500 mt-2 border-t border-gray-100 pt-3">
-          <p>Serving Havertown and surrounding communities in Delaware County, Pennsylvania:</p>
-          <p className="mt-1">Broomall • Ardmore • Drexel Hill • Springfield • Newtown Square</p>
+          <p>Serving Darby and surrounding communities in Delaware County, Pennsylvania:</p>
+          <p className="mt-1">Yeadon • Lansdowne • Upper Darby • Collingdale • Sharon Hill</p>
         </div>
       </div>
     </div>

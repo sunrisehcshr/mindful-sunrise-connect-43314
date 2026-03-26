@@ -8,14 +8,14 @@ import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, MapPin, Calendar } from "lucide-react";
 
-const FindingTherapistHavertown = () => {
+const FindingTherapistDarby = () => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do I find a good therapist in Havertown, PA?",
+        "name": "How do I find a good therapist in Darby, PA?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Look for licensed therapists with experience in your specific concerns, check their credentials, read reviews, and schedule a consultation to ensure they're a good fit. Sunrise Human Care Services offers experienced therapists specializing in anxiety, depression, trauma, and family therapy."
@@ -23,7 +23,7 @@ const FindingTherapistHavertown = () => {
       },
       {
         "@type": "Question",
-        "name": "Does insurance cover therapy in Havertown?",
+        "name": "Does insurance cover therapy in Darby?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Most major insurance plans cover mental health services in Pennsylvania. Contact Sunrise Human Care Services at (814) 620-2162 to verify your specific insurance coverage."
@@ -47,10 +47,10 @@ const FindingTherapistHavertown = () => {
       },
       {
         "@type": "Question",
-        "name": "Is online therapy available in Havertown?",
+        "name": "Is online therapy available in Darby?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Sunrise Human Care Services offers both in-person and teletherapy options for residents of Havertown, Drexel Hill, Broomall, and surrounding Delaware County areas."
+          "text": "Yes, Sunrise Human Care Services offers both in-person and teletherapy options for residents of Darby, Upper Darby, Yeadon, and surrounding Delaware County areas."
         }
       }
     ]
@@ -59,11 +59,11 @@ const FindingTherapistHavertown = () => {
   return (
     <>
       <SEOHead
-        title="Finding the Right Therapist in Havertown, PA | Complete Guide"
-        description="Discover how to find the perfect therapist in Havertown, PA. Learn about therapy types, insurance options, and what to expect at Sunrise Human Care Services."
-        canonicalUrl="https://sunrisehumancare.com/blog/finding-therapist-havertown-pa-guide"
-        keywords="therapist in Havertown PA, mental health services Havertown, therapy Delaware County, how to find a good therapist in Havertown, best therapy practice Havertown PA"
-        ogImage="https://sunrisehumancare.com/images/Therapy-in-havertown.webp"
+        title="Finding the Right Therapist in Darby, PA | Complete Guide"
+        description="Discover how to find the perfect therapist in Darby, PA. Learn about therapy types, insurance options, and what to expect at Sunrise Human Care Services."
+        canonicalUrl="https://sunrisehumancare.com/blog/finding-therapist-darby-pa-guide"
+        keywords="therapist in Darby PA, mental health services Darby, therapy Delaware County, how to find a good therapist in Darby, best therapy practice Darby PA"
+        ogImage="https://sunrisehumancare.com/images/Therapy-in-darby.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -86,7 +86,7 @@ const FindingTherapistHavertown = () => {
             {/* Header */}
             <header className="mb-8">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Finding the Right Therapist in Havertown, PA: A Complete Guide
+                Finding the Right Therapist in Darby, PA: A Complete Guide
               </h1>
               <div className="flex items-center gap-4 text-muted-foreground text-sm">
                 <time dateTime="2025-01-15">January 15, 2025</time>
@@ -97,15 +97,15 @@ const FindingTherapistHavertown = () => {
 
             {/* Featured Image */}
             <img 
-              src="/images/finding-therapist-havertown.webp" 
-              alt="Professional therapy office in Havertown, PA showing comfortable counseling environment"
+              src="/images/finding-therapist-darby.webp" 
+              alt="Professional therapy office in Darby, PA showing comfortable counseling environment"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />
 
             {/* Introduction */}
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-lg leading-relaxed text-foreground/90">
-                Finding the right therapist in Havertown, PA can feel overwhelming, especially when you're already dealing with mental health challenges. Whether you're seeking help for anxiety, depression, relationship issues, or family concerns, choosing a mental health professional who understands your needs is crucial to your healing journey. This comprehensive guide will walk you through everything you need to know about finding quality therapy services right here in Delaware County.
+                Finding the right therapist in Darby, PA can feel overwhelming, especially when you're already dealing with mental health challenges. Whether you're seeking help for anxiety, depression, relationship issues, or family concerns, choosing a mental health professional who understands your needs is crucial to your healing journey. This comprehensive guide will walk you through everything you need to know about finding quality therapy services right here in Delaware County.
               </p>
             </div>
 
@@ -113,17 +113,17 @@ const FindingTherapistHavertown = () => {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">Why Location Matters in Therapy</h2>
               <p className="mb-4 text-foreground/90 leading-relaxed">
-                Choosing a therapist in Havertown offers significant advantages over traveling to Center City Philadelphia or other distant locations. When your therapy office is conveniently located on West Chester Pike, you're more likely to maintain consistent appointments—a critical factor in treatment success.
+                Choosing a therapist in Darby offers significant advantages over traveling to Center City Philadelphia or other distant locations. When your therapy office is conveniently located on Main Street, you're more likely to maintain consistent appointments—a critical factor in treatment success.
               </p>
               <p className="mb-4 text-foreground/90 leading-relaxed">
-                Local therapists understand the unique challenges facing Delaware County residents, from the stresses of suburban family life to the specific community resources available in Havertown, Drexel Hill, Broomall, and Ardmore. At Sunrise Human Care Services, we're embedded in the community we serve, making us more than just healthcare providers—we're your neighbors.
+                Local therapists understand the unique challenges facing Delaware County residents, from the stresses of suburban family life to the specific community resources available in Darby, Upper Darby, Yeadon, and Lansdowne. At Sunrise Human Care Services, we're embedded in the community we serve, making us more than just healthcare providers—we're your neighbors.
               </p>
               <Card className="p-6 bg-accent/50 border-accent">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold mb-2 text-foreground">Conveniently Located</h3>
-                    <p className="text-sm text-foreground/80">2050 West Chester Pike, Havertown, PA 19083 - Easy access from Route 476 and I-76, with ample parking available.</p>
+                    <p className="text-sm text-foreground/80">869 Main Street, Darby, PA 19023 - Easy access from Route 476 and I-76, with ample parking available.</p>
                   </div>
                 </div>
               </Card>
@@ -142,7 +142,7 @@ const FindingTherapistHavertown = () => {
                   <p className="text-foreground/90 mb-3">
                     One-on-one counseling sessions focused on your personal mental health goals. Our experienced therapists use evidence-based approaches like Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and psychodynamic therapy to address anxiety, depression, trauma, and more.
                   </p>
-                  <Link to="/individual-therapy-havertown-pa">
+                  <Link to="/individual-therapy-darby-pa">
                     <Button variant="link" className="p-0 h-auto">Learn more about individual therapy →</Button>
                   </Link>
                 </Card>
@@ -152,7 +152,7 @@ const FindingTherapistHavertown = () => {
                   <p className="text-foreground/90 mb-3">
                     Strengthen your relationship through improved communication, conflict resolution, and emotional intimacy. Our couples therapists help partners navigate challenges including infidelity, financial stress, parenting disagreements, and life transitions.
                   </p>
-                  <Link to="/couples-counseling-havertown-pa">
+                  <Link to="/couples-counseling-darby-pa">
                     <Button variant="link" className="p-0 h-auto">Explore couples counseling services →</Button>
                   </Link>
                 </Card>
@@ -162,7 +162,7 @@ const FindingTherapistHavertown = () => {
                   <p className="text-foreground/90 mb-3">
                     Address family dynamics, improve communication between family members, and resolve conflicts. We work with families dealing with teen behavioral issues, blended family challenges, elder care stress, and intergenerational trauma.
                   </p>
-                  <Link to="/family-therapy-havertown-pa">
+                  <Link to="/family-therapy-darby-pa">
                     <Button variant="link" className="p-0 h-auto">Discover family therapy options →</Button>
                   </Link>
                 </Card>
@@ -171,7 +171,7 @@ const FindingTherapistHavertown = () => {
 
             {/* What to Look For */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-foreground">What to Look for in a Havertown Therapist</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground">What to Look for in a Darby Therapist</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
                 Not all therapists are the same, and finding the right match is essential for successful treatment. Here are key factors to consider:
               </p>
@@ -224,7 +224,7 @@ const FindingTherapistHavertown = () => {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">Your First Visit at Sunrise Human Care Services</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
-                We understand that starting therapy can feel intimidating. Here's what to expect during your first appointment at our Havertown office:
+                We understand that starting therapy can feel intimidating. Here's what to expect during your first appointment at our Darby office:
               </p>
 
               <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -256,13 +256,13 @@ const FindingTherapistHavertown = () => {
               <h2 className="text-3xl font-bold mb-6 text-foreground">Frequently Asked Questions</h2>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className="text-left">How do I find a good therapist in Havertown, PA?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">How do I find a good therapist in Darby, PA?</AccordionTrigger>
                   <AccordionContent className="text-foreground/80">
                     Look for licensed therapists with experience in your specific concerns, check their credentials, read reviews, and schedule a consultation to ensure they're a good fit. Sunrise Human Care Services offers experienced therapists specializing in anxiety, depression, trauma, and family therapy.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className="text-left">Does insurance cover therapy in Havertown?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">Does insurance cover therapy in Darby?</AccordionTrigger>
                   <AccordionContent className="text-foreground/80">
                     Most major insurance plans cover mental health services in Pennsylvania. Contact Sunrise Human Care Services at (814) 620-2162 to verify your specific insurance coverage.
                   </AccordionContent>
@@ -280,9 +280,9 @@ const FindingTherapistHavertown = () => {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5">
-                  <AccordionTrigger className="text-left">Is online therapy available in Havertown?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">Is online therapy available in Darby?</AccordionTrigger>
                   <AccordionContent className="text-foreground/80">
-                    Yes, Sunrise Human Care Services offers both in-person and teletherapy options for residents of Havertown, Drexel Hill, Broomall, and surrounding Delaware County areas.
+                    Yes, Sunrise Human Care Services offers both in-person and teletherapy options for residents of Darby, Upper Darby, Yeadon, and surrounding Delaware County areas.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -293,7 +293,7 @@ const FindingTherapistHavertown = () => {
               <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
                 <h2 className="text-2xl font-bold mb-4 text-center text-foreground">Ready to Start Your Therapy Journey?</h2>
                 <p className="text-center mb-6 text-foreground/80">
-                  Sunrise Human Care Services is accepting new patients in Havertown, PA. Our experienced team is here to support your mental health and wellness goals.
+                  Sunrise Human Care Services is accepting new patients in Darby, PA. Our experienced team is here to support your mental health and wellness goals.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link to="/appointment">
@@ -325,7 +325,7 @@ const FindingTherapistHavertown = () => {
                     <p className="text-sm text-foreground/70">Explore proven treatment approaches for anxiety disorders.</p>
                   </Card>
                 </Link>
-                <Link to="/blog/family-therapy-havertown-pa-strengthening-relationships">
+                <Link to="/blog/family-therapy-darby-pa-strengthening-relationships">
                   <Card className="p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2 text-foreground">Family Therapy: Strengthening Relationships</h4>
                     <p className="text-sm text-foreground/70">Learn how family counseling can improve communication.</p>
@@ -342,4 +342,4 @@ const FindingTherapistHavertown = () => {
   );
 };
 
-export default FindingTherapistHavertown;
+export default FindingTherapistDarby;

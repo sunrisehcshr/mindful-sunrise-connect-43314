@@ -77,13 +77,13 @@ https://sunrisehumancare.com/medicaid-therapy
 ### 2. Recommended Campaign Structure
 - **Campaign Type**: Search
 - **Goal**: Leads
-- **Location**: Delaware County, PA (Havertown, Broomall, Drexel Hill, Ardmore, Springfield)
+- **Location**: Delaware County, PA (Darby, Yeadon, Upper Darby, Lansdowne, Collingdale)
 - **Budget**: Start with $30-50/day
 
 ### 3. Keyword Suggestions
 High-intent keywords:
 - medicaid therapist near me
-- medicaid psychiatrist havertown
+- medicaid psychiatrist darby
 - mental health services medicaid
 - therapy covered by medicaid pa
 - medicaid counseling delaware county
@@ -100,7 +100,7 @@ Highlight these key points:
 ### 5. Ad Extensions
 Enable these extensions:
 - **Call Extension**: (814) 620-2162
-- **Location Extension**: 2050 West Chester Pike, Havertown, PA
+- **Location Extension**: 869 Main Street, Darby, PA
 - **Sitelink Extensions**:
   - Book Appointment
   - Our Services

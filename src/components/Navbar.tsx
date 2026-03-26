@@ -77,48 +77,48 @@ const Navbar = () => {
 
   const serviceLinks = [{
     title: "Individual Therapy",
-    path: "/individual-therapy-havertown-pa"
+    path: "/individual-therapy-darby-pa"
   }, {
     title: "Couples Counseling",
-    path: "/couples-counseling-havertown-pa"
+    path: "/couples-counseling-darby-pa"
   }, {
     title: "Family Therapy",
-    path: "/family-therapy-havertown-pa"
+    path: "/family-therapy-darby-pa"
   }, {
     title: "Child Therapy",
-    path: "/child-therapy-havertown-pa"
+    path: "/child-therapy-darby-pa"
   }, {
     title: "Psychiatric Evaluations",
-    path: "/psychiatric-evaluations-havertown-pa"
+    path: "/psychiatric-evaluations-darby-pa"
   }, {
     title: "Medication Management",
-    path: "/medication-management-havertown-pa"
+    path: "/medication-management-darby-pa"
   }];
 
   const conditionLinks = [
     {
       title: "Anxiety",
-      path: "/anxiety-therapy-havertown-pa"
+      path: "/anxiety-therapy-darby-pa"
     }, 
     {
       title: "Depression",
-      path: "/depression-therapy-havertown-pa"
+      path: "/depression-therapy-darby-pa"
     }, 
     {
       title: "ADHD",
-      path: "/adhd-treatment-havertown-pa"
+      path: "/adhd-treatment-darby-pa"
     }, 
     {
       title: "Bipolar Disorder",
-      path: "/bipolar-disorder-therapy-havertown-pa"
+      path: "/bipolar-disorder-therapy-darby-pa"
     }, 
     {
       title: "PTSD & Trauma",
-      path: "/ptsd-therapy-havertown-pa"
+      path: "/ptsd-therapy-darby-pa"
     }, 
     {
       title: "OCD",
-      path: "/ocd-therapy-havertown-pa"
+      path: "/ocd-therapy-darby-pa"
     }
   ];
 

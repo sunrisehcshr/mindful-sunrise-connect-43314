@@ -10,7 +10,7 @@ const FAQ = () => {
     <>
       <SEOHead
         title="Frequently Asked Questions | Sunrise Human Care Services"
-        description="Answers to common questions about our mental health services in Havertown, PA. Learn about therapy options, insurance, and appointment information."
+        description="Answers to common questions about our mental health services in Darby, PA. Learn about therapy options, insurance, and appointment information."
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />

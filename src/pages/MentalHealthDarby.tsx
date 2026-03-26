@@ -14,7 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const MentalHealthHavertown = () => {
+const MentalHealthDarby = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -35,42 +35,42 @@ const MentalHealthHavertown = () => {
     {
       title: "Individual Therapy",
       description: "Private, one-on-one sessions with a licensed therapist to address personal challenges and promote emotional well-being.",
-      link: "/individual-therapy-havertown-pa"
+      link: "/individual-therapy-darby-pa"
     },
     {
       title: "Couples Counseling",
       description: "Supportive therapy for partners looking to strengthen communication, rebuild trust, and navigate relationship challenges together.",
-      link: "/couples-counseling-havertown-pa"
+      link: "/couples-counseling-darby-pa"
     },
     {
       title: "Family Therapy",
       description: "Guided sessions designed to improve family dynamics, resolve conflicts, and foster healthier connections among family members.",
-      link: "/family-therapy-havertown-pa"
+      link: "/family-therapy-darby-pa"
     },
     {
       title: "Child & Adolescent Therapy",
       description: "Age-appropriate therapeutic support for children and teens facing emotional, behavioral, or developmental concerns.",
-      link: "/child-therapy-havertown-pa"
+      link: "/child-therapy-darby-pa"
     },
     {
       title: "Psychiatric Evaluations",
       description: "Comprehensive assessments conducted by qualified professionals to understand mental health needs and guide treatment planning.",
-      link: "/psychiatric-evaluations-havertown-pa"
+      link: "/psychiatric-evaluations-darby-pa"
     },
     {
       title: "Medication Management",
       description: "Careful oversight of psychiatric medications to ensure safe, effective treatment as part of a comprehensive care plan.",
-      link: "/medication-management-havertown-pa"
+      link: "/medication-management-darby-pa"
     },
     {
       title: "Grief Therapy",
       description: "Compassionate support for individuals processing loss and navigating the emotional journey of grief.",
-      link: "/grief-therapy-havertown-pa"
+      link: "/grief-therapy-darby-pa"
     },
     {
       title: "Relationship Therapy",
       description: "Therapeutic guidance for individuals seeking to improve interpersonal skills and build healthier relationships.",
-      link: "/relationship-therapy-havertown-pa"
+      link: "/relationship-therapy-darby-pa"
     }
   ];
 
@@ -123,10 +123,10 @@ const MentalHealthHavertown = () => {
   return (
     <>
       <SEOHead 
-        title="Mental Health Services in Havertown, PA | Sunrise Human Care" 
-        description="Compassionate mental health care for Havertown residents. Licensed therapists offering individual therapy, couples counseling, family therapy, and psychiatric services. Schedule your appointment today." 
-        canonicalUrl="https://sunrisehumancare.com/mental-health-havertown-pa"
-        keywords="mental health Havertown PA, mental health services Havertown, therapy Havertown PA, mental health clinic Havertown, counseling Havertown Pennsylvania"
+        title="Mental Health Services in Darby, PA | Sunrise Human Care" 
+        description="Compassionate mental health care for Darby residents. Licensed therapists offering individual therapy, couples counseling, family therapy, and psychiatric services. Schedule your appointment today." 
+        canonicalUrl="https://sunrisehumancare.com/mental-health-darby-pa"
+        keywords="mental health Darby PA, mental health services Darby, therapy Darby PA, mental health clinic Darby, counseling Darby Pennsylvania"
       />
       <SchemaMarkup />
       <Helmet>
@@ -203,7 +203,7 @@ const MentalHealthHavertown = () => {
                   transition={{ delay: 0.4, duration: 0.8 }}
                   className="font-barlow font-medium text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed [text-shadow:_0_1px_8px_rgba(0,0,0,0.5)]"
                 >
-                  Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Havertown and the surrounding community.
+                  Professional, compassionate mental health care from licensed therapists who understand your needs. Serving Darby and the surrounding community.
                 </motion.p>
 
                 <motion.div
@@ -241,12 +241,12 @@ const MentalHealthHavertown = () => {
                     <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">About Our Practice</span>
                     <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-6">
                       Compassionate care for
-                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">Havertown residents</span>
+                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">Darby residents</span>
                     </h2>
                   </div>
                   <div className="space-y-5 font-barlow text-stone-600 text-base md:text-lg leading-relaxed">
                     <p>
-                      At Sunrise Human Care, we understand that seeking mental health support can feel like a significant step. That's why we've created a welcoming, confidential environment where Havertown residents can receive the care they deserve.
+                      At Sunrise Human Care, we understand that seeking mental health support can feel like a significant step. That's why we've created a welcoming, confidential environment where Darby residents can receive the care they deserve.
                     </p>
                     <p>
                       We believe everyone's path to wellness is unique. Our licensed mental health professionals take the time to listen, understand your concerns, and work with you to develop a treatment approach that fits your life.
@@ -274,7 +274,7 @@ const MentalHealthHavertown = () => {
                     <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Why Choose Us</span>
                     <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight">
                       Licensed mental health clinic
-                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">serving Havertown, PA</span>
+                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">serving Darby, PA</span>
                     </h2>
                   </div>
                   
@@ -283,7 +283,7 @@ const MentalHealthHavertown = () => {
                       { icon: <Shield className="h-5 w-5" />, title: "Licensed Professionals", desc: "Our team consists of fully licensed mental health professionals with extensive training and experience in evidence-based treatment approaches." },
                       { icon: <Heart className="h-5 w-5" />, title: "Personalized Care", desc: "We prioritize quality over volume. Each client receives individualized attention and a treatment plan tailored to their specific needs and goals." },
                       { icon: <MessageCircle className="h-5 w-5" />, title: "Confidential Treatment", desc: "Your privacy matters. We maintain strict confidentiality standards and provide a safe, judgment-free space for you to share openly." },
-                      { icon: <MapPin className="h-5 w-5" />, title: "Local Presence", desc: "As part of the Havertown community, we understand the local culture and are committed to serving our neighbors with integrity and care." }
+                      { icon: <MapPin className="h-5 w-5" />, title: "Local Presence", desc: "As part of the Darby community, we understand the local culture and are committed to serving our neighbors with integrity and care." }
                     ].map((item, index) => (
                       <motion.div
                         key={index}
@@ -322,10 +322,10 @@ const MentalHealthHavertown = () => {
                     <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Our Services</span>
                     <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight">
                       Mental health services
-                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">available in Havertown</span>
+                      <span className="block font-instrument-serif italic text-amber-700/70 font-normal">available in Darby</span>
                     </h2>
                     <p className="font-barlow text-stone-500 text-base md:text-lg mt-5 max-w-2xl mx-auto">
-                      Our Havertown clinic provides structured mental health and psychiatric services for individuals, couples, families, and children.
+                      Our Darby clinic provides structured mental health and psychiatric services for individuals, couples, families, and children.
                     </p>
                   </div>
                   
@@ -421,14 +421,14 @@ const MentalHealthHavertown = () => {
                       <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Visit Us</span>
                       <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-6">
                         In-clinic services in
-                        <span className="block font-instrument-serif italic text-amber-700/70 font-normal">Havertown, Pennsylvania</span>
+                        <span className="block font-instrument-serif italic text-amber-700/70 font-normal">Darby, Pennsylvania</span>
                       </h2>
                       <div className="space-y-4 font-barlow text-stone-600 text-base leading-relaxed">
                         <p>
-                          Our clinic is located in Havertown, Pennsylvania, serving residents across Delaware County. We've designed our space to be a comfortable, private environment where you can focus on your well-being.
+                          Our clinic is located in Darby, Pennsylvania, serving residents across Delaware County. We've designed our space to be a comfortable, private environment where you can focus on your well-being.
                         </p>
                         <p>
-                          The office is easily accessible for residents throughout the area, including those coming from Upper Darby, Ardmore, and Bryn Mawr.
+                          The office is easily accessible for residents throughout the area, including those coming from Upper Darby, Lansdowne, and Folcroft.
                         </p>
                       </div>
                     </div>
@@ -442,7 +442,7 @@ const MentalHealthHavertown = () => {
                       </div>
                       <ul className="space-y-4">
                         {[
-                          "In-clinic appointments in Havertown, PA",
+                          "In-clinic appointments in Darby, PA",
                           "Comfortable, private clinical setting",
                           "Flexible scheduling for your convenience",
                           "Easy appointment booking process"
@@ -504,7 +504,7 @@ const MentalHealthHavertown = () => {
             {/* Background Image */}
             <div 
               className="absolute inset-0 bg-cover bg-no-repeat"
-              style={{ backgroundImage: "url('/images/havertown-hero-sunrise.png')", backgroundPosition: "center 5%" }}
+              style={{ backgroundImage: "url('/images/darby-hero-sunrise.png')", backgroundPosition: "center 5%" }}
             />
             
             {/* Warm Overlay */}
@@ -555,4 +555,4 @@ const MentalHealthHavertown = () => {
   );
 };
 
-export default MentalHealthHavertown;
+export default MentalHealthDarby;

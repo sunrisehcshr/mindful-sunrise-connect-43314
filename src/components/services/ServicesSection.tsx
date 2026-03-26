@@ -11,46 +11,46 @@ import AppointmentDialog from '../Appointment/AppointmentDialog';
 const ServicesSection: React.FC = () => {
   const services = [{
     icon: <User className="h-6 w-6" />,
-    title: "Individual Therapy in Havertown, PA",
-    description: "One-on-one therapy sessions tailored to your unique needs and challenges. Our specialized mental health care in Havertown helps clients overcome anxiety, depression, and stress with evidence-based techniques and personalized treatment plans.",
+    title: "Individual Therapy in Darby, PA",
+    description: "One-on-one therapy sessions tailored to your unique needs and challenges. Our specialized mental health care in Darby helps clients overcome anxiety, depression, and stress with evidence-based techniques and personalized treatment plans.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/individual-therapy-havertown-pa"
+    url: "/individual-therapy-darby-pa"
   }, {
     icon: <HeartHandshake className="h-6 w-6" />,
-    title: "Couples Counseling in Havertown",
+    title: "Couples Counseling in Darby",
     description: "Specialized therapy to help couples improve communication, resolve conflicts, and strengthen relationships. Our experienced therapists provide supportive guidance for couples facing challenges, helping rebuild trust and foster deeper connections.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/couples-counseling-havertown-pa"
+    url: "/couples-counseling-darby-pa"
   }, {
     icon: <Users className="h-6 w-6" />,
-    title: "Family Therapy in Havertown, PA",
-    description: "Therapy sessions focused on improving family relationships and communication. We help families from Havertown, Broomall, and surrounding areas navigate conflicts, adjust to changes, and develop healthier patterns of interaction for lasting family harmony.",
+    title: "Family Therapy in Darby, PA",
+    description: "Therapy sessions focused on improving family relationships and communication. We help families from Darby, Yeadon, and surrounding areas navigate conflicts, adjust to changes, and develop healthier patterns of interaction for lasting family harmony.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/family-therapy-havertown-pa"
+    url: "/family-therapy-darby-pa"
   }, {
     icon: <Baby className="h-6 w-6" />,
     title: "Child & Adolescent Therapy",
-    description: "Specialized therapy for children and teens facing behavioral or emotional challenges. Our compassionate approach to mental health care in Havertown helps young people build resilience, develop coping skills, and thrive through life's challenges.",
+    description: "Specialized therapy for children and teens facing behavioral or emotional challenges. Our compassionate approach to mental health care in Darby helps young people build resilience, develop coping skills, and thrive through life's challenges.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/child-therapy-havertown-pa"
+    url: "/child-therapy-darby-pa"
   }, {
     icon: <Stethoscope className="h-6 w-6" />,
-    title: "Psychiatric Evaluations in Havertown",
+    title: "Psychiatric Evaluations in Darby",
     description: "Comprehensive mental health assessments and diagnostic services. Our thorough evaluations provide clarity and direction for treatment, identifying specific conditions and creating the foundation for effective, personalized mental health care.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/psychiatric-evaluations-havertown-pa"
+    url: "/psychiatric-evaluations-darby-pa"
   }, {
     icon: <Pill className="h-6 w-6" />,
     title: "Medication Management",
-    description: "Professional psychiatric medication reviews and management for mental health conditions. Our psychiatrists in Havertown provide expert guidance on medication options, carefully monitor effectiveness, and make adjustments to optimize your mental wellness journey.",
+    description: "Professional psychiatric medication reviews and management for mental health conditions. Our psychiatrists in Darby provide expert guidance on medication options, carefully monitor effectiveness, and make adjustments to optimize your mental wellness journey.",
     color: "bg-sunrise-50 text-sunrise-700",
     bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
-    url: "/medication-management-havertown-pa"
+    url: "/medication-management-darby-pa"
   }];
   return <section id="services" className="bg-gradient-to-b from-white to-secondary/50 py-[100px]">
       <div className="container mx-auto px-4 md:px-6">
@@ -89,7 +89,7 @@ const ServicesSection: React.FC = () => {
           duration: 0.5,
           delay: 0.1
         }} className="text-3xl font-bold mb-4 font-opensans md:text-5xl">
-            Comprehensive Mental Health Services in Havertown
+            Comprehensive Mental Health Services in Darby
           </motion.h2>
           
           <motion.p initial={{
@@ -103,7 +103,7 @@ const ServicesSection: React.FC = () => {
           delay: 0.2
         }} className="text-base font-medium text-zinc-700">
             Our team of experienced mental health professionals provides a range of services 
-            designed to support your well-being and personal growth in Havertown, PA and surrounding areas.
+            designed to support your well-being and personal growth in Darby, PA and surrounding areas.
           </motion.p>
           
           <div className="mx-auto mt-6 mb-10 w-24">
@@ -119,7 +119,7 @@ const ServicesSection: React.FC = () => {
           <AppointmentDialog>
             <Button size="lg" className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300">
               <Calendar className="mr-2 h-4 w-4" />
-              Book Mental Health Appointment in Havertown
+              Book Mental Health Appointment in Darby
             </Button>
           </AppointmentDialog>
         </div>

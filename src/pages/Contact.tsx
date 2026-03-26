@@ -87,10 +87,10 @@ const Contact = () => {
   return (
     <>
       <SEOHead
-        title="Contact Our Mental Health Clinic | Sunrise Human Care Services Havertown"
-        description="Reach our mental health team in Havertown, PA. Phone: (814) 620-2162. Located at 2050 West Chester Pike. In-person and telehealth appointments available. Easy online contact form. Medicaid accepted."
+        title="Contact Our Mental Health Clinic | Sunrise Human Care Services Darby"
+        description="Reach our mental health team in Darby, PA. Phone: (814) 620-2162. Located at 869 Main Street. In-person and telehealth appointments available. Easy online contact form. Medicaid accepted."
         canonicalUrl="https://sunrisehumancare.com/contact"
-        keywords="contact therapist Havertown, mental health clinic address, therapy phone number, counseling office hours, psychiatrist directions, telehealth therapy consultation"
+        keywords="contact therapist Darby, mental health clinic address, therapy phone number, counseling office hours, psychiatrist directions, telehealth therapy consultation"
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -120,7 +120,7 @@ const Contact = () => {
               <div className="max-w-5xl mx-auto">
                 <div className="relative h-[400px] rounded-xl overflow-hidden shadow-md border border-amber-200 mb-12">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.42270663133!2d-75.3343826!3d39.97665800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c19c8aaf0c5f%3A0xda74d062dc04cad0!2sSunrise%20Human%20Care%20Services!5e0!3m2!1sen!2sus!4v1743301383826!5m2!1sen!2sus" 
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=869+Main+Street,+Darby,+PA+19023&zoom=15" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 
@@ -183,10 +183,10 @@ const Contact = () => {
                         </div>
                         <div>
                           <h3 className="font-medium text-amber-900">Address</h3>
-                          <p className="text-amber-700">2050 West Chester Pike</p>
-                          <p className="text-amber-700">Havertown, PA 19083</p>
+                          <p className="text-amber-700">869 Main Street</p>
+                          <p className="text-amber-700">Darby, PA 19023</p>
                           <a 
-                            href="https://maps.app.goo.gl/5Bop8fKVPk1i61Ss6" 
+                            href="https://www.google.com/maps/dir/?api=1&destination=869+Main+Street,+Darby,+PA+19023" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="text-sm text-orange-500 hover:text-orange-600 font-medium mt-1 inline-block"

@@ -129,7 +129,7 @@ const MedicaidLanding = () => {
     <>
       <Helmet>
         <title>Mental Health Care Covered by Medicaid | Sunrise Human Care Services</title>
-        <meta name="description" content="Quality mental health therapy and psychiatry services covered by Medicaid in Havertown, PA. Book your appointment today - we accept Medicaid insurance." />
+        <meta name="description" content="Quality mental health therapy and psychiatry services covered by Medicaid in Darby, PA. Book your appointment today - we accept Medicaid insurance." />
         
         {/* Google Ads Conversion Tracking - Replace CONVERSION_ID with your actual ID */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
@@ -168,7 +168,7 @@ const MedicaidLanding = () => {
                   </h1>
                   
                   <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                    Access quality mental health therapy and psychiatric services in Havertown, PA. 
+                    Access quality mental health therapy and psychiatric services in Darby, PA. 
                     No out-of-pocket costs with Medicaid coverage.
                   </p>
 
@@ -530,17 +530,17 @@ const MedicaidLanding = () => {
                   {
                     quote: "The staff made the whole process so easy. I had my first appointment within days and my Medicaid covered everything.",
                     author: "Sarah M.",
-                    location: "Havertown, PA"
+                    location: "Darby, PA"
                   },
                   {
                     quote: "Finally found quality mental health care that accepts Medicaid. The therapists here really care about their patients.",
                     author: "James R.",
-                    location: "Drexel Hill, PA"
+                    location: "Upper Darby, PA"
                   },
                   {
                     quote: "No hidden fees, no surprises. Just excellent care covered by my insurance. Highly recommend!",
                     author: "Maria L.",
-                    location: "Broomall, PA"
+                    location: "Yeadon, PA"
                   },
                 ].map((testimonial, index) => (
                   <motion.div

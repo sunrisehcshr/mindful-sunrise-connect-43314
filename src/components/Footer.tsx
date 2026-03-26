@@ -16,7 +16,7 @@ const Footer = () => {
               <h3 className="font-semibold text-lg">Sunrise</h3>
             </div>
             <p className="text-sm text-muted-foreground">
-              Sunrise Human Care Services provides compassionate mental health care in Havertown, PA, 
+              Sunrise Human Care Services provides compassionate mental health care in Darby, PA, 
               focusing on individual well-being and community support.
             </p>
             <div className="flex space-x-4">
@@ -100,7 +100,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-sunrise-400 mt-0.5" />
                 <span className="text-sm text-muted-foreground">
-                  2050 West Chester Pike, Havertown, PA 19083, United States
+                  869 Main Street, Darby, PA 19023, United States
                 </span>
               </li>
               <li className="flex items-center space-x-3">

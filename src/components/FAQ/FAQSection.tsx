@@ -2,10 +2,10 @@ import React from 'react';
 import FAQItem from './FAQItem';
 const FAQSection: React.FC = () => {
   const faqs = [{
-    question: "What mental health services do you offer at your Havertown, PA clinic?",
+    question: "What mental health services do you offer at your Darby, PA clinic?",
     answer: "We provide comprehensive mental health services, including individual therapy, couple Counseling, group therapy, family counseling, psychiatric evaluations, and medication management. Our team addresses various conditions such as anxiety, depression, PTSD, and substance use disorders."
   }, {
-    question: "Which insurance plans are currently accepted at your Havertown clinic?",
+    question: "Which insurance plans are currently accepted at your Darby clinic?",
     answer: "We currently accept Medicaid for our mental health services. We understand the importance of accessible care and are committed to serving the Medicaid community with quality mental health treatment."
   }, {
     question: "How do I know if I need to seek help from a mental health professional?",
@@ -14,7 +14,7 @@ const FAQSection: React.FC = () => {
     question: "What should I expect during my first visit to your clinic?",
     answer: "During your initial visit, our clinicians will conduct a comprehensive assessment to understand your mental health needs. This evaluation helps us create a personalized treatment plan tailored to your specific goals and concerns."
   }, {
-    question: "How do I schedule an appointment at your Havertown clinic?",
+    question: "How do I schedule an appointment at your Darby clinic?",
     answer: "To schedule an appointment, please contact our office directly via phone or through our website's appointment request form. Our team will guide you through the process and address any questions you may have."
   }, {
     question: "Do you offer virtual therapy sessions?",

@@ -25,27 +25,27 @@ const SleepDisordersTherapy = () => {
   }];
   const faqs = [{
     question: "How do I know if I have a sleep disorder?",
-    answer: "Common signs include difficulty falling or staying asleep, excessive daytime sleepiness, irregular sleep patterns, unusual behaviors during sleep, and feeling unrefreshed after sleep. If sleep problems persist for more than a few weeks or interfere with daily functioning, our sleep disorder treatment in Havertown can help with a professional assessment and personalized recommendations."
+    answer: "Common signs include difficulty falling or staying asleep, excessive daytime sleepiness, irregular sleep patterns, unusual behaviors during sleep, and feeling unrefreshed after sleep. If sleep problems persist for more than a few weeks or interfere with daily functioning, our sleep disorder treatment in Darby can help with a professional assessment and personalized recommendations."
   }, {
     question: "Is medication necessary for treating sleep disorders?",
-    answer: "Not always. While medication may be helpful in some cases, many sleep disorders can be effectively treated with non-medication approaches like CBT-I at our Havertown sleep therapy center. This evidence-based treatment has been shown to produce long-lasting improvements in sleep quality without the side effects or dependencies associated with sleep medications. Our sleep specialists in Havertown will discuss all treatment options based on your specific situation."
+    answer: "Not always. While medication may be helpful in some cases, many sleep disorders can be effectively treated with non-medication approaches like CBT-I at our Darby sleep therapy center. This evidence-based treatment has been shown to produce long-lasting improvements in sleep quality without the side effects or dependencies associated with sleep medications. Our sleep specialists in Darby will discuss all treatment options based on your specific situation."
   }, {
     question: "How long does sleep therapy take to work?",
-    answer: "Many people seeking sleep disorder treatment in Havertown begin to see improvements in their sleep within 2-4 weeks of starting CBT-I or other behavioral sleep treatments. Full benefits of our sleep therapy typically develop over 6-8 weeks of consistent practice of the recommended strategies. Clients throughout Havertown, Drexel Hill, and Broomall report significant improvements in sleep quality with our structured approach."
+    answer: "Many people seeking sleep disorder treatment in Darby begin to see improvements in their sleep within 2-4 weeks of starting CBT-I or other behavioral sleep treatments. Full benefits of our sleep therapy typically develop over 6-8 weeks of consistent practice of the recommended strategies. Clients throughout Darby, Upper Darby, and Yeadon report significant improvements in sleep quality with our structured approach."
   }];
   const relatedServices = [{
-    title: "Anxiety Therapy in Havertown",
-    url: "/anxiety-therapy-havertown-pa"
+    title: "Anxiety Therapy in Darby",
+    url: "/anxiety-therapy-darby-pa"
   }, {
-    title: "Depression Therapy in Havertown",
-    url: "/depression-therapy-havertown-pa"
+    title: "Depression Therapy in Darby",
+    url: "/depression-therapy-darby-pa"
   }, {
-    title: "Stress Management in Havertown",
-    url: "/stress-management-havertown-pa"
+    title: "Stress Management in Darby",
+    url: "/stress-management-darby-pa"
   }];
 
-  return <ServicePageLayout title="Sleep Disorders Treatment in Havertown, PA" description="Effective treatment for insomnia, sleep anxiety, and other sleep-related issues in Havertown, PA." pageTitle="Sleep Disorders Treatment in Havertown, PA | Insomnia Therapy | Sunrise Human Care Services" metaDescription="Effective sleep disorder treatment in Havertown, PA for insomnia and sleep-related issues. Evidence-based approaches including CBT-I serving Delaware County residents. Sleep therapy for Havertown, Drexel Hill, and Broomall." serviceType="Sleep Disorders Treatment" canonicalUrl="/sleep-disorders-treatment-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      <ServiceContentSection title="Our Sleep Disorders Treatment Approach in Havertown" hasBgPattern={true}>
+  return <ServicePageLayout title="Sleep Disorders Treatment in Darby, PA" description="Effective treatment for insomnia, sleep anxiety, and other sleep-related issues in Darby, PA." pageTitle="Sleep Disorders Treatment in Darby, PA | Insomnia Therapy | Sunrise Human Care Services" metaDescription="Effective sleep disorder treatment in Darby, PA for insomnia and sleep-related issues. Evidence-based approaches including CBT-I serving Delaware County residents. Sleep therapy for Darby, Upper Darby, and Yeadon." serviceType="Sleep Disorders Treatment" canonicalUrl="/sleep-disorders-treatment-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
+      <ServiceContentSection title="Our Sleep Disorders Treatment Approach in Darby" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
           opacity: 0,
@@ -61,19 +61,19 @@ const SleepDisordersTherapy = () => {
         }}>
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed">
-                At Sunrise Human Care Services in Havertown, PA, we provide evidence-based treatment for a range of sleep disorders. Our sleep therapy begins with a comprehensive sleep assessment to understand your specific sleep patterns, habits, and factors that may be interfering with restful sleep.
+                At Sunrise Human Care Services in Darby, PA, we provide evidence-based treatment for a range of sleep disorders. Our sleep therapy begins with a comprehensive sleep assessment to understand your specific sleep patterns, habits, and factors that may be interfering with restful sleep.
               </p>
               
               <p className="leading-relaxed">
-                For insomnia, which is the most common sleep disorder, our Havertown sleep specialists primarily use Cognitive-Behavioral Therapy for Insomnia (CBT-I), the gold-standard treatment recommended by sleep medicine experts. This structured approach helps you identify and change thoughts and behaviors that cause or worsen sleep problems.
+                For insomnia, which is the most common sleep disorder, our Darby sleep specialists primarily use Cognitive-Behavioral Therapy for Insomnia (CBT-I), the gold-standard treatment recommended by sleep medicine experts. This structured approach helps you identify and change thoughts and behaviors that cause or worsen sleep problems.
               </p>
               
               <p className="leading-relaxed">
-                Beyond insomnia, our sleep disorder treatment in Havertown addresses sleep-related anxiety, nightmares, circadian rhythm disorders, and the psychological aspects of other sleep conditions. We work collaboratively with medical providers when necessary to ensure comprehensive care for complex sleep problems.
+                Beyond insomnia, our sleep disorder treatment in Darby addresses sleep-related anxiety, nightmares, circadian rhythm disorders, and the psychological aspects of other sleep conditions. We work collaboratively with medical providers when necessary to ensure comprehensive care for complex sleep problems.
               </p>
               
               <p className="leading-relaxed">
-                We provide sleep therapy services to clients throughout Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities. Our goal is to help you develop healthy sleep habits and thought patterns that support natural, restorative sleep without ongoing reliance on medication or therapy.
+                We provide sleep therapy services to clients throughout Darby, Upper Darby, Yeadon, and surrounding Delaware County communities. Our goal is to help you develop healthy sleep habits and thought patterns that support natural, restorative sleep without ongoing reliance on medication or therapy.
               </p>
             </div>
           </motion.div>
@@ -91,7 +91,7 @@ const SleepDisordersTherapy = () => {
           delay: 0.4
         }} className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300">
             <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Our Sleep Disorders Treatment in Havertown Helps With:
+              Our Sleep Disorders Treatment in Darby Helps With:
             </h3>
             
             <ul className="space-y-3.5">
@@ -117,10 +117,10 @@ const SleepDisordersTherapy = () => {
               <ul className="space-y-3">
                 {[{
                 name: "Sleep and Anxiety Connection",
-                url: "/anxiety-therapy-havertown-pa"
+                url: "/anxiety-therapy-darby-pa"
               }, {
                 name: "Depression and Sleep Problems",
-                url: "/depression-therapy-havertown-pa"
+                url: "/depression-therapy-darby-pa"
               }, {
                 name: "Sleep Hygiene Basics",
                 url: "/blog/sleep-hygiene-tips"

@@ -4,13 +4,13 @@ import ServicePageLayout from '../../components/services/ServicePageLayout';
 
 const DissociativeDisordersTherapy = () => {
   const pageData = {
-    title: "Dissociative Disorders Treatment in Havertown, PA",
-    description: "Specialized treatment for dissociative identity disorder and related conditions in Havertown, PA.",
+    title: "Dissociative Disorders Treatment in Darby, PA",
+    description: "Specialized treatment for dissociative identity disorder and related conditions in Darby, PA.",
     pageTitle: "Dissociative Disorders Treatment | Sunrise Human Care Services",
-    metaDescription: "Specialized treatment for dissociative disorders in Havertown, PA. Trauma-informed therapy focusing on safety, stabilization, and integration.",
+    metaDescription: "Specialized treatment for dissociative disorders in Darby, PA. Trauma-informed therapy focusing on safety, stabilization, and integration.",
     serviceType: "Dissociative Disorders Treatment",
-    canonicalUrl: "/dissociative-disorders-treatment-havertown-pa",
-    heroImage: "/images/Therapy-in-havertown.webp",
+    canonicalUrl: "/dissociative-disorders-treatment-darby-pa",
+    heroImage: "/images/Therapy-in-darby.webp",
     benefits: [
       "Comprehensive psychological assessment",
       "Phase-oriented trauma treatment",
@@ -59,15 +59,15 @@ const DissociativeDisordersTherapy = () => {
     relatedServices: [
       {
         title: "Trauma & PTSD Therapy",
-        url: "/ptsd-therapy-havertown-pa"
+        url: "/ptsd-therapy-darby-pa"
       },
       {
         title: "Anxiety Therapy",
-        url: "/anxiety-therapy-havertown-pa"
+        url: "/anxiety-therapy-darby-pa"
       },
       {
         title: "Depression Therapy",
-        url: "/depression-therapy-havertown-pa"
+        url: "/depression-therapy-darby-pa"
       }
     ]
   };
@@ -97,7 +97,7 @@ const DissociativeDisordersTherapy = () => {
                 
                 <div className="space-y-4">
                   <p>
-                    At Sunrise Human Care Services in Havertown, PA, we provide specialized, trauma-informed treatment for dissociative disorders. Our approach recognizes that dissociation often develops as a creative survival mechanism in response to overwhelming experiences, particularly childhood trauma.
+                    At Sunrise Human Care Services in Darby, PA, we provide specialized, trauma-informed treatment for dissociative disorders. Our approach recognizes that dissociation often develops as a creative survival mechanism in response to overwhelming experiences, particularly childhood trauma.
                   </p>
                   
                   <p>

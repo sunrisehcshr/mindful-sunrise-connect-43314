@@ -50,19 +50,19 @@ const ADHDTreatment = () => {
   ];
   
   const relatedServices = [
-    { title: "Child & Adolescent Therapy", url: "/child-therapy-havertown-pa" },
-    { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-havertown-pa" },
-    { title: "Medication Management", url: "/medication-management-havertown-pa" }
+    { title: "Child & Adolescent Therapy", url: "/child-therapy-darby-pa" },
+    { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-darby-pa" },
+    { title: "Medication Management", url: "/medication-management-darby-pa" }
   ];
   
   return (
       <ServicePageLayout
-        title="ADHD Treatment in Havertown, PA"
+        title="ADHD Treatment in Darby, PA"
         description="Comprehensive ADHD assessment and treatment for children, adolescents, and adults, helping you manage symptoms and reach your full potential."
-        pageTitle="Expert ADHD Treatment in Havertown, PA - Assessment & Management | Sunrise Human Care"
-        metaDescription="Specialized ADHD treatment in Havertown, PA for children, teens, and adults. Comprehensive assessment, therapy, and medication management to improve focus, organization, and productivity."
+        pageTitle="Expert ADHD Treatment in Darby, PA - Assessment & Management | Sunrise Human Care"
+        metaDescription="Specialized ADHD treatment in Darby, PA for children, teens, and adults. Comprehensive assessment, therapy, and medication management to improve focus, organization, and productivity."
         serviceType="ADHD Treatment"
-        canonicalUrl="/adhd-treatment-havertown-pa"
+        canonicalUrl="/adhd-treatment-darby-pa"
         benefits={benefits}
         approaches={approaches}
         faqs={faqs}
@@ -78,7 +78,7 @@ const ADHDTreatment = () => {
                 
                 <div className="space-y-4">
                   <p>
-                    At Sunrise Human Care Services in Havertown, PA, we take a comprehensive approach to ADHD treatment, beginning with a thorough evaluation to confirm diagnosis, identify specific challenges, and understand your unique strengths and weaknesses.
+                    At Sunrise Human Care Services in Darby, PA, we take a comprehensive approach to ADHD treatment, beginning with a thorough evaluation to confirm diagnosis, identify specific challenges, and understand your unique strengths and weaknesses.
                   </p>
                   
                   <p>

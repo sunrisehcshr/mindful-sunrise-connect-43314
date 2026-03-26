@@ -15,15 +15,15 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
-import MentalHealthHavertown from "./pages/MentalHealthHavertown"; 
+import MentalHealthDarby from "./pages/MentalHealthDarby"; 
 import MedicaidLanding from "./pages/MedicaidLanding";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import FindingTherapistHavertown from "./pages/blog/FindingTherapistHavertown";
+import FindingTherapistDarby from "./pages/blog/FindingTherapistDarby";
 import AnxietyTreatmentDelawareCounty from "./pages/blog/AnxietyTreatmentDelawareCounty";
-import DepressionTherapyHavertown from "./pages/blog/DepressionTherapyHavertown";
-import FamilyTherapyHavertown from "./pages/blog/FamilyTherapyHavertown";
-import ADHDTreatmentHavertown from "./pages/blog/ADHDTreatmentHavertown";
+import DepressionTherapyDarby from "./pages/blog/DepressionTherapyDarby";
+import FamilyTherapyDarby from "./pages/blog/FamilyTherapyDarby";
+import ADHDTreatmentDarby from "./pages/blog/ADHDTreatmentDarby";
 
 // Import service pages
 import IndividualTherapy from "./pages/services/IndividualTherapy";
@@ -74,40 +74,40 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/mental-health-havertown-pa" element={<MentalHealthHavertown />} />
+            <Route path="/mental-health-darby-pa" element={<MentalHealthDarby />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/finding-therapist-havertown-pa-guide" element={<FindingTherapistHavertown />} />
+            <Route path="/blog/finding-therapist-darby-pa-guide" element={<FindingTherapistDarby />} />
             <Route path="/blog/anxiety-treatment-delaware-county-pa" element={<AnxietyTreatmentDelawareCounty />} />
-            <Route path="/blog/depression-therapy-havertown-pa-complete-guide" element={<DepressionTherapyHavertown />} />
-            <Route path="/blog/family-therapy-havertown-pa-guide" element={<FamilyTherapyHavertown />} />
-            <Route path="/blog/adhd-treatment-havertown-pa-comprehensive-guide" element={<ADHDTreatmentHavertown />} />
+            <Route path="/blog/depression-therapy-darby-pa-complete-guide" element={<DepressionTherapyDarby />} />
+            <Route path="/blog/family-therapy-darby-pa-guide" element={<FamilyTherapyDarby />} />
+            <Route path="/blog/adhd-treatment-darby-pa-comprehensive-guide" element={<ADHDTreatmentDarby />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             
             {/* Service pages */}
-            <Route path="/individual-therapy-havertown-pa" element={<IndividualTherapy />} />
-            <Route path="/couples-counseling-havertown-pa" element={<CouplesCounseling />} />
-            <Route path="/family-therapy-havertown-pa" element={<FamilyTherapy />} />
-            <Route path="/child-therapy-havertown-pa" element={<ChildTherapy />} />
-            <Route path="/psychiatric-evaluations-havertown-pa" element={<PsychiatricEvaluations />} />
-            <Route path="/medication-management-havertown-pa" element={<MedicationManagement />} />
-            <Route path="/ibhs-havertown-pa" element={<IBHSServices />} />
+            <Route path="/individual-therapy-darby-pa" element={<IndividualTherapy />} />
+            <Route path="/couples-counseling-darby-pa" element={<CouplesCounseling />} />
+            <Route path="/family-therapy-darby-pa" element={<FamilyTherapy />} />
+            <Route path="/child-therapy-darby-pa" element={<ChildTherapy />} />
+            <Route path="/psychiatric-evaluations-darby-pa" element={<PsychiatricEvaluations />} />
+            <Route path="/medication-management-darby-pa" element={<MedicationManagement />} />
+            <Route path="/ibhs-darby-pa" element={<IBHSServices />} />
             
             {/* Condition pages */}
-            <Route path="/anxiety-therapy-havertown-pa" element={<AnxietyTherapy />} />
-            <Route path="/depression-therapy-havertown-pa" element={<DepressionTherapy />} />
-            <Route path="/adhd-treatment-havertown-pa" element={<ADHDTreatment />} />
-            <Route path="/ptsd-therapy-havertown-pa" element={<TraumaPTSDTherapy />} />
-            <Route path="/bipolar-disorder-therapy-havertown-pa" element={<BipolarDisorderTherapy />} />
-            <Route path="/ocd-therapy-havertown-pa" element={<OCDTherapy />} />
-            <Route path="/schizophrenia-treatment-havertown-pa" element={<SchizophreniaTherapy />} />
-            <Route path="/eating-disorders-treatment-havertown-pa" element={<EatingDisordersTherapy />} />
-            <Route path="/substance-use-treatment-havertown-pa" element={<SubstanceUseTherapy />} />
-            <Route path="/bpd-therapy-havertown-pa" element={<BPDTherapy />} />
-            <Route path="/sleep-disorders-treatment-havertown-pa" element={<SleepDisordersTherapy />} />
-            <Route path="/dissociative-disorders-treatment-havertown-pa" element={<DissociativeDisordersTherapy />} />
-            <Route path="/somatic-disorders-treatment-havertown-pa" element={<SomaticDisordersTherapy />} />
-            <Route path="/relationship-therapy-havertown-pa" element={<RelationshipTherapy />} />
-            <Route path="/grief-therapy-havertown-pa" element={<GriefTherapy />} />
+            <Route path="/anxiety-therapy-darby-pa" element={<AnxietyTherapy />} />
+            <Route path="/depression-therapy-darby-pa" element={<DepressionTherapy />} />
+            <Route path="/adhd-treatment-darby-pa" element={<ADHDTreatment />} />
+            <Route path="/ptsd-therapy-darby-pa" element={<TraumaPTSDTherapy />} />
+            <Route path="/bipolar-disorder-therapy-darby-pa" element={<BipolarDisorderTherapy />} />
+            <Route path="/ocd-therapy-darby-pa" element={<OCDTherapy />} />
+            <Route path="/schizophrenia-treatment-darby-pa" element={<SchizophreniaTherapy />} />
+            <Route path="/eating-disorders-treatment-darby-pa" element={<EatingDisordersTherapy />} />
+            <Route path="/substance-use-treatment-darby-pa" element={<SubstanceUseTherapy />} />
+            <Route path="/bpd-therapy-darby-pa" element={<BPDTherapy />} />
+            <Route path="/sleep-disorders-treatment-darby-pa" element={<SleepDisordersTherapy />} />
+            <Route path="/dissociative-disorders-treatment-darby-pa" element={<DissociativeDisordersTherapy />} />
+            <Route path="/somatic-disorders-treatment-darby-pa" element={<SomaticDisordersTherapy />} />
+            <Route path="/relationship-therapy-darby-pa" element={<RelationshipTherapy />} />
+            <Route path="/grief-therapy-darby-pa" element={<GriefTherapy />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>

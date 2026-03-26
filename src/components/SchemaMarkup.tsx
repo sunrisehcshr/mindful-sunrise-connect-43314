@@ -10,8 +10,8 @@ const SchemaMarkup: React.FC = () => {
         "@type": "WebSite",
         "@id": "https://sunrisehumancare.com/#WebSite",
         "url": "https://sunrisehumancare.com/",
-        "name": "Sunrise Human Care Services | Mental Health Services in Havertown, PA",
-        "description": "Comprehensive mental health care in Havertown, PA, offering therapy and psychiatry services for anxiety, depression, ADHD, and more.",
+        "name": "Sunrise Human Care Services | Mental Health Services in Darby, PA",
+        "description": "Comprehensive mental health care in Darby, PA, offering therapy and psychiatry services for anxiety, depression, ADHD, and more.",
         "publisher": { "@id": "https://sunrisehumancare.com/#MedicalOrganization" },
         "inLanguage": "en-US",
         "mainEntityOfPage": {
@@ -51,23 +51,23 @@ const SchemaMarkup: React.FC = () => {
           "areaServed": [
             { 
               "@type": "City", 
-              "name": "Havertown",
+              "name": "Darby",
               "containedIn": {
                 "@type": "AdministrativeArea",
                 "name": "Delaware County"
               }
             },
-            { "@type": "City", "name": "Drexel Hill" },
-            { "@type": "City", "name": "Broomall" },
-            { "@type": "City", "name": "Ardmore" }
+            { "@type": "City", "name": "Upper Darby" },
+            { "@type": "City", "name": "Yeadon" },
+            { "@type": "City", "name": "Lansdowne" }
           ]
         },
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "2050 West Chester Pike",
-          "addressLocality": "Havertown",
+          "streetAddress": "869 Main Street",
+          "addressLocality": "Darby",
           "addressRegion": "PA",
-          "postalCode": "19083",
+          "postalCode": "19023",
           "addressCountry": "US"
         },
         "parentOrganization": {
@@ -82,7 +82,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Individual Therapy",
-                "url": "https://sunrisehumancare.com/individual-therapy-havertown-pa"
+                "url": "https://sunrisehumancare.com/individual-therapy-darby-pa"
               }
             },
             {
@@ -90,7 +90,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Couples Counseling",
-                "url": "https://sunrisehumancare.com/couples-counseling-havertown-pa"
+                "url": "https://sunrisehumancare.com/couples-counseling-darby-pa"
               }
             },
             {
@@ -98,7 +98,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Family Therapy",
-                "url": "https://sunrisehumancare.com/family-therapy-havertown-pa"
+                "url": "https://sunrisehumancare.com/family-therapy-darby-pa"
               }
             },
             {
@@ -106,7 +106,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Child & Adolescent Therapy",
-                "url": "https://sunrisehumancare.com/child-therapy-havertown-pa"
+                "url": "https://sunrisehumancare.com/child-therapy-darby-pa"
               }
             },
             {
@@ -114,7 +114,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Psychiatric Evaluations",
-                "url": "https://sunrisehumancare.com/psychiatric-evaluations-havertown-pa"
+                "url": "https://sunrisehumancare.com/psychiatric-evaluations-darby-pa"
               }
             },
             {
@@ -122,7 +122,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Medication Management",
-                "url": "https://sunrisehumancare.com/medication-management-havertown-pa"
+                "url": "https://sunrisehumancare.com/medication-management-darby-pa"
               }
             },
             {
@@ -130,7 +130,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "IBHS Services",
-                "url": "https://sunrisehumancare.com/ibhs-havertown-pa"
+                "url": "https://sunrisehumancare.com/ibhs-darby-pa"
               }
             },
             {
@@ -138,7 +138,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Anxiety Treatment",
-                "url": "https://sunrisehumancare.com/anxiety-therapy-havertown-pa"
+                "url": "https://sunrisehumancare.com/anxiety-therapy-darby-pa"
               }
             },
             {
@@ -146,7 +146,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Depression Therapy",
-                "url": "https://sunrisehumancare.com/depression-therapy-havertown-pa"
+                "url": "https://sunrisehumancare.com/depression-therapy-darby-pa"
               }
             },
             {
@@ -154,7 +154,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "ADHD Treatment",
-                "url": "https://sunrisehumancare.com/adhd-treatment-havertown-pa"
+                "url": "https://sunrisehumancare.com/adhd-treatment-darby-pa"
               }
             },
             {
@@ -162,7 +162,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Bipolar Disorder Therapy",
-                "url": "https://sunrisehumancare.com/bipolar-disorder-therapy-havertown-pa"
+                "url": "https://sunrisehumancare.com/bipolar-disorder-therapy-darby-pa"
               }
             },
             {
@@ -170,7 +170,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "OCD Therapy",
-                "url": "https://sunrisehumancare.com/ocd-therapy-havertown-pa"
+                "url": "https://sunrisehumancare.com/ocd-therapy-darby-pa"
               }
             },
             {
@@ -178,7 +178,7 @@ const SchemaMarkup: React.FC = () => {
               "itemOffered": {
                 "@type": "MedicalService",
                 "name": "Trauma & PTSD Therapy",
-                "url": "https://sunrisehumancare.com/ptsd-therapy-havertown-pa"
+                "url": "https://sunrisehumancare.com/ptsd-therapy-darby-pa"
               }
             }
           ]

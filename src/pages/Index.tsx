@@ -27,10 +27,10 @@ const Index = () => {
   return (
     <>
       <SEOHead 
-        title="Mental Health Therapy & Psychiatry in Havertown, PA | Sunrise Human Care Services" 
-        description="Expert mental health care in Havertown, PA for anxiety, depression, ADHD, and trauma. In-person and telehealth sessions available with licensed therapists and psychiatrists in Delaware County. Schedule your appointment today: (814) 620-2162." 
+        title="Mental Health Therapy & Psychiatry in Darby, PA | Sunrise Human Care Services" 
+        description="Expert mental health care in Darby, PA for anxiety, depression, ADHD, and trauma. In-person and telehealth sessions available with licensed therapists and psychiatrists in Delaware County. Schedule your appointment today: (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/" 
-        keywords="mental health care in Havertown, mental health Havertown, anxiety therapy Delaware County, depression counseling Havertown, ADHD treatment PA, psychiatrist near me, therapist Havertown PA, telehealth therapy, in-person counseling"
+        keywords="mental health care in Darby, mental health Darby, anxiety therapy Delaware County, depression counseling Darby, ADHD treatment PA, psychiatrist near me, therapist Darby PA, telehealth therapy, in-person counseling"
         breadcrumbs={homeBreadcrumbs}
       />
       <SchemaMarkup />

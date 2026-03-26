@@ -2,13 +2,13 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 const GriefTherapy = () => {
   const pageData = {
-    title: "Grief & Loss Therapy in Havertown, PA",
-    description: "Compassionate support for bereavement, complicated grief, and adapting to significant losses in Havertown, PA.",
+    title: "Grief & Loss Therapy in Darby, PA",
+    description: "Compassionate support for bereavement, complicated grief, and adapting to significant losses in Darby, PA.",
     pageTitle: "Grief & Loss Therapy | Sunrise Human Care Services",
-    metaDescription: "Compassionate grief counseling and bereavement support in Havertown, PA. Professional therapy for coping with loss and complicated grief.",
+    metaDescription: "Compassionate grief counseling and bereavement support in Darby, PA. Professional therapy for coping with loss and complicated grief.",
     serviceType: "Grief & Loss Therapy",
-    canonicalUrl: "/grief-therapy-havertown-pa",
-    heroImage: "/images/Therapy-in-havertown.webp",
+    canonicalUrl: "/grief-therapy-darby-pa",
+    heroImage: "/images/Therapy-in-darby.webp",
     benefits: ["Grief assessment and education", "Processing complex emotions", "Making meaning of your loss", "Coping with anniversary reactions", "Adapting to life changes", "Memorial rituals and continuing bonds", "Building resilience through loss"],
     approaches: [{
       title: "Understanding Grief and Loss",
@@ -38,13 +38,13 @@ const GriefTherapy = () => {
     }],
     relatedServices: [{
       title: "Depression Therapy",
-      url: "/depression-therapy-havertown-pa"
+      url: "/depression-therapy-darby-pa"
     }, {
       title: "Anxiety Therapy",
-      url: "/anxiety-therapy-havertown-pa"
+      url: "/anxiety-therapy-darby-pa"
     }, {
       title: "Trauma & PTSD Therapy",
-      url: "/ptsd-therapy-havertown-pa"
+      url: "/ptsd-therapy-darby-pa"
     }]
   };
   return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
@@ -59,7 +59,7 @@ const GriefTherapy = () => {
                 
                 <div className="space-y-4">
                   <p>
-                    At Sunrise Human Care Services in Havertown, PA, we provide compassionate support for individuals experiencing grief and loss. Our approach acknowledges that grief is a natural, necessary response to loss and that each person's grief journey is unique.
+                    At Sunrise Human Care Services in Darby, PA, we provide compassionate support for individuals experiencing grief and loss. Our approach acknowledges that grief is a natural, necessary response to loss and that each person's grief journey is unique.
                   </p>
                   
                   <p>
