@@ -186,7 +186,7 @@ const Contact = () => {
                           <p className="text-amber-700">869 Main Street</p>
                           <p className="text-amber-700">Darby, PA 19023</p>
                           <a 
-                            href="https://maps.app.goo.gl/5Bop8fKVPk1i61Ss6" 
+                            href="https://www.google.com/maps/dir/?api=1&destination=869+Main+Street,+Darby,+PA+19023" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="text-sm text-orange-500 hover:text-orange-600 font-medium mt-1 inline-block"
