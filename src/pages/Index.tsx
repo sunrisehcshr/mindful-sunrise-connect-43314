@@ -43,6 +43,10 @@ const Index = () => {
         animate={{ opacity: 1 }} 
         transition={{ duration: 0.6 }}
       >
+        <Banner id="new-location-2025" variant="rainbow">
+          <MapPin className="h-4 w-4 flex-shrink-0" />
+          <span>We've moved! Visit us at our new location: <strong>869 Main Street, Darby, PA 19023</strong></span>
+        </Banner>
         <Navbar />
         <main className="flex-grow">
           <WarmHeroSection />
