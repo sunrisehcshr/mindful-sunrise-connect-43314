@@ -65,48 +65,52 @@ const Blog = () => {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         
-        <main className="flex-grow pt-24 pb-16">
+        <main className="flex-grow pt-28 pb-16 bg-[#faf8f4]">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Mental Health Resources</h1>
-              <p className="text-xl text-center mb-16 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Mental health insights and resources for Darby residents from the experts at Sunrise Human Care Services.
-              </p>
-              
-              <div className="grid gap-10 mt-12">
-                {blogPosts.map(post => <Card key={post.id} className="overflow-hidden transition-all hover:shadow-md border-border/40 bg-white">
-                    <div className="p-6">
-                      <CardHeader className="pb-2 px-0 pt-0">
-                        <CardTitle className="text-2xl md:text-3xl">
-                          <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
-                            {post.title}
-                          </Link>
-                        </CardTitle>
-                        <CardDescription className="flex items-center gap-4 mt-3 text-sm">
-                          <span className="flex items-center gap-1">
-                            <CalendarIcon className="h-4 w-4 text-orange-500" /> {post.date}
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <Clock3 className="h-4 w-4 text-orange-500" /> {post.readTime}
-                          </span>
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="pt-4 pb-6 px-0">
-                        <p className="text-muted-foreground text-base leading-relaxed">{post.excerpt}</p>
-                      </CardContent>
-                      <CardFooter className="pt-0 pb-0 px-0">
-                        <Button asChild className="btn-sunrise">
-                          <Link to={`/blog/${post.id}`}>Read More</Link>
-                        </Button>
-                      </CardFooter>
-                    </div>
-                  </Card>)}
+              <div className="text-center mb-14">
+                <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Blog</span>
+                <h1 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
+                  Mental Health
+                  <span className="block font-instrument-serif italic text-amber-700/70 font-normal">Resources</span>
+                </h1>
+                <p className="text-lg text-stone-600 font-barlow max-w-3xl mx-auto leading-relaxed">
+                  Mental health insights and resources for Darby residents from the experts at Sunrise Human Care Services.
+                </p>
               </div>
               
-              <div className="mt-20 text-center p-8 rounded-lg backdrop-blur-sm border border-border/30 bg-white">
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4">Need Professional Mental Health Support in Darby?</h2>
-                <p className="mb-8 text-lg max-w-2xl mx-auto leading-relaxed">Our team of licensed therapists and psychiatrists is ready to help you navigate your mental health journey.</p>
-                <Button asChild size="lg" className="btn-sunrise">
+              <div className="grid gap-6 mt-12">
+                {blogPosts.map(post => (
+                  <div key={post.id} className="bg-white border border-stone-200/80 rounded-2xl overflow-hidden hover:shadow-lg hover:border-amber-200 transition-all duration-300">
+                    <div className="p-6">
+                      <div className="pb-2">
+                        <h2 className="text-xl md:text-2xl font-barlow font-semibold text-stone-800">
+                          <Link to={`/blog/${post.id}`} className="hover:text-amber-700 transition-colors">
+                            {post.title}
+                          </Link>
+                        </h2>
+                        <div className="flex items-center gap-4 mt-3 text-sm text-stone-400 font-barlow">
+                          <span className="flex items-center gap-1">
+                            <CalendarIcon className="h-4 w-4 text-amber-600" /> {post.date}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Clock3 className="h-4 w-4 text-amber-600" /> {post.readTime}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-stone-500 text-base leading-relaxed font-barlow pt-4 pb-6">{post.excerpt}</p>
+                      <Button asChild className="bg-[#222] hover:bg-zinc-800 text-white font-barlow font-medium rounded-full">
+                        <Link to={`/blog/${post.id}`}>Read More</Link>
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-16 text-center p-8 rounded-2xl border border-stone-200/80 bg-white">
+                <h2 className="text-2xl font-barlow font-semibold mb-4 text-stone-800">Need Professional Mental Health Support in Darby?</h2>
+                <p className="mb-8 text-stone-500 font-barlow max-w-2xl mx-auto leading-relaxed">Our team of licensed therapists and psychiatrists is ready to help you navigate your mental health journey.</p>
+                <Button asChild size="lg" className="bg-[#222] hover:bg-zinc-800 text-white font-barlow font-semibold rounded-full">
                   <Link to="/appointment">Book Your Appointment Today</Link>
                 </Button>
               </div>

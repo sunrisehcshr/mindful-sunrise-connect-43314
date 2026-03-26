@@ -15,13 +15,9 @@ const NewsletterForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate with spam protection
     const validation = validateSubmission();
-    if (!validation.valid) {
-      return;
-    }
+    if (!validation.valid) return;
 
-    // Validate with Zod schema
     const result = newsletterFormSchema.safeParse({ email, honeypot });
     if (!result.success) {
       toast.error(result.error.errors[0]?.message || "Please enter a valid email address");
@@ -37,12 +33,9 @@ const NewsletterForm: React.FC = () => {
         _cc: "info@sunrisehumancare.com"
       };
       
-      // Updated to use the correct endpoint
       const response = await fetch("https://formspree.io/f/xzzeaeql", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
       
@@ -63,38 +56,22 @@ const NewsletterForm: React.FC = () => {
   
   return (
     <div className="space-y-3">
-      <p className="text-xs sm:text-sm text-muted-foreground">
+      <p className="text-xs sm:text-sm text-stone-500 font-barlow">
         Subscribe to our newsletter for helpful mental health tips and updates.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
-        {/* Honeypot field - hidden from users */}
-        <input
-          type="text"
-          name="website"
-          value={honeypot}
-          onChange={(e) => setHoneypot(e.target.value)}
-          tabIndex={-1}
-          autoComplete="off"
-          style={{
-            position: 'absolute',
-            left: '-9999px',
-            width: '1px',
-            height: '1px',
-            opacity: 0
-          }}
-          aria-hidden="true"
-        />
+        <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }} aria-hidden="true" />
         <input 
           type="email" 
           placeholder="Your email address" 
           value={email} 
           onChange={e => setEmail(e.target.value)} 
-          className="flex-grow px-3 py-1.5 text-xs rounded-md border border-sunrise-200/70 bg-background focus:outline-none focus:ring-2 focus:ring-sunrise-400 focus:ring-opacity-50" 
+          className="flex-grow px-3 py-1.5 text-xs rounded-lg border border-stone-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-opacity-50 font-barlow" 
           required 
         />
         <button 
           type="submit" 
-          className="bg-sunrise-500 hover:bg-sunrise-600 text-white font-medium py-1.5 px-3 text-xs rounded-md transition-colors duration-300 whitespace-nowrap disabled:opacity-70" 
+          className="bg-[#222] hover:bg-zinc-800 text-white font-barlow font-medium py-1.5 px-3 text-xs rounded-full transition-colors duration-300 whitespace-nowrap disabled:opacity-70" 
           disabled={isSubmitting}
         >
           {isSubmitting ? "Subscribing..." : "Subscribe"}

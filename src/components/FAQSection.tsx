@@ -1,8 +1,6 @@
 
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
-import { Separator } from './ui/separator';
-import SectionTag from './ui/section-tag';
 import { cn } from "@/lib/utils";
 import { ChevronUp, ChevronDown, Calendar } from "lucide-react";
 import { Button } from './ui/button';
@@ -30,6 +28,7 @@ const faqs = [{
   question: "What steps should I take if I or someone I know is in crisis?",
   answer: "If you or someone you know is struggling or in crisis, help is available immediately. Call or text 988 to speak with a trained crisis counselor any time of day or night. For emergencies that present an immediate danger, please call 911 or go to your nearest emergency room. After the immediate crisis, contact our Darby clinic at (814) 620-2162 for follow-up mental health care and support."
 }];
+
 const FAQItem = ({
   question,
   answer,
@@ -41,122 +40,95 @@ const FAQItem = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  return <div className="border border-sunrise-200/70 rounded-lg overflow-hidden mb-4 transition-all duration-300 shadow-sm hover:shadow-md">
-      <button className={cn("flex items-center justify-between w-full p-5 text-left transition-colors duration-200", isOpen ? "bg-sunrise-50/80" : "bg-white/70 hover:bg-sunrise-50/40")} onClick={onClick} aria-expanded={isOpen}>
-        <h3 className="font-medium text-foreground">{question}</h3>
-        <span className="ml-6 flex-shrink-0 text-sunrise-500">
+  return (
+    <div className={cn(
+      "bg-white border rounded-2xl overflow-hidden mb-3 transition-all duration-300",
+      isOpen ? "border-amber-200 shadow-md" : "border-stone-200/80 hover:border-amber-200 hover:shadow-sm"
+    )}>
+      <button 
+        className="flex items-center justify-between w-full p-5 text-left transition-colors duration-200" 
+        onClick={onClick} 
+        aria-expanded={isOpen}
+      >
+        <h3 className="font-barlow font-medium text-stone-800">{question}</h3>
+        <span className="ml-6 flex-shrink-0 text-stone-400">
           {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
         </span>
       </button>
       <AnimatePresence initial={false}>
-        {isOpen && <motion.div initial={{
-        height: 0,
-        opacity: 0
-      }} animate={{
-        height: "auto",
-        opacity: 1
-      }} exit={{
-        height: 0,
-        opacity: 0
-      }} transition={{
-        duration: 0.3,
-        ease: "easeInOut"
-      }}>
-            <div className="p-5 bg-white/80 border-t border-sunrise-100">
-              <p className="text-muted-foreground">{answer}</p>
+        {isOpen && (
+          <motion.div 
+            initial={{ height: 0, opacity: 0 }} 
+            animate={{ height: "auto", opacity: 1 }} 
+            exit={{ height: 0, opacity: 0 }} 
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="px-5 pb-5 border-t border-stone-100">
+              <p className="text-stone-500 font-barlow pt-4 leading-relaxed">{answer}</p>
             </div>
-          </motion.div>}
+          </motion.div>
+        )}
       </AnimatePresence>
-    </div>;
+    </div>
+  );
 };
+
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  return <section id="faq" className="py-24 bg-white">
+
+  return (
+    <section id="faq" className="py-20 md:py-28 bg-[#f0ece4]">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div className="max-w-3xl mx-auto text-center mb-12" initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5
-      }}>
-          <motion.div initial={{
-          opacity: 0,
-          scale: 0.9
-        }} whileInView={{
-          opacity: 1,
-          scale: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.4
-        }}>
-            <SectionTag>FAQ</SectionTag>
-          </motion.div>
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-14" 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">FAQ</span>
           
-          <motion.h2 className="text-3xl md:text-4xl font-bold mb-4" initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: 0.1
-        }}>
-            Frequently Asked Questions About Mental Health Care
-          </motion.h2>
+          <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
+            Frequently asked
+            <span className="block font-instrument-serif italic text-amber-700/70 font-normal">questions</span>
+          </h2>
           
-          <motion.p className="text-muted-foreground" initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: 0.2
-        }}>
+          <p className="text-stone-600 font-barlow">
             Find answers to common questions about our services, appointments, and mental health care in Darby.
-          </motion.p>
-          
-          <div className="mx-auto mt-6 mb-10 w-24">
-            <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
-          </div>
+          </p>
         </motion.div>
         
         <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => <FAQItem key={index} question={faq.question} answer={faq.answer} isOpen={openIndex === index} onClick={() => toggleFAQ(index)} />)}
+          {faqs.map((faq, index) => (
+            <FAQItem key={index} question={faq.question} answer={faq.answer} isOpen={openIndex === index} onClick={() => toggleFAQ(index)} />
+          ))}
         </div>
         
-        <div className="max-w-3xl mx-auto mt-12 bg-white/70 p-8 rounded-xl border border-sunrise-100/80 shadow-sm">
-          <h3 className="text-xl font-semibold mb-4 text-center">
+        <div className="max-w-3xl mx-auto mt-12 bg-white p-8 rounded-2xl border border-stone-200/80">
+          <h3 className="text-xl font-barlow font-semibold mb-4 text-center text-stone-800">
             Ready to start your mental health journey in Darby?
           </h3>
-          <p className="text-muted-foreground mb-6 text-center">
+          <p className="text-stone-500 mb-6 text-center font-barlow">
             Our licensed mental health professionals are here to provide the compassionate care you deserve.
             Contact us today to schedule your first appointment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+18146202162" className="px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium rounded-md hover:from-orange-600 hover:to-amber-600 transition-colors shadow-sm">
+            <a href="tel:+18146202162" className="inline-flex items-center justify-center px-6 py-3 bg-[#222] text-white font-barlow font-medium rounded-full hover:bg-zinc-800 transition-colors">
               Call Us at (814) 620-2162
             </a>
             <AppointmentDialog>
-              <Button className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white">
+              <Button className="bg-white border border-stone-200 text-stone-800 font-barlow font-medium rounded-full hover:border-amber-200 hover:bg-amber-50">
                 <Calendar className="mr-2 h-4 w-4" />
-                Book Mental Health Appointment
+                Book Appointment
               </Button>
             </AppointmentDialog>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default FAQSection;

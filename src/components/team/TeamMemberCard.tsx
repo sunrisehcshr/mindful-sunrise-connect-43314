@@ -24,13 +24,8 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Generate initials from name
   const getInitials = (name: string) => {
-    return name
-      .split(' ')
-      .map(word => word[0])
-      .join('')
-      .toUpperCase();
+    return name.split(' ').map(word => word[0]).join('').toUpperCase();
   };
 
   return (
@@ -40,8 +35,8 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card className="warm-card floating-card h-full">
-        <CardContent className="p-6">
+      <div className="group bg-white border border-stone-200/80 rounded-2xl hover:shadow-lg hover:border-amber-200 transition-all duration-300 h-full">
+        <div className="p-6">
           <div className="flex flex-col items-center text-center space-y-4">
             <Avatar className="h-24 w-24 border-4 border-amber-100 overflow-hidden">
               <AvatarImage 
@@ -49,21 +44,21 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
                 alt={name} 
                 className={`object-cover ${name === 'Shanada Anderson' ? 'scale-125 translate-y-2' : name === 'Anthony Obi' ? 'scale-125' : name === 'Michael Flynn' ? 'scale-[1.02]' : ''}`}
               />
-              <AvatarFallback className="bg-gradient-to-br from-orange-400 to-amber-500 text-white text-xl font-semibold">
+              <AvatarFallback className="bg-amber-100 text-amber-700 text-xl font-barlow font-semibold">
                 {getInitials(name)}
               </AvatarFallback>
             </Avatar>
             
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-1">
+              <h3 className="text-xl font-barlow font-semibold text-stone-800 mb-1">
                 {name}
               </h3>
-              <p className="text-sm font-medium text-primary mb-3">
+              <p className="text-sm font-barlow font-medium text-amber-700/70 mb-3">
                 {role}
               </p>
             </div>
 
-            <div className="w-full pt-3 border-t border-amber-100">
+            <div className="w-full pt-3 border-t border-stone-100">
               {isExpanded && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
@@ -72,7 +67,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
                   transition={{ duration: 0.3 }}
                   className="mb-3"
                 >
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-stone-500 font-barlow leading-relaxed">
                     {bio}
                   </p>
                 </motion.div>
@@ -82,22 +77,18 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="w-full text-primary hover:text-primary hover:bg-amber-50"
+                className="w-full text-amber-700 hover:text-amber-800 hover:bg-amber-50 font-barlow"
               >
                 {isExpanded ? (
-                  <>
-                    Close Bio <ChevronUp className="ml-1 h-4 w-4" />
-                  </>
+                  <>Close Bio <ChevronUp className="ml-1 h-4 w-4" /></>
                 ) : (
-                  <>
-                    Read Bio <ChevronDown className="ml-1 h-4 w-4" />
-                  </>
+                  <>Read Bio <ChevronDown className="ml-1 h-4 w-4" /></>
                 )}
               </Button>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </motion.div>
   );
 };
