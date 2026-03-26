@@ -23,56 +23,37 @@ const Conditions = () => {
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-24 bg-white">
-          {/* Hero Section */}
-          <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
-            
-            {/* Subtle texture overlay */}
-            <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
-            
-            <div className="container relative z-10 mx-auto px-4 md:px-6">
-              <div className="max-w-3xl">                
-                <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
-                  Mental Health Conditions We Treat in Darby
+        <main className="flex-grow pt-28 bg-[#faf8f4]">
+          {/* Hero */}
+          <section className="py-16 md:py-20 lg:py-28 bg-[#f0ece4]">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="max-w-3xl">
+                <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Specialized Care</span>
+                <h1 className="font-barlow font-bold text-2xl sm:text-3xl md:text-5xl text-stone-800 tracking-tight leading-tight mb-6">
+                  Mental Health Conditions
+                  <span className="block font-instrument-serif italic text-amber-700/70 font-normal">We Treat in Darby</span>
                 </h1>
                 
-                <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
+                <p className="text-base md:text-lg text-stone-600 font-barlow mb-8 leading-relaxed">
                   Our experienced team provides evidence-based treatment for a wide range of mental health conditions affecting children, adolescents, adults, and seniors in Darby, PA and the surrounding Delaware County area.
                 </p>
-                
-                <div className="flex flex-wrap gap-2 md:gap-4">
-                  <a href="#anxiety" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-600 shadow hover:bg-white/90 h-9 px-4 py-2">
-                    Anxiety
-                  </a>
-                  <a href="#depression" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-600 shadow hover:bg-white/90 h-9 px-4 py-2">
-                    Depression
-                  </a>
-                  <a href="#adhd" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-600 shadow hover:bg-white/90 h-9 px-4 py-2">
-                    ADHD
-                  </a>
-                  <a href="#trauma" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-white text-orange-600 shadow hover:bg-white/90 h-9 px-4 py-2">
-                    Trauma & PTSD
-                  </a>
-                </div>
               </div>
             </div>
           </section>
           
           <ConditionsSection />
           
-          {/* Local Context Section */}
-          <section className="py-16 bg-orange-50">
+          {/* Local Context */}
+          <section className="py-16 bg-[#faf8f4]">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 font-playfair">Mental Health Care in Darby, Pennsylvania</h2>
-                <p className="mb-4">At Sunrise Human Care Services, we're proud to serve the Darby community and surrounding areas in Delaware County with comprehensive mental health care. Our practice is conveniently located at 869 Main Street, making quality mental health treatment accessible to residents throughout the region.</p>
-                <p className="mb-4">We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Darby area. Our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.</p>
+              <div className="max-w-3xl mx-auto space-y-4 text-stone-600 font-barlow leading-relaxed">
+                <h2 className="font-barlow font-bold text-2xl md:text-3xl text-stone-800 tracking-tight mb-6">Mental Health Care in Darby, Pennsylvania</h2>
+                <p>At Sunrise Human Care Services, we're proud to serve the Darby community and surrounding areas in Delaware County with comprehensive mental health care. Our practice is conveniently located at 869 Main Street, making quality mental health treatment accessible to residents throughout the region.</p>
+                <p>We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Darby area. Our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.</p>
                 <p>Whether you're coming from Haverford Township, Collingdale, Upper Darby, Yeadon, or other nearby communities, we provide a welcoming environment where you can receive expert care for a wide range of mental health conditions.</p>
               </div>
             </div>
           </section>
-          
         </main>
         <Footer />
       </div>

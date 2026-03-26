@@ -4,7 +4,6 @@ import Footer from '../Footer/Footer';
 import SEOHead from '../SEOHead';
 import SchemaMarkup from '../SchemaMarkup';
 import { motion } from 'framer-motion';
-import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, PhoneCall, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -44,26 +43,9 @@ const ServicePageLayout = ({
   schemaType,
   breadcrumbs
 }: ServicePageLayoutProps) => {
-  const warmGradientBg = "relative overflow-hidden bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90";
-  const warmGradientOverlay = (
-    <div className="absolute inset-0 -z-10">
-      <svg className="h-full w-full opacity-30" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
-            <rect x="0" y="0" width="100%" height="100%" fill="none" />
-            <path d="M100 0H0V100" stroke="rgba(252, 211, 77, 0.4)" fill="none" strokeWidth="1" />
-            <path d="M0 50H100M50 0V100" stroke="rgba(252, 211, 77, 0.3)" fill="none" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#warm-pattern)" />
-      </svg>
-    </div>
-  );
-  const itemBgClass = "bg-white/80 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all duration-300";
   const serviceName = serviceType || title.split('in')[0].trim();
   const absoluteCanonicalUrl = canonicalUrl.startsWith('http') ? canonicalUrl : `https://sunrisehumancare.com${canonicalUrl}`;
 
-  // Generate page-specific FAQ schema
   const faqSchema = faqs && faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -88,7 +70,6 @@ const ServicePageLayout = ({
       />
       <SchemaMarkup />
 
-      {/* Page-specific FAQ schema */}
       {faqSchema && (
         <Helmet>
           <script type="application/ld+json">
@@ -100,40 +81,40 @@ const ServicePageLayout = ({
       <div className="flex flex-col min-h-screen">
         <Navbar />
         
-        <main className="flex-grow pt-24 bg-white">
-          <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-r from-orange-500 to-amber-400"></div>
-            <div className="absolute inset-0 z-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01NC44NSA1NC44NXYtNTBINS4xNXY1MGg0OS43eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
-            
-            <div className="container relative z-10 mx-auto px-4 md:px-6">
+        <main className="flex-grow pt-28 bg-[#faf8f4]">
+          {/* Hero */}
+          <section className="py-16 md:py-20 lg:py-28 bg-[#f0ece4]">
+            <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl">
-                <motion.h1
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white"
                 >
-                  {title}
-                </motion.h1>
+                  <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">{serviceType}</span>
+                  <h1 className="font-barlow font-bold text-2xl sm:text-3xl md:text-5xl text-stone-800 tracking-tight leading-tight mb-6">
+                    {title}
+                  </h1>
+                </motion.div>
                 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-base md:text-xl text-white/90 mb-6 md:mb-8"
+                  className="text-base md:text-lg text-stone-600 font-barlow mb-8 leading-relaxed"
                 >
                   {description}
                 </motion.p>
                 
                 <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mt-6 md:mt-8">
                   <Link to="/appointment" className="w-full sm:w-auto">
-                    <Button size="lg" className="w-full sm:w-auto bg-white text-orange-600 hover:bg-orange-50">
+                    <Button size="lg" className="w-full sm:w-auto bg-[#222] hover:bg-zinc-800 text-white font-barlow font-semibold rounded-full">
                       <Calendar className="mr-2 h-5 w-5" /> Schedule a Consultation
                     </Button>
                   </Link>
                   
                   <a href="tel:+18146202162" className="w-full sm:w-auto">
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white/10">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-stone-200 text-stone-800 font-barlow font-medium rounded-full hover:border-amber-200 hover:bg-amber-50">
                       <PhoneCall className="mr-2 h-5 w-5" /> Call (814) 620-2162
                     </Button>
                   </a>
@@ -142,24 +123,23 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          {/* Render main content sections (e.g., Why Choose, Types) */}
           {children}
 
           {/* Benefits Section */}
           {benefits && benefits.length > 0 && (
-            <section className={`py-12 md:py-16 ${warmGradientBg}`}>
-              {warmGradientOverlay}
-              <div className="container relative z-10 mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">
-                    Benefits of {serviceType} in Darby
+            <section className="py-16 md:py-20 bg-[#faf8f4]">
+              <div className="container mx-auto px-4 md:px-6">
+                <div className="max-w-3xl mx-auto text-center mb-12">
+                  <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Benefits</span>
+                  <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight mb-4">
+                    Benefits of {serviceType}
+                    <span className="block font-instrument-serif italic text-amber-700/70 font-normal">in Darby</span>
                   </h2>
-                  <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
-                  <p className="text-amber-900">
+                  <p className="text-stone-600 font-barlow">
                     Our {serviceType.toLowerCase()} in Darby, PA is designed to help you achieve meaningful, lasting improvements in your mental health and daily life.
                   </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
                   {benefits.map((benefit, index) => (
                     <motion.div
                       key={index}
@@ -167,10 +147,10 @@ const ServicePageLayout = ({
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.08 }}
-                      className={`flex items-start gap-3 rounded-lg p-5 ${itemBgClass}`}
+                      className="flex items-start gap-3 bg-white rounded-2xl p-5 border border-stone-200/80 hover:border-amber-200 hover:shadow-sm transition-all duration-300"
                     >
-                      <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-amber-900 text-sm leading-relaxed">{benefit}</span>
+                      <CheckCircle2 className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-stone-600 text-sm font-barlow leading-relaxed">{benefit}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -178,20 +158,21 @@ const ServicePageLayout = ({
             </section>
           )}
 
-          {/* Treatment Approaches Section */}
+          {/* Treatment Approaches */}
           {approaches && approaches.length > 0 && (
-            <section className="py-12 md:py-16 bg-white">
+            <section className="py-16 md:py-20 bg-[#f0ece4]">
               <div className="container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">
-                    Our Treatment Approaches for {serviceType}
+                <div className="max-w-3xl mx-auto text-center mb-12">
+                  <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Our Approach</span>
+                  <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight mb-4">
+                    Treatment approaches
+                    <span className="block font-instrument-serif italic text-amber-700/70 font-normal">for {serviceType}</span>
                   </h2>
-                  <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
-                  <p className="text-muted-foreground">
+                  <p className="text-stone-600 font-barlow">
                     We use evidence-based therapeutic methods tailored to your unique needs at our Darby, PA clinic.
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
                   {approaches.map((approach, index) => (
                     <motion.div
                       key={index}
@@ -199,17 +180,17 @@ const ServicePageLayout = ({
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-amber-50/60 border border-amber-100/50 rounded-xl p-6 md:p-7 hover:shadow-md transition-all duration-300"
+                      className="bg-white border border-stone-200/80 rounded-2xl p-7 hover:border-amber-200 hover:shadow-lg transition-all duration-300"
                     >
                       <div className="flex items-start gap-4">
                         {approach.icon && (
-                          <div className="rounded-full bg-amber-100/80 p-3 flex-shrink-0">
+                          <div className="rounded-full bg-amber-100 p-3 flex-shrink-0 text-amber-700">
                             {approach.icon}
                           </div>
                         )}
                         <div>
-                          <h3 className="text-lg md:text-xl font-semibold mb-2 text-amber-900">{approach.title}</h3>
-                          <p className="text-muted-foreground text-sm leading-relaxed">{approach.description}</p>
+                          <h3 className="text-lg font-barlow font-semibold mb-2 text-stone-800">{approach.title}</h3>
+                          <p className="text-stone-500 text-sm font-barlow leading-relaxed">{approach.description}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -221,24 +202,28 @@ const ServicePageLayout = ({
 
           {/* FAQ Section */}
           {faqs && faqs.length > 0 && (
-            <section className={`py-12 md:py-16 ${warmGradientBg}`}>
-              {warmGradientOverlay}
-              <div className="container relative z-10 mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">
-                    Frequently Asked Questions About {serviceType}
+            <section className="py-16 md:py-20 bg-[#faf8f4]">
+              <div className="container mx-auto px-4 md:px-6">
+                <div className="max-w-3xl mx-auto text-center mb-12">
+                  <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">FAQ</span>
+                  <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight">
+                    Frequently asked questions
+                    <span className="block font-instrument-serif italic text-amber-700/70 font-normal">about {serviceType}</span>
                   </h2>
-                  <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6" />
                 </div>
                 <div className="max-w-3xl mx-auto">
-                  <Accordion type="single" collapsible className="w-full">
+                  <Accordion type="single" collapsible className="w-full space-y-3">
                     {faqs.map((faq, index) => (
-                      <AccordionItem value={`faq-${index}`} key={index} className="border-amber-200/50">
-                        <AccordionTrigger className="text-base md:text-lg font-medium text-amber-950 text-left hover:no-underline">
+                      <AccordionItem 
+                        value={`faq-${index}`} 
+                        key={index} 
+                        className="bg-white border border-stone-200/80 rounded-2xl px-5 data-[state=open]:border-amber-200 data-[state=open]:shadow-md transition-all"
+                      >
+                        <AccordionTrigger className="text-base font-barlow font-medium text-stone-800 text-left hover:no-underline py-5">
                           {faq.question}
                         </AccordionTrigger>
                         <AccordionContent>
-                          <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                          <p className="text-stone-500 font-barlow leading-relaxed pb-2">{faq.answer}</p>
                         </AccordionContent>
                       </AccordionItem>
                     ))}
@@ -248,24 +233,25 @@ const ServicePageLayout = ({
             </section>
           )}
           
-          <section className="py-12 md:py-16 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
+          {/* CTA Section */}
+          <section className="py-16 md:py-20 bg-[#222]">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Take the First Step?</h2>
-                <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
+                <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-4 tracking-tight">Ready to Take the First Step?</h2>
+                <p className="text-base md:text-lg text-white/70 mb-8 font-barlow">
                   Our compassionate team is here to support you on your mental health journey in Darby, Yeadon, and Upper Darby.
                 </p>
                 
                 <div className="flex flex-row flex-wrap sm:flex-nowrap justify-center gap-3 sm:gap-4">
                   <Link to="/appointment" className="w-full sm:w-auto">
-                    <Button size="lg" className="w-full bg-white text-orange-600 hover:bg-orange-50">
-                      <Calendar className="mr-2 h-5 w-5" /> Book Mental Health Appointment in Darby
+                    <Button size="lg" className="w-full bg-white text-stone-800 hover:bg-amber-50 font-barlow font-semibold rounded-full">
+                      <Calendar className="mr-2 h-5 w-5" /> Book Appointment
                     </Button>
                   </Link>
                   
                   <a href="tel:+18146202162" className="w-full sm:w-auto">
-                    <Button variant="outline" size="lg" className="w-full bg-transparent border-white text-white hover:bg-white/10">
-                      <PhoneCall className="mr-2 h-5 w-5" /> Speak with a Therapist Today
+                    <Button variant="outline" size="lg" className="w-full bg-transparent border-white/30 text-white hover:bg-white/10 font-barlow rounded-full">
+                      <PhoneCall className="mr-2 h-5 w-5" /> Speak with a Therapist
                     </Button>
                   </a>
                 </div>
@@ -273,19 +259,18 @@ const ServicePageLayout = ({
             </div>
           </section>
           
-          <section className={`py-12 md:py-16 ${warmGradientBg}`}>
-            {warmGradientOverlay}
-            
-            <div className="container relative z-10 mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-amber-950">Related Services in Darby</h2>
-                <Separator className="w-24 mx-auto bg-gradient-to-r from-transparent via-orange-300 to-transparent h-0.5 mb-6 md:mb-8" />
-                <p className="text-amber-900 mb-6 md:mb-8">
-                  Explore our other mental health services in Darby that complement {serviceType}.
-                </p>
+          {/* Related Services */}
+          <section className="py-16 md:py-20 bg-[#f0ece4]">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Related</span>
+                <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight">
+                  Related services
+                  <span className="block font-instrument-serif italic text-amber-700/70 font-normal">in Darby</span>
+                </h2>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 {relatedServices.map((service, index) => (
                   <motion.div
                     key={index}
@@ -294,10 +279,10 @@ const ServicePageLayout = ({
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Link to={service.url} className={`block rounded-lg p-5 md:p-6 h-full ${itemBgClass}`}>
-                      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-amber-900">{service.title}</h3>
-                      <div className="flex items-center text-orange-500 mt-3 md:mt-4">
-                        <span className="text-sm font-medium">Learn more</span>
+                    <Link to={service.url} className="block bg-white rounded-2xl p-6 border border-stone-200/80 hover:border-amber-200 hover:shadow-lg transition-all duration-300 h-full">
+                      <h3 className="text-lg font-barlow font-semibold mb-3 text-stone-800">{service.title}</h3>
+                      <div className="flex items-center text-amber-700 mt-4">
+                        <span className="text-sm font-barlow font-medium">Learn more</span>
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </Link>
