@@ -36,7 +36,7 @@ const ContactInfo: React.FC = () => {
         
         <div className="flex items-center space-x-3">
           <Globe className="h-5 w-5 text-orange-500" />
-          <a href="https://www.google.com/maps?q=39.9707,-75.3151" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-sunrise-700 transition-colors">
+          <a href="https://www.google.com/maps?q=39.9184,-75.2590" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-sunrise-700 transition-colors">
             View on Google Maps
           </a>
         </div>

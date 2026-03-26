@@ -58,8 +58,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       "name": serviceSchema.areaServed,
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": "39.9707",
-        "longitude": "-75.3151"
+        "latitude": "39.9184",
+        "longitude": "-75.2590"
       },
       "geoRadius": "15000"
     },
@@ -90,8 +90,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "39.9707",
-      "longitude": "-75.3151"
+      "latitude": "39.9184",
+      "longitude": "-75.2590"
     },
     "openingHoursSpecification": [
       {
@@ -129,7 +129,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       { "@type": "City", "name": "Upper Darby" },
       { "@type": "City", "name": "Collingdale" }
     ],
-    "hasMap": "https://www.google.com/maps?q=39.9707,-75.3151"
+    "hasMap": "https://www.google.com/maps?q=39.9184,-75.2590"
   };
 
   // Generate breadcrumb items or use provided ones
@@ -159,8 +159,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="author" content={author} />
       <meta name="geo.region" content="US-PA" />
       <meta name="geo.placename" content="Darby" />
-      <meta name="geo.position" content="39.9707;-75.3151" />
-      <meta name="ICBM" content="39.9707, -75.3151" />
+      <meta name="geo.position" content="39.9184;-75.2590" />
+      <meta name="ICBM" content="39.9184, -75.2590" />
       <meta name="google" content="notranslate" />
       <meta name="language" content="English" />
       <meta name="content-language" content="en-US" />
@@ -186,8 +186,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="business:contact_data:region" content="PA" />
       <meta property="business:contact_data:postal_code" content="19023" />
       <meta property="business:contact_data:country_name" content="USA" />
-      <meta property="place:location:latitude" content="39.9707" />
-      <meta property="place:location:longitude" content="-75.3151" />
+      <meta property="place:location:latitude" content="39.9184" />
+      <meta property="place:location:longitude" content="-75.2590" />
 
       {/* Article specific tags */}
       {article && publishedTime && <meta property="article:published_time" content={publishedTime} />}
