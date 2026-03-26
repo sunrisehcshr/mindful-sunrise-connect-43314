@@ -60,7 +60,7 @@ const reviewSchema = {
 
 const TestimonialsSection: React.FC = () => {
   return (
-    <section className="py-16 md:py-20 bg-secondary/30">
+    <section className="py-20 md:py-28 bg-[#f0ece4]">
       <Helmet>
         <script type="application/ld+json">
           {JSON.stringify(reviewSchema)}
@@ -68,40 +68,41 @@ const TestimonialsSection: React.FC = () => {
       </Helmet>
       
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+        <div className="text-center mb-14">
+          <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">
             Patient Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            What Our Patients Say
+          <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
+            What our patients
+            <span className="block font-instrument-serif italic text-amber-700/70 font-normal">say about us</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-stone-600 max-w-2xl mx-auto font-barlow">
             Real experiences from individuals and families who have found healing and support at Sunrise Human Care Services.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-6 shadow-sm border border-border/50 hover:shadow-md transition-shadow relative"
+              className="group bg-white border border-stone-200/80 rounded-2xl p-6 hover:shadow-lg hover:border-amber-200 transition-all duration-300 relative"
             >
-              <Quote className="absolute top-4 right-4 h-8 w-8 text-primary/15" />
+              <Quote className="absolute top-4 right-4 h-8 w-8 text-amber-200/50" />
               
               <div className="flex items-center gap-1 mb-3">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
               
-              <p className="text-foreground/80 text-sm leading-relaxed mb-4">
+              <p className="text-stone-600 text-sm leading-relaxed mb-4 font-barlow">
                 "{testimonial.text}"
               </p>
               
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.service}</p>
+                  <p className="font-barlow font-semibold text-stone-800 text-sm">{testimonial.name}</p>
+                  <p className="text-xs text-stone-400 font-barlow">{testimonial.service}</p>
                 </div>
               </div>
             </div>

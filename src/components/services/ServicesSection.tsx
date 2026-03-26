@@ -3,8 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
 import { User, Users, Baby, HeartHandshake, Stethoscope, Pill, Calendar } from 'lucide-react';
-import { Separator } from '../ui/separator';
-import SectionTag from '../ui/section-tag';
 import { Button } from '../ui/button';
 import AppointmentDialog from '../Appointment/AppointmentDialog';
 
@@ -13,117 +11,71 @@ const ServicesSection: React.FC = () => {
     icon: <User className="h-6 w-6" />,
     title: "Individual Therapy in Darby, PA",
     description: "One-on-one therapy sessions tailored to your unique needs and challenges. Our specialized mental health care in Darby helps clients overcome anxiety, depression, and stress with evidence-based techniques and personalized treatment plans.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/individual-therapy-darby-pa"
   }, {
     icon: <HeartHandshake className="h-6 w-6" />,
     title: "Couples Counseling in Darby",
     description: "Specialized therapy to help couples improve communication, resolve conflicts, and strengthen relationships. Our experienced therapists provide supportive guidance for couples facing challenges, helping rebuild trust and foster deeper connections.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/couples-counseling-darby-pa"
   }, {
     icon: <Users className="h-6 w-6" />,
     title: "Family Therapy in Darby, PA",
     description: "Therapy sessions focused on improving family relationships and communication. We help families from Darby, Yeadon, and surrounding areas navigate conflicts, adjust to changes, and develop healthier patterns of interaction for lasting family harmony.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/family-therapy-darby-pa"
   }, {
     icon: <Baby className="h-6 w-6" />,
     title: "Child & Adolescent Therapy",
     description: "Specialized therapy for children and teens facing behavioral or emotional challenges. Our compassionate approach to mental health care in Darby helps young people build resilience, develop coping skills, and thrive through life's challenges.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/child-therapy-darby-pa"
   }, {
     icon: <Stethoscope className="h-6 w-6" />,
     title: "Psychiatric Evaluations in Darby",
     description: "Comprehensive mental health assessments and diagnostic services. Our thorough evaluations provide clarity and direction for treatment, identifying specific conditions and creating the foundation for effective, personalized mental health care.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/psychiatric-evaluations-darby-pa"
   }, {
     icon: <Pill className="h-6 w-6" />,
     title: "Medication Management",
     description: "Professional psychiatric medication reviews and management for mental health conditions. Our psychiatrists in Darby provide expert guidance on medication options, carefully monitor effectiveness, and make adjustments to optimize your mental wellness journey.",
-    color: "bg-sunrise-50 text-sunrise-700",
-    bgColor: "bg-gradient-to-r from-orange-400 to-amber-400",
     url: "/medication-management-darby-pa"
   }];
-  return <section id="services" className="bg-gradient-to-b from-white to-secondary/50 py-[100px]">
+
+  return (
+    <section id="services" className="py-20 md:py-28 bg-[#faf8f4]">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div className="max-w-3xl mx-auto text-center mb-12" initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6
-      }}>
-          <motion.div initial={{
-          opacity: 0,
-          scale: 0.9
-        }} whileInView={{
-          opacity: 1,
-          scale: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.4
-        }}>
-            <SectionTag>Our Services</SectionTag>
-          </motion.div>
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-14" 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.6 }}
+        >
+          <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Our Services</span>
           
-          <motion.h2 initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: 0.1
-        }} className="text-3xl font-bold mb-4 font-opensans md:text-5xl">
-            Comprehensive Mental Health Services in Darby
-          </motion.h2>
+          <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
+            Mental health services
+            <span className="block font-instrument-serif italic text-amber-700/70 font-normal">available in Darby</span>
+          </h2>
           
-          <motion.p initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: 0.2
-        }} className="text-base font-medium text-zinc-700">
+          <p className="text-stone-600 font-barlow">
             Our team of experienced mental health professionals provides a range of services 
             designed to support your well-being and personal growth in Darby, PA and surrounding areas.
-          </motion.p>
-          
-          <div className="mx-auto mt-6 mb-10 w-24">
-            <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
-          </div>
+          </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
           {services.map((service, index) => <ServiceCard key={index} service={service} index={index} />)}
         </div>
 
         <div className="flex justify-center mt-12">
           <AppointmentDialog>
-            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300">
+            <Button size="lg" className="bg-[#222] hover:bg-zinc-800 text-white font-barlow font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300">
               <Calendar className="mr-2 h-4 w-4" />
-              Book Mental Health Appointment in Darby
+              Book Mental Health Appointment
             </Button>
           </AppointmentDialog>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default ServicesSection;
