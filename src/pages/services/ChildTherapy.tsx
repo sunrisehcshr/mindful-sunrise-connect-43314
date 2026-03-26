@@ -80,28 +80,28 @@ const ChildTherapy = () => {
 
   const relatedServices = [
     {
-      title: "Family Therapy in Havertown",
-      url: "/family-therapy-havertown-pa"
+      title: "Family Therapy in Darby",
+      url: "/family-therapy-darby-pa"
     },
     {
-      title: "ADHD Treatment in Havertown",
-      url: "/adhd-treatment-havertown-pa"
+      title: "ADHD Treatment in Darby",
+      url: "/adhd-treatment-darby-pa"
     },
     {
-      title: "Anxiety Therapy in Havertown",
-      url: "/anxiety-therapy-havertown-pa"
+      title: "Anxiety Therapy in Darby",
+      url: "/anxiety-therapy-darby-pa"
     }
   ];
 
   return (
     <ServicePageLayout
-      title="Child & Adolescent Therapy in Havertown, PA"
+      title="Child & Adolescent Therapy in Darby, PA"
       description="Specialized therapeutic approaches for children and teens facing emotional, behavioral, or developmental challenges. Our experienced child therapists create a safe, nurturing environment for growth."
-      pageTitle="Child & Adolescent Therapy in Havertown, PA - Youth Mental Health Services | Sunrise Human Care"
-      metaDescription="Professional child and adolescent therapy in Havertown, PA serving Delaware County families. Age-appropriate counseling for anxiety, depression, behavioral issues, and developmental challenges. Child therapists for Havertown, Drexel Hill, and Broomall."
+      pageTitle="Child & Adolescent Therapy in Darby, PA - Youth Mental Health Services | Sunrise Human Care"
+      metaDescription="Professional child and adolescent therapy in Darby, PA serving Delaware County families. Age-appropriate counseling for anxiety, depression, behavioral issues, and developmental challenges. Child therapists for Darby, Drexel Hill, and Broomall."
       serviceType="Child & Adolescent Therapy"
-      canonicalUrl="/child-therapy-havertown-pa"
-      heroImage="/images/child-counseling-havertown.webp"
+      canonicalUrl="/child-therapy-darby-pa"
+      heroImage="/images/child-counseling-darby.webp"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -127,7 +127,7 @@ const ChildTherapy = () => {
           >
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed text-base lg:text-lg">
-                At Sunrise Human Care Services in Havertown, PA, we understand that children and adolescents have unique therapeutic needs. Our child therapy approach begins with creating a safe, welcoming environment where young people feel comfortable expressing themselves.
+                At Sunrise Human Care Services in Darby, PA, we understand that children and adolescents have unique therapeutic needs. Our child therapy approach begins with creating a safe, welcoming environment where young people feel comfortable expressing themselves.
               </p>
               
               <p className="leading-relaxed text-base lg:text-lg">
@@ -139,7 +139,7 @@ const ChildTherapy = () => {
               </p>
               
               <p className="leading-relaxed text-base lg:text-lg">
-                Our child therapy services support families throughout Havertown, Drexel Hill, and Broomall. Whether your child is struggling with <Link to="/anxiety-therapy-havertown-pa" className="text-orange-600 hover:underline">anxiety</Link>, <Link to="/adhd-treatment-havertown-pa" className="text-orange-600 hover:underline">ADHD</Link>, or emotional challenges, our experienced child therapists provide specialized care tailored to their unique needs.
+                Our child therapy services support families throughout Darby, Drexel Hill, and Broomall. Whether your child is struggling with <Link to="/anxiety-therapy-darby-pa" className="text-orange-600 hover:underline">anxiety</Link>, <Link to="/adhd-treatment-darby-pa" className="text-orange-600 hover:underline">ADHD</Link>, or emotional challenges, our experienced child therapists provide specialized care tailored to their unique needs.
               </p>
             </div>
           </motion.div>
@@ -189,11 +189,11 @@ const ChildTherapy = () => {
                 {[
                   {
                     name: "Understanding Childhood Anxiety",
-                    url: "/anxiety-therapy-havertown-pa"
+                    url: "/anxiety-therapy-darby-pa"
                   },
                   {
                     name: "Signs of ADHD in Children",
-                    url: "/adhd-treatment-havertown-pa"
+                    url: "/adhd-treatment-darby-pa"
                   },
                   {
                     name: "Supporting Your Child's Mental Health",

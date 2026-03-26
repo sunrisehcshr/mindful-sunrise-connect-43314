@@ -63,7 +63,7 @@ const TeamSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-muted-foreground"
           >
-            Our compassionate team of licensed therapists and psychiatrists is dedicated to providing personalized, evidence-based care in Havertown, PA.
+            Our compassionate team of licensed therapists and psychiatrists is dedicated to providing personalized, evidence-based care in Darby, PA.
           </motion.p>
 
           <div className="mx-auto mt-6 mb-10 w-24">

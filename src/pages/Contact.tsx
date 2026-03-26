@@ -87,10 +87,10 @@ const Contact = () => {
   return (
     <>
       <SEOHead
-        title="Contact Our Mental Health Clinic | Sunrise Human Care Services Havertown"
-        description="Reach our mental health team in Havertown, PA. Phone: (814) 620-2162. Located at 2050 West Chester Pike. In-person and telehealth appointments available. Easy online contact form. Medicaid accepted."
+        title="Contact Our Mental Health Clinic | Sunrise Human Care Services Darby"
+        description="Reach our mental health team in Darby, PA. Phone: (814) 620-2162. Located at 869 Main Street. In-person and telehealth appointments available. Easy online contact form. Medicaid accepted."
         canonicalUrl="https://sunrisehumancare.com/contact"
-        keywords="contact therapist Havertown, mental health clinic address, therapy phone number, counseling office hours, psychiatrist directions, telehealth therapy consultation"
+        keywords="contact therapist Darby, mental health clinic address, therapy phone number, counseling office hours, psychiatrist directions, telehealth therapy consultation"
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -183,8 +183,8 @@ const Contact = () => {
                         </div>
                         <div>
                           <h3 className="font-medium text-amber-900">Address</h3>
-                          <p className="text-amber-700">2050 West Chester Pike</p>
-                          <p className="text-amber-700">Havertown, PA 19083</p>
+                          <p className="text-amber-700">869 Main Street</p>
+                          <p className="text-amber-700">Darby, PA 19023</p>
                           <a 
                             href="https://maps.app.goo.gl/5Bop8fKVPk1i61Ss6" 
                             target="_blank" 

@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, Calendar, Users } from "lucide-react";
 
-const FamilyTherapyHavertown = () => {
+const FamilyTherapyDarby = () => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -43,11 +43,11 @@ const FamilyTherapyHavertown = () => {
   return (
     <>
       <SEOHead
-        title="Family Therapy in Havertown, PA | Strengthen Your Family"
-        description="Discover how family therapy can improve communication and resolve conflicts. Serving Havertown, Drexel Hill, and Broomall families at Sunrise Human Care Services."
-        canonicalUrl="https://sunrisehumancare.com/blog/family-therapy-havertown-pa-strengthening-relationships"
-        keywords="family therapy Havertown PA, family counseling Delaware County, couples therapy Havertown, family therapist for teens Havertown, blended family counseling near me"
-        ogImage="https://sunrisehumancare.com/images/family-counseling-havertown.webp"
+        title="Family Therapy in Darby, PA | Strengthen Your Family"
+        description="Discover how family therapy can improve communication and resolve conflicts. Serving Darby, Drexel Hill, and Broomall families at Sunrise Human Care Services."
+        canonicalUrl="https://sunrisehumancare.com/blog/family-therapy-darby-pa-strengthening-relationships"
+        keywords="family therapy Darby PA, family counseling Delaware County, couples therapy Darby, family therapist for teens Darby, blended family counseling near me"
+        ogImage="https://sunrisehumancare.com/images/family-counseling-darby.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -68,7 +68,7 @@ const FamilyTherapyHavertown = () => {
 
             <header className="mb-8">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Family Therapy in Havertown: Strengthening Relationships at Home
+                Family Therapy in Darby: Strengthening Relationships at Home
               </h1>
               <div className="flex items-center gap-4 text-muted-foreground text-sm">
                 <time dateTime="2025-02-01">February 1, 2025</time>
@@ -78,21 +78,21 @@ const FamilyTherapyHavertown = () => {
             </header>
 
             <img 
-              src="/images/family-therapy-havertown-guide.webp" 
-              alt="Family therapy session at Sunrise Human Care Services in Havertown, PA"
+              src="/images/family-therapy-darby-guide.webp" 
+              alt="Family therapy session at Sunrise Human Care Services in Darby, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />
 
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-lg leading-relaxed text-foreground/90">
-                Every family faces challenges—whether it's navigating a teenager's difficult behavior, coping with divorce, blending two families together, or simply feeling disconnected from one another. For families in Havertown, Drexel Hill, Broomall, and throughout Delaware County, family therapy offers a path to healthier communication, stronger bonds, and lasting resolution of conflicts. At Sunrise Human Care Services, we understand that when one family member struggles, the entire family feels the impact. Our experienced family therapists are here to help your family thrive.
+                Every family faces challenges—whether it's navigating a teenager's difficult behavior, coping with divorce, blending two families together, or simply feeling disconnected from one another. For families in Darby, Drexel Hill, Broomall, and throughout Delaware County, family therapy offers a path to healthier communication, stronger bonds, and lasting resolution of conflicts. At Sunrise Human Care Services, we understand that when one family member struggles, the entire family feels the impact. Our experienced family therapists are here to help your family thrive.
               </p>
             </div>
 
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">When Families Benefit from Therapy</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
-                Family therapy isn't just for families in crisis. Many Delaware County families seek counseling as a proactive way to improve relationships and build resilience. Here are common situations where family therapy in Havertown can help:
+                Family therapy isn't just for families in crisis. Many Delaware County families seek counseling as a proactive way to improve relationships and build resilience. Here are common situations where family therapy in Darby can help:
               </p>
 
               <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -163,7 +163,7 @@ const FamilyTherapyHavertown = () => {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">What Happens in Family Therapy Sessions</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
-                Many Havertown families wonder what to expect from family counseling. While each family's experience is unique, here's a general overview of the family therapy process at Sunrise Human Care Services:
+                Many Darby families wonder what to expect from family counseling. While each family's experience is unique, here's a general overview of the family therapy process at Sunrise Human Care Services:
               </p>
 
               <div className="space-y-4">
@@ -244,7 +244,7 @@ const FamilyTherapyHavertown = () => {
               </div>
 
               <div className="mt-6">
-                <Link to="/family-therapy-havertown-pa">
+                <Link to="/family-therapy-darby-pa">
                   <Button>Explore Our Family Therapy Services</Button>
                 </Link>
               </div>
@@ -253,14 +253,14 @@ const FamilyTherapyHavertown = () => {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">Specialized Support for Delaware County Families</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
-                Our family therapists have specialized training to address the unique challenges facing modern families in the Havertown area. We understand the specific pressures Delaware County families face, from school district concerns to suburban lifestyle stressors.
+                Our family therapists have specialized training to address the unique challenges facing modern families in the Darby area. We understand the specific pressures Delaware County families face, from school district concerns to suburban lifestyle stressors.
               </p>
 
               <div className="space-y-6">
                 <Card className="p-6 bg-accent/20 border-accent">
                   <h3 className="text-xl font-semibold mb-3 text-foreground">Teen and Adolescent Issues</h3>
                   <p className="mb-3 text-foreground/90">
-                    The teenage years bring unique challenges for Havertown families. Our therapists help address:
+                    The teenage years bring unique challenges for Darby families. Our therapists help address:
                   </p>
                   <ul className="space-y-2 text-foreground/80">
                     <li>• Academic pressure and school refusal (common in competitive Haverford Township schools)</li>
@@ -284,7 +284,7 @@ const FamilyTherapyHavertown = () => {
                     <li>• Managing challenging behaviors in young children</li>
                     <li>• Co-parenting effectively after divorce or separation</li>
                     <li>• Parenting children with ADHD, autism, or other special needs</li>
-                    <li>• Balancing work demands with family time (a major Havertown challenge)</li>
+                    <li>• Balancing work demands with family time (a major Darby challenge)</li>
                   </ul>
                 </Card>
 
@@ -301,7 +301,7 @@ const FamilyTherapyHavertown = () => {
                     <li>• Reignite connection in long-term relationships</li>
                   </ul>
                   <div className="mt-4">
-                    <Link to="/couples-counseling-havertown-pa">
+                    <Link to="/couples-counseling-darby-pa">
                       <Button variant="outline">Learn About Couples Counseling</Button>
                     </Link>
                   </div>
@@ -353,7 +353,7 @@ const FamilyTherapyHavertown = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-foreground">Family-Friendly Resources in Havertown</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground">Family-Friendly Resources in Darby</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
                 In addition to family therapy, Delaware County offers wonderful resources to support family bonding and wellness:
               </p>
@@ -365,7 +365,7 @@ const FamilyTherapyHavertown = () => {
                 </Card>
                 <Card className="p-5">
                   <h4 className="font-semibold mb-2 text-foreground">Haverford Township Recreation</h4>
-                  <p className="text-sm text-foreground/80">Family programs, youth sports, and community events that bring Havertown families together.</p>
+                  <p className="text-sm text-foreground/80">Family programs, youth sports, and community events that bring Darby families together.</p>
                 </Card>
                 <Card className="p-5">
                   <h4 className="font-semibold mb-2 text-foreground">Local Libraries</h4>
@@ -423,7 +423,7 @@ const FamilyTherapyHavertown = () => {
                   </a>
                 </div>
                 <p className="text-center text-sm text-foreground/60 mt-4">
-                  Evening & weekend sessions available • Convenient Havertown location
+                  Evening & weekend sessions available • Convenient Darby location
                 </p>
               </Card>
             </section>
@@ -431,16 +431,16 @@ const FamilyTherapyHavertown = () => {
             <section>
               <h3 className="text-2xl font-bold mb-4 text-foreground">Related Articles</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                <Link to="/blog/finding-therapist-havertown-pa-guide">
+                <Link to="/blog/finding-therapist-darby-pa-guide">
                   <Card className="p-4 hover:shadow-lg transition-shadow">
-                    <h4 className="font-semibold mb-2 text-foreground">Finding the Right Therapist in Havertown</h4>
+                    <h4 className="font-semibold mb-2 text-foreground">Finding the Right Therapist in Darby</h4>
                     <p className="text-sm text-foreground/70">Guide to choosing a mental health provider for your family.</p>
                   </Card>
                 </Link>
-                <Link to="/blog/adhd-treatment-havertown-pa-children-adults">
+                <Link to="/blog/adhd-treatment-darby-pa-children-adults">
                   <Card className="p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2 text-foreground">ADHD Treatment for Children and Adults</h4>
-                    <p className="text-sm text-foreground/70">Comprehensive ADHD care for all ages in Havertown.</p>
+                    <p className="text-sm text-foreground/70">Comprehensive ADHD care for all ages in Darby.</p>
                   </Card>
                 </Link>
               </div>
@@ -454,4 +454,4 @@ const FamilyTherapyHavertown = () => {
   );
 };
 
-export default FamilyTherapyHavertown;
+export default FamilyTherapyDarby;

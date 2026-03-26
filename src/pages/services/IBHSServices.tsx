@@ -12,23 +12,23 @@ const IBHSServices = () => {
   const breadcrumbs = [
     { name: "Home", url: "https://sunrisehumancare.com", position: 1 },
     { name: "Services", url: "https://sunrisehumancare.com/services", position: 2 },
-    { name: "IBHS Services", url: "https://sunrisehumancare.com/ibhs-havertown-pa", position: 3 }
+    { name: "IBHS Services", url: "https://sunrisehumancare.com/ibhs-darby-pa", position: 3 }
   ];
 
   return (
     <>
       <SEOHead
-        title="IBHS Services in Havertown, PA | Intensive Behavioral Health Services | Sunrise Human Care"
-        description="Intensive Behavioral Health Services (IBHS) in Havertown, PA and Delaware County. Evidence-based behavioral therapy for children and adolescents with autism, ADHD, and behavioral challenges. Medicaid accepted."
-        canonicalUrl="https://sunrisehumancare.com/ibhs-havertown-pa"
-        keywords="IBHS Delaware County PA, intensive behavioral health services Havertown, IBHS near me, ABA therapy Havertown PA, behavioral health children PA, IBHS Medicaid Delaware County, autism services Havertown"
+        title="IBHS Services in Darby, PA | Intensive Behavioral Health Services | Sunrise Human Care"
+        description="Intensive Behavioral Health Services (IBHS) in Darby, PA and Delaware County. Evidence-based behavioral therapy for children and adolescents with autism, ADHD, and behavioral challenges. Medicaid accepted."
+        canonicalUrl="https://sunrisehumancare.com/ibhs-darby-pa"
+        keywords="IBHS Delaware County PA, intensive behavioral health services Darby, IBHS near me, ABA therapy Darby PA, behavioral health children PA, IBHS Medicaid Delaware County, autism services Darby"
         breadcrumbs={breadcrumbs}
         serviceSchema={{
           name: "Intensive Behavioral Health Services (IBHS)",
-          description: "Evidence-based behavioral health interventions for children and adolescents in Havertown, PA and Delaware County.",
+          description: "Evidence-based behavioral health interventions for children and adolescents in Darby, PA and Delaware County.",
           provider: "Sunrise Human Care Services",
           serviceType: "Intensive Behavioral Health Services",
-          areaServed: "Havertown, PA and Delaware County"
+          areaServed: "Darby, PA and Delaware County"
         }}
       />
 
@@ -48,7 +48,7 @@ const IBHSServices = () => {
                   Behavioral Health Services
                 </span>
                 <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                  Intensive Behavioral Health Services (IBHS) in Havertown, PA
+                  Intensive Behavioral Health Services (IBHS) in Darby, PA
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
                   Comprehensive, evidence-based behavioral health interventions designed to help children and adolescents thrive. Serving families across Delaware County with Medicaid-covered services.
@@ -82,7 +82,7 @@ const IBHSServices = () => {
                   Intensive Behavioral Health Services (IBHS) is a Pennsylvania-regulated program that provides individualized, evidence-based behavioral health treatment for children and adolescents under 21. IBHS replaced the former BHRS (Behavioral Health Rehabilitation Services) system to deliver more effective, outcome-driven care.
                 </p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  At Sunrise Human Care Services in Havertown, PA, our IBHS program is designed to address a wide range of behavioral and emotional challenges, including autism spectrum disorder (ASD), ADHD, anxiety, oppositional defiant disorder, and other behavioral health conditions that impact daily functioning.
+                  At Sunrise Human Care Services in Darby, PA, our IBHS program is designed to address a wide range of behavioral and emotional challenges, including autism spectrum disorder (ASD), ADHD, anxiety, oppositional defiant disorder, and other behavioral health conditions that impact daily functioning.
                 </p>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   Our licensed clinicians work closely with families, schools, and other care providers to create comprehensive treatment plans that are tailored to each child's unique needs. Services can be delivered in the home, school, or community settings — wherever the child needs the most support.
@@ -182,7 +182,7 @@ const IBHSServices = () => {
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                  Why Choose Sunrise Human Care for IBHS in Havertown?
+                  Why Choose Sunrise Human Care for IBHS in Darby?
                 </h2>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   As a trusted behavioral health provider in Delaware County, Sunrise Human Care Services brings a unique combination of clinical expertise, cultural sensitivity, and family-centered care to our IBHS program. Our team includes licensed Behavior Consultants, Board Certified Behavior Analysts (BCBAs), and trained Behavioral Health Technicians who are dedicated to helping children reach their full potential.
@@ -190,7 +190,7 @@ const IBHSServices = () => {
                 
                 <div className="space-y-4 mb-8">
                   {[
-                    "Licensed and experienced IBHS clinical team serving Havertown and all of Delaware County",
+                    "Licensed and experienced IBHS clinical team serving Darby and all of Delaware County",
                     "Culturally responsive care for diverse families in our community",
                     "Flexible service delivery in home, school, and community settings",
                     "Regular progress monitoring with data-driven treatment adjustments",

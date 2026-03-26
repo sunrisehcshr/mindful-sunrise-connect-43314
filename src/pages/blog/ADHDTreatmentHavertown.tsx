@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, Calendar, Brain, CheckCircle } from "lucide-react";
 
-const ADHDTreatmentHavertown = () => {
+const ADHDTreatmentDarby = () => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -23,7 +23,7 @@ const ADHDTreatmentHavertown = () => {
       },
       {
         "@type": "Question",
-        "name": "How is ADHD diagnosed in Havertown?",
+        "name": "How is ADHD diagnosed in Darby?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "ADHD diagnosis involves a comprehensive psychiatric evaluation including clinical interviews, symptom rating scales, review of developmental history, and sometimes psychological testing. Contact Sunrise Human Care Services at (814) 620-2162 for evaluation."
@@ -43,11 +43,11 @@ const ADHDTreatmentHavertown = () => {
   return (
     <>
       <SEOHead
-        title="ADHD Treatment in Havertown, PA | Children & Adults"
-        description="Expert ADHD treatment in Havertown for all ages. Therapy, psychiatric evaluations, and medication management at Sunrise Human Care Services in Delaware County."
-        canonicalUrl="https://sunrisehumancare.com/blog/adhd-treatment-havertown-pa-children-adults"
-        keywords="ADHD treatment Havertown PA, ADHD therapist Delaware County, adult ADHD treatment near me, child ADHD psychiatrist Havertown, ADHD medication management Pennsylvania"
-        ogImage="https://sunrisehumancare.com/images/Therapy-in-havertown.webp"
+        title="ADHD Treatment in Darby, PA | Children & Adults"
+        description="Expert ADHD treatment in Darby for all ages. Therapy, psychiatric evaluations, and medication management at Sunrise Human Care Services in Delaware County."
+        canonicalUrl="https://sunrisehumancare.com/blog/adhd-treatment-darby-pa-children-adults"
+        keywords="ADHD treatment Darby PA, ADHD therapist Delaware County, adult ADHD treatment near me, child ADHD psychiatrist Darby, ADHD medication management Pennsylvania"
+        ogImage="https://sunrisehumancare.com/images/Therapy-in-darby.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -68,7 +68,7 @@ const ADHDTreatmentHavertown = () => {
 
             <header className="mb-8">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                ADHD Treatment in Havertown: Comprehensive Care for Children and Adults
+                ADHD Treatment in Darby: Comprehensive Care for Children and Adults
               </h1>
               <div className="flex items-center gap-4 text-muted-foreground text-sm">
                 <time dateTime="2025-02-05">February 5, 2025</time>
@@ -78,21 +78,21 @@ const ADHDTreatmentHavertown = () => {
             </header>
 
             <img 
-              src="/images/adhd-treatment-havertown.webp" 
-              alt="ADHD treatment and evaluation services at Sunrise Human Care in Havertown, PA"
+              src="/images/adhd-treatment-darby.webp" 
+              alt="ADHD treatment and evaluation services at Sunrise Human Care in Darby, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />
 
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-lg leading-relaxed text-foreground/90">
-                Attention-Deficit/Hyperactivity Disorder (ADHD) affects approximately 10% of children and 4% of adults in the United States. For families and individuals in Havertown, Drexel Hill, Broomall, and throughout Delaware County, untreated ADHD can create significant challenges at school, work, and home. The good news? ADHD is highly treatable. At Sunrise Human Care Services, our comprehensive ADHD treatment program combines expert diagnosis, evidence-based therapy, and careful medication management to help children and adults with ADHD thrive.
+                Attention-Deficit/Hyperactivity Disorder (ADHD) affects approximately 10% of children and 4% of adults in the United States. For families and individuals in Darby, Drexel Hill, Broomall, and throughout Delaware County, untreated ADHD can create significant challenges at school, work, and home. The good news? ADHD is highly treatable. At Sunrise Human Care Services, our comprehensive ADHD treatment program combines expert diagnosis, evidence-based therapy, and careful medication management to help children and adults with ADHD thrive.
               </p>
             </div>
 
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">Recognizing ADHD Across Different Ages</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
-                ADHD presents differently at various life stages. Understanding these patterns helps families in Havertown recognize when professional evaluation is needed.
+                ADHD presents differently at various life stages. Understanding these patterns helps families in Darby recognize when professional evaluation is needed.
               </p>
 
               <div className="space-y-6">
@@ -129,7 +129,7 @@ const ADHDTreatmentHavertown = () => {
                     </div>
                   </div>
                   <p className="mt-3 text-sm text-foreground/70 italic">
-                    Many Havertown parents first hear concerns from teachers at Haverford Township schools about their child's ability to focus or sit still.
+                    Many Darby parents first hear concerns from teachers at Haverford Township schools about their child's ability to focus or sit still.
                   </p>
                 </Card>
 
@@ -156,7 +156,7 @@ const ADHDTreatmentHavertown = () => {
                 <Card className="p-6 border-l-4 border-l-primary">
                   <h3 className="text-xl font-semibold mb-3 text-foreground">ADHD in Adults (18+)</h3>
                   <p className="mb-3 text-foreground/90">
-                    Many adults in Havertown are surprised to learn they have ADHD—often diagnosed only after their child receives a diagnosis. Adult ADHD impacts workplace performance and relationships:
+                    Many adults in Darby are surprised to learn they have ADHD—often diagnosed only after their child receives a diagnosis. Adult ADHD impacts workplace performance and relationships:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 mb-3">
                     <div>
@@ -190,7 +190,7 @@ const ADHDTreatmentHavertown = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-foreground">Getting an ADHD Diagnosis in Havertown</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground">Getting an ADHD Diagnosis in Darby</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
                 Proper ADHD diagnosis is the foundation of effective treatment. At Sunrise Human Care Services, our board-certified psychiatrists conduct comprehensive evaluations to accurately diagnose ADHD and identify any co-existing conditions.
               </p>
@@ -261,7 +261,7 @@ const ADHDTreatmentHavertown = () => {
               </Card>
 
               <div className="mt-6">
-                <Link to="/psychiatric-evaluations-havertown-pa">
+                <Link to="/psychiatric-evaluations-darby-pa">
                   <Button>Schedule ADHD Evaluation</Button>
                 </Link>
               </div>
@@ -339,7 +339,7 @@ const ADHDTreatmentHavertown = () => {
                     Medication choice depends on symptom profile, co-existing conditions, side effect concerns, and insurance coverage. Our psychiatrists carefully titrate doses and schedule regular follow-ups to optimize treatment.
                   </p>
 
-                  <Link to="/medication-management-havertown-pa">
+                  <Link to="/medication-management-darby-pa">
                     <Button variant="outline">Learn About Medication Management</Button>
                   </Link>
                 </Card>
@@ -368,7 +368,7 @@ const ADHDTreatmentHavertown = () => {
               </div>
 
               <div className="mt-6">
-                <Link to="/adhd-treatment-havertown-pa">
+                <Link to="/adhd-treatment-darby-pa">
                   <Button>Explore Comprehensive ADHD Treatment</Button>
                 </Link>
               </div>
@@ -452,7 +452,7 @@ const ADHDTreatmentHavertown = () => {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className="text-left">How is ADHD diagnosed in Havertown?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">How is ADHD diagnosed in Darby?</AccordionTrigger>
                   <AccordionContent className="text-foreground/80">
                     ADHD diagnosis involves a comprehensive psychiatric evaluation including clinical interviews, symptom rating scales, review of developmental history, and sometimes psychological testing. Contact Sunrise Human Care Services at (814) 620-2162 for evaluation.
                   </AccordionContent>
@@ -468,7 +468,7 @@ const ADHDTreatmentHavertown = () => {
 
             <section className="mb-12">
               <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-                <h2 className="text-2xl font-bold mb-4 text-center text-foreground">Get Expert ADHD Care in Havertown</h2>
+                <h2 className="text-2xl font-bold mb-4 text-center text-foreground">Get Expert ADHD Care in Darby</h2>
                 <p className="text-center mb-6 text-foreground/80">
                   Whether for yourself or your child, comprehensive ADHD treatment can be life-changing. We're accepting new patients.
                 </p>
@@ -495,13 +495,13 @@ const ADHDTreatmentHavertown = () => {
             <section>
               <h3 className="text-2xl font-bold mb-4 text-foreground">Related Articles</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                <Link to="/blog/finding-therapist-havertown-pa-guide">
+                <Link to="/blog/finding-therapist-darby-pa-guide">
                   <Card className="p-4 hover:shadow-lg transition-shadow">
-                    <h4 className="font-semibold mb-2 text-foreground">Finding the Right Therapist in Havertown</h4>
+                    <h4 className="font-semibold mb-2 text-foreground">Finding the Right Therapist in Darby</h4>
                     <p className="text-sm text-foreground/70">Guide to choosing mental health care for you or your child.</p>
                   </Card>
                 </Link>
-                <Link to="/blog/family-therapy-havertown-pa-strengthening-relationships">
+                <Link to="/blog/family-therapy-darby-pa-strengthening-relationships">
                   <Card className="p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2 text-foreground">Family Therapy: Strengthening Relationships</h4>
                     <p className="text-sm text-foreground/70">How family counseling supports children with ADHD.</p>
@@ -518,4 +518,4 @@ const ADHDTreatmentHavertown = () => {
   );
 };
 
-export default ADHDTreatmentHavertown;
+export default ADHDTreatmentDarby;

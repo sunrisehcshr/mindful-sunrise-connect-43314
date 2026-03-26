@@ -10,7 +10,7 @@ const WhyChooseUsSection = () => {
   const features = [
     {
       icon: <MapPin className="h-6 w-6 text-orange-500" />,
-      title: "Locally rooted in Havertown, PA",
+      title: "Locally rooted in Darby, PA",
       description: "Serving our community with deep local understanding and connections."
     },
     {

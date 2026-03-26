@@ -25,27 +25,27 @@ const SubstanceUseTherapy = () => {
   }];
   const faqs = [{
     question: "How do I know if I have a substance use disorder?",
-    answer: "Signs include using more of a substance than intended, unsuccessful attempts to cut down or stop use, spending significant time obtaining or using the substance, experiencing cravings, failing to fulfill obligations due to use, continuing use despite problems, and developing tolerance or withdrawal symptoms. Our substance use treatment in Havertown provides comprehensive assessments to help determine if you would benefit from professional support."
+    answer: "Signs include using more of a substance than intended, unsuccessful attempts to cut down or stop use, spending significant time obtaining or using the substance, experiencing cravings, failing to fulfill obligations due to use, continuing use despite problems, and developing tolerance or withdrawal symptoms. Our substance use treatment in Darby provides comprehensive assessments to help determine if you would benefit from professional support."
   }, {
     question: "Can I recover from addiction without residential treatment?",
-    answer: "Yes, many people successfully recover through outpatient substance use treatment in Havertown, especially when their substance use is caught early or is not severe. The appropriate level of care depends on factors like the severity of addiction, presence of co-occurring disorders, and available support system. Our Havertown addiction therapists will help determine the right treatment approach for clients throughout Delaware County, including Drexel Hill and Broomall."
+    answer: "Yes, many people successfully recover through outpatient substance use treatment in Darby, especially when their substance use is caught early or is not severe. The appropriate level of care depends on factors like the severity of addiction, presence of co-occurring disorders, and available support system. Our Darby addiction therapists will help determine the right treatment approach for clients throughout Delaware County, including Drexel Hill and Broomall."
   }, {
     question: "How do you handle relapse during treatment?",
-    answer: "At our substance use treatment center in Havertown, we view relapse as part of the recovery process rather than a failure. If relapse occurs, we work together to understand triggers, strengthen coping skills, and adjust the treatment plan accordingly. Our non-judgmental approach to addiction treatment focuses on learning from setbacks to prevent future relapses and support your continued recovery journey."
+    answer: "At our substance use treatment center in Darby, we view relapse as part of the recovery process rather than a failure. If relapse occurs, we work together to understand triggers, strengthen coping skills, and adjust the treatment plan accordingly. Our non-judgmental approach to addiction treatment focuses on learning from setbacks to prevent future relapses and support your continued recovery journey."
   }];
   const relatedServices = [{
-    title: "Depression Therapy in Havertown",
-    url: "/depression-therapy-havertown-pa"
+    title: "Depression Therapy in Darby",
+    url: "/depression-therapy-darby-pa"
   }, {
-    title: "Anxiety Therapy in Havertown",
-    url: "/anxiety-therapy-havertown-pa"
+    title: "Anxiety Therapy in Darby",
+    url: "/anxiety-therapy-darby-pa"
   }, {
-    title: "Trauma & PTSD Therapy in Havertown",
-    url: "/ptsd-therapy-havertown-pa"
+    title: "Trauma & PTSD Therapy in Darby",
+    url: "/ptsd-therapy-darby-pa"
   }];
 
-  return <ServicePageLayout title="Substance Use Treatment in Havertown, PA" description="Evidence-based treatment for alcohol and drug addiction, recovery support, and relapse prevention in Havertown, PA." pageTitle="Substance Use Treatment in Havertown, PA | Addiction Recovery | Sunrise Human Care Services" metaDescription="Comprehensive substance use and addiction treatment in Havertown, PA serving Delaware County. Evidence-based approaches for alcohol and drug recovery with personalized care. Serving Havertown, Drexel Hill, and Broomall." serviceType="Substance Use Counseling" canonicalUrl="/substance-use-treatment-havertown-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
-      <ServiceContentSection title="Our Substance Use Treatment Approach in Havertown" hasBgPattern={true}>
+  return <ServicePageLayout title="Substance Use Treatment in Darby, PA" description="Evidence-based treatment for alcohol and drug addiction, recovery support, and relapse prevention in Darby, PA." pageTitle="Substance Use Treatment in Darby, PA | Addiction Recovery | Sunrise Human Care Services" metaDescription="Comprehensive substance use and addiction treatment in Darby, PA serving Delaware County. Evidence-based approaches for alcohol and drug recovery with personalized care. Serving Darby, Drexel Hill, and Broomall." serviceType="Substance Use Counseling" canonicalUrl="/substance-use-treatment-darby-pa" benefits={benefits} approaches={approaches} faqs={faqs} relatedServices={relatedServices}>
+      <ServiceContentSection title="Our Substance Use Treatment Approach in Darby" hasBgPattern={true}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{
           opacity: 0,
@@ -61,11 +61,11 @@ const SubstanceUseTherapy = () => {
         }}>
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed">
-                At Sunrise Human Care Services in Havertown, PA, we provide compassionate, evidence-based substance use treatment. Our addiction therapy begins with a comprehensive assessment to understand your unique situation, substance use history, and any co-occurring mental health conditions.
+                At Sunrise Human Care Services in Darby, PA, we provide compassionate, evidence-based substance use treatment. Our addiction therapy begins with a comprehensive assessment to understand your unique situation, substance use history, and any co-occurring mental health conditions.
               </p>
               
               <p className="leading-relaxed">
-                We recognize that substance use disorders develop for many reasons and often serve as coping mechanisms for underlying issues. Our substance use treatment in Havertown addresses not only the substance use itself but also the factors that contribute to and maintain addictive patterns.
+                We recognize that substance use disorders develop for many reasons and often serve as coping mechanisms for underlying issues. Our substance use treatment in Darby addresses not only the substance use itself but also the factors that contribute to and maintain addictive patterns.
               </p>
               
               <p className="leading-relaxed">
@@ -73,7 +73,7 @@ const SubstanceUseTherapy = () => {
               </p>
               
               <p className="leading-relaxed">
-                Our substance use treatment services are available to residents throughout Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities. Our dual diagnosis capability ensures that co-occurring mental health conditions receive appropriate attention alongside addiction treatment. This integrated approach leads to better outcomes and more sustainable recovery.
+                Our substance use treatment services are available to residents throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities. Our dual diagnosis capability ensures that co-occurring mental health conditions receive appropriate attention alongside addiction treatment. This integrated approach leads to better outcomes and more sustainable recovery.
               </p>
             </div>
           </motion.div>
@@ -91,7 +91,7 @@ const SubstanceUseTherapy = () => {
           delay: 0.4
         }} className="bg-white p-7 rounded-xl shadow-md border border-sunrise-100/50 hover:shadow-lg transition-all duration-300">
             <h3 className="text-xl font-semibold mb-5 text-orange-600 font-playfair">
-              Our Substance Use Treatment in Havertown Helps With:
+              Our Substance Use Treatment in Darby Helps With:
             </h3>
             
             <ul className="space-y-3.5">
@@ -120,10 +120,10 @@ const SubstanceUseTherapy = () => {
                 url: "/blog/dual-diagnosis-treatment"
               }, {
                 name: "Depression and Substance Use",
-                url: "/depression-therapy-havertown-pa"
+                url: "/depression-therapy-darby-pa"
               }, {
                 name: "Family Support in Recovery",
-                url: "/family-therapy-havertown-pa"
+                url: "/family-therapy-darby-pa"
               }].map((resource, index) => <li key={index}>
                     <Link to={resource.url} className="flex items-center text-orange-500 hover:text-orange-700 transition-colors">
                       <ArrowRight className="h-4 w-4 mr-2" />

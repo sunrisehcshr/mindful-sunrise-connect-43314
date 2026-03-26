@@ -9,16 +9,16 @@ const Conditions = () => {
   return (
     <>
       <SEOHead 
-        title="Mental Health Conditions We Treat in Havertown, PA | Sunrise Human Care" 
-        description="Comprehensive evidence-based treatment for anxiety, depression, ADHD, PTSD, OCD, bipolar disorder, and more mental health conditions in Havertown, PA. Our expert team provides specialized care for all ages. Call (814) 620-2162." 
+        title="Mental Health Conditions We Treat in Darby, PA | Sunrise Human Care" 
+        description="Comprehensive evidence-based treatment for anxiety, depression, ADHD, PTSD, OCD, bipolar disorder, and more mental health conditions in Darby, PA. Our expert team provides specialized care for all ages. Call (814) 620-2162." 
         canonicalUrl="https://sunrisehumancare.com/conditions"
-        keywords="mental health conditions Havertown, anxiety treatment PA, depression therapy Delaware County, ADHD treatment Havertown, PTSD therapy Pennsylvania, OCD treatment near me, bipolar disorder help"
+        keywords="mental health conditions Darby, anxiety treatment PA, depression therapy Delaware County, ADHD treatment Darby, PTSD therapy Pennsylvania, OCD treatment near me, bipolar disorder help"
         serviceSchema={{
           name: "Mental Health Condition Treatment",
           description: "Evidence-based treatment for a wide range of mental health conditions including anxiety, depression, ADHD, PTSD, OCD, bipolar disorder, and more.",
           provider: "Sunrise Human Care Services",
           serviceType: "Mental Health Treatment",
-          areaServed: "Havertown, PA and Delaware County"
+          areaServed: "Darby, PA and Delaware County"
         }}
       />
       <div className="flex flex-col min-h-screen">
@@ -34,11 +34,11 @@ const Conditions = () => {
             <div className="container relative z-10 mx-auto px-4 md:px-6">
               <div className="max-w-3xl">                
                 <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
-                  Mental Health Conditions We Treat in Havertown
+                  Mental Health Conditions We Treat in Darby
                 </h1>
                 
                 <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
-                  Our experienced team provides evidence-based treatment for a wide range of mental health conditions affecting children, adolescents, adults, and seniors in Havertown, PA and the surrounding Delaware County area.
+                  Our experienced team provides evidence-based treatment for a wide range of mental health conditions affecting children, adolescents, adults, and seniors in Darby, PA and the surrounding Delaware County area.
                 </p>
                 
                 <div className="flex flex-wrap gap-2 md:gap-4">
@@ -65,9 +65,9 @@ const Conditions = () => {
           <section className="py-16 bg-orange-50">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 font-playfair">Mental Health Care in Havertown, Pennsylvania</h2>
-                <p className="mb-4">At Sunrise Human Care Services, we're proud to serve the Havertown community and surrounding areas in Delaware County with comprehensive mental health care. Our practice is conveniently located at 2050 West Chester Pike, making quality mental health treatment accessible to residents throughout the region.</p>
-                <p className="mb-4">We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Havertown area. Our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.</p>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 font-playfair">Mental Health Care in Darby, Pennsylvania</h2>
+                <p className="mb-4">At Sunrise Human Care Services, we're proud to serve the Darby community and surrounding areas in Delaware County with comprehensive mental health care. Our practice is conveniently located at 869 Main Street, making quality mental health treatment accessible to residents throughout the region.</p>
+                <p className="mb-4">We understand the unique needs of our local community and provide culturally responsive care that considers the specific challenges and resources of the Darby area. Our team is committed to improving mental health awareness and reducing stigma throughout Delaware County.</p>
                 <p>Whether you're coming from Haverford Township, Springfield, Upper Darby, Broomall, or other nearby communities, we provide a welcoming environment where you can receive expert care for a wide range of mental health conditions.</p>
               </div>
             </div>

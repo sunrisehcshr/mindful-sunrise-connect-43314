@@ -60,7 +60,7 @@ const BlogPost = () => {
           
           <div className="mt-16 p-8 backdrop-blur-sm border border-border/30 rounded-lg bg-white">
             <h2 className="text-2xl font-semibold mb-4">Need Help with {blogPostData.ctaTopicLink}?</h2>
-            <p className="mb-6 text-lg">Our Havertown mental health professionals specialize in treating {blogPostData.ctaTopic} and other mental health conditions. We're here to help you thrive.</p>
+            <p className="mb-6 text-lg">Our Darby mental health professionals specialize in treating {blogPostData.ctaTopic} and other mental health conditions. We're here to help you thrive.</p>
             <div className="flex flex-wrap gap-4">
               <Button asChild className="btn-sunrise">
                 <Link to="/appointment">Book an Appointment</Link>
@@ -101,25 +101,25 @@ const BlogPost = () => {
 // Function to get blog post data by ID
 const getBlogPostDataById = (id: string) => {
   const blogPosts = {
-    "anxiety-signs-havertown": {
-      title: "5 Signs of Anxiety That Havertown Residents Shouldn't Ignore",
+    "anxiety-signs-darby": {
+      title: "5 Signs of Anxiety That Darby Residents Shouldn't Ignore",
       date: "June 20, 2024",
       readTime: "7 min read",
-      excerpt: "Learn about common anxiety symptoms that people in Havertown might experience, especially considering local factors like commuting to Philadelphia or balancing suburban family life.",
+      excerpt: "Learn about common anxiety symptoms that people in Darby might experience, especially considering local factors like commuting to Philadelphia or balancing suburban family life.",
       ctaTopic: "anxiety",
       ctaTopicLink: "Anxiety",
       content: <>
-          <p className="lead font-medium text-xl text-foreground/90 mb-8">Living in the beautiful suburb of Havertown offers many advantages, from its tight-knit community feel to its convenient location near Philadelphia. However, even in this picturesque Delaware County town, residents aren't immune to the effects of anxiety – especially with the unique pressures of suburban living and commuting.</p>
+          <p className="lead font-medium text-xl text-foreground/90 mb-8">Living in the beautiful suburb of Darby offers many advantages, from its tight-knit community feel to its convenient location near Philadelphia. However, even in this picturesque Delaware County town, residents aren't immune to the effects of anxiety – especially with the unique pressures of suburban living and commuting.</p>
           
-          <p>At Sunrise Human Care Services in Havertown, PA, we've noticed certain anxiety symptoms that are particularly common among our local clients. Recognizing these signs early can make a significant difference in getting the help you need.</p>
+          <p>At Sunrise Human Care Services in Darby, PA, we've noticed certain anxiety symptoms that are particularly common among our local clients. Recognizing these signs early can make a significant difference in getting the help you need.</p>
           
           <h2>1. Commuter Stress and Morning Anxiety</h2>
           
-          <p>Many Havertown residents commute to Philadelphia or other nearby employment centers. This daily journey can trigger what we call "commuter anxiety" – a specific form of stress that manifests as:</p>
+          <p>Many Darby residents commute to Philadelphia or other nearby employment centers. This daily journey can trigger what we call "commuter anxiety" – a specific form of stress that manifests as:</p>
           
           <ul className="list-disc pl-6 space-y-2">
             <li>Feeling of dread when preparing for your morning commute</li>
-            <li>Racing heart or shallow breathing while sitting in traffic on West Chester Pike</li>
+            <li>Racing heart or shallow breathing while sitting in traffic on Main Street</li>
             <li>Constant checking of traffic apps and feeling overwhelmed by potential delays</li>
             <li>Sunday evening anxiety about the upcoming work week commute</li>
           </ul>
@@ -128,7 +128,7 @@ const getBlogPostDataById = (id: string) => {
           
           <h2>2. Social Comparison in Suburban Settings</h2>
           
-          <p>Havertown's close-knit community offers wonderful support, but it can also create a unique form of anxiety related to social comparison. Signs include:</p>
+          <p>Darby's close-knit community offers wonderful support, but it can also create a unique form of anxiety related to social comparison. Signs include:</p>
           
           <ul className="list-disc pl-6 space-y-2">
             <li>Feeling inadequate when comparing your home to neighboring properties</li>
@@ -152,9 +152,9 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Our <Link to="/services" className="text-primary hover:underline">holistic therapy approach</Link> addresses both the psychological aspects of financial anxiety and practical strategies for financial wellness.</p>
           
-          <h2>4. Parenting Anxiety in Havertown's Competitive School Environment</h2>
+          <h2>4. Parenting Anxiety in Darby's Competitive School Environment</h2>
           
-          <p>Havertown is known for its excellent schools, but this can create pressure for both children and parents. Signs of parenting anxiety include:</p>
+          <p>Darby is known for its excellent schools, but this can create pressure for both children and parents. Signs of parenting anxiety include:</p>
           
           <ul className="list-disc pl-6 space-y-2">
             <li>Excessive worry about your child's academic performance</li>
@@ -163,11 +163,11 @@ const getBlogPostDataById = (id: string) => {
             <li>Difficulty enjoying family time due to preoccupation with future concerns</li>
           </ul>
           
-          <p>Our family therapists specialize in helping Havertown parents navigate these challenges while maintaining their own mental health.</p>
+          <p>Our family therapists specialize in helping Darby parents navigate these challenges while maintaining their own mental health.</p>
           
           <h2>5. Weather-Related Anxiety and Seasonal Patterns</h2>
           
-          <p>Pennsylvania's variable weather patterns can trigger anxiety for many Havertown residents. Signs include:</p>
+          <p>Pennsylvania's variable weather patterns can trigger anxiety for many Darby residents. Signs include:</p>
           
           <ul className="list-disc pl-6 space-y-2">
             <li>Heightened anxiety during storm forecasts or severe weather warnings</li>
@@ -178,43 +178,43 @@ const getBlogPostDataById = (id: string) => {
           
           <p>This weather-related anxiety often has a seasonal component, which our <Link to="/services" className="text-primary hover:underline">mental health specialists</Link> can help you address with tailored seasonal treatment plans.</p>
           
-          <h2>When to Seek Help for Anxiety in Havertown</h2>
+          <h2>When to Seek Help for Anxiety in Darby</h2>
           
-          <p>If you recognize several of these signs in yourself or a loved one, it's worth reaching out for professional support. At Sunrise Human Care Services, located conveniently at 2050 West Chester Pike in Havertown, our team of licensed therapists specializes in anxiety treatment that acknowledges the specific pressures of living in our community.</p>
+          <p>If you recognize several of these signs in yourself or a loved one, it's worth reaching out for professional support. At Sunrise Human Care Services, located conveniently at 869 Main Street in Darby, our team of licensed therapists specializes in anxiety treatment that acknowledges the specific pressures of living in our community.</p>
           
-          <p>Many Havertown residents find that even a few sessions with one of our anxiety specialists can provide significant relief and practical tools for managing everyday stressors. We offer both in-person appointments in our Havertown office and telehealth options for those with busy schedules.</p>
+          <p>Many Darby residents find that even a few sessions with one of our anxiety specialists can provide significant relief and practical tools for managing everyday stressors. We offer both in-person appointments in our Darby office and telehealth options for those with busy schedules.</p>
           
-          <h2>Resources for Havertown Residents</h2>
+          <h2>Resources for Darby Residents</h2>
           
-          <p>In addition to professional therapy, Havertown residents can access several local resources for anxiety support:</p>
+          <p>In addition to professional therapy, Darby residents can access several local resources for anxiety support:</p>
           
           <ul className="list-disc pl-6 space-y-2">
             <li>Haverford Township Free Library offers meditation sessions and mental wellness books</li>
-            <li>The Havertown YMCA provides stress-reduction exercise classes</li>
+            <li>The Darby YMCA provides stress-reduction exercise classes</li>
             <li>Local community groups offer social support to combat isolation</li>
           </ul>
           
-          <p>Remember, experiencing anxiety doesn't mean you're alone – many of your Havertown neighbors are navigating similar challenges. Reaching out for support is a sign of strength, not weakness.</p>
+          <p>Remember, experiencing anxiety doesn't mean you're alone – many of your Darby neighbors are navigating similar challenges. Reaching out for support is a sign of strength, not weakness.</p>
         </>
     },
-    "supporting-depression-havertown": {
-      title: "How Havertown Families Can Support a Loved One with Depression",
+    "supporting-depression-darby": {
+      title: "How Darby Families Can Support a Loved One with Depression",
       date: "June 18, 2024",
       readTime: "8 min read",
       excerpt: "Practical guidance for local families supporting someone with depression, including local community resources and support groups in Delaware County.",
       ctaTopic: "depression",
       ctaTopicLink: "Depression",
       content: <>
-          <p className="lead font-medium text-xl text-foreground/90 mb-8">Depression affects approximately 21 million adults in the United States, and Havertown families are not exempt from this challenging mental health condition. When someone you love is experiencing depression, knowing how to provide effective support can make a significant difference in their recovery journey.</p>
+          <p className="lead font-medium text-xl text-foreground/90 mb-8">Depression affects approximately 21 million adults in the United States, and Darby families are not exempt from this challenging mental health condition. When someone you love is experiencing depression, knowing how to provide effective support can make a significant difference in their recovery journey.</p>
           
-          <p>At Sunrise Human Care Services in Havertown, we work with many local families navigating this difficult terrain. Based on our experience with Delaware County residents, here are practical strategies for supporting a loved one with depression while also maintaining your own wellbeing.</p>
+          <p>At Sunrise Human Care Services in Darby, we work with many local families navigating this difficult terrain. Based on our experience with Delaware County residents, here are practical strategies for supporting a loved one with depression while also maintaining your own wellbeing.</p>
           
-          <h2>Understanding Depression in the Havertown Context</h2>
+          <h2>Understanding Depression in the Darby Context</h2>
           
           <p>Before diving into support strategies, it's important to understand how depression might manifest in our specific community context. While depression is a universal condition, certain local factors can influence how it presents and progresses:</p>
           
           <ul className="list-disc pl-6 space-y-2">
-            <li>Suburban isolation: Despite Havertown's community-oriented atmosphere, some residents experience isolation, particularly seniors or those new to the area</li>
+            <li>Suburban isolation: Despite Darby's community-oriented atmosphere, some residents experience isolation, particularly seniors or those new to the area</li>
             <li>Seasonal factors: Pennsylvania's distinct seasons, particularly our often gray and lengthy winters, can exacerbate seasonal depression</li>
             <li>High-achievement culture: Our area's focus on academic and professional success can create additional pressure for those already struggling with depression</li>
           </ul>
@@ -223,7 +223,7 @@ const getBlogPostDataById = (id: string) => {
           
           <h2>Recognizing Depression Signs in Family Members</h2>
           
-          <p>Depression often manifests differently across age groups and individuals. Here are some signs that might indicate depression in your Havertown family member:</p>
+          <p>Depression often manifests differently across age groups and individuals. Here are some signs that might indicate depression in your Darby family member:</p>
           
           <h3>In Adults:</h3>
           <ul className="list-disc pl-6 space-y-2">
@@ -254,22 +254,22 @@ const getBlogPostDataById = (id: string) => {
           
           <p>If you notice these signs, our <Link to="/services" className="text-primary hover:underline">mental health assessment services</Link> at Sunrise Human Care Services can help determine if depression is present and recommend appropriate next steps.</p>
           
-          <h2>Communication Strategies for Havertown Families</h2>
+          <h2>Communication Strategies for Darby Families</h2>
           
-          <p>Effective communication is crucial when supporting a family member with depression. Here are approaches we've found particularly helpful for Havertown families:</p>
+          <p>Effective communication is crucial when supporting a family member with depression. Here are approaches we've found particularly helpful for Darby families:</p>
           
           <h3>Do:</h3>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Express concern with specific observations: "I've noticed you haven't been going to your weekly meetup at the Havertown Community Recreation Center."</li>
+            <li>Express concern with specific observations: "I've noticed you haven't been going to your weekly meetup at the Darby Community Recreation Center."</li>
             <li>Use "I" statements: "I care about you and am here to support you."</li>
-            <li>Offer specific help: "Would you like me to drive you to your appointment on West Chester Pike?"</li>
+            <li>Offer specific help: "Would you like me to drive you to your appointment on Main Street?"</li>
             <li>Validate their feelings: "It makes sense that you're feeling overwhelmed with everything going on."</li>
             <li>Create a judgment-free zone for honest conversation</li>
           </ul>
           
           <h3>Avoid:</h3>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Dismissive statements: "Everyone in Havertown is stressed; you just need to get out more."</li>
+            <li>Dismissive statements: "Everyone in Darby is stressed; you just need to get out more."</li>
             <li>Comparisons to others: "Your sister is handling her job loss much better."</li>
             <li>Trying to "fix" their depression with quick solutions</li>
             <li>Pressuring them to attend social events before they're ready</li>
@@ -280,12 +280,12 @@ const getBlogPostDataById = (id: string) => {
           
           <h2>Practical Support Strategies</h2>
           
-          <p>Beyond emotional support, there are concrete ways Havertown families can help a loved one managing depression:</p>
+          <p>Beyond emotional support, there are concrete ways Darby families can help a loved one managing depression:</p>
           
           <h3>Support Their Treatment Journey:</h3>
           <ul className="list-disc pl-6 space-y-2">
             <li>Offer to help research local mental health providers who accept their insurance</li>
-            <li>Provide transportation to appointments in Havertown or surrounding areas</li>
+            <li>Provide transportation to appointments in Darby or surrounding areas</li>
             <li>Help them create a comfortable environment for telehealth sessions if they prefer virtual care</li>
             <li>Gently check in about medication adherence if appropriate</li>
             <li>Recognize and celebrate small improvements without creating pressure</li>
@@ -293,7 +293,7 @@ const getBlogPostDataById = (id: string) => {
           
           <h3>Assist with Daily Life:</h3>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Drop off a meal from a local Havertown restaurant</li>
+            <li>Drop off a meal from a local Darby restaurant</li>
             <li>Invite them for a gentle walk through Haverford Reserve</li>
             <li>Help with tasks that might feel overwhelming, like grocery shopping at ACME</li>
             <li>Create a low-pressure routine that includes small, manageable activities</li>
@@ -301,7 +301,7 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Remember that depression often makes everyday tasks feel insurmountable, so practical help can be just as valuable as emotional support.</p>
           
-          <h2>Havertown and Delaware County Resources</h2>
+          <h2>Darby and Delaware County Resources</h2>
           
           <p>Our community offers several valuable resources for families supporting someone with depression:</p>
           
@@ -309,19 +309,19 @@ const getBlogPostDataById = (id: string) => {
             <li><strong>Delaware County Crisis Connections Team:</strong> 855-889-7827 (available 24/7)</li>
             <li><strong>Haverford Township Free Library:</strong> Offers mental health awareness events and resources</li>
             <li><strong>Delaware County NAMI Chapter:</strong> Provides family support groups and education</li>
-            <li><strong>Havertown Senior Center:</strong> Resources specifically for older adults experiencing depression</li>
-            <li><strong>Sunrise Human Care Services:</strong> Our practice at 2050 West Chester Pike offers <Link to="/services" className="text-primary hover:underline">comprehensive depression treatment</Link> and family support</li>
+            <li><strong>Darby Senior Center:</strong> Resources specifically for older adults experiencing depression</li>
+            <li><strong>Sunrise Human Care Services:</strong> Our practice at 869 Main Street offers <Link to="/services" className="text-primary hover:underline">comprehensive depression treatment</Link> and family support</li>
           </ul>
           
           <p>Connecting your loved one with these local resources can provide additional support beyond what family alone can offer.</p>
           
           <h2>Caring for Yourself as a Support Person</h2>
           
-          <p>Supporting someone with depression can be emotionally exhausting. As a Havertown family member providing care, it's essential to maintain your own wellbeing:</p>
+          <p>Supporting someone with depression can be emotionally exhausting. As a Darby family member providing care, it's essential to maintain your own wellbeing:</p>
           
           <ul className="list-disc pl-6 space-y-2">
             <li>Set realistic boundaries about what support you can provide</li>
-            <li>Connect with other Havertown families through support groups</li>
+            <li>Connect with other Darby families through support groups</li>
             <li>Maintain your own activities and relationships</li>
             <li>Consider individual therapy to process your own emotions</li>
             <li>Recognize the limitations of your role – you cannot "fix" your loved one's depression</li>
@@ -342,31 +342,31 @@ const getBlogPostDataById = (id: string) => {
           
           <p>In these cases, contact crisis services immediately or bring your loved one to the nearest emergency department, such as Delaware County Memorial Hospital or Lankenau Medical Center.</p>
           
-          <h2>Hope and Recovery in Havertown</h2>
+          <h2>Hope and Recovery in Darby</h2>
           
-          <p>While supporting a family member with depression is challenging, it's important to maintain hope. Our Havertown practice has witnessed countless recovery journeys, and we know that with appropriate treatment and support, people can and do recover from depression.</p>
+          <p>While supporting a family member with depression is challenging, it's important to maintain hope. Our Darby practice has witnessed countless recovery journeys, and we know that with appropriate treatment and support, people can and do recover from depression.</p>
           
-          <p>By combining professional help from qualified providers like our team at Sunrise Human Care Services with compassionate family support, your loved one can find their path to wellness right here in our Havertown community.</p>
+          <p>By combining professional help from qualified providers like our team at Sunrise Human Care Services with compassionate family support, your loved one can find their path to wellness right here in our Darby community.</p>
         </>
     },
-    "seasonal-affective-disorder-havertown": {
-      title: "Seasonal Affective Disorder in Havertown: Coping with Pennsylvania's Winter Blues",
+    "seasonal-affective-disorder-darby": {
+      title: "Seasonal Affective Disorder in Darby: Coping with Pennsylvania's Winter Blues",
       date: "June 15, 2024",
       readTime: "6 min read",
-      excerpt: "How Pennsylvania's winter weather patterns affect mental health in Havertown specifically, with practical coping strategies for seasonal depression.",
+      excerpt: "How Pennsylvania's winter weather patterns affect mental health in Darby specifically, with practical coping strategies for seasonal depression.",
       ctaTopic: "seasonal mood changes",
       ctaTopicLink: "Seasonal Affective Disorder",
       content: <>
-          <p className="lead font-medium text-xl text-foreground/90 mb-8">As the daylight hours shorten and the Delaware County skies turn increasingly gray, many Havertown residents notice a distinct shift in their mood and energy levels. This phenomenon, known as Seasonal Affective Disorder (SAD), affects approximately 5% of adults in the United States – with even more experiencing a milder form often called the "winter blues."</p>
+          <p className="lead font-medium text-xl text-foreground/90 mb-8">As the daylight hours shorten and the Delaware County skies turn increasingly gray, many Darby residents notice a distinct shift in their mood and energy levels. This phenomenon, known as Seasonal Affective Disorder (SAD), affects approximately 5% of adults in the United States – with even more experiencing a milder form often called the "winter blues."</p>
           
-          <p>At Sunrise Human Care Services in Havertown, PA, we see a significant increase in clients seeking support for mood changes during Pennsylvania's darker months. Understanding how our specific regional climate impacts seasonal depression can help local residents develop effective coping strategies.</p>
+          <p>At Sunrise Human Care Services in Darby, PA, we see a significant increase in clients seeking support for mood changes during Pennsylvania's darker months. Understanding how our specific regional climate impacts seasonal depression can help local residents develop effective coping strategies.</p>
           
-          <h2>How Pennsylvania's Climate Affects Seasonal Depression in Havertown</h2>
+          <h2>How Pennsylvania's Climate Affects Seasonal Depression in Darby</h2>
           
-          <p>Havertown's location in southeastern Pennsylvania creates specific seasonal patterns that can influence mood and mental health:</p>
+          <p>Darby's location in southeastern Pennsylvania creates specific seasonal patterns that can influence mood and mental health:</p>
           
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Reduced Daylight Hours:</strong> During December and January, Havertown receives approximately 9-10 hours of daylight, compared to 15+ hours during summer months</li>
+            <li><strong>Reduced Daylight Hours:</strong> During December and January, Darby receives approximately 9-10 hours of daylight, compared to 15+ hours during summer months</li>
             <li><strong>Cloud Cover:</strong> The Philadelphia region experiences an average of 93 cloudy days per year, with most occurring during winter months</li>
             <li><strong>Temperature Fluctuations:</strong> Our area's variable winter temperatures can limit outdoor activities and social connection</li>
             <li><strong>Precipitation Patterns:</strong> Winter storms that sometimes hit our region can create additional isolation and stress</li>
@@ -374,9 +374,9 @@ const getBlogPostDataById = (id: string) => {
           
           <p>These climatic factors can trigger biochemical changes in the brain related to serotonin, melatonin, and vitamin D levels – all crucial for mood regulation. Our <Link to="/services" className="text-primary hover:underline">mental health services</Link> address both the psychological and physiological aspects of seasonal mood changes.</p>
           
-          <h2>Recognizing Seasonal Affective Disorder in Havertown</h2>
+          <h2>Recognizing Seasonal Affective Disorder in Darby</h2>
           
-          <p>While many people casually reference "winter blues," clinical Seasonal Affective Disorder has specific symptoms that Havertown residents should recognize:</p>
+          <p>While many people casually reference "winter blues," clinical Seasonal Affective Disorder has specific symptoms that Darby residents should recognize:</p>
           
           <h3>Common Symptoms in Our Community:</h3>
           <ul className="list-disc pl-6 space-y-2">
@@ -389,40 +389,40 @@ const getBlogPostDataById = (id: string) => {
             <li>Sleep disturbances – typically oversleeping but sometimes insomnia</li>
           </ul>
           
-          <p>If you notice these symptoms following a seasonal pattern, our <Link to="/services" className="text-primary hover:underline">specialized therapy programs</Link> at Sunrise Human Care Services include evidence-based treatments for seasonal affective disorder that can help Havertown residents thrive year-round.</p>
+          <p>If you notice these symptoms following a seasonal pattern, our <Link to="/services" className="text-primary hover:underline">specialized therapy programs</Link> at Sunrise Human Care Services include evidence-based treatments for seasonal affective disorder that can help Darby residents thrive year-round.</p>
           
-          <h2>Coping Strategies Tailored to Havertown Living</h2>
+          <h2>Coping Strategies Tailored to Darby Living</h2>
           
-          <p>While SAD is influenced by our regional climate, there are numerous effective strategies specifically relevant to Havertown residents:</p>
+          <p>While SAD is influenced by our regional climate, there are numerous effective strategies specifically relevant to Darby residents:</p>
           
           <h3>1. Maximize Natural Light Exposure</h3>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Position your desk or favorite chair near windows facing Havertown's southern exposure</li>
+            <li>Position your desk or favorite chair near windows facing Darby's southern exposure</li>
             <li>Take lunch breaks outdoors at local spots like the Haverford Reserve even on cloudy days (UV light penetrates clouds)</li>
             <li>Keep blinds open during daylight hours to allow maximum natural light into your home</li>
-            <li>Consider pruning trees that block southern light from entering your Havertown home</li>
+            <li>Consider pruning trees that block southern light from entering your Darby home</li>
           </ul>
           
           <h3>2. Explore Light Therapy</h3>
           <ul className="list-disc pl-6 space-y-2">
             <li>Light therapy boxes that provide 10,000 lux exposure can simulate sunlight</li>
             <li>Use for 20-30 minutes each morning during winter months</li>
-            <li>Local Havertown pharmacies like CVS and Rite Aid often carry these devices</li>
+            <li>Local Darby pharmacies like CVS and Rite Aid often carry these devices</li>
           </ul>
           
           <h3>3. Maintain Physical Activity</h3>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Utilize indoor facilities like the Havertown YMCA or local fitness centers</li>
+            <li>Utilize indoor facilities like the Darby YMCA or local fitness centers</li>
             <li>Take advantage of winter weather breaks to walk the Pennsy Trail or Haverford Reserve trails</li>
             <li>Consider weather-appropriate outdoor activities like the sledding hill at South Ardmore Park after snowfalls</li>
-            <li>Join community classes at the Havertown Community Recreation Center to combine exercise with social connection</li>
+            <li>Join community classes at the Darby Community Recreation Center to combine exercise with social connection</li>
           </ul>
           
           <p>Regular physical activity is one of the most effective natural interventions for seasonal mood changes, and our community offers many options even during winter months.</p>
           
           <h3>4. Social Connection Strategies</h3>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Schedule regular gatherings at Havertown's cozy local establishments like Kettle or Brick & Brew</li>
+            <li>Schedule regular gatherings at Darby's cozy local establishments like Kettle or Brick & Brew</li>
             <li>Join winter activities through Haverford Township Parks & Recreation</li>
             <li>Consider volunteering with local organizations like the Haverford Township Free Library or food banks</li>
             <li>Create a winter tradition with neighbors or friends, such as a monthly dinner rotation</li>
@@ -434,7 +434,7 @@ const getBlogPostDataById = (id: string) => {
           <ul className="list-disc pl-6 space-y-2">
             <li>Maintain consistent meal times to regulate circadian rhythms</li>
             <li>Consider vitamin D supplementation (after consulting with your healthcare provider)</li>
-            <li>Shop for mood-supporting foods at our local Havertown farmers market or ACME</li>
+            <li>Shop for mood-supporting foods at our local Darby farmers market or ACME</li>
             <li>Balance winter carbohydrate cravings with proteins and healthy fats</li>
           </ul>
           
@@ -446,9 +446,9 @@ const getBlogPostDataById = (id: string) => {
             <li>Consider Delaware County's winter offerings as opportunities rather than obstacles</li>
           </ul>
           
-          <p>Being proactive about seasonal mood changes can significantly reduce their impact. Our therapists can help create personalized wellness plans tailored to your specific needs and circumstances in Havertown.</p>
+          <p>Being proactive about seasonal mood changes can significantly reduce their impact. Our therapists can help create personalized wellness plans tailored to your specific needs and circumstances in Darby.</p>
           
-          <h2>Professional Treatment Options in Havertown</h2>
+          <h2>Professional Treatment Options in Darby</h2>
           
           <p>For many residents, self-care strategies may need to be supplemented with professional support:</p>
           
@@ -459,7 +459,7 @@ const getBlogPostDataById = (id: string) => {
             <li><strong>Mindfulness-Based Approaches:</strong> Helping manage the difficult emotions that accompany seasonal changes</li>
           </ul>
           
-          <p>At Sunrise Human Care Services, located at 2050 West Chester Pike in Havertown, our therapists are specially trained in these evidence-based approaches for seasonal mood disorders. We offer both in-person sessions and telehealth options for those who prefer to receive treatment from home during inclement weather.</p>
+          <p>At Sunrise Human Care Services, located at 869 Main Street in Darby, our therapists are specially trained in these evidence-based approaches for seasonal mood disorders. We offer both in-person sessions and telehealth options for those who prefer to receive treatment from home during inclement weather.</p>
           
           <h3>Medical Approaches:</h3>
           <ul className="list-disc pl-6 space-y-2">
@@ -470,14 +470,14 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Through our <Link to="/services" className="text-primary hover:underline">psychiatric services</Link>, we can provide comprehensive assessment and medication management when needed as part of a holistic treatment plan.</p>
           
-          <h2>Preparing for Next Winter: A Havertown Approach</h2>
+          <h2>Preparing for Next Winter: A Darby Approach</h2>
           
-          <p>One of the advantages of seasonal depression is its predictability. Havertown residents can prepare for winter challenges:</p>
+          <p>One of the advantages of seasonal depression is its predictability. Darby residents can prepare for winter challenges:</p>
           
           <ul className="list-disc pl-6 space-y-2">
             <li>Schedule a mental health "tune-up" in early fall before symptoms typically begin</li>
             <li>Plan winter activities and social commitments in advance</li>
-            <li>Consider organizing or joining a Havertown-based winter wellness group</li>
+            <li>Consider organizing or joining a Darby-based winter wellness group</li>
             <li>Prepare your home environment by maximizing light and creating cozy, inviting spaces</li>
           </ul>
           
@@ -485,7 +485,7 @@ const getBlogPostDataById = (id: string) => {
           
           <h2>The Broader Context: Seasonal Changes Beyond Winter</h2>
           
-          <p>While winter-onset SAD is most common in our region, some Havertown residents experience mood changes during other seasonal transitions:</p>
+          <p>While winter-onset SAD is most common in our region, some Darby residents experience mood changes during other seasonal transitions:</p>
           
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Spring-Onset SAD:</strong> Characterized by increased anxiety, insomnia, and irritability as days lengthen</li>
@@ -495,13 +495,13 @@ const getBlogPostDataById = (id: string) => {
           
           <p>Our <Link to="/services" className="text-primary hover:underline">comprehensive mental health services</Link> address all variations of mood changes related to seasons, not just the winter pattern.</p>
           
-          <h2>Community as Medicine: Havertown's Unique Advantage</h2>
+          <h2>Community as Medicine: Darby's Unique Advantage</h2>
           
-          <p>One of Havertown's greatest assets in combating seasonal depression is its strong community fabric. Unlike more isolated areas, our township offers numerous opportunities for connection even during the challenging winter months.</p>
+          <p>One of Darby's greatest assets in combating seasonal depression is its strong community fabric. Unlike more isolated areas, our township offers numerous opportunities for connection even during the challenging winter months.</p>
           
-          <p>From community events at the Haverford Township Free Library to winter farmers markets, these community touchpoints can be powerful medicine for seasonal depression. Our therapists often "prescribe" community engagement as part of treatment plans for Havertown residents struggling with seasonal mood changes.</p>
+          <p>From community events at the Haverford Township Free Library to winter farmers markets, these community touchpoints can be powerful medicine for seasonal depression. Our therapists often "prescribe" community engagement as part of treatment plans for Darby residents struggling with seasonal mood changes.</p>
           
-          <p>Remember that seasonal depression, while challenging, is highly treatable with the right combination of self-care, community connection, and professional support. At Sunrise Human Care Services, we're committed to helping Havertown residents thrive during every season of the year.</p>
+          <p>Remember that seasonal depression, while challenging, is highly treatable with the right combination of self-care, community connection, and professional support. At Sunrise Human Care Services, we're committed to helping Darby residents thrive during every season of the year.</p>
         </>
     }
   };
@@ -511,18 +511,18 @@ const getBlogPostDataById = (id: string) => {
 // Function to get other blog posts for related content
 const getOtherBlogPosts = (currentId: string) => {
   const allPosts = [{
-    id: "anxiety-signs-havertown",
-    title: "5 Signs of Anxiety That Havertown Residents Shouldn't Ignore",
+    id: "anxiety-signs-darby",
+    title: "5 Signs of Anxiety That Darby Residents Shouldn't Ignore",
     date: "June 20, 2024",
     readTime: "7 min read"
   }, {
-    id: "supporting-depression-havertown",
-    title: "How Havertown Families Can Support a Loved One with Depression",
+    id: "supporting-depression-darby",
+    title: "How Darby Families Can Support a Loved One with Depression",
     date: "June 18, 2024",
     readTime: "8 min read"
   }, {
-    id: "seasonal-affective-disorder-havertown",
-    title: "Seasonal Affective Disorder in Havertown: Coping with Pennsylvania's Winter Blues",
+    id: "seasonal-affective-disorder-darby",
+    title: "Seasonal Affective Disorder in Darby: Coping with Pennsylvania's Winter Blues",
     date: "June 15, 2024",
     readTime: "6 min read"
   }];

@@ -2,13 +2,13 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 const BPDTherapy = () => {
   const pageData = {
-    title: "Borderline Personality Disorder Treatment in Havertown, PA",
-    description: "Specialized therapy for Borderline Personality Disorder (BPD) and emotional regulation in Havertown, PA.",
+    title: "Borderline Personality Disorder Treatment in Darby, PA",
+    description: "Specialized therapy for Borderline Personality Disorder (BPD) and emotional regulation in Darby, PA.",
     pageTitle: "Borderline Personality Disorder Treatment | Sunrise Human Care Services",
-    metaDescription: "Specialized treatment for Borderline Personality Disorder in Havertown, PA. Dialectical Behavior Therapy (DBT) and evidence-based approaches for emotional regulation.",
+    metaDescription: "Specialized treatment for Borderline Personality Disorder in Darby, PA. Dialectical Behavior Therapy (DBT) and evidence-based approaches for emotional regulation.",
     serviceType: "Borderline Personality Disorder Treatment",
-    canonicalUrl: "/bpd-therapy-havertown-pa",
-    heroImage: "/images/Therapy-in-havertown.webp",
+    canonicalUrl: "/bpd-therapy-darby-pa",
+    heroImage: "/images/Therapy-in-darby.webp",
     benefits: ["Comprehensive psychiatric assessment", "Dialectical Behavior Therapy (DBT)", "Schema Therapy when appropriate", "Emotional regulation skills training", "Interpersonal effectiveness development", "Mindfulness and distress tolerance techniques", "Crisis management strategies"],
     approaches: [{
       title: "Understanding Borderline Personality Disorder",
@@ -38,13 +38,13 @@ const BPDTherapy = () => {
     }],
     relatedServices: [{
       title: "Depression Therapy",
-      url: "/depression-therapy-havertown-pa"
+      url: "/depression-therapy-darby-pa"
     }, {
       title: "Anxiety Therapy",
-      url: "/anxiety-therapy-havertown-pa"
+      url: "/anxiety-therapy-darby-pa"
     }, {
       title: "Trauma & PTSD Therapy",
-      url: "/ptsd-therapy-havertown-pa"
+      url: "/ptsd-therapy-darby-pa"
     }]
   };
   return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
@@ -59,7 +59,7 @@ const BPDTherapy = () => {
                 
                 <div className="space-y-4">
                   <p>
-                    At Sunrise Human Care Services in Havertown, PA, we specialize in evidence-based treatments for Borderline Personality Disorder (BPD). Our approach centers on Dialectical Behavior Therapy (DBT), a comprehensive treatment specifically developed for BPD and emotions that feel overwhelming.
+                    At Sunrise Human Care Services in Darby, PA, we specialize in evidence-based treatments for Borderline Personality Disorder (BPD). Our approach centers on Dialectical Behavior Therapy (DBT), a comprehensive treatment specifically developed for BPD and emotions that feel overwhelming.
                   </p>
                   
                   <p>

@@ -54,33 +54,33 @@ const TraumaPTSDTherapy = () => {
   ];
   
   const relatedServices = [
-    { title: "Individual Therapy", url: "/individual-therapy-havertown-pa" },
-    { title: "Anxiety Therapy", url: "/anxiety-therapy-havertown-pa" },
-    { title: "Depression Therapy", url: "/depression-therapy-havertown-pa" }
+    { title: "Individual Therapy", url: "/individual-therapy-darby-pa" },
+    { title: "Anxiety Therapy", url: "/anxiety-therapy-darby-pa" },
+    { title: "Depression Therapy", url: "/depression-therapy-darby-pa" }
   ];
   
   return (
     <>
       <SEOHead 
-        title="Trauma & PTSD Therapy in Havertown, PA | EMDR Therapy | Sunrise Human Care" 
-        description="Specialized trauma and PTSD treatment in Havertown, PA including EMDR therapy. Our trauma-informed therapists help you process traumatic experiences and reduce symptoms like flashbacks, nightmares, and anxiety. Call (814) 620-2162." 
-        canonicalUrl="https://sunrisehumancare.com/ptsd-therapy-havertown-pa"
-        keywords="trauma therapy Havertown, PTSD treatment Pennsylvania, EMDR therapy Delaware County, trauma-focused CBT, childhood trauma counseling, complex PTSD therapy, trauma recovery"
+        title="Trauma & PTSD Therapy in Darby, PA | EMDR Therapy | Sunrise Human Care" 
+        description="Specialized trauma and PTSD treatment in Darby, PA including EMDR therapy. Our trauma-informed therapists help you process traumatic experiences and reduce symptoms like flashbacks, nightmares, and anxiety. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/ptsd-therapy-darby-pa"
+        keywords="trauma therapy Darby, PTSD treatment Pennsylvania, EMDR therapy Delaware County, trauma-focused CBT, childhood trauma counseling, complex PTSD therapy, trauma recovery"
         serviceSchema={{
           name: "Trauma & PTSD Therapy",
           description: "Specialized therapeutic approaches for healing from trauma and PTSD, including EMDR therapy and trauma-focused counseling.",
           provider: "Sunrise Human Care Services",
           serviceType: "Trauma Treatment",
-          areaServed: "Havertown, PA and Delaware County"
+          areaServed: "Darby, PA and Delaware County"
         }}
       />
       <ServicePageLayout
-        title="Trauma & PTSD Therapy in Havertown, PA"
+        title="Trauma & PTSD Therapy in Darby, PA"
         description="Specialized therapeutic approaches for healing from trauma and PTSD, including EMDR therapy and trauma-focused counseling."
-        pageTitle="Expert Trauma & PTSD Therapy in Havertown, PA - EMDR & Trauma Treatment | Sunrise Human Care"
-        metaDescription="Effective trauma and PTSD treatment in Havertown, PA. Specialized approaches including EMDR therapy help you process traumatic experiences and reclaim your life. Schedule today."
+        pageTitle="Expert Trauma & PTSD Therapy in Darby, PA - EMDR & Trauma Treatment | Sunrise Human Care"
+        metaDescription="Effective trauma and PTSD treatment in Darby, PA. Specialized approaches including EMDR therapy help you process traumatic experiences and reclaim your life. Schedule today."
         serviceType="Trauma & PTSD Therapy"
-        canonicalUrl="/ptsd-therapy-havertown-pa"
+        canonicalUrl="/ptsd-therapy-darby-pa"
         benefits={benefits}
         approaches={approaches}
         faqs={faqs}
@@ -99,7 +99,7 @@ const TraumaPTSDTherapy = () => {
             >
               <div className="space-y-5 text-muted-foreground">
                 <p className="leading-relaxed">
-                  At Sunrise Human Care Services in Havertown, PA, we understand that trauma can profoundly impact every aspect of your life. Our trauma-informed therapists specialize in evidence-based approaches specifically designed to help you process traumatic experiences and reduce their impact on your daily life.
+                  At Sunrise Human Care Services in Darby, PA, we understand that trauma can profoundly impact every aspect of your life. Our trauma-informed therapists specialize in evidence-based approaches specifically designed to help you process traumatic experiences and reduce their impact on your daily life.
                 </p>
                 
                 <p className="leading-relaxed">

@@ -51,8 +51,8 @@ const IndividualTherapy = () => {
 
   const faqs = [
     {
-      question: "What does individual therapy in Havertown involve?",
-      answer: "Individual therapy in Havertown offers a personalized process where licensed therapists support you in addressing challenges like anxiety or depression in a confidential setting."
+      question: "What does individual therapy in Darby involve?",
+      answer: "Individual therapy in Darby offers a personalized process where licensed therapists support you in addressing challenges like anxiety or depression in a confidential setting."
     },
     {
       question: "How often are therapy sessions recommended?",
@@ -81,26 +81,26 @@ const IndividualTherapy = () => {
   ];
 
   const relatedServices = [
-    { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-havertown-pa" },
-    { title: "Medication Management", url: "/medication-management-havertown-pa" },
-    { title: "Child Therapy", url: "/child-therapy-havertown-pa" }
+    { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-darby-pa" },
+    { title: "Medication Management", url: "/medication-management-darby-pa" },
+    { title: "Child Therapy", url: "/child-therapy-darby-pa" }
   ];
 
   const conditions = [
     {
       title: "Anxiety Disorders",
-      description: "Havertown therapy for anxiety, including generalized anxiety, social anxiety, and panic disorders.",
-      url: "/anxiety-therapy-havertown-pa"
+      description: "Darby therapy for anxiety, including generalized anxiety, social anxiety, and panic disorders.",
+      url: "/anxiety-therapy-darby-pa"
     },
     {
       title: "Depression",
-      description: "Depression therapy in Havertown to improve mood and daily functioning with evidence-based methods.",
-      url: "/depression-therapy-havertown-pa"
+      description: "Depression therapy in Darby to improve mood and daily functioning with evidence-based methods.",
+      url: "/depression-therapy-darby-pa"
     },
     {
       title: "Trauma & PTSD",
-      description: "Trauma therapy in Havertown to heal from past experiences using trauma-informed care.",
-      url: "/ptsd-therapy-havertown-pa"
+      description: "Trauma therapy in Darby to heal from past experiences using trauma-informed care.",
+      url: "/ptsd-therapy-darby-pa"
     }
   ];
 
@@ -129,19 +129,19 @@ const IndividualTherapy = () => {
 
   return (
       <ServicePageLayout
-        title="Individual Therapy in Havertown, PA"
-        description="Personalized individual therapy in Havertown, PA with licensed therapists helping you navigate anxiety, depression, and trauma using proven counseling methods."
-        pageTitle="Individual Therapy in Havertown, PA | Evidence-Based Counseling"
-        metaDescription="Individual therapy in Havertown, PA with licensed therapists for anxiety, depression, and trauma. Personalized counseling, flexible scheduling, insurance accepted."
+        title="Individual Therapy in Darby, PA"
+        description="Personalized individual therapy in Darby, PA with licensed therapists helping you navigate anxiety, depression, and trauma using proven counseling methods."
+        pageTitle="Individual Therapy in Darby, PA | Evidence-Based Counseling"
+        metaDescription="Individual therapy in Darby, PA with licensed therapists for anxiety, depression, and trauma. Personalized counseling, flexible scheduling, insurance accepted."
         serviceType="Individual Therapy"
-        canonicalUrl="/individual-therapy-havertown-pa"
+        canonicalUrl="/individual-therapy-darby-pa"
         benefits={benefits}
         approaches={approaches}
         faqs={faqs}
         relatedServices={relatedServices}
       >
         <ServiceContentSection 
-          title="Why Choose Individual Therapy in Havertown, PA" 
+          title="Why Choose Individual Therapy in Darby, PA" 
           hasBgPattern={true}
           tagText="Expert Care"
         >
@@ -154,10 +154,10 @@ const IndividualTherapy = () => {
             >
               <div className="space-y-5 text-muted-foreground">
                 <p className="leading-relaxed">
-                  Individual therapy in Havertown offers a supportive space to explore your emotions and challenges. At Sunrise Human Care Services, our licensed therapists create personalized plans to help you grow, whether addressing anxiety, depression, or personal goals.
+                  Individual therapy in Darby offers a supportive space to explore your emotions and challenges. At Sunrise Human Care Services, our licensed therapists create personalized plans to help you grow, whether addressing anxiety, depression, or personal goals.
                 </p>
                 <p className="leading-relaxed">
-                  Beginning therapy can feel overwhelming, especially when seeking a therapist nearby. Our Havertown team fosters a welcoming environment, listening closely to understand your needs and tailoring sessions to support your journey.
+                  Beginning therapy can feel overwhelming, especially when seeking a therapist nearby. Our Darby team fosters a welcoming environment, listening closely to understand your needs and tailoring sessions to support your journey.
                 </p>
                 <p className="leading-relaxed">
                   We use proven methods like Cognitive Behavioral Therapy and mindfulness, adjusting each session to fit your situation. Available in-person or via telehealth, our counseling helps you build skills for lasting change.
@@ -190,7 +190,7 @@ const IndividualTherapy = () => {
                     ]
                   },
                   {
-                    title: "Why Choose Sunrise in Havertown for Therapy?",
+                    title: "Why Choose Sunrise in Darby for Therapy?",
                     items: [
                       "Compassionate, licensed professionals",
                       "Convenient Delaware County location",
@@ -232,14 +232,14 @@ const IndividualTherapy = () => {
         </ServiceContentSection>
 
         <ServiceContentSection 
-          title="How Individual Therapy Works in Havertown" 
+          title="How Individual Therapy Works in Darby" 
           className="bg-white"
           variant="default"
           tagText="Our Process"
         >
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Individual therapy in Havertown is a personalized process designed to support your mental health goals. Here's how our licensed therapists guide you at Sunrise Human Care Services.
+              Individual therapy in Darby is a personalized process designed to support your mental health goals. Here's how our licensed therapists guide you at Sunrise Human Care Services.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
@@ -253,7 +253,7 @@ const IndividualTherapy = () => {
               <div>
                 <h3 className="text-xl font-semibold text-amber-900 mb-3">Initial Consultation</h3>
                 <p className="leading-relaxed">
-                  Your therapy begins with a consultation to discuss your concerns and goals. Our Havertown therapists listen carefully, building a foundation for personalized counseling.
+                  Your therapy begins with a consultation to discuss your concerns and goals. Our Darby therapists listen carefully, building a foundation for personalized counseling.
                 </p>
               </div>
               <div>
@@ -311,14 +311,14 @@ const IndividualTherapy = () => {
         </ServiceContentSection>
 
         <ServiceContentSection 
-          title="Types of Individual Therapy in Havertown" 
+          title="Types of Individual Therapy in Darby" 
           hasBgPattern={true}
           variant="alternate"
           tagText="Therapy Options"
         >
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Our therapy in Havertown is designed to meet varied needs, from quick solutions to deep exploration, with licensed therapists guiding your path to wellness.
+              Our therapy in Darby is designed to meet varied needs, from quick solutions to deep exploration, with licensed therapists guiding your path to wellness.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -353,13 +353,13 @@ const IndividualTherapy = () => {
         </ServiceContentSection>
 
         <ServiceContentSection 
-          title="Mental Health Conditions Addressed in Havertown" 
+          title="Mental Health Conditions Addressed in Darby" 
           variant="highlight"
           tagText="Conditions We Treat" 
         >
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Our individual therapy in Havertown addresses mental health challenges with evidence-based techniques. Licensed therapists help you find relief and build resilience.
+              Our individual therapy in Darby addresses mental health challenges with evidence-based techniques. Licensed therapists help you find relief and build resilience.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -413,7 +413,7 @@ const IndividualTherapy = () => {
                 className="space-y-5 text-muted-foreground"
               >
                 <p className="leading-relaxed">
-                  Individual therapy in Havertown is a transformative tool for mental health and personal growth. At Sunrise Human Care Services, our licensed therapists empower you to overcome challenges and thrive.
+                  Individual therapy in Darby is a transformative tool for mental health and personal growth. At Sunrise Human Care Services, our licensed therapists empower you to overcome challenges and thrive.
                 </p>
                 <p className="leading-relaxed">
                   Counseling helps uncover patterns behind distress, offering new ways to cope. Whether managing anxiety or healing trauma, we tailor strategies to fit your life.

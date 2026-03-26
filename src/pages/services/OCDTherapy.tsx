@@ -60,36 +60,36 @@ const OCDTherapy = () => {
   ];
   
   const relatedServices = [
-    { title: "Anxiety Therapy", url: "/anxiety-therapy-havertown-pa" },
-    { title: "Depression Therapy", url: "/depression-therapy-havertown-pa" },
-    { title: "Individual Therapy", url: "/individual-therapy-havertown-pa" },
-    { title: "Medication Management", url: "/medication-management-havertown-pa" },
-    { title: "Family Therapy", url: "/family-therapy-havertown-pa" },
-    { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-havertown-pa" }
+    { title: "Anxiety Therapy", url: "/anxiety-therapy-darby-pa" },
+    { title: "Depression Therapy", url: "/depression-therapy-darby-pa" },
+    { title: "Individual Therapy", url: "/individual-therapy-darby-pa" },
+    { title: "Medication Management", url: "/medication-management-darby-pa" },
+    { title: "Family Therapy", url: "/family-therapy-darby-pa" },
+    { title: "Psychiatric Evaluations", url: "/psychiatric-evaluations-darby-pa" }
   ];
 
   return (
     <>
       <SEOHead 
-        title="OCD Treatment in Havertown, PA | ERP Therapy | Sunrise Human Care" 
-        description="Specialized OCD therapy in Havertown using Exposure and Response Prevention (ERP), the gold standard for OCD treatment. Our experts help reduce obsessions, compulsions, and anxiety. Call (814) 620-2162." 
-        canonicalUrl="https://sunrisehumancare.com/ocd-therapy-havertown-pa"
-        keywords="OCD treatment Havertown, ERP therapy Pennsylvania, intrusive thoughts help, compulsion reduction therapy, OCD specialist Delaware County, contamination OCD treatment, scrupulosity therapy"
+        title="OCD Treatment in Darby, PA | ERP Therapy | Sunrise Human Care" 
+        description="Specialized OCD therapy in Darby using Exposure and Response Prevention (ERP), the gold standard for OCD treatment. Our experts help reduce obsessions, compulsions, and anxiety. Call (814) 620-2162." 
+        canonicalUrl="https://sunrisehumancare.com/ocd-therapy-darby-pa"
+        keywords="OCD treatment Darby, ERP therapy Pennsylvania, intrusive thoughts help, compulsion reduction therapy, OCD specialist Delaware County, contamination OCD treatment, scrupulosity therapy"
         serviceSchema={{
           name: "OCD Treatment",
           description: "Evidence-based OCD therapy using Exposure and Response Prevention (ERP) and other proven approaches to reduce obsessions and compulsions.",
           provider: "Sunrise Human Care Services",
           serviceType: "OCD Therapy",
-          areaServed: "Havertown, PA and Delaware County"
+          areaServed: "Darby, PA and Delaware County"
         }}
       />
       <ServicePageLayout
-        title="Specialized OCD Treatment in Havertown, PA"
+        title="Specialized OCD Treatment in Darby, PA"
         description="Evidence-based OCD therapy using Exposure and Response Prevention (ERP) and other proven approaches to reduce obsessions and compulsions."
-        pageTitle="OCD Treatment | Sunrise Human Care Services | Havertown, PA"
-        metaDescription="Effective OCD therapy in Havertown, PA. Our specialized approach using ERP and cognitive-behavioral therapy helps reduce obsessions and compulsions."
+        pageTitle="OCD Treatment | Sunrise Human Care Services | Darby, PA"
+        metaDescription="Effective OCD therapy in Darby, PA. Our specialized approach using ERP and cognitive-behavioral therapy helps reduce obsessions and compulsions."
         serviceType="OCD Treatment"
-        canonicalUrl="/ocd-therapy-havertown-pa"
+        canonicalUrl="/ocd-therapy-darby-pa"
         benefits={benefits}
         approaches={approaches}
         faqs={faqs}
@@ -108,7 +108,7 @@ const OCDTherapy = () => {
                 
                 <div className="space-y-4">
                   <p>
-                    At Sunrise Human Care Services in Havertown, PA, we provide specialized, evidence-based treatment for Obsessive-Compulsive Disorder (OCD) and related conditions. Our therapists have extensive training in proven approaches that help reduce obsessions, compulsions, and the distress they cause.
+                    At Sunrise Human Care Services in Darby, PA, we provide specialized, evidence-based treatment for Obsessive-Compulsive Disorder (OCD) and related conditions. Our therapists have extensive training in proven approaches that help reduce obsessions, compulsions, and the distress they cause.
                   </p>
                   
                   <p>

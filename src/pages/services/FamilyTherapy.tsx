@@ -9,8 +9,8 @@ import { Badge } from '@/components/ui/badge';
 
 const FamilyTherapy = () => {
   const benefits = [
-    "Licensed Havertown Family Therapists with extensive experience",
-    "Convenient West Chester Pike location with parking",
+    "Licensed Darby Family Therapists with extensive experience",
+    "Convenient Main Street location with parking",
     "Flexible scheduling for all family members",
     "Most insurance plans accepted",
     "Safe, supportive environment for every family member",
@@ -72,16 +72,16 @@ const FamilyTherapy = () => {
 
   const relatedServices = [
     {
-      title: "Couples Counseling in Havertown",
-      url: "/couples-counseling-havertown-pa"
+      title: "Couples Counseling in Darby",
+      url: "/couples-counseling-darby-pa"
     },
     {
-      title: "Child & Adolescent Therapy in Havertown",
-      url: "/child-therapy-havertown-pa"
+      title: "Child & Adolescent Therapy in Darby",
+      url: "/child-therapy-darby-pa"
     },
     {
-      title: "Individual Therapy in Havertown",
-      url: "/individual-therapy-havertown-pa"
+      title: "Individual Therapy in Darby",
+      url: "/individual-therapy-darby-pa"
     }
   ];
 
@@ -98,20 +98,20 @@ const FamilyTherapy = () => {
     },
     {
       name: "Family Therapy",
-      url: "https://sunrisehumancare.com/family-therapy-havertown-pa",
+      url: "https://sunrisehumancare.com/family-therapy-darby-pa",
       position: 3
     }
   ];
 
   return (
     <ServicePageLayout 
-      title="Family Therapy in Havertown, PA" 
-      description="Expert family therapy in Havertown to improve communication, resolve conflicts, and strengthen relationships. Our experienced therapists help families navigate challenges and build stronger bonds." 
-      pageTitle="Expert Family Therapy in Havertown, PA | Build Stronger Family Bonds | Sunrise Human Care" 
-      metaDescription="Professional family therapy in Havertown, PA serving Delaware County families. Our experienced therapists help families improve communication, resolve conflicts, and strengthen bonds. Family counseling for Havertown, Drexel Hill, and Broomall." 
+      title="Family Therapy in Darby, PA" 
+      description="Expert family therapy in Darby to improve communication, resolve conflicts, and strengthen relationships. Our experienced therapists help families navigate challenges and build stronger bonds." 
+      pageTitle="Expert Family Therapy in Darby, PA | Build Stronger Family Bonds | Sunrise Human Care" 
+      metaDescription="Professional family therapy in Darby, PA serving Delaware County families. Our experienced therapists help families improve communication, resolve conflicts, and strengthen bonds. Family counseling for Darby, Drexel Hill, and Broomall." 
       serviceType="Family Therapy" 
-      canonicalUrl="/family-therapy-havertown-pa" 
-      heroImage="/images/family-counseling-havertown.webp" 
+      canonicalUrl="/family-therapy-darby-pa" 
+      heroImage="/images/family-counseling-darby.webp" 
       benefits={benefits} 
       approaches={approaches} 
       faqs={faqs} 
@@ -119,7 +119,7 @@ const FamilyTherapy = () => {
       schemaType="TherapeuticProcedure"
       breadcrumbs={familyTherapyBreadcrumbs}
     >
-      <ServiceContentSection title="Our Family Therapy Approach in Havertown" hasBgPattern={true}>
+      <ServiceContentSection title="Our Family Therapy Approach in Darby" hasBgPattern={true}>
         <div className="mb-6">
           <SectionTag icon={<HeartHandshake className="h-3 w-3" />}>Strengthening Family Bonds</SectionTag>
         </div>
@@ -133,7 +133,7 @@ const FamilyTherapy = () => {
           >
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed text-base lg:text-lg">
-                At Sunrise Human Care Services in Havertown, our family therapy program begins with understanding your family's unique dynamics, strengths, and challenges. We create a welcoming environment where every family member feels safe to express themselves.
+                At Sunrise Human Care Services in Darby, our family therapy program begins with understanding your family's unique dynamics, strengths, and challenges. We create a welcoming environment where every family member feels safe to express themselves.
               </p>
               
               <p className="leading-relaxed text-base lg:text-lg">

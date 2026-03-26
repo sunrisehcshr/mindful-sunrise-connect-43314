@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const CouplesCounseling = () => {
   const benefits = [
-    "Expert couples counselors trained in Havertown",
+    "Expert couples counselors trained in Darby",
     "Private, comfortable session rooms",
     "Flexible evening and weekend scheduling",
     "Insurance-friendly, including Medicaid",
@@ -42,12 +42,12 @@ const CouplesCounseling = () => {
 
   const faqs = [
     {
-      question: "What can we expect from couples counseling in Havertown?",
-      answer: "Couples counseling in Havertown at Sunrise Human Care offers a tailored approach where licensed therapists guide partners to improve communication, resolve conflicts, and build a stronger bond in a confidential, supportive environment."
+      question: "What can we expect from couples counseling in Darby?",
+      answer: "Couples counseling in Darby at Sunrise Human Care offers a tailored approach where licensed therapists guide partners to improve communication, resolve conflicts, and build a stronger bond in a confidential, supportive environment."
     },
     {
       question: "Is couples counseling effective for long-term relationships?",
-      answer: "Yes, couples counseling in Havertown helps long-term partners address entrenched patterns, rebuild trust, and rediscover connection, using proven methods like The Gottman Method."
+      answer: "Yes, couples counseling in Darby helps long-term partners address entrenched patterns, rebuild trust, and rediscover connection, using proven methods like The Gottman Method."
     },
     {
       question: "Can unmarried couples benefit from relationship therapy in Delaware County?",
@@ -64,9 +64,9 @@ const CouplesCounseling = () => {
   ];
 
   const relatedServices = [
-    { title: "Family Therapy", url: "/family-therapy-havertown-pa" },
-    { title: "Individual Therapy", url: "/individual-therapy-havertown-pa" },
-    { title: "Anxiety Therapy", url: "/anxiety-therapy-havertown-pa" }
+    { title: "Family Therapy", url: "/family-therapy-darby-pa" },
+    { title: "Individual Therapy", url: "/individual-therapy-darby-pa" },
+    { title: "Anxiety Therapy", url: "/anxiety-therapy-darby-pa" }
   ];
 
   const counselingTypes = [
@@ -95,7 +95,7 @@ const CouplesCounseling = () => {
   const challenges = [
     {
       title: "Communication Breakdowns",
-      description: "Couples counseling in Havertown helps partners clarify misunderstandings, develop active listening skills, and express needs openly to strengthen their connection."
+      description: "Couples counseling in Darby helps partners clarify misunderstandings, develop active listening skills, and express needs openly to strengthen their connection."
     },
     {
       title: "Trust and Infidelity Issues",
@@ -114,32 +114,32 @@ const CouplesCounseling = () => {
   return (
     <>
       <SEOHead
-        title="Expert Couples Counseling in Havertown, PA | Marriage & Relationship Therapy"
-        description="Strengthen your relationship with couples counseling in Havertown, PA. Licensed therapists offer personalized support to improve communication, rebuild trust, and deepen intimacy in Delaware County."
-        canonicalUrl="https://sunrisehumancare.com/couples-counseling-havertown-pa"
-        keywords="couples counseling Havertown, marriage counseling PA, relationship therapy Delaware County, couples therapy near me, marriage therapist Havertown, premarital counseling Havertown"
+        title="Expert Couples Counseling in Darby, PA | Marriage & Relationship Therapy"
+        description="Strengthen your relationship with couples counseling in Darby, PA. Licensed therapists offer personalized support to improve communication, rebuild trust, and deepen intimacy in Delaware County."
+        canonicalUrl="https://sunrisehumancare.com/couples-counseling-darby-pa"
+        keywords="couples counseling Darby, marriage counseling PA, relationship therapy Delaware County, couples therapy near me, marriage therapist Darby, premarital counseling Darby"
         serviceSchema={{
           name: "Couples Counseling",
-          description: "Expert couples counseling in Havertown, PA to enhance communication, resolve conflicts, and strengthen relationships.",
+          description: "Expert couples counseling in Darby, PA to enhance communication, resolve conflicts, and strengthen relationships.",
           provider: "Sunrise Human Care Services",
           serviceType: "Couples Therapy",
-          areaServed: "Havertown, PA and Delaware County"
+          areaServed: "Darby, PA and Delaware County"
         }}
       />
 
       <ServicePageLayout
-        title="Couples Counseling in Havertown, PA"
-        description="Expert couples counseling in Havertown, PA with licensed therapists dedicated to helping partners improve communication, resolve conflicts, and build stronger relationships through evidence-based therapy."
-        pageTitle="Expert Couples Counseling in Havertown, PA | Relationship Therapy"
-        metaDescription="Strengthen your relationship with couples counseling in Havertown, PA. Licensed therapists offer personalized support to improve communication, rebuild trust, and deepen intimacy in Delaware County."
+        title="Couples Counseling in Darby, PA"
+        description="Expert couples counseling in Darby, PA with licensed therapists dedicated to helping partners improve communication, resolve conflicts, and build stronger relationships through evidence-based therapy."
+        pageTitle="Expert Couples Counseling in Darby, PA | Relationship Therapy"
+        metaDescription="Strengthen your relationship with couples counseling in Darby, PA. Licensed therapists offer personalized support to improve communication, rebuild trust, and deepen intimacy in Delaware County."
         serviceType="Couples Counseling"
-        canonicalUrl="/couples-counseling-havertown-pa"
+        canonicalUrl="/couples-counseling-darby-pa"
         benefits={benefits}
         approaches={approaches}
         faqs={faqs}
         relatedServices={relatedServices}
       >
-        <ServiceContentSection title="Why Choose Couples Counseling in Havertown, PA" hasBgPattern={true}>
+        <ServiceContentSection title="Why Choose Couples Counseling in Darby, PA" hasBgPattern={true}>
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             <motion.div
@@ -150,13 +150,13 @@ const CouplesCounseling = () => {
             >
               <div className="space-y-5 text-muted-foreground">
                 <p className="leading-relaxed">
-                  Couples counseling in Havertown, PA at Sunrise Human Care Services offers a safe, nurturing environment to strengthen your partnership. Our licensed therapists specialize in helping couples navigate challenges, from everyday misunderstandings to deeper relational issues, fostering a renewed sense of connection.
+                  Couples counseling in Darby, PA at Sunrise Human Care Services offers a safe, nurturing environment to strengthen your partnership. Our licensed therapists specialize in helping couples navigate challenges, from everyday misunderstandings to deeper relational issues, fostering a renewed sense of connection.
                 </p>
                 <p className="leading-relaxed">
-                  Starting couples therapy near me can feel like a big step. Our Havertown team is committed to making the process welcoming, listening closely to your needs and tailoring sessions to align with your relationship goals, whether you’re seeking to resolve conflicts or deepen your bond.
+                  Starting couples therapy near me can feel like a big step. Our Darby team is committed to making the process welcoming, listening closely to your needs and tailoring sessions to align with your relationship goals, whether you’re seeking to resolve conflicts or deepen your bond.
                 </p>
                 <p className="leading-relaxed">
-                  We draw on evidence-based approaches like Emotionally Focused Therapy (EFT) and The Gottman Method, adapting each session to your unique dynamic. Whether you prefer in-person counseling in Havertown or telehealth for marriage counseling PA, we provide tools to create lasting change.
+                  We draw on evidence-based approaches like Emotionally Focused Therapy (EFT) and The Gottman Method, adapting each session to your unique dynamic. Whether you prefer in-person counseling in Darby or telehealth for marriage counseling PA, we provide tools to create lasting change.
                 </p>
                 <p className="leading-relaxed">
                   Therapy is a collaborative journey, and our counselors work alongside you to track progress and celebrate milestones. If you’re ready to invest in your relationship, <Link to="/contact" className="text-orange-600 hover:text-orange-700">schedule a consultation today</Link> to begin.
@@ -186,9 +186,9 @@ const CouplesCounseling = () => {
                     ]
                   },
                   {
-                    title: "Why Sunrise in Havertown for Couples Counseling?",
+                    title: "Why Sunrise in Darby for Couples Counseling?",
                     items: [
-                      "Compassionate, licensed therapists in Havertown",
+                      "Compassionate, licensed therapists in Darby",
                       "Convenient access for Delaware County couples",
                       "Welcoming, judgment-free therapy spaces",
                       "Customized sessions for your unique needs",
@@ -227,11 +227,11 @@ const CouplesCounseling = () => {
           </div>
         </ServiceContentSection>
 
-        <ServiceContentSection title="How Couples Counseling Works in Havertown" className="bg-white">
+        <ServiceContentSection title="How Couples Counseling Works in Darby" className="bg-white">
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Couples counseling in Havertown, PA is a structured yet flexible process designed to help partners grow closer and tackle obstacles together. Here’s what the journey looks like at Sunrise Human Care Services.
+              Couples counseling in Darby, PA is a structured yet flexible process designed to help partners grow closer and tackle obstacles together. Here’s what the journey looks like at Sunrise Human Care Services.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
@@ -245,7 +245,7 @@ const CouplesCounseling = () => {
               <div>
                 <h3 className="text-xl font-semibold text-amber-900 mb-3">Initial Consultation</h3>
                 <p className="leading-relaxed">
-                  Your couples counseling journey begins with a consultation where we discuss your goals and challenges. Our Havertown therapists listen carefully to understand both partners’ perspectives, setting the stage for personalized marriage counseling PA.
+                  Your couples counseling journey begins with a consultation where we discuss your goals and challenges. Our Darby therapists listen carefully to understand both partners’ perspectives, setting the stage for personalized marriage counseling PA.
                 </p>
               </div>
               <div>
@@ -302,11 +302,11 @@ const CouplesCounseling = () => {
           </div>
         </ServiceContentSection>
 
-        <ServiceContentSection title="Types of Couples Counseling in Havertown" hasBgPattern={true}>
+        <ServiceContentSection title="Types of Couples Counseling in Darby" hasBgPattern={true}>
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Couples counseling in Havertown, PA is tailored to meet diverse needs, from enhancing daily interactions to preparing for lifelong commitments. Our licensed therapists offer specialized formats to support your relationship.
+              Couples counseling in Darby, PA is tailored to meet diverse needs, from enhancing daily interactions to preparing for lifelong commitments. Our licensed therapists offer specialized formats to support your relationship.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -337,11 +337,11 @@ const CouplesCounseling = () => {
           </div>
         </ServiceContentSection>
 
-        <ServiceContentSection title="Relationship Challenges Addressed in Havertown" className="bg-white">
+        <ServiceContentSection title="Relationship Challenges Addressed in Darby" className="bg-white">
           <div className="w-24 h-1 bg-amber-200 mx-auto mt-2 mb-8"></div>
           <div className="mb-10 max-w-4xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Relationships face unique challenges, and couples counseling in Havertown provides targeted support to help partners overcome obstacles and grow stronger together.
+              Relationships face unique challenges, and couples counseling in Darby provides targeted support to help partners overcome obstacles and grow stronger together.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -378,13 +378,13 @@ const CouplesCounseling = () => {
                 className="space-y-5 text-muted-foreground"
               >
                 <p className="leading-relaxed">
-                  Couples counseling in Havertown, PA is more than conflict resolution—it’s an investment in your relationship’s future. At Sunrise Human Care Services, our licensed therapists empower partners to build resilience, trust, and joy together.
+                  Couples counseling in Darby, PA is more than conflict resolution—it’s an investment in your relationship’s future. At Sunrise Human Care Services, our licensed therapists empower partners to build resilience, trust, and joy together.
                 </p>
                 <p className="leading-relaxed">
                   Relationship therapy in Delaware County uncovers the root causes of disconnection, offering practical strategies to restore harmony. Whether addressing trust issues or aligning life goals, our counselors create a plan that fits your unique journey.
                 </p>
                 <p className="leading-relaxed">
-                  Beyond immediate challenges, couples therapy near me cultivates skills for lifelong partnership. From better communication to deeper intimacy, our Havertown sessions lay the foundation for lasting change through marriage counseling PA.
+                  Beyond immediate challenges, couples therapy near me cultivates skills for lifelong partnership. From better communication to deeper intimacy, our Darby sessions lay the foundation for lasting change through marriage counseling PA.
                 </p>
                 <p className="leading-relaxed">
                   If you’re ready to transform your relationship, our team is here to guide you. <Link to="/contact" className="text-orange-600 hover:text-orange-700">Book your first session today</Link> and discover the difference counseling can make.

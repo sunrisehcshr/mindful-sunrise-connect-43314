@@ -104,7 +104,7 @@ const FullTeamSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-muted-foreground"
           >
-            Our experienced team brings together diverse specialties and backgrounds, united by a shared commitment to providing compassionate, evidence-based mental health care in Havertown and Delaware County.
+            Our experienced team brings together diverse specialties and backgrounds, united by a shared commitment to providing compassionate, evidence-based mental health care in Darby and Delaware County.
           </motion.p>
 
           <div className="mx-auto mt-6 mb-10 w-24">

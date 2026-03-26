@@ -3,13 +3,13 @@ import ServicePageLayout from '../../components/services/ServicePageLayout';
 import { motion } from 'framer-motion';
 const SchizophreniaTherapy = () => {
   const pageData = {
-    title: "Schizophrenia Treatment in Havertown, PA",
-    description: "Specialized treatment for schizophrenia and other psychotic disorders in Havertown, PA.",
+    title: "Schizophrenia Treatment in Darby, PA",
+    description: "Specialized treatment for schizophrenia and other psychotic disorders in Darby, PA.",
     pageTitle: "Schizophrenia Treatment | Sunrise Human Care Services",
-    metaDescription: "Comprehensive treatment for schizophrenia and psychotic disorders in Havertown, PA. Evidence-based therapy approaches, medication management, and family support.",
+    metaDescription: "Comprehensive treatment for schizophrenia and psychotic disorders in Darby, PA. Evidence-based therapy approaches, medication management, and family support.",
     serviceType: "Schizophrenia Treatment",
-    canonicalUrl: "/schizophrenia-treatment-havertown-pa",
-    heroImage: "/images/Therapy-in-havertown.webp",
+    canonicalUrl: "/schizophrenia-treatment-darby-pa",
+    heroImage: "/images/Therapy-in-darby.webp",
     benefits: ["Comprehensive assessment and diagnosis", "Medication management coordination", "Individual therapy using evidence-based approaches", "Family education and support", "Skills training for daily functioning", "Crisis intervention planning", "Ongoing symptom monitoring and management"],
     approaches: [{
       title: "Understanding Schizophrenia",
@@ -39,13 +39,13 @@ const SchizophreniaTherapy = () => {
     }],
     relatedServices: [{
       title: "Psychiatric Evaluations",
-      url: "/psychiatric-evaluations-havertown-pa"
+      url: "/psychiatric-evaluations-darby-pa"
     }, {
       title: "Medication Management",
-      url: "/medication-management-havertown-pa"
+      url: "/medication-management-darby-pa"
     }, {
       title: "Family Therapy",
-      url: "/family-therapy-havertown-pa"
+      url: "/family-therapy-darby-pa"
     }]
   };
   return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
@@ -60,7 +60,7 @@ const SchizophreniaTherapy = () => {
               <div>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    At Sunrise Human Care Services in Havertown, we understand that effective schizophrenia treatment requires a comprehensive, integrated approach. Our treatment model addresses the biological, psychological, and social aspects of the condition to provide holistic care.
+                    At Sunrise Human Care Services in Darby, we understand that effective schizophrenia treatment requires a comprehensive, integrated approach. Our treatment model addresses the biological, psychological, and social aspects of the condition to provide holistic care.
                   </p>
                   
                   <p>

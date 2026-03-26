@@ -67,7 +67,7 @@ const WarmHeroSection = () => {
             duration: 0.5,
             delay: 0.2
           }} className="mb-4">
-              <SectionTag>Mental Health Clinic in Havertown</SectionTag>
+              <SectionTag>Mental Health Clinic in Darby</SectionTag>
             </motion.div>
             
             <motion.h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-amber-950 leading-tight" initial={{
@@ -78,7 +78,7 @@ const WarmHeroSection = () => {
             duration: 0.6,
             delay: 0.3
           }}>
-              Expert Mental Health Care in Havertown, PA
+              Expert Mental Health Care in Darby, PA
             </motion.h1>
             
             <motion.p className="text-lg md:text-xl text-amber-900 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed" initial={{
@@ -88,7 +88,7 @@ const WarmHeroSection = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.4
-          }}>Step into a brighter tomorrow with Sunrise Human Care—offering comprehensive mental health care in Havertown with licensed therapists, psychologists, counselors, and psychiatrists for residents of Havertown, Broomall, and Drexel Hill.</motion.p>
+          }}>Step into a brighter tomorrow with Sunrise Human Care—offering comprehensive mental health care in Darby with licensed therapists, psychologists, counselors, and psychiatrists for residents of Darby, Broomall, and Drexel Hill.</motion.p>
             
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" initial={{
             opacity: 0,
@@ -144,8 +144,8 @@ const WarmHeroSection = () => {
               y: 0
             }}>
                 <ImageOptimizer 
-                  src="/images/family-counseling-havertown.webp" 
-                  alt="Expert family counseling services in Havertown, PA" 
+                  src="/images/family-counseling-darby.webp" 
+                  alt="Expert family counseling services in Darby, PA" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
                   priority={true} 
                   width={600} 

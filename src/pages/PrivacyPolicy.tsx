@@ -113,8 +113,8 @@ const PrivacyPolicy = () => {
                   </p>
                   <p>
                     Sunrise Human Care Services<br />
-                    2050 West Chester Pike<br />
-                    Havertown, PA 19083<br />
+                    869 Main Street<br />
+                    Darby, PA 19023<br />
                     Email: info@sunrisehcsllc.com<br />
                     Phone: (814) 620-2162
                   </p>

@@ -49,7 +49,7 @@ const Map: React.FC<MapProps> = ({ className }) => {
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
             onLoad={() => setMapLoaded(true)}
-            title="Sunrise Human Care Services Location in Havertown, PA"
+            title="Sunrise Human Care Services Location in Darby, PA"
           />
           {!mapLoaded && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-amber-50">
@@ -70,8 +70,8 @@ const Map: React.FC<MapProps> = ({ className }) => {
             </svg>
           </div>
           <h3 className="text-lg font-semibold text-amber-900 mb-2">Sunrise Human Care Services</h3>
-          <p className="text-amber-800 mb-1">2050 West Chester Pike</p>
-          <p className="text-amber-800">Havertown, PA 19083</p>
+          <p className="text-amber-800 mb-1">869 Main Street</p>
+          <p className="text-amber-800">Darby, PA 19023</p>
           <button 
             onClick={() => setShouldLoadMap(true)}
             className="mt-4 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-md hover:from-amber-600 hover:to-orange-600 transition-colors shadow-sm"

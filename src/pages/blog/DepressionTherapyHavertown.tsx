@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, Calendar, Heart, AlertTriangle } from "lucide-react";
 
-const DepressionTherapyHavertown = () => {
+const DepressionTherapyDarby = () => {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -43,11 +43,11 @@ const DepressionTherapyHavertown = () => {
   return (
     <>
       <SEOHead
-        title="Depression Therapy in Havertown, PA | When to Seek Help"
-        description="Recognize the signs of depression and learn about effective treatment options in Havertown, PA. Sunrise Human Care offers compassionate, expert depression care."
-        canonicalUrl="https://sunrisehumancare.com/blog/depression-therapy-havertown-signs-to-seek-help"
-        keywords="depression therapy Havertown, signs of depression, treating depression Delaware County, when to see a therapist for depression Havertown PA, depression psychiatrist near me"
-        ogImage="https://sunrisehumancare.com/images/Therapy-in-havertown.webp"
+        title="Depression Therapy in Darby, PA | When to Seek Help"
+        description="Recognize the signs of depression and learn about effective treatment options in Darby, PA. Sunrise Human Care offers compassionate, expert depression care."
+        canonicalUrl="https://sunrisehumancare.com/blog/depression-therapy-darby-signs-to-seek-help"
+        keywords="depression therapy Darby, signs of depression, treating depression Delaware County, when to see a therapist for depression Darby PA, depression psychiatrist near me"
+        ogImage="https://sunrisehumancare.com/images/Therapy-in-darby.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -68,7 +68,7 @@ const DepressionTherapyHavertown = () => {
 
             <header className="mb-8">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Depression Therapy in Havertown: Signs You Should Seek Help
+                Depression Therapy in Darby: Signs You Should Seek Help
               </h1>
               <div className="flex items-center gap-4 text-muted-foreground text-sm">
                 <time dateTime="2025-01-25">January 25, 2025</time>
@@ -78,14 +78,14 @@ const DepressionTherapyHavertown = () => {
             </header>
 
             <img 
-              src="/images/depression-therapy-havertown.webp" 
-              alt="Compassionate depression therapy session at Sunrise Human Care in Havertown, PA"
+              src="/images/depression-therapy-darby.webp" 
+              alt="Compassionate depression therapy session at Sunrise Human Care in Darby, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />
 
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-lg leading-relaxed text-foreground/90">
-                Depression affects more than 21 million adults in the United States each year, making it one of the most common mental health conditions. Yet many people in Havertown and throughout Delaware County suffer in silence, unsure whether their feelings warrant professional help. Understanding the signs of depression and knowing when to seek treatment can be life-changing—and potentially life-saving. This guide will help you recognize depression symptoms and explore effective treatment options available right here in Havertown, PA.
+                Depression affects more than 21 million adults in the United States each year, making it one of the most common mental health conditions. Yet many people in Darby and throughout Delaware County suffer in silence, unsure whether their feelings warrant professional help. Understanding the signs of depression and knowing when to seek treatment can be life-changing—and potentially life-saving. This guide will help you recognize depression symptoms and explore effective treatment options available right here in Darby, PA.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ const DepressionTherapyHavertown = () => {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">Common Signs and Symptoms of Depression</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
-                Depression is more than feeling sad or having a bad day. It's a persistent mood disorder that affects how you think, feel, and function in daily life. While everyone's experience is unique, certain signs indicate it may be time to seek professional depression therapy in Havertown.
+                Depression is more than feeling sad or having a bad day. It's a persistent mood disorder that affects how you think, feel, and function in daily life. While everyone's experience is unique, certain signs indicate it may be time to seek professional depression therapy in Darby.
               </p>
 
               <div className="space-y-4 mb-6">
@@ -144,7 +144,7 @@ const DepressionTherapyHavertown = () => {
                   When to Seek Help
                 </h3>
                 <p className="text-foreground/80 mb-2">
-                  Consider reaching out to a depression therapist in Havertown if:
+                  Consider reaching out to a depression therapist in Darby if:
                 </p>
                 <ul className="space-y-2 text-foreground/80">
                   <li>✓ Symptoms persist for two weeks or longer</li>
@@ -163,7 +163,7 @@ const DepressionTherapyHavertown = () => {
                 Depression rarely improves on its own without treatment. In fact, untreated depression often worsens over time and can lead to serious complications including relationship problems, job loss, substance abuse, and physical health issues like heart disease and chronic pain.
               </p>
               <p className="mb-6 text-foreground/90 leading-relaxed">
-                The good news is that depression is one of the most treatable mental health conditions. With proper care from experienced depression therapists in Havertown, most people experience significant improvement within weeks to months. Early intervention leads to:
+                The good news is that depression is one of the most treatable mental health conditions. With proper care from experienced depression therapists in Darby, most people experience significant improvement within weeks to months. Early intervention leads to:
               </p>
 
               <div className="grid md:grid-cols-2 gap-4">
@@ -187,7 +187,7 @@ const DepressionTherapyHavertown = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-foreground">Depression Treatment Approaches in Havertown</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground">Depression Treatment Approaches in Darby</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
                 Sunrise Human Care Services offers comprehensive, evidence-based depression treatment tailored to your unique situation. Our integrated approach combines therapy, medication management when appropriate, and supportive care to address depression from multiple angles.
               </p>
@@ -216,7 +216,7 @@ const DepressionTherapyHavertown = () => {
                     </div>
                   </div>
                   <div className="mt-4">
-                    <Link to="/depression-therapy-havertown-pa">
+                    <Link to="/depression-therapy-darby-pa">
                       <Button variant="outline">Learn More About Depression Therapy</Button>
                     </Link>
                   </div>
@@ -234,7 +234,7 @@ const DepressionTherapyHavertown = () => {
                     Research shows that combining therapy with medication produces better outcomes than either treatment alone for moderate to severe depression.
                   </p>
                   <div className="mt-4">
-                    <Link to="/psychiatric-evaluations-havertown-pa">
+                    <Link to="/psychiatric-evaluations-darby-pa">
                       <Button variant="outline">Schedule Psychiatric Evaluation</Button>
                     </Link>
                   </div>
@@ -260,7 +260,7 @@ const DepressionTherapyHavertown = () => {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">What to Expect at Your First Appointment</h2>
               <p className="mb-6 text-foreground/90 leading-relaxed">
-                Taking the first step toward depression treatment takes courage. At Sunrise Human Care Services, we've designed our intake process to be welcoming, confidential, and thorough. Here's what you can expect when you visit our Havertown office:
+                Taking the first step toward depression treatment takes courage. At Sunrise Human Care Services, we've designed our intake process to be welcoming, confidential, and thorough. Here's what you can expect when you visit our Darby office:
               </p>
 
               <div className="space-y-4">
@@ -319,7 +319,7 @@ const DepressionTherapyHavertown = () => {
                     <strong className="text-foreground">Listen without judgment:</strong> Create a safe space for them to express feelings without offering unsolicited advice or minimizing their experience.
                   </div>
                   <div>
-                    <strong className="text-foreground">Encourage professional help:</strong> Gently suggest they contact a depression therapist in Havertown. Offer to help them find a provider or accompany them to appointments.
+                    <strong className="text-foreground">Encourage professional help:</strong> Gently suggest they contact a depression therapist in Darby. Offer to help them find a provider or accompany them to appointments.
                   </div>
                   <div>
                     <strong className="text-foreground">Provide practical support:</strong> Help with daily tasks like meals, errands, or childcare. Depression can make even simple activities feel overwhelming.
@@ -365,7 +365,7 @@ const DepressionTherapyHavertown = () => {
               <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
                 <h2 className="text-2xl font-bold mb-4 text-center text-foreground">Take the First Step Toward Recovery</h2>
                 <p className="text-center mb-6 text-foreground/80">
-                  Depression is treatable, and you don't have to face it alone. Compassionate, expert care is available at Sunrise Human Care Services in Havertown.
+                  Depression is treatable, and you don't have to face it alone. Compassionate, expert care is available at Sunrise Human Care Services in Darby.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link to="/appointment">
@@ -396,9 +396,9 @@ const DepressionTherapyHavertown = () => {
                     <p className="text-sm text-foreground/70">Explore evidence-based anxiety therapy approaches.</p>
                   </Card>
                 </Link>
-                <Link to="/blog/finding-therapist-havertown-pa-guide">
+                <Link to="/blog/finding-therapist-darby-pa-guide">
                   <Card className="p-4 hover:shadow-lg transition-shadow">
-                    <h4 className="font-semibold mb-2 text-foreground">Finding the Right Therapist in Havertown</h4>
+                    <h4 className="font-semibold mb-2 text-foreground">Finding the Right Therapist in Darby</h4>
                     <p className="text-sm text-foreground/70">Complete guide to choosing a mental health provider.</p>
                   </Card>
                 </Link>
@@ -413,4 +413,4 @@ const DepressionTherapyHavertown = () => {
   );
 };
 
-export default DepressionTherapyHavertown;
+export default DepressionTherapyDarby;

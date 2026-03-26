@@ -15,7 +15,7 @@ const MedicationManagement = () => {
     "Flexible scheduling including telehealth options when appropriate",
     "Most insurance plans accepted including Medicaid",
     "Evening and weekend appointments available",
-    "Convenient Havertown location serving Delaware County"
+    "Convenient Darby location serving Delaware County"
   ];
 
   const approaches = [
@@ -70,27 +70,27 @@ const MedicationManagement = () => {
 
   const relatedServices = [
     {
-      title: "Psychiatric Evaluations in Havertown",
-      url: "/psychiatric-evaluations-havertown-pa"
+      title: "Psychiatric Evaluations in Darby",
+      url: "/psychiatric-evaluations-darby-pa"
     },
     {
-      title: "Depression Treatment in Havertown",
-      url: "/depression-therapy-havertown-pa"
+      title: "Depression Treatment in Darby",
+      url: "/depression-therapy-darby-pa"
     },
     {
-      title: "Anxiety Treatment in Havertown",
-      url: "/anxiety-therapy-havertown-pa"
+      title: "Anxiety Treatment in Darby",
+      url: "/anxiety-therapy-darby-pa"
     }
   ];
 
   return (
     <ServicePageLayout
-      title="Medication Management in Havertown, PA"
+      title="Medication Management in Darby, PA"
       description="Expert psychiatric medication management services with personalized care plans, regular monitoring, and ongoing support for optimal mental health outcomes."
-      pageTitle="Expert Medication Management in Havertown, PA | Psychiatric Medication Services | Sunrise Human Care"
-      metaDescription="Professional psychiatric medication management in Havertown, PA serving Delaware County. Comprehensive medication services for depression, anxiety, ADHD, and other mental health conditions with expert psychiatric providers. Schedule today."
+      pageTitle="Expert Medication Management in Darby, PA | Psychiatric Medication Services | Sunrise Human Care"
+      metaDescription="Professional psychiatric medication management in Darby, PA serving Delaware County. Comprehensive medication services for depression, anxiety, ADHD, and other mental health conditions with expert psychiatric providers. Schedule today."
       serviceType="Medication Management"
-      canonicalUrl="/medication-management-havertown-pa"
+      canonicalUrl="/medication-management-darby-pa"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}
@@ -113,7 +113,7 @@ const MedicationManagement = () => {
           >
             <div className="space-y-5 text-muted-foreground">
               <p className="leading-relaxed">
-                At Sunrise Human Care Services in Havertown, our medication management program is led by experienced psychiatric providers who understand the complex interplay between mental health conditions and medication treatment. We take a comprehensive approach to psychiatric medication management, ensuring that each medication plan is tailored to your specific needs and circumstances.
+                At Sunrise Human Care Services in Darby, our medication management program is led by experienced psychiatric providers who understand the complex interplay between mental health conditions and medication treatment. We take a comprehensive approach to psychiatric medication management, ensuring that each medication plan is tailored to your specific needs and circumstances.
               </p>
               
               <p className="leading-relaxed">
@@ -125,7 +125,7 @@ const MedicationManagement = () => {
               </p>
 
               <p className="leading-relaxed">
-                We serve clients throughout Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities, providing accessible, evidence-based medication management services for various mental health conditions.
+                We serve clients throughout Darby, Drexel Hill, Broomall, and surrounding Delaware County communities, providing accessible, evidence-based medication management services for various mental health conditions.
               </p>
             </div>
           </motion.div>
@@ -184,7 +184,7 @@ const MedicationManagement = () => {
                   },
                   {
                     name: "Mental Health Treatment Options",
-                    url: "/psychiatric-evaluations-havertown-pa"
+                    url: "/psychiatric-evaluations-darby-pa"
                   }
                 ].map((resource, index) => (
                   <li key={index}>
@@ -217,7 +217,7 @@ const MedicationManagement = () => {
             className="space-y-5 text-muted-foreground"
           >
             <p className="leading-relaxed">
-              Our Havertown medication management services address a wide range of mental health conditions. We provide expert medication treatment for:
+              Our Darby medication management services address a wide range of mental health conditions. We provide expert medication treatment for:
             </p>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">

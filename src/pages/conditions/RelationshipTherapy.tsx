@@ -2,13 +2,13 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 const RelationshipTherapy = () => {
   const pageData = {
-    title: "Relationship Therapy in Havertown, PA",
-    description: "Effective therapy for communication problems, conflict resolution, and rebuilding trust in Havertown, PA.",
+    title: "Relationship Therapy in Darby, PA",
+    description: "Effective therapy for communication problems, conflict resolution, and rebuilding trust in Darby, PA.",
     pageTitle: "Relationship Therapy | Sunrise Human Care Services",
-    metaDescription: "Effective therapy for relationship issues, communication problems, and conflict resolution in Havertown, PA.",
+    metaDescription: "Effective therapy for relationship issues, communication problems, and conflict resolution in Darby, PA.",
     serviceType: "Relationship Therapy",
-    canonicalUrl: "/relationship-therapy-havertown-pa",
-    heroImage: "/images/couple-counseling-havertown-pa.webp",
+    canonicalUrl: "/relationship-therapy-darby-pa",
+    heroImage: "/images/couple-counseling-darby-pa.webp",
     benefits: ["Assessment of relationship patterns and dynamics", "Communication skills development", "Conflict resolution techniques", "Emotional intimacy building", "Trust repair and reconciliation work", "Boundaries exploration and establishment", "Tools for maintaining relationship health"],
     approaches: [{
       title: "Understanding Relationship Challenges",
@@ -38,13 +38,13 @@ const RelationshipTherapy = () => {
     }],
     relatedServices: [{
       title: "Couples Counseling",
-      url: "/couples-counseling-havertown-pa"
+      url: "/couples-counseling-darby-pa"
     }, {
       title: "Family Therapy",
-      url: "/family-therapy-havertown-pa"
+      url: "/family-therapy-darby-pa"
     }, {
       title: "Individual Therapy",
-      url: "/individual-therapy-havertown-pa"
+      url: "/individual-therapy-darby-pa"
     }]
   };
   return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
@@ -59,7 +59,7 @@ const RelationshipTherapy = () => {
                 
                 <div className="space-y-4">
                   <p>
-                    At Sunrise Human Care Services in Havertown, PA, we believe that healthy relationships are fundamental to our wellbeing and quality of life. Our approach to relationship therapy draws from evidence-based methods that have been proven effective in helping couples and families create more satisfying connections.
+                    At Sunrise Human Care Services in Darby, PA, we believe that healthy relationships are fundamental to our wellbeing and quality of life. Our approach to relationship therapy draws from evidence-based methods that have been proven effective in helping couples and families create more satisfying connections.
                   </p>
                   
                   <p>
@@ -145,7 +145,7 @@ const RelationshipTherapy = () => {
             </div>
             
             <div className="mt-12 text-center">
-              <p className="text-muted-foreground max-w-2xl mx-auto">Our therapists at Sunrise Human Care Services in Havertown are trained in these evidence-based approaches and tailor interventions to meet your specific relationship needs and goals.</p>
+              <p className="text-muted-foreground max-w-2xl mx-auto">Our therapists at Sunrise Human Care Services in Darby are trained in these evidence-based approaches and tailor interventions to meet your specific relationship needs and goals.</p>
             </div>
           </div>
         </section>

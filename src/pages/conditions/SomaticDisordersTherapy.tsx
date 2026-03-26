@@ -2,13 +2,13 @@ import React from 'react';
 import ServicePageLayout from '../../components/services/ServicePageLayout';
 const SomaticDisordersTherapy = () => {
   const pageData = {
-    title: "Somatic Symptom Disorders Treatment in Havertown, PA",
-    description: "Specialized treatment for somatic symptom disorders and related conditions in Havertown, PA.",
+    title: "Somatic Symptom Disorders Treatment in Darby, PA",
+    description: "Specialized treatment for somatic symptom disorders and related conditions in Darby, PA.",
     pageTitle: "Somatic Symptom Disorders Treatment | Sunrise Human Care Services",
-    metaDescription: "Specialized treatment for somatic symptom disorders in Havertown, PA. Mind-body approaches to reduce symptom distress and improve functioning.",
+    metaDescription: "Specialized treatment for somatic symptom disorders in Darby, PA. Mind-body approaches to reduce symptom distress and improve functioning.",
     serviceType: "Somatic Symptom Disorders Treatment",
-    canonicalUrl: "/somatic-disorders-treatment-havertown-pa",
-    heroImage: "/images/Therapy-in-havertown.webp",
+    canonicalUrl: "/somatic-disorders-treatment-darby-pa",
+    heroImage: "/images/Therapy-in-darby.webp",
     benefits: ["Comprehensive biopsychosocial assessment", "Cognitive-behavioral therapy for somatic symptoms", "Mind-body techniques and somatic awareness", "Stress reduction and relaxation training", "Coping skills for physical discomfort", "Communication strategies with healthcare providers", "Functional improvement focus"],
     approaches: [{
       title: "Understanding Somatic Symptom Disorders",
@@ -38,13 +38,13 @@ const SomaticDisordersTherapy = () => {
     }],
     relatedServices: [{
       title: "Anxiety Therapy",
-      url: "/anxiety-therapy-havertown-pa"
+      url: "/anxiety-therapy-darby-pa"
     }, {
       title: "Depression Therapy",
-      url: "/depression-therapy-havertown-pa"
+      url: "/depression-therapy-darby-pa"
     }, {
       title: "Trauma & PTSD Therapy",
-      url: "/ptsd-therapy-havertown-pa"
+      url: "/ptsd-therapy-darby-pa"
     }]
   };
   return <ServicePageLayout title={pageData.title} description={pageData.description} pageTitle={pageData.pageTitle} metaDescription={pageData.metaDescription} serviceType={pageData.serviceType} canonicalUrl={pageData.canonicalUrl} heroImage={pageData.heroImage} benefits={pageData.benefits} approaches={pageData.approaches} faqs={pageData.faqs} relatedServices={pageData.relatedServices}>
@@ -59,7 +59,7 @@ const SomaticDisordersTherapy = () => {
                 
                 <div className="space-y-4">
                   <p>
-                    At Sunrise Human Care Services in Havertown, PA, we provide specialized treatment for individuals experiencing persistent physical symptoms that cause significant distress and impairment. Our approach begins with a comprehensive biopsychosocial assessment to understand your specific symptoms, health history, and the impact of symptoms on your daily life.
+                    At Sunrise Human Care Services in Darby, PA, we provide specialized treatment for individuals experiencing persistent physical symptoms that cause significant distress and impairment. Our approach begins with a comprehensive biopsychosocial assessment to understand your specific symptoms, health history, and the impact of symptoms on your daily life.
                   </p>
                   
                   <p>
@@ -137,7 +137,7 @@ const SomaticDisordersTherapy = () => {
               <p>For many individuals with somatic symptom disorders, a cycle develops: physical symptoms cause anxiety, which increases bodily arousal and attention to symptoms, which then intensifies the symptoms further. Our treatment approaches focus on breaking this cycle by addressing both physical symptoms and psychological responses.</p>
               
               <h3>Collaborative Care</h3>
-              <p>At Sunrise Human Care Services in Havertown, we believe in a collaborative approach to treating somatic symptom disorders. This often involves working with your primary care physician, specialists, and other healthcare providers to ensure comprehensive care that addresses both physical and psychological aspects of your condition.</p>
+              <p>At Sunrise Human Care Services in Darby, we believe in a collaborative approach to treating somatic symptom disorders. This often involves working with your primary care physician, specialists, and other healthcare providers to ensure comprehensive care that addresses both physical and psychological aspects of your condition.</p>
             </div>
           </div>
         </section>

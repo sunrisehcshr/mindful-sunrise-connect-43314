@@ -77,29 +77,29 @@ const PsychiatricEvaluations = () => {
   ];
   
   const relatedServices = [
-    { title: "Medication Management", url: "/medication-management-havertown-pa" },
-    { title: "Individual Therapy", url: "/individual-therapy-havertown-pa" },
-    { title: "Child Therapy", url: "/child-therapy-havertown-pa" }
+    { title: "Medication Management", url: "/medication-management-darby-pa" },
+    { title: "Individual Therapy", url: "/individual-therapy-darby-pa" },
+    { title: "Child Therapy", url: "/child-therapy-darby-pa" }
   ];
   
   const conditions = [
     {
       title: "Anxiety Disorders",
       description: "Comprehensive evaluation for generalized anxiety, social anxiety, panic disorder, and phobias.",
-      url: "/anxiety-therapy-havertown-pa",
-      imageSrc: "/therapy-in-havertown.jpg"
+      url: "/anxiety-therapy-darby-pa",
+      imageSrc: "/therapy-in-darby.jpg"
     },
     {
       title: "Mood Disorders",
       description: "Expert assessment for depression, bipolar disorder, and other mood-related conditions.",
-      url: "/depression-therapy-havertown-pa",
-      imageSrc: "/therapy-in-havertown.jpg"
+      url: "/depression-therapy-darby-pa",
+      imageSrc: "/therapy-in-darby.jpg"
     },
     {
       title: "ADHD",
       description: "Thorough evaluation for attention deficit hyperactivity disorder in children and adults.",
-      url: "/adhd-treatment-havertown-pa",
-      imageSrc: "/therapy-in-havertown.jpg"
+      url: "/adhd-treatment-darby-pa",
+      imageSrc: "/therapy-in-darby.jpg"
     }
   ];
   
@@ -129,26 +129,26 @@ const PsychiatricEvaluations = () => {
   return (
     <>
       <SEOHead 
-        title="Expert Psychiatric Evaluations in Havertown, PA | Mental Health Assessment"
-        description="Comprehensive psychiatric evaluations in Havertown, PA. Professional mental health assessments for accurate diagnosis and personalized treatment planning. Schedule today."
-        canonicalUrl="https://sunrisehumancare.com/psychiatric-evaluations-havertown-pa"
-        keywords="psychiatric evaluations Havertown, mental health assessment Pennsylvania, psychiatric diagnosis Delaware County, psychiatrist Havertown PA, mental health evaluation near me"
+        title="Expert Psychiatric Evaluations in Darby, PA | Mental Health Assessment"
+        description="Comprehensive psychiatric evaluations in Darby, PA. Professional mental health assessments for accurate diagnosis and personalized treatment planning. Schedule today."
+        canonicalUrl="https://sunrisehumancare.com/psychiatric-evaluations-darby-pa"
+        keywords="psychiatric evaluations Darby, mental health assessment Pennsylvania, psychiatric diagnosis Delaware County, psychiatrist Darby PA, mental health evaluation near me"
         serviceSchema={{
           name: "Psychiatric Evaluations",
-          description: "Professional psychiatric evaluation and mental health assessment services in Havertown, PA",
+          description: "Professional psychiatric evaluation and mental health assessment services in Darby, PA",
           provider: "Sunrise Human Care Services",
           serviceType: "Mental Health Assessment",
-          areaServed: "Havertown, PA and Delaware County"
+          areaServed: "Darby, PA and Delaware County"
         }}
       />
       
       <ServicePageLayout
-        title="Psychiatric Evaluations in Havertown, PA"
+        title="Psychiatric Evaluations in Darby, PA"
         description="Comprehensive psychiatric evaluations and mental health assessments to provide accurate diagnosis and guide effective treatment planning."
-        pageTitle="Expert Psychiatric Evaluations in Havertown, PA - Mental Health Assessment | Sunrise Human Care"
-        metaDescription="Professional psychiatric evaluations in Havertown, PA. Comprehensive mental health assessments for accurate diagnosis and personalized treatment planning. Schedule today."
+        pageTitle="Expert Psychiatric Evaluations in Darby, PA - Mental Health Assessment | Sunrise Human Care"
+        metaDescription="Professional psychiatric evaluations in Darby, PA. Comprehensive mental health assessments for accurate diagnosis and personalized treatment planning. Schedule today."
         serviceType="Psychiatric Evaluations"
-        canonicalUrl="/psychiatric-evaluations-havertown-pa"
+        canonicalUrl="/psychiatric-evaluations-darby-pa"
         schemaType="MedicalService"
         benefits={benefits}
         approaches={approaches}
@@ -168,7 +168,7 @@ const PsychiatricEvaluations = () => {
             >
               <div className="space-y-5 text-muted-foreground">
                 <p className="leading-relaxed">
-                  At Sunrise Human Care Services in Havertown, PA, our psychiatric evaluations provide a comprehensive assessment of your mental health needs. Our experienced psychiatrists and mental health professionals use evidence-based approaches to understand your symptoms and develop personalized treatment plans.
+                  At Sunrise Human Care Services in Darby, PA, our psychiatric evaluations provide a comprehensive assessment of your mental health needs. Our experienced psychiatrists and mental health professionals use evidence-based approaches to understand your symptoms and develop personalized treatment plans.
                 </p>
                 
                 <p className="leading-relaxed">

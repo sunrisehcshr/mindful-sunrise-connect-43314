@@ -30,11 +30,11 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "Sunrise Human Care Services | Mental Health Clinic in Havertown, PA",
-  description = "Experience comprehensive mental health care in Havertown, PA at Sunrise Human Care Services. Our dedicated team provides counseling, therapy, psychiatry, and medication management for anxiety, depression, ADHD, trauma, and more.",
+  title = "Sunrise Human Care Services | Mental Health Clinic in Darby, PA",
+  description = "Experience comprehensive mental health care in Darby, PA at Sunrise Human Care Services. Our dedicated team provides counseling, therapy, psychiatry, and medication management for anxiety, depression, ADHD, trauma, and more.",
   canonicalUrl = "https://sunrisehumancare.com",
   ogImage = "https://sunrisehumancare.com/og-image.png",
-  keywords = "mental health Havertown, therapy Havertown PA, counseling Delaware County, psychiatry Havertown, anxiety treatment Havertown, depression therapy Havertown, ADHD treatment Havertown, trauma therapy PA, PTSD counseling Havertown, OCD treatment Havertown, bipolar disorder Havertown, medication management Havertown, psychologist Havertown, therapist near me, Havertown mental health clinic",
+  keywords = "mental health Darby, therapy Darby PA, counseling Delaware County, psychiatry Darby, anxiety treatment Darby, depression therapy Darby, ADHD treatment Darby, trauma therapy PA, PTSD counseling Darby, OCD treatment Darby, bipolar disorder Darby, medication management Darby, psychologist Darby, therapist near me, Darby mental health clinic",
   article = false,
   publishedTime,
   modifiedTime,
@@ -82,10 +82,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2050 West Chester Pike",
-      "addressLocality": "Havertown",
+      "streetAddress": "869 Main Street",
+      "addressLocality": "Darby",
       "addressRegion": "PA",
-      "postalCode": "19083",
+      "postalCode": "19023",
       "addressCountry": "US"
     },
     "geo": {
@@ -114,7 +114,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "areaServed": [
       {
         "@type": "City",
-        "name": "Havertown",
+        "name": "Darby",
         "containedInPlace": {
           "@type": "AdministrativeArea",
           "name": "Delaware County",
@@ -158,7 +158,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
       <meta name="geo.region" content="US-PA" />
-      <meta name="geo.placename" content="Havertown" />
+      <meta name="geo.placename" content="Darby" />
       <meta name="geo.position" content="39.9707;-75.3151" />
       <meta name="ICBM" content="39.9707, -75.3151" />
       <meta name="google" content="notranslate" />
@@ -181,10 +181,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:site_name" content="Sunrise Human Care Services" />
       
       {/* Business Location Information */}
-      <meta property="business:contact_data:street_address" content="2050 West Chester Pike" />
-      <meta property="business:contact_data:locality" content="Havertown" />
+      <meta property="business:contact_data:street_address" content="869 Main Street" />
+      <meta property="business:contact_data:locality" content="Darby" />
       <meta property="business:contact_data:region" content="PA" />
-      <meta property="business:contact_data:postal_code" content="19083" />
+      <meta property="business:contact_data:postal_code" content="19023" />
       <meta property="business:contact_data:country_name" content="USA" />
       <meta property="place:location:latitude" content="39.9707" />
       <meta property="place:location:longitude" content="-75.3151" />

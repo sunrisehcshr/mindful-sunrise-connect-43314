@@ -8,13 +8,13 @@ import { ArrowRight } from 'lucide-react';
 
 const EatingDisordersTherapy = () => {
   const pageData = {
-    title: "Eating Disorders Treatment in Havertown, PA",
-    description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating in Havertown, PA.",
+    title: "Eating Disorders Treatment in Darby, PA",
+    description: "Specialized treatment for anorexia, bulimia, binge eating disorder, and disordered eating in Darby, PA.",
     pageTitle: "Eating Disorders Treatment | Sunrise Human Care Services",
-    metaDescription: "Specialized treatment for anorexia, bulimia, binge eating disorder and disordered eating in Havertown, PA. Comprehensive therapy and nutritional support.",
+    metaDescription: "Specialized treatment for anorexia, bulimia, binge eating disorder and disordered eating in Darby, PA. Comprehensive therapy and nutritional support.",
     serviceType: "Eating Disorders Treatment",
-    canonicalUrl: "/eating-disorders-treatment-havertown-pa",
-    heroImage: "/images/Therapy-in-havertown.webp",
+    canonicalUrl: "/eating-disorders-treatment-darby-pa",
+    heroImage: "/images/Therapy-in-darby.webp",
     benefits: ["Comprehensive assessment and diagnosis", "Personalized treatment planning", "Individual therapy using evidence-based approaches", "Nutritional counseling coordination", "Body image work", "Family involvement when appropriate", "Medical monitoring coordination"],
     approaches: [{
       title: "Understanding Eating Disorders",
@@ -44,13 +44,13 @@ const EatingDisordersTherapy = () => {
     }],
     relatedServices: [{
       title: "Depression Therapy",
-      url: "/depression-therapy-havertown-pa"
+      url: "/depression-therapy-darby-pa"
     }, {
       title: "Anxiety Therapy",
-      url: "/anxiety-therapy-havertown-pa"
+      url: "/anxiety-therapy-darby-pa"
     }, {
       title: "Family Therapy",
-      url: "/family-therapy-havertown-pa"
+      url: "/family-therapy-darby-pa"
     }]
   };
 
@@ -73,12 +73,12 @@ const EatingDisordersTherapy = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-6 font-playfair">
-                  Our Approach to Eating Disorder Treatment in Havertown
+                  Our Approach to Eating Disorder Treatment in Darby
                 </h2>
                 
                 <div className="space-y-4">
                   <p>
-                    At Sunrise Human Care Services in Havertown, PA, we understand that eating disorders are complex conditions that affect both physical and mental health. Our comprehensive treatment approach begins with a thorough assessment to understand your specific symptoms, history, and the unique factors contributing to your eating disorder.
+                    At Sunrise Human Care Services in Darby, PA, we understand that eating disorders are complex conditions that affect both physical and mental health. Our comprehensive treatment approach begins with a thorough assessment to understand your specific symptoms, history, and the unique factors contributing to your eating disorder.
                   </p>
                   
                   <p>
@@ -90,7 +90,7 @@ const EatingDisordersTherapy = () => {
                   </p>
                   
                   <p>
-                    Serving clients across Havertown, Drexel Hill, Broomall, and surrounding Delaware County communities, our eating disorder specialists provide compassionate care close to home.
+                    Serving clients across Darby, Drexel Hill, Broomall, and surrounding Delaware County communities, our eating disorder specialists provide compassionate care close to home.
                   </p>
                 </div>
                 
@@ -105,7 +105,7 @@ const EatingDisordersTherapy = () => {
               
               <div className="bg-white p-6 rounded-lg shadow-sm border border-sunrise-100/30">
                 <h3 className="text-xl font-semibold mb-4 text-amber-900">
-                  We Treat All Types of Eating Disorders in Havertown
+                  We Treat All Types of Eating Disorders in Darby
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -155,7 +155,7 @@ const EatingDisordersTherapy = () => {
               </h2>
               
               <p className="mb-4">
-                At Sunrise Human Care, we're proud to offer specialized eating disorder treatment services to residents throughout Delaware County, including Havertown, Broomall, Drexel Hill, Springfield, and surrounding areas. Our conveniently located Havertown office makes quality eating disorder care accessible to the entire community.
+                At Sunrise Human Care, we're proud to offer specialized eating disorder treatment services to residents throughout Delaware County, including Darby, Broomall, Drexel Hill, Springfield, and surrounding areas. Our conveniently located Darby office makes quality eating disorder care accessible to the entire community.
               </p>
               
               <p className="mb-4">

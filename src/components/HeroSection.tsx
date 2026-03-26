@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
 >
   Personalized Mental Health Services in{" "}
   <span className="relative inline-block">
-    <span className="relative z-10 text-gray-900">Havertown, PA</span>
+    <span className="relative z-10 text-gray-900">Darby, PA</span>
     <span className="absolute bottom-0 left-0 w-full h-[0.4em] bg-sunrise-400/30 -z-10"></span>
   </span>
 </motion.h1>
@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
           }} transition={{
             delay: 0.7,
             duration: 0.8
-          }} className="text-muted-foreground max-w-2xl text-lg font-normal">Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health care in Havertown with licensed therapists, psychologists, counselors, and psychiatrists. Schedule an appointment today!</motion.p>
+          }} className="text-muted-foreground max-w-2xl text-lg font-normal">Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health care in Darby with licensed therapists, psychologists, counselors, and psychiatrists. Schedule an appointment today!</motion.p>
             <motion.div className="flex flex-wrap gap-4 pt-1" initial={{
             opacity: 0,
             y: 20
@@ -91,12 +91,12 @@ const HeroSection: React.FC = () => {
           ease: "easeOut"
         }}>
             <div className="absolute inset-0 bg-gradient-to-tr from-sunrise-400/30 to-sunrise-500/10 mix-blend-multiply z-10"></div>
-            <img src="/images/Therapy-in-havertown.webp" 
-     alt="Expert mental health therapy in Havertown, PA" 
+            <img src="/images/Therapy-in-darby.webp" 
+     alt="Expert mental health therapy in Darby, PA" 
      className="h-full w-full object-cover" />
             <div className="absolute bottom-0 left-0 right-0 p-9 bg-gradient-to-t from-black/80 to-transparent z-20 bg-transparent">
               <p className="text-white text-lg font-medium">Creating a safe space for healing</p>
-              <p className="text-sm font-medium text-slate-50">Personalized therapy and psychiatry services in Havertown, PA for your unique needs.</p>
+              <p className="text-sm font-medium text-slate-50">Personalized therapy and psychiatry services in Darby, PA for your unique needs.</p>
             </div>
           </motion.div>
         </div>
