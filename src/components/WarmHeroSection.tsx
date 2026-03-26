@@ -144,7 +144,7 @@ const WarmHeroSection = () => {
               y: 0
             }}>
                 <ImageOptimizer 
-                  src="/images/family-counseling-darby.webp" 
+                  src="/images/family-counseling-havertown.webp" 
                   alt="Expert family counseling services in Darby, PA" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
                   priority={true} 
