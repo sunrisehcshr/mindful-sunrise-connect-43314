@@ -11,6 +11,7 @@ const FAQ = () => {
       <SEOHead
         title="Frequently Asked Questions | Sunrise Human Care Services"
         description="Answers to common questions about our mental health services in Darby, PA. Learn about therapy options, insurance, and appointment information."
+        canonicalUrl="https://sunrisehumancare.com/faq"
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />
