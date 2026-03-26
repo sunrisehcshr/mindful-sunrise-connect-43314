@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface SectionTagProps {
@@ -12,16 +11,17 @@ interface SectionTagProps {
 const SectionTag = ({ 
   children, 
   className, 
-  icon = <Sparkles className="h-3 w-3" /> 
+  icon
 }: SectionTagProps) => {
   return (
     <span 
       className={cn(
-        "section-tag inline-flex items-center gap-1.5 font-semibold text-sm px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-orange-400 shadow-sm hover:from-orange-600 hover:to-amber-600 transition-colors",
+        "inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4",
         className
       )}
     >
-      {icon} {children}
+      {icon && <span className="mr-1.5">{icon}</span>}
+      {children}
     </span>
   );
 };
