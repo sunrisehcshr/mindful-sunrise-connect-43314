@@ -101,7 +101,7 @@ const ChildTherapy = () => {
       metaDescription="Professional child and adolescent therapy in Darby, PA serving Delaware County families. Age-appropriate counseling for anxiety, depression, behavioral issues, and developmental challenges. Child therapists for Darby, Upper Darby, and Yeadon."
       serviceType="Child & Adolescent Therapy"
       canonicalUrl="/child-therapy-darby-pa"
-      heroImage="/images/child-counseling-darby.webp"
+      heroImage="/images/Therapy-in-havertown.webp"
       benefits={benefits}
       approaches={approaches}
       faqs={faqs}

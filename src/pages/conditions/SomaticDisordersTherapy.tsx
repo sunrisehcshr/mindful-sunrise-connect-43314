@@ -8,7 +8,7 @@ const SomaticDisordersTherapy = () => {
     metaDescription: "Specialized treatment for somatic symptom disorders in Darby, PA. Mind-body approaches to reduce symptom distress and improve functioning.",
     serviceType: "Somatic Symptom Disorders Treatment",
     canonicalUrl: "/somatic-disorders-treatment-darby-pa",
-    heroImage: "/images/Therapy-in-darby.webp",
+    heroImage: "/images/Therapy-in-havertown.webp",
     benefits: ["Comprehensive biopsychosocial assessment", "Cognitive-behavioral therapy for somatic symptoms", "Mind-body techniques and somatic awareness", "Stress reduction and relaxation training", "Coping skills for physical discomfort", "Communication strategies with healthcare providers", "Functional improvement focus"],
     approaches: [{
       title: "Understanding Somatic Symptom Disorders",

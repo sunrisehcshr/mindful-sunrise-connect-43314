@@ -47,7 +47,7 @@ const DepressionTherapyDarby = () => {
         description="Recognize the signs of depression and learn about effective treatment options in Darby, PA. Sunrise Human Care offers compassionate, expert depression care."
         canonicalUrl="https://sunrisehumancare.com/blog/depression-therapy-darby-signs-to-seek-help"
         keywords="depression therapy Darby, signs of depression, treating depression Delaware County, when to see a therapist for depression Darby PA, depression psychiatrist near me"
-        ogImage="https://sunrisehumancare.com/images/Therapy-in-darby.webp"
+        ogImage="https://sunrisehumancare.com/images/Therapy-in-havertown.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -78,7 +78,7 @@ const DepressionTherapyDarby = () => {
             </header>
 
             <img 
-              src="/images/depression-therapy-darby.webp" 
+              src="/images/depression-therapy-havertown.webp" 
               alt="Compassionate depression therapy session at Sunrise Human Care in Darby, PA"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />

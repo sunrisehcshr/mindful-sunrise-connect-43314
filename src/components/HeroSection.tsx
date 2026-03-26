@@ -91,7 +91,7 @@ const HeroSection: React.FC = () => {
           ease: "easeOut"
         }}>
             <div className="absolute inset-0 bg-gradient-to-tr from-sunrise-400/30 to-sunrise-500/10 mix-blend-multiply z-10"></div>
-            <img src="/images/Therapy-in-darby.webp" 
+            <img src="/images/Therapy-in-havertown.webp" 
      alt="Expert mental health therapy in Darby, PA" 
      className="h-full w-full object-cover" />
             <div className="absolute bottom-0 left-0 right-0 p-9 bg-gradient-to-t from-black/80 to-transparent z-20 bg-transparent">

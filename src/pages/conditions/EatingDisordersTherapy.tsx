@@ -14,7 +14,7 @@ const EatingDisordersTherapy = () => {
     metaDescription: "Specialized treatment for anorexia, bulimia, binge eating disorder and disordered eating in Darby, PA. Comprehensive therapy and nutritional support.",
     serviceType: "Eating Disorders Treatment",
     canonicalUrl: "/eating-disorders-treatment-darby-pa",
-    heroImage: "/images/Therapy-in-darby.webp",
+    heroImage: "/images/Therapy-in-havertown.webp",
     benefits: ["Comprehensive assessment and diagnosis", "Personalized treatment planning", "Individual therapy using evidence-based approaches", "Nutritional counseling coordination", "Body image work", "Family involvement when appropriate", "Medical monitoring coordination"],
     approaches: [{
       title: "Understanding Eating Disorders",

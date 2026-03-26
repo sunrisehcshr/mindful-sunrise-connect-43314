@@ -87,19 +87,19 @@ const PsychiatricEvaluations = () => {
       title: "Anxiety Disorders",
       description: "Comprehensive evaluation for generalized anxiety, social anxiety, panic disorder, and phobias.",
       url: "/anxiety-therapy-darby-pa",
-      imageSrc: "/therapy-in-darby.jpg"
+      imageSrc: "/images/Therapy-in-havertown.webp"
     },
     {
       title: "Mood Disorders",
       description: "Expert assessment for depression, bipolar disorder, and other mood-related conditions.",
       url: "/depression-therapy-darby-pa",
-      imageSrc: "/therapy-in-darby.jpg"
+      imageSrc: "/images/Therapy-in-havertown.webp"
     },
     {
       title: "ADHD",
       description: "Thorough evaluation for attention deficit hyperactivity disorder in children and adults.",
       url: "/adhd-treatment-darby-pa",
-      imageSrc: "/therapy-in-darby.jpg"
+      imageSrc: "/images/Therapy-in-havertown.webp"
     }
   ];
   

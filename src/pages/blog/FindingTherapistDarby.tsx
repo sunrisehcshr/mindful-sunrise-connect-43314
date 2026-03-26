@@ -63,7 +63,7 @@ const FindingTherapistDarby = () => {
         description="Discover how to find the perfect therapist in Darby, PA. Learn about therapy types, insurance options, and what to expect at Sunrise Human Care Services."
         canonicalUrl="https://sunrisehumancare.com/blog/finding-therapist-darby-pa-guide"
         keywords="therapist in Darby PA, mental health services Darby, therapy Delaware County, how to find a good therapist in Darby, best therapy practice Darby PA"
-        ogImage="https://sunrisehumancare.com/images/Therapy-in-darby.webp"
+        ogImage="https://sunrisehumancare.com/images/Therapy-in-havertown.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -97,7 +97,7 @@ const FindingTherapistDarby = () => {
 
             {/* Featured Image */}
             <img 
-              src="/images/finding-therapist-darby.webp" 
+              src="/images/finding-therapist-havertown.webp" 
               alt="Professional therapy office in Darby, PA showing comfortable counseling environment"
               className="w-full h-[400px] object-cover rounded-lg mb-8"
             />
