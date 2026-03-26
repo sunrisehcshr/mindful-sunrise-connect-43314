@@ -16,7 +16,22 @@ import Footer from '../components/Footer/Footer';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
 
+const BANNER_KEY = 'nd-banner-new-location-2025';
+
 const Index = () => {
+  const [showNotification, setShowNotification] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem(BANNER_KEY) === 'true') return;
+    const timer = setTimeout(() => setShowNotification(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const dismissNotification = () => {
+    setShowNotification(false);
+    localStorage.setItem(BANNER_KEY, 'true');
+  };
+
   const homeBreadcrumbs = [
     {
       name: "Home",
