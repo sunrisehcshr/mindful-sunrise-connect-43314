@@ -37,8 +37,8 @@ const WarmHeroSection = () => {
               animate={{ opacity: 1 }} 
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Expert Mental Health Care
-              <span className="block font-instrument-serif italic text-amber-700/70 font-normal">in Darby, PA</span>
+              Step into a brighter tomorrow
+              <span className="block font-instrument-serif italic text-amber-700/70 font-normal">with Sunrise Human Care</span>
             </motion.h1>
             
             <motion.p 
@@ -47,7 +47,7 @@ const WarmHeroSection = () => {
               animate={{ opacity: 1 }} 
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Step into a brighter tomorrow with Sunrise Human Care—offering comprehensive mental health care in Darby with licensed therapists, psychologists, counselors, and psychiatrists for residents of Darby, Yeadon, and Upper Darby.
+              A brighter tomorrow starts with the right support today. Taking the first step toward better mental health is an act of courage - and we're here to support your journey with expert counseling, therapy, and psychiatric services tailored to your unique needs.
             </motion.p>
             
             <motion.div 
