@@ -52,7 +52,7 @@ const WarmHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             Step into a brighter tomorrow{' '}
-            <span className="inline md:block font-instrument-serif italic text-amber-300/80 font-normal">with Sunrise Human Care</span>
+            <span className="inline md:block font-instrument-serif italic text-amber-300/80 font-bold">with Sunrise Human Care</span>
           </motion.h1>
 
           <motion.p
@@ -77,7 +77,7 @@ const WarmHeroSection = () => {
               </Button>
             </a>
             <AppointmentDialog>
-              <Button size="lg" className="w-full sm:w-auto border-0 text-white bg-white/10 font-barlow font-semibold rounded-full hover:bg-white/20 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <Button size="lg" className="w-full sm:w-auto border-0 text-white bg-white/20 backdrop-blur-sm font-barlow font-semibold rounded-full hover:bg-white/30 shadow-sm hover:shadow-md transition-all duration-300 group">
                 <Calendar className="mr-2 h-4 w-4 group-hover:text-amber-300" />
                 Book Appointment
               </Button>

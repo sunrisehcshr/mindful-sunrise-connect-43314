@@ -230,9 +230,7 @@ const Navbar = () => {
               to="/appointment" 
               className={cn(
                 "ml-2 flex items-center gap-2 font-barlow font-medium text-sm px-5 py-2.5 rounded-full transition-colors shrink-0",
-                isHomePage && !isScrolled 
-                  ? "bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30" 
-                  : "bg-[#222] text-white hover:bg-zinc-800"
+                "bg-[#222] text-white hover:bg-zinc-800"
               )}
             >
               Book Appointment
