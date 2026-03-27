@@ -167,11 +167,11 @@ const Navbar = () => {
                             (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
                             (link.label === "Resources" && isResourcePage())
                               ? "text-stone-900 font-semibold" 
-                              : isHomePage && !isScrolled ? "text-white/90 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
-                          )}
-                        >
-                          {link.label}
-                        </NavigationMenuTrigger>
+                              : "text-zinc-600 hover:text-zinc-900"
+                           )}
+                         >
+                           {link.label}
+                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="p-2 w-[400px] max-h-[600px]">
                           <ScrollArea className="h-full w-full max-h-[550px]">
                             <div className="grid grid-cols-1 gap-1 p-2">
