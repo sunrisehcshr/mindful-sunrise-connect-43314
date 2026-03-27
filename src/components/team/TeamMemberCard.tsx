@@ -53,7 +53,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               <h3 className="text-xl font-barlow font-semibold text-stone-800 mb-1">
                 {name}
               </h3>
-              <p className="text-sm font-barlow font-medium text-amber-700/70 mb-3">
+              <p className="text-sm font-barlow font-medium text-amber-400 mb-3">
                 {role}
               </p>
             </div>
