@@ -25,7 +25,7 @@ const WarmHeroSection = () => {
 
       {/* Soft glow overlay */}
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(251,191,36,0.06) 40%, rgba(255,255,255,0.05) 70%, rgba(245,158,11,0.04) 100%)',
+        background: 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(251,191,36,0.04) 40%, rgba(0,0,0,0.03) 70%, rgba(245,158,11,0.02) 100%)',
       }} />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20">
@@ -52,7 +52,7 @@ const WarmHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             Step into a brighter tomorrow{' '}
-            <span className="inline md:block font-instrument-serif italic text-amber-300/80 font-bold">with Sunrise Human Care</span>
+            <span className="inline md:block font-instrument-serif italic text-amber-300 font-normal">with Sunrise Human Care</span>
           </motion.h1>
 
           <motion.p
