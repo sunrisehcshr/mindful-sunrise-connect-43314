@@ -25,16 +25,17 @@ const Navbar = () => {
   
   const toggleMobileServices = () => {
     setMobileServicesOpen(!mobileServicesOpen);
-    if (!mobileServicesOpen && mobileConditionsOpen) {
-      setMobileConditionsOpen(false);
-    }
+    if (!mobileServicesOpen) { setMobileConditionsOpen(false); setMobileResourcesOpen(false); }
   };
 
   const toggleMobileConditions = () => {
     setMobileConditionsOpen(!mobileConditionsOpen);
-    if (!mobileConditionsOpen && mobileServicesOpen) {
-      setMobileServicesOpen(false);
-    }
+    if (!mobileConditionsOpen) { setMobileServicesOpen(false); setMobileResourcesOpen(false); }
+  };
+
+  const toggleMobileResources = () => {
+    setMobileResourcesOpen(!mobileResourcesOpen);
+    if (!mobileResourcesOpen) { setMobileServicesOpen(false); setMobileConditionsOpen(false); }
   };
 
   useEffect(() => {
