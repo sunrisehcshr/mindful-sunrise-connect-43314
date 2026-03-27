@@ -77,7 +77,7 @@ const WarmHeroSection = () => {
               </Button>
             </a>
             <AppointmentDialog>
-              <Button size="lg" className="w-full sm:w-auto border-2 border-white text-white bg-white/10 font-barlow font-semibold rounded-full hover:bg-white/20 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <Button size="lg" className="w-full sm:w-auto border-0 text-white bg-white/10 font-barlow font-semibold rounded-full hover:bg-white/20 shadow-sm hover:shadow-md transition-all duration-300 group">
                 <Calendar className="mr-2 h-4 w-4 group-hover:text-amber-300" />
                 Book Appointment
               </Button>
