@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileConditionsOpen, setMobileConditionsOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
