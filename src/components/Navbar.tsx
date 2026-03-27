@@ -177,7 +177,7 @@ const Navbar = () => {
                               {link.children.map((child, childIndex) => (
                                 <Link 
                                   key={childIndex} 
-                                  to={`${child.path}#home`} 
+                                  to={link.label === "Resources" ? child.path : `${child.path}#home`} 
                                   className={cn(
                                     "block select-none rounded-md py-2 px-3 text-sm font-barlow leading-none no-underline outline-none transition-colors hover:bg-amber-50 hover:text-stone-900", 
                                     isActive(child.path) ? "bg-amber-50 text-stone-900 font-medium" : "text-zinc-600"
