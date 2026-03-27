@@ -7,7 +7,7 @@ import AppointmentDialog from './Appointment/AppointmentDialog';
 
 const WarmHeroSection = () => {
   return (
-    <section className="relative overflow-hidden min-h-[100vh] flex items-center justify-center" id="home">
+    <section className="sticky top-0 overflow-hidden min-h-[100vh] flex items-center justify-center" id="home">
       {/* Background Video */}
       <video
         autoPlay
@@ -23,11 +23,9 @@ const WarmHeroSection = () => {
         <source src="https://res.cloudinary.com/dabsxebx8/video/upload/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
       </video>
 
-      {/* Soft glowing blur overlay */}
+      {/* Soft glow overlay */}
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(251,191,36,0.08) 40%, rgba(255,255,255,0.12) 70%, rgba(245,158,11,0.06) 100%)',
-        backdropFilter: 'blur(3px)',
-        WebkitBackdropFilter: 'blur(3px)',
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(251,191,36,0.06) 40%, rgba(255,255,255,0.05) 70%, rgba(245,158,11,0.04) 100%)',
       }} />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-20">
