@@ -7,7 +7,7 @@ import AppointmentDialog from './Appointment/AppointmentDialog';
 
 const WarmHeroSection = () => {
   return (
-    <section className="relative overflow-hidden min-h-[90vh] flex items-center justify-center" id="home">
+    <section className="relative overflow-hidden min-h-[100vh] flex items-center justify-center" id="home">
       {/* Background Video */}
       <video
         autoPlay
@@ -15,15 +15,18 @@ const WarmHeroSection = () => {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        disablePictureInPicture
+        controlsList="nodownload nofullscreen noremoteplayback"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        style={{ WebkitMediaControlsPanel: 'none' } as React.CSSProperties}
       >
-        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dabsxebx8/video/upload/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/50 z-[1]" />
 
-      <div className="container mx-auto px-4 z-10 relative text-center">
+      <div className="container mx-auto px-4 z-10 relative text-center pt-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,8 +49,8 @@ const WarmHeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Step into a brighter tomorrow
-            <span className="block font-instrument-serif italic text-amber-300/80 font-normal">with Sunrise Human Care</span>
+            Step into a brighter tomorrow{' '}
+            <span className="inline md:block font-instrument-serif italic text-amber-300/80 font-normal">with Sunrise Human Care</span>
           </motion.h1>
 
           <motion.p
@@ -72,7 +75,7 @@ const WarmHeroSection = () => {
               </Button>
             </a>
             <AppointmentDialog>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/30 text-white font-barlow font-semibold rounded-full hover:bg-white/10 hover:border-white/50 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <Button size="lg" className="w-full sm:w-auto border-2 border-white text-white bg-white/10 font-barlow font-semibold rounded-full hover:bg-white/20 shadow-sm hover:shadow-md transition-all duration-300 group">
                 <Calendar className="mr-2 h-4 w-4 group-hover:text-amber-300" />
                 Book Appointment
               </Button>
@@ -89,6 +92,23 @@ const WarmHeroSection = () => {
           </motion.p>
         </motion.div>
       </div>
+
+      {/* Hide native video controls on all browsers */}
+      <style>{`
+        video::-webkit-media-controls,
+        video::-webkit-media-controls-panel,
+        video::-webkit-media-controls-play-button,
+        video::-webkit-media-controls-start-playback-button,
+        video::-webkit-media-controls-overlay-play-button {
+          display: none !important;
+          -webkit-appearance: none !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+        video::-moz-media-controls {
+          display: none !important;
+        }
+      `}</style>
     </section>
   );
 };
