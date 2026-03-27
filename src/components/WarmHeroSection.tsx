@@ -23,8 +23,12 @@ const WarmHeroSection = () => {
         <source src="https://res.cloudinary.com/dabsxebx8/video/upload/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50 z-[1]" />
+      {/* Soft glowing blur overlay */}
+      <div className="absolute inset-0 z-[1]" style={{
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(251,191,36,0.08) 40%, rgba(255,255,255,0.12) 70%, rgba(245,158,11,0.06) 100%)',
+        backdropFilter: 'blur(3px)',
+        WebkitBackdropFilter: 'blur(3px)',
+      }} />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-20">
         <motion.div
