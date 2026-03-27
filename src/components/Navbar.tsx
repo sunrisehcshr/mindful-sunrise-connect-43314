@@ -12,6 +12,7 @@ const Navbar = () => {
   const [mobileConditionsOpen, setMobileConditionsOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
