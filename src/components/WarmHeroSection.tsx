@@ -37,8 +37,8 @@ const WarmHeroSection = () => {
               animate={{ opacity: 1 }} 
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Expert Mental Health Care
-              <span className="block font-instrument-serif italic text-amber-700/70 font-normal">in Darby, PA</span>
+              Step into a brighter tomorrow
+              <span className="block font-instrument-serif italic text-amber-700/70 font-normal">with Sunrise Human Care</span>
             </motion.h1>
             
             <motion.p 
