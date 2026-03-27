@@ -163,7 +163,8 @@ const Navbar = () => {
                           className={cn(
                             "px-3 py-2 rounded-md text-sm font-barlow font-medium transition-all duration-300 gap-1.5", 
                             (link.label === "Services" && (isActive("/services") || isServicePage())) || 
-                            (link.label === "Conditions" && (isActive("/conditions") || isConditionPage()))
+                            (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
+                            (link.label === "Resources" && isResourcePage())
                               ? "text-stone-900 font-semibold" 
                               : "text-zinc-600 hover:text-zinc-900"
                           )}
