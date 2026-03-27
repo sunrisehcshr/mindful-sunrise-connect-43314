@@ -242,7 +242,7 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          <button onClick={toggleMenu} className={cn("md:hidden p-2 rounded-md focus:outline-none", isHomePage && !isScrolled ? "text-white hover:text-white/80" : "text-zinc-600 hover:text-stone-900")} aria-label="Toggle menu">
+          <button onClick={toggleMenu} className="md:hidden p-2 rounded-md focus:outline-none text-zinc-600 hover:text-stone-900" aria-label="Toggle menu">
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
