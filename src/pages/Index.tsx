@@ -8,7 +8,7 @@ import ConditionsSection from '../components/conditions/ConditionsSection';
 import AboutSection from '../components/AboutSection';
 import TeamSection from '../components/team/TeamSection';
 import FAQSection from '../components/FAQSection';
-import TestimonialsSection from '../components/TestimonialsSection';
+
 import AppointmentSection from '../components/Appointment/AppointmentSection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
@@ -49,7 +49,7 @@ const Index = () => {
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
-          <TestimonialsSection />
+          
           <TeamSection />
           <FAQSection />
           <AppointmentSection />
