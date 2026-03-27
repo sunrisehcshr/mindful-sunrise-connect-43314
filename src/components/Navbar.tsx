@@ -42,6 +42,7 @@ const Navbar = () => {
     setIsMenuOpen(false);
     setMobileServicesOpen(false);
     setMobileConditionsOpen(false);
+    setMobileResourcesOpen(false);
   }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path;
