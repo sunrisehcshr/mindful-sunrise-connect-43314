@@ -167,7 +167,7 @@ const Navbar = () => {
                             (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
                             (link.label === "Resources" && isResourcePage())
                               ? "text-stone-900 font-semibold" 
-                              : "text-zinc-600 hover:text-zinc-900"
+                              : isHomePage && !isScrolled ? "text-white/90 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
                           )}
                         >
                           {link.label}
