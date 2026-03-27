@@ -53,6 +53,7 @@ const Index = () => {
           <TeamSection />
           <FAQSection />
           <AppointmentSection />
+          </div>
         </main>
         <Footer />
       </motion.div>
