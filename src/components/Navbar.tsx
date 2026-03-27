@@ -148,8 +148,8 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 shrink-0 group">
             <img src="/images/logo.png" alt="Sunrise Human Care Services Logo" className="h-10 w-12 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
             <div className="flex flex-col">
-              <span className={cn("leading-tight text-base font-extrabold", isHomePage && !isScrolled ? "text-white" : "bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text")}>Sunrise</span>
-              <span className={cn("text-xs leading-tight font-normal", isHomePage && !isScrolled ? "text-white/70" : "text-muted-foreground")}>Human Care Services</span>
+              <span className="leading-tight text-base font-extrabold bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text">Sunrise</span>
+               <span className="text-xs leading-tight font-normal text-muted-foreground">Human Care Services</span>
             </div>
           </Link>
 
