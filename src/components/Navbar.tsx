@@ -140,8 +140,8 @@ const Navbar = () => {
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
       <div className={cn(
-        "bg-white/95 backdrop-blur-md rounded-[16px] shadow-lg px-4 md:px-6 py-3 transition-all duration-300",
-        isScrolled && "shadow-xl"
+        "backdrop-blur-md rounded-[16px] px-4 md:px-6 py-3 transition-all duration-300",
+        isScrolled ? "bg-white/95 shadow-xl" : "bg-[#faf8f4]/90 shadow-lg"
       )}>
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 shrink-0 group">
