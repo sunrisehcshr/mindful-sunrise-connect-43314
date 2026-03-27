@@ -17,7 +17,7 @@ const WarmHeroSection = () => {
         preload="auto"
         disablePictureInPicture
         controlsList="nodownload nofullscreen noremoteplayback"
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none object-right md:object-center"
         style={{ WebkitMediaControlsPanel: 'none' } as React.CSSProperties}
       >
         <source src="https://res.cloudinary.com/dabsxebx8/video/upload/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
