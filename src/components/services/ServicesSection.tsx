@@ -53,7 +53,7 @@ const ServicesSection: React.FC = () => {
           
           <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
             Mental health services
-            <span className="block font-instrument-serif italic text-amber-700/70 font-normal">available in Darby</span>
+            <span className="block font-instrument-serif italic text-amber-400 font-normal">available in Darby</span>
           </h2>
           
           <p className="text-stone-600 font-barlow">

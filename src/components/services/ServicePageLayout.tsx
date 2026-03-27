@@ -133,7 +133,7 @@ const ServicePageLayout = ({
                   <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Benefits</span>
                   <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight mb-4">
                     Benefits of {serviceType}
-                    <span className="block font-instrument-serif italic text-amber-700/70 font-normal">in Darby</span>
+                    <span className="block font-instrument-serif italic text-amber-400 font-normal">in Darby</span>
                   </h2>
                   <p className="text-stone-600 font-barlow">
                     Our {serviceType.toLowerCase()} in Darby, PA is designed to help you achieve meaningful, lasting improvements in your mental health and daily life.
@@ -166,7 +166,7 @@ const ServicePageLayout = ({
                   <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Our Approach</span>
                   <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight mb-4">
                     Treatment approaches
-                    <span className="block font-instrument-serif italic text-amber-700/70 font-normal">for {serviceType}</span>
+                    <span className="block font-instrument-serif italic text-amber-400 font-normal">for {serviceType}</span>
                   </h2>
                   <p className="text-stone-600 font-barlow">
                     We use evidence-based therapeutic methods tailored to your unique needs at our Darby, PA clinic.
@@ -208,7 +208,7 @@ const ServicePageLayout = ({
                   <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">FAQ</span>
                   <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight">
                     Frequently asked questions
-                    <span className="block font-instrument-serif italic text-amber-700/70 font-normal">about {serviceType}</span>
+                    <span className="block font-instrument-serif italic text-amber-400 font-normal">about {serviceType}</span>
                   </h2>
                 </div>
                 <div className="max-w-3xl mx-auto">
@@ -266,7 +266,7 @@ const ServicePageLayout = ({
                 <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Related</span>
                 <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight">
                   Related services
-                  <span className="block font-instrument-serif italic text-amber-700/70 font-normal">in Darby</span>
+                  <span className="block font-instrument-serif italic text-amber-400 font-normal">in Darby</span>
                 </h2>
               </div>
               

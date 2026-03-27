@@ -74,7 +74,7 @@ const TestimonialsSection: React.FC = () => {
           </span>
           <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
             What our patients
-            <span className="block font-instrument-serif italic text-amber-700/70 font-normal">say about us</span>
+            <span className="block font-instrument-serif italic text-amber-400 font-normal">say about us</span>
           </h2>
           <p className="text-stone-600 max-w-2xl mx-auto font-barlow">
             Real experiences from individuals and families who have found healing and support at Sunrise Human Care Services.
