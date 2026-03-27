@@ -40,7 +40,7 @@ const WarmHeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-4"
           >
-            <span className="inline-block bg-white/25 backdrop-blur-md text-white font-barlow font-semibold text-[11px] tracking-[0.25em] uppercase px-5 py-2.5 rounded-full shadow-lg border border-white/20">
+            <span className="inline-block bg-white/20 backdrop-blur-sm text-white font-barlow font-semibold text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full">
               Mental Health Clinic in Darby
             </span>
           </motion.div>
