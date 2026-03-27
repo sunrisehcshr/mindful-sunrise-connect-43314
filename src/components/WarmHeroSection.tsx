@@ -52,7 +52,7 @@ const WarmHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             Step into a brighter tomorrow{' '}
-            <span className="inline md:block font-instrument-serif italic text-amber-300/80 font-bold">with Sunrise Human Care</span>
+            <span className="inline md:block font-instrument-serif italic text-amber-300 font-normal">with Sunrise Human Care</span>
           </motion.h1>
 
           <motion.p
