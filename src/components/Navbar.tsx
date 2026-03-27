@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileConditionsOpen, setMobileConditionsOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -24,22 +25,24 @@ const Navbar = () => {
   
   const toggleMobileServices = () => {
     setMobileServicesOpen(!mobileServicesOpen);
-    if (!mobileServicesOpen && mobileConditionsOpen) {
-      setMobileConditionsOpen(false);
-    }
+    if (!mobileServicesOpen) { setMobileConditionsOpen(false); setMobileResourcesOpen(false); }
   };
 
   const toggleMobileConditions = () => {
     setMobileConditionsOpen(!mobileConditionsOpen);
-    if (!mobileConditionsOpen && mobileServicesOpen) {
-      setMobileServicesOpen(false);
-    }
+    if (!mobileConditionsOpen) { setMobileServicesOpen(false); setMobileResourcesOpen(false); }
+  };
+
+  const toggleMobileResources = () => {
+    setMobileResourcesOpen(!mobileResourcesOpen);
+    if (!mobileResourcesOpen) { setMobileServicesOpen(false); setMobileConditionsOpen(false); }
   };
 
   useEffect(() => {
     setIsMenuOpen(false);
     setMobileServicesOpen(false);
     setMobileConditionsOpen(false);
+    setMobileResourcesOpen(false);
   }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path;
@@ -104,12 +107,19 @@ const Navbar = () => {
     { title: "OCD", path: "/ocd-therapy-darby-pa" }
   ];
 
+  const resourceLinks = [
+    { title: "About Us", path: "/about" },
+    { title: "Blog", path: "/blog" },
+    { title: "FAQ", path: "/faq" },
+  ];
+
+  const isResourcePage = () => {
+    return isActive("/about") || isActive("/blog") || isActive("/faq");
+  };
+
   const navLinks = [{
     path: "/",
     label: "Home"
-  }, {
-    path: "/about",
-    label: "About"
   }, {
     type: "dropdown",
     label: "Services",
@@ -119,11 +129,9 @@ const Navbar = () => {
     label: "Conditions",
     children: conditionLinks
   }, {
-    path: "/blog",
-    label: "Blog"
-  }, {
-    path: "/faq",
-    label: "FAQ"
+    type: "dropdown",
+    label: "Resources",
+    children: resourceLinks
   }, {
     path: "/contact",
     label: "Contact"
@@ -132,8 +140,8 @@ const Navbar = () => {
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
       <div className={cn(
-        "bg-white/95 backdrop-blur-md rounded-[16px] shadow-lg px-4 md:px-6 py-3 transition-all duration-300",
-        isScrolled && "shadow-xl"
+        "backdrop-blur-md rounded-[16px] px-4 md:px-6 py-3 transition-all duration-300",
+        isScrolled ? "bg-white/95 shadow-xl" : "bg-[#faf8f4]/90 shadow-lg"
       )}>
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 shrink-0 group">
@@ -155,7 +163,8 @@ const Navbar = () => {
                           className={cn(
                             "px-3 py-2 rounded-md text-sm font-barlow font-medium transition-all duration-300 gap-1.5", 
                             (link.label === "Services" && (isActive("/services") || isServicePage())) || 
-                            (link.label === "Conditions" && (isActive("/conditions") || isConditionPage()))
+                            (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
+                            (link.label === "Resources" && isResourcePage())
                               ? "text-stone-900 font-semibold" 
                               : "text-zinc-600 hover:text-zinc-900"
                           )}
@@ -168,7 +177,7 @@ const Navbar = () => {
                               {link.children.map((child, childIndex) => (
                                 <Link 
                                   key={childIndex} 
-                                  to={`${child.path}#home`} 
+                                  to={link.label === "Resources" ? child.path : `${child.path}#home`} 
                                   className={cn(
                                     "block select-none rounded-md py-2 px-3 text-sm font-barlow leading-none no-underline outline-none transition-colors hover:bg-amber-50 hover:text-stone-900", 
                                     isActive(child.path) ? "bg-amber-50 text-stone-900 font-medium" : "text-zinc-600"
@@ -245,24 +254,25 @@ const Navbar = () => {
                   return (
                     <div key={index} className="space-y-1">
                       <button 
-                        onClick={link.label === "Services" ? toggleMobileServices : toggleMobileConditions} 
+                        onClick={link.label === "Services" ? toggleMobileServices : link.label === "Conditions" ? toggleMobileConditions : toggleMobileResources} 
                         className={cn(
                           "w-full px-4 py-3 rounded-lg text-sm font-barlow font-medium transition-all duration-300 flex items-center justify-between", 
                           (link.label === "Services" && (isActive("/services") || isServicePage())) || 
-                          (link.label === "Conditions" && (isActive("/conditions") || isConditionPage()))
+                          (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
+                          (link.label === "Resources" && isResourcePage())
                             ? "text-stone-900 bg-amber-50" 
                             : "text-zinc-600 hover:text-stone-900 hover:bg-stone-50"
                         )}
                       >
                         {link.label}
-                        {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
+                        {(link.label === "Services" && mobileServicesOpen) || (link.label === "Conditions" && mobileConditionsOpen) || (link.label === "Resources" && mobileResourcesOpen) ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
                       </button>
-                      {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? (
+                      {(link.label === "Services" && mobileServicesOpen) || (link.label === "Conditions" && mobileConditionsOpen) || (link.label === "Resources" && mobileResourcesOpen) ? (
                         <div className="pl-4 space-y-1 border-l-2 border-amber-200 ml-4">
                           {link.children.map((child, childIndex) => (
                             <Link 
                               key={childIndex} 
-                              to={`${child.path}#home`} 
+                              to={link.label === "Resources" ? child.path : `${child.path}#home`} 
                               className={cn(
                                 "block px-4 py-2 text-sm font-barlow rounded-md transition-colors", 
                                 isActive(child.path) ? "text-stone-900 bg-amber-50 font-medium" : "text-zinc-500 hover:text-stone-900 hover:bg-stone-50"
