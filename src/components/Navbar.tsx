@@ -148,8 +148,8 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 shrink-0 group">
             <img src="/images/logo.png" alt="Sunrise Human Care Services Logo" className="h-10 w-12 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
             <div className="flex flex-col">
-              <span className={cn("leading-tight text-base font-extrabold", isHomePage && !isScrolled ? "text-white" : "bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text")}>Sunrise</span>
-              <span className={cn("text-xs leading-tight font-normal", isHomePage && !isScrolled ? "text-white/70" : "text-muted-foreground")}>Human Care Services</span>
+              <span className="leading-tight text-base font-extrabold bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text">Sunrise</span>
+               <span className="text-xs leading-tight font-normal text-muted-foreground">Human Care Services</span>
             </div>
           </Link>
 
@@ -167,11 +167,11 @@ const Navbar = () => {
                             (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
                             (link.label === "Resources" && isResourcePage())
                               ? "text-stone-900 font-semibold" 
-                              : isHomePage && !isScrolled ? "text-white/90 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
-                          )}
-                        >
-                          {link.label}
-                        </NavigationMenuTrigger>
+                              : "text-zinc-600 hover:text-zinc-900"
+                           )}
+                         >
+                           {link.label}
+                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="p-2 w-[400px] max-h-[600px]">
                           <ScrollArea className="h-full w-full max-h-[550px]">
                             <div className="grid grid-cols-1 gap-1 p-2">
@@ -219,7 +219,7 @@ const Navbar = () => {
                     "px-3 py-2 rounded-md text-sm font-barlow font-medium transition-all duration-300", 
                     isActive(link.path) 
                       ? "text-stone-900 font-semibold" 
-                      : isHomePage && !isScrolled ? "text-white/90 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
+                       : "text-zinc-600 hover:text-zinc-900"
                   )}
                 >
                   {link.label}
@@ -228,7 +228,12 @@ const Navbar = () => {
             })}
             <Link 
               to="/appointment" 
-              className="ml-2 flex items-center gap-2 bg-[#222] text-white font-barlow font-medium text-sm px-5 py-2.5 rounded-full hover:bg-zinc-800 transition-colors shrink-0"
+              className={cn(
+                "ml-2 flex items-center gap-2 font-barlow font-medium text-sm px-5 py-2.5 rounded-full transition-colors shrink-0",
+                isHomePage && !isScrolled 
+                  ? "bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30" 
+                  : "bg-[#222] text-white hover:bg-zinc-800"
+              )}
             >
               Book Appointment
               <span className="flex items-center justify-center w-5 h-5 rounded-full bg-white/20">
@@ -237,7 +242,7 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          <button onClick={toggleMenu} className={cn("md:hidden p-2 rounded-md focus:outline-none", isHomePage && !isScrolled ? "text-white hover:text-white/80" : "text-zinc-600 hover:text-stone-900")} aria-label="Toggle menu">
+          <button onClick={toggleMenu} className="md:hidden p-2 rounded-md focus:outline-none text-zinc-600 hover:text-stone-900" aria-label="Toggle menu">
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
