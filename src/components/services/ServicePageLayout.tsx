@@ -184,7 +184,7 @@ const ServicePageLayout = ({
                     >
                       <div className="flex items-start gap-4">
                         {approach.icon && (
-                          <div className="rounded-full bg-amber-100 p-3 flex-shrink-0 text-amber-700">
+                          <div className="rounded-xl bg-amber-400 p-3 flex-shrink-0 text-white">
                             {approach.icon}
                           </div>
                         )}
