@@ -44,6 +44,7 @@ const Index = () => {
         <Navbar />
         <main className="flex-grow">
           <WarmHeroSection />
+          <div className="relative z-10 rounded-t-3xl bg-[hsl(var(--cream))] -mt-8 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
           <WhyChooseUsSection />
           <ServicesSection />
           <ConditionsSection />
