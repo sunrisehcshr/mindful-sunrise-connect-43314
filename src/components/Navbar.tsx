@@ -254,24 +254,25 @@ const Navbar = () => {
                   return (
                     <div key={index} className="space-y-1">
                       <button 
-                        onClick={link.label === "Services" ? toggleMobileServices : toggleMobileConditions} 
+                        onClick={link.label === "Services" ? toggleMobileServices : link.label === "Conditions" ? toggleMobileConditions : toggleMobileResources} 
                         className={cn(
                           "w-full px-4 py-3 rounded-lg text-sm font-barlow font-medium transition-all duration-300 flex items-center justify-between", 
                           (link.label === "Services" && (isActive("/services") || isServicePage())) || 
-                          (link.label === "Conditions" && (isActive("/conditions") || isConditionPage()))
+                          (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
+                          (link.label === "Resources" && isResourcePage())
                             ? "text-stone-900 bg-amber-50" 
                             : "text-zinc-600 hover:text-stone-900 hover:bg-stone-50"
                         )}
                       >
                         {link.label}
-                        {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
+                        {(link.label === "Services" && mobileServicesOpen) || (link.label === "Conditions" && mobileConditionsOpen) || (link.label === "Resources" && mobileResourcesOpen) ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
                       </button>
-                      {link.label === "Services" && mobileServicesOpen || link.label === "Conditions" && mobileConditionsOpen ? (
+                      {(link.label === "Services" && mobileServicesOpen) || (link.label === "Conditions" && mobileConditionsOpen) || (link.label === "Resources" && mobileResourcesOpen) ? (
                         <div className="pl-4 space-y-1 border-l-2 border-amber-200 ml-4">
                           {link.children.map((child, childIndex) => (
                             <Link 
                               key={childIndex} 
-                              to={`${child.path}#home`} 
+                              to={link.label === "Resources" ? child.path : `${child.path}#home`} 
                               className={cn(
                                 "block px-4 py-2 text-sm font-barlow rounded-md transition-colors", 
                                 isActive(child.path) ? "text-stone-900 bg-amber-50 font-medium" : "text-zinc-500 hover:text-stone-900 hover:bg-stone-50"
