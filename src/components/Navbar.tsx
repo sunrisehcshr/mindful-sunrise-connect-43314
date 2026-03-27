@@ -107,12 +107,19 @@ const Navbar = () => {
     { title: "OCD", path: "/ocd-therapy-darby-pa" }
   ];
 
+  const resourceLinks = [
+    { title: "About Us", path: "/about" },
+    { title: "Blog", path: "/blog" },
+    { title: "FAQ", path: "/faq" },
+  ];
+
+  const isResourcePage = () => {
+    return isActive("/about") || isActive("/blog") || isActive("/faq");
+  };
+
   const navLinks = [{
     path: "/",
     label: "Home"
-  }, {
-    path: "/about",
-    label: "About"
   }, {
     type: "dropdown",
     label: "Services",
@@ -122,11 +129,9 @@ const Navbar = () => {
     label: "Conditions",
     children: conditionLinks
   }, {
-    path: "/blog",
-    label: "Blog"
-  }, {
-    path: "/faq",
-    label: "FAQ"
+    type: "dropdown",
+    label: "Resources",
+    children: resourceLinks
   }, {
     path: "/contact",
     label: "Contact"
