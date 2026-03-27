@@ -219,7 +219,7 @@ const Navbar = () => {
                     "px-3 py-2 rounded-md text-sm font-barlow font-medium transition-all duration-300", 
                     isActive(link.path) 
                       ? "text-stone-900 font-semibold" 
-                      : "text-zinc-600 hover:text-zinc-900"
+                      : isHomePage && !isScrolled ? "text-white/90 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
                   )}
                 >
                   {link.label}
