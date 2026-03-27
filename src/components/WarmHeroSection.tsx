@@ -28,7 +28,7 @@ const WarmHeroSection = () => {
         background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(251,191,36,0.06) 40%, rgba(255,255,255,0.05) 70%, rgba(245,158,11,0.04) 100%)',
       }} />
 
-      <div className="container mx-auto px-4 z-10 relative text-center pt-20">
+      <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,15 +38,15 @@ const WarmHeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-4"
+            className="mb-3 md:mb-4"
           >
-            <span className="inline-block bg-white/20 backdrop-blur-sm text-white font-barlow font-semibold text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full">
+            <span className="inline-block bg-white/20 backdrop-blur-sm text-white font-barlow font-semibold text-[10px] sm:text-xs tracking-[0.2em] uppercase px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
               Mental Health Clinic in Darby
             </span>
           </motion.div>
 
           <motion.h1
-            className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl mb-6 text-white leading-tight tracking-tight"
+            className="font-barlow font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 text-white leading-tight tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -56,7 +56,7 @@ const WarmHeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed font-barlow"
+            className="text-sm sm:text-base md:text-lg text-white/80 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed font-barlow"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}

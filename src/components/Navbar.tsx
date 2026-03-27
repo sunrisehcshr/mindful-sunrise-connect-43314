@@ -12,6 +12,7 @@ const Navbar = () => {
   const [mobileConditionsOpen, setMobileConditionsOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -147,8 +148,8 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 shrink-0 group">
             <img src="/images/logo.png" alt="Sunrise Human Care Services Logo" className="h-10 w-12 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
             <div className="flex flex-col">
-              <span className="leading-tight text-base bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text font-extrabold">Sunrise</span>
-              <span className="text-xs text-muted-foreground leading-tight font-normal">Human Care Services</span>
+              <span className={cn("leading-tight text-base font-extrabold", isHomePage && !isScrolled ? "text-white" : "bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text")}>Sunrise</span>
+              <span className={cn("text-xs leading-tight font-normal", isHomePage && !isScrolled ? "text-white/70" : "text-muted-foreground")}>Human Care Services</span>
             </div>
           </Link>
 
@@ -166,7 +167,7 @@ const Navbar = () => {
                             (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
                             (link.label === "Resources" && isResourcePage())
                               ? "text-stone-900 font-semibold" 
-                              : "text-zinc-600 hover:text-zinc-900"
+                              : isHomePage && !isScrolled ? "text-white/90 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
                           )}
                         >
                           {link.label}
@@ -218,7 +219,7 @@ const Navbar = () => {
                     "px-3 py-2 rounded-md text-sm font-barlow font-medium transition-all duration-300", 
                     isActive(link.path) 
                       ? "text-stone-900 font-semibold" 
-                      : "text-zinc-600 hover:text-zinc-900"
+                      : isHomePage && !isScrolled ? "text-white/90 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
                   )}
                 >
                   {link.label}
@@ -236,7 +237,7 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          <button onClick={toggleMenu} className="md:hidden p-2 rounded-md text-zinc-600 hover:text-stone-900 focus:outline-none" aria-label="Toggle menu">
+          <button onClick={toggleMenu} className={cn("md:hidden p-2 rounded-md focus:outline-none", isHomePage && !isScrolled ? "text-white hover:text-white/80" : "text-zinc-600 hover:text-stone-900")} aria-label="Toggle menu">
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
