@@ -55,7 +55,7 @@ const WarmHeroSection = () => {
       {/* Soft glow overlay */}
       {/* Subtle dark overlay for text readability */}
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'rgba(0,0,0,0.3)',
+        background: 'rgba(0,0,0,0.05)',
         WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
       } as React.CSSProperties} />
