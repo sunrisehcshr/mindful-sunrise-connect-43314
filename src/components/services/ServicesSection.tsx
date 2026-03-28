@@ -8,32 +8,32 @@ import AppointmentDialog from '../Appointment/AppointmentDialog';
 
 const ServicesSection: React.FC = () => {
   const services = [{
-    icon: <User className="h-6 w-6 bg-primary" />,
+    icon: <User className="h-6 w-6 text-orange-300" />,
     title: "Individual Therapy in Darby, PA",
     description: "One-on-one therapy sessions tailored to your unique needs and challenges. Our specialized mental health care in Darby helps clients overcome anxiety, depression, and stress with evidence-based techniques and personalized treatment plans.",
     url: "/individual-therapy-darby-pa"
   }, {
-    icon: <HeartHandshake className="h-6 w-6 bg-primary" />,
+    icon: <HeartHandshake className="h-6 w-6 text-orange-300" />,
     title: "Couples Counseling in Darby",
     description: "Specialized therapy to help couples improve communication, resolve conflicts, and strengthen relationships. Our experienced therapists provide supportive guidance for couples facing challenges, helping rebuild trust and foster deeper connections.",
     url: "/couples-counseling-darby-pa"
   }, {
-    icon: <Users className="h-6 w-6 bg-primary" />,
+    icon: <Users className="h-6 w-6 text-orange-300" />,
     title: "Family Therapy in Darby, PA",
     description: "Therapy sessions focused on improving family relationships and communication. We help families from Darby, Yeadon, and surrounding areas navigate conflicts, adjust to changes, and develop healthier patterns of interaction for lasting family harmony.",
     url: "/family-therapy-darby-pa"
   }, {
-    icon: <Baby className="h-6 w-6 bg-primary" />,
+    icon: <Baby className="h-6 w-6 text-orange-300" />,
     title: "Child & Adolescent Therapy",
     description: "Specialized therapy for children and teens facing behavioral or emotional challenges. Our compassionate approach to mental health care in Darby helps young people build resilience, develop coping skills, and thrive through life's challenges.",
     url: "/child-therapy-darby-pa"
   }, {
-    icon: <Stethoscope className="h-6 w-6 bg-primary" />,
+    icon: <Stethoscope className="h-6 w-6 text-orange-300" />,
     title: "Psychiatric Evaluations in Darby",
     description: "Comprehensive mental health assessments and diagnostic services. Our thorough evaluations provide clarity and direction for treatment, identifying specific conditions and creating the foundation for effective, personalized mental health care.",
     url: "/psychiatric-evaluations-darby-pa"
   }, {
-    icon: <Pill className="h-6 w-6 bg-primary" />,
+    icon: <Pill className="h-6 w-6 text-orange-300" />,
     title: "Medication Management",
     description: "Professional psychiatric medication reviews and management for mental health conditions. Our psychiatrists in Darby provide expert guidance on medication options, carefully monitor effectiveness, and make adjustments to optimize your mental wellness journey.",
     url: "/medication-management-darby-pa"
