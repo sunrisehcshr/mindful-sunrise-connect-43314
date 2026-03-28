@@ -38,16 +38,19 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
       <div className="group bg-white border border-stone-200/80 rounded-2xl hover:shadow-lg hover:border-amber-200 transition-all duration-300 h-full">
         <div className="p-6">
           <div className="flex flex-col items-center text-center space-y-4">
-            <Avatar className="h-24 w-24 border-4 border-amber-100 overflow-hidden">
-              <AvatarImage 
-                src={image} 
-                alt={name} 
-                className={`object-cover ${name === 'Shanada Anderson' ? 'scale-125 translate-y-2' : name === 'Anthony Obi' ? 'scale-125' : name === 'Michael Flynn' ? 'scale-[1.02]' : ''}`}
-              />
-              <AvatarFallback className="bg-amber-100 text-amber-700 text-xl font-barlow font-semibold">
-                {getInitials(name)}
-              </AvatarFallback>
-            </Avatar>
+            <div className="w-24 h-24 rounded-2xl border-2 border-stone-200/80 overflow-hidden">
+              {image ? (
+                <img 
+                  src={image} 
+                  alt={name} 
+                  className={`w-full h-full object-cover ${name === 'Shanada Anderson' ? 'scale-125 translate-y-2' : name === 'Anthony Obi' ? 'scale-125' : name === 'Michael Flynn' ? 'scale-[1.02]' : ''}`}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-amber-100 text-amber-700 text-xl font-barlow font-semibold">
+                  {getInitials(name)}
+                </div>
+              )}
+            </div>
             
             <div>
               <h3 className="text-xl font-barlow font-semibold text-stone-800 mb-1">
