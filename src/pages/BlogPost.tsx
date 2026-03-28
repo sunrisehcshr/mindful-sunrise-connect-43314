@@ -24,7 +24,7 @@ const BlogPost = () => {
     return null;
   }
   return <>
-      <SEOHead title={`${blogPostData.title} | Mental Health Blog | Sunrise Human Care Services`} description={blogPostData.excerpt} canonicalUrl={`https://sunrisehcsllc.com/blog/${id}`} />
+      <SEOHead title={`${blogPostData.title} | Mental Health Blog | Sunrise Human Care Services`} description={blogPostData.excerpt} canonicalUrl={`https://sunrisehumancare.com/blog/${id}`} />
       <SchemaMarkup />
       <Navbar />
       
