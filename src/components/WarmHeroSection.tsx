@@ -91,7 +91,7 @@ const WarmHeroSection = () => {
           </motion.div>
 
           <motion.p
-            className="text-sm text-white/60 mt-4 font-barlow"
+            className="text-sm text-amber-300/80 mt-4 font-barlow"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
