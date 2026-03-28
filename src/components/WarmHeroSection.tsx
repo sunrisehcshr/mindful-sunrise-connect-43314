@@ -39,7 +39,7 @@ const WarmHeroSection = () => {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         disablePictureInPicture
         controlsList="nodownload nofullscreen noremoteplayback"
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
