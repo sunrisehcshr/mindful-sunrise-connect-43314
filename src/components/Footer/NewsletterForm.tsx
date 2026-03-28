@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { useFormProtection } from '@/hooks/useFormProtection';
@@ -56,22 +55,22 @@ const NewsletterForm: React.FC = () => {
   
   return (
     <div className="space-y-3">
-      <p className="text-xs sm:text-sm text-stone-500 font-barlow">
+      <p className="text-sm text-stone-300 font-barlow leading-relaxed">
         Subscribe to our newsletter for helpful mental health tips and updates.
       </p>
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }} aria-hidden="true" />
         <input 
           type="email" 
           placeholder="Your email address" 
           value={email} 
           onChange={e => setEmail(e.target.value)} 
-          className="flex-grow px-3 py-1.5 text-xs rounded-lg border border-stone-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-opacity-50 font-barlow" 
+          className="w-full px-4 py-2.5 text-sm rounded-xl border border-white/10 bg-white/5 text-white placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30 focus:border-amber-400/30 font-barlow transition-all duration-300" 
           required 
         />
         <button 
           type="submit" 
-          className="bg-[#222] hover:bg-zinc-800 text-white font-barlow font-medium py-1.5 px-3 text-xs rounded-full transition-colors duration-300 whitespace-nowrap disabled:opacity-70" 
+          className="w-full bg-amber-400 hover:bg-amber-300 text-slate-900 font-barlow font-semibold py-2.5 px-4 text-sm rounded-full transition-all duration-300 whitespace-nowrap disabled:opacity-70" 
           disabled={isSubmitting}
         >
           {isSubmitting ? "Subscribing..." : "Subscribe"}

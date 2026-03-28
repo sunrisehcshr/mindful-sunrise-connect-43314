@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ChevronDown } from 'lucide-react';
@@ -62,13 +61,13 @@ const FooterNav: React.FC = () => {
             <div className="space-y-2">
               <button 
                 onClick={() => toggleSection(link.label)}
-                className="flex items-center justify-between w-full text-sm text-stone-500 hover:text-stone-800 transition-colors font-barlow"
+                className="flex items-center justify-between w-full text-sm text-stone-300 hover:text-amber-300 transition-colors font-barlow"
               >
                 {link.label}
                 {openSection === link.label ? (
-                  <ChevronDown className="h-4 w-4 text-amber-600" />
+                  <ChevronDown className="h-4 w-4 text-yellow-300" />
                 ) : (
-                  <ChevronRight className="h-4 w-4 text-stone-400" />
+                  <ChevronRight className="h-4 w-4 text-stone-500" />
                 )}
               </button>
               
@@ -76,21 +75,21 @@ const FooterNav: React.FC = () => {
                 <ul className="ml-4 mt-2 space-y-2">
                   {link.children?.map((child, childIndex) => (
                     <li key={childIndex}>
-                      <Link to={child.to} className="text-xs text-stone-400 hover:text-stone-700 transition-colors block py-1 font-barlow">
+                      <Link to={child.to} className="text-xs text-stone-400 hover:text-amber-300 transition-colors block py-1 font-barlow">
                         {child.label}
                       </Link>
                     </li>
                   ))}
                   {link.label === "Our Services" && (
                     <li>
-                      <Link to="/services" className="text-xs text-amber-700 hover:text-amber-800 font-medium transition-colors flex items-center py-1 font-barlow">
+                      <Link to="/services" className="text-xs text-amber-300 hover:text-amber-200 font-medium transition-colors flex items-center py-1 font-barlow">
                         All Services <ChevronRight className="h-3 w-3 ml-1" />
                       </Link>
                     </li>
                   )}
                   {link.label === "Conditions We Treat" && (
                     <li>
-                      <Link to="/conditions" className="text-xs text-amber-700 hover:text-amber-800 font-medium transition-colors flex items-center py-1 font-barlow">
+                      <Link to="/conditions" className="text-xs text-amber-300 hover:text-amber-200 font-medium transition-colors flex items-center py-1 font-barlow">
                         All Conditions <ChevronRight className="h-3 w-3 ml-1" />
                       </Link>
                     </li>
@@ -100,11 +99,11 @@ const FooterNav: React.FC = () => {
             </div>
           ) : (
             link.to.endsWith('.xml') ? (
-              <a href={link.to} className="text-sm text-stone-500 hover:text-stone-800 transition-colors block py-1 font-barlow">
+              <a href={link.to} className="text-sm text-stone-300 hover:text-amber-300 transition-colors block py-1 font-barlow">
                 {link.label}
               </a>
             ) : (
-              <Link to={link.to} className="text-sm text-stone-500 hover:text-stone-800 transition-colors block py-1 font-barlow">
+              <Link to={link.to} className="text-sm text-stone-300 hover:text-amber-300 transition-colors block py-1 font-barlow">
                 {link.label}
               </Link>
             )
