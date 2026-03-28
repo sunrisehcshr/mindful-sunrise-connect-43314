@@ -49,7 +49,7 @@ const WarmHeroSection = () => {
           maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         } as React.CSSProperties}
       >
-        <source src="https://res.cloudinary.com/dabsxebx8/video/upload/q_80,f_auto/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dabsxebx8/video/upload/q_80,f_auto/v1774724306/8091705-uhd_4096_2160_24fps_wsjr3i.mp4" type="video/mp4" />
       </video>
 
       {/* Soft glow overlay */}
