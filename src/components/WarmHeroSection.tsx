@@ -45,7 +45,6 @@ const WarmHeroSection = () => {
         poster="/images/hero-fallback.png"
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
         style={{
-          transform: 'scaleX(-1)',
           WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
           maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         } as React.CSSProperties}
@@ -56,7 +55,7 @@ const WarmHeroSection = () => {
       {/* Soft glow overlay */}
       {/* Subtle dark overlay for text readability */}
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'rgba(0,0,0,0.10)',
+        background: 'rgba(0,0,0,0.30)',
         WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
       } as React.CSSProperties} />
@@ -129,7 +128,7 @@ const WarmHeroSection = () => {
       </div>
 
       {/* Bottom fade matching next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 z-[2] bg-gradient-to-t from-[hsl(var(--cream))] via-[hsl(var(--cream))]/80 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 z-[2] bg-gradient-to-t from-white via-white/80 to-transparent" />
 
       {/* Hide native video controls on all browsers */}
       <style>{`
