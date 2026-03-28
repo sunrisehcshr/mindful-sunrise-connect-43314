@@ -1,20 +1,45 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { Phone, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
 
 const WarmHeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Force play as soon as enough data is available
+    const tryPlay = () => {
+      video.play().catch(() => {
+        // Autoplay blocked — silent fallback
+      });
+    };
+
+    if (video.readyState >= 2) {
+      tryPlay();
+    } else {
+      video.addEventListener('loadeddata', tryPlay, { once: true });
+    }
+
+    return () => {
+      video.removeEventListener('loadeddata', tryPlay);
+    };
+  }, []);
+
   return (
     <section className="relative overflow-hidden h-[110vh] flex items-center justify-center bg-[hsl(var(--cream))]" id="home">
       {/* Background Video */}
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         disablePictureInPicture
         controlsList="nodownload nofullscreen noremoteplayback"
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
@@ -24,7 +49,7 @@ const WarmHeroSection = () => {
           maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         } as React.CSSProperties}
       >
-        <source src="https://res.cloudinary.com/dabsxebx8/video/upload/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dabsxebx8/video/upload/q_auto,f_auto/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
       </video>
 
       {/* Soft glow overlay */}

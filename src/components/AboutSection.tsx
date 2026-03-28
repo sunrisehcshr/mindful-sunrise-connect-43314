@@ -38,7 +38,7 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/therapy-for-older-adults.webp" alt="Therapy for older adults at Sunrise Human Care Services in Darby" className="w-full h-full object-cover" />
+              <img src="/images/therapy-for-older-adults.webp" alt="Therapy for older adults at Sunrise Human Care Services in Darby" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </motion.div>
 
