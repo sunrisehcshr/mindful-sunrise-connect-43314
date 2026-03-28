@@ -28,7 +28,7 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-[#f0ece4]">
+    <section className="section-padding bg-[hsl(var(--cream))]">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-14" 
