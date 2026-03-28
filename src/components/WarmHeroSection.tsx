@@ -45,7 +45,6 @@ const WarmHeroSection = () => {
         poster="/images/hero-fallback.png"
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
         style={{
-          transform: 'scaleX(-1)',
           WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
           maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         } as React.CSSProperties}
