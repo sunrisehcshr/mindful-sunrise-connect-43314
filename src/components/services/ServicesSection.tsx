@@ -52,8 +52,8 @@ const ServicesSection: React.FC = () => {
           <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Our Services</span>
           
           <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
-            Mental health services
-            <span className="block font-instrument-serif italic text-amber-400 font-normal">available in Darby</span>
+            Mental health services {' '}
+            <span className="font-instrument-serif italic text-amber-400 font-normal">available in Darby</span>
           </h2>
           
           <p className="text-stone-600 font-barlow">
