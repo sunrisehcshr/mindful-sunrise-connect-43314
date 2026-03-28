@@ -45,7 +45,7 @@ const WarmHeroSection = () => {
         poster="/images/hero-fallback.png"
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
         style={{
-          WebkitMediaControlsPanel: 'none',
+          transform: 'scaleX(-1)',
           WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
           maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         } as React.CSSProperties}
@@ -56,7 +56,7 @@ const WarmHeroSection = () => {
       {/* Soft glow overlay */}
       {/* Subtle dark overlay for text readability */}
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'rgba(0,0,0,0.05)',
+        background: 'rgba(0,0,0,0.10)',
         WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
       } as React.CSSProperties} />
