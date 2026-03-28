@@ -42,6 +42,7 @@ const WarmHeroSection = () => {
         preload="auto"
         disablePictureInPicture
         controlsList="nodownload nofullscreen noremoteplayback"
+        poster="/images/hero-fallback.png"
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
         style={{
           WebkitMediaControlsPanel: 'none',
