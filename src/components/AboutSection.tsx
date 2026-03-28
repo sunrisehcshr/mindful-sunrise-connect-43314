@@ -17,8 +17,8 @@ const AboutSection = () => {
             <div>
               <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">About Us</span>
               <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-6">
-                Our Story & Mission
-                <span className="block font-instrument-serif italic text-amber-400 font-normal">in mental health care</span>
+                Our Story & Mission {' '}
+                <span className="font-instrument-serif italic text-amber-400 font-normal">in mental health care</span>
               </h2>
             </div>
             <div>
