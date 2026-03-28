@@ -53,8 +53,9 @@ const WarmHeroSection = () => {
       </video>
 
       {/* Soft glow overlay */}
+      {/* Subtle dark overlay for text readability */}
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(251,191,36,0.04) 40%, rgba(0,0,0,0.03) 70%, rgba(245,158,11,0.02) 100%)',
+        background: 'rgba(0,0,0,0.3)',
         WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
       } as React.CSSProperties} />
