@@ -7,7 +7,7 @@ import AppointmentDialog from './Appointment/AppointmentDialog';
 
 const WarmHeroSection = () => {
   return (
-    <section className="relative overflow-hidden h-screen flex items-center justify-center bg-[hsl(var(--cream))]" id="home">
+    <section className="relative overflow-hidden h-[110vh] flex items-center justify-center bg-[hsl(var(--cream))]" id="home">
       {/* Background Video */}
       <video
         autoPlay
