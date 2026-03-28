@@ -7,7 +7,7 @@ import AppointmentDialog from './Appointment/AppointmentDialog';
 
 const WarmHeroSection = () => {
   return (
-    <section className="sticky top-0 overflow-hidden h-screen flex items-center justify-center" id="home">
+    <section className="relative overflow-hidden h-screen flex items-center justify-center" id="home">
       {/* Background Video */}
       <video
         autoPlay
@@ -94,6 +94,11 @@ const WarmHeroSection = () => {
           </motion.p>
         </motion.div>
       </div>
+
+      {/* Bottom gradient overlay matching next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 z-[2]" style={{
+        background: 'linear-gradient(to bottom, transparent, hsl(var(--cream)))',
+      }} />
 
       {/* Hide native video controls on all browsers */}
       <style>{`
