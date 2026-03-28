@@ -20,8 +20,8 @@ const WarmHeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
         style={{
           WebkitMediaControlsPanel: 'none',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)',
-          maskImage: 'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 95%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, black 0%, black 95%, transparent 100%)',
         } as React.CSSProperties}
       >
         <source src="https://res.cloudinary.com/dabsxebx8/video/upload/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
