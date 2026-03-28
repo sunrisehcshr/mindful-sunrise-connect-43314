@@ -171,7 +171,7 @@ const MentalHealthDarby = () => {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               webkit-playsinline="true"
               className="absolute inset-0 w-full h-full object-cover object-[center_80%]"
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4"

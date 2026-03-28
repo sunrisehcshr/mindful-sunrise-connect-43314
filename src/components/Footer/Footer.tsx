@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           {/* About */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/images/logo.png" alt="Sunrise Human Care Services Logo" className="h-18 w-20 object-contain" />
+              <img src="/images/logo.png" alt="Sunrise Human Care Services Logo" className="h-18 w-20 object-contain" loading="lazy" />
               <div className="flex flex-col">
                 <span className="leading-tight text-base bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text font-extrabold font-barlow">Sunrise</span>
                 <span className="text-xs text-stone-500 leading-tight font-normal font-barlow">Human Care Services</span>
