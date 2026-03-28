@@ -5,6 +5,10 @@
 # Prerender.io integration — handled via edge function (prerender.ts)
 # Requires PRERENDER_TOKEN environment variable to be set in Netlify dashboard
 
+[[edge_functions]]
+  function = "prerender"
+  path = "/*"
+
 # Custom headers for SEO and performance
 [[headers]]
   for = "/*"

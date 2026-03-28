@@ -31,6 +31,15 @@ const BOT_USER_AGENTS = [
   "qwantify",
   "developers.google.com/+/web/snippet",
   "google-inspectiontool",
+  "prerender",
+  "prerendercloud",
+  "duckduckbot",
+  "sogou",
+  "exabot",
+  "petalbot",
+  "semrushbot",
+  "ahrefsbot",
+  "dotbot",
 ];
 
 const IGNORED_EXTENSIONS = [
@@ -87,6 +96,11 @@ export default async function handler(req: Request, context: Context) {
 
   // Skip static assets
   if (IGNORED_EXTENSIONS.some((ext) => pathname.endsWith(ext))) {
+    return;
+  }
+
+  // Prevent infinite loop: skip if request is already from Prerender.io
+  if (req.headers.get("X-Prerender") || req.headers.get("x-prerender")) {
     return;
   }
 
