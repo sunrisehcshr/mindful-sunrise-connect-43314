@@ -149,7 +149,7 @@ const Navbar = () => {
             <img src="/images/logo.png" alt="Sunrise Human Care Services Logo" className="h-14 w-16 object-contain transition-transform duration-300 group-hover:-translate-y-1" />
             <div className="flex flex-col">
               <span className="leading-tight text-base font-extrabold bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text">Sunrise</span>
-               <span className="text-xs leading-tight font-normal text-muted-foreground">Human Care Services</span>
+               <span className="text-xs leading-tight font-instrument-serif italic text-muted-foreground">Human Care Services</span>
             </div>
           </Link>
 

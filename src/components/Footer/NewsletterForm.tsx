@@ -55,7 +55,7 @@ const NewsletterForm: React.FC = () => {
   
   return (
     <div className="space-y-3">
-      <p className="text-sm text-stone-300 font-barlow leading-relaxed">
+      <p className="text-sm text-stone-600 font-barlow leading-relaxed">
         Subscribe to our newsletter for helpful mental health tips and updates.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -65,7 +65,7 @@ const NewsletterForm: React.FC = () => {
           placeholder="Your email address" 
           value={email} 
           onChange={e => setEmail(e.target.value)} 
-          className="w-full px-4 py-2.5 text-sm rounded-xl border border-white/10 bg-white/5 text-white placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30 focus:border-amber-400/30 font-barlow transition-all duration-300" 
+          className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 bg-stone-50 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30 focus:border-amber-400/30 font-barlow transition-all duration-300" 
           required 
         />
         <button 
