@@ -7,7 +7,7 @@ import AppointmentDialog from './Appointment/AppointmentDialog';
 
 const WarmHeroSection = () => {
   return (
-    <section className="relative overflow-hidden h-[130vh] flex items-center justify-center bg-[hsl(var(--cream))]" id="home">
+    <section className="relative overflow-hidden h-[110vh] flex items-center justify-center bg-[hsl(var(--cream))]" id="home">
       {/* Background Video */}
       <video
         autoPlay
@@ -20,8 +20,8 @@ const WarmHeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
         style={{
           WebkitMediaControlsPanel: 'none',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 93%, transparent 100%)',
-          maskImage: 'linear-gradient(to bottom, black 0%, black 93%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
+          maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
         } as React.CSSProperties}
       >
         <source src="https://res.cloudinary.com/dabsxebx8/video/upload/v1774583868/sunrise_mi0tyu.mp4" type="video/mp4" />
@@ -30,8 +30,8 @@ const WarmHeroSection = () => {
       {/* Soft glow overlay */}
       <div className="absolute inset-0 z-[1]" style={{
         background: 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(251,191,36,0.04) 40%, rgba(0,0,0,0.03) 70%, rgba(245,158,11,0.02) 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 93%, transparent 100%)',
-        maskImage: 'linear-gradient(to bottom, black 0%, black 93%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
+        maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
       } as React.CSSProperties} />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20">
