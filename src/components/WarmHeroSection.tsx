@@ -95,6 +95,11 @@ const WarmHeroSection = () => {
         </motion.div>
       </div>
 
+      {/* Bottom gradient overlay matching next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 z-[2]" style={{
+        background: 'linear-gradient(to bottom, transparent, hsl(var(--cream)))',
+      }} />
+
       {/* Hide native video controls on all browsers */}
       <style>{`
         video::-webkit-media-controls,
