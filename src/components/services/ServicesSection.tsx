@@ -66,14 +66,6 @@ const ServicesSection: React.FC = () => {
           {services.map((service, index) => <ServiceCard key={index} service={service} index={index} />)}
         </div>
 
-        <div className="flex justify-center mt-12">
-          <AppointmentDialog>
-            <Button size="lg" className="bg-[#222] hover:bg-zinc-800 text-white font-barlow font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-              <Calendar className="mr-2 h-4 w-4" />
-              Book Mental Health Appointment
-            </Button>
-          </AppointmentDialog>
-        </div>
       </div>
     </section>
   );
