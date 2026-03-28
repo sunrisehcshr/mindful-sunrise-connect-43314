@@ -162,7 +162,7 @@ const AppointmentForm = () => {
 
       <Button
         type="submit"
-        className="w-full"
+        className="w-full bg-[#222] hover:bg-zinc-800 text-white font-barlow font-medium rounded-full"
         disabled={isSubmitting}
       >
         {isSubmitting ? 'Submitting...' : 'Submit Request'}

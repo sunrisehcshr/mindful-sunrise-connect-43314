@@ -29,7 +29,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
       className="group bg-white border border-stone-200/80 rounded-2xl p-7 hover:shadow-lg hover:border-amber-200 transition-all duration-300 flex flex-col h-full"
     >
       {/* Icon */}
-      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-400 text-white mb-5">
+      <div className="flex items-center justify-center w-12 h-12 rounded-xl mb-5 bg-slate-800 text-yellow-300">
         {service.icon}
       </div>
 
