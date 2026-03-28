@@ -2,10 +2,8 @@
   publish = "dist"
   command = "npm run build"
 
-# Enable Netlify's prerendering for search engine bots
-# This serves a pre-rendered HTML snapshot to crawlers instead of the empty SPA shell
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
+# Prerender.io integration — handled via edge function (prerender.ts)
+# Requires PRERENDER_TOKEN environment variable to be set in Netlify dashboard
 
 # Custom headers for SEO and performance
 [[headers]]
@@ -56,13 +54,7 @@
     Cache-Control = "public, max-age=3600"
     Content-Type = "text/plain"
 
-# SPA redirect - let client-side routing handle all paths
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Blog redirects
+# Blog redirects (must be ABOVE the SPA catch-all)
 [[redirects]]
   from = "/resources"
   to = "/blog"
@@ -72,3 +64,9 @@
   from = "/resources/*"
   to = "/blog/:splat"
   status = 301
+
+# SPA redirect - let client-side routing handle all paths
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
