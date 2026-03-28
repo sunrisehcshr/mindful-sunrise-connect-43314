@@ -60,7 +60,7 @@ const WarmHeroSection = () => {
         maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
       } as React.CSSProperties} />
 
-      <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20">
+      <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20 -mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
