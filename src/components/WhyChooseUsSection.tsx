@@ -59,7 +59,7 @@ const WhyChooseUsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-400 text-white mb-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl mb-4 bg-slate-800 text-yellow-300">
                 {feature.icon}
               </div>
               <h3 className="text-lg font-barlow font-semibold text-stone-800 mb-2">{feature.title}</h3>
