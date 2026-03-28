@@ -102,7 +102,7 @@ const WarmHeroSection = () => {
       </div>
 
       {/* Bottom fade matching next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 z-[2] bg-gradient-to-t from-[hsl(var(--cream))] via-[hsl(var(--cream))]/80 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 z-[2] bg-gradient-to-t from-[hsl(var(--cream))] via-[hsl(var(--cream))]/80 to-transparent" />
 
       {/* Hide native video controls on all browsers */}
       <style>{`
