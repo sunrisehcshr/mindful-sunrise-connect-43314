@@ -58,7 +58,7 @@ const WarmHeroSection = () => {
         background: 'linear-gradient(to bottom, hsl(var(--cream) / 0.3) 0%, transparent 40%, transparent 60%, hsl(var(--cream) / 0.5) 85%, hsl(var(--cream)) 100%)',
       } as React.CSSProperties} />
 
-      <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20">
+      <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3)' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
