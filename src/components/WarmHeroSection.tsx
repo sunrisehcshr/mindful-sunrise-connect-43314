@@ -43,7 +43,7 @@ const WarmHeroSection = () => {
         disablePictureInPicture
         controlsList="nodownload nofullscreen noremoteplayback"
         poster="/images/hero-fallback.png"
-        className="absolute inset-0 w-full h-full object-cover object-right md:object-center z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-center z-0 pointer-events-none"
         style={{
           WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
           maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
