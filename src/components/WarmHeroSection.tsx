@@ -55,10 +55,12 @@ const WarmHeroSection = () => {
       {/* Soft glow overlay */}
       {/* Subtle dark overlay for text readability */}
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'linear-gradient(to bottom, hsl(var(--cream) / 0.3) 0%, transparent 40%, transparent 60%, hsl(var(--cream) / 0.5) 85%, hsl(var(--cream)) 100%)',
+        background: 'rgba(0,0,0,0.3)',
+        WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
+        maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 99%)',
       } as React.CSSProperties} />
 
-      <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3)' }}>
+      <div className="container mx-auto px-4 z-10 relative text-center pt-28 md:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
