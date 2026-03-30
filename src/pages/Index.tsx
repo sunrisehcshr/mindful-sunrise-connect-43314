@@ -48,6 +48,7 @@ const Index = () => {
           <div className="relative z-10 -mt-px bg-[hsl(var(--cream))]">
           <WhyChooseUsSection />
           <GallerySection />
+          <ServicesSection />
           <ConditionsSection />
           <AboutSection />
           
