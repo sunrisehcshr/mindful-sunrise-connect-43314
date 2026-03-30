@@ -34,22 +34,28 @@
       }
       .loading {
         display: flex;
+        flex-direction: column;
+        gap: 8px;
         justify-content: center;
         align-items: center;
         height: 100vh;
         width: 100%;
         background: #ffffff;
       }
-      .spinner {
-        width: 50px;
-        height: 50px;
-        border: 5px solid rgba(236, 177, 66, 0.2);
-        border-radius: 50%;
-        border-top-color: #F7913E;
-        animation: spin 1s ease-in-out infinite;
+      .morphing-square {
+        width: 40px;
+        height: 40px;
+        background: hsl(25, 85%, 58%);
+        animation: morphSpin 2s ease-in-out infinite;
       }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
+      .loading-text {
+        color: #78716c;
+        font-size: 14px;
+      }
+      @keyframes morphSpin {
+        0% { border-radius: 6%; transform: rotate(0deg); }
+        50% { border-radius: 50%; transform: rotate(180deg); }
+        100% { border-radius: 6%; transform: rotate(360deg); }
       }
     </style>
 
