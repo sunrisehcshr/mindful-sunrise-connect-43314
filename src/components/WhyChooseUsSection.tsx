@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Users, Video, HeartPulse } from 'lucide-react';
+import { MapPin, Users, Video, HeartPulse, ShieldCheck } from 'lucide-react';
 
 const WhyChooseUsSection = () => {
   return (
@@ -17,12 +17,12 @@ const WhyChooseUsSection = () => {
           <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Why Choose Us</span>
           
           <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
-            Why Choose {' '}
-            <span className="font-instrument-serif italic text-amber-400 font-normal">Sunrise?</span>
+            Mental health that actually {' '}
+            <span className="font-instrument-serif italic text-amber-400 font-normal">fits your life.</span>
           </h2>
           
           <p className="text-stone-600 max-w-2xl mx-auto font-barlow">
-            We're more than a clinic — we're a compassionate care team dedicated to helping you rise above life's challenges.
+            Evidence-based care. Real therapists. Right here in Darby.
           </p>
         </motion.div>
         
@@ -38,15 +38,14 @@ const WhyChooseUsSection = () => {
             viewport={{ once: true }}
           >
             <div>
-              <p className="text-amber-100/60 font-barlow text-sm mb-3">Serving our community with deep local understanding</p>
+              <p className="text-amber-100/60 font-barlow text-sm mb-3">Open Saturdays. No 3-month waitlist.</p>
               <h3 className="text-white font-barlow font-bold text-xl leading-snug">
-                Locally rooted in Darby, PA
+                Darby-based, no corporate chain feel. We know Delaware County.
               </h3>
             </div>
             <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-400/20 text-amber-300 mt-4">
               <MapPin className="h-7 w-7" />
             </div>
-            {/* Decorative gradient */}
             <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-amber-500/10 blur-2xl" />
           </motion.div>
 
@@ -65,8 +64,8 @@ const WhyChooseUsSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-stone-900 font-barlow font-bold text-lg">Licensed professionals</h3>
-              <p className="text-stone-800/70 font-barlow text-sm">Therapists, psychologists & psychiatrists</p>
+              <h3 className="text-stone-900 font-barlow font-bold text-lg">Board-certified specialists</h3>
+              <p className="text-stone-800/70 font-barlow text-sm">Not interns or generalists — your therapist stays with you</p>
             </div>
           </motion.div>
 
@@ -82,12 +81,12 @@ const WhyChooseUsSection = () => {
               <Video className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="text-stone-800 font-barlow font-bold text-base">In-person & virtual</h3>
-              <p className="text-stone-500 font-barlow text-sm">Flexible sessions</p>
+              <h3 className="text-stone-800 font-barlow font-bold text-base">In-person or virtual</h3>
+              <p className="text-stone-500 font-barlow text-sm">Weekly sessions or intensive support — pick what works</p>
             </div>
           </motion.div>
 
-          {/* Card 4 - Serving All Ages (wide, spans 2 cols) */}
+          {/* Card 4 - All Ages (wide, spans 2 cols) */}
           <motion.div 
             className="md:col-span-2 rounded-3xl bg-[hsl(var(--linen))] p-7 flex flex-col justify-between overflow-hidden group hover:shadow-xl transition-shadow duration-300"
             initial={{ opacity: 0, y: 20 }} 
@@ -102,21 +101,26 @@ const WhyChooseUsSection = () => {
               <span className="font-barlow text-xs tracking-[0.15em] uppercase text-stone-500 font-semibold border border-stone-300 rounded-full px-3 py-1">All Ages</span>
             </div>
             <div>
-              <h3 className="text-stone-800 font-barlow font-bold text-lg">Individuals, couples, children, teens & families</h3>
-              <p className="text-stone-500 font-barlow text-sm">Comprehensive care across all ages and dynamics</p>
+              <h3 className="text-stone-800 font-barlow font-bold text-lg">Depression, anxiety, trauma, ADHD — and more</h3>
+              <p className="text-stone-500 font-barlow text-sm">Children, teens, adults, couples & families. No waitlist.</p>
             </div>
           </motion.div>
 
-          {/* Card 5 - Accent card */}
+          {/* Card 5 - Medicaid */}
           <motion.div 
-            className="rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 p-7 flex flex-col justify-center items-center text-center group hover:shadow-xl transition-shadow duration-300"
+            className="rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 p-7 flex flex-col justify-between group hover:shadow-xl transition-shadow duration-300"
             initial={{ opacity: 0, y: 20 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <span className="text-white/80 font-barlow text-xs tracking-[0.2em] uppercase font-semibold mb-1">Compassionate</span>
-            <span className="text-white font-instrument-serif italic text-3xl">Care</span>
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/20 text-white">
+              <ShieldCheck className="h-5 w-5" />
+            </div>
+            <div>
+              <span className="text-white font-barlow font-bold text-lg block">Medicaid accepted</span>
+              <span className="text-white/70 font-barlow text-sm">Quality care, zero barriers</span>
+            </div>
           </motion.div>
 
         </div>
