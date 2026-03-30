@@ -1,5 +1,6 @@
 
 import { lazy, Suspense } from "react";
+import { MorphingSquare } from "@/components/ui/morphing-square";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
