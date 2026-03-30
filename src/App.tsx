@@ -63,8 +63,8 @@ const queryClient = new QueryClient();
 const helmetContext = {};
 
 const PageLoader = () => (
-  <div className="flex items-center justify-center min-h-screen bg-[hsl(var(--cream))]">
-    <div className="w-12 h-12 border-4 border-sunrise-400/20 border-t-[#F7913E] rounded-full animate-spin" />
+  <div className="flex items-center justify-center min-h-screen bg-background">
+    <MorphingSquare message="Loading..." />
   </div>
 );
 
