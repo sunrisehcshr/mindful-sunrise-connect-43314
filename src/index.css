@@ -46,7 +46,9 @@
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
-    overscroll-behavior-x: none;
+    min-height: 100%;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   body {
@@ -60,7 +62,7 @@
     min-height: 100vh;
     width: 100%;
     max-width: 100%;
-    overflow-x: clip;
+    overflow-x: hidden;
     background-color: hsl(var(--card));
   }
   
