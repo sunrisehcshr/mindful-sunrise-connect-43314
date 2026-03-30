@@ -46,7 +46,7 @@ interface PlaneData {
 	z: number;
 	imageIndex: number;
 	x: number;
-	y: number; 
+	y: number;
 }
 
 const DEFAULT_DEPTH_RANGE = 50;
@@ -230,7 +230,7 @@ function GalleryScene({
 	const totalImages = normalizedImages.length;
 	const depthRange = DEFAULT_DEPTH_RANGE;
 
-	const planesData = useRef(
+	const planesData = useRef<PlaneData[]>(
 		Array.from({ length: visibleCount }, (_, i) => ({
 			index: i,
 			z: visibleCount > 0 ? ((depthRange / visibleCount) * i) % depthRange : 0,
@@ -317,17 +317,27 @@ function GalleryScene({
 
 		planesData.current.forEach((plane, i) => {
 			let newZ = plane.z + scrollVelocity * delta * 10;
+			let wrapsForward = 0;
+			let wrapsBackward = 0;
 
-			// Clamp instead of wrapping — stop at boundaries
-			newZ = Math.max(0, Math.min(totalRange, newZ));
-
-			// Stop velocity when hitting boundaries
-			if (newZ <= 0 || newZ >= totalRange) {
-				setScrollVelocity(0);
-				setAutoPlay(false);
+			if (newZ >= totalRange) {
+				wrapsForward = Math.floor(newZ / totalRange);
+				newZ -= totalRange * wrapsForward;
+			} else if (newZ < 0) {
+				wrapsBackward = Math.ceil(-newZ / totalRange);
+				newZ += totalRange * wrapsBackward;
 			}
 
-			plane.z = newZ;
+			if (wrapsForward > 0 && imageAdvance > 0 && totalImages > 0) {
+				plane.imageIndex = (plane.imageIndex + wrapsForward * imageAdvance) % totalImages;
+			}
+
+			if (wrapsBackward > 0 && imageAdvance > 0 && totalImages > 0) {
+				const step = plane.imageIndex - wrapsBackward * imageAdvance;
+				plane.imageIndex = ((step % totalImages) + totalImages) % totalImages;
+			}
+
+			plane.z = ((newZ % totalRange) + totalRange) % totalRange;
 			plane.x = spatialPositions[i]?.x ?? 0;
 			plane.y = spatialPositions[i]?.y ?? 0;
 
@@ -386,7 +396,7 @@ function GalleryScene({
 
 				const img = texture.image as HTMLImageElement | undefined;
 				const aspect = img ? img.width / img.height : 1;
-				const scale: [number, number, number] = aspect > 1 ? [4 * aspect, 4, 1] : [4, 4 / aspect, 1];
+				const scale: [number, number, number] = aspect > 1 ? [2 * aspect, 2, 1] : [2, 2 / aspect, 1];
 
 				return (
 					<ImagePlane
