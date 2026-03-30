@@ -49,11 +49,10 @@ const Index = () => {
           <WhyChooseUsSection />
           </div>
           <StickyTabsSection />
-          <div className="relative z-10 -mt-px bg-[hsl(var(--cream))]">
+          <div className="relative z-10 bg-[hsl(var(--cream))]">
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
-          
           <TeamSection />
           <FAQSection />
           <AppointmentSection />
