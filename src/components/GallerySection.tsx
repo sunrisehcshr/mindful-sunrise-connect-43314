@@ -15,13 +15,21 @@ const sampleImages = [
 
 const GallerySection = () => {
   return (
-    <section className="bg-[hsl(var(--cream))]">
+    <section className="relative bg-[hsl(var(--cream))]">
       <Suspense fallback={<div className="h-[500px] bg-[hsl(var(--cream))]" />}>
         <InfiniteGallery
           images={sampleImages}
-          className="h-[400px] md:h-[500px] w-full"
+          className="h-[400px] md:h-[600px] w-full"
         />
       </Suspense>
+      <div className="absolute bottom-6 left-0 right-0 text-center pointer-events-none">
+        <p className="text-xs font-barlow uppercase tracking-[0.15em] font-semibold text-stone-500">
+          Use mouse wheel, arrow keys, or touch to navigate
+        </p>
+        <p className="text-xs font-barlow text-stone-400 mt-1">
+          Auto-play resumes after 3 seconds of inactivity
+        </p>
+      </div>
     </section>
   );
 };

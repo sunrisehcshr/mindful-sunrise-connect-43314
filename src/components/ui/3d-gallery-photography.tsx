@@ -317,27 +317,17 @@ function GalleryScene({
 
 		planesData.current.forEach((plane, i) => {
 			let newZ = plane.z + scrollVelocity * delta * 10;
-			let wrapsForward = 0;
-			let wrapsBackward = 0;
 
-			if (newZ >= totalRange) {
-				wrapsForward = Math.floor(newZ / totalRange);
-				newZ -= totalRange * wrapsForward;
-			} else if (newZ < 0) {
-				wrapsBackward = Math.ceil(-newZ / totalRange);
-				newZ += totalRange * wrapsBackward;
+			// Clamp instead of wrapping — stop at boundaries
+			newZ = Math.max(0, Math.min(totalRange, newZ));
+
+			// Stop velocity when hitting boundaries
+			if (newZ <= 0 || newZ >= totalRange) {
+				setScrollVelocity(0);
+				setAutoPlay(false);
 			}
 
-			if (wrapsForward > 0 && imageAdvance > 0 && totalImages > 0) {
-				plane.imageIndex = (plane.imageIndex + wrapsForward * imageAdvance) % totalImages;
-			}
-
-			if (wrapsBackward > 0 && imageAdvance > 0 && totalImages > 0) {
-				const step = plane.imageIndex - wrapsBackward * imageAdvance;
-				plane.imageIndex = ((step % totalImages) + totalImages) % totalImages;
-			}
-
-			plane.z = ((newZ % totalRange) + totalRange) % totalRange;
+			plane.z = newZ;
 			plane.x = spatialPositions[i]?.x ?? 0;
 			plane.y = spatialPositions[i]?.y ?? 0;
 
