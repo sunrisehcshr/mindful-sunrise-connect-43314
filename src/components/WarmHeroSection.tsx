@@ -93,7 +93,7 @@ const WarmHeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            A brighter tomorrow starts with the right support today. Taking the first step toward better mental health is an act of courage - and we're here to support your journey with expert counseling, therapy, and psychiatric services tailored to your unique needs.
+            Taking the first step takes courage - and we're here for it. Expert counseling, therapy, and psychiatric services tailored to your unique needs.
           </motion.p>
 
           <motion.div
