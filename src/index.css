@@ -44,6 +44,7 @@
   body {
     @apply bg-background text-foreground antialiased min-h-screen font-barlow;
     background-color: hsl(var(--cream));
+    overflow-x: hidden;
   }
 
   #root {
