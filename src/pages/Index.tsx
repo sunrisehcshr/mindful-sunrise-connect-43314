@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import WarmHeroSection from '../components/WarmHeroSection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
-import GallerySection from '../components/GallerySection';
 import ServicesSection from '../components/services/ServicesSection';
 import ConditionsSection from '../components/conditions/ConditionsSection';
 import AboutSection from '../components/AboutSection';
@@ -47,7 +46,6 @@ const Index = () => {
           <WarmHeroSection />
           <div className="relative z-10 -mt-px bg-[hsl(var(--cream))]">
           <WhyChooseUsSection />
-          <GallerySection />
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
