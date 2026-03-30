@@ -41,7 +41,7 @@
     --linen: 35 20% 92%;
   }
   
-  html, body {
+  html {
     background-color: hsl(var(--card));
     overflow-x: hidden;
     width: 100%;
