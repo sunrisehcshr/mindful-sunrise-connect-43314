@@ -43,7 +43,7 @@ const WhyChooseUsSection = () => {
                 Darby-based, no corporate chain feel. We know Delaware County.
               </h3>
             </div>
-            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-400/20 text-amber-300 mt-4">
+            <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-400/20 text-amber-300 mt-4">
               <MapPin className="h-7 w-7" />
             </div>
             <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-amber-500/10 blur-2xl" />
