@@ -82,8 +82,9 @@
   <body>
     <div id="root">
       <!-- Loading spinner shown until React loads -->
-      <div class="loading">
-        <div class="spinner"></div>
+      <div class="loading" id="initial-loader">
+        <div class="morphing-square"></div>
+        <p class="loading-text">Loading...</p>
       </div>
       <!-- SEO: Visible content for crawlers that don't execute JavaScript -->
       <noscript>
