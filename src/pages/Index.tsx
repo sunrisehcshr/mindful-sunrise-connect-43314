@@ -47,7 +47,7 @@ const Index = () => {
           <WarmHeroSection />
           <div className="relative z-10 -mt-px bg-[hsl(var(--cream))]">
           <WhyChooseUsSection />
-          <ServicesSection />
+          <GallerySection />
           <ConditionsSection />
           <AboutSection />
           
