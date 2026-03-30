@@ -27,7 +27,7 @@ const WhyChooseUsSection = () => {
         </motion.div>
         
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto auto-rows-[180px] md:auto-rows-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto auto-rows-auto md:auto-rows-[200px]">
           
           {/* Card 1 - Locally Rooted (tall, spans 2 rows) */}
           <motion.div 
