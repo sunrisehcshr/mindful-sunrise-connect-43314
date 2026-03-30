@@ -47,6 +47,9 @@ const Index = () => {
           <WarmHeroSection />
           <div className="relative z-10 -mt-px bg-[hsl(var(--cream))]">
           <WhyChooseUsSection />
+          </div>
+          <StickyTabsSection />
+          <div className="relative z-10 -mt-px bg-[hsl(var(--cream))]">
           <ServicesSection />
           <ConditionsSection />
           <AboutSection />
