@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Users, Video, HeartPulse } from 'lucide-react';
+import { MapPin, Users, Video, HeartPulse, ArrowRight } from 'lucide-react';
 
 const WhyChooseUsSection = () => {
   const features = [
