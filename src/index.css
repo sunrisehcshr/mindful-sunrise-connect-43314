@@ -41,16 +41,27 @@
     --linen: 35 20% 92%;
   }
   
+  html, body {
+    background-color: hsl(var(--card));
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    overscroll-behavior-x: none;
+  }
+
   body {
     @apply bg-background text-foreground antialiased min-h-screen font-barlow;
-    background-color: hsl(var(--cream));
-    overflow-x: hidden;
+    background-color: hsl(var(--card));
   }
 
   #root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    background-color: hsl(var(--card));
   }
   
   h1, h2, h3, h4, h5, h6 {
