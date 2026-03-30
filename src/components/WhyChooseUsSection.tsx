@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Users, Video, HeartPulse } from 'lucide-react';
+import { MapPin, Users, Video, HeartPulse, ArrowRight } from 'lucide-react';
 
 const WhyChooseUsSection = () => {
   const features = [
@@ -53,17 +53,21 @@ const WhyChooseUsSection = () => {
           {features.map((feature, index) => (
             <motion.div 
               key={index} 
-              className="group bg-white border border-stone-200/80 rounded-2xl p-7 hover:shadow-lg hover:border-amber-200 transition-all duration-300"
+              className="group relative flex flex-col overflow-hidden rounded-lg border border-stone-200/80 bg-white text-stone-800 shadow-sm transition-all duration-300 ease-in-out hover:shadow-md hover:border-amber-200 p-6"
               initial={{ opacity: 0, y: 20 }} 
               whileInView={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -5, transition: { duration: 0.2, ease: 'easeInOut' } }}
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-xl mb-4 bg-slate-800 text-yellow-300">
                 {feature.icon}
               </div>
-              <h3 className="text-lg font-barlow font-semibold text-stone-800 mb-2">{feature.title}</h3>
+              <h3 className="text-lg font-barlow font-semibold text-stone-800 mb-2 group-hover:text-amber-700 transition-colors duration-200">{feature.title}</h3>
               <p className="text-sm text-stone-500 font-barlow leading-relaxed">{feature.description}</p>
+              <div className="mt-4 flex items-center text-sm font-barlow font-medium text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Learn more <ArrowRight className="ml-1 h-4 w-4" />
+              </div>
             </motion.div>
           ))}
         </div>
