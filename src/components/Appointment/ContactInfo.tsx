@@ -2,6 +2,8 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
+import ClinicStatus from '../ui/ClinicStatus';
+
 const ContactInfo: React.FC = () => {
   return (
     <div className="h-full flex flex-col justify-between">
@@ -78,7 +80,7 @@ const ContactInfo: React.FC = () => {
             <p className="font-barlow font-bold text-stone-900 text-sm">Hours:</p>
             <p className="text-stone-500 font-barlow text-sm">Mon - Fri, 9 AM - 5 PM</p>
           </div>
-          <p className="text-[10px] uppercase tracking-widest font-bold text-orange-500 bg-orange-50 px-2 py-0.5 rounded-full">Open Now</p>
+          <ClinicStatus showBadge={true} />
         </div>
       </div>
     </div>

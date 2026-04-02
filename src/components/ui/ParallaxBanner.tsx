@@ -41,14 +41,14 @@ export default function ParallaxBanner() {
           <motion.div className="relative h-full w-full" style={{ y }}>
             <Image
               alt="Healing landscape"
-              className="grayscale-0 object-cover brightness-100 contrast-100"
+              className="grayscale-0 object-cover brightness-[0.85] contrast-[1.1]"
               fill
               src="/images/parallax-bg.png"
               style={{ objectFit: "cover" }}
               priority
             />
-            {/* Subtle orange-tinted gradient overlay to make text pop */}
-            <div className="absolute inset-0 bg-gradient-to-b from-orange-500/10 via-black/10 to-orange-500/10" />
+            {/* Subtle neutral gradient overlay to make text pop */}
+            <div className="absolute inset-0 bg-gradient-to-b from-stone-950/40 via-black/20 to-stone-950/40" />
           </motion.div>
         </div>
       </div>

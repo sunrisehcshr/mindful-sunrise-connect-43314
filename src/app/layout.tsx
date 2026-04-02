@@ -31,7 +31,7 @@ const instrumentSerif = Instrument_Serif({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1.0,
-  themeColor: "#F7913E",
+  themeColor: "#FFFFFF",
 };
 
 export const metadata: Metadata = {
@@ -88,6 +88,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-US">
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+      </head>
       <body className={`${inter.variable} ${openSans.variable} ${barlow.variable} ${instrumentSerif.variable} font-barlow antialiased`}>
         <TooltipProvider>
           <Toaster />

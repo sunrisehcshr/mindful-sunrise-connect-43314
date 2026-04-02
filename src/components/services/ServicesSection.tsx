@@ -84,14 +84,14 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                                 hover: { opacity: 1, scale: 1, x: "-50%", y: "-50%", filter: "blur(0px)" } 
                             }}
                             transition={{ type: "spring", duration: 0.4, bounce: 0 }}
-                            className="absolute top-1/2 left-1/2 w-[200px] h-[140px] md:w-[400px] md:h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5"
+                            className="absolute top-1/2 left-1/2 w-[200px] h-[140px] md:w-[400px] md:h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 will-change-transform"
                         >
                             <Image
                               src={typeof item.image === 'string' ? item.image : item.image.src}
-                              alt=""
+                              alt={item.title}
                               fill
                               sizes="(max-width: 768px) 200px, 400px"
-                              className="object-cover transition-all duration-500 group-hover:sepia group-hover:hue-rotate-[320deg] group-hover:saturate-[2] group-hover:brightness-[0.8]"
+                              className="object-cover transition-[filter,transform] duration-500 group-hover:sepia group-hover:hue-rotate-[320deg] group-hover:saturate-[2] group-hover:brightness-[0.8]"
                             />
                             <div className="absolute inset-0 bg-orange-600/30 mix-blend-overlay" />
                         </motion.div>

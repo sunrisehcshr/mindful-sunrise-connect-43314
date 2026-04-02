@@ -30,7 +30,7 @@ const containerVariants = {
 
 const AppointmentSection = () => {
   return (
-    <section id="appointment" className="py-12 md:py-16 bg-stone-50/50">
+    <section id="appointment" className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           className="max-w-4xl mx-auto text-center mb-6" 
@@ -59,7 +59,7 @@ const AppointmentSection = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={containerVariants}
-            className="relative z-10 mx-auto max-w-6xl flex flex-col gap-4 bg-stone-50/20 p-3 md:p-4 rounded-[3rem] border border-stone-100/50"
+            className="relative z-10 mx-auto max-w-6xl flex flex-col gap-4 bg-white p-3 md:p-4 rounded-[3rem] border border-stone-100/50"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
             

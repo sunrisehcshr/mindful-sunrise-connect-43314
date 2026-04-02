@@ -77,7 +77,7 @@ const CONFIG = {
 const MagnifiedBento = ({ className }: { className?: string }) => {
   return (
     <div 
-      className={cn("group relative w-full h-full overflow-hidden rounded-[2.5rem] border border-stone-200/80 bg-white/95 backdrop-blur-md p-2 shadow-sm transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-amber-200/50 hover:bg-white", className)}
+      className={cn("group relative w-full h-full overflow-hidden rounded-[2.5rem] border border-stone-200/80 bg-white/95 backdrop-blur-md p-2 shadow-sm transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-orange-200/50 hover:bg-white", className)}
     >
       <div 
         className={cn(

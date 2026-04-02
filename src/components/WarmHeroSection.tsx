@@ -139,13 +139,13 @@ const WarmHeroSection = () => {
 
       {/* Soft glow overlay */}
       {/* Semi-transparent black overlay for text readability */}
-      <div className="absolute inset-0 z-0 bg-black/40" />
+      <div className="absolute inset-0 z-0 bg-black/50" />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-40 md:pt-48 -mt-16">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/20 backdrop-blur-[2px] border border-white/5 md:bg-transparent md:backdrop-blur-0 md:border-none md:py-0 md:px-0"
+          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/30 backdrop-blur-[4px] border border-white/10 md:bg-transparent md:backdrop-blur-0 md:border-none md:py-0 md:px-0"
           variants={{
             hidden: { opacity: 0 },
             visible: { 
@@ -165,15 +165,15 @@ const WarmHeroSection = () => {
                 transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
               }
             }}
-            className="mb-3 md:mb-4"
+            className="mb-3 md:mb-4 flex justify-center"
           >
-            <span className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-barlow font-semibold text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full">
-              Mental Health Clinic in Darby, PA
+            <span className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden text-ellipsis max-w-full">
+              Now accepting new Medicaid patients in Darby, PA
             </span>
           </motion.div>
 
           <motion.h1
-            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 text-white leading-[1.2] tracking-tight"
+            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 text-white leading-[1.2] tracking-tight drop-shadow-sm"
             variants={{
               hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
               visible: { 
@@ -184,12 +184,12 @@ const WarmHeroSection = () => {
               }
             }}
           >
-            Expert mental health care in Darby, PA <br className="sm:hidden" />
-            <span className="inline md:block font-instrument-serif italic text-white font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 leading-tight">to help you reclaim your life</span>
+            Expert mental health care in Darby <br className="sm:hidden" />
+            <span className="inline md:block font-instrument-serif italic text-white font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 leading-tight drop-shadow-md">to help you reclaim your peace of mind</span>
           </motion.h1>
 
           <motion.p
-            className="text-sm sm:text-base md:text-lg text-white/80 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed font-barlow"
+            className="text-sm sm:text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed font-barlow drop-shadow-sm"
             variants={{
               hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
               visible: { 
@@ -200,18 +200,18 @@ const WarmHeroSection = () => {
               }
             }}
           >
-            Stop struggling alone. Get the expert, evidence-based therapy and psychiatric care you deserve. We provide the compassionate support you need to reclaim your peace of mind.
+            Stop struggling alone. Within 24 hours, our licensed Darby team will help you start a personalized, evidence-based plan to manage anxiety, depression, or trauma. You don’t have to wait months for the support you need today.
           </motion.p>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-3 justify-center"
             variants={{
               hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
-              visible: { 
-                opacity: 1, 
-                y: 0, 
+              visible: {
+                opacity: 1,
+                y: 0,
                 filter: "blur(0px)",
-                transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+                transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
               }
             }}
           >
@@ -237,11 +237,11 @@ const WarmHeroSection = () => {
             className="flex flex-col items-center mt-6"
             variants={{
               hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
-              visible: { 
-                opacity: 1, 
-                y: 0, 
+              visible: {
+                opacity: 1,
+                y: 0,
                 filter: "blur(0px)",
-                transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+                transition: { duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }
               }
             }}
           >
@@ -253,7 +253,7 @@ const WarmHeroSection = () => {
               ))}
             </div>
             <p className="text-[11px] md:text-xs text-white/80 font-medium tracking-[0.15em] uppercase font-barlow">
-              Medicaid Accepted • 500+ Patients Helped • Licensed Experts
+              Trusted by Hundreds of Darby Families
             </p>
           </motion.div>
         </motion.div>

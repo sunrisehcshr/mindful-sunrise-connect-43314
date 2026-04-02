@@ -168,7 +168,7 @@ const QuickAppointmentForm = () => {
               </p>
             </div>
 
-            <Button type="submit" disabled={isSubmitting} className="w-full bg-orange-500 hover:bg-orange-600 text-white font-barlow font-bold rounded-xl py-6 shadow-lg shadow-orange-500/20">
+            <Button type="submit" disabled={isSubmitting} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-barlow font-bold rounded-xl py-6 shadow-lg shadow-orange-600/20">
               {isSubmitting ? 'Sending...' : 'Schedule Now'}
             </Button>
           </form>

@@ -40,7 +40,7 @@ const Map: React.FC<MapProps> = ({ className }) => {
   return (
     <div 
       id="map-container"
-      className={cn("rounded-lg overflow-hidden shadow-md border border-amber-200 h-96 bg-amber-50/40 relative", className)}
+      className={cn("rounded-lg overflow-hidden shadow-md border border-stone-200 h-96 bg-stone-50/40 relative", className)}
     >
       {shouldLoadMap ? (
         <>
@@ -54,9 +54,9 @@ const Map: React.FC<MapProps> = ({ className }) => {
             title="Sunrise Human Care Services Location in Darby, PA"
           />
           {!mapLoaded && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-amber-50">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
-              <p className="mt-4 text-amber-700 font-medium">Loading map...</p>
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-stone-50">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-600"></div>
+              <p className="mt-4 text-stone-700 font-medium">Loading map...</p>
             </div>
           )}
         </>
@@ -64,19 +64,19 @@ const Map: React.FC<MapProps> = ({ className }) => {
         <motion.div 
           initial={{ opacity: 0.5 }}
           animate={{ opacity: 1 }}
-          className="absolute inset-0 flex flex-col items-center justify-center bg-amber-50/60"
+          className="absolute inset-0 flex flex-col items-center justify-center bg-stone-50/60"
         >
-          <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+          <div className="w-16 h-16 rounded-full bg-orange-600/10 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-600" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
             </svg>
           </div>
-          <h3 className="text-lg font-semibold text-amber-900 mb-2">Sunrise Human Care Services</h3>
-          <p className="text-amber-800 mb-1">869 Main Street</p>
-          <p className="text-amber-800">Darby, PA 19023</p>
+          <h3 className="text-lg font-semibold text-stone-900 mb-2">Sunrise Human Care Services</h3>
+          <p className="text-stone-800 mb-1">869 Main Street</p>
+          <p className="text-stone-800">Darby, PA 19023</p>
           <button 
             onClick={() => setShouldLoadMap(true)}
-            className="mt-4 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-md hover:from-amber-600 hover:to-orange-600 transition-colors shadow-sm"
+            className="mt-4 px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors shadow-sm font-barlow font-bold"
           >
             Load Map
           </button>

@@ -7,93 +7,7 @@ import SectionTag from "./ui/section-tag";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
-
-// --- Clinic Status Logic ---
-function ClinicStatus() {
-    const [status, setStatus] = useState({ isOpen: false, label: "Clinic Closed" });
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    useEffect(() => {
-        const checkStatus = () => {
-            // Get current time in Darby, PA (America/New_York time zone)
-            const darbyNow = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
-            
-            const day = darbyNow.getDay(); 
-            const hour = darbyNow.getHours();
-            
-            // Mon-Fri (1-5) and 9:00 AM to 5:00 PM (9-17)
-            const isOpen = day >= 1 && day <= 5 && hour >= 9 && hour < 17;
-            
-            if (isOpen) {
-                setStatus({ isOpen: true, label: "Clinic Open" });
-            } else {
-                // Calculate time until next open (Mon-Fri 9:00 AM)
-                let nextOpen = new Date(darbyNow);
-                nextOpen.setHours(9, 0, 0, 0);
-
-                if (day >= 1 && day <= 5 && hour >= 17) {
-                    // It's a weekday after 5 PM, next open is tomorrow 9 AM
-                    nextOpen.setDate(darbyNow.getDate() + 1);
-                } else if (day === 0 || day === 6) {
-                    // It's weekend, next open is Monday 9 AM
-                    const daysUntilMonday = (1 + 7 - day) % 7;
-                    nextOpen.setDate(darbyNow.getDate() + (daysUntilMonday === 0 ? 7 : daysUntilMonday));
-                } else if (day >= 1 && day <= 5 && hour < 9) {
-                    // It's a weekday before 9 AM, next open is today 9 AM
-                    // nextOpen is already set to today 9 AM
-                }
-
-                const diffMs = nextOpen.getTime() - darbyNow.getTime();
-                const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
-                const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-                const diffSecs = Math.floor((diffMs % (1000 * 60)) / 1000);
-                
-                let timeLabel = "Opens in ";
-                if (diffHrs > 0) {
-                    timeLabel += `${diffHrs}h ${diffMins}m ${diffSecs}s`;
-                } else {
-                    timeLabel += `${diffMins}m ${diffSecs}s`;
-                }
-
-                setStatus({ isOpen: false, label: timeLabel });
-            }
-        };
-
-        checkStatus();
-        const interval = setInterval(checkStatus, 1000); 
-        return () => clearInterval(interval);
-    }, []);
-
-    if (!mounted) {
-        return (
-            <div className="flex items-center gap-2 mb-1 opacity-0">
-                <div className="h-2 w-2 rounded-full bg-stone-200" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-200">
-                    Loading&hellip;
-                </span>
-            </div>
-        );
-    }
-
-    return (
-        <div className="flex items-center gap-2 mb-1">
-            <div className={cn(
-                "h-2 w-2 rounded-full shadow-[0_0_8px]",
-                status.isOpen ? "bg-emerald-500 shadow-emerald-500" : "bg-red-500 shadow-red-500"
-            )} />
-            <span className={cn(
-                "text-[10px] font-bold uppercase tracking-[0.2em]",
-                status.isOpen ? "text-emerald-600" : "text-red-600"
-            )}>
-                {status.label}
-            </span>
-        </div>
-    );
-}
+import ClinicStatus from "./ui/ClinicStatus";
 
 // --- Scramble Text Effect (Restored) ---
 function ScrambleText({ text, className }: { text: string, className?: string }) {
@@ -206,7 +120,7 @@ const WhyChooseUsSection = () => {
     const iconContainerStyles = "w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 aspect-square rounded-xl bg-white flex items-center justify-center shadow-md shadow-stone-200/50 border border-stone-100 transition-transform group-hover:scale-110 duration-300 shrink-0";
 
     return (
-        <section className="relative overflow-hidden bg-white pt-16 pb-8 selection:bg-amber-100 selection:text-amber-900 font-barlow">
+        <section className="relative overflow-hidden bg-white pt-16 pb-8 selection:bg-stone-100 selection:text-stone-900 font-barlow">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Section Header with Animation */}
                 <motion.div 
@@ -230,9 +144,8 @@ const WhyChooseUsSection = () => {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={containerVariants}
-                    className="relative z-10 mx-auto max-w-7xl h-full flex flex-col gap-4 bg-stone-50/20 p-6 md:p-12 md:pb-20 rounded-[2.5rem] overflow-hidden text-stone-900 border border-stone-100"
+                    className="relative z-10 mx-auto max-w-7xl h-full flex flex-col gap-4 bg-white p-6 md:p-12 md:pb-20 rounded-[2.5rem] overflow-hidden text-stone-900 border border-stone-100"
                 >
-                    
                     {/* ROW 1: Header + Status */}
                     <motion.div variants={itemVariants} className="grid grid-cols-1 gap-4 md:grid-cols-4 md:h-[140px] relative z-10">
                         {/* Brand Spotlight Card */}
@@ -240,7 +153,8 @@ const WhyChooseUsSection = () => {
                             <div className="flex flex-col justify-center relative z-10">
                                 <motion.div
                                     initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
                                     transition={{ duration: 0.6 }}
                                 >
                                     <ClinicStatus />
@@ -358,10 +272,10 @@ const WhyChooseUsSection = () => {
                                 </div>
                             </Card>
 
-                            <Card containerClassName="h-1/3 rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50/30 border-amber-100/30" className="flex items-center justify-center">
+                            <Card containerClassName="h-1/3 rounded-3xl bg-gradient-to-br from-stone-50 to-white border-stone-100/30 shadow-sm" className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <ScrambleText text="TRUSTED_CARE" className="text-lg font-bold tracking-[0.2em] text-amber-700 uppercase" />
-                                    <p className="text-[10px] text-amber-600/60 mt-1 font-bold uppercase tracking-widest">Compassionate Experts</p>
+                                    <ScrambleText text="TRUSTED_CARE" className="text-lg font-bold tracking-[0.2em] text-stone-700 uppercase" />
+                                    <p className="text-[10px] text-stone-600/60 mt-1 font-bold uppercase tracking-widest">Compassionate Experts</p>
                                 </div>
                             </Card>
                         </div>
@@ -378,7 +292,8 @@ const WhyChooseUsSection = () => {
                                     href="https://www.google.com/maps/search/?api=1&query=869+Main+Street+Darby+PA+19023" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="h-10 w-10 rounded-xl bg-stone-900 text-white flex items-center justify-center hover:bg-amber-600 transition-all active:scale-[0.96] hover:shadow-lg hover:shadow-amber-200"
+                                    aria-label="View our Darby clinic location on Google Maps"
+                                    className="h-10 w-10 rounded-xl bg-stone-900 text-white flex items-center justify-center hover:bg-orange-600 transition-all active:scale-[0.96] hover:shadow-lg hover:shadow-orange-200"
                                 >
                                     <Navigation className="h-4 w-4" />
                                 </a>

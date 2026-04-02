@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Marquee } from "@/components/ui/marquee";
+import { HorizontalScroll } from "../ui/HorizontalScroll";
 import { motion } from "framer-motion";
 import SectionTag from "@/components/ui/section-tag";
 import UiloraFrostedGlass from "@/components/ui/uilora-frosted-glass";
@@ -74,7 +74,7 @@ const itemVariants = {
 
 export default function TeamSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-24 font-barlow selection:bg-amber-100 selection:text-amber-900">
+    <section className="relative w-full overflow-hidden bg-white py-24 font-barlow selection:bg-stone-100 selection:text-stone-900">
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header Section */}
         <motion.div 
@@ -98,7 +98,7 @@ export default function TeamSection() {
           </motion.div>
         </motion.div>
 
-        {/* Marquee Section */}
+        {/* Horizontal Scroll System */}
         <motion.div 
           initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -106,35 +106,33 @@ export default function TeamSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative w-full py-4"
         >
-          <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-24 md:w-64 bg-gradient-to-r from-white via-white/80 to-transparent" />
-          <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-24 md:w-64 bg-gradient-to-l from-white via-white/80 to-transparent" />
-
-          <Marquee className="[--gap:2rem] [--duration:50s]" pauseOnHover>
-            {teamMembers.map((member) => (
-              <motion.div 
-                whileTap={{ scale: 0.98 }}
-                className="group flex w-72 shrink-0 flex-col px-2 cursor-pointer" 
-                key={member.name}
-              >
-                <div className="relative h-[420px] w-full overflow-hidden rounded-[2.5rem] bg-stone-50 border border-stone-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
-                  <Image 
-                    alt={member.name} 
-                    className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
-                    fill 
-                    src={member.image} 
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 rounded-3xl bg-white/90 backdrop-blur-md p-5 border border-white/50 shadow-lg transform transition-all duration-500 group-hover:bg-white">
-                    <h3 className="font-bold text-stone-900 tracking-tight text-lg"> 
-                      {member.name} 
-                    </h3> 
-                    <p className="text-orange-500 font-bold text-xs uppercase tracking-widest mt-1"> 
-                      {member.role} 
-                    </p> 
+          <HorizontalScroll className="px-4 md:px-8 pb-20">
+            {[...teamMembers, ...teamMembers].map((member, idx) => (
+              <div key={idx} className="w-72 shrink-0 snap-start">
+                <motion.div 
+                  whileTap={{ scale: 0.98 }}
+                  className="group flex flex-col cursor-pointer" 
+                >
+                  <div className="relative h-[420px] w-full overflow-hidden rounded-[2.5rem] bg-stone-50 border border-stone-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
+                    <Image 
+                      alt={member.name} 
+                      className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
+                      fill 
+                      src={member.image} 
+                    />
+                    <div className="absolute bottom-4 left-4 right-4 rounded-3xl bg-white/90 backdrop-blur-md p-5 border border-white/50 shadow-lg transform transition-all duration-500 group-hover:bg-white">
+                      <h3 className="font-bold text-stone-900 tracking-tight text-lg"> 
+                        {member.name} 
+                      </h3> 
+                      <p className="text-orange-500 font-bold text-xs uppercase tracking-widest mt-1"> 
+                        {member.role} 
+                      </p> 
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             ))}
-          </Marquee>
+          </HorizontalScroll>
         </motion.div>
 
         <motion.div 

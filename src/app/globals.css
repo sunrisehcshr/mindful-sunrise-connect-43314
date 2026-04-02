@@ -9,6 +9,16 @@
   .animate-marquee-vertical {
     animation: marquee-vertical var(--duration) linear infinite;
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .momentum-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 @keyframes marquee {
@@ -40,16 +50,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 33 10% 25%;
  
-    --primary: 25 85% 58%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 33 90% 60%;
+    --primary-foreground: 0 0% 100%;
  
-    --secondary: 40 15% 93%;
+    --secondary: 40 15% 94%;
     --secondary-foreground: 33 10% 25%;
  
-    --muted: 40 10% 93%;
-    --muted-foreground: 33 10% 45%;
+    --muted: 40 15% 94%;
+    --muted-foreground: 33 5% 45%;
  
-    --accent: 40 15% 93%;
+    --accent: 40 15% 94%;
     --accent-foreground: 33 10% 25%;
  
     --destructive: 0 74% 65%;

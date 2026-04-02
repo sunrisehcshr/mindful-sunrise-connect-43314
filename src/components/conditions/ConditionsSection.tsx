@@ -89,28 +89,9 @@ const itemVariants = {
   }
 };
 
+import { HorizontalScroll } from '../ui/HorizontalScroll';
+
 const ConditionsSection = () => {
-  useEffect(() => {
-    const style = document.createElement('style');
-    style.innerHTML = `
-      @keyframes conditions-scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      .animate-conditions-scroll {
-        display: flex;
-        width: max-content;
-        animation: conditions-scroll 80s linear infinite;
-      }
-      .animate-conditions-scroll:hover {
-        animation-play-state: paused;
-      }
-    `;
-    document.head.appendChild(style);
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
   const conditions = [
     {
       title: "Anxiety Disorders",
@@ -220,7 +201,7 @@ const ConditionsSection = () => {
   ];
 
   return (
-    <section id="conditions" className="relative py-24 pb-8 bg-white font-barlow overflow-hidden">
+    <section id="conditions" className="relative py-24 pb-16 bg-white font-barlow overflow-hidden">
       <CurveTransition fillColor="#fdfdfc" />
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
@@ -232,8 +213,8 @@ const ConditionsSection = () => {
         >
           <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
             <SectionTag>Conditions We Treat</SectionTag>
-            <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-              Specialized treatment for {' '}
+            <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight max-w-[15ch] md:max-w-none mx-auto">
+              Specialized treatment for <br className="hidden md:block" />
               <span className="font-instrument-serif italic text-orange-500">the challenges you face.</span>
             </h2>
           </motion.div>
@@ -243,54 +224,49 @@ const ConditionsSection = () => {
         </motion.div>
       </div>
 
-      {/* Infinite Horizontal Scroll */}
-      <div className="relative w-full overflow-hidden py-10 group/carousel">
-        <div className="animate-conditions-scroll gap-6">
-          {/* Double the list for seamless loop */}
+      {/* Horizontal Scroll System */}
+      <div className="relative w-full py-10">
+        <HorizontalScroll className="px-4 md:px-8 pb-16">
           {[...conditions, ...conditions].map((condition, idx) => (
-            <motion.div key={idx} className="w-[380px] flex-shrink-0" whileTap={{ scale: 0.98 }}>
-              <Card className="flex flex-col h-full min-h-[340px] cursor-pointer">
-                <div className="flex items-center justify-between mb-6">
-                  <div className={cn(
-                    "w-12 h-12 rounded-xl flex items-center justify-center bg-white shadow-md shadow-stone-200/50 border border-stone-100 transition-transform group-hover:scale-110 duration-300",
-                    condition.color === 'amber' && "text-amber-500",
-                    condition.color === 'blue' && "text-blue-500",
-                    condition.color === 'orange' && "text-orange-500",
-                    condition.color === 'rose' && "text-rose-500",
-                    condition.color === 'indigo' && "text-indigo-500",
-                    condition.color === 'emerald' && "text-emerald-500",
-                    condition.color === 'red' && "text-red-500",
-                  )}>
-                    <condition.icon className="w-6 h-6" />
+            <div key={idx} className="w-[300px] sm:w-[380px] shrink-0 snap-start">
+              <Link href={condition.url} className="block h-full group/card">
+                <Card containerClassName="h-full border-stone-100 hover:border-orange-200/50" className="p-8">
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className={cn(
+                        "p-3 rounded-2xl transition-all duration-500 group-hover/card:scale-110",
+                        condition.color === 'amber' && "bg-amber-50 text-amber-600 group-hover/card:bg-amber-100",
+                        condition.color === 'blue' && "bg-blue-50 text-blue-600 group-hover/card:bg-blue-100",
+                        condition.color === 'orange' && "bg-orange-50 text-orange-600 group-hover/card:bg-orange-100",
+                        condition.color === 'rose' && "bg-rose-50 text-rose-600 group-hover/card:bg-rose-100",
+                        condition.color === 'indigo' && "bg-indigo-50 text-indigo-600 group-hover/card:bg-indigo-100",
+                        condition.color === 'emerald' && "bg-emerald-50 text-emerald-600 group-hover/card:bg-emerald-100",
+                        condition.color === 'red' && "bg-red-50 text-red-600 group-hover/card:bg-red-100"
+                      )}>
+                        <condition.icon className="w-6 h-6" />
+                      </div>
+                      <div className="h-10 w-10 rounded-full bg-stone-50 border border-stone-100 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform translate-x-4 group-hover/card:translate-x-0">
+                        <ArrowUpRight className="w-5 h-5 text-stone-400 group-hover/card:text-orange-500" />
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-stone-900 mb-4 tracking-tight group-hover/card:text-orange-600 transition-colors">
+                      {condition.title}
+                    </h3>
+                    
+                    <p className="text-stone-500 text-sm leading-relaxed mb-6 font-barlow">
+                      {condition.short}
+                    </p>
+                    
+                    <div className="mt-auto pt-4 border-t border-stone-50 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-stone-400 group-hover/card:text-orange-500 transition-colors">
+                      Learn More <ArrowUpRight className="w-3 h-3" />
+                    </div>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-stone-300 group-hover:text-amber-600 transition-colors" />
-                </div>
-                
-                <h3 className="text-2xl font-bold text-stone-900 mb-3 group-hover:text-amber-600 transition-colors whitespace-normal">
-                  {condition.title}
-                </h3>
-                <p className="text-stone-500 text-sm mb-8 flex-grow font-medium leading-relaxed whitespace-normal line-clamp-4">
-                  {condition.short}
-                </p>
-                
-                {/* Reveal on hover link - Cleaner replacement for repetitive buttons */}
-                <Link href={condition.url} className="mt-auto relative overflow-hidden group/link flex items-center gap-3">
-                   <div className="h-px flex-grow bg-stone-100 group-hover/link:bg-amber-200 transition-colors" />
-                   <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-300 group-hover/link:text-amber-600 transition-all opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-300">
-                     Read Details
-                   </span>
-                   <div className="w-8 h-8 rounded-full border border-stone-100 flex items-center justify-center text-stone-300 group-hover/link:bg-amber-500 group-hover/link:border-amber-400 group-hover/link:text-white transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 duration-500 delay-75">
-                     <ArrowUpRight className="h-4 w-4" />
-                   </div>
-                </Link>
-              </Card>
-            </motion.div>
+                </Card>
+              </Link>
+            </div>
           ))}
-        </div>
-
-        {/* Gradient Overlays for Fade Effect */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+        </HorizontalScroll>
       </div>
 
       <div className="container mx-auto px-4 text-center mt-4">

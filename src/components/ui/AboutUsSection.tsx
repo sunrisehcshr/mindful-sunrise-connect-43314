@@ -121,10 +121,10 @@ const AboutUsSection = () => {
               </h3>
               <div className="space-y-4">
                 <p className="text-stone-500 leading-relaxed font-medium italic">
-                  &quot;At Sunrise, we believe in treating the whole person, not just symptoms. Our mission is to provide a safe, trauma-informed space where every individual can access the compassionate care they deserve.&quot;
+                  &quot;We treat the person, not the symptom. Our goal is to provide a trauma-informed environment where evidence-based therapy leads to measurable clinical improvement.&quot;
                 </p>
                 <p className="text-stone-500 leading-relaxed font-medium">
-                  We aim to transform mental health care in our community by combining clinical excellence with deep empathy, ensuring that your path to wellness is supported at every step.
+                  Since 2018, we have combined clinical excellence with deep community roots to ensure your path to wellness is supported by local experts who understand your needs.
                 </p>
               </div>
             </div>
@@ -151,11 +151,11 @@ const AboutUsSection = () => {
             <div className={cn(iconContainerStyles, "mb-6")}>
               <Heart className="h-5 w-5 text-orange-500" />
             </div>
-            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-amber-600 transition-colors">
-                Patient Centered
+            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-orange-600 transition-colors">
+                Personalized Care
             </h3>
             <p className="text-sm text-stone-500 leading-relaxed font-medium">
-              Your well-being is our priority. We design personalized treatment plans that respect your unique voice and goals.
+              Treatment as unique as you are. Your path to recovery starts with a clinical plan designed for your specific history, goals, and lifestyle.
             </p>
           </Card>
 
@@ -164,22 +164,22 @@ const AboutUsSection = () => {
             <div className={cn(iconContainerStyles, "mb-6")}>
               <ShieldCheck className="h-5 w-5 text-emerald-500" />
             </div>
-            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-amber-600 transition-colors">
+            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-orange-600 transition-colors">
                 Accessible Care
             </h3>
             <p className="text-sm text-stone-500 leading-relaxed font-medium">
-              Breaking barriers to mental health. We offer both in-person and telehealth options, accepting Medicaid and private pay.
+              Professional support, within reach. We accept Medicaid and private insurance for both in-person Darby visits and secure telehealth sessions.
             </p>
           </Card>
 
           {/* Holistic Growth Stat Card */}
           <Card containerClassName="md:col-span-4 rounded-[2.5rem]" className="flex flex-col justify-center items-center text-center p-8">
             <div className={cn(iconContainerStyles, "mb-6")}>
-              <Leaf className="h-5 w-5 text-amber-500" />
+              <Leaf className="h-5 w-5 text-orange-500" />
             </div>
-            <div className="text-5xl font-black text-stone-900 tracking-tighter mb-2">Holistic</div>
+            <div className="text-5xl font-black text-stone-900 tracking-tighter mb-2">Total</div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400">
-                Approach to Healing
+                Wellness Approach
             </p>
           </Card>
 
@@ -187,10 +187,10 @@ const AboutUsSection = () => {
           <Card containerClassName="md:col-span-12 rounded-[2.5rem] bg-stone-900 border-none" className="p-10 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 blur-[80px] -mr-32 -mt-32 transition-transform duration-700 group-hover:scale-110" />
             <div className="relative z-10 text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-normal text-white tracking-tight mb-2 transition-colors duration-500 group-hover:text-stone-900">
-                Ready to start your journey?
+              <h3 className="text-2xl md:text-3xl font-normal text-white tracking-tight mb-2 transition-colors duration-500 group-hover:text-orange-500">
+                Take the first step today.
               </h3>
-              <p className="text-stone-400 text-lg transition-colors duration-500 group-hover:text-stone-600">Our compassionate team is here to support you every step of the way.</p>
+              <p className="text-stone-400 text-lg transition-colors duration-500 group-hover:text-stone-300">Our Darby team typically responds to appointment requests by the next business day.</p>
             </div>
             <Link href="/appointment#home" className="relative z-10 shrink-0">
               <motion.div 
