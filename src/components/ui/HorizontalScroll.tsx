@@ -77,9 +77,15 @@ export const HorizontalScroll = ({
       }
     };
 
+    // Initial check after a short delay for layout stability
+    const timer = setTimeout(checkScrollable, 100);
+    
     checkScrollable();
     window.addEventListener("resize", checkScrollable);
-    return () => window.removeEventListener("resize", checkScrollable);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", checkScrollable);
+    };
   }, []);
 
   return (
@@ -89,8 +95,6 @@ export const HorizontalScroll = ({
       aria-label="Horizontal scrollable content"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
     >
       <div
         ref={scrollRef}
@@ -98,13 +102,12 @@ export const HorizontalScroll = ({
         className={cn(
           "flex overflow-x-auto overflow-y-hidden gap-6 pb-12 pt-4 no-scrollbar outline-none focus-visible:ring-2 focus-visible:ring-orange-500/20",
           "cursor-grab active:cursor-grabbing",
-          "touch-pan-x momentum-scroll",
+          "touch-pan-x",
           className
         )}
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-          WebkitOverflowScrolling: 'touch',
         }}
       >
         {children}

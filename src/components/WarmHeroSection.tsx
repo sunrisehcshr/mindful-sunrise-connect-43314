@@ -138,14 +138,14 @@ const WarmHeroSection = () => {
       </motion.div>
 
       {/* Soft glow overlay */}
-      {/* Semi-transparent black overlay for text readability */}
-      <div className="absolute inset-0 z-0 bg-black/50" />
+      {/* Semi-transparent black overlay for text readability - Desktop only to keep video clear on mobile */}
+      <div className="absolute inset-0 z-0 hidden md:block bg-black/50" />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-40 md:pt-48 -mt-16">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/30 backdrop-blur-[4px] border border-white/10 md:bg-transparent md:backdrop-blur-0 md:border-none md:py-0 md:px-0"
+          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/60 backdrop-blur-[6px] border border-white/20 md:bg-transparent md:backdrop-blur-0 md:border-none md:py-0 md:px-0 shadow-2xl md:shadow-none"
           variants={{
             hidden: { opacity: 0 },
             visible: { 

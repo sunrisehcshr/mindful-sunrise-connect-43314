@@ -90,7 +90,10 @@ const AppointmentForm = () => {
 
       if (response.ok && json?.ok) {
         setIsSuccess(true);
-        toast.success('Request submitted successfully!');
+        // Ogilvy-style success toast: Benefit-driven and specific
+        toast.success('Your path to peace begins now. Our specialist will contact you within 24 hours.', {
+          duration: 6000,
+        });
         setFormData({
           firstName: '',
           email: '',
@@ -131,13 +134,24 @@ const AppointmentForm = () => {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
               <CheckCircle2 className="w-8 h-8 text-green-600" />
             </div>
-            <h3 className="text-2xl font-barlow font-bold text-stone-900 mb-2">Request Sent!</h3>
-            <p className="text-stone-500 font-barlow text-base max-w-sm">
-              Thank you for reaching out. Our team will contact you shortly to confirm your appointment.
+            <h3 className="text-2xl font-barlow font-bold text-stone-900 mb-2">Thank you for reaching out</h3>
+            <p className="text-stone-700 font-barlow text-lg max-w-sm mb-4">
+              Our team will contact you within 24 hours to help you start your journey.
             </p>
+            
+            <div className="bg-stone-50 border border-stone-200 rounded-2xl p-4 max-w-sm mb-6 flex gap-3 items-start text-left" role="alert" aria-live="polite">
+              <AlertCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+              <div>
+                <p className="text-stone-900 font-bold text-xs uppercase tracking-wider mb-1">Important Notice</p>
+                <p className="text-stone-500 font-barlow text-[13px] leading-relaxed">
+                  This is not an appointment confirmation. Our clinical team will contact you to verify details and confirm your specific time slot.
+                </p>
+              </div>
+            </div>
+
             <Button 
               onClick={() => setIsSuccess(false)}
-              className="mt-6 bg-stone-900 hover:bg-stone-800 text-white rounded-full px-8 py-4 font-barlow font-bold"
+              className="bg-stone-900 hover:bg-stone-800 text-white rounded-full px-8 py-4 font-barlow font-bold transition-all hover:scale-105 active:scale-95"
             >
               Send another request
             </Button>

@@ -106,9 +106,9 @@ export default function TeamSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative w-full py-4"
         >
-          <HorizontalScroll className="px-4 md:px-8 pb-20">
+          <HorizontalScroll className="px-4 md:px-8 pb-20" autoPlay={true} autoPlaySpeed={0.4}>
             {[...teamMembers, ...teamMembers].map((member, idx) => (
-              <div key={idx} className="w-72 shrink-0 snap-start">
+              <div key={idx} className="w-72 shrink-0">
                 <motion.div 
                   whileTap={{ scale: 0.98 }}
                   className="group flex flex-col cursor-pointer" 

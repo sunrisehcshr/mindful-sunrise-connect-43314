@@ -226,9 +226,9 @@ const ConditionsSection = () => {
 
       {/* Horizontal Scroll System */}
       <div className="relative w-full py-10">
-        <HorizontalScroll className="px-4 md:px-8 pb-16">
+        <HorizontalScroll className="px-4 md:px-8 pb-16" autoPlay={true} autoPlaySpeed={0.4}>
           {[...conditions, ...conditions].map((condition, idx) => (
-            <div key={idx} className="w-[300px] sm:w-[380px] shrink-0 snap-start">
+            <div key={idx} className="w-[300px] sm:w-[380px] shrink-0">
               <Link href={condition.url} className="block h-full group/card">
                 <Card containerClassName="h-full border-stone-100 hover:border-orange-200/50" className="p-8">
                   <div className="flex flex-col h-full">

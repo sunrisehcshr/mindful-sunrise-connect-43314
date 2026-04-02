@@ -40,7 +40,10 @@ const NewsletterForm: React.FC = () => {
       const json = await response.json().catch(() => null);
       
       if (response.ok && json?.ok) {
-        toast.success("Thank you for subscribing to our newsletter!");
+        toast.success('Your path to peace begins now. Our team will contact you within 24 hours.', {
+          duration: 6000,
+          description: 'This is not an appointment confirmation. Our clinical team will contact you to verify details and confirm your specific time slot.',
+        });
         setEmail("");
       } else {
         toast.error("Something went wrong. Please try again.");
