@@ -1,4 +1,6 @@
 
+"use client";
+
 import React from 'react';
 import {
   Dialog,
@@ -27,13 +29,13 @@ const AppointmentDialog: React.FC<AppointmentDialogProps> = ({ children }) => {
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </DialogClose>
-        <DialogHeader className="p-4 pb-0">
-          <DialogTitle className="text-xl font-bold text-amber-950">Schedule Your Appointment</DialogTitle>
-          <DialogDescription className="text-amber-900 text-sm">
-            Fill out the form below and we'll get back to you shortly.
+        <DialogHeader className="p-8 pb-0">
+          <DialogTitle className="text-3xl font-barlow font-bold text-stone-900 tracking-tight">Schedule Your <span className="text-orange-500 font-instrument-serif italic font-normal">Appointment</span></DialogTitle>
+          <DialogDescription className="text-stone-500 font-barlow text-base mt-2">
+            Fill out the form below and we&apos;ll get back to you shortly.
           </DialogDescription>
         </DialogHeader>
-        <div className="px-4 pb-4 pt-2">
+        <div className="p-8 pt-6">
           <QuickAppointmentForm />
         </div>
       </DialogContent>

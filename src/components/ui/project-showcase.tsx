@@ -1,14 +1,17 @@
 
+"use client";
+
 import type React from "react"
 import { useState, useRef } from "react"
 import { ArrowUpRight } from "lucide-react"
+import Image, { type StaticImageData } from "next/image"
 
 export interface ShowcaseItem {
   title: string
   description: string
   tag: string
   link: string
-  image: string
+  image: string | StaticImageData
 }
 
 interface ProjectShowcaseProps {
@@ -41,11 +44,10 @@ export function ProjectShowcase({ items }: ProjectShowcaseProps) {
                 }}
               >
                 <div className="w-[300px] h-[210px] rounded-2xl overflow-hidden shadow-2xl border border-stone-200/50">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover"
-                    loading="lazy"
                     width={300}
                     height={210}
                   />

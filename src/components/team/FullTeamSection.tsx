@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Separator } from '../ui/separator';
@@ -54,23 +56,20 @@ const fullTeamMembers = [
     specialties: ["Couples Counseling", "Relationship Issues", "Communication"],
     bio: "Shanada Anderson, MS, is a therapist dedicated to creating safe, affirming spaces where clients feel seen and supported. She provides culturally competent, client-centered care that empowers individuals to build resilience and navigate life's challenges with confidence. Shanada is committed to not only supporting her clients, but also transforming the culture of care with authenticity, strength, and heart. Shanada holds a Master's in Science in Professional Counseling ",
     image: "/images/Shanada Anderson.jpeg"
-  },
-  {
-    name: "Ekalavya Amrute",
-    role: "Office Manager",
-    specialties: ["Substance Abuse", "Grief Counseling", "Life Transitions"],
-    bio: "Ekalavya Amrute serves as the Office Manager at Sunrise Human Care Services, where he ensures the smooth functioning of daily operations and supports the team in delivering quality care. His responsibilities include managing administrative processes, coordinating schedules, maintaining records, and overseeing compliance to keep organizational workflows efficient. Through his strong organizational skills and dedication, Ekalavya creates a supportive environment for staff and contributes directly to the productivity of the team and the overall mission of Sunrise Human Care Services.",
-    image: "/images/ekalavya-amrute.jpeg"
   }
 ];
 
  
 const FullTeamSection = () => {
   return (
-    <section id="team" className="py-16 md:py-24 bg-inherit">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="team" className="py-16 md:py-24 bg-stone-50 overflow-hidden relative">
+      {/* Background decorations */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] -mr-[200px] -mt-[200px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] -ml-[200px] -mb-[200px] pointer-events-none" />
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
-          className="max-w-3xl mx-auto text-center mb-12"
+          className="max-w-3xl mx-auto text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -81,20 +80,21 @@ const FullTeamSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
+            className="mb-6"
           >
-            <SectionTag icon={<Users className="h-3 w-3" />}>
+            <SectionTag>
               Our Team
             </SectionTag>
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-4xl font-bold mb-4"
+            className="font-barlow font-normal text-4xl md:text-5xl text-stone-900 tracking-tighter leading-none mb-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Meet Our Dedicated Mental Health Professionals
+            Meet the professionals <span className="font-instrument-serif italic text-orange-500 font-normal">behind your care</span>
           </motion.h2>
 
           <motion.p
@@ -102,17 +102,13 @@ const FullTeamSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-muted-foreground"
+            className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed"
           >
-            Our experienced team brings together diverse specialties and backgrounds, united by a shared commitment to providing compassionate, evidence-based mental health care in Darby and Delaware County.
+            Our experienced team brings together diverse specialties and backgrounds, united by a shared commitment to providing compassionate, evidence-based mental health care.
           </motion.p>
-
-          <div className="mx-auto mt-6 mb-10 w-24">
-            <Separator className="bg-gradient-to-r from-transparent via-orange-300/50 to-transparent h-0.5" />
-          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {fullTeamMembers.map((member, index) => (
             <TeamMemberCard
               key={index}

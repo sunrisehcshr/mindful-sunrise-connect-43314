@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,6 +7,10 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { appointmentFormSchema } from '@/lib/formValidation';
 import { useFormProtection } from '@/hooks/useFormProtection';
+
+import { motion, AnimatePresence } from 'framer-motion';
+import { User, Mail, Phone, Calendar, MessageSquare, ChevronRight, AlertCircle, CheckCircle2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const QuickAppointmentForm = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +21,9 @@ const QuickAppointmentForm = () => {
     serviceInterest: '' as 'Counseling' | 'Psychiatric Consultation' | 'General Inquiry' | '',
   });
   
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const { honeypot, setHoneypot, validateSubmission } = useFormProtection();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -24,14 +32,21 @@ const QuickAppointmentForm = () => {
       ...prev,
       [name]: value
     }));
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrors({});
 
     try {
-      // Spam protection
       const validation = validateSubmission();
       if (!validation.valid) {
         toast.error(validation.error || 'Submission blocked');
@@ -39,22 +54,34 @@ const QuickAppointmentForm = () => {
         return;
       }
 
-      // Validate form data
-      const validatedData = appointmentFormSchema.parse({
+      const result = appointmentFormSchema.safeParse({
         ...formData,
         honeypot
       });
+
+      if (!result.success) {
+        const formattedErrors: Record<string, string> = {};
+        result.error.issues.forEach((issue) => {
+          if (issue.path[0]) {
+            formattedErrors[issue.path[0].toString()] = issue.message;
+          }
+        });
+        setErrors(formattedErrors);
+        setIsSubmitting(false);
+        return;
+      }
 
       const response = await fetch('https://formspree.io/f/xzzeaeql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(validatedData),
+        body: JSON.stringify(result.data),
       });
 
       if (response.ok) {
-        toast.success('Request submitted successfully! We\'ll contact you soon.');
+        setIsSuccess(true);
+        toast.success('Request submitted successfully!');
         setFormData({
           firstName: '',
           email: '',
@@ -62,116 +89,88 @@ const QuickAppointmentForm = () => {
           preferredDateTime: '',
           serviceInterest: '',
         });
+        setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        toast.error('Failed to submit request. Please try again.');
+        toast.error('Failed to submit request.');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error('Please check your information and try again.');
-      }
+      toast.error('An unexpected error occurred.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const inputClasses = (fieldName: string) => cn(
+    "w-full bg-stone-50 border transition-all duration-300 rounded-xl px-10 py-3 font-barlow text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20",
+    errors[fieldName] 
+      ? "border-red-300 bg-red-50/30 focus:border-red-500" 
+      : "border-stone-200 focus:border-orange-500"
+  );
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <input
-        type="text"
-        name="honeypot"
-        value={honeypot}
-        onChange={(e) => setHoneypot(e.target.value)}
-        style={{ display: 'none' }}
-        tabIndex={-1}
-        autoComplete="off"
-      />
-      
-      <div className="space-y-2">
-        <Label htmlFor="firstName" className="text-sm">First Name *</Label>
-        <Input
-          id="firstName"
-          name="firstName"
-          type="text"
-          required
-          value={formData.firstName}
-          onChange={handleChange}
-          placeholder="Enter your first name"
-          className="h-9"
-        />
-      </div>
+    <div className="relative">
+      <AnimatePresence mode="wait">
+        {isSuccess ? (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="flex flex-col items-center justify-center py-8 text-center"
+          >
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+              <CheckCircle2 className="w-8 h-8 text-green-600" />
+            </div>
+            <h3 className="text-2xl font-barlow font-bold text-stone-900 mb-2">Success!</h3>
+            <p className="text-stone-500 font-barlow text-sm">We'll contact you soon.</p>
+          </motion.div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input type="text" name="honeypot" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} className="hidden" />
+            
+            <div className="space-y-1">
+              <Label htmlFor="firstName" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Name *</Label>
+              <div className="relative">
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400" />
+                <input id="firstName" name="firstName" required value={formData.firstName} onChange={handleChange} placeholder="John Doe" className={inputClasses('firstName')} />
+              </div>
+            </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="email" className="text-sm">Email *</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="your.email@example.com"
-          className="h-9"
-        />
-      </div>
+            <div className="space-y-1">
+              <Label htmlFor="email" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Email *</Label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400" />
+                <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@example.com" className={inputClasses('email')} />
+              </div>
+            </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="phone" className="text-sm">Phone Number (Optional)</Label>
-        <Input
-          id="phone"
-          name="phone"
-          type="tel"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="(123) 456-7890"
-          className="h-9"
-        />
-      </div>
+            <div className="space-y-1">
+              <Label htmlFor="serviceInterest" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Service *</Label>
+              <div className="relative">
+                <MessageSquare className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400 pointer-events-none" />
+                <select id="serviceInterest" name="serviceInterest" required value={formData.serviceInterest} onChange={handleChange} className={cn(inputClasses('serviceInterest'), "appearance-none")}>
+                  <option value="" disabled>Select a service</option>
+                  <option value="Counseling">Counseling</option>
+                  <option value="Psychiatric Consultation">Psychiatric Consultation</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+                <ChevronRight className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400 rotate-90 pointer-events-none" />
+              </div>
+            </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="preferredDateTime" className="text-sm">Preferred Date or Time</Label>
-        <Input
-          id="preferredDateTime"
-          name="preferredDateTime"
-          type="text"
-          value={formData.preferredDateTime}
-          onChange={handleChange}
-          placeholder="e.g., Next Tuesday afternoon"
-          className="h-9"
-        />
-      </div>
+            <div className="bg-orange-50 rounded-xl p-3 border border-orange-100 flex gap-2 items-start">
+              <AlertCircle className="h-3 w-3 text-orange-500 mt-0.5 flex-shrink-0" />
+              <p className="text-[10px] text-orange-700 font-barlow leading-tight">
+                For your privacy, please do not include personal health details.
+              </p>
+            </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="serviceInterest" className="text-sm">Service Interest *</Label>
-        <select
-          id="serviceInterest"
-          name="serviceInterest"
-          required
-          value={formData.serviceInterest}
-          onChange={handleChange}
-          className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          <option value="">Select a service</option>
-          <option value="Counseling">Counseling</option>
-          <option value="Psychiatric Consultation">Psychiatric Consultation</option>
-          <option value="General Inquiry">General Inquiry</option>
-        </select>
-      </div>
-
-      <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded-md">
-        This form is for general scheduling and inquiries only. Please do not include personal health details.
-      </div>
-
-      <Button
-        type="submit"
-        className="w-full bg-[#222] hover:bg-zinc-800 text-white font-barlow font-medium rounded-full"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? 'Submitting...' : 'Submit Request'}
-      </Button>
-    </form>
+            <Button type="submit" disabled={isSubmitting} className="w-full bg-orange-500 hover:bg-orange-600 text-white font-barlow font-bold rounded-xl py-6 shadow-lg shadow-orange-500/20">
+              {isSubmitting ? 'Sending...' : 'Schedule Now'}
+            </Button>
+          </form>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 

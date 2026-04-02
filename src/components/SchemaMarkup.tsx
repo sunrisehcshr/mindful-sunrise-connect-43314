@@ -1,11 +1,41 @@
 
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import Script from "next/script";
 
 const SchemaMarkup: React.FC = () => {
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Sunrise Human Care Services",
+        "description": "Mental health clinic offering therapy and psychiatry in Darby, PA",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "869 Main Street",
+          "addressLocality": "Darby",
+          "addressRegion": "PA",
+          "postalCode": "19023",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-814-620-2162",
+        "url": "https://sunrisehumancare.com",
+        "image": "https://sunrisehumancare.com/images/logo.png",
+        "priceRange": "$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.9184",
+          "longitude": "-75.2590"
+        },
+        "acceptedPaymentMethod": ["Cash", "CreditCard", "Medicaid"],
+        "areaServed": "Darby, PA"
+      },
       {
         "@type": "WebSite",
         "@id": "https://sunrisehumancare.com/#WebSite",
@@ -23,14 +53,8 @@ const SchemaMarkup: React.FC = () => {
         "@type": "MedicalOrganization",
         "@id": "https://sunrisehumancare.com/#MedicalOrganization",
         "name": "Sunrise Human Care Services",
+        "alternateName": "Sunrise Human Care",
         "url": "https://sunrisehumancare.com/",
-        "foundingDate": "2020-01-01",
-        "founder": "Michael Thevar",
-        "identifier": {
-          "@type": "PropertyValue",
-          "name": "NPI",
-          "value": "1528784568"
-        },
         "logo": {
           "@type": "ImageObject",
           "@id": "https://sunrisehumancare.com/#logo",
@@ -39,6 +63,33 @@ const SchemaMarkup: React.FC = () => {
           "height": 512,
           "caption": "Sunrise Human Care Services Logo"
         },
+        "image": "https://sunrisehumancare.com/images/logo.png",
+        "description": "Sunrise Human Care Services provides expert mental health care, therapy, and psychiatry in Darby, PA. We specialize in treating anxiety, depression, ADHD, and trauma.",
+        "foundingDate": "2020-01-01",
+        "founder": {
+          "@type": "Person",
+          "name": "Michael Thevar"
+        },
+        "taxID": "1528784568",
+        "iso6523Code": "1528784568",
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "NPI",
+          "value": "1528784568"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "869 Main Street",
+          "addressLocality": "Darby",
+          "addressRegion": "PA",
+          "postalCode": "19023",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-814-620-2162",
+        "email": "info@sunrisehumancare.com",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card, Medicaid",
+        "currenciesAccepted": "USD",
         "sameAs": [
           "https://www.facebook.com/sunrisehumancare",
           "https://www.linkedin.com/company/sunrise-human-care-services"
@@ -59,19 +110,9 @@ const SchemaMarkup: React.FC = () => {
             },
             { "@type": "City", "name": "Upper Darby" },
             { "@type": "City", "name": "Yeadon" },
-            { "@type": "City", "name": "Lansdowne" }
+            { "@type": "City", "name": "Lansdowne" },
+            { "@type": "City", "name": "Philadelphia" }
           ]
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "869 Main Street",
-          "addressLocality": "Darby",
-          "addressRegion": "PA",
-          "postalCode": "19023",
-          "addressCountry": "US"
-        },
-        "parentOrganization": {
-          "@id": "https://sunrisehumancare.com/#MedicalBusiness"
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -124,62 +165,6 @@ const SchemaMarkup: React.FC = () => {
                 "name": "Medication Management",
                 "url": "https://sunrisehumancare.com/medication-management-darby-pa"
               }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "IBHS Services",
-                "url": "https://sunrisehumancare.com/ibhs-darby-pa"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Anxiety Treatment",
-                "url": "https://sunrisehumancare.com/anxiety-therapy-darby-pa"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Depression Therapy",
-                "url": "https://sunrisehumancare.com/depression-therapy-darby-pa"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "ADHD Treatment",
-                "url": "https://sunrisehumancare.com/adhd-treatment-darby-pa"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Bipolar Disorder Therapy",
-                "url": "https://sunrisehumancare.com/bipolar-disorder-therapy-darby-pa"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "OCD Therapy",
-                "url": "https://sunrisehumancare.com/ocd-therapy-darby-pa"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Trauma & PTSD Therapy",
-                "url": "https://sunrisehumancare.com/ptsd-therapy-darby-pa"
-              }
             }
           ]
         }
@@ -188,11 +173,11 @@ const SchemaMarkup: React.FC = () => {
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schemaData)}
-      </script>
-    </Helmet>
+    <Script
+      id="schema-markup"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
   );
 };
 

@@ -1,7 +1,11 @@
 
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import SectionTag from '../ui/section-tag';
+
 interface ServiceContentSectionProps {
   title: string;
   children: React.ReactNode;
@@ -12,6 +16,7 @@ interface ServiceContentSectionProps {
   variant?: 'default' | 'alternate' | 'highlight';
   divider?: boolean;
 }
+
 const ServiceContentSection: React.FC<ServiceContentSectionProps> = ({
   title,
   children,
@@ -20,42 +25,29 @@ const ServiceContentSection: React.FC<ServiceContentSectionProps> = ({
   tagText,
   tagIcon,
   variant = 'default',
-  divider = true
+  divider = false
 }) => {
-  // Determine background classes based on variant
+  // Determine background classes based on variant using the new palette
   const getBgClasses = () => {
     switch(variant) {
       case 'alternate':
-        return "bg-amber-50/80";
+        return "bg-stone-50";
       case 'highlight':
-        return "bg-gradient-to-br from-orange-50 to-amber-100/50";
+        return "bg-white border-y border-stone-100";
       case 'default':
       default:
-        return hasBgPattern ? 
-          "bg-gradient-to-br from-yellow-100/80 via-white/30 to-amber-50/90" : 
-          "bg-white";
+        return "bg-transparent";
     }
   };
 
   return (
     <section className={cn(
-      "py-16 lg:py-20 relative overflow-hidden", 
+      "py-16 md:py-24 relative overflow-hidden", 
       getBgClasses(),
       className
     )}>
       {hasBgPattern && (
-        <div className="absolute inset-0 z-0 opacity-20">
-          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="warm-pattern" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="scale(0.75) rotate(0)">
-                <rect x="0" y="0" width="100%" height="100%" fill="none" />
-                <path d="M100 0H0V100" stroke="rgba(252, 211, 77, 0.4)" fill="none" strokeWidth="1" />
-                <path d="M0 50H100M50 0V100" stroke="rgba(252, 211, 77, 0.3)" fill="none" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#warm-pattern)" />
-          </svg>
-        </div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] -mr-[200px] -mt-[200px] pointer-events-none" />
       )}
       
       <div className="container relative z-10 mx-auto px-4 md:px-6">
@@ -72,25 +64,31 @@ const ServiceContentSection: React.FC<ServiceContentSectionProps> = ({
             once: true
           }} 
           transition={{
-            duration: 0.5
+            duration: 0.6,
+            ease: [0.22, 1, 0.36, 1]
           }} 
           className="max-w-7xl mx-auto"
         >
           {tagText && (
-            <div className="flex justify-center mb-4">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-800">
-                {tagIcon} {tagText}
-              </span>
+            <div className="flex justify-center mb-6">
+              <SectionTag>
+                {tagIcon && <span className="mr-2 inline-flex items-center">{tagIcon}</span>}
+                {tagText}
+              </SectionTag>
             </div>
           )}
           
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-10 text-amber-950 font-playfair text-center">{title}</h2>
+          <h2 className="font-barlow font-bold text-3xl md:text-5xl text-stone-900 tracking-tight text-center mb-12">
+            {title}
+          </h2>
           
           {divider && (
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto mb-8"></div>
+            <div className="w-24 h-0.5 bg-stone-200 mx-auto mb-12"></div>
           )}
           
-          {children}
+          <div className="prose prose-stone max-w-none font-barlow text-lg leading-relaxed text-stone-600">
+            {children}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 interface ImageOptimizerProps {
@@ -10,6 +11,7 @@ interface ImageOptimizerProps {
   className?: string;
   priority?: boolean;
   onLoad?: () => void;
+  fill?: boolean;
 }
 
 const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
@@ -20,22 +22,36 @@ const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
   className,
   priority = false,
   onLoad,
+  fill = false,
 }) => {
+  if (fill) {
+    return (
+      <div className={cn('relative', className)}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover transition-opacity"
+          priority={priority}
+          onLoad={onLoad}
+        />
+      </div>
+    );
+  }
+
   // Default dimensions if not provided
   const defaultWidth = width || 800;
   const defaultHeight = height || 600;
   
   return (
-    <img
+    <Image
       src={src}
       alt={alt}
       width={defaultWidth}
       height={defaultHeight}
       className={cn('transition-opacity', className)}
-      loading={priority ? 'eager' : 'lazy'} 
-      decoding={priority ? 'sync' : 'async'}
+      priority={priority}
       onLoad={onLoad}
-      fetchPriority={priority ? 'high' : 'auto'}
     />
   );
 };

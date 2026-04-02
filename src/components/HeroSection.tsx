@@ -1,6 +1,9 @@
+"use client";
+
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { CalendarCheck, Phone } from 'lucide-react';
+import Image from 'next/image';
 const HeroSection: React.FC = () => {
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-6">
       <div className="absolute inset-0 bg-gradient-to-b from-sunrise-50/40 to-white/50 z-0"></div>
@@ -91,9 +94,10 @@ const HeroSection: React.FC = () => {
           ease: "easeOut"
         }}>
             <div className="absolute inset-0 bg-gradient-to-tr from-sunrise-400/30 to-sunrise-500/10 mix-blend-multiply z-10"></div>
-            <img src="/images/Therapy-in-havertown.webp" 
+            <Image src="/images/Therapy-in-havertown.webp" 
      alt="Expert mental health therapy in Darby, PA" 
-     className="h-full w-full object-cover" />
+     fill
+     className="object-cover" />
             <div className="absolute bottom-0 left-0 right-0 p-9 bg-gradient-to-t from-black/80 to-transparent z-20 bg-transparent">
               <p className="text-white text-lg font-medium">Creating a safe space for healing</p>
               <p className="text-sm font-medium text-slate-50">Personalized therapy and psychiatry services in Darby, PA for your unique needs.</p>

@@ -1,90 +1,179 @@
 
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ProjectShowcase, ShowcaseItem } from '../ui/project-showcase';
-import individualTherapy from '@/assets/services/individual-therapy.jpg';
-import couplesCounseling from '@/assets/services/couples-counseling.jpg';
-import familyTherapy from '@/assets/services/family-therapy.jpg';
-import childTherapy from '@/assets/services/child-therapy.jpg';
-import psychiatricEval from '@/assets/services/psychiatric-eval.jpg';
-import medicationMgmt from '@/assets/services/medication-management.jpg';
+import { ArrowUpRight } from "lucide-react";
+import Link from 'next/link';
+import Image from 'next/image';
+import SectionTag from '../ui/section-tag';
+
+interface FeatureItem {
+    title: string;
+    desc?: string;
+    image?: any;
+    link?: string;
+}
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 16, opacity: 0, filter: "blur(4px)" },
+  visible: {
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1] as any
+    }
+  }
+};
+
+const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => {
+    return (
+        <motion.div variants={itemVariants} whileTap={{ scale: 0.98 }} className="w-full">
+            <Link href={item.link || "#"} className="block group mb-2 last:mb-0 w-full">
+                <motion.div
+                    initial="initial"
+                    whileHover="hover"
+                    className="relative border-t border-stone-200 py-6 md:py-12 group cursor-pointer overflow-hidden transition-all duration-300 hover:rounded-3xl hover:border-transparent min-h-[60px] md:min-h-0"
+                >
+                    <div className="flex flex-row items-center justify-between relative z-10 px-4 gap-4">
+                        {/* Number */}
+                        <span className="text-stone-400 font-barlow font-medium text-xs md:text-sm tracking-widest group-hover:text-white transition-colors duration-300 tabular-nums">
+                            0{index + 1}
+                        </span>
+
+                        {/* Title */}
+                        <motion.h2
+                            variants={{ initial: { x: 0 }, hover: { x: 20 } }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            className="text-lg sm:text-2xl md:text-5xl lg:text-6xl font-normal text-stone-400 group-hover:text-white transition-colors duration-300 font-barlow tracking-tighter text-left flex-1 px-4 md:px-10"
+                        >
+                            {item.title}
+                        </motion.h2>
+
+                        {/* Button */}
+                        <motion.div
+                            variants={{ 
+                                initial: { scale: 0.8, opacity: 0.5 }, 
+                                hover: { scale: 1, opacity: 1 } 
+                            }}
+                            transition={{ type: "spring", duration: 0.3, bounce: 0 }}
+                            className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-stone-300 text-stone-400 group-hover:border-white group-hover:text-white transition-all duration-300 shrink-0"
+                        >
+                            <ArrowUpRight className="h-4 w-4 md:h-5 md:h-5" />
+                        </motion.div>
+                    </div>
+
+                    {/* Spotlight Image Reveal with Orange Tint */}
+                    {item.image && (
+                        <motion.div
+                            variants={{ 
+                                initial: { opacity: 0, scale: 0.95, x: "-50%", y: "-50%", filter: "blur(8px)" }, 
+                                hover: { opacity: 1, scale: 1, x: "-50%", y: "-50%", filter: "blur(0px)" } 
+                            }}
+                            transition={{ type: "spring", duration: 0.4, bounce: 0 }}
+                            className="absolute top-1/2 left-1/2 w-[200px] h-[140px] md:w-[400px] md:h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5"
+                        >
+                            <Image
+                              src={typeof item.image === 'string' ? item.image : item.image.src}
+                              alt=""
+                              fill
+                              sizes="(max-width: 768px) 200px, 400px"
+                              className="object-cover transition-all duration-500 group-hover:sepia group-hover:hue-rotate-[320deg] group-hover:saturate-[2] group-hover:brightness-[0.8]"
+                            />
+                            <div className="absolute inset-0 bg-orange-600/30 mix-blend-overlay" />
+                        </motion.div>
+                    )}
+
+                    {/* Background Orange Hover State */}
+                    <motion.div
+                        variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute inset-0 bg-orange-600/90 blur-none transition-opacity duration-300"
+                    />
+                </motion.div>
+            </Link>
+        </motion.div>
+    );
+};
 
 const ServicesSection: React.FC = () => {
-  const services: ShowcaseItem[] = [
+  const services: FeatureItem[] = [
     {
       title: "Individual Therapy",
-      description: "One-on-one therapy sessions tailored to your unique needs — anxiety, depression, stress, and more.",
-      tag: "Therapy",
       link: "/individual-therapy-darby-pa#home",
-      image: individualTherapy,
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg",
     },
     {
       title: "Couples Counseling",
-      description: "Rebuild trust, improve communication, and strengthen your relationship with expert guidance.",
-      tag: "Relationships",
       link: "/couples-counseling-darby-pa#home",
-      image: couplesCounseling,
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg",
     },
     {
       title: "Family Therapy",
-      description: "Navigate family conflicts and build healthier patterns of interaction for lasting harmony.",
-      tag: "Family",
       link: "/family-therapy-darby-pa#home",
-      image: familyTherapy,
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918387/family-counseling-talk-from-home-parents-listen-t-2026-03-25-02-29-59-utc_a9m3eu.jpg",
     },
     {
       title: "Child & Adolescent Therapy",
-      description: "Help young people build resilience, develop coping skills, and thrive through life's challenges.",
-      tag: "Youth",
       link: "/child-therapy-darby-pa#home",
-      image: childTherapy,
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg",
     },
     {
       title: "Psychiatric Evaluations",
-      description: "Comprehensive mental health assessments providing clarity and direction for effective treatment.",
-      tag: "Diagnostics",
       link: "/psychiatric-evaluations-darby-pa#home",
-      image: psychiatricEval,
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg",
     },
     {
       title: "Medication Management",
-      description: "Expert psychiatric medication reviews, monitoring, and adjustments to optimize your wellness.",
-      tag: "Psychiatry",
       link: "/medication-management-darby-pa#home",
-      image: medicationMgmt,
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg",
     },
   ];
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-[hsl(var(--cream))]">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="services" className="py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
         <motion.div 
-          className="max-w-3xl mx-auto text-center mb-14" 
-          initial={{ opacity: 0, y: 20 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true }} 
-          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center mb-12" 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }} 
+          variants={containerVariants}
         >
-          <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Our Services</span>
-          
-          <h2 className="font-barlow font-bold text-3xl md:text-4xl lg:text-5xl text-stone-800 tracking-tight leading-tight mb-4">
-            Mental health services {' '}
-            <span className="font-instrument-serif italic text-amber-400 font-normal">available in Darby</span>
-          </h2>
-          
-          <p className="text-stone-600 font-barlow">
-            Our team of experienced mental health professionals provides a range of services 
-            designed to support your well-being and personal growth in Darby, PA and surrounding areas.
-          </p>
+          <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
+            <SectionTag>
+                Our Specialties
+            </SectionTag>
+            <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
+                From Talk Therapy to Psychiatric Care: <br />
+                <span className="font-instrument-serif italic text-orange-500">Specialized Support for Every Step.</span>
+            </h2>
+          </motion.div>
         </motion.div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+        <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-6xl mx-auto border-b border-stone-200"
         >
-          <ProjectShowcase items={services} />
+            {services.map((item, i) => (
+                <SpotlightRow key={i} item={item} index={i} />
+            ))}
         </motion.div>
       </div>
     </section>

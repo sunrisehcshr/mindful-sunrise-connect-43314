@@ -1,6 +1,8 @@
+"use client";
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 interface NavLinkProps {
@@ -18,22 +20,24 @@ export const NavLink: React.FC<NavLinkProps> = ({
   activeClassName = "bg-sunrise-400/20",
   onClick
 }) => {
+  const pathname = usePathname();
+  
   // Helper to check if current path is a condition page
   const isConditionPage = () => {
-    return window.location.pathname.includes('disorder') || 
-          window.location.pathname.includes('anxiety') ||
-          window.location.pathname.includes('depression') ||
-          window.location.pathname.includes('schizophrenia') || 
-          window.location.pathname.includes('eating-disorders') || 
-          window.location.pathname.includes('substance-use') || 
-          window.location.pathname.includes('dissociative') || 
-          window.location.pathname.includes('somatic') || 
-          window.location.pathname.includes('relationship') || 
-          window.location.pathname.includes('grief') || 
-          window.location.pathname.includes('bpd') || 
-          window.location.pathname.includes('sleep') ||
-          window.location.pathname.includes('ptsd') ||
-          window.location.pathname === '/conditions';
+    return pathname.includes('disorder') || 
+          pathname.includes('anxiety') ||
+          pathname.includes('depression') ||
+          pathname.includes('schizophrenia') || 
+          pathname.includes('eating-disorders') || 
+          pathname.includes('substance-use') || 
+          pathname.includes('dissociative') || 
+          pathname.includes('somatic') || 
+          pathname.includes('relationship') || 
+          pathname.includes('grief') || 
+          pathname.includes('bpd') || 
+          pathname.includes('sleep') ||
+          pathname.includes('ptsd') ||
+          pathname === '/conditions';
   };
   
   // Helper to check if current path is a service page
@@ -48,20 +52,20 @@ export const NavLink: React.FC<NavLinkProps> = ({
       'adhd-treatment'
     ];
     
-    return (serviceKeywords.some(keyword => window.location.pathname.includes(keyword)) || 
-           window.location.pathname === '/services') && 
+    return (serviceKeywords.some(keyword => pathname.includes(keyword)) || 
+           pathname === '/services') && 
            !isConditionPage();
   };
   
   // Determine if this nav link should be active
+  // Since these are hash links, we check the pathname for external pages
   const isActive = 
-    (href === '#home' && !window.location.hash) || 
-    window.location.hash === href || 
+    (href === '#home' && pathname === '/') || 
     (href === '#services' && isServicePage()) ||
     (href === '#conditions' && isConditionPage()) ||
-    (href === '#about' && window.location.pathname === '/about') ||
-    (href === '#faq' && window.location.pathname === '/faq') ||
-    (href === '#appointment' && (window.location.pathname === '/appointment' || window.location.pathname === '/contact'));
+    (href === '#about' && pathname === '/about') ||
+    (href === '#faq' && pathname === '/faq') ||
+    (href === '#appointment' && (pathname === '/appointment' || pathname === '/contact'));
   
   return (
     <a

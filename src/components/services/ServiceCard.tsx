@@ -1,8 +1,10 @@
 
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 interface ServiceProps {
@@ -41,7 +43,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
       
       <div className="flex flex-col gap-3 mt-auto">
         <Link 
-          to={linkUrl} 
+          href={linkUrl} 
           className="inline-flex items-center justify-center text-sm font-barlow font-medium bg-white border border-stone-200 
                    text-stone-700 hover:border-amber-200 hover:bg-amber-50 transition-all duration-300 rounded-full px-4 py-2"
           aria-label={`Learn more about ${service.title}`}

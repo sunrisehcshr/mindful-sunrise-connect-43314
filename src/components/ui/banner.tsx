@@ -1,8 +1,8 @@
 "use client";
-import { type HTMLAttributes, useEffect, useState } from "react";
-import { X, MapPin } from "lucide-react";
+
+import { type HTMLAttributes, useState } from "react";
+import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import * as React from "react";
 
 type BannerVariant = "rainbow" | "normal";
 
@@ -15,12 +15,16 @@ export function Banner({
 }: HTMLAttributes<HTMLDivElement> & {
   variant?: BannerVariant;
 }) {
-  const [open, setOpen] = useState(true);
   const globalKey = id ? `nd-banner-${id}` : null;
-
-  useEffect(() => {
-    if (globalKey) setOpen(localStorage.getItem(globalKey) !== "true");
-  }, [globalKey]);
+  const [open, setOpen] = useState(() => {
+    if (!globalKey) return true;
+    if (typeof window === "undefined") return true;
+    try {
+      return window.localStorage.getItem(globalKey) !== "true";
+    } catch {
+      return true;
+    }
+  });
 
   const onClose = () => {
     setOpen(false);

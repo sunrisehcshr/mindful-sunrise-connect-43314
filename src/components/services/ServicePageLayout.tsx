@@ -1,30 +1,74 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer/Footer';
 import SEOHead from '../SEOHead';
 import SchemaMarkup from '../SchemaMarkup';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar, PhoneCall, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Helmet } from 'react-helmet-async';
+import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Calendar, PhoneCall, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import Script from 'next/script';
+import AppointmentSection from '../Appointment/AppointmentSection';
+import SectionTag from '../ui/section-tag';
+import { cn } from "@/lib/utils";
 
 interface ServicePageLayoutProps {
   children: React.ReactNode;
   title: string;
   description: string;
-  pageTitle: string;
-  metaDescription: string;
-  serviceType: string;
-  canonicalUrl: string;
+  pageTitle?: string;
+  metaDescription?: string;
+  serviceType?: string;
+  canonicalUrl?: string;
   heroImage?: string;
   benefits?: string[];
   approaches?: { title: string; description: string; icon?: React.ReactNode }[];
   faqs?: { question: string; answer: string }[];
-  relatedServices: { title: string; url: string }[];
+  relatedServices?: { title: string; url: string }[];
   schemaType?: string;
   breadcrumbs?: { name: string; url: string; position: number }[];
+}
+
+// --- Glowing Bento Card ---
+function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+      const { left, top } = currentTarget.getBoundingClientRect();
+      mouseX.set(clientX - left);
+      mouseY.set(clientY - top);
+  }
+
+  return (
+      <div
+          className={cn(
+              "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-500",
+              "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-orange-200/50 hover:bg-white rounded-3xl",
+              containerClassName
+          )}
+          onMouseMove={handleMouseMove}
+      >
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/50 pointer-events-none" />
+          <motion.div
+              className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
+              style={{
+                  background: useMotionTemplate`
+          radial-gradient(
+            650px circle at ${mouseX}px ${mouseY}px,
+            rgba(249, 115, 22, 0.08),
+            transparent 80%
+          )
+        `,
+              }}
+          />
+          <div className={cn("relative h-full w-full p-8", className)}>
+              {children}
+          </div>
+      </div>
+  );
 }
 
 const ServicePageLayout = ({
@@ -33,18 +77,19 @@ const ServicePageLayout = ({
   description,
   pageTitle,
   metaDescription,
-  serviceType,
-  canonicalUrl,
-  heroImage = '/images/Therapy-in-havertown.webp',
+  serviceType = "Mental Health Service",
+  canonicalUrl = "https://sunrisehumancare.com",
+  heroImage = 'https://res.cloudinary.com/dabsxebx8/image/upload/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg',
   benefits,
   approaches,
   faqs,
-  relatedServices,
+  relatedServices = [],
   schemaType,
   breadcrumbs
 }: ServicePageLayoutProps) => {
   const serviceName = serviceType || title.split('in')[0].trim();
   const absoluteCanonicalUrl = canonicalUrl.startsWith('http') ? canonicalUrl : `https://sunrisehumancare.com${canonicalUrl}`;
+  const [activeFaq, setActiveFaq] = useState<number | null>(0);
 
   const faqSchema = faqs && faqs.length > 0 ? {
     "@context": "https://schema.org",
@@ -62,238 +107,304 @@ const ServicePageLayout = ({
   return (
     <>
       <SEOHead
-        title={pageTitle}
-        description={metaDescription}
+        title={pageTitle || `${title} in Darby, PA | Sunrise Human Care`}
+        description={metaDescription || description}
         canonicalUrl={absoluteCanonicalUrl}
-        keywords={`${serviceName.toLowerCase()} darby pa, ${serviceName.toLowerCase()} delaware county, mental health darby, therapy darby pa`}
         breadcrumbs={breadcrumbs}
       />
       <SchemaMarkup />
 
       {faqSchema && (
-        <Helmet>
-          <script type="application/ld+json">
-            {JSON.stringify(faqSchema)}
-          </script>
-        </Helmet>
+        <Script
+          id={`faq-schema-${serviceName.toLowerCase().replace(/\s+/g, '-')}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       )}
 
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-stone-950">
         <Navbar />
         
-        <main className="flex-grow pt-28 bg-[#faf8f4]">
-          {/* Hero */}
-          <section className="py-16 md:py-20 lg:py-28 bg-[#f0ece4]">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">{serviceType}</span>
-                  <h1 className="font-barlow font-bold text-2xl sm:text-3xl md:text-5xl text-stone-800 tracking-tight leading-tight mb-6">
-                    {title}
-                  </h1>
-                </motion.div>
-                
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-base md:text-lg text-stone-600 font-barlow mb-8 leading-relaxed"
-                >
-                  {description}
-                </motion.p>
-                
-                <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mt-6 md:mt-8">
-                  <Link to="/appointment" className="w-full sm:w-auto">
-                    <Button size="lg" className="w-full sm:w-auto bg-[#222] hover:bg-zinc-800 text-white font-barlow font-semibold rounded-full">
-                      <Calendar className="mr-2 h-5 w-5" /> Schedule a Consultation
-                    </Button>
-                  </Link>
-                  
-                  <a href="tel:+18146202162" className="w-full sm:w-auto">
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-stone-200 text-stone-800 font-barlow font-medium rounded-full hover:border-amber-200 hover:bg-amber-50">
-                      <PhoneCall className="mr-2 h-5 w-5" /> Call (814) 620-2162
-                    </Button>
-                  </a>
-                </div>
-              </div>
+        <main className="flex-grow">
+          {/* HERO SECTION */}
+          <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
+            <div className="absolute inset-0 z-0">
+              <Image 
+                src={heroImage.includes('cloudinary') && !heroImage.includes('f_auto') ? heroImage.replace('/upload/', '/upload/f_auto,q_auto/') : heroImage} 
+                alt={`${title} in Darby PA`} 
+                fill 
+                className="object-cover opacity-60"
+                priority
+              />
+              <div className="absolute inset-0 z-0 bg-black/30" />
+              <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
             </div>
-          </section>
-          
-          {children}
-
-          {/* Benefits Section */}
-          {benefits && benefits.length > 0 && (
-            <section className="py-16 md:py-20 bg-[#faf8f4]">
-              <div className="container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center mb-12">
-                  <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Benefits</span>
-                  <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight mb-4">
-                    Benefits of {serviceType}
-                    <span className="block font-instrument-serif italic text-amber-400 font-normal">in Darby</span>
-                  </h2>
-                  <p className="text-stone-600 font-barlow">
-                    Our {serviceType.toLowerCase()} in Darby, PA is designed to help you achieve meaningful, lasting improvements in your mental health and daily life.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
-                  {benefits.map((benefit, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 15 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: index * 0.08 }}
-                      className="flex items-start gap-3 bg-white rounded-2xl p-5 border border-stone-200/80 hover:border-amber-200 hover:shadow-sm transition-all duration-300"
-                    >
-                      <CheckCircle2 className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-stone-600 text-sm font-barlow leading-relaxed">{benefit}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Treatment Approaches */}
-          {approaches && approaches.length > 0 && (
-            <section className="py-16 md:py-20 bg-[#f0ece4]">
-              <div className="container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center mb-12">
-                  <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Our Approach</span>
-                  <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight mb-4">
-                    Treatment approaches
-                    <span className="block font-instrument-serif italic text-amber-400 font-normal">for {serviceType}</span>
-                  </h2>
-                  <p className="text-stone-600 font-barlow">
-                    We use evidence-based therapeutic methods tailored to your unique needs at our Darby, PA clinic.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-                  {approaches.map((approach, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-white border border-stone-200/80 rounded-2xl p-7 hover:border-amber-200 hover:shadow-lg transition-all duration-300"
-                    >
-                      <div className="flex items-start gap-4">
-                        {approach.icon && (
-                          <div className="rounded-xl bg-amber-400 p-3 flex-shrink-0 text-white">
-                            {approach.icon}
-                          </div>
-                        )}
-                        <div>
-                          <h3 className="text-lg font-barlow font-semibold mb-2 text-stone-800">{approach.title}</h3>
-                          <p className="text-stone-500 text-sm font-barlow leading-relaxed">{approach.description}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* FAQ Section */}
-          {faqs && faqs.length > 0 && (
-            <section className="py-16 md:py-20 bg-[#faf8f4]">
-              <div className="container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center mb-12">
-                  <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">FAQ</span>
-                  <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight">
-                    Frequently asked questions
-                    <span className="block font-instrument-serif italic text-amber-400 font-normal">about {serviceType}</span>
-                  </h2>
-                </div>
-                <div className="max-w-3xl mx-auto">
-                  <Accordion type="single" collapsible className="w-full space-y-3">
-                    {faqs.map((faq, index) => (
-                      <AccordionItem 
-                        value={`faq-${index}`} 
-                        key={index} 
-                        className="bg-white border border-stone-200/80 rounded-2xl px-5 data-[state=open]:border-amber-200 data-[state=open]:shadow-md transition-all"
-                      >
-                        <AccordionTrigger className="text-base font-barlow font-medium text-stone-800 text-left hover:no-underline py-5">
-                          {faq.question}
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <p className="text-stone-500 font-barlow leading-relaxed pb-2">{faq.answer}</p>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </div>
-              </div>
-            </section>
-          )}
-          
-          {/* CTA Section */}
-          <section className="py-16 md:py-20 bg-[#222]">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-4 tracking-tight">Ready to Take the First Step?</h2>
-                <p className="text-base md:text-lg text-white/70 mb-8 font-barlow">
-                  Our compassionate team is here to support you on your mental health journey in Darby, Yeadon, and Upper Darby.
+            
+            <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="max-w-4xl mx-auto"
+              >
+                <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
+                  {serviceType}
+                </span>
+                <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
+                  {title.split(' ').slice(0, -1).join(' ')} <br className="hidden md:block" />
+                  <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">{title.split(' ').slice(-1)}</span>
+                </h1>
+                <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
+                  {description}
                 </p>
                 
-                <div className="flex flex-row flex-wrap sm:flex-nowrap justify-center gap-3 sm:gap-4">
-                  <Link to="/appointment" className="w-full sm:w-auto">
-                    <Button size="lg" className="w-full bg-white text-stone-800 hover:bg-amber-50 font-barlow font-semibold rounded-full">
-                      <Calendar className="mr-2 h-5 w-5" /> Book Appointment
-                    </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="#appointment">
+                    <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                      <Calendar className="w-5 h-5" />
+                      Book an Appointment
+                    </button>
                   </Link>
-                  
-                  <a href="tel:+18146202162" className="w-full sm:w-auto">
-                    <Button variant="outline" size="lg" className="w-full bg-transparent border-white/30 text-white hover:bg-white/10 font-barlow rounded-full">
-                      <PhoneCall className="mr-2 h-5 w-5" /> Speak with a Therapist
-                    </Button>
+                  <a href="tel:+18146202162">
+                    <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+                      <PhoneCall className="w-5 h-5 mr-2" />
+                      Call (814) 620-2162
+                    </button>
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </section>
           
-          {/* Related Services */}
-          <section className="py-16 md:py-20 bg-[#f0ece4]">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className="max-w-3xl mx-auto text-center mb-12">
-                <span className="inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4">Related</span>
-                <h2 className="font-barlow font-bold text-2xl md:text-3xl lg:text-4xl text-stone-800 tracking-tight leading-tight">
-                  Related services
-                  <span className="block font-instrument-serif italic text-amber-400 font-normal">in Darby</span>
-                </h2>
+          <div className="bg-stone-50 relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
+            
+            {/* Custom Content Passed from Page */}
+            {children && (
+              <div className="py-16 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                  {children}
+                </div>
               </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-                {relatedServices.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <Link to={service.url} className="block bg-white rounded-2xl p-6 border border-stone-200/80 hover:border-amber-200 hover:shadow-lg transition-all duration-300 h-full">
-                      <h3 className="text-lg font-barlow font-semibold mb-3 text-stone-800">{service.title}</h3>
-                      <div className="flex items-center text-amber-700 mt-4">
-                        <span className="text-sm font-barlow font-medium">Learn more</span>
-                        <ArrowRight className="ml-2 h-4 w-4" />
+            )}
+
+            {/* Benefits Section */}
+            {benefits && benefits.length > 0 && (
+              <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-50/50 rounded-full blur-[120px] -mr-[300px] -mt-[300px] pointer-events-none" />
+                
+                <div className="container mx-auto px-4 md:px-6 relative z-10">
+                  <div className="max-w-3xl mx-auto text-center mb-16">
+                    <SectionTag>Benefits</SectionTag>
+                    <h2 className="font-barlow font-bold text-3xl md:text-5xl text-stone-900 tracking-tight mt-4 mb-6">
+                      Benefits of {serviceType}
+                    </h2>
+                    <p className="text-stone-500 font-barlow text-lg leading-relaxed">
+                      Our {serviceType.toLowerCase()} in Darby, PA is designed to help you achieve meaningful, lasting improvements in your mental health and daily life.
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {benefits.map((benefit, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                      >
+                        <Card className="h-full flex items-start gap-4">
+                          <CheckCircle2 className="h-6 w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-stone-700 font-barlow font-medium leading-relaxed">{benefit}</span>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Treatment Approaches */}
+            {approaches && approaches.length > 0 && (
+              <section className="py-16 md:py-24 bg-stone-900 text-white relative overflow-hidden rounded-[3rem] mx-4 md:mx-6 my-12">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
+                
+                <div className="container mx-auto px-4 md:px-8 relative z-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    <motion.div
+                      className="lg:col-span-5"
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      <SectionTag className="bg-orange-500/20 text-orange-400 border-orange-500/30 mb-6">Our Approach</SectionTag>
+                      <h2 className="font-barlow font-normal text-4xl md:text-5xl tracking-tighter leading-tight mb-6">
+                        Treatment approaches <br />
+                        <span className="font-instrument-serif italic text-orange-400 font-normal">for {serviceType}</span>
+                      </h2>
+                      <div className="space-y-6 font-barlow text-stone-300 text-lg leading-relaxed">
+                        <p>
+                          We use evidence-based therapeutic methods tailored to your unique needs at our Darby, PA clinic.
+                        </p>
                       </div>
-                    </Link>
-                  </motion.div>
-                ))}
+                    </motion.div>
+
+                    <motion.div
+                      className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      {approaches.map((approach, index) => (
+                        <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                          <div className="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center mb-4 text-orange-400">
+                            {approach.icon || <CheckCircle2 className="w-6 h-6" />}
+                          </div>
+                          <h4 className="font-barlow font-bold text-xl text-white mb-2">
+                            {approach.title}
+                          </h4>
+                          <p className="font-barlow text-stone-400 text-sm leading-relaxed">
+                            {approach.description}
+                          </p>
+                        </div>
+                      ))}
+                    </motion.div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Related Services */}
+            {relatedServices && relatedServices.length > 0 && (
+              <section className="py-16 md:py-24 bg-stone-50">
+                <div className="container mx-auto px-4 md:px-6">
+                  <div className="max-w-3xl mx-auto text-center mb-16">
+                    <SectionTag>Related</SectionTag>
+                    <h2 className="font-barlow font-bold text-3xl md:text-5xl text-stone-900 tracking-tight mt-4">
+                      Related Services
+                    </h2>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {relatedServices.map((service, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                      >
+                        <Link href={service.url}>
+                          <Card className="h-full flex flex-col justify-between group-hover:border-orange-300">
+                            <h3 className="text-xl font-barlow font-bold mb-3 text-stone-800">{service.title}</h3>
+                            <div className="flex items-center text-orange-500 mt-4 font-barlow font-bold uppercase tracking-widest text-xs">
+                              <span>Learn more</span>
+                              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                          </Card>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* FAQ Section */}
+            {faqs && faqs.length > 0 && (
+              <section className="py-16 md:py-24 bg-white border-t border-stone-100">
+                <div className="container mx-auto px-4 md:px-6">
+                  <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-12">
+                      <SectionTag>Common Questions</SectionTag>
+                      <h2 className="font-barlow font-bold text-3xl md:text-5xl text-stone-900 tracking-tight mt-4">
+                        Frequently asked questions
+                      </h2>
+                    </div>
+
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div 
+                          key={index}
+                          className={cn(
+                            "group relative overflow-hidden rounded-[2rem] border backdrop-blur-xl transition-all duration-500",
+                            activeFaq === index 
+                              ? "border-orange-500/30 bg-white shadow-md" 
+                              : "border-stone-200/60 bg-white/50 hover:border-orange-200/40 hover:bg-white shadow-sm"
+                          )}
+                        >
+                          <button 
+                            type="button"
+                            onClick={() => setActiveFaq(activeFaq === index ? null : index)}
+                            className="relative flex w-full items-start gap-6 px-8 py-6 text-left transition-colors duration-300 focus:outline-none"
+                          >
+                            <span 
+                              className={cn(
+                                "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-500 group-hover:scale-105",
+                                activeFaq === index ? "bg-orange-500 border-orange-400 text-white" : "bg-orange-50 border-stone-100 text-orange-500"
+                              )}
+                            >
+                              <ChevronDown className={cn("relative h-5 w-5 transition-transform duration-500", activeFaq === index ? "rotate-180" : "")} />
+                            </span>
+
+                            <div className="flex flex-1 flex-col gap-2 mt-2">
+                              <h3 className={cn(
+                                "text-lg font-barlow font-bold leading-tight tracking-tight transition-colors duration-300",
+                                activeFaq === index ? "text-orange-500" : "text-stone-900 group-hover:text-orange-500"
+                              )}>
+                                {faq.question}
+                              </h3>
+
+                              <AnimatePresence initial={false}>
+                                {activeFaq === index && (
+                                  <motion.div 
+                                    initial={{ height: 0, opacity: 0 }} 
+                                    animate={{ height: "auto", opacity: 1 }} 
+                                    exit={{ height: 0, opacity: 0 }} 
+                                    transition={{ duration: 0.3 }}
+                                  >
+                                    <div className="pt-2">
+                                      <p className="text-stone-500 font-barlow text-base leading-relaxed">
+                                        {faq.answer}
+                                      </p>
+                                    </div>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+            
+            {/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}
+            <section className="sr-only">
+              <div itemScope itemType="https://schema.org/WebPage">
+                <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
+                  <meta itemProp="name" content="Holli" />
+                  <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
+                  <link itemProp="image" href="https://res.cloudinary.com/dabsxebx8/image/upload/v1774574164/holli_d6mwnh.jpg" />
+                </div>
+                <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
+                <p>
+                  This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                </p>
               </div>
-            </div>
-          </section>
+            </section>
+
+            {/* Appointment Section */}
+            <AppointmentSection />
+            
+          </div>
         </main>
         
-        <Footer />
+        <div className="relative z-20 bg-white">
+          <Footer />
+        </div>
       </div>
     </>
   );

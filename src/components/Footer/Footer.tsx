@@ -1,9 +1,14 @@
+"use client";
+
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
 import SocialLinks from './SocialLinks';
 import FooterNav from './FooterNav';
 import NewsletterForm from './NewsletterForm';
+
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
   return (
@@ -13,13 +18,15 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* About */}
           <div className="space-y-5">
-            <div className="flex items-center gap-2">
-              <img src="/images/logo.png" alt="Sunrise Human Care Services Logo" className="h-18 w-20 object-contain" loading="lazy" />
-              <div className="flex flex-col">
-                <span className="leading-tight text-base font-extrabold bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text font-barlow">Sunrise</span>
-                <span className="text-xs leading-tight font-instrument-serif italic text-muted-foreground">Human Care Services</span>
-              </div>
-            </div>
+            <motion.div whileTap={{ scale: 0.96 }}>
+              <Link href="/" className="flex items-center gap-2 w-fit group">
+                <Image src="/images/logo.png" alt="Sunrise Human Care Services Logo" width={80} height={72} className="object-contain transition-transform duration-300 group-hover:-translate-y-1" />
+                <div className="flex flex-col">
+                  <span className="leading-tight text-base font-extrabold bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text font-barlow">Sunrise</span>
+                  <span className="text-xs leading-tight font-instrument-serif italic text-muted-foreground">Human Care Services</span>
+                </div>
+              </Link>
+            </motion.div>
             <p className="text-sm text-stone-600 font-barlow leading-relaxed">
               Sunrise Human Care Services Inc is a registered health care organization committed to delivering compassionate and high-quality behavioral health services. We are officially listed in the National Plan and Provider Enumeration System (NPPES) under NPI Number: 1528784568.
             </p>
@@ -42,15 +49,23 @@ const Footer: React.FC = () => {
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-50 shrink-0">
                   <Phone className="h-4 w-4 text-amber-500" />
                 </div>
-                <a href="tel:+18146202162" className="text-sm text-stone-600 hover:text-amber-600 transition-colors font-barlow">
+                <motion.a 
+                  whileTap={{ scale: 0.98 }}
+                  href="tel:+18146202162" 
+                  className="text-sm text-stone-600 hover:text-amber-600 transition-colors font-barlow"
+                >
                   (814) 620-2162
-                </a>
+                </motion.a>
               </li>
               <li className="flex items-center space-x-3">
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-50 shrink-0">
                   <Mail className="h-4 w-4 text-amber-500" />
                 </div>
-                <a href="mailto:info@sunrisehumancare.com" className="text-sm text-stone-600 hover:text-amber-600 transition-colors font-barlow">info@sunrisehumancare.com</a>
+                <motion.a 
+                  whileTap={{ scale: 0.98 }}
+                  href="mailto:info@sunrisehumancare.com" 
+                  className="text-sm text-stone-600 hover:text-amber-600 transition-colors font-barlow"
+                >info@sunrisehumancare.com</motion.a>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-50 mt-0.5 shrink-0">
@@ -89,9 +104,13 @@ const Footer: React.FC = () => {
               </div>
               <p className="text-sm text-stone-700 font-barlow">
                 <span className="font-semibold text-stone-900">Emergency:</span> If this is a life-threatening emergency, please call 911 or the National Suicide Prevention Lifeline{' '}
-                <a href="tel:988" className="font-semibold text-amber-600 hover:text-amber-500 underline underline-offset-2 inline-flex items-center">
+                <motion.a 
+                  whileTap={{ scale: 0.98 }}
+                  href="tel:988" 
+                  className="font-semibold text-amber-600 hover:text-amber-500 underline underline-offset-2 inline-flex items-center"
+                >
                   <Phone className="h-3 w-3 mr-1" /> 988
-                </a>
+                </motion.a>
               </p>
             </div>
           </div>
@@ -99,7 +118,7 @@ const Footer: React.FC = () => {
           {/* HIPAA Notice */}
           <p className="text-xs text-stone-500 text-center mb-6 font-barlow leading-relaxed">
             Sunrise Human Care Services is committed to protecting your privacy in accordance with HIPAA regulations. All patient information is kept strictly confidential. Read our{' '}
-            <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-amber-600 transition-colors">Privacy Policy</Link> for details on how we handle your protected health information.
+            <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-amber-600 transition-colors">Privacy Policy</Link> for details on how we handle your protected health information.
           </p>
 
           {/* Copyright & Links */}
@@ -110,19 +129,25 @@ const Footer: React.FC = () => {
               </p>
               <ul className="flex space-x-6">
                 <li>
-                  <Link to="/privacy-policy" className="text-xs text-stone-500 hover:text-amber-600 transition-colors font-barlow">
-                    Privacy Policy
-                  </Link>
+                  <motion.div whileTap={{ scale: 0.98 }}>
+                    <Link href="/privacy-policy" className="text-xs text-stone-500 hover:text-amber-600 transition-colors font-barlow">
+                      Privacy Policy
+                    </Link>
+                  </motion.div>
                 </li>
                 <li>
-                  <Link to="/terms-of-service" className="text-xs text-stone-500 hover:text-amber-600 transition-colors font-barlow">
-                    Terms of Service
-                  </Link>
+                  <motion.div whileTap={{ scale: 0.98 }}>
+                    <Link href="/terms-of-service" className="text-xs text-stone-500 hover:text-amber-600 transition-colors font-barlow">
+                      Terms of Service
+                    </Link>
+                  </motion.div>
                 </li>
                 <li>
-                  <a href="/sitemap.xml" className="text-xs text-stone-500 hover:text-amber-600 transition-colors font-barlow">
-                    Sitemap
-                  </a>
+                  <motion.div whileTap={{ scale: 0.98 }}>
+                    <a href="/sitemap.xml" className="text-xs text-stone-500 hover:text-amber-600 transition-colors font-barlow">
+                      Sitemap
+                    </a>
+                  </motion.div>
                 </li>
               </ul>
             </div>

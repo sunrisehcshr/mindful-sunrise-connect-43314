@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 
 const testimonials = [
   {
@@ -61,11 +61,11 @@ const reviewSchema = {
 const TestimonialsSection: React.FC = () => {
   return (
     <section className="py-20 md:py-28 bg-[#f0ece4]">
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(reviewSchema)}
-        </script>
-      </Helmet>
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
       
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-14">
@@ -96,7 +96,7 @@ const TestimonialsSection: React.FC = () => {
               </div>
               
               <p className="text-stone-600 text-sm leading-relaxed mb-4 font-barlow">
-                "{testimonial.text}"
+                &quot;{testimonial.text}&quot;
               </p>
               
               <div className="flex items-center justify-between">

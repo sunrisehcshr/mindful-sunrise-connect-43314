@@ -8,23 +8,14 @@ interface UseFormProtectionOptions {
 }
 
 export function useFormProtection(options: UseFormProtectionOptions = {}) {
-  const { requireRecaptcha = true, checkContent = true } = options;
-  const [isProtected, setIsProtected] = useState(false);
+  const { checkContent = true } = options;
+  const isProtected = true;
   const [honeypot, setHoneypot] = useState('');
-  const formRenderTime = useRef(Date.now());
+  const formRenderTime = useRef(0);
 
   useEffect(() => {
-    // Record when form was rendered
     formRenderTime.current = Date.now();
-    
-    // Load reCAPTCHA if required
-    if (requireRecaptcha) {
-      // reCAPTCHA will be loaded by GoogleReCaptchaProvider
-      setIsProtected(true);
-    } else {
-      setIsProtected(true);
-    }
-  }, [requireRecaptcha]);
+  }, []);
 
   const validateSubmission = (messageContent?: string): { valid: boolean; error?: string } => {
     // Check honeypot

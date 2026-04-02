@@ -69,8 +69,12 @@ export const appointmentFormSchema = z.object({
     .max(200, { message: "Preferred date/time must be less than 200 characters" })
     .optional()
     .or(z.literal('')),
-  serviceInterest: z.enum(['Counseling', 'Psychiatric Consultation', 'General Inquiry'], {
-    errorMap: () => ({ message: "Please select a service interest" })
+  serviceInterest: z.enum([
+    "Counseling",
+    "Psychiatric Consultation",
+    "General Inquiry",
+  ] as const, {
+    message: "Please select a service interest",
   }),
   honeypot: z.string().max(0, { message: "Bot detected" }).optional(),
 });

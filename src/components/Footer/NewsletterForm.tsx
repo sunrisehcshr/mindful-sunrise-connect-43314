@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 import { useFormProtection } from '@/hooks/useFormProtection';
 import { newsletterFormSchema } from '@/lib/formValidation';
@@ -19,7 +22,7 @@ const NewsletterForm: React.FC = () => {
 
     const result = newsletterFormSchema.safeParse({ email, honeypot });
     if (!result.success) {
-      toast.error(result.error.errors[0]?.message || "Please enter a valid email address");
+      toast.error(result.error.issues[0]?.message || "Please enter a valid email address");
       return;
     }
 
@@ -68,13 +71,14 @@ const NewsletterForm: React.FC = () => {
           className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 bg-stone-50 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30 focus:border-amber-400/30 font-barlow transition-all duration-300" 
           required 
         />
-        <button 
+        <motion.button 
+          whileTap={{ scale: 0.96 }}
           type="submit" 
           className="w-full bg-amber-400 hover:bg-amber-300 text-slate-900 font-barlow font-semibold py-2.5 px-4 text-sm rounded-full transition-all duration-300 whitespace-nowrap disabled:opacity-70" 
           disabled={isSubmitting}
         >
           {isSubmitting ? "Subscribing..." : "Subscribe"}
-        </button>
+        </motion.button>
       </form>
     </div>
   );

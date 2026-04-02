@@ -10,17 +10,17 @@ interface SectionTagProps {
 
 const SectionTag = ({ 
   children, 
-  className, 
-  icon
+  className,
+  icon,
 }: SectionTagProps) => {
   return (
     <span 
       className={cn(
-        "inline-block font-barlow font-semibold text-xs tracking-[0.2em] uppercase text-amber-600/70 mb-4",
+        "inline-flex items-center gap-2 bg-amber-50 text-amber-600 font-barlow font-bold text-[10px] tracking-[0.3em] uppercase px-4 py-2 rounded-full border border-amber-100 mb-6",
         className
       )}
     >
-      {icon && <span className="mr-1.5">{icon}</span>}
+      {icon}
       {children}
     </span>
   );
