@@ -1,0 +1,30 @@
+
+{
+  "name": "Sunrise Human Care Services",
+  "short_name": "Sunrise HCS",
+  "description": "Mental health services in Darby, PA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F7913E",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/947ba080-a4e6-428b-a1cd-41a174bfe001.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/e61eb4f2-0e34-4b1e-af17-b6917b07c944.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

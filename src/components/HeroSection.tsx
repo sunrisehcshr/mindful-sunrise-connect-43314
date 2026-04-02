@@ -1,0 +1,110 @@
+"use client";
+
+import React from 'react';
+import { motion } from "framer-motion";
+import { CalendarCheck, Phone } from 'lucide-react';
+import Image from 'next/image';
+const HeroSection: React.FC = () => {
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-6">
+      <div className="absolute inset-0 bg-gradient-to-b from-sunrise-50/40 to-white/50 z-0"></div>
+      
+      <div className="absolute inset-0 z-0 opacity-5">
+        <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
+            <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          ease: "easeOut"
+        }} className="space-y-5 my-[50px]">
+            <div>
+              <motion.span initial={{
+              opacity: 0,
+              x: -20
+            }} animate={{
+              opacity: 1,
+              x: 0
+            }} transition={{
+              delay: 0.3,
+              duration: 0.5
+            }} className="inline-block px-3 py-1 rounded-full text-xs bg-sunrise-400/20 font-medium text-sunrise-900">Mental Health Clinic</motion.span>
+            </div>
+            <motion.h1 
+  initial={{ opacity: 0 }} 
+  animate={{ opacity: 1 }} 
+  transition={{ delay: 0.5, duration: 0.8 }} 
+  className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight"
+>
+  Personalized Mental Health Services in{" "}
+  <span className="relative inline-block">
+    <span className="relative z-10 text-gray-900">Darby, PA</span>
+    <span className="absolute bottom-0 left-0 w-full h-[0.4em] bg-sunrise-400/30 -z-10"></span>
+  </span>
+</motion.h1>
+            <motion.p initial={{
+            opacity: 0
+          }} animate={{
+            opacity: 1
+          }} transition={{
+            delay: 0.7,
+            duration: 0.8
+          }} className="text-muted-foreground max-w-2xl text-lg font-normal">Step into a brighter tomorrow with Sunrise Human Care—offering expert mental health care in Darby with licensed therapists, psychologists, counselors, and psychiatrists. Schedule an appointment today!</motion.p>
+            <motion.div className="flex flex-wrap gap-4 pt-1" initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: 0.9,
+            duration: 0.8
+          }}>
+              <a href="#appointment" className="btn-sunrise flex items-center gap-2">
+                <CalendarCheck className="h-5 w-5" />
+                Book Appointment
+              </a>
+              <a href="tel:+18146202162" className="btn-sunrise-outline flex items-center gap-2">
+                <Phone className="h-5 w-5" />
+                Call Us Now
+              </a>
+            </motion.div>
+          </motion.div>
+
+          <motion.div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl" initial={{
+          opacity: 0,
+          scale: 0.9
+        }} animate={{
+          opacity: 1,
+          scale: 1
+        }} transition={{
+          delay: 0.5,
+          duration: 1,
+          ease: "easeOut"
+        }}>
+            <div className="absolute inset-0 bg-gradient-to-tr from-sunrise-400/30 to-sunrise-500/10 mix-blend-multiply z-10"></div>
+            <Image src="/images/Therapy-in-havertown.webp" 
+     alt="Expert mental health therapy in Darby, PA" 
+     fill
+     className="object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 p-9 bg-gradient-to-t from-black/80 to-transparent z-20 bg-transparent">
+              <p className="text-white text-lg font-medium">Creating a safe space for healing</p>
+              <p className="text-sm font-medium text-slate-50">Personalized therapy and psychiatry services in Darby, PA for your unique needs.</p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>;
+};
+export default HeroSection;

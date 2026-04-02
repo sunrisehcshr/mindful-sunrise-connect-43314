@@ -1,0 +1,22 @@
+# Sunrise Human Care Services
+# https://sunrisehumancare.com
+# Darby, PA 19023, United States
+
+User-agent: *
+Allow: /
+
+# Block admin and system files
+Disallow: /admin/
+Disallow: /login/
+Disallow: /logout/
+
+# Block staging or test environments
+Disallow: /dev/
+Disallow: /test/
+Disallow: /staging/
+
+# Block internal search results
+Disallow: /*?s=
+
+# Sitemap
+Sitemap: https://sunrisehumancare.com/sitemap.xml
