@@ -92,8 +92,8 @@ interface RateLimitEntry {
 }
 
 const RATE_LIMIT_KEY = 'form_submissions';
-const MAX_SUBMISSIONS = 3;
-const TIME_WINDOW = 60 * 60 * 1000; // 1 hour
+const MAX_SUBMISSIONS = 10;
+const TIME_WINDOW = 30 * 60 * 1000; // 30 minutes
 
 export function checkRateLimit(): { allowed: boolean; remainingAttempts: number } {
   try {
@@ -145,6 +145,6 @@ export function checkSubmissionTiming(formRenderTime: number): boolean {
   const now = Date.now();
   const timeElapsed = now - formRenderTime;
   
-  // Minimum 3 seconds to fill form
-  return timeElapsed >= 3000;
+  // Minimum 1 second to fill form (to allow for autofill)
+  return timeElapsed >= 1000;
 }
