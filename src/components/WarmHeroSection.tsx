@@ -145,7 +145,7 @@ const WarmHeroSection = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/20 backdrop-blur-[2px] border border-white/5"
+          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/20 backdrop-blur-[2px] border border-white/5 md:bg-transparent md:backdrop-blur-0 md:border-none md:py-0 md:px-0"
           variants={{
             hidden: { opacity: 0 },
             visible: { 
@@ -168,12 +168,12 @@ const WarmHeroSection = () => {
             className="mb-3 md:mb-4"
           >
             <span className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-barlow font-semibold text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full">
-              Top-Rated Mental Health Clinic in Darby, PA
+              Mental Health Clinic in Darby, PA
             </span>
           </motion.div>
 
           <motion.h1
-            className="font-barlow text-balance font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-white leading-[1.2] tracking-tight"
+            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 text-white leading-[1.2] tracking-tight"
             variants={{
               hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
               visible: { 
@@ -184,8 +184,8 @@ const WarmHeroSection = () => {
               }
             }}
           >
-            Expert Mental Health Care for Darby Families <br />
-            <span className="inline md:block font-instrument-serif italic text-white font-normal text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2">Compassionate Support to Help You Reclaim Your Life</span>
+            Expert mental health care in Darby, PA <br className="sm:hidden" />
+            <span className="inline md:block font-instrument-serif italic text-white font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 leading-tight">to help you reclaim your life</span>
           </motion.h1>
 
           <motion.p
@@ -200,7 +200,7 @@ const WarmHeroSection = () => {
               }
             }}
           >
-            Stop struggling alone. Get the expert, evidence-based therapy and psychiatric care you deserve. Whether in-person at our Darby clinic or via secure telehealth, we provide the compassionate support you need to reclaim your peace of mind.
+            Stop struggling alone. Get the expert, evidence-based therapy and psychiatric care you deserve. We provide the compassionate support you need to reclaim your peace of mind.
           </motion.p>
 
           <motion.div
