@@ -29,28 +29,24 @@ const NewsletterForm: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      const formData = {
-        email: email,
-        _subject: "Newsletter Subscription",
-        _cc: "info@sunrisehumancare.com"
-      };
-      
-      const response = await fetch("https://formspree.io/f/xzzeaeql", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+      const response = await fetch('/api/forms/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'newsletter',
+          data: { email, honeypot },
+        }),
       });
+      const json = await response.json().catch(() => null);
       
-      if (response.ok) {
+      if (response.ok && json?.ok) {
         toast.success("Thank you for subscribing to our newsletter!");
         setEmail("");
       } else {
-        console.error("Newsletter form submission failed:", await response.text());
         toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
-      console.error("Error submitting newsletter form:", error);
     } finally {
       setIsSubmitting(false);
     }

@@ -44,20 +44,24 @@ export default function ContactPage() {
 
       const validatedData = appointmentFormSchema.parse({ ...formData, honeypot });
 
-      const response = await fetch('https://formspree.io/f/xzzeaeql', {
+      const response = await fetch('/api/forms/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(validatedData),
+        body: JSON.stringify({
+          formType: 'contact',
+          data: validatedData,
+        }),
       });
 
-      if (response.ok) {
+      const json = await response.json().catch(() => null);
+
+      if (response.ok && json?.ok) {
         toast.success('Request submitted successfully! We\'ll contact you soon.');
         setFormData({ firstName: '', email: '', phone: '', preferredDateTime: '', serviceInterest: '' });
       } else {
         toast.error('Failed to submit request. Please try again.');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       if (error instanceof Error) {
         toast.error(error.message);
       } else {

@@ -72,15 +72,20 @@ export default function MedicaidLandingPage() {
         honeypot
       });
 
-      const response = await fetch('https://formspree.io/f/xzzeaeql', {
+      const response = await fetch('/api/forms/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(validatedData),
+        body: JSON.stringify({
+          formType: 'appointment',
+          data: validatedData,
+        }),
       });
 
-      if (response.ok) {
+      const json = await response.json().catch(() => null);
+
+      if (response.ok && json?.ok) {
         // Track conversion
         trackConversion('form_submit', {
           form_name: 'medicaid_appointment_request',
@@ -99,7 +104,6 @@ export default function MedicaidLandingPage() {
         toast.error('Failed to submit request. Please try again.');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       toast.error('Please check your information and try again.');
     } finally {
       setIsSubmitting(false);

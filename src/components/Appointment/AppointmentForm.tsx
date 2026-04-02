@@ -75,15 +75,20 @@ const AppointmentForm = () => {
         return;
       }
 
-      const response = await fetch('https://formspree.io/f/xzzeaeql', {
+      const response = await fetch('/api/forms/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(result.data),
+        body: JSON.stringify({
+          formType: 'appointment',
+          data: result.data,
+        }),
       });
 
-      if (response.ok) {
+      const json = await response.json().catch(() => null);
+
+      if (response.ok && json?.ok) {
         setIsSuccess(true);
         toast.success('Request submitted successfully!');
         setFormData({
@@ -100,7 +105,6 @@ const AppointmentForm = () => {
         toast.error('Failed to submit request. Please try again.');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       toast.error('An unexpected error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
