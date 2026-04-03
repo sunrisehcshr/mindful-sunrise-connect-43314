@@ -155,7 +155,7 @@ const QuickAppointmentForm = () => {
               <Label htmlFor="firstName" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Name *</Label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400" />
-                <input id="firstName" name="firstName" required value={formData.firstName} onChange={handleChange} placeholder="John Doe" className={inputClasses('firstName')} />
+                <input id="firstName" name="firstName" required value={formData.firstName} onChange={handleChange} placeholder="John Doe" autoComplete="name" className={inputClasses('firstName')} />
               </div>
             </div>
 
@@ -163,7 +163,23 @@ const QuickAppointmentForm = () => {
               <Label htmlFor="email" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Email *</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400" />
-                <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@example.com" className={inputClasses('email')} />
+                <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@example.com" autoComplete="email" className={inputClasses('email')} />
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <Label htmlFor="phone" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Phone</Label>
+              <div className="relative">
+                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400" />
+                <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(123) 456-7890" autoComplete="tel" className={inputClasses('phone')} />
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <Label htmlFor="preferredDateTime" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Preferred Time *</Label>
+              <div className="relative">
+                <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400 pointer-events-none" />
+                <input id="preferredDateTime" name="preferredDateTime" type="text" required value={formData.preferredDateTime} onChange={handleChange} placeholder="e.g. Next Monday" autoComplete="off" className={inputClasses('preferredDateTime')} />
               </div>
             </div>
 
@@ -171,7 +187,7 @@ const QuickAppointmentForm = () => {
               <Label htmlFor="serviceInterest" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Service *</Label>
               <div className="relative">
                 <MessageSquare className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400 pointer-events-none" />
-                <select id="serviceInterest" name="serviceInterest" required value={formData.serviceInterest} onChange={handleChange} className={cn(inputClasses('serviceInterest'), "appearance-none")}>
+                <select id="serviceInterest" name="serviceInterest" required value={formData.serviceInterest} onChange={handleChange} autoComplete="off" className={cn(inputClasses('serviceInterest'), "appearance-none")}>
                   <option value="" disabled>Select a service</option>
                   <option value="Counseling">Counseling</option>
                   <option value="Psychiatric Consultation">Psychiatric Consultation</option>

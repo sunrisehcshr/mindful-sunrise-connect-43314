@@ -49,12 +49,14 @@ export const HorizontalScroll = ({
       if (scrollRef.current) {
         const deltaTime = currentTime - lastTime;
         // Normalize speed to 60fps (16.67ms per frame)
+        // Ensure autoPlaySpeed is sufficient for mobile (sometimes values are too small to be noticeable)
         const pixelsToScroll = (autoPlaySpeed * deltaTime) / 16.67;
         
         scrollRef.current.scrollLeft += pixelsToScroll;
         
-        // Reset to start if we reach the end
-        if (scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= scrollRef.current.scrollWidth - 5) {
+        // Loop back to start if we reach the end
+        const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+        if (scrollRef.current.scrollLeft >= maxScroll - 1) {
           scrollRef.current.scrollLeft = 0;
         }
       }
@@ -95,13 +97,15 @@ export const HorizontalScroll = ({
       aria-label="Horizontal scrollable content"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
     >
       <div
         ref={scrollRef}
         tabIndex={0}
         className={cn(
           "flex overflow-x-auto overflow-y-hidden gap-6 pb-12 pt-4 no-scrollbar outline-none focus-visible:ring-2 focus-visible:ring-orange-500/20",
-          "cursor-grab active:cursor-grabbing",
+          "cursor-grab active:cursor-grabbing snap-x snap-mandatory",
           "touch-pan-x",
           className
         )}
@@ -110,7 +114,11 @@ export const HorizontalScroll = ({
           msOverflowStyle: 'none',
         }}
       >
-        {children}
+        {React.Children.map(children, (child) => (
+          <div className="snap-center shrink-0">
+            {child}
+          </div>
+        ))}
       </div>
 
       {showProgress && canScroll && (

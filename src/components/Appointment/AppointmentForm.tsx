@@ -182,7 +182,7 @@ const AppointmentForm = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    autoComplete="given-name"
+                    autoComplete="name"
                     className={inputClasses('firstName')}
                   />
                 </div>
@@ -202,6 +202,7 @@ const AppointmentForm = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
+                    autoComplete="email"
                     className={inputClasses('email')}
                   />
                 </div>
@@ -219,6 +220,7 @@ const AppointmentForm = () => {
                     id="phone"
                     name="phone"
                     type="tel"
+                    required
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="(123) 456-7890"
@@ -231,16 +233,18 @@ const AppointmentForm = () => {
 
               {/* Date/Time Field */}
               <div className="space-y-1 group">
-                <Label htmlFor="preferredDateTime" className="text-[11px] font-bold text-stone-900 ml-1 font-barlow uppercase tracking-wider">Preferred Time</Label>
+                <Label htmlFor="preferredDateTime" className="text-[11px] font-bold text-stone-900 ml-1 font-barlow uppercase tracking-wider">Preferred Time *</Label>
                 <div className="relative">
-                  <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-stone-400 group-focus-within:text-orange-500 transition-colors" />
+                  <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-stone-400 group-focus-within:text-orange-500 transition-colors pointer-events-none" />
                   <input
                     id="preferredDateTime"
                     name="preferredDateTime"
                     type="text"
+                    required
                     value={formData.preferredDateTime}
                     onChange={handleChange}
                     placeholder="e.g. Next Monday morning"
+                    autoComplete="off"
                     className={inputClasses('preferredDateTime')}
                   />
                 </div>
@@ -259,6 +263,7 @@ const AppointmentForm = () => {
                   required
                   value={formData.serviceInterest}
                   onChange={handleChange}
+                  autoComplete="off"
                   className={cn(
                     inputClasses('serviceInterest'),
                     "appearance-none"

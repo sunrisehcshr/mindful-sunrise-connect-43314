@@ -226,45 +226,43 @@ const ConditionsSection = () => {
 
       {/* Horizontal Scroll System */}
       <div className="relative w-full py-10">
-        <HorizontalScroll className="px-4 md:px-8 pb-16" autoPlay={true} autoPlaySpeed={0.4}>
+        <HorizontalScroll className="px-4 md:px-8 pb-16" autoPlay={true} autoPlaySpeed={0.8}>
           {[...conditions, ...conditions].map((condition, idx) => (
-            <div key={idx} className="w-[300px] sm:w-[380px] shrink-0">
-              <Link href={condition.url} className="block h-full group/card">
-                <Card containerClassName="h-full border-stone-100 hover:border-orange-200/50" className="p-8">
-                  <div className="flex flex-col h-full">
-                    <div className="flex items-start justify-between mb-6">
-                      <div className={cn(
-                        "p-3 rounded-2xl transition-all duration-500 group-hover/card:scale-110",
-                        condition.color === 'amber' && "bg-amber-50 text-amber-600 group-hover/card:bg-amber-100",
-                        condition.color === 'blue' && "bg-blue-50 text-blue-600 group-hover/card:bg-blue-100",
-                        condition.color === 'orange' && "bg-orange-50 text-orange-600 group-hover/card:bg-orange-100",
-                        condition.color === 'rose' && "bg-rose-50 text-rose-600 group-hover/card:bg-rose-100",
-                        condition.color === 'indigo' && "bg-indigo-50 text-indigo-600 group-hover/card:bg-indigo-100",
-                        condition.color === 'emerald' && "bg-emerald-50 text-emerald-600 group-hover/card:bg-emerald-100",
-                        condition.color === 'red' && "bg-red-50 text-red-600 group-hover/card:bg-red-100"
-                      )}>
-                        <condition.icon className="w-6 h-6" />
-                      </div>
-                      <div className="h-10 w-10 rounded-full bg-stone-50 border border-stone-100 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform translate-x-4 group-hover/card:translate-x-0">
-                        <ArrowUpRight className="w-5 h-5 text-stone-400 group-hover/card:text-orange-500" />
-                      </div>
+            <Link key={idx} href={condition.url} className="block h-full group/card w-[300px] sm:w-[380px]">
+              <Card containerClassName="h-full border-stone-100 hover:border-orange-200/50" className="p-8">
+                <div className="flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className={cn(
+                      "p-3 rounded-2xl transition-all duration-500 group-hover/card:scale-110",
+                      condition.color === 'amber' && "bg-amber-50 text-amber-600 group-hover/card:bg-amber-100",
+                      condition.color === 'blue' && "bg-blue-50 text-blue-600 group-hover/card:bg-blue-100",
+                      condition.color === 'orange' && "bg-orange-50 text-orange-600 group-hover/card:bg-orange-100",
+                      condition.color === 'rose' && "bg-rose-50 text-rose-600 group-hover/card:bg-rose-100",
+                      condition.color === 'indigo' && "bg-indigo-50 text-indigo-600 group-hover/card:bg-indigo-100",
+                      condition.color === 'emerald' && "bg-emerald-50 text-emerald-600 group-hover/card:bg-emerald-100",
+                      condition.color === 'red' && "bg-red-50 text-red-600 group-hover/card:bg-red-100"
+                    )}>
+                      <condition.icon className="w-6 h-6" />
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-stone-900 mb-4 tracking-tight group-hover/card:text-orange-600 transition-colors">
-                      {condition.title}
-                    </h3>
-                    
-                    <p className="text-stone-500 text-sm leading-relaxed mb-6 font-barlow">
-                      {condition.short}
-                    </p>
-                    
-                    <div className="mt-auto pt-4 border-t border-stone-50 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-stone-400 group-hover/card:text-orange-500 transition-colors">
-                      Learn More <ArrowUpRight className="w-3 h-3" />
+                    <div className="h-10 w-10 rounded-full bg-stone-50 border border-stone-100 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform translate-x-4 group-hover/card:translate-x-0">
+                      <ArrowUpRight className="w-5 h-5 text-stone-400 group-hover/card:text-orange-500" />
                     </div>
                   </div>
-                </Card>
-              </Link>
-            </div>
+                  
+                  <h3 className="text-xl font-bold text-stone-900 mb-4 tracking-tight group-hover/card:text-orange-600 transition-colors">
+                    {condition.title}
+                  </h3>
+                  
+                  <p className="text-stone-500 text-sm leading-relaxed mb-6 font-barlow">
+                    {condition.short}
+                  </p>
+                  
+                  <div className="mt-auto pt-4 border-t border-stone-50 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-stone-400 group-hover/card:text-orange-500 transition-colors">
+                    Learn More <ArrowUpRight className="w-3 h-3" />
+                  </div>
+                </div>
+              </Card>
+            </Link>
           ))}
         </HorizontalScroll>
       </div>
