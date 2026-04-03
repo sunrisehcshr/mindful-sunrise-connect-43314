@@ -44,20 +44,25 @@ export const HorizontalScroll = ({
       return;
     }
 
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
     let lastTime = performance.now();
     const scroll = (currentTime: number) => {
       if (scrollRef.current) {
         const deltaTime = currentTime - lastTime;
-        // Normalize speed to 60fps (16.67ms per frame)
-        // Ensure autoPlaySpeed is sufficient for mobile (sometimes values are too small to be noticeable)
         const pixelsToScroll = (autoPlaySpeed * deltaTime) / 16.67;
         
-        scrollRef.current.scrollLeft += pixelsToScroll;
+        const currentPos = scrollRef.current.scrollLeft;
+        const newPos = currentPos + pixelsToScroll;
         
-        // Loop back to start if we reach the end
+        // Loop back logic
         const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-        if (scrollRef.current.scrollLeft >= maxScroll - 1) {
-          scrollRef.current.scrollLeft = 0;
+        
+        if (newPos >= maxScroll - 2) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'instant' as any });
+        } else {
+          scrollRef.current.scrollTo({ left: newPos, behavior: 'instant' as any });
         }
       }
       lastTime = currentTime;
@@ -98,7 +103,10 @@ export const HorizontalScroll = ({
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
+      onTouchEnd={() => {
+        // Delay resuming auto-play after touch to prevent jumpiness
+        setTimeout(() => setIsPaused(false), 2000);
+      }}
     >
       <div
         ref={scrollRef}
