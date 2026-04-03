@@ -184,7 +184,7 @@ const WarmHeroSection = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/10 backdrop-blur-[6px] border border-white/20 md:bg-transparent md:backdrop-blur-0 md:border-none md:py-0 md:px-0 shadow-2xl md:shadow-none"
+          className="max-w-5xl mx-auto py-12 px-6 md:py-16 md:px-12 rounded-[3rem] bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden"
           variants={{
             hidden: { opacity: 0 },
             visible: { 
@@ -206,7 +206,7 @@ const WarmHeroSection = () => {
             }}
             className="flex flex-col items-center gap-1 sm:gap-2 mb-6 sm:mb-8"
           >
-            <div className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none">
+            <div className="inline-block bg-black/20 backdrop-blur-md border border-white/10 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none shadow-sm">
               <div className="overflow-hidden relative w-full h-full flex items-center">
                 <motion.div
                   initial={{ x: "0%" }}
@@ -242,7 +242,7 @@ const WarmHeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="text-sm sm:text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed font-barlow drop-shadow-sm"
+            className="text-sm sm:text-base md:text-lg text-white mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed font-barlow drop-shadow-md"
             variants={{
               hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
               visible: { 
