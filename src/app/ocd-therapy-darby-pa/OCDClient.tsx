@@ -249,7 +249,7 @@ export default function OCDClient() {
                   <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-4 border-stone-50">
                     <Image 
                       src="/images/holly.jpg" 
-                      alt="Holli H, Licensed Mental Health Professional" 
+                      alt="Holli O'Donnell, Licensed Mental Health Professional" 
                       fill 
                       sizes="96px"
                       className="object-cover"
@@ -257,9 +257,9 @@ export default function OCDClient() {
                   </div>
                   <div>
                     <span className="text-xs font-bold tracking-wider uppercase text-stone-400 mb-1 block">Clinically Reviewed By</span>
-                    <h3 className="font-barlow font-bold text-2xl text-stone-900">Holli H, Licensed Mental Health Professional</h3>
+                    <h3 className="font-barlow font-bold text-2xl text-stone-900">Holli O'Donnell, Licensed Mental Health Professional</h3>
                     <p className="font-barlow text-stone-500 mt-2 text-sm leading-relaxed">
-                      Holli H is a dedicated mental health professional at Sunrise Human Care Services, specializing in the psychiatric evaluation and evidence-based treatment of severe anxiety disorders and OCD.
+                      Holli O'Donnell is a dedicated mental health professional at Sunrise Human Care Services, specializing in the diagnosis and evidence-based treatment of OCD, anxiety disorders, and complex behavioral patterns.
                     </p>
                     <p className="font-barlow text-stone-400 text-xs mt-3">
                       Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}

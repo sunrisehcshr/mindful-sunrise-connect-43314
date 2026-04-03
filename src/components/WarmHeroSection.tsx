@@ -189,7 +189,7 @@ const WarmHeroSection = () => {
             hidden: { opacity: 0 },
             visible: { 
               opacity: 1,
-              transition: { staggerChildren: 0.1, delayChildren: 0.5 }
+              transition: { staggerChildren: 0.1, delayChildren: 0.1 }
             }
           }}
         >
@@ -209,15 +209,17 @@ const WarmHeroSection = () => {
             <div className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none">
               <div className="overflow-hidden relative w-full h-full flex items-center">
                 <motion.div
-                  animate={{ x: ["100%", "-100%"] }}
+                  initial={{ x: "0%" }}
+                  animate={{ x: "-100%" }}
                   transition={{ 
                     repeat: Infinity, 
-                    duration: 12, 
+                    duration: 25, 
                     ease: "linear" 
                   }}
-                  className="whitespace-nowrap"
+                  className="whitespace-nowrap flex"
                 >
-                  Now accepting new Medicaid patients in Darby, PA — Response within 24 hours — No Waitlist
+                  <span className="pr-8">Now accepting new Medicaid patients in Darby, PA — Response within 24 hours — No Waitlist</span>
+                  <span className="pr-8">Now accepting new Medicaid patients in Darby, PA — Response within 24 hours — No Waitlist</span>
                 </motion.div>
               </div>
             </div>
