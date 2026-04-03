@@ -1,15 +1,18 @@
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import UiloraFrostedGlass from '../ui/uilora-frosted-glass';
+import CurveTransition from '../ui/CurveTransition';
 
 const AboutCTA = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
   return (
-    <section className="py-16 md:py-24 bg-stone-50 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
+    <section ref={sectionRef} className="py-16 md:py-24 bg-stone-50 overflow-hidden relative">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,6 +64,9 @@ const AboutCTA = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Curved Transition into the next section (AppointmentSection which is white) */}
+      <CurveTransition fillColor="#ffffff" inverted className="z-20" targetRef={sectionRef as any} />
     </section>
   );
 };

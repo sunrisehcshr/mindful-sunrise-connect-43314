@@ -319,13 +319,13 @@ export default function BetterhelpAlternativesClient() {
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
               <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli" />
+                <meta itemProp="name" content="Holli O'Donnell" />
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
               <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
               <p>
-                This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>

@@ -108,18 +108,20 @@ const Navbar = () => {
   ];
 
   const resourceLinks = [
-    { title: "About Us", path: "/about" },
     { title: "Blog", path: "/blog" },
     { title: "FAQ", path: "/faq" },
   ];
 
   const isResourcePage = () => {
-    return isActive("/about") || isActive("/blog") || isActive("/faq");
+    return isActive("/blog") || isActive("/faq");
   };
 
   const navLinks = [{
     path: "/",
     label: "Home"
+  }, {
+    path: "/about",
+    label: "About"
   }, {
     type: "dropdown",
     label: "Services",

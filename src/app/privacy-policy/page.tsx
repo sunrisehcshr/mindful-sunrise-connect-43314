@@ -9,7 +9,6 @@ import { motion } from 'framer-motion';
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <SEOHead title="Privacy Policy | Sunrise Human Care Services" description="Our privacy policy details how we collect, use, and protect your personal information at Sunrise Human Care Services." canonicalUrl="https://sunrisehumancare.com/privacy-policy" />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow py-12 md:py-16">

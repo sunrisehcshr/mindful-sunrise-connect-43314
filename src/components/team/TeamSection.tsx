@@ -115,7 +115,7 @@ export default function TeamSection() {
                 >
                   <div className="relative h-[420px] w-full overflow-hidden rounded-[2.5rem] bg-stone-50 border border-stone-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
                     <Image 
-                      alt={member.name} 
+                      alt={`${member.name}, ${member.role} at Sunrise Human Care Services in Darby, PA`} 
                       className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
                       fill 
                       src={member.image} 

@@ -1,125 +1,57 @@
 import React from 'react';
+import SchemaMarkup from '@/components/SchemaMarkup';
 import { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/seo';
 import DissociativeDisordersClient from './DissociativeDisordersClient';
 
-export const metadata: Metadata = {
-  title: "Dissociative Disorders Treatment in Darby, PA | Sunrise Human Care", // 66 chars
-  description: "Specialized psychiatric treatment for dissociative disorders, DID, depersonalization, and derealization in Darby, PA. Trauma-informed Medicaid care.", // 150 chars
-  alternates: {
-    canonical: "https://sunrisehumancare.com/dissociative-disorders-treatment-darby-pa",
-  },
-  keywords: "dissociative disorders treatment Darby PA, DID therapy Delaware County, depersonalization help PA, trauma dissociation counseling, derealization treatment",
-  openGraph: {
-    title: "Dissociative Disorders Treatment in Darby, PA | Sunrise Human Care",
-    description: "Specialized psychiatric treatment for dissociative disorders, DID, depersonalization, and derealization in Darby, PA. Trauma-informed Medicaid care.",
-    url: "https://sunrisehumancare.com/dissociative-disorders-treatment-darby-pa",
-    siteName: "Sunrise Human Care Services",
-    images: [
-      {
-        url: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Psychotherapist providing trauma-informed care for dissociative disorders",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dissociative Disorders Treatment in Darby, PA | Sunrise Human Care",
-    description: "Specialized psychiatric treatment for dissociative disorders, DID, depersonalization, and derealization in Darby, PA. Trauma-informed Medicaid care.",
-    images: ["https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg"],
-  },
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Dissociative Disorders Treatment in Darby, PA | No Waitlist",
+  description: "Specialized psychiatric treatment for dissociative disorders, DID, depersonalization, and derealization in Darby, PA. 100% Medicaid accepted. No waitlist.",
+  path: "/dissociative-disorders-treatment-darby-pa",
+  keywords: ["dissociative disorders treatment Darby PA", "DID therapy Delaware County", "depersonalization help PA", "trauma dissociation counseling", "derealization treatment", "Medicaid dissociative therapy PA"],
+});
 
 export default function DissociativeDisordersTreatmentPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MedicalWebPage",
-        "name": "Dissociative Disorders Treatment in Darby, PA",
-        "description": "Evidence-based, trauma-informed therapy and psychiatric support for Dissociative Disorders, including DID and Depersonalization, in Darby, PA.",
-        "about": {
-          "@type": "MedicalSpecialty",
-          "name": "Psychiatry"
-        },
-        "provider": {
-          "@type": "MedicalBusiness",
-          "name": "Sunrise Human Care Services",
-          "address": "869 Main Street, Darby, PA 19023"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://sunrisehumancare.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Conditions We Treat",
-            "item": "https://sunrisehumancare.com/conditions"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Dissociative Disorders Treatment",
-            "item": "https://sunrisehumancare.com/dissociative-disorders-treatment-darby-pa"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is dissociation the same as having multiple personalities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Dissociation exists on a spectrum. While Dissociative Identity Disorder (formerly called multiple personality disorder) involves distinct identity states, many people experience milder forms of dissociation like depersonalization (feeling detached from oneself) or derealization (feeling the world is unreal). All forms of dissociation involve some degree of disconnection from full awareness."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does treatment for dissociative disorders take?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Treatment for dissociative disorders is typically longer-term, often lasting several years, especially for more complex presentations like Dissociative Identity Disorder. The pace of treatment is determined by the client's needs and readiness, focusing first on stabilization before addressing traumatic material."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can medication cure dissociative disorders?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "There are no medications that specifically cure dissociation. However, psychiatric medications are highly effective in treating the severe anxiety, depression, or sleep disturbances that almost always accompany dissociative disorders. Therapy (such as EMDR or CBT) remains the primary treatment for the dissociation itself."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What causes dissociative disorders?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Dissociative disorders usually develop as a psychological response to severe trauma, particularly chronic physical, sexual, or emotional abuse during childhood. The dissociation serves as a survival mechanism, allowing the mind to detach from an overwhelmingly painful reality."
-            }
-          }
-        ]
-      }
-    ]
+  const dissociativeFAQs = [
+    {
+      question: "Is dissociation the same as having multiple personalities?",
+      answer: "Dissociation exists on a spectrum. While Dissociative Identity Disorder involves distinct identity states, many experience milder forms like depersonalization (feeling detached from oneself) or derealization (feeling the world is unreal)."
+    },
+    {
+      question: "How long does treatment for dissociative disorders take?",
+      answer: "Treatment is typically longer-term, often lasting several years for complex cases like DID. We focus first on stabilization and safety before addressing deeper traumatic material at your own pace."
+    },
+    {
+      question: "Can medication cure dissociative disorders?",
+      answer: "There's no specific medication to cure dissociation. However, psychiatric medications are highly effective in treating the severe anxiety, depression, or sleep disturbances that often accompany these disorders."
+    },
+    {
+      question: "What causes dissociative disorders?",
+      answer: "These disorders usually develop as a psychological response to severe, chronic childhood trauma. Dissociation serves as a survival mechanism, allowing the mind to detach from an overwhelmingly painful reality."
+    },
+    {
+      question: "Do you accept Medicaid for dissociative disorders?",
+      answer: "Yes, we exclusively accept Medicaid and Medical Assistance. We provide specialized trauma-informed care with no waitlist to ensure you get the support you need."
+    }
+  ];
+
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Conditions We Treat", url: "/conditions" },
+    { name: "Dissociative Disorders Treatment", url: "/dissociative-disorders-treatment-darby-pa" }
+  ];
+
+  const serviceData = {
+    name: "Dissociative Disorders Treatment in Darby, PA",
+    description: "Evidence-based, trauma-informed therapy and psychiatric support for Dissociative Disorders in Darby, PA. Specialized care with no waitlist and Medicaid acceptance.",
+    serviceType: "Dissociative Disorder Treatment"
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <SchemaMarkup type="MedicalService" data={serviceData} />
+      <SchemaMarkup type="FAQPage" data={dissociativeFAQs} />
+      <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />
       <DissociativeDisordersClient />
     </>
   );

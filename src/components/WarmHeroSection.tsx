@@ -3,7 +3,7 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { Button } from './ui/button';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Phone, Calendar } from 'lucide-react';
 import AppointmentDialog from './Appointment/AppointmentDialog';
 import Image from 'next/image';
@@ -16,9 +16,40 @@ const WarmHeroSection = () => {
   const [loopCount, setLoopCount] = useState(0);
   const MAX_LOOPS = 10;
 
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  
+  const { scrollY } = useScroll();
+  
+  // Pause video when user scrolls past the second section
+  // We'll estimate the second section ends around 1500px down
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      if (videoRef.current) {
+        if (latest > 1800) { // Threshold for stopping video
+          if (!videoRef.current.paused) {
+            videoRef.current.pause();
+          }
+        } else if (latest < 1800 && shouldLoadVideo) {
+          if (videoRef.current.paused) {
+            videoRef.current.play().catch(() => {});
+          }
+        }
+      }
+    });
+  }, [scrollY, shouldLoadVideo]);
 
   useEffect(() => {
+    // Lazy load video after mount to prioritize LCP
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoadVideo) return;
     const video = videoRef.current;
     const section = sectionRef.current;
     if (!video || !section) return;
@@ -86,7 +117,11 @@ const WarmHeroSection = () => {
   }, [loopCount, showFallback]);
 
   return (
-    <section ref={sectionRef} className="relative h-[100vh] flex items-center justify-center bg-stone-950 z-0 overflow-hidden" id="home">
+    <section 
+      ref={sectionRef}
+      className="relative min-h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-stone-900"
+      id="home"
+    >
       <div className="absolute inset-0 w-full h-full pointer-events-none" /> {/* Spacer for position warning */}
       {/* Background Media - Isolating the rendering to its own layer */}
       <motion.div 
@@ -103,15 +138,19 @@ const WarmHeroSection = () => {
           ref={videoRef}
           autoPlay
           muted
+          loop
           playsInline
-          preload="auto"
+          preload={shouldLoadVideo ? "auto" : "none"}
           disablePictureInPicture
           controlsList="nodownload nofullscreen noremoteplayback"
           poster="https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
           className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-center pointer-events-none transition-opacity duration-1000"
-          style={{ opacity: isPlaying ? 1 : 0.5 }}
+          style={{ opacity: 1 }}
+          title="Happy family at the beach - Sunrise Human Care Services"
         >
-          <source src="https://res.cloudinary.com/dabsxebx8/video/upload/q_80,f_auto/v1774833967/happy-funny-and-sunset-with-big-family-at-beach-f-2025-12-17-13-03-02-utc_i9s1nu.mov" type="video/mp4" />
+          {shouldLoadVideo && (
+            <source src="https://res.cloudinary.com/dabsxebx8/video/upload/q_80,f_auto/v1774833967/happy-funny-and-sunset-with-big-family-at-beach-f-2025-12-17-13-03-02-utc_i9s1nu.mov" type="video/mp4" />
+          )}
         </video>
 
         <AnimatePresence>
@@ -139,13 +178,13 @@ const WarmHeroSection = () => {
 
       {/* Soft glow overlay */}
       {/* Semi-transparent black overlay for text readability - Desktop only to keep video clear on mobile */}
-      <div className="absolute inset-0 z-0 hidden md:block bg-black/50" />
+      <div className="absolute inset-0 z-0 hidden md:block bg-black/25" />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-40 md:pt-48 -mt-16">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/60 backdrop-blur-[6px] border border-white/20 md:bg-transparent md:backdrop-blur-0 md:border-none md:py-0 md:px-0 shadow-2xl md:shadow-none"
+          className="max-w-4xl mx-auto py-12 px-6 rounded-[2.5rem] bg-black/10 backdrop-blur-[6px] border border-white/20 md:bg-transparent md:backdrop-blur-0 md:border-none md:py-0 md:px-0 shadow-2xl md:shadow-none"
           variants={{
             hidden: { opacity: 0 },
             visible: { 
@@ -165,11 +204,23 @@ const WarmHeroSection = () => {
                 transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
               }
             }}
-            className="mb-3 md:mb-4 flex justify-center"
+            className="flex flex-col items-center gap-1 sm:gap-2 mb-6 sm:mb-8"
           >
-            <span className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden text-ellipsis max-w-full">
-              Now accepting new Medicaid patients in Darby, PA
-            </span>
+            <div className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none">
+              <div className="overflow-hidden relative w-full h-full flex items-center">
+                <motion.div
+                  animate={{ x: ["100%", "-100%"] }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 12, 
+                    ease: "linear" 
+                  }}
+                  className="whitespace-nowrap"
+                >
+                  Now accepting new Medicaid patients in Darby, PA — Response within 24 hours — No Waitlist
+                </motion.div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.h1
@@ -224,37 +275,16 @@ const WarmHeroSection = () => {
               </Button>
             </motion.div>
             <motion.div whileTap={{ scale: 0.96 }}>
-              <AppointmentDialog>
-                <Button size="lg" className="w-full sm:w-auto border border-white/30 text-white bg-white/10 backdrop-blur-md h-12 px-7 text-sm font-barlow font-bold rounded-full hover:bg-white/20 transition-all duration-300 group active:scale-[0.96]">
+              <Button asChild size="lg" className="w-full sm:w-auto border border-white/30 text-white bg-white/10 backdrop-blur-md h-12 px-7 text-sm font-barlow font-bold rounded-full hover:bg-white/20 transition-all duration-300 group active:scale-[0.96]">
+                <a href="#appointment" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' });
+                }}>
                   <Calendar className="mr-2 h-4 w-4 group-hover:text-amber-300" />
                   Schedule Your Visit
-                </Button>
-              </AppointmentDialog>
+                </a>
+              </Button>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="flex flex-col items-center mt-6"
-            variants={{
-              hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
-              visible: {
-                opacity: 1,
-                y: 0,
-                filter: "blur(0px)",
-                transition: { duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }
-              }
-            }}
-          >
-            <div className="flex items-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <p className="text-[11px] md:text-xs text-white/80 font-medium tracking-[0.15em] uppercase font-barlow">
-              Trusted by Hundreds of Darby Families
-            </p>
           </motion.div>
         </motion.div>
       </div>

@@ -112,14 +112,7 @@ export default function MedicaidLandingPage() {
 
   return (
     <>
-      <SEOHead 
-        title="Medicaid Therapy & Psychiatry in Darby, PA | Sunrise Human Care" 
-        description="Compassionate mental health care for Medicaid recipients in Darby, PA. We accept PA Medicaid for therapy, counseling, and psychiatric evaluations. In-person and telehealth available. Schedule today: (814) 620-2162." 
-        canonicalUrl="https://sunrisehumancare.com/medicaid-therapy"
-        keywords="Medicaid therapy Darby PA, behavioral health Medicaid Pennsylvania, therapy that accepts Medicaid Delaware County, Medicaid psychiatrist PA, mental health care for Medicaid recipients"
-      />
-      
-      <div className="flex flex-col min-h-screen">
+      <div className="min-h-screen bg-stone-50">
         <Navbar />
         <main className="flex-grow pt-24">
           {/* Hero Section */}

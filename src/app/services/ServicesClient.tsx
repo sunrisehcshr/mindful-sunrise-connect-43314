@@ -4,12 +4,23 @@ import React, { useState } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, ArrowRight, Brain, Heart, Users, Activity, Stethoscope, Pill, ChevronDown, Calendar, Phone, Shield } from 'lucide-react';
+import { ArrowRight, ChevronDown, Calendar, Phone, MapPin, ShieldCheck, Users, Stethoscope, Navigation, HeartPulse, UserPlus } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SectionTag from '@/components/ui/section-tag';
+import ClinicStatus from '@/components/ui/ClinicStatus';
 import { cn } from "@/lib/utils";
+
+// --- Opening Hours Component ---
+function OpeningHours() {
+    return (
+        <div className="flex flex-col items-center justify-center">
+            <div className="font-barlow text-sm font-semibold tracking-tight text-stone-400 uppercase">Mon - Fri</div>
+            <div className="font-barlow text-xl font-bold text-stone-900">9:00 AM - 5:00 PM</div>
+        </div>
+    );
+}
 
 // --- Glowing Bento Card ---
 function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
@@ -57,42 +68,36 @@ export default function ServicesClient() {
       title: "Individual Therapy",
       link: "/individual-therapy-darby-pa",
       desc: "One-on-one sessions tailored to help you navigate anxiety, depression, trauma, and personal growth in a safe environment.",
-      icon: <Brain className="w-8 h-8 text-orange-500" />,
       image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg"
     },
     {
       title: "Couples Counseling",
       link: "/couples-counseling-darby-pa",
       desc: "Expert guidance to help partners improve communication, resolve conflicts, and rebuild emotional and physical intimacy.",
-      icon: <Heart className="w-8 h-8 text-orange-500" />,
       image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
     },
     {
       title: "Family Therapy",
       link: "/family-therapy-darby-pa",
       desc: "Collaborative sessions designed to strengthen family bonds, improve household dynamics, and support collective healing.",
-      icon: <Users className="w-8 h-8 text-orange-500" />,
       image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918387/family-counseling-talk-from-home-parents-listen-t-2026-03-25-02-29-59-utc_a9m3eu.jpg"
     },
     {
       title: "Child & Teen Therapy",
       link: "/child-therapy-darby-pa",
       desc: "Age-appropriate therapeutic approaches including play therapy and CBT to help youth manage behavioral and emotional challenges.",
-      icon: <Activity className="w-8 h-8 text-orange-500" />,
       image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg"
     },
     {
       title: "Psychiatric Evaluations",
       link: "/psychiatric-evaluations-darby-pa",
       desc: "Comprehensive diagnostic assessments by our clinical team to provide clarity and establish an effective treatment roadmap.",
-      icon: <Stethoscope className="w-8 h-8 text-orange-500" />,
       image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg"
     },
     {
       title: "Medication Management",
       link: "/medication-management-darby-pa",
       desc: "Ongoing psychiatric care and prescription monitoring to ensure your medications are safe, effective, and properly balanced.",
-      icon: <Pill className="w-8 h-8 text-orange-500" />,
       image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg"
     }
   ];
@@ -183,20 +188,17 @@ export default function ServicesClient() {
                     transition={{ delay: index * 0.1 }}
                   >
                     <Link href={service.link} className="block h-full">
-                      <Card className="h-full flex flex-col p-0 overflow-hidden group">
-                        <div className="relative h-48 w-full overflow-hidden">
+                      <Card className="h-full flex flex-col p-4 overflow-hidden group">
+                        <div className="relative h-64 w-full overflow-hidden rounded-2xl mb-6 shadow-sm border border-stone-100">
                           <Image 
                             src={service.image} 
                             alt={service.title} 
                             fill 
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-stone-900/20 group-hover:bg-stone-900/10 transition-colors duration-500" />
-                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-sm">
-                            {service.icon}
-                          </div>
+                          <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors duration-500" />
                         </div>
-                        <div className="p-8 flex flex-col flex-grow">
+                        <div className="px-4 pb-4 flex flex-col flex-grow">
                           <h3 className="font-barlow font-bold text-2xl text-stone-900 mb-3 group-hover:text-orange-500 transition-colors">
                             {service.title}
                           </h3>
@@ -215,52 +217,141 @@ export default function ServicesClient() {
             </div>
           </section>
 
-          {/* SECTION 2: Why Choose Us (E-E-A-T Focus) */}
+          {/* SECTION 2: Why Choose Us (Optimized layout) */}
           <section className="py-16 md:py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-              <div className="max-w-3xl mx-auto text-center mb-16">
-                <SectionTag>Why Choose Us</SectionTag>
-                <h2 className="font-barlow font-bold text-3xl md:text-5xl text-stone-900 tracking-tight mt-4 mb-6">
-                  Expert Mental Health Care in Darby
-                </h2>
-                <p className="text-stone-500 font-barlow text-lg leading-relaxed">
-                  We don't just treat symptoms; we treat the whole person. Our clinical team provides evidence-based, compassionate care designed to create lasting change.
-                </p>
-              </div>
+              {/* Section Header */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="max-w-4xl mx-auto text-center mb-16"
+              >
+                <div className="flex flex-col items-center gap-4">
+                  <SectionTag>Why Choose Us</SectionTag>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-stone-900 tracking-tighter leading-tight">
+                    Expert therapy & psychiatric care <br />
+                    <span className="font-instrument-serif italic text-orange-500">without the barriers.</span>
+                  </h2>
+                </div>
+              </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card className="bg-stone-50/50 text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-6">
-                    <Shield className="w-8 h-8 text-orange-500" />
-                  </div>
-                  <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">100% Medicaid</h3>
-                  <p className="font-barlow text-stone-600 text-sm">We exclusively accept Medicaid, removing financial barriers to high-quality psychiatric care and therapy.</p>
-                </Card>
-                
-                <Card className="bg-stone-50/50 text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-6">
-                    <Users className="w-8 h-8 text-orange-500" />
-                  </div>
-                  <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">Continuity of Care</h3>
-                  <p className="font-barlow text-stone-600 text-sm">Unlike therapy apps, you build a lasting relationship with a dedicated, local therapist who knows your story.</p>
-                </Card>
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.1,
+                      delayChildren: 0.2
+                    }
+                  }
+                }}
+                className="relative z-10 mx-auto max-w-7xl h-full flex flex-col gap-4 bg-stone-50/30 p-6 md:p-12 rounded-[2.5rem] border border-stone-100"
+              >
+                {/* ROW 1: Status + Hours */}
+                <motion.div 
+                  variants={{
+                    hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      filter: "blur(0px)",
+                      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
+                    }
+                  }} 
+                  className="grid grid-cols-1 gap-4 md:grid-cols-4 relative z-10"
+                >
+                  <Card containerClassName="md:col-span-2 rounded-3xl bg-white group/brand" className="flex items-center justify-between gap-6">
+                    <div className="flex flex-col justify-center">
+                      <span className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 text-transparent bg-clip-text tracking-tight">
+                        Sunrise
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm md:text-base font-instrument-serif italic text-stone-400">Human Care Services</span>
+                        <div className="h-px w-8 bg-stone-200" />
+                      </div>
+                      <div className="mt-2">
+                        <ClinicStatus showBadge={true} />
+                      </div>
+                    </div>
+                    <div className="relative shrink-0 pr-4">
+                      <Image src="/images/logo.png" alt="Logo" width={80} height={70} className="object-contain" />
+                    </div>
+                  </Card>
 
-                <Card className="bg-stone-50/50 text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-6">
-                    <Stethoscope className="w-8 h-8 text-orange-500" />
-                  </div>
-                  <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">Integrated Approach</h3>
-                  <p className="font-barlow text-stone-600 text-sm">Therapy and medication management work hand-in-hand under one roof for superior clinical outcomes.</p>
-                </Card>
+                  <Card containerClassName="md:col-span-1 rounded-3xl bg-blue-50/80 border-blue-200/50" className="flex flex-col justify-center items-center text-center">
+                    <OpeningHours />
+                    <span className="text-[10px] text-blue-700/60 uppercase mt-1 font-bold tracking-wider">Business Hours</span>
+                  </Card>
 
-                <Card className="bg-stone-50/50 text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-6">
-                    <MapPin className="w-8 h-8 text-orange-500" />
+                  <Card containerClassName="md:col-span-1 rounded-3xl bg-emerald-50/40 border-emerald-100/50" className="flex flex-col justify-center items-start">
+                    <div className="flex items-center justify-between w-full mb-3">
+                      <span className="font-bold tracking-tight text-emerald-900">Accepting Patients</span>
+                      <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm border border-stone-100">
+                        <UserPlus className="h-5 w-5 text-emerald-600" />
+                      </div>
+                    </div>
+                    <div className="text-[11px] text-emerald-800/70 leading-tight font-medium">
+                      Immediate Openings for <br /> Therapy & Psychiatry.
+                    </div>
+                  </Card>
+                </motion.div>
+
+                {/* ROW 2: Main Value Prop + Detail Cards */}
+                <motion.div 
+                  variants={{
+                    hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      filter: "blur(0px)",
+                      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
+                    }
+                  }} 
+                  className="grid grid-cols-1 gap-4 md:grid-cols-3 relative z-10"
+                >
+                  <Card containerClassName="md:col-span-2 rounded-3xl bg-white" className="flex flex-col justify-between py-10">
+                    <div className="flex justify-between items-start mb-12">
+                      <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center border border-orange-100">
+                        <HeartPulse className="h-6 w-6 text-orange-500" />
+                      </div>
+                      <div className="px-3 py-1 rounded-full bg-stone-50 border border-stone-100 text-[10px] uppercase tracking-widest text-stone-400 font-bold">
+                        The Sunrise Difference
+                      </div>
+                    </div>
+                    <div className="space-y-6">
+                      <h3 className="text-4xl md:text-5xl font-normal leading-[0.95] tracking-tighter text-stone-900">
+                        Integrated healing <br />
+                        <span className="font-instrument-serif italic text-orange-500">for mind and body.</span>
+                      </h3>
+                      <p className="max-w-md text-stone-500 text-sm leading-relaxed font-medium">
+                        Whether you need compassionate talk therapy or precise medication management, our Darby clinic provides a unified approach. We eliminate the gap between diagnosis and recovery.
+                      </p>
+                    </div>
+                  </Card>
+
+                  <div className="flex flex-col gap-4">
+                    <Card containerClassName="rounded-3xl bg-stone-900 text-white border-none" className="flex flex-col justify-between h-full">
+                      <ShieldCheck className="h-8 w-8 text-orange-400 mb-4" />
+                      <div>
+                        <h4 className="font-bold text-lg mb-1">100% Medicaid</h4>
+                        <p className="text-stone-400 text-xs leading-relaxed">Exclusively accepting Medicaid for all psychiatric and therapy services in Delaware County.</p>
+                      </div>
+                    </Card>
+                    <Card containerClassName="rounded-3xl bg-orange-500 text-stone-900 border-none" className="flex flex-col justify-between h-full">
+                      <Users className="h-8 w-8 text-white mb-4" />
+                      <div>
+                        <h4 className="font-bold text-lg mb-1">Local Continuity</h4>
+                        <p className="text-stone-900/70 text-xs leading-relaxed font-medium">Work with the same psychiatrist and therapist every session for deep, meaningful healing.</p>
+                      </div>
+                    </Card>
                   </div>
-                  <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">Local Expertise</h3>
-                  <p className="font-barlow text-stone-600 text-sm">Conveniently located in Darby, PA, we understand the specific cultural and community needs of Delaware County.</p>
-                </Card>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </section>
 
@@ -386,13 +477,13 @@ export default function ServicesClient() {
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
               <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli" />
+                <meta itemProp="name" content="Holli O'Donnell" />
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
               <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
               <p>
-                This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>

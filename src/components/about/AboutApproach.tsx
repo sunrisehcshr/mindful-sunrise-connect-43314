@@ -1,12 +1,14 @@
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import SectionTag from '../ui/section-tag';
 import { CheckCircle2 } from 'lucide-react';
+import CurveTransition from '../ui/CurveTransition';
 
 const AboutApproach = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const highlights = [
     "Personalized, evidence-based treatment plans",
     "Safe, trauma-informed care environment",
@@ -15,8 +17,8 @@ const AboutApproach = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
+    <section ref={sectionRef} className="py-16 md:py-24 bg-white overflow-hidden relative">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,6 +71,9 @@ const AboutApproach = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Curved Transition into the next section (FullTeamSection which is stone-50) */}
+      <CurveTransition fillColor="#f8f8f7" inverted className="z-20" targetRef={sectionRef as any} />
     </section>
   );
 };

@@ -1,11 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Separator } from '../ui/separator';
 import SectionTag from '../ui/section-tag';
 import TeamMemberCard from './TeamMemberCard';
 import { Users } from 'lucide-react';
+import CurveTransition from '../ui/CurveTransition';
 
 const fullTeamMembers = [
   {
@@ -61,8 +62,10 @@ const fullTeamMembers = [
 
  
 const FullTeamSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
   return (
-    <section id="team" className="py-16 md:py-24 bg-stone-50 overflow-hidden relative">
+    <section id="team" ref={sectionRef} className="py-16 md:py-24 bg-stone-50 overflow-hidden relative">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] -mr-[200px] -mt-[200px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] -ml-[200px] -mb-[200px] pointer-events-none" />
@@ -118,6 +121,9 @@ const FullTeamSection = () => {
           ))}
         </div>
       </div>
+
+      {/* Curved Transition into the next section (AboutCTA which is stone-50) */}
+      <CurveTransition fillColor="#f8f8f7" inverted className="z-20" targetRef={sectionRef as any} />
     </section>
   );
 };

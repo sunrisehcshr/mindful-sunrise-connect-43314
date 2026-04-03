@@ -73,7 +73,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               {image ? (
                 <Image 
                   src={image} 
-                  alt={name} 
+                  alt={`${name}, ${role} at Sunrise Human Care Services in Darby, PA`} 
                   fill
                   className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${name === 'Shanada Anderson' ? 'scale-125 translate-y-2' : name === 'Anthony Obi' ? 'scale-125' : name === 'Michael Flynn' ? 'scale-[1.02]' : ''}`}
                 />

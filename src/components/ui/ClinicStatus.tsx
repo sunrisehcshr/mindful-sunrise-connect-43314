@@ -57,14 +57,15 @@ export default function ClinicStatus({ className, showBadge = false }: ClinicSta
                 const diffMs = nextOpen.getTime() - darbyNow.getTime();
                 const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
                 const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+                const diffSecs = Math.floor((diffMs % (1000 * 60)) / 1000);
                 
-                const timeLabel = `Next opening in ${String(diffHrs).padStart(2, '0')}:${String(diffMins).padStart(2, '0')}`;
+                const timeLabel = `Open in ${String(diffHrs).padStart(2, '0')}:${String(diffMins).padStart(2, '0')}:${String(diffSecs).padStart(2, '0')}`;
                 setStatus({ isOpen: false, label: "Closed Now", countdown: timeLabel });
             }
         };
 
         checkStatus();
-        const interval = setInterval(checkStatus, 60000); // Update every minute
+        const interval = setInterval(checkStatus, 1000); // Update every second
         return () => clearInterval(interval);
     }, [mounted]);
 

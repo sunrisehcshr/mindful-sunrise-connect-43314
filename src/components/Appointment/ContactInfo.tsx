@@ -80,7 +80,9 @@ const ContactInfo: React.FC = () => {
             <p className="font-barlow font-bold text-stone-900 text-sm">Hours:</p>
             <p className="text-stone-500 font-barlow text-sm">Mon - Fri, 9 AM - 5 PM</p>
           </div>
-          <ClinicStatus showBadge={true} />
+          <div className="mt-2">
+            <ClinicStatus showBadge={true} />
+          </div>
         </div>
       </div>
     </div>

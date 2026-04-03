@@ -9,8 +9,8 @@ const AboutHero = () => {
     <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
       <div className="absolute inset-0 z-0">
         <Image 
-          src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774917953/the-young-family-with-a-child-are-having-a-session-2023-11-27-05-18-05-utc_z6v3ed.jpg" 
-          alt="Sunrise Human Care Darby PA" 
+          src="/images/therapy-for-older-adults.webp" 
+          alt="Young family with a child having a session at Sunrise Human Care Services in Darby, PA" 
           fill 
           className="object-cover opacity-60"
           priority

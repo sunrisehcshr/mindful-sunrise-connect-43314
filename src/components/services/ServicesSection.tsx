@@ -88,7 +88,7 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                         >
                             <Image
                               src={typeof item.image === 'string' ? item.image : item.image.src}
-                              alt={item.title}
+                              alt={`${item.title} services at Sunrise Human Care Services in Darby, PA`}
                               fill
                               sizes="(max-width: 768px) 200px, 400px"
                               className="object-cover transition-[filter,transform] duration-500 group-hover:sepia group-hover:hue-rotate-[320deg] group-hover:saturate-[2] group-hover:brightness-[0.8]"

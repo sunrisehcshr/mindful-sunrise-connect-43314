@@ -6,8 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { 
   Brain, Heart, Shield, Star, Phone, ArrowRight, CheckCircle2, 
-  ChevronDown, MapPin, Calendar, Users, MessageCircle, Scale,
-  RefreshCcw, Split, GitMerge
+  ChevronDown, MapPin, Calendar, Users, MessageCircle
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -174,23 +173,19 @@ export default function CouplesCounselingClient() {
                   transition={{ duration: 0.8 }}
                   className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
                 >
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Shield className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Neutral Ground</h3>
                     <p className="font-barlow text-stone-500 text-sm">A safe, unbiased space where both partners have an equal voice and are heard without judgment.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <MessageCircle className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Better Communication</h3>
                     <p className="font-barlow text-stone-500 text-sm">Learn practical tools to express your needs clearly and listen to your partner actively.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Heart className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Rebuild Intimacy</h3>
                     <p className="font-barlow text-stone-500 text-sm">Overcome emotional distance and reignite the spark that brought you together.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Users className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Expert Counselors</h3>
                     <p className="font-barlow text-stone-500 text-sm">Work with licensed therapists highly trained in specialized relationship modalities.</p>
                   </Card>
@@ -224,32 +219,26 @@ export default function CouplesCounselingClient() {
                   {
                     title: "Communication Breakdowns",
                     desc: "When conversations turn into arguments or silence. We help partners clarify misunderstandings, develop active listening skills, and express needs openly to strengthen their connection.",
-                    icon: <MessageCircle className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Trust Restoration",
                     desc: "Rebuilding a foundation after infidelity, financial secrecy, or betrayal. Our therapists guide couples through the delicate process of restoring trust and creating a safe space for healing.",
-                    icon: <Shield className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Intimacy & Connection",
                     desc: "Addressing feelings of emotional distance or physical disconnect. We provide tools to help partners rediscover each other and reignite romance and mutual affection.",
-                    icon: <Heart className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Frequent Arguments",
                     desc: "Breaking the cycle of repeating the same fight. We focus on identifying the root triggers of conflict and teaching effective, respectful de-escalation techniques.",
-                    icon: <Scale className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Life Transitions",
                     desc: "Navigating major changes like parenthood, career shifts, relocation, or empty-nesting. We offer support to help couples adapt and grow together during stressful periods.",
-                    icon: <RefreshCcw className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Premarital Counseling",
                     desc: "Setting a strong foundation before saying 'I do.' We help engaged couples align on core values, financial planning, and family expectations to prevent future conflicts.",
-                    icon: <GitMerge className="w-6 h-6 text-orange-500" />
                   }
                 ].map((item, i) => (
                   <motion.div 
@@ -259,10 +248,7 @@ export default function CouplesCounselingClient() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <Card className="h-full bg-stone-50/50">
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-stone-100 flex items-center justify-center mb-6">
-                        {item.icon}
-                      </div>
+                    <Card className="h-full bg-stone-50/50 flex flex-col items-center text-center p-8">
                       <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">{item.title}</h3>
                       <p className="font-barlow text-stone-600 text-sm leading-relaxed">{item.desc}</p>
                     </Card>
@@ -411,13 +397,13 @@ export default function CouplesCounselingClient() {
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
               <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli" />
+                <meta itemProp="name" content="Holli O'Donnell" />
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
               <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
               <p>
-                This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>

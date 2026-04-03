@@ -1,10 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import ServicesClient from './ServicesClient';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: "Mental Health Services in Darby, PA | Therapy & Psychiatry | Sunrise Human Care", // 80 chars (slightly long but highly relevant)
-  description: "Comprehensive mental health services in Darby, PA. We offer therapy for anxiety, depression, ADHD, trauma, and psychiatric evaluations. Accept Medicaid.", // 156 chars
+  title: "Therapy & Psychiatry Services in Darby, PA | Sunrise Human Care Services",
+  description: "Comprehensive mental health services in Darby, PA. Medicaid only, no waitlist. Expert therapy for anxiety, depression, ADHD & trauma. Call (814) 620-2162.",
   alternates: {
     canonical: "https://sunrisehumancare.com/services",
   },
@@ -12,134 +13,30 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MedicalService",
-        "name": "Mental Health Services in Darby, PA",
-        "description": "Comprehensive mental health services including therapy, counseling, and psychiatric care for individuals, families, and couples in Darby and Delaware County.",
-        "serviceType": "MedicalService",
-        "provider": {
-          "@type": "MedicalBusiness",
-          "name": "Sunrise Human Care Services",
-          "address": "869 Main Street, Darby, PA 19023"
-        },
-        "areaServed": "Darby, PA and Delaware County",
-        "availableService": "TherapyService",
-        "medicalSpecialty": "Psychiatry",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Mental Health Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Individual Therapy"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Couples Counseling"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Family Therapy"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Child & Adolescent Therapy"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Psychiatric Evaluations"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalService",
-                "name": "Medication Management"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://sunrisehumancare.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://sunrisehumancare.com/services"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do you accept Medicaid for therapy and psychiatry?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, Sunrise Human Care Services exclusively accepts Medicaid. We believe high-quality mental health care should be accessible to everyone in Delaware County, without financial barriers."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the difference between therapy and a psychiatric evaluation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Therapy (or counseling) involves regular sessions to discuss feelings, behaviors, and coping strategies. A psychiatric evaluation is a diagnostic assessment performed by a medical professional who can prescribe medications to help manage your symptoms."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I receive both therapy and medication management at your clinic?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. In fact, we encourage it. Research shows that combining talk therapy with appropriate medication management often yields the best outcomes for conditions like depression, anxiety, and ADHD."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer services for children and teenagers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we have specialized child and adolescent therapists on staff. We offer play therapy for younger children and cognitive behavioral approaches tailored specifically for teens navigating school, peer, and family challenges."
-            }
-          }
-        ]
-      }
-    ]
-  };
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" }
+  ];
+
+  const faqs = [
+    {
+      question: "What mental health services do you offer in Darby, PA?",
+      answer: "We provide individual therapy, couples counseling, family therapy, child therapy, psychiatric evaluations, and medication management at our Darby clinic."
+    },
+    {
+      question: "Do you accept Medicaid for therapy services?",
+      answer: "Yes, Sunrise Human Care Services is a Medicaid-only provider, ensuring accessible care for our community."
+    },
+    {
+      question: "How long is the waitlist for new patients?",
+      answer: "We currently have no waitlist and typically respond to all inquiries within 24 hours."
+    }
+  ];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <SchemaMarkup type="FAQPage" data={faqs} />
+      <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />
       <ServicesClient />
     </>
   );

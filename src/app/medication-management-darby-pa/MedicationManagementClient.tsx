@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  Brain, ClipboardCheck, MessageCircle, Activity, Phone, Calendar, ArrowRight, CheckCircle2, ChevronDown, Shield, Pill, Stethoscope, Clock
+  Phone, ArrowRight, CheckCircle2, 
+  ChevronDown, Calendar, Users
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -176,23 +177,19 @@ export default function MedicationManagementClient() {
                   transition={{ duration: 0.8 }}
                   className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
                 >
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Pill className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Tailored Prescriptions</h3>
                     <p className="font-barlow text-stone-500 text-sm">Medications selected based on your unique biology, history, and symptoms.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Shield className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Safe Monitoring</h3>
                     <p className="font-barlow text-stone-500 text-sm">Rigorous tracking of side effects, dosage effectiveness, and interactions.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Brain className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Holistic Integration</h3>
                     <p className="font-barlow text-stone-500 text-sm">Coordinating medication plans with your therapy for maximum benefit.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Clock className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Flexible Care</h3>
                     <p className="font-barlow text-stone-500 text-sm">Easy refill processes and accessible scheduling for your convenience.</p>
                   </Card>
@@ -226,32 +223,26 @@ export default function MedicationManagementClient() {
                   {
                     title: "Depression",
                     desc: "Management of SSRIs, SNRIs, and atypical antidepressants to alleviate persistent sadness and lethargy.",
-                    icon: <Brain className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Anxiety Disorders",
                     desc: "Careful prescription of anti-anxiety medications to reduce panic, generalized worry, and social phobia.",
-                    icon: <Activity className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "ADHD",
                     desc: "Stimulant and non-stimulant medication options to enhance focus, organization, and executive function.",
-                    icon: <Pill className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Bipolar Disorder",
                     desc: "Mood stabilizers and antipsychotics closely monitored to prevent manic and depressive episodes.",
-                    icon: <Activity className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Sleep Disorders",
                     desc: "Medications to help establish healthy sleep patterns and combat chronic insomnia.",
-                    icon: <Clock className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Schizophrenia",
                     desc: "Long-term management of antipsychotic medications to maintain stability and prevent psychosis.",
-                    icon: <Shield className="w-6 h-6 text-orange-500" />
                   }
                 ].map((item, i) => (
                   <motion.div 
@@ -261,10 +252,7 @@ export default function MedicationManagementClient() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <Card className="h-full bg-stone-50/50">
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-stone-100 flex items-center justify-center mb-6">
-                        {item.icon}
-                      </div>
+                    <Card className="h-full bg-stone-50/50 flex flex-col items-center text-center p-8">
                       <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">{item.title}</h3>
                       <p className="font-barlow text-stone-600 text-sm leading-relaxed">{item.desc}</p>
                     </Card>
@@ -409,13 +397,13 @@ export default function MedicationManagementClient() {
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
               <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli" />
+                <meta itemProp="name" content="Holli O'Donnell" />
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
               <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
               <p>
-                This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>

@@ -295,23 +295,19 @@ export default function IndividualTherapyClient() {
                   transition={{ duration: 0.8 }}
                   className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
                 >
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Shield className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Safe & Confidential</h3>
                     <p className="font-barlow text-stone-500 text-sm">Your privacy is our utmost priority. We provide a secure environment where you can speak openly without fear of judgment.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Users className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Licensed Experts</h3>
                     <p className="font-barlow text-stone-500 text-sm">Work with highly trained, compassionate therapists in Delaware County who specialize in various therapeutic modalities.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Brain className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Evidence-Based</h3>
                     <p className="font-barlow text-stone-500 text-sm">We utilize scientifically proven methods like CBT and DBT to ensure effective, measurable progress in your mental health journey.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Heart className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Personalized Care</h3>
                     <p className="font-barlow text-stone-500 text-sm">Your treatment plan is tailored specifically to your unique background, challenges, and personal goals for therapy.</p>
                   </Card>
@@ -345,32 +341,26 @@ export default function IndividualTherapyClient() {
                   {
                     title: "Anxiety Disorders",
                     desc: "Anxiety therapy in Darby focuses on identifying triggers and developing coping strategies for generalized anxiety, social anxiety, panic attacks, and phobias. We help you regain control over racing thoughts.",
-                    icon: <Sparkles className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Depression & Mood",
                     desc: "Our depression treatment in Darby utilizes proven methods to address persistent sadness, lack of motivation, and feelings of hopelessness, helping you rediscover joy and purpose in your daily life.",
-                    icon: <Brain className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Trauma & PTSD",
                     desc: "We offer trauma-informed care to help individuals process and heal from past traumatic experiences, reducing the impact of distressing memories and post-traumatic stress symptoms.",
-                    icon: <Shield className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Stress & Burnout",
                     desc: "Whether stemming from career pressures, caregiving, or daily life, our personal counseling in PA equips you with stress management techniques to restore your energy and work-life balance.",
-                    icon: <Heart className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Life Transitions",
                     desc: "Navigating major life changes such as divorce, career shifts, relocation, or loss can be overwhelming. Individual therapy provides an anchor and guidance during these uncertain times.",
-                    icon: <Clock className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Self-Esteem & Growth",
                     desc: "Therapy isn't just for crisis management. We assist clients in exploring their identity, building self-worth, improving relationships, and achieving profound personal growth.",
-                    icon: <Star className="w-6 h-6 text-orange-500" />
                   }
                 ].map((item, i) => (
                   <motion.div 
@@ -380,10 +370,7 @@ export default function IndividualTherapyClient() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <Card className="h-full bg-stone-50/50">
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-stone-100 flex items-center justify-center mb-6">
-                        {item.icon}
-                      </div>
+                    <Card className="h-full bg-stone-50/50 flex flex-col items-center text-center p-8">
                       <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">{item.title}</h3>
                       <p className="font-barlow text-stone-600 text-sm leading-relaxed">{item.desc}</p>
                     </Card>
@@ -588,13 +575,13 @@ export default function IndividualTherapyClient() {
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
               <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli" />
+                <meta itemProp="name" content="Holli O'Donnell" />
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
               <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
               <p>
-                This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>

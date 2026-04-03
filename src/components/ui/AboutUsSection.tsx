@@ -97,9 +97,7 @@ const AboutUsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="flex flex-col items-center gap-4">
-            <SectionTag>
-                Our Story & Mission
-            </SectionTag>
+            <SectionTag>Our Story</SectionTag>
             <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                 Compassionate support for your <br />
                 <span className="font-instrument-serif italic text-orange-500">mental wellness journey.</span>
@@ -131,7 +129,7 @@ const AboutUsSection = () => {
             <div className="w-full md:w-1/2 relative aspect-square md:aspect-auto md:h-full min-h-[300px] rounded-3xl overflow-hidden shadow-xl group/img">
               <Image 
                 src="/images/holly.jpg"
-                alt="Holli O'Donnell - Clinical Director"
+                alt="Holli O'Donnell - Clinical Director at Sunrise Human Care Services in Darby, PA"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -177,7 +175,7 @@ const AboutUsSection = () => {
             <div className={cn(iconContainerStyles, "mb-6")}>
               <Leaf className="h-5 w-5 text-orange-500" />
             </div>
-            <div className="text-5xl font-black text-stone-900 tracking-tighter mb-2">Total</div>
+            <div className="text-5xl font-black text-stone-900 tracking-tighter mb-2">Holistic</div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400">
                 Wellness Approach
             </p>

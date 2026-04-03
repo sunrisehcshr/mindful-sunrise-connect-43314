@@ -30,12 +30,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ service, index }) => {
       transition={{ duration: 0.5, delay: index * 0.08 }} 
       className="group bg-white border border-stone-200/80 rounded-2xl p-7 hover:shadow-lg hover:border-amber-200 transition-all duration-300 flex flex-col h-full"
     >
-      {/* Icon */}
-      <div className="flex items-center justify-center w-12 h-12 rounded-xl mb-5 bg-slate-800 text-yellow-300">
-        {service.icon}
-      </div>
-
-      <h3 className="text-lg font-barlow font-semibold text-stone-800 mb-3">{service.title}</h3>
+      <h3 className="text-lg font-barlow font-semibold text-stone-800 mb-3 group-hover:text-orange-500 transition-colors">{service.title}</h3>
       
       <p className="text-stone-500 text-sm font-barlow flex-grow mb-5 leading-relaxed">
         {service.description}

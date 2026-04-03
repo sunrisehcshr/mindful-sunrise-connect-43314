@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  Brain, Heart, Shield, Phone, ArrowRight, CheckCircle2, 
-  ChevronDown, Calendar, Users, MessageCircle, Home,
-  Lightbulb, Sparkles, Smile, Activity
+  Phone, ArrowRight, CheckCircle2, 
+  ChevronDown, Calendar, Users
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -178,23 +177,19 @@ export default function ChildTherapyClient() {
                   transition={{ duration: 0.8 }}
                   className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
                 >
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Smile className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Age-Appropriate</h3>
                     <p className="font-barlow text-stone-500 text-sm">Therapeutic approaches tailored specifically for children and teenagers.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Brain className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Coping Skills</h3>
                     <p className="font-barlow text-stone-500 text-sm">Development of healthy emotional regulation and problem-solving abilities.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Users className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Parent Collaboration</h3>
                     <p className="font-barlow text-stone-500 text-sm">Working together with parents and caregivers to ensure consistent support at home.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Shield className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Safe Environment</h3>
                     <p className="font-barlow text-stone-500 text-sm">A welcoming, non-judgmental space for honest expression and healing.</p>
                   </Card>
@@ -228,32 +223,26 @@ export default function ChildTherapyClient() {
                   {
                     title: "Anxiety & Worries",
                     desc: "Helping children manage school-related anxiety, social phobias, and generalized worry with effective coping mechanisms.",
-                    icon: <Brain className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Behavioral Issues",
                     desc: "Addressing acting out, defiance, and school behavior problems by exploring root causes and building self-regulation skills.",
-                    icon: <Activity className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Life Transitions",
                     desc: "Supporting youth through family changes like divorce, moving, or changing schools to ensure they adapt healthily.",
-                    icon: <Home className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "ADHD & Focus",
                     desc: "Providing strategies for children with ADHD to improve focus, organization, and impulse control in both school and home environments.",
-                    icon: <Sparkles className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Self-Esteem Issues",
                     desc: "Building confidence and a positive self-image for teens struggling with peer pressure and identity development.",
-                    icon: <Heart className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Communication Challenges",
                     desc: "Improving how children and teens express their feelings and needs to parents, teachers, and peers.",
-                    icon: <MessageCircle className="w-6 h-6 text-orange-500" />
                   }
                 ].map((item, i) => (
                   <motion.div 
@@ -263,10 +252,7 @@ export default function ChildTherapyClient() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <Card className="h-full bg-stone-50/50">
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-stone-100 flex items-center justify-center mb-6">
-                        {item.icon}
-                      </div>
+                    <Card className="h-full bg-stone-50/50 flex flex-col items-center text-center p-8">
                       <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">{item.title}</h3>
                       <p className="font-barlow text-stone-600 text-sm leading-relaxed">{item.desc}</p>
                     </Card>
@@ -415,13 +401,13 @@ export default function ChildTherapyClient() {
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
               <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli" />
+                <meta itemProp="name" content="Holli O'Donnell" />
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
               <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
               <p>
-                This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>

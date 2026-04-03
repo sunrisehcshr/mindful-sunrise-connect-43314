@@ -157,7 +157,6 @@ const WhyChooseUsSection = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6 }}
                                 >
-                                    <ClinicStatus />
                                     <div className="flex flex-col mt-1">
                                         <span className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 text-transparent bg-clip-text tracking-tight">
                                             Sunrise
@@ -165,6 +164,9 @@ const WhyChooseUsSection = () => {
                                         <div className="flex items-center gap-2">
                                             <span className="text-sm md:text-base font-instrument-serif italic text-stone-400">Human Care Services</span>
                                             <div className="h-px w-8 bg-stone-200" />
+                                        </div>
+                                        <div className="mt-2">
+                                            <ClinicStatus showBadge={true} />
                                         </div>
                                     </div>
                                 </motion.div>
@@ -217,7 +219,7 @@ const WhyChooseUsSection = () => {
                                     <HeartPulse className="h-5 w-5 text-amber-500" />
                                 </div>
                                 <div className="px-3 py-1 rounded-full bg-stone-50 border border-stone-100 text-[10px] uppercase tracking-widest text-stone-400 font-bold">
-                                    Why Darby Families Trust Us
+                                    Why Sunrise?
                                 </div>
                             </div>
 

@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  Brain, ClipboardCheck, MessageCircle, Activity, Phone, Calendar, ArrowRight, CheckCircle2, ChevronDown, CheckSquare, Stethoscope, Search
+  Phone, Calendar, ArrowRight, CheckCircle2, ChevronDown
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -176,23 +176,19 @@ export default function PsychiatricEvaluationsClient() {
                   transition={{ duration: 0.8 }}
                   className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
                 >
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <CheckSquare className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Accurate Diagnosis</h3>
                     <p className="font-barlow text-stone-500 text-sm">Identifying the exact root causes of symptoms to tailor treatment plans.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Stethoscope className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Medical Insight</h3>
                     <p className="font-barlow text-stone-500 text-sm">Evaluating physical and biological factors affecting mental health.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <ClipboardCheck className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Evidence-Based</h3>
                     <p className="font-barlow text-stone-500 text-sm">Using standardized assessment tools and proven clinical methods.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Activity className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Progress Tracking</h3>
                     <p className="font-barlow text-stone-500 text-sm">Establishing baselines to monitor the effectiveness of future treatments.</p>
                   </Card>
@@ -226,32 +222,26 @@ export default function PsychiatricEvaluationsClient() {
                   {
                     title: "Mood Disorders",
                     desc: "Assessing symptoms related to Depression, Bipolar Disorder, and emotional dysregulation.",
-                    icon: <Brain className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Anxiety Disorders",
                     desc: "Evaluating Generalized Anxiety, Panic Disorder, PTSD, and Obsessive-Compulsive symptoms.",
-                    icon: <Activity className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Attention & Focus",
                     desc: "Detailed screening for ADHD and other cognitive or executive functioning challenges.",
-                    icon: <Search className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Trauma History",
                     desc: "Understanding past experiences and how they currently impact your psychological state.",
-                    icon: <ClipboardCheck className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Substance Use",
                     desc: "Screening for dependencies or substance use that may be complicating mental health.",
-                    icon: <Stethoscope className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Social Dynamics",
                     desc: "Reviewing family history, relationships, and environmental stressors.",
-                    icon: <MessageCircle className="w-6 h-6 text-orange-500" />
                   }
                 ].map((item, i) => (
                   <motion.div 
@@ -261,10 +251,7 @@ export default function PsychiatricEvaluationsClient() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <Card className="h-full bg-stone-50/50">
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-stone-100 flex items-center justify-center mb-6">
-                        {item.icon}
-                      </div>
+                    <Card className="h-full bg-stone-50/50 flex flex-col items-center text-center p-8">
                       <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">{item.title}</h3>
                       <p className="font-barlow text-stone-600 text-sm leading-relaxed">{item.desc}</p>
                     </Card>
@@ -410,16 +397,17 @@ export default function PsychiatricEvaluationsClient() {
           </section>
 
           {/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}
+          {/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
               <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli" />
+                <meta itemProp="name" content="Holli O'Donnell" />
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
               <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
               <p>
-                This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>

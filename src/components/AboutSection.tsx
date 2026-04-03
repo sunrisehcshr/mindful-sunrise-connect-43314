@@ -1,15 +1,18 @@
 
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionTag from './ui/section-tag';
 import { HeartHandshake } from 'lucide-react';
+import CurveTransition from './ui/CurveTransition';
 
 const AboutSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
   return (
-    <section id="about" className="py-16 md:py-24 relative overflow-hidden bg-stone-50">
+    <section id="about" ref={sectionRef} className="py-16 md:py-24 relative overflow-hidden bg-stone-50">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
         {/* Header Section */}
@@ -46,16 +49,16 @@ const AboutSection = () => {
             <div className="lg:col-span-5 h-[400px] lg:h-auto">
               <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.02)] border border-stone-200/60 group">
                 <Image 
-                  src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg" 
-                  alt="Mental health care for older adults at Sunrise Human Care Services in Darby" 
+                  src="/images/IMG_4244.jpeg" 
+                  alt="Sunrise Human Care Services storefront in Darby, PA" 
                   fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-stone-900/0 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/20 shadow-lg inline-block">
-                     <p className="text-stone-900 font-bold font-barlow text-sm">Founded in 2018</p>
-                     <p className="text-orange-500 text-[10px] uppercase tracking-widest font-bold mt-0.5">Darby, PA</p>
+                     <p className="text-stone-900 font-bold font-barlow text-sm">Now in Darby, PA</p>
+                     <p className="text-orange-500 text-[10px] uppercase tracking-widest font-bold mt-0.5">Community Care</p>
                   </div>
                 </div>
               </div>
@@ -130,6 +133,9 @@ const AboutSection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Curved Transition into the next section (AboutValues which is stone-50) */}
+      <CurveTransition fillColor="#f8f8f7" inverted className="z-20" targetRef={sectionRef as any} />
     </section>
   );
 };

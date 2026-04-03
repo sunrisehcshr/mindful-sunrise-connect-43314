@@ -212,9 +212,8 @@ const ServicePageLayout = ({
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                       >
-                        <Card className="h-full flex items-start gap-4">
-                          <CheckCircle2 className="h-6 w-6 text-orange-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-stone-700 font-barlow font-medium leading-relaxed">{benefit}</span>
+                        <Card className="h-full flex items-center p-8">
+                          <span className="text-stone-700 font-barlow font-medium leading-relaxed text-center w-full">{benefit}</span>
                         </Card>
                       </motion.div>
                     ))}
@@ -256,14 +255,11 @@ const ServicePageLayout = ({
                       viewport={{ once: true }}
                     >
                       {approaches.map((approach, index) => (
-                        <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors">
-                          <div className="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center mb-4 text-orange-400">
-                            {approach.icon || <CheckCircle2 className="w-6 h-6" />}
-                          </div>
-                          <h4 className="font-barlow font-bold text-xl text-white mb-2">
+                        <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[2rem] hover:bg-white/10 transition-colors flex flex-col items-center text-center">
+                          <h4 className="font-barlow font-bold text-2xl text-white mb-3">
                             {approach.title}
                           </h4>
-                          <p className="font-barlow text-stone-400 text-sm leading-relaxed">
+                          <p className="font-barlow text-stone-400 text-base leading-relaxed">
                             {approach.description}
                           </p>
                         </div>
@@ -385,13 +381,13 @@ const ServicePageLayout = ({
             <section className="sr-only">
               <div itemScope itemType="https://schema.org/WebPage">
                 <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                  <meta itemProp="name" content="Holli" />
+                  <meta itemProp="name" content="Holli O'Donnell" />
                   <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                   <link itemProp="image" href="https://res.cloudinary.com/dabsxebx8/image/upload/v1774574164/holli_d6mwnh.jpg" />
                 </div>
                 <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
                 <p>
-                  This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                  This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
                 </p>
               </div>
             </section>

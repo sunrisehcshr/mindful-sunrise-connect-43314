@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  Brain, Heart, Shield, Phone, ArrowRight, CheckCircle2, 
-  ChevronDown, Calendar, Users, MessageCircle, Home,
-  Baby, Workflow
+  Heart, Phone, ArrowRight, CheckCircle2, 
+  ChevronDown, Calendar, Users
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -170,23 +169,19 @@ export default function FamilyTherapyClient() {
                   transition={{ duration: 0.8 }}
                   className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
                 >
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Shield className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Neutral & Safe</h3>
                     <p className="font-barlow text-stone-500 text-sm">Our therapists never take sides, ensuring every family member feels validated and secure.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <MessageCircle className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Open Dialogue</h3>
                     <p className="font-barlow text-stone-500 text-sm">Learn to communicate effectively without escalating into anger or shutting down.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Home className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">Systemic Healing</h3>
                     <p className="font-barlow text-stone-500 text-sm">We address the root causes of dysfunction to heal the entire family unit, not just the symptoms.</p>
                   </Card>
-                  <Card className="flex flex-col h-full bg-white/60">
-                    <Users className="w-10 h-10 text-orange-500 mb-4" />
+                  <Card className="flex flex-col items-center text-center h-full bg-white/60 p-8">
                     <h3 className="font-barlow font-bold text-xl text-stone-900 mb-2">All Ages Welcome</h3>
                     <p className="font-barlow text-stone-500 text-sm">We adapt our therapeutic approach to accommodate children, teens, and adults in the same room.</p>
                   </Card>
@@ -220,32 +215,26 @@ export default function FamilyTherapyClient() {
                   {
                     title: "Parent-Child Conflict",
                     desc: "Bridging the gap between generations. We help parents and children (or teens) understand each other's perspectives and establish respectful boundaries.",
-                    icon: <Baby className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Blended Family Issues",
                     desc: "Navigating the complexities of step-parenting and step-siblings. We provide strategies to foster unity and ease the transition into a new family structure.",
-                    icon: <Workflow className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Grief and Loss",
                     desc: "Supporting the family through the devastating loss of a loved one. We create a space for collective mourning while honoring individual grieving processes.",
-                    icon: <Heart className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Behavioral Problems",
                     desc: "Addressing acting out, school issues, or defiance in children. We explore the systemic root causes and develop consistent parenting strategies.",
-                    icon: <Brain className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Major Life Transitions",
                     desc: "Helping families adapt to divorce, relocation, chronic illness, or financial stress without the household falling apart.",
-                    icon: <Home className="w-6 h-6 text-orange-500" />
                   },
                   {
                     title: "Communication Breakdown",
                     desc: "Breaking cycles of yelling, silent treatment, or misunderstanding. We teach active listening and emotional regulation for the whole family.",
-                    icon: <MessageCircle className="w-6 h-6 text-orange-500" />
                   }
                 ].map((item, i) => (
                   <motion.div 
@@ -255,10 +244,7 @@ export default function FamilyTherapyClient() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <Card className="h-full bg-stone-50/50">
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-stone-100 flex items-center justify-center mb-6">
-                        {item.icon}
-                      </div>
+                    <Card className="h-full bg-stone-50/50 flex flex-col items-center text-center p-8">
                       <h3 className="font-barlow font-bold text-xl text-stone-900 mb-3">{item.title}</h3>
                       <p className="font-barlow text-stone-600 text-sm leading-relaxed">{item.desc}</p>
                     </Card>
@@ -407,13 +393,13 @@ export default function FamilyTherapyClient() {
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
               <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli" />
+                <meta itemProp="name" content="Holli O'Donnell" />
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
               <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
               <p>
-                This content was clinically reviewed by Holli, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>
