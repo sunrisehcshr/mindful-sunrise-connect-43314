@@ -8,11 +8,10 @@ import AppointmentForm from './AppointmentForm';
 import ContactInfo from './ContactInfo';
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
+  hidden: { opacity: 0, y: 12 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    filter: "blur(0px)",
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }
   }
 };

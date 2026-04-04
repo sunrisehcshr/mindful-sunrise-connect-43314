@@ -106,11 +106,10 @@ const containerVariants = {
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+    hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
         transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
     }
 };
@@ -323,9 +322,9 @@ const WhyChooseUsSection = () => {
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.96 }}
-                                        className="mt-6 md:mt-8 rounded-full bg-stone-900 px-8 md:px-10 py-3 md:py-3.5 text-xs md:text-sm font-bold text-white shadow-2xl shadow-stone-300 transition-all hover:bg-amber-600 hover:shadow-amber-200"
+                                        className="mt-6 md:mt-8 rounded-full bg-orange-500 px-8 md:px-10 py-3 md:py-3.5 text-xs md:text-sm font-bold text-stone-950 shadow-2xl shadow-orange-500/20 transition-all hover:bg-orange-400"
                                     >
-                                        Schedule Your Consultation
+                                        Start Today
                                     </motion.button>
                                 </Link>
                             </div>

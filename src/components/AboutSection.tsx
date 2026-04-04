@@ -52,6 +52,7 @@ const AboutSection = () => {
                   src="/images/IMG_4244.jpeg" 
                   alt="Sunrise Human Care Services storefront in Darby, PA" 
                   fill 
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-stone-900/0 to-transparent" />

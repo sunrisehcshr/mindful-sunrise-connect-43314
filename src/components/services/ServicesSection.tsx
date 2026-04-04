@@ -27,11 +27,10 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { y: 16, opacity: 0, filter: "blur(4px)" },
+  hidden: { y: 16, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.8,
       ease: [0.22, 1, 0.36, 1] as any
@@ -80,14 +79,14 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                     {item.image && (
                         <motion.div
                             variants={{ 
-                                initial: { opacity: 0, scale: 0.95, x: "-50%", y: "-50%", filter: "blur(8px)" }, 
-                                hover: { opacity: 1, scale: 1, x: "-50%", y: "-50%", filter: "blur(0px)" } 
+                                initial: { opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }, 
+                                hover: { opacity: 1, scale: 1, x: "-50%", y: "-50%" } 
                             }}
                             transition={{ type: "spring", duration: 0.4, bounce: 0 }}
                             className="absolute top-1/2 left-1/2 w-[200px] h-[140px] md:w-[400px] md:h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 will-change-transform"
                         >
                             <Image
-                              src={typeof item.image === 'string' ? item.image : item.image.src}
+                              src={typeof item.image === 'string' ? (item.image.includes('cloudinary') ? item.image.replace('/upload/', '/upload/f_auto,q_auto,w_800/') : item.image) : item.image.src}
                               alt={`${item.title} services at Sunrise Human Care Services in Darby, PA`}
                               fill
                               sizes="(max-width: 768px) 200px, 400px"
@@ -113,33 +112,33 @@ const ServicesSection: React.FC = () => {
   const services: FeatureItem[] = [
     {
       title: "Individual Therapy",
-      link: "/individual-therapy-darby-pa#home",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg",
+      link: "/individual-therapy-darby-pa",
+      desc: "One-on-one sessions focused on personal growth, emotional healing, and developing practical coping strategies for life's challenges.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/young-woman-with-her-psychologist-during-a-therapy-2025-11-20-15-46-12-utc_d2c80h.jpg",
     },
     {
       title: "Couples Counseling",
-      link: "/couples-counseling-darby-pa#home",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg",
+      link: "/couples-counseling-darby-pa",
+      desc: "Strengthening relationships through improved communication, conflict resolution, and rebuilding trust in a supportive environment.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg",
     },
     {
       title: "Family Therapy",
-      link: "/family-therapy-darby-pa#home",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918387/family-counseling-talk-from-home-parents-listen-t-2026-03-25-02-29-59-utc_a9m3eu.jpg",
-    },
-    {
-      title: "Child & Adolescent Therapy",
-      link: "/child-therapy-darby-pa#home",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg",
+      link: "/family-therapy-darby-pa",
+      desc: "Nurturing family dynamics and fostering healthy connections by addressing collective challenges and improving understanding.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg",
     },
     {
       title: "Psychiatric Evaluations",
-      link: "/psychiatric-evaluations-darby-pa#home",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg",
+      link: "/psychiatric-evaluations-darby-pa",
+      desc: "Comprehensive diagnostic assessments to understand your mental health needs and determine the best course of treatment.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg",
     },
     {
       title: "Medication Management",
-      link: "/medication-management-darby-pa#home",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg",
+      link: "/medication-management-darby-pa",
+      desc: "Professional oversight and monitoring of psychiatric medications to ensure optimal effectiveness and safety in your recovery.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg",
     },
   ];
 

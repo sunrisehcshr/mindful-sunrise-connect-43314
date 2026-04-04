@@ -130,11 +130,12 @@ const ServicePageLayout = ({
           <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
             <div className="absolute inset-0 z-0">
               <Image 
-                src={heroImage.includes('cloudinary') && !heroImage.includes('f_auto') ? heroImage.replace('/upload/', '/upload/f_auto,q_auto/') : heroImage} 
+                src={heroImage.includes('cloudinary') && !heroImage.includes('f_auto') ? heroImage.replace('/upload/', '/upload/f_auto,q_auto,w_1600/') : heroImage} 
                 alt={`${title} in Darby PA`} 
                 fill 
                 className="object-cover opacity-60"
                 priority
+                sizes="100vw"
               />
               <div className="absolute inset-0 z-0 bg-black/30" />
               <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
@@ -160,7 +161,7 @@ const ServicePageLayout = ({
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="#appointment">
-                    <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                    <button className="bg-orange-500 hover:bg-orange-400 text-stone-950 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
                       <Calendar className="w-5 h-5" />
                       Book an Appointment
                     </button>

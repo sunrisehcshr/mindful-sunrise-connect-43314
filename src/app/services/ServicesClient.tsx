@@ -67,38 +67,32 @@ export default function ServicesClient() {
     {
       title: "Individual Therapy",
       link: "/individual-therapy-darby-pa",
-      desc: "One-on-one sessions tailored to help you navigate anxiety, depression, trauma, and personal growth in a safe environment.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg"
+      desc: "One-on-one sessions focused on personal growth, emotional healing, and developing practical coping strategies for life's challenges.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/young-woman-with-her-psychologist-during-a-therapy-2025-11-20-15-46-12-utc_d2c80h.jpg"
     },
     {
       title: "Couples Counseling",
       link: "/couples-counseling-darby-pa",
-      desc: "Expert guidance to help partners improve communication, resolve conflicts, and rebuild emotional and physical intimacy.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
+      desc: "Strengthening relationships through improved communication, conflict resolution, and rebuilding trust in a supportive environment.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
     },
     {
       title: "Family Therapy",
       link: "/family-therapy-darby-pa",
-      desc: "Collaborative sessions designed to strengthen family bonds, improve household dynamics, and support collective healing.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918387/family-counseling-talk-from-home-parents-listen-t-2026-03-25-02-29-59-utc_a9m3eu.jpg"
-    },
-    {
-      title: "Child & Teen Therapy",
-      link: "/child-therapy-darby-pa",
-      desc: "Age-appropriate therapeutic approaches including play therapy and CBT to help youth manage behavioral and emotional challenges.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg"
+      desc: "Nurturing family dynamics and fostering healthy connections by addressing collective challenges and improving understanding.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg"
     },
     {
       title: "Psychiatric Evaluations",
       link: "/psychiatric-evaluations-darby-pa",
       desc: "Comprehensive diagnostic assessments by our clinical team to provide clarity and establish an effective treatment roadmap.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg"
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg"
     },
     {
       title: "Medication Management",
       link: "/medication-management-darby-pa",
       desc: "Ongoing psychiatric care and prescription monitoring to ensure your medications are safe, effective, and properly balanced.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg"
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg"
     }
   ];
 
@@ -111,11 +105,12 @@ export default function ServicesClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg" 
-              alt="Mental Health Services in Darby PA" 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
+              alt="Expert Mental Health Services in Darby, PA" 
               fill 
-              className="object-cover opacity-40"
+              className="object-cover opacity-60"
               priority
+              sizes="100vw"
             />
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/80 via-stone-950/40 to-stone-50" />
           </div>

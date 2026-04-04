@@ -119,7 +119,7 @@ export default function MedicationManagementClient() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="#appointment">
-                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-950 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
                     <Calendar className="w-5 h-5" />
                     Book an Appointment
                   </button>

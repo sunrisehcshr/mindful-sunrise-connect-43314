@@ -14,6 +14,7 @@ const AboutHero = () => {
           fill 
           className="object-cover opacity-60"
           priority
+          sizes="100vw"
         />
         {/* Soft overlay gradient mimicking the brand warmth */}
         <div className="absolute inset-0 z-0 bg-black/50" />

@@ -46,6 +46,7 @@ export default function ParallaxBanner() {
               src="/images/parallax-bg.png"
               style={{ objectFit: "cover" }}
               priority
+              sizes="100vw"
             />
             {/* Subtle neutral gradient overlay to make text pop */}
             <div className="absolute inset-0 bg-gradient-to-b from-stone-950/40 via-black/20 to-stone-950/40" />

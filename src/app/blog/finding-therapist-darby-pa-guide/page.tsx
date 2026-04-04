@@ -195,7 +195,7 @@ export default function FindingTherapistDarbyPage() {
                       Our compassionate team in Darby is ready to support you with expert care tailored to your specific needs.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                      <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-10 h-14 font-bold text-base shadow-xl shadow-orange-900/20 w-full sm:w-auto">
+                      <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-stone-950 rounded-full px-10 h-14 font-bold text-base shadow-xl shadow-orange-900/20 w-full sm:w-auto">
                         <Link href="/appointment">Book Your Session</Link>
                       </Button>
                       <Button asChild size="lg" variant="outline" className="border-white/20 hover:bg-white/10 text-white rounded-full px-10 h-14 font-bold text-base w-full sm:w-auto">

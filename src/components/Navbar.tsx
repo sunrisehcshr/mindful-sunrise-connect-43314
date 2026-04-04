@@ -275,9 +275,9 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20, filter: "blur(4px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="md:hidden fixed inset-x-0 top-[80px] mx-[2.5%] bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-stone-100 z-40 max-h-[calc(100vh-96px)] overflow-hidden"
           >

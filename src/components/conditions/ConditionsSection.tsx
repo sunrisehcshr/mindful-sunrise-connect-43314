@@ -77,11 +77,10 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { y: 12, opacity: 0, filter: "blur(4px)" },
+  hidden: { y: 12, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.6,
       ease: [0.22, 1, 0.36, 1] as any
@@ -263,7 +262,7 @@ const ConditionsSection = () => {
                       {condition.short}
                     </p>
                     
-                    <div className="mt-auto pt-4 border-t border-stone-50 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-stone-400 group-hover/card:text-orange-500 transition-colors">
+                    <div className="mt-auto pt-4 border-t border-stone-50 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-orange-600 transition-colors">
                       Learn More <ArrowUpRight className="w-3 h-3" />
                     </div>
                   </div>

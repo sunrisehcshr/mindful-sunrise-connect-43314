@@ -60,11 +60,10 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { y: 12, opacity: 0, filter: "blur(4px)" },
+  hidden: { y: 12, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.6,
       ease: [0.22, 1, 0.36, 1] as any
@@ -100,8 +99,8 @@ export default function TeamSection() {
 
         {/* Horizontal Scroll System */}
         <motion.div 
-          initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative w-full py-4"

@@ -296,7 +296,7 @@ const AppointmentForm = () => {
               type="submit"
               disabled={isSubmitting}
               className={cn(
-                "w-full group relative overflow-hidden bg-orange-600 hover:bg-orange-700 text-white font-barlow font-bold rounded-2xl py-4 transition-all duration-300 shadow-lg shadow-orange-600/20 disabled:opacity-70 disabled:cursor-not-allowed",
+                "w-full group relative overflow-hidden bg-orange-500 hover:bg-orange-600 text-stone-950 font-barlow font-bold rounded-2xl py-8 transition-all duration-300 shadow-xl shadow-orange-500/20 disabled:opacity-70 disabled:cursor-not-allowed",
                 isSubmitting && "animate-pulse"
               )}
             >

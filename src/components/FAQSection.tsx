@@ -123,8 +123,7 @@ const FAQItem = ({
             initial={false}
             animate={{ 
               scale: isOpen ? 1 : 0.25,
-              opacity: isOpen ? 1 : 0,
-              filter: isOpen ? "blur(0px)" : "blur(4px)"
+              opacity: isOpen ? 1 : 0
             }}
             transition={{ type: "spring", duration: 0.3, bounce: 0 }}
             className="absolute inset-0 rounded-full bg-orange-500 border border-orange-400"
@@ -290,8 +289,8 @@ const FAQSection = () => {
           </motion.ul>
 
           <motion.div 
-            initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12"

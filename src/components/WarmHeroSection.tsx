@@ -18,6 +18,7 @@ const WarmHeroSection = () => {
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [videoKey, setVideoKey] = useState(0);
   
   const { scrollY } = useScroll();
   
@@ -60,6 +61,7 @@ const WarmHeroSection = () => {
         if (newCount >= MAX_LOOPS) {
           setShowFallback(true);
         } else {
+          setVideoKey(k => k + 1);
           video.play().catch(() => {});
         }
         return newCount;
@@ -135,21 +137,21 @@ const WarmHeroSection = () => {
         style={{ willChange: "transform, opacity", backfaceVisibility: "hidden", transform: "translateZ(0)" }}
       >
         <video
-          ref={videoRef}
+          key={videoKey}
           autoPlay
           muted
           loop
           playsInline
-          preload={shouldLoadVideo ? "auto" : "none"}
+          preload="auto"
           disablePictureInPicture
           controlsList="nodownload nofullscreen noremoteplayback"
-          poster="https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
+          poster="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1200/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
           className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-center pointer-events-none transition-opacity duration-1000"
           style={{ opacity: 1 }}
-          title="Happy family at the beach - Sunrise Human Care Services"
+          title="Expert mental health care - Sunrise Human Care Services"
         >
           {shouldLoadVideo && (
-            <source src="https://res.cloudinary.com/dabsxebx8/video/upload/q_80,f_auto/v1774833967/happy-funny-and-sunset-with-big-family-at-beach-f-2025-12-17-13-03-02-utc_i9s1nu.mov" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dabsxebx8/video/upload/q_auto,f_auto/v1774833967/happy-funny-and-sunset-with-big-family-at-beach-f-2025-12-17-13-03-02-utc_i9s1nu.mp4" type="video/mp4" />
           )}
         </video>
 
@@ -184,7 +186,7 @@ const WarmHeroSection = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto py-12 px-6 md:py-16 md:px-12 rounded-[3rem] bg-black/25 md:bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden"
+          className="max-w-5xl mx-auto py-12 px-6 md:py-16 md:px-12 rounded-[3rem] bg-black/15 backdrop-blur-xl border border-white/10 shadow-2xl md:bg-transparent md:backdrop-blur-0 md:border-none md:shadow-none relative overflow-hidden"
           variants={{
             hidden: { opacity: 0 },
             visible: { 
@@ -195,15 +197,14 @@ const WarmHeroSection = () => {
         >
           <motion.div
             variants={{
-              hidden: { opacity: 0, scale: 0.9, filter: "blur(4px)", y: 12 },
-              visible: { 
-                opacity: 1, 
-                scale: 1, 
-                filter: "blur(0px)", 
-                y: 0,
-                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-              }
-            }}
+            hidden: { opacity: 0, scale: 0.9, y: 12 },
+            visible: { 
+              opacity: 1, 
+              scale: 1, 
+              y: 0,
+              transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+            }
+          }}
             className="flex flex-col items-center gap-1 sm:gap-2 mb-6 sm:mb-8"
           >
             <div className="inline-block bg-black/20 backdrop-blur-md border border-white/10 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none shadow-sm">
@@ -226,14 +227,13 @@ const WarmHeroSection = () => {
           </motion.div>
 
           <motion.h1
-            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 text-white leading-[1.2] tracking-tight drop-shadow-sm"
+            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-4 md:mb-6 leading-[1.1] tracking-tight drop-shadow-xl"
             variants={{
-              hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
+              hidden: { opacity: 0, y: 12 },
               visible: { 
                 opacity: 1, 
                 y: 0, 
-                filter: "blur(0px)",
-                transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as any }
+                transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
               }
             }}
           >
@@ -244,11 +244,10 @@ const WarmHeroSection = () => {
           <motion.p
             className="text-sm sm:text-base md:text-lg text-white mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed font-barlow drop-shadow-md"
             variants={{
-              hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
+              hidden: { opacity: 0, y: 12 },
               visible: { 
                 opacity: 1, 
                 y: 0, 
-                filter: "blur(0px)",
                 transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
               }
             }}
@@ -259,15 +258,14 @@ const WarmHeroSection = () => {
           <motion.div
             className="flex flex-col sm:flex-row gap-3 justify-center"
             variants={{
-              hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
+              hidden: { opacity: 0, y: 12 },
               visible: {
                 opacity: 1,
                 y: 0,
-                filter: "blur(0px)",
                 transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
               }
-            }}
-          >
+            }}>
+
             <motion.div whileTap={{ scale: 0.96 }}>
               <Button asChild size="lg" className="w-full sm:w-auto bg-white text-stone-900 hover:bg-amber-50 h-12 px-7 text-sm font-barlow font-bold rounded-full shadow-lg transition-all duration-300 group active:scale-[0.96]">
                 <a href="tel:+18146202162">
