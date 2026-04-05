@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { HugeiconsIcon } from "@hugeicons/react";
 import { BrainIcon, HeartIcon, ShieldIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon } from "@hugeicons/core-free-icons";
-import { Lightbulb } from 'lucide-react';
+import { Lightbulb, CheckCircle2 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
