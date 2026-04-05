@@ -754,7 +754,12 @@ export default function IndividualTherapyClient() {
           </section>
 
           {/* SECTION 6: Appointment */}
-          <AppointmentSection />
+          <div className="relative z-10 bg-stone-50 pb-24 md:pb-32">
+            <CurveTransition fillColor="#ffffff" />
+          </div>
+          <div className="-mt-24 md:-mt-32">
+            <AppointmentSection />
+          </div>
           
         </div>
       </main>
