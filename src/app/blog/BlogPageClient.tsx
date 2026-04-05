@@ -79,9 +79,9 @@ export default function BlogPage() {
       <div className="flex flex-col min-h-screen bg-white">
         <Navbar />
 
-        <main className="flex-grow pt-28">
+        <main className="flex-grow">
           {/* Blog Hero */}
-          <section className="relative py-20 md:py-32 bg-stone-900 overflow-hidden">
+          <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900 overflow-hidden">
             <div className="absolute inset-0 z-0">
               <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
               <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
