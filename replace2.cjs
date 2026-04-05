@@ -1,23 +1,10 @@
-"use client";
+const fs = require('fs');
 
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionTemplate, useMotionValue, AnimatePresence, useScroll, useSpring, useTransform, useReducedMotion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { 
-  Brain, Heart, Shield, Lightbulb, Star, Phone, ArrowRight, CheckCircle2, 
-  ChevronDown, ChevronUp, MapPin, Calendar, Clock, Users, Sparkles, Plus
-} from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer/Footer';
-import AppointmentSection from '@/components/Appointment/AppointmentSection';
-import SectionTag from '@/components/ui/section-tag';
-import CurveTransition from '@/components/ui/CurveTransition';
-import { cn } from "@/lib/utils";
+const filePath = 'src/app/individual-therapy-darby-pa/IndividualTherapyClient.tsx';
+let content = fs.readFileSync(filePath, 'utf8');
 
-// Removed TimelineStep as it's no longer used.
-
-
+// 1. Add TimelineStep component back at the top
+const timelineStepCode = `
 // --- Timeline Step Component ---
 const TimelineStep = ({
     step,
@@ -63,19 +50,19 @@ const TimelineStep = ({
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 whileTap={{ scale: 0.96 }}
-                className={`
+                className={\`
                     ml-10 md:ml-0 w-full md:w-[calc(50%-2.5rem)]
-                    ${isLeft ? "md:mr-auto md:pr-0" : "md:ml-auto md:pl-0"}
+                    \${isLeft ? "md:mr-auto md:pr-0" : "md:ml-auto md:pl-0"}
                     cursor-pointer
-                `}
+                \`}
             >
                 <div
                     className="relative rounded-[2rem] p-8 transition-all duration-500 cursor-default bg-white"
                     style={{
-                        border: `1px solid ${shouldGlow ? `${accentColor}80` : (isHovered ? `${accentColor}40` : "rgba(0,0,0,0.05)")}`,
+                        border: \`1px solid \${shouldGlow ? \`\${accentColor}80\` : (isHovered ? \`\${accentColor}40\` : "rgba(0,0,0,0.05)")}\`,
                         boxShadow: shouldGlow
-                            ? `0 10px 40px -10px ${accentColor}40`
-                            : (isHovered ? `0 10px 30px -10px ${accentColor}20` : "0 4px 20px -10px rgba(0,0,0,0.05)"),
+                            ? \`0 10px 40px -10px \${accentColor}40\`
+                            : (isHovered ? \`0 10px 30px -10px \${accentColor}20\` : "0 4px 20px -10px rgba(0,0,0,0.05)"),
                         transform: (isHovered || (shouldGlow && !isHovered)) && !prefersReducedMotion
                             ? (isLeft ? "translateX(-5px)" : "translateX(5px)")
                             : "none",
@@ -98,81 +85,12 @@ const TimelineStep = ({
         </div>
     );
 };
+`;
 
-// --- Scramble Text Effect (Brand Style) ---
-function ScrambleText({ text, className }: { text: string, className?: string }) {
-    const [displayText, setDisplayText] = useState(text);
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+content = content.replace('// --- Scramble Text Effect (Brand Style) ---', timelineStepCode + '\n// --- Scramble Text Effect (Brand Style) ---');
 
-    const scramble = () => {
-        let iteration = 0;
-        const interval = setInterval(() => {
-            setDisplayText(
-                text
-                    .split("")
-                    .map((letter, index) => {
-                        if (index < iteration) return text[index];
-                        return chars[Math.floor(Math.random() * chars.length)];
-                    })
-                    .join("")
-            );
-
-            if (iteration >= text.length) clearInterval(interval);
-            iteration += 1 / 3;
-        }, 30);
-    };
-
-    return (
-        <span
-            onMouseEnter={scramble}
-            className={cn("cursor-default", className)}
-        >
-            {displayText}
-        </span>
-    );
-}
-
-// --- Glowing Bento Card ---
-function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
-
-    function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-        const { left, top } = currentTarget.getBoundingClientRect();
-        mouseX.set(clientX - left);
-        mouseY.set(clientY - top);
-    }
-
-    return (
-        <div
-            className={cn(
-                "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-500",
-                "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-orange-200/50 hover:bg-white rounded-3xl",
-                containerClassName
-            )}
-            onMouseMove={handleMouseMove}
-        >
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/50 pointer-events-none" />
-            <motion.div
-                className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
-                style={{
-                    background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              rgba(249, 115, 22, 0.08),
-              transparent 80%
-            )
-          `,
-                }}
-            />
-            <div className={cn("relative h-full w-full p-8", className)}>
-                {children}
-            </div>
-        </div>
-    );
-}
-
-export default function IndividualTherapyClient() {
+// 2. Add hooks to IndividualTherapyClient
+const hooksCode = `export default function IndividualTherapyClient() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -194,109 +112,15 @@ export default function IndividualTherapyClient() {
       prefersReducedMotion ? scrollYProgress : smoothProgress, 
       [0, 1], 
       ["0%", "100%"]
-  );
+  );`;
 
-  const processSteps = [
-    {
-      title: "Initial Consultation",
-      desc: "Reach out to schedule your first appointment. We will discuss your basic needs, match you with the right therapist, and verify your insurance coverage, including Medicaid."
-    },
-    {
-      title: "Comprehensive Assessment",
-      desc: "During your first session, your therapist will conduct a thorough evaluation of your mental health history, current challenges, and personal goals."
-    },
-    {
-      title: "Personalized Plan",
-      desc: "Together, you and your therapist will develop a customized treatment plan outlining the therapeutic methods and frequency of sessions needed to reach your objectives."
-    },
-    {
-      title: "Growth & Healing",
-      desc: "Engage in regular therapy sessions where you will learn new skills, process emotions, and gradually achieve lasting positive change in your life."
-    }
-  ];
+content = content.replace(/export default function IndividualTherapyClient\(\) \{\s*const \[activeFaq, setActiveFaq\] = useState<number \| null>\(0\);/, hooksCode);
 
-  const faqs = [
-    {
-      question: "What does individual therapy in Darby involve?",
-      answer: "Individual therapy in Darby offers a personalized process where licensed therapists support you in addressing challenges like anxiety, depression, or life transitions in a safe, confidential setting. Our Delaware County therapists use evidence-based methods tailored to your needs."
-    },
-    {
-      question: "How often are individual counseling sessions recommended?",
-      answer: "Most clients begin with weekly counseling sessions to establish momentum and build progress. As you meet your therapeutic goals, we can adjust the frequency to bi-weekly or monthly based on your unique situation."
-    },
-    {
-      question: "How long does personal counseling typically last?",
-      answer: "The duration of personal counseling in PA varies widely. Some individuals achieve their specific goals through short-term solution-focused therapy in 8-12 sessions, while others benefit from longer-term counseling to navigate deeper trauma or ongoing life stressors."
-    },
-    {
-      question: "Is individual therapy covered by insurance in PA?",
-      answer: "Yes, Sunrise Human Care accepts Medicaid to ensure mental health care is accessible to the Darby and broader Delaware County community. Our administrative team will verify your benefits prior to your first session."
-    },
-    {
-      question: "What if I'm nervous about starting therapy for the first time?",
-      answer: "It is completely normal to feel nervous or hesitant about starting individual therapy. Our therapists prioritize creating a warm, non-judgmental, and secure environment. We move at a pace that feels comfortable for you, ensuring you feel safe every step of the way."
-    }
-  ];
+// 3. Replace the entire content of Sections 1 to 5 to apply Typography, Colors, and new layouts
+const mainStart = '{/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}';
+const mainEnd = '{/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}';
 
-  return (
-    <div className="flex flex-col min-h-screen bg-stone-950">
-      <Navbar />
-      
-      <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg" 
-              alt="Individual Therapy in Darby PA" 
-              fill 
-              className="object-cover opacity-60"
-              priority
-            />
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
-            <div className="absolute inset-0 z-0 bg-black/30" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
-          </div>
-          
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Personalized Counseling in PA
-              </span>
-              <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Individual Therapy in <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Expert, one-on-one counseling designed to help you navigate life&apos;s challenges, manage anxiety and depression, and foster profound personal growth in a safe, confidential environment.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="#appointment">
-                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-950 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
-                    <Calendar className="w-5 h-5" />
-                    Book an Appointment
-                  </button>
-                </Link>
-                <a href="tel:+18146202162">
-                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call (814) 620-2162
-                  </button>
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
-          
-          {/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}
+const newMainContent = `{/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}
           <section className="py-16 md:py-24 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Header Row */}
@@ -501,7 +325,7 @@ export default function IndividualTherapyClient() {
                       style={{ 
                           backgroundColor: accentColor,
                           height: lineHeight,
-                          boxShadow: `0 0 10px ${accentColor}40`
+                          boxShadow: \`0 0 10px \${accentColor}40\`
                       }}
                   />
 
@@ -592,31 +416,15 @@ export default function IndividualTherapyClient() {
               </div>
             </div>
           </section>
+`;
 
-          {/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}
-          <section className="sr-only">
-            <div itemScope itemType="https://schema.org/WebPage">
-              <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
-                <meta itemProp="name" content="Holli O'Donnell" />
-                <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
-                <link itemProp="image" href="/images/holly.jpg" />
-              </div>
-              <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
-              <p>
-                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
-              </p>
-            </div>
-          </section>
-
-          {/* SECTION 6: Appointment */}
-          <AppointmentSection />
-          
-        </div>
-      </main>
-      
-      <div className="relative z-20 bg-white">
-        <Footer />
-      </div>
-    </div>
-  );
+let startIndex = content.indexOf(mainStart);
+let endIndex = content.indexOf(mainEnd);
+if (startIndex !== -1 && endIndex !== -1) {
+  content = content.substring(0, startIndex) + newMainContent + '\n          ' + content.substring(endIndex);
+  fs.writeFileSync(filePath, content, 'utf8');
+  console.log("Successfully replaced the main content block.");
+} else {
+  console.error("Could not find start or end block.");
+  process.exit(1);
 }
