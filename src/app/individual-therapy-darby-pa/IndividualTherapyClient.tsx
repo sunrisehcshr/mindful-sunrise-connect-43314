@@ -246,7 +246,7 @@ SpotlightItem.displayName = "SpotlightItem";
 const processSteps = [
   {
     title: "Initial Consultation",
-    desc: "Reach out to schedule your first appointment. We will discuss your basic needs, match you with the right therapist, and verify your insurance coverage, including Medicaid."
+    desc: "We handle the paperwork and verify your insurance coverage—including Medicaid—before you even start. We'll match you with the right therapist on day one."
   },
   {
     title: "Comprehensive Assessment",
@@ -354,7 +354,7 @@ export default function IndividualTherapyClient() {
                 <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Expert, one-on-one counseling designed to help you navigate life&apos;s challenges, manage anxiety and depression, and foster profound personal growth in a safe, confidential environment.
+                One-on-one counseling in Darby, PA. Learn practical tools to reduce anxiety, overcome depression, and regain control of your daily life in a 100% confidential environment.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -389,9 +389,9 @@ export default function IndividualTherapyClient() {
                     className="max-w-4xl mx-auto text-center mb-16"
                 >
                     <div className="flex flex-col items-center gap-4">
-                        <SectionTag>Understanding Your Journey</SectionTag>
+                        <SectionTag>Why Choose Sunrise</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            What is <span className="font-instrument-serif italic text-orange-500">Individual Therapy?</span>
+                            Therapy tailored to your exact needs, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not a textbook.</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -410,7 +410,7 @@ export default function IndividualTherapyClient() {
                     <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-4 relative z-10">
                         <Card containerClassName="md:col-span-3 rounded-3xl bg-stone-50/50" className="flex flex-col justify-center p-8 md:p-12">
                             <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed max-w-3xl">
-                                Individual therapy is a collaborative process between you and a licensed mental health professional. At Sunrise Human Care in Darby, PA, we provide a safe, confidential space to explore your thoughts, develop healthy coping mechanisms, and empower you to lead a fulfilling life.
+                                Therapy isn't just about talking—it's about taking your life back. When you partner with a licensed expert at Sunrise Human Care in Darby, PA, you get more than a confidential space. You gain a dedicated guide who will help you untangle your thoughts, build practical coping skills, and empower you to finally step back into a life that feels entirely your own.
                             </p>
                         </Card>
                         <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
@@ -427,14 +427,14 @@ export default function IndividualTherapyClient() {
                                 <HugeiconsIcon icon={CheckmarkBadge01Icon} className="w-6 h-6 text-emerald-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Licensed Experts</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with highly trained, compassionate therapists in Delaware County who specialize in various therapeutic modalities.</p>
+                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with fully licensed, state-certified therapists in Delaware County who specialize in various therapeutic modalities.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
                                 <HugeiconsIcon icon={BrainIcon} className="w-6 h-6 text-blue-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We utilize scientifically proven methods like CBT and DBT to ensure effective, measurable progress in your mental health journey.</p>
+                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like CBT and DBT so you see measurable, real-world progress in your mental health journey.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
@@ -459,25 +459,25 @@ export default function IndividualTherapyClient() {
                 className="max-w-4xl mx-auto text-center mb-16"
               >
                 <div className="flex flex-col items-center gap-4">
-                  <SectionTag>Comprehensive Care</SectionTag>
+                  <SectionTag>Targeted Relief</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    What we treat with <br />
-                    <span className="font-instrument-serif italic text-orange-500">Individual Therapy.</span>
+                    Find relief from the weight of <br />
+                    <span className="font-instrument-serif italic text-orange-500">everyday struggles.</span>
                   </h2>
                   <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
-                    Our licensed professionals in Darby, PA are equipped to help you manage and overcome a wide spectrum of psychological and emotional challenges.
+                    You don't have to carry this burden alone. Our specialists in Darby, PA use proven, evidence-based methods to help you break free from emotional pain and get back to living fully.
                   </p>
                 </div>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {[
-                  { title: "Anxiety Disorders", icon: Brain, desc: "Identifying triggers and developing coping strategies for generalized anxiety, social anxiety, and panic attacks." },
-                  { title: "Depression & Mood", icon: Sparkles, desc: "Proven methods to address persistent sadness, lack of motivation, and help you rediscover joy and purpose." },
-                  { title: "Trauma & PTSD", icon: Shield, desc: "Trauma-informed care to help process and heal from past experiences, reducing the impact of distressing memories." },
-                  { title: "Stress & Burnout", icon: Lightbulb, desc: "Equipping you with stress management techniques to restore your energy and work-life balance." },
-                  { title: "Life Transitions", icon: ArrowRight, desc: "Guidance during uncertain times like career shifts, relocation, or major relationship changes." },
-                  { title: "Self-Esteem & Growth", icon: Star, desc: "Assisting clients in exploring their identity, building self-worth, and achieving personal growth." }
+                  { title: "Anxiety Disorders", icon: Brain, desc: "Stop letting worry dictate your life. We'll help you identify hidden triggers and build practical tools to quiet your mind." },
+                  { title: "Depression & Mood", icon: Sparkles, desc: "Break free from the heavy fog of sadness. Restore your energy, motivation, and sense of purpose with proven methods." },
+                  { title: "Trauma & PTSD", icon: Shield, desc: "You don't have to live in the past. Safely process painful memories so you can heal and finally move forward." },
+                  { title: "Stress & Burnout", icon: Lightbulb, desc: "Reclaim your energy. Learn actionable techniques to manage overwhelming stress and achieve the balance you deserve." },
+                  { title: "Life Transitions", icon: ArrowRight, desc: "Navigate change with absolute confidence. Find clarity and support during career shifts, moves, or relationship changes." },
+                  { title: "Self-Esteem & Growth", icon: Star, desc: "Discover your true worth. Silence your inner critic, build unwavering confidence, and unlock your full potential." }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
@@ -520,22 +520,22 @@ export default function IndividualTherapyClient() {
                 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
                     <div className="lg:col-span-5 flex flex-col justify-center">
-                        <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">Clinical Excellence</SectionTag>
+                        <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">How We Work</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
-                            Evidence-Based <br />
-                            <span className="font-instrument-serif italic text-orange-400">Therapeutic Approaches</span>
+                            Discover Proven Therapies <br />
+                            <span className="font-instrument-serif italic text-orange-400">That Deliver Real Results</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
-                            We adhere strictly to evidence-based practices (EBPs). Our licensed therapists integrate various modalities depending on your specific diagnosis and personal preferences.
+                            Stop guessing with your mental health. We exclusively use scientifically proven, evidence-based practices (EBPs) tailored to your unique mind—ensuring you experience measurable progress, faster.
                         </p>
                     </div>
 
                     <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {[
-                            { title: "Cognitive Behavioral Therapy (CBT)", desc: "Identifies and changes negative thought patterns. A gold standard for anxiety and depression." },
-                            { title: "Dialectical Behavior Therapy (DBT)", desc: "Focuses on living in the moment, regulating emotions, and improving relationships." },
-                            { title: "Mindfulness-Based Therapy", desc: "Combines cognitive techniques with mindfulness to manage thoughts and distress." },
-                            { title: "Solution-Focused Brief Therapy", desc: "A short-term, future-focused approach that constructs solutions rather than dwelling on problems." }
+                            { title: "Cognitive Behavioral Therapy (CBT)", desc: "Rewire your mind for success. Stop negative thought loops in their tracks and conquer anxiety and depression using the clinical gold standard." },
+                            { title: "Dialectical Behavior Therapy (DBT)", desc: "Regain emotional control. Learn powerful, practical skills to live in the present moment, manage intense feelings, and build healthier relationships." },
+                            { title: "Mindfulness-Based Therapy", desc: "Find peace in the chaos. Master scientifically proven mindfulness techniques that quiet mental noise and dramatically reduce daily distress." },
+                            { title: "Solution-Focused Brief Therapy", desc: "Get unstuck, fast. Stop dwelling on past problems and start building concrete, actionable solutions for your future in fewer sessions." }
                         ].map((method, idx) => (
                             <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4 group">
                                 <div className="w-10 h-10 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors duration-300">
@@ -630,16 +630,16 @@ export default function IndividualTherapyClient() {
                  
                  <div className="relative z-10 flex flex-col items-center">
                     <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.1)] drop-shadow-md">
-                      Take the first step
+                      Don't Wait Another Day
                     </span>
                    
                    <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
-                     Your journey to wellness <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-yellow-200 font-normal">begins here</span>
+                     Start feeling better <br className="hidden md:block" />
+                     <span className="font-instrument-serif italic text-yellow-200 font-normal">this week.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
-                     Our compassionate team is ready to support you. Schedule an appointment today and discover a sanctuary for healing and growth in Darby, PA.
+                     You don't have to figure this out alone. Schedule your first appointment today and let our Darby, PA specialists help you move forward.
                    </p>
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
