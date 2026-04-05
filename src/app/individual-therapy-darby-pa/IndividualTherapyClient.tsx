@@ -5,7 +5,7 @@ import { motion, useMotionTemplate, useMotionValue, AnimatePresence, useScroll, 
 import Image from 'next/image';
 import Link from 'next/link';
 import { HugeiconsIcon } from "@hugeicons/react";
-import { BrainIcon, ShieldIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon } from "@hugeicons/core-free-icons";
+import { BrainIcon, ShieldIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon, FavouriteIcon } from "@hugeicons/core-free-icons";
 import { Lightbulb, CheckCircle2, Shield, Users, Heart } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -375,7 +375,7 @@ export default function IndividualTherapyClient() {
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={HeartIcon} className="w-6 h-6 text-rose-600" />
+                                <HugeiconsIcon icon={FavouriteIcon} className="w-6 h-6 text-rose-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Personalized Care</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">Your treatment plan is tailored specifically to your unique background, challenges, and personal goals for therapy.</p>
