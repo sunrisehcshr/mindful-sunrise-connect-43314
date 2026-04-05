@@ -157,9 +157,9 @@ const Navbar = () => {
                 style={{ height: "auto" }}
               />
               <div className="flex flex-col">
-                <span className="leading-tight text-sm md:text-base font-extrabold bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text">Sunrise</span>
-                 <span className="text-[10px] md:text-xs leading-tight font-instrument-serif italic text-muted-foreground">Human Care Services</span>
-              </div>
+                  <span className="leading-tight text-sm md:text-base font-extrabold text-orange-500">Sunrise</span>
+                   <span className="text-[10px] md:text-xs leading-tight font-instrument-serif italic text-muted-foreground">Human Care Services</span>
+                </div>
             </Link>
           </motion.div>
 
@@ -190,8 +190,8 @@ const Navbar = () => {
                                   <Link 
                                     href={link.label === "Resources" ? child.path : `${child.path}#home`} 
                                     className={cn(
-                                      "block select-none rounded-md py-2 px-3 text-sm font-barlow leading-none no-underline outline-none transition-colors hover:bg-amber-50 hover:text-stone-900", 
-                                      isActive(child.path) ? "bg-amber-50 text-stone-900 font-medium" : "text-zinc-600"
+                                      "block select-none rounded-md py-2 px-3 text-sm font-barlow leading-none no-underline outline-none transition-colors hover:bg-orange-50 hover:text-stone-900", 
+                                      isActive(child.path) ? "bg-orange-50 text-stone-900 font-medium" : "text-zinc-600"
                                     )}
                                   >
                                     {child.title}
@@ -201,7 +201,7 @@ const Navbar = () => {
                               {link.label === "Services" && (
                                 <div className="pt-2 mt-2 border-t border-stone-100">
                                   <motion.div whileTap={{ scale: 0.98 }}>
-                                    <Link href="/services" className="flex items-center text-sm text-amber-700 hover:text-amber-800 font-medium px-3 py-2 font-barlow">
+                                    <Link href="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-3 py-2 font-barlow">
                                       View All Services
                                       <ChevronRight className="ml-1 h-4 w-4" />
                                     </Link>
@@ -211,7 +211,7 @@ const Navbar = () => {
                               {link.label === "Conditions" && (
                                 <div className="pt-2 mt-2 border-t border-stone-100">
                                   <motion.div whileTap={{ scale: 0.98 }}>
-                                    <Link href="/conditions" className="flex items-center text-sm text-amber-700 hover:text-amber-800 font-medium px-3 py-2 font-barlow">
+                                    <Link href="/conditions" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-3 py-2 font-barlow">
                                       View All Conditions
                                       <ChevronRight className="ml-1 h-4 w-4" />
                                     </Link>
@@ -295,8 +295,8 @@ const Navbar = () => {
                               (link.label === "Services" && (isActive("/services") || isServicePage())) || 
                               (link.label === "Conditions" && (isActive("/conditions") || isConditionPage())) ||
                               (link.label === "Resources" && isResourcePage())
-                                ? "text-stone-900 bg-amber-50" 
-                                : "text-zinc-600 hover:text-stone-900 hover:bg-stone-50"
+                                ? "text-stone-900 bg-orange-50" 
+                                : "text-zinc-600 hover:text-stone-900 hover:bg-orange-50"
                             )}
                           >
                             {link.label}
@@ -309,7 +309,7 @@ const Navbar = () => {
                                 animate={{ height: "auto", opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                                className="pl-4 space-y-1 border-l-2 border-amber-200 ml-4 overflow-hidden"
+                                className="pl-4 space-y-1 border-l-2 border-orange-200 ml-4 overflow-hidden"
                               >
                                 {link.children.map((child, childIndex) => (
                                   <Link 
@@ -317,20 +317,20 @@ const Navbar = () => {
                                     href={link.label === "Resources" ? child.path : `${child.path}#home`} 
                                     className={cn(
                                       "block px-4 py-2 text-sm font-barlow rounded-md transition-colors", 
-                                      isActive(child.path) ? "text-stone-900 bg-amber-50 font-medium" : "text-zinc-500 hover:text-stone-900 hover:bg-stone-50"
+                                      isActive(child.path) ? "text-stone-900 bg-orange-50 font-medium" : "text-zinc-500 hover:text-stone-900 hover:bg-orange-50"
                                     )}
                                   >
                                     {child.title}
                                   </Link>
                                 ))}
                                 {link.label === "Services" && (
-                                  <Link href="/services" className="flex items-center text-sm text-amber-700 hover:text-amber-800 font-medium px-4 py-2 font-barlow">
+                                  <Link href="/services" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2 font-barlow">
                                     View All Services
                                     <ChevronRight className="ml-1 h-4 w-4" />
                                   </Link>
                                 )}
                                 {link.label === "Conditions" && (
-                                  <Link href="/conditions" className="flex items-center text-sm text-amber-700 hover:text-amber-800 font-medium px-4 py-2 font-barlow">
+                                  <Link href="/conditions" className="flex items-center text-sm text-orange-600 hover:text-orange-700 font-medium px-4 py-2 font-barlow">
                                     View All Conditions
                                     <ChevronRight className="ml-1 h-4 w-4" />
                                   </Link>
@@ -347,7 +347,7 @@ const Navbar = () => {
                         href={link.path} 
                         className={cn(
                           "px-4 py-3 rounded-lg text-sm font-barlow font-medium transition-all duration-300", 
-                          isActive(link.path) ? "text-stone-900 bg-amber-50 font-semibold" : "text-zinc-600 hover:text-stone-900 hover:bg-stone-50"
+                          isActive(link.path) ? "text-stone-900 bg-orange-50 font-semibold" : "text-zinc-600 hover:text-stone-900 hover:bg-orange-50"
                         )}
                       >
                         {link.label}
