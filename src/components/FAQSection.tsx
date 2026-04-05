@@ -65,13 +65,13 @@ const containerVariants = {
 
 const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextColor, hoverCardTextColor, answerTextColor, iconColor, hoverIconColor, spotlightColor }: { faq: { question: string, answer: string, meta?: string }, cardBgColor: string, cardBorderColor: string, cardTextColor: string, hoverCardTextColor: string, answerTextColor: string, iconColor: string, hoverIconColor: string, spotlightColor: string }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const divRef = useRef<HTMLLIElement>(null);
+    const divRef = useRef<HTMLDivElement>(null);
 
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
     const background = useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, ${spotlightColor}, transparent 40%)`;
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLLIElement>) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!divRef.current) return;
         const rect = divRef.current.getBoundingClientRect();
         mouseX.set(e.clientX - rect.left);
@@ -79,12 +79,11 @@ const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextC
     };
 
     return (
-        <motion.li
-            variants={itemVariants}
+        <div
             ref={divRef}
             onMouseMove={handleMouseMove}
             onClick={() => setIsOpen(!isOpen)}
-            className="relative rounded-[2rem] border overflow-hidden cursor-pointer group shadow-sm hover:shadow-md transition-shadow duration-300 list-none"
+            className="relative rounded-[2rem] border overflow-hidden cursor-pointer group shadow-sm hover:shadow-md transition-shadow duration-300"
             style={{ backgroundColor: cardBgColor, borderColor: cardBorderColor }}
         >
             <motion.div
@@ -122,7 +121,7 @@ const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextC
                     )}
                 </AnimatePresence>
             </div>
-        </motion.li>
+        </div>
     );
 });
 
@@ -194,9 +193,45 @@ const FAQSection = () => {
   }, []);
 
   return (
-    <section id="faq" className="relative py-32 md:py-40 bg-stone-50/50 overflow-hidden">
+    <section id="faq" className="relative pt-40 md:pt-48 pb-48 bg-stone-50 overflow-hidden">
       <CurveTransition fillColor="#ffffff" />
-      <div className="container mx-auto px-4 md:px-6">
+      
+      {/* Animated SVG Background */}
+      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none mt-16">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0">
+          <defs>
+            <pattern id="grid-pattern-faq" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f97316" strokeWidth="0.5" strokeOpacity="0.3" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-pattern-faq)" />
+          <motion.circle
+            cx="80%"
+            cy="20%"
+            r="150"
+            fill="none"
+            stroke="#ea580c"
+            strokeWidth="1"
+            strokeOpacity="0.2"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.circle
+            cx="20%"
+            cy="80%"
+            r="250"
+            fill="none"
+            stroke="#ea580c"
+            strokeWidth="1"
+            strokeOpacity="0.1"
+            animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          />
+        </svg>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           className="max-w-4xl mx-auto text-center mb-20" 
           initial="hidden"
@@ -208,7 +243,7 @@ const FAQSection = () => {
             <SectionTag>Common Questions</SectionTag>
           </motion.div>
           
-          <motion.h2 variants={itemVariants} className="font-barlow font-normal text-4xl md:text-6xl text-balance text-stone-900 tracking-tighter leading-none mb-6">
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight mb-6">
             7 questions you might be {' '}
             <span className="font-instrument-serif italic text-orange-500 font-normal">hesitant to ask.</span>
           </motion.h2>
@@ -219,13 +254,7 @@ const FAQSection = () => {
         </motion.div>
         
         <div className="max-w-4xl mx-auto">
-          <motion.ul 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="space-y-4"
-          >
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
               <SpotlightItem
                 key={index}
@@ -240,7 +269,7 @@ const FAQSection = () => {
                 spotlightColor="rgba(249, 115, 22, 0.08)"
               />
             ))}
-          </motion.ul>
+          </div>
 
           <motion.div 
             initial={{ opacity: 0, y: 12 }}
@@ -284,6 +313,7 @@ const FAQSection = () => {
           </motion.div>
         </div>
       </div>
+      <CurveTransition fillColor="#ffffff" inverted />
     </section>
   );
 };
