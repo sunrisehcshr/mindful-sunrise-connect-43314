@@ -14,6 +14,16 @@ interface CurveTransitionProps {
 export default function CurveTransition({ fillColor = "#ffffff", className, inverted = false, targetRef }: CurveTransitionProps) {
   const internalRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: targetRef || internalRef,
@@ -31,7 +41,7 @@ export default function CurveTransition({ fillColor = "#ffffff", className, inve
 
   // Transform the curveValue into the SVG path string
   const pathData = useTransform(
-    prefersReducedMotion ? curveValue : smoothCurveValue,
+    (prefersReducedMotion || isMobile) ? curveValue : smoothCurveValue,
     (val) => inverted 
       ? `M 0 100 Q 400 ${val} 800 100 Z` // Starts at 150 (dip), moves to 0 (hump)
       : `M 0 0 Q 400 ${val} 800 0 Z`        // Normal curve pointing down

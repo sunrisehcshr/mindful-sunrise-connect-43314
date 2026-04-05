@@ -1,5 +1,5 @@
 import React from "react";
-import Script from "next/script";
+import { JsonLd } from "./JsonLd";
 
 interface BreadcrumbItem {
   name: string;
@@ -146,25 +146,22 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     <>
       {/* Service schema markup if provided */}
       {serviceSchema && (
-        <Script
+        <JsonLd
           id="service-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemaScript) }}
+          data={serviceSchemaScript!}
         />
       )}
 
       {/* Local business schema */}
-      <Script
+      <JsonLd
         id="local-business-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        data={localBusinessSchema}
       />
 
       {/* Breadcrumbs schema */}
-      <Script
+      <JsonLd
         id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        data={breadcrumbSchema}
       />
     </>
   );

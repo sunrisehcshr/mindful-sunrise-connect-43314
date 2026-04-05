@@ -78,14 +78,27 @@
  }) => { 
      const containerRef = useRef<HTMLDivElement>(null); 
  
-     useEffect(() => { 
+     useEffect(() => {
         const container = containerRef.current;
-        if (!container) return; 
- 
-         const renderer = new Renderer({ alpha: false, antialias: true }); 
-         const gl = renderer.gl; 
- 
-         gl.canvas.style.display = 'block'; 
+        if (!container) return;
+
+        let renderer: Renderer;
+        try {
+            renderer = new Renderer({ alpha: false, antialias: true });
+        } catch (error) {
+            console.warn("WebGL not supported, falling back to basic background", error);
+            container.style.backgroundColor = baseColor;
+            return;
+        }
+
+        const gl = renderer.gl;
+        if (!gl) {
+            console.warn("WebGL context not available");
+            container.style.backgroundColor = baseColor;
+            return;
+        }
+
+        gl.canvas.style.display = 'block'; 
          gl.canvas.style.width = '100%'; 
          gl.canvas.style.height = '100%'; 
         container.appendChild(gl.canvas); 
