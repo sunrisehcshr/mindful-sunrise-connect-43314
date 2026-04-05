@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "framer-motion";
+import React, { useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 interface CurveTransitionProps {
@@ -12,44 +11,70 @@ interface CurveTransitionProps {
 }
 
 export default function CurveTransition({ fillColor = "#ffffff", className, inverted = false, targetRef }: CurveTransitionProps) {
-  const internalRef = useRef<HTMLDivElement>(null);
-  const prefersReducedMotion = useReducedMotion();
-  const [isMobile, setIsMobile] = React.useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const pathRef = useRef<SVGPathElement>(null);
 
-  React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+  useEffect(() => {
+    let ticking = false;
+
+    const updateCurve = () => {
+      const target = targetRef?.current || containerRef.current;
+      if (!target || !pathRef.current) {
+        ticking = false;
+        return;
+      }
+
+      const rect = target.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      let progress;
+      if (inverted) {
+        // Curve is at the bottom of the section
+        // Animate from when bottom enters viewport (windowHeight) to when it reaches top (0)
+        progress = (windowHeight - rect.bottom) / windowHeight;
+      } else {
+        // Curve is at the top of the section
+        // Animate from when top enters viewport (windowHeight) to when it reaches top (0)
+        progress = (windowHeight - rect.top) / windowHeight;
+      }
+      
+      // Clamp between 0 and 1
+      if (progress < 0) progress = 0;
+      if (progress > 1) progress = 1;
+
+      // Curve value goes from 150 down to 0
+      const curveValue = 150 * (1 - progress);
+      
+      const d = inverted 
+        ? `M 0 100 Q 400 ${curveValue} 800 100 Z` 
+        : `M 0 0 Q 400 ${curveValue} 800 0 Z`;
+        
+      pathRef.current.setAttribute("d", d);
+      ticking = false;
     };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: targetRef || internalRef,
-    offset: ["start end", "end start"],
-  });
+    // Initial update
+    updateCurve();
 
-  // Map scroll progress (0 to 1) to the curve value (150 down to 0)
-  const curveValue = useTransform(scrollYProgress, [0, 1], [150, 0]);
-  
-  const smoothCurveValue = useSpring(curveValue, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateCurve);
+        ticking = true;
+      }
+    };
 
-  // Transform the curveValue into the SVG path string
-  const pathData = useTransform(
-    (prefersReducedMotion || isMobile) ? curveValue : smoothCurveValue,
-    (val) => inverted 
-      ? `M 0 100 Q 400 ${val} 800 100 Z` // Starts at 150 (dip), moves to 0 (hump)
-      : `M 0 0 Q 400 ${val} 800 0 Z`        // Normal curve pointing down
-  );
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [inverted, targetRef]);
 
   return (
     <div 
-      ref={internalRef} 
+      ref={containerRef} 
       className={cn(
         "absolute left-0 w-full overflow-hidden z-10 pointer-events-none", 
         inverted ? "bottom-0" : "top-0",
@@ -60,7 +85,7 @@ export default function CurveTransition({ fillColor = "#ffffff", className, inve
         minHeight: "60px", 
         maxHeight: "150px", 
         transform: inverted ? "translateY(1px)" : "translateY(-1px)",
-        position: "absolute" // Explicitly ensure non-static position for Framer Motion
+        position: "absolute" 
       }} 
     >
       <svg 
@@ -68,9 +93,10 @@ export default function CurveTransition({ fillColor = "#ffffff", className, inve
         preserveAspectRatio="none" 
         className="w-full h-full overflow-visible"
       >
-        <motion.path 
+        <path 
+          ref={pathRef}
           fill={fillColor} 
-          d={pathData} 
+          d={inverted ? "M 0 100 Q 400 150 800 100 Z" : "M 0 0 Q 400 150 800 0 Z"} 
         />
       </svg>
     </div>
