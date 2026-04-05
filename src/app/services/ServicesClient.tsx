@@ -168,6 +168,12 @@ export default function ServicesClient() {
       link: "/medication-management-darby-pa",
       desc: "Ongoing psychiatric care and prescription monitoring to ensure your medications are safe, effective, and properly balanced.",
       image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg"
+    },
+    {
+      title: "Grief & Loss Therapy",
+      link: "/grief-therapy-darby-pa",
+      desc: "Compassionate bereavement support to help you process profound loss, honor your loved ones, and find a path forward.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918388/sad-woman-crying-at-psychotherapy-session-comfort-2026-03-25-06-38-04-utc_hfj8y7.jpg"
     }
   ];
 
@@ -180,7 +186,7 @@ export default function ServicesClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
+              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" 
               alt="Expert Mental Health Services in Darby, PA" 
               fill 
               className="object-cover opacity-60"
@@ -201,11 +207,11 @@ export default function ServicesClient() {
                 Comprehensive Care
               </span>
               <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Mental Health Services in <br className="hidden md:block" />
+                Find the Right Care in <br className="hidden md:block" />
                 <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Expert therapy, counseling, and psychiatric care for children, teens, adults, and families in Delaware County. We proudly and exclusively accept Medicaid.
+                Stop letting waitlists and confusing networks delay your healing. Get immediate access to expert therapy and psychiatric care in Delaware County. We proudly and exclusively accept Medicaid.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -240,8 +246,8 @@ export default function ServicesClient() {
                 className="max-w-3xl mx-auto text-center mb-16"
               >
                 <SectionTag>Our Specialties</SectionTag>
-                <h2 className="font-barlow font-bold text-3xl md:text-5xl text-stone-900 tracking-tight mt-4 mb-6">
-                  Care Tailored to You
+                <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight mt-4 mb-6">
+                  Care Tailored to <span className="font-instrument-serif italic text-orange-500">You.</span>
                 </h2>
                 <p className="text-stone-500 font-barlow text-lg leading-relaxed">
                   From traditional talk therapy to comprehensive psychiatric evaluations, our Darby clinic offers a full spectrum of mental health services under one roof.
@@ -300,7 +306,7 @@ export default function ServicesClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Why Choose Us</SectionTag>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-stone-900 tracking-tighter leading-tight">
-                    Expert therapy & psychiatric care <br />
+                    Expert therapy & psychiatric care <br className="hidden md:block" />
                     <span className="font-instrument-serif italic text-orange-500">without the barriers.</span>
                   </h2>
                 </div>
@@ -490,8 +496,8 @@ export default function ServicesClient() {
           </section>
 
           {/* SECTION 4: FAQs */}
-          <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
-            <CurveTransition fillColor="#ffffff" />
+          <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+            <CurveTransition fillColor="#fafaf9" />
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -586,6 +592,58 @@ export default function ServicesClient() {
                   ))}
                 </div>
               </div>
+            </div>
+          </section>
+
+          
+          {/* SECTION 5: CTA Banner */}
+          <section className="py-20 md:py-32 relative overflow-hidden bg-stone-950 mx-4 md:mx-6 my-12 rounded-[3rem]">
+            <div className="absolute inset-0 z-0">
+              <Image 
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" 
+                alt="Therapy Session" 
+                fill 
+                className="object-cover opacity-30" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent" />
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="max-w-3xl mx-auto"
+              >
+                <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-lg">
+                  Take the First Step
+                </span>
+                
+                <h2 className="text-balance font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6">
+                  Ready to prioritize your <br className="hidden md:block" />
+                  <span className="font-instrument-serif italic text-yellow-200">mental health?</span>
+                </h2>
+                
+                <p className="text-white/80 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                  You don't have to navigate life's challenges alone. Our compassionate team in Darby, PA is ready to support your journey to wellness.
+                </p>
+
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
+                  <Link href="/#appointment" className="w-full sm:w-auto">
+                    <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg">
+                      <Calendar className="w-5 h-5" />
+                      Schedule Your First Session
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </Link>
+                  <a href="tel:+18146202162" className="w-full sm:w-auto">
+                    <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
+                      <Phone className="w-5 h-5 mr-2" />
+                      Call (814) 620-2162
+                    </button>
+                  </a>
+                </div>
+              </motion.div>
             </div>
           </section>
 
