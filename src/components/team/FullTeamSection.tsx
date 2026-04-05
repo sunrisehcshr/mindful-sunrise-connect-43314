@@ -123,7 +123,7 @@ const FullTeamSection = () => {
       </div>
 
       {/* Curved Transition into the next section (AboutCTA which is stone-50) */}
-      <CurveTransition fillColor="#f8f8f7" inverted className="z-20" targetRef={sectionRef as any} />
+      <CurveTransition fillColor="#fafaf9" inverted className="z-20" targetRef={sectionRef as any} />
     </section>
   );
 };
