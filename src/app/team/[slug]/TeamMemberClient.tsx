@@ -29,7 +29,7 @@ function Card({ children, className, containerClassName }: { children: React.Rea
   return (
     <div
       className={cn(
-        "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-500",
+        "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition duration-500",
         "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-amber-200/50 hover:bg-white",
         containerClassName
       )}
@@ -194,13 +194,13 @@ export default function ProviderPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                      <Button asChild size="lg" className="bg-[#222] hover:bg-stone-800 text-white rounded-full px-10 py-7 text-lg font-bold transition-all shadow-xl shadow-stone-200">
+                      <Button asChild size="lg" className="bg-[#222] hover:bg-stone-800 text-white rounded-full px-10 py-7 text-lg font-bold transition shadow-xl shadow-stone-200">
                         <Link href="/appointment">
                           <Calendar className="mr-2 h-5 w-5" />
                           Book Evaluation
                         </Link>
                       </Button>
-                      <Button asChild variant="outline" size="lg" className="text-stone-600 border-stone-200 hover:bg-stone-50 rounded-full px-10 py-7 text-lg font-bold transition-all">
+                      <Button asChild variant="outline" size="lg" className="text-stone-600 border-stone-200 hover:bg-stone-50 rounded-full px-10 py-7 text-lg font-bold transition">
                         <a href="tel:+18146202162">
                           <Phone className="mr-2 h-5 w-5" />
                           (814) 620-2162
@@ -267,7 +267,7 @@ export default function ProviderPage() {
                     </p>
                     <Link 
                       href="/appointment" 
-                      className="mt-auto flex items-center justify-between group/btn bg-white text-orange-600 px-6 py-4 rounded-2xl font-bold transition-all hover:bg-stone-50"
+                      className="mt-auto flex items-center justify-between group/btn bg-white text-orange-600 px-6 py-4 rounded-2xl font-bold transition hover:bg-stone-50"
                     >
                       Schedule Now <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </Link>

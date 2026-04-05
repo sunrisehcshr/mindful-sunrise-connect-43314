@@ -76,7 +76,7 @@ const Map: React.FC<MapProps> = ({ className }) => {
           <p className="text-stone-800">Darby, PA 19023</p>
           <button 
             onClick={() => setShouldLoadMap(true)}
-            className="mt-4 px-4 py-2 bg-orange-600 text-stone-950 rounded-md hover:bg-orange-700 transition-colors shadow-sm font-barlow font-bold"
+            className="mt-4 px-4 py-2 bg-orange-600 text-stone-50 rounded-md hover:bg-orange-700 transition-colors shadow-sm font-barlow font-bold"
           >
             Load Map
           </button>

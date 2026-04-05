@@ -222,7 +222,7 @@ export default function MentalHealthDarbyClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group p-8 bg-stone-50 rounded-3xl border border-stone-100 hover:border-amber-200 hover:bg-white hover:shadow-xl hover:shadow-amber-900/5 transition-all duration-500"
+                  className="group p-8 bg-stone-50 rounded-3xl border border-stone-100 hover:border-amber-200 hover:bg-white hover:shadow-xl hover:shadow-amber-900/5 transition duration-500"
                 >
                   <h3 className="text-xl font-bold mb-3 font-barlow text-stone-800 group-hover:text-amber-700 transition-colors">
                     {service.title}
@@ -232,7 +232,7 @@ export default function MentalHealthDarbyClient() {
                   </p>
                   <Link 
                     href={service.link}
-                    className="inline-flex items-center text-amber-600 font-semibold hover:gap-2 transition-all font-barlow"
+                    className="inline-flex items-center text-amber-600 font-semibold hover:gap-2 transition font-barlow"
                   >
                     Learn More <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>

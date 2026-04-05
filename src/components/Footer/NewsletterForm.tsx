@@ -73,7 +73,7 @@ const NewsletterForm: React.FC = () => {
         <motion.button 
           whileTap={{ scale: 0.96 }}
           type="submit" 
-          className="w-full bg-orange-600 hover:bg-orange-700 text-stone-950 font-barlow font-bold py-2.5 px-4 text-sm rounded-full transition-all duration-300 whitespace-nowrap disabled:opacity-70 shadow-md shadow-orange-600/10" 
+          className="w-full bg-orange-600 hover:bg-orange-700 text-stone-50 font-barlow font-bold py-2.5 px-4 text-sm rounded-full transition-all duration-300 whitespace-nowrap disabled:opacity-70 shadow-md shadow-orange-600/10" 
           disabled={isSubmitting}
         >
           {isSubmitting ? "Subscribing..." : "Subscribe"}

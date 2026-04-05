@@ -49,7 +49,7 @@ const AboutCTA = () => {
             
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
               <Link href="/#appointment" className="w-full sm:w-auto">
-                <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-orange-500/20">
                   <Calendar className="w-5 h-5" />
                   Book an Appointment
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -98,7 +98,7 @@ export default function IBHSClient() {
                     description: "We actively involve parents and caregivers in the treatment process to ensure sustainable progress and support."
                   }
                 ].map((item, index) => (
-                  <div key={index} className="bg-amber-50/50 p-8 rounded-3xl border border-amber-100 hover:border-amber-200 transition-all">
+                  <div key={index} className="bg-amber-50/50 p-8 rounded-3xl border border-amber-100 hover:border-amber-200 transition">
                     <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm">
                       <item.icon className="h-6 w-6 text-amber-600" />
                     </div>

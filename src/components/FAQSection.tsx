@@ -2,7 +2,8 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react"; 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useMotionValue, useMotionTemplate } from "framer-motion";
+import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown, MessageCircle, Phone, ArrowUpRight, Plus } from "lucide-react";
 import SectionTag from './ui/section-tag';
@@ -61,120 +62,74 @@ const containerVariants = {
   }
 };
 
-const FAQItem = ({
-  question,
-  answer,
-  meta,
-  isOpen,
-  onClick,
-  index
-}: {
-  question: string;
-  answer: string;
-  meta?: string;
-  isOpen: boolean;
-  onClick: () => void;
-  index: number;
-}) => {
-  const setCardGlow = (event: React.MouseEvent<HTMLLIElement>) => {
-    const target = event.currentTarget;
-    const rect = target.getBoundingClientRect();
-    target.style.setProperty("--faq-x", `${event.clientX - rect.left}px`);
-    target.style.setProperty("--faq-y", `${event.clientY - rect.top}px`);
-  };
 
-  const clearCardGlow = (event: React.MouseEvent<HTMLLIElement>) => {
-    const target = event.currentTarget;
-    target.style.removeProperty("--faq-x");
-    target.style.removeProperty("--faq-y");
-  };
+const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextColor, hoverCardTextColor, answerTextColor, iconColor, hoverIconColor, spotlightColor }: { faq: { question: string, answer: string, meta?: string }, cardBgColor: string, cardBorderColor: string, cardTextColor: string, hoverCardTextColor: string, answerTextColor: string, iconColor: string, hoverIconColor: string, spotlightColor: string }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const divRef = useRef<HTMLLIElement>(null);
 
-  return (
-    <motion.li 
-      variants={itemVariants}
-      whileTap={{ scale: 0.98 }}
-      className={cn(
-        "group relative overflow-hidden rounded-[2rem] border backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5",
-        isOpen 
-          ? "border-orange-500/30 bg-white shadow-[0_20px_50px_rgba(249,115,22,0.05)]" 
-          : "border-stone-200/60 bg-white/50 hover:border-orange-200/40 hover:bg-white shadow-sm"
-      )}
-      onMouseMove={setCardGlow}
-      onMouseLeave={clearCardGlow}
-    >
-      <div 
-        className={cn(
-          "pointer-events-none absolute inset-0 transition-opacity duration-500",
-          isOpen ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-        )}
-        style={{ 
-          background: `radial-gradient(300px circle at var(--faq-x, 50%) var(--faq-y, 50%), rgba(249, 115, 22, 0.06), transparent 70%)`, 
-        }} 
-      />
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+    const background = useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, ${spotlightColor}, transparent 40%)`;
 
-      <button 
-        type="button"
-        aria-expanded={isOpen}
-        onClick={onClick}
-        className="relative flex w-full items-start gap-6 px-8 py-8 text-left transition-colors duration-300 focus:outline-none"
-      >
-        <div className="relative flex h-12 w-12 shrink-0 items-center justify-center">
-          <motion.span 
-            initial={false}
-            animate={{ 
-              scale: isOpen ? 1 : 0.25,
-              opacity: isOpen ? 1 : 0
-            }}
-            transition={{ type: "spring", duration: 0.3, bounce: 0 }}
-            className="absolute inset-0 rounded-full bg-orange-500 border border-orange-400"
-          />
-          <span 
-            className={cn(
-              "relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-500 group-hover:scale-105",
-              !isOpen && "bg-orange-50 border-stone-100 text-orange-500"
-            )}
-          >
-            <Plus className={cn("relative h-5 w-5 transition-transform duration-500", isOpen ? "rotate-45 text-white" : "")} />
-          </span>
-        </div>
+    const handleMouseMove = (e: React.MouseEvent<HTMLLIElement>) => {
+        if (!divRef.current) return;
+        const rect = divRef.current.getBoundingClientRect();
+        mouseX.set(e.clientX - rect.left);
+        mouseY.set(e.clientY - rect.top);
+    };
 
-        <div className="flex flex-1 flex-col gap-4">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-            <h3 className={cn(
-              "text-lg md:text-xl font-barlow font-bold leading-tight tracking-tight transition-colors duration-300",
-              isOpen ? "text-orange-500" : "text-stone-900 group-hover:text-orange-500"
-            )}>
-              {question}
-            </h3>
-            {meta && (
-              <span className="inline-flex w-fit items-center rounded-full border border-stone-100 bg-stone-50/50 px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 transition-opacity duration-300 sm:ml-auto">
-                {meta}
-              </span>
-            )}
-          </div>
-
-          <AnimatePresence initial={false}>
-            {isOpen && (
-              <motion.div 
-                initial={{ height: 0, opacity: 0 }} 
-                animate={{ height: "auto", opacity: 1 }} 
-                exit={{ height: 0, opacity: 0 }} 
-                transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
-              >
-                <div className="pt-4 border-t border-stone-50">
-                  <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-3xl">{answer}</p>
+    return (
+        <motion.li
+            variants={itemVariants}
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            onClick={() => setIsOpen(!isOpen)}
+            className="relative rounded-[2rem] border overflow-hidden cursor-pointer group shadow-sm hover:shadow-md transition-shadow duration-300 list-none"
+            style={{ backgroundColor: cardBgColor, borderColor: cardBorderColor }}
+        >
+            <motion.div
+                className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
+                style={{ background }}
+            />
+            <div className="relative z-10 p-6 md:p-8">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                        <h3 className="text-lg font-barlow font-medium leading-tight tracking-tight transition-colors group-hover:text-orange-500" style={{ color: cardTextColor }}>{faq.question}</h3>
+                        {faq.meta && (
+                            <span className="inline-flex w-fit items-center rounded-full border border-stone-100 bg-stone-50/50 px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 transition-opacity duration-300 sm:ml-auto shrink-0">
+                                {faq.meta}
+                            </span>
+                        )}
+                    </div>
+                    <motion.div
+                        animate={{ rotate: isOpen ? 45 : 0 }}
+                        className="flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-white border border-stone-100 shadow-sm transition-colors duration-300 group-hover:border-orange-200"
+                        style={{ color: iconColor }}
+                    >
+                        <Plus size={20} className="group-hover:text-orange-500 transition-colors" />
+                    </motion.div>
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </button>
-    </motion.li>
-  );
-};
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                        >
+                            <p className="pt-4 font-barlow text-base leading-relaxed" style={{ color: answerTextColor }}>{faq.answer}</p>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </motion.li>
+    );
+});
+
+SpotlightItem.displayName = "SpotlightItem";
+
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [introReady, setIntroReady] = useState(false);
 
   useEffect(() => {
@@ -238,10 +193,6 @@ const FAQSection = () => {
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <section id="faq" className="relative py-32 md:py-40 bg-stone-50/50 overflow-hidden">
       <CurveTransition fillColor="#ffffff" />
@@ -276,14 +227,17 @@ const FAQSection = () => {
             className="space-y-4"
           >
             {faqs.map((faq, index) => (
-              <FAQItem 
-                key={index} 
-                index={index}
-                question={faq.question} 
-                answer={faq.answer} 
-                meta={faq.meta}
-                isOpen={openIndex === index} 
-                onClick={() => toggleFAQ(index)} 
+              <SpotlightItem
+                key={index}
+                faq={faq}
+                cardBgColor="#ffffff"
+                cardBorderColor="rgba(249, 115, 22, 0.15)"
+                cardTextColor="#1c1917"
+                hoverCardTextColor="#ea580c"
+                answerTextColor="#78716c"
+                iconColor="#f97316"
+                hoverIconColor="#ffffff"
+                spotlightColor="rgba(249, 115, 22, 0.08)"
               />
             ))}
           </motion.ul>

@@ -87,13 +87,13 @@ export default function PTSDClient() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
                     <Calendar className="w-5 h-5" />
                     Book an Evaluation
                   </button>
                 </Link>
                 <a href="tel:+18146202162">
-                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
                     <Phone className="w-5 h-5 mr-2" />
                     Call (814) 620-2162
                   </button>
@@ -298,7 +298,7 @@ export default function PTSDClient() {
                       <div 
                         key={index} 
                         className={cn(
-                          "border rounded-2xl overflow-hidden transition-all duration-300",
+                          "border rounded-2xl overflow-hidden transition duration-300",
                           openFaq === index ? "border-orange-500/50 bg-orange-50/30" : "border-stone-200 bg-white hover:border-orange-200"
                         )}
                       >
@@ -311,7 +311,7 @@ export default function PTSDClient() {
                         </button>
                         <div 
                           className={cn(
-                            "overflow-hidden transition-all duration-300",
+                            "overflow-hidden transition duration-300",
                             openFaq === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                           )}
                         >

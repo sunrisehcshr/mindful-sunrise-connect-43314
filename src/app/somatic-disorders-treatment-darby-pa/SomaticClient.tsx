@@ -97,7 +97,7 @@ export default function SomaticDisordersTherapyPage() {
                 </div>
               </motion.div>
               
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:border-amber-200 transition-all duration-300">
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:border-amber-200 transition duration-300">
                 <h3 className="text-xl font-bold mb-6 text-stone-800 font-barlow">
                   Our Somatic Disorders Treatment Helps With:
                 </h3>
@@ -121,7 +121,7 @@ export default function SomaticDisordersTherapyPage() {
                 </ul>
                 
                 <div className="mt-8 pt-6 border-t border-stone-100">
-                  <Link href="/appointment" className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-barlow font-bold py-3 px-6 rounded-full transition-all w-full justify-center">
+                  <Link href="/appointment" className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-barlow font-bold py-3 px-6 rounded-full transition w-full justify-center">
                     Request a Specialized Consultation
                     <ArrowRight className="h-4 w-4" />
                   </Link>

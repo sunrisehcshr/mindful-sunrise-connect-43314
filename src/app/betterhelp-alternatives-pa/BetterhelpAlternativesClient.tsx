@@ -27,7 +27,7 @@ function Card({ children, className, containerClassName }: { children: React.Rea
     return (
         <div
             className={cn(
-                "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-500",
+                "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition duration-500",
                 "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-orange-200/50 hover:bg-white rounded-3xl",
                 containerClassName
             )}
@@ -114,7 +114,7 @@ export default function BetterhelpAlternativesClient() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
                     <Calendar className="w-5 h-5" />
                     Book Local Therapy
                   </button>
@@ -262,7 +262,7 @@ export default function BetterhelpAlternativesClient() {
                     <div 
                       key={index}
                       className={cn(
-                        "group relative overflow-hidden rounded-[2rem] border backdrop-blur-xl transition-all duration-500",
+                        "group relative overflow-hidden rounded-[2rem] border backdrop-blur-xl transition duration-500",
                         activeFaq === index 
                           ? "border-orange-500/30 bg-white shadow-md" 
                           : "border-stone-200/60 bg-white/50 hover:border-orange-200/40 hover:bg-white shadow-sm"
@@ -275,7 +275,7 @@ export default function BetterhelpAlternativesClient() {
                       >
                         <span 
                           className={cn(
-                            "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-500 group-hover:scale-105",
+                            "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition duration-500 group-hover:scale-105",
                             activeFaq === index ? "bg-orange-500 border-orange-400 text-white" : "bg-orange-50 border-stone-100 text-orange-500"
                           )}
                         >

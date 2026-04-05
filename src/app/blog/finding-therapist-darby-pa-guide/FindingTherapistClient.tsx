@@ -129,7 +129,7 @@ export default function FindingTherapistDarbyPage() {
           <section className="py-24 bg-white relative">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
-                <div className="prose prose-stone prose-lg max-w-none prose-headings:font-barlow prose-headings:font-bold prose-headings:tracking-tight prose-p:font-barlow prose-p:text-stone-600 prose-p:leading-relaxed prose-strong:text-stone-900 prose-blockquote:border-orange-500 prose-blockquote:bg-orange-50/30 prose-blockquote:rounded-2xl prose-blockquote:p-8 prose-blockquote:not-italic prose-blockquote:font-medium">
+                <div className="prose prose-stone prose-lg max-w-none prose-headings:font-barlow prose-headings:font-bold prose-headings:tracking-tight prose-p:font-barlow prose-p:text-stone-600 prose-p:leading-relaxed prose-strong:text-stone-50 prose-blockquote:border-orange-500 prose-blockquote:bg-orange-50/30 prose-blockquote:rounded-2xl prose-blockquote:p-8 prose-blockquote:not-italic prose-blockquote:font-medium">
                   <p className="text-xl text-stone-900 font-medium leading-relaxed mb-12">
                     Finding a therapist who understands your unique journey is the first and most important step toward healing. For residents of Darby, PA, and the wider Delaware County area, navigating the mental health landscape can feel overwhelming. This guide is designed to help you find the professional support you deserve.
                   </p>
@@ -195,7 +195,7 @@ export default function FindingTherapistDarbyPage() {
                       Our compassionate team in Darby is ready to support you with expert care tailored to your specific needs.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                      <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-stone-950 rounded-full px-10 h-14 font-bold text-base shadow-xl shadow-orange-900/20 w-full sm:w-auto">
+                      <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-stone-50 rounded-full px-10 h-14 font-bold text-base shadow-xl shadow-orange-900/20 w-full sm:w-auto">
                         <Link href="/appointment">Book Your Session</Link>
                       </Button>
                       <Button asChild size="lg" variant="outline" className="border-white/20 hover:bg-white/10 text-white rounded-full px-10 h-14 font-bold text-base w-full sm:w-auto">

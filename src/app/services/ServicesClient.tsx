@@ -76,7 +76,7 @@ const TimelineStep = React.memo(({
                 `}
             >
                 <div
-                    className="relative rounded-[2rem] p-8 transition-all duration-500 cursor-default bg-white group/step"
+                    className="relative rounded-[2rem] p-8 transition duration-500 cursor-default bg-white group/step"
                     style={{
                         border: `1px solid ${shouldGlow ? `${accentColor}80` : (isHovered ? `${accentColor}40` : "rgba(0,0,0,0.05)")}`,
                         boxShadow: shouldGlow
@@ -90,7 +90,7 @@ const TimelineStep = React.memo(({
                 >
                     <span 
                         className={cn(
-                            "font-bold text-5xl font-instrument-serif mb-4 block transition-all duration-500",
+                            "font-bold text-5xl font-instrument-serif mb-4 block transition duration-500",
                             shouldGlow ? "text-orange-500 opacity-100" : "text-orange-500 opacity-30 group-hover/step:opacity-100"
                         )}
                     >
@@ -158,7 +158,7 @@ function Card({ children, className, containerClassName }: { children: React.Rea
     return (
         <div
             className={cn(
-                "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-500",
+                "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition duration-500",
                 "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-orange-200/50 hover:bg-white rounded-3xl",
                 containerClassName
             )}
@@ -344,13 +344,13 @@ export default function ServicesClient() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
                     <Calendar className="w-5 h-5" />
                     Schedule Your First Session
                   </button>
                 </Link>
                 <a href="tel:+18146202162">
-                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
                     <Phone className="w-5 h-5 mr-2" />
                     Call (814) 620-2162
                   </button>
@@ -548,7 +548,7 @@ export default function ServicesClient() {
                         <p className="text-stone-400 text-xs leading-relaxed group-hover:text-stone-300 transition-colors duration-300">We proudly and exclusively accept Medicaid. Get premium psychiatric care without the out-of-pocket costs.</p>
                       </div>
                     </Card>
-                    <Card containerClassName="rounded-3xl bg-orange-500 text-stone-900 border-none group relative overflow-hidden" className="flex flex-col justify-between h-full z-10">
+                    <Card containerClassName="rounded-3xl bg-orange-500 text-stone-50 border-none group relative overflow-hidden" className="flex flex-col justify-between h-full z-10">
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[-1]" />
                       <Users className="h-8 w-8 text-white mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1" />
                       <div>
@@ -604,7 +604,7 @@ export default function ServicesClient() {
                       Areas We Serve
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      <Link href="/mental-health-darby-pa" className="px-4 py-3 bg-orange-500 hover:bg-orange-400 transition-colors rounded-xl text-center font-barlow font-bold text-stone-900 shadow-lg shadow-orange-500/20">
+                      <Link href="/mental-health-darby-pa" className="px-4 py-3 bg-orange-500 hover:bg-orange-400 transition-colors rounded-xl text-center font-barlow font-bold text-stone-50 shadow-lg shadow-orange-500/20">
                         Darby (19023)
                       </Link>
                       {[
@@ -627,8 +627,8 @@ export default function ServicesClient() {
           </section>
 
           {/* SECTION 2.5: The Process */}
-          <section className="py-16 md:py-32 bg-white relative overflow-hidden">
-            
+          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+            <CurveTransition fillColor="#ffffff" />
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
@@ -717,14 +717,14 @@ export default function ServicesClient() {
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
                      <Link href="#appointment" className="w-full sm:w-auto" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                       <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
+                       <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
                          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
                          Schedule Your First Session
                          <HugeiconsIcon icon={ArrowRight01Icon} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                        </button>
                      </Link>
                      <a href="tel:+18146202162" className="w-full sm:w-auto">
-                       <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
+                       <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
                          <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
                          Call (814) 620-2162
                        </button>
@@ -737,7 +737,7 @@ export default function ServicesClient() {
 
           {/* SECTION 4: FAQs */}
           <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
-            <CurveTransition fillColor="#ffffff" />
+            <CurveTransition fillColor="#fafaf9" />
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">

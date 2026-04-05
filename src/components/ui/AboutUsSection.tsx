@@ -194,7 +194,7 @@ const AboutUsSection = () => {
               <motion.div 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-stone-950 font-bold rounded-full shadow-lg shadow-orange-500/20 transition-all flex items-center gap-2 group/btn"
+                className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-stone-50 font-bold rounded-full shadow-lg shadow-orange-500/20 transition-all flex items-center gap-2 group/btn"
               >
                 <span>Book Appointment</span>
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />

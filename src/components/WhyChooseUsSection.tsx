@@ -322,7 +322,7 @@ const WhyChooseUsSection = () => {
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.96 }}
-                                        className="mt-6 md:mt-8 rounded-full bg-orange-500 px-8 md:px-10 py-3 md:py-3.5 text-xs md:text-sm font-bold text-stone-950 shadow-2xl shadow-orange-500/20 transition-all hover:bg-orange-400"
+                                        className="mt-6 md:mt-8 rounded-full bg-orange-500 px-8 md:px-10 py-3 md:py-3.5 text-xs md:text-sm font-bold text-stone-50 shadow-2xl shadow-orange-500/20 transition-all hover:bg-orange-400"
                                     >
                                         Start Today
                                     </motion.button>

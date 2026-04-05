@@ -130,7 +130,7 @@ const MagnifiedBento = ({ className }: { className?: string }) => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-stone-950 font-bold rounded-2xl shadow-lg shadow-orange-500/20 transition-all flex items-center justify-center gap-2 group/btn"
+            className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-stone-50 font-bold rounded-2xl shadow-lg shadow-orange-500/20 transition-all flex items-center justify-center gap-2 group/btn"
           >
             <span>Start Healing</span>
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />

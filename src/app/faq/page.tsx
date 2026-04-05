@@ -531,7 +531,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
         </span>
         <div className={cn(
           "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 mt-1 sm:mt-0 transition-all duration-300",
-          isOpen ? "bg-orange-500 border-orange-500 text-stone-950 rotate-180" : "bg-white border-stone-200 text-stone-400 group-hover:border-orange-300 group-hover:text-orange-500"
+          isOpen ? "bg-orange-500 border-orange-500 text-stone-50 rotate-180" : "bg-white border-stone-200 text-stone-400 group-hover:border-orange-300 group-hover:text-orange-500"
         )}>
           <ChevronDown className="w-4 h-4" />
         </div>
@@ -645,7 +645,7 @@ export default function FAQPage() {
                         >
                           <div className={cn(
                             "w-10 h-10 rounded-xl flex items-center justify-center transition-colors",
-                            activeTab === cat.id ? "bg-orange-500 text-stone-950" : "bg-stone-100 text-stone-400 group-hover:bg-white"
+                            activeTab === cat.id ? "bg-orange-500 text-stone-50" : "bg-stone-100 text-stone-400 group-hover:bg-white"
                           )}>
                             <cat.icon className="w-5 h-5" />
                           </div>
