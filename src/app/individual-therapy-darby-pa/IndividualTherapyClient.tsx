@@ -4,11 +4,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionTemplate, useMotionValue, AnimatePresence, useScroll, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  Brain, Heart, Shield, Lightbulb, Star, Phone, ArrowRight, CheckCircle2, 
-  ChevronDown, ChevronUp, MapPin, Calendar, Clock, Users, Sparkles, Plus,
-  BookOpen, UserCircle, CloudRain, HeartCrack, Check
-} from 'lucide-react';
+import { HugeiconsIcon } from "@hugeicons/react";
+import { BrainIcon, HeartIcon, ShieldIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon } from "@hugeicons/core-free-icons";
+import { Lightbulb } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
@@ -294,19 +292,19 @@ export default function IndividualTherapyClient() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="#appointment">
-                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-950 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
-                    <Calendar className="w-5 h-5" />
-                    Book an Appointment
-                  </button>
-                </Link>
-                <a href="tel:+18146202162">
-                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call (814) 620-2162
-                  </button>
-                </a>
-              </div>
+        <Link href="#appointment">
+          <button className="bg-orange-500 hover:bg-orange-400 text-stone-950 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+            <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
+            Book an Appointment
+          </button>
+        </Link>
+        <a href="tel:+18146202162">
+          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+            <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
+            Call (814) 620-2162
+          </button>
+        </a>
+      </div>
             </motion.div>
           </div>
         </section>
@@ -350,7 +348,7 @@ export default function IndividualTherapyClient() {
                             </p>
                         </Card>
                         <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
-                            <Shield className="w-10 h-10 text-orange-500 mb-4" />
+                            <HugeiconsIcon icon={ShieldIcon} className="w-10 h-10 text-orange-500 mb-4" />
                             <h3 className="text-xl font-bold text-stone-900 mb-2">Safe Space</h3>
                             <p className="text-stone-500 text-sm font-medium">100% confidential and non-judgmental.</p>
                         </Card>
@@ -360,21 +358,21 @@ export default function IndividualTherapyClient() {
                     <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-3 relative z-10">
                         <Card containerClassName="rounded-3xl bg-emerald-50/40 border-emerald-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-emerald-200/20 border border-emerald-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <Shield className="w-6 h-6 text-emerald-600" />
+                                <HugeiconsIcon icon={ShieldIcon} className="w-6 h-6 text-emerald-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Licensed Experts</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with highly trained, compassionate therapists in Delaware County who specialize in various therapeutic modalities.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <BookOpen className="w-6 h-6 text-blue-600" />
+                                <HugeiconsIcon icon={BookOpen01Icon} className="w-6 h-6 text-blue-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">We utilize scientifically proven methods like CBT and DBT to ensure effective, measurable progress in your mental health journey.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <UserCircle className="w-6 h-6 text-rose-600" />
+                                <HugeiconsIcon icon={UserCircleIcon} className="w-6 h-6 text-rose-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Personalized Care</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">Your treatment plan is tailored specifically to your unique background, challenges, and personal goals for therapy.</p>
@@ -408,12 +406,12 @@ export default function IndividualTherapyClient() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {[
-                  { title: "Anxiety Disorders", icon: CloudRain, desc: "Identifying triggers and developing coping strategies for generalized anxiety, social anxiety, and panic attacks." },
-                  { title: "Depression & Mood", icon: Sparkles, desc: "Proven methods to address persistent sadness, lack of motivation, and help you rediscover joy and purpose." },
-                  { title: "Trauma & PTSD", icon: HeartCrack, desc: "Trauma-informed care to help process and heal from past experiences, reducing the impact of distressing memories." },
-                  { title: "Stress & Burnout", icon: Lightbulb, desc: "Equipping you with stress management techniques to restore your energy and work-life balance." },
-                  { title: "Life Transitions", icon: ArrowRight, desc: "Guidance during uncertain times like career shifts, relocation, or major relationship changes." },
-                  { title: "Self-Esteem & Growth", icon: Star, desc: "Assisting clients in exploring their identity, building self-worth, and achieving personal growth." }
+                  { title: "Anxiety Disorders", icon: <HugeiconsIcon icon={CloudAngledRainIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Identifying triggers and developing coping strategies for generalized anxiety, social anxiety, and panic attacks." },
+                  { title: "Depression & Mood", icon: <HugeiconsIcon icon={SparklesIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Proven methods to address persistent sadness, lack of motivation, and help you rediscover joy and purpose." },
+                  { title: "Trauma & PTSD", icon: <HugeiconsIcon icon={HeartbreakIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Trauma-informed care to help process and heal from past experiences, reducing the impact of distressing memories." },
+                  { title: "Stress & Burnout", icon: <Lightbulb className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Equipping you with stress management techniques to restore your energy and work-life balance." },
+                  { title: "Life Transitions", icon: <HugeiconsIcon icon={ArrowRightIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Guidance during uncertain times like career shifts, relocation, or major relationship changes." },
+                  { title: "Self-Esteem & Growth", icon: <HugeiconsIcon icon={StarIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Assisting clients in exploring their identity, building self-worth, and achieving personal growth." }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
@@ -425,7 +423,7 @@ export default function IndividualTherapyClient() {
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-orange-500/10 transition-colors duration-500" />
                     <div className="w-12 h-12 rounded-2xl bg-stone-50 flex items-center justify-center mb-6 border border-stone-100 group-hover:bg-orange-50 group-hover:border-orange-100 transition-colors duration-500">
-                        <item.icon className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />
+                        {item.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-stone-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors">{item.title}</h3>
                     <p className="text-stone-500 text-base leading-relaxed font-medium">
@@ -579,19 +577,19 @@ export default function IndividualTherapyClient() {
                    </p>
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-                     <Link href="/#appointment" className="w-full sm:w-auto">
-                       <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
-                         <Calendar className="w-5 h-5" />
-                         Book an Appointment
-                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                       </button>
-                     </Link>
-                     <a href="tel:+18146202162" className="w-full sm:w-auto">
-                       <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
-                         Call (814) 620-2162
-                       </button>
-                     </a>
-                   </div>
+                      <Link href="/#appointment" className="w-full sm:w-auto">
+                        <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
+                          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
+                          Book an Appointment
+                          <HugeiconsIcon icon={ArrowRightIcon} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </button>
+                      </Link>
+                      <a href="tel:+18146202162" className="w-full sm:w-auto">
+                        <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
+                          Call (814) 620-2162
+                        </button>
+                      </a>
+                    </div>
                  </div>
               </motion.div>
             </div>
@@ -630,7 +628,7 @@ export default function IndividualTherapyClient() {
                             activeFaq === index ? "bg-orange-500 border-orange-400 text-white" : "bg-orange-50 border-stone-100 text-orange-500"
                           )}
                         >
-                          <ChevronDown className={cn("relative h-5 w-5 transition-transform duration-500", activeFaq === index ? "rotate-180" : "")} />
+                          <HugeiconsIcon icon={ArrowDown01Icon} className={cn("relative h-5 w-5 transition-transform duration-500", activeFaq === index ? "rotate-180" : "")} />
                         </span>
 
                         <div className="flex flex-1 flex-col gap-2">
