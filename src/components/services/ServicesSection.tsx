@@ -86,7 +86,7 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                             className="absolute top-1/2 left-1/2 w-[200px] h-[140px] md:w-[400px] md:h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 will-change-transform"
                         >
                             <Image
-                              src={typeof item.image === 'string' ? (item.image.includes('cloudinary') ? item.image.replace('/upload/', '/upload/f_auto,q_auto,w_800/') : item.image) : item.image.src}
+                              src={typeof item.image === 'string' ? (item.image.includes('cloudinary') ? (item.image.includes('f_auto') ? item.image : item.image.replace('/upload/', '/upload/f_auto,q_auto,w_800/')) : item.image) : item.image.src}
                               alt={`${item.title} services at Sunrise Human Care Services in Darby, PA`}
                               fill
                               sizes="(max-width: 768px) 200px, 400px"

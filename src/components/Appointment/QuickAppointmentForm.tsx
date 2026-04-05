@@ -149,7 +149,7 @@ const QuickAppointmentForm = () => {
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <input type="text" name="honeypot" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} className="hidden" />
+            <input id="quick-appointment-honeypot" type="text" name="honeypot" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} className="hidden" />
             
             <div className="space-y-1">
               <Label htmlFor="firstName" className="text-xs font-bold text-stone-900 ml-1 font-barlow uppercase">Name *</Label>

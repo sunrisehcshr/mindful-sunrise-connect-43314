@@ -61,7 +61,7 @@ const NewsletterForm: React.FC = () => {
         Subscribe to our newsletter for helpful mental health tips and updates.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }} aria-hidden="true" />
+        <input id="honeypot-website" type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }} aria-hidden="true" />
         <input 
           type="email" 
           placeholder="Your email address" 
