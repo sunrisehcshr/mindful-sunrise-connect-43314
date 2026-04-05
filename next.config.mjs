@@ -2,6 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   typedRoutes: false,
+  allowedDevOrigins: [
+    "**.*",
+    "localhost",
+    "127.0.0.1"
+  ],
   async redirects() {
     return [
       {
