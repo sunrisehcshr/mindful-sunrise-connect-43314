@@ -14,7 +14,7 @@ import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SectionTag from '@/components/ui/section-tag';
 import CurveTransition from '@/components/ui/CurveTransition';
-import AboutCTA from '@/components/about/AboutCTA';
+import UiloraFrostedGlass from '@/components/ui/uilora-frosted-glass';
 import { cn } from "@/lib/utils";
 
 // Removed TimelineStep as it's no longer used.
@@ -473,14 +473,12 @@ export default function IndividualTherapyClient() {
                             { title: "Mindfulness-Based Therapy", desc: "Combines cognitive techniques with mindfulness to manage thoughts and distress." },
                             { title: "Solution-Focused Brief Therapy", desc: "A short-term, future-focused approach that constructs solutions rather than dwelling on problems." }
                         ].map((method, idx) => (
-                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4 group">
-                                <div className="w-10 h-10 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors duration-300">
-                                    <CheckCircle2 className="w-5 h-5 text-orange-400" />
+                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-3 group">
+                                <div className="flex items-center gap-3">
+                                    <Check className="w-6 h-6 text-orange-500 shrink-0" />
+                                    <h4 className="font-barlow font-bold text-lg text-white">{method.title}</h4>
                                 </div>
-                                <div>
-                                  <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
-                                  <p className="text-stone-400 text-sm leading-relaxed">{method.desc}</p>
-                                </div>
+                                <p className="text-stone-400 text-sm leading-relaxed pl-9">{method.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -542,11 +540,60 @@ export default function IndividualTherapyClient() {
                       ))}
                   </div>
               </div>
+
+              {/* Inlined Sun-style Fluid CTA */}
+              <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
+                  className="mt-24 md:mt-32 max-w-5xl mx-auto bg-orange-600 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-orange-500/20"
+              >
+                 {/* WebGL Fluid Background - Sun Theme */}
+                 <div className="absolute inset-0 z-0 opacity-90 mix-blend-screen">
+                    <UiloraFrostedGlass 
+                      baseColor="#ea580c" // Bright Orange Base
+                      accentColor="#fef08a" // Bright Yellow highlights
+                      speed={0.15}
+                    />
+                 </div>
+                 
+                 {/* Subtle Ambient Glow overlays to ensure text readability */}
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
+                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
+                 
+                 <div className="relative z-10 flex flex-col items-center">
+                   <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-stone-900 mb-6 bg-white/20 px-4 py-2 rounded-full border border-white/30 backdrop-blur-sm shadow-sm">
+                     Take the first step
+                   </span>
+                   
+                   <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
+                     Your journey to wellness <br className="hidden md:block" />
+                     <span className="font-instrument-serif italic text-yellow-200 font-normal">begins here</span>
+                   </h2>
+                   
+                   <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
+                     Our compassionate team is ready to support you. Schedule an appointment today and discover a sanctuary for healing and growth in Darby, PA.
+                   </p>
+                   
+                   <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
+                     <Link href="/#appointment" className="w-full sm:w-auto">
+                       <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
+                         <Calendar className="w-5 h-5" />
+                         Book an Appointment
+                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                       </button>
+                     </Link>
+                     <a href="tel:+18146202162" className="w-full sm:w-auto">
+                       <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
+                         Call (814) 620-2162
+                       </button>
+                     </a>
+                   </div>
+                 </div>
+              </motion.div>
             </div>
           </section>
-
-          {/* Fluid Banner CTA from About Section */}
-          <AboutCTA />
 
           {/* SECTION 5: FAQs */}
           <section className="py-16 md:py-24 bg-white relative overflow-hidden">
