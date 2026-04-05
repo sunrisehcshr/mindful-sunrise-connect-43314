@@ -245,20 +245,20 @@ SpotlightItem.displayName = "SpotlightItem";
 
 const processSteps = [
   {
-    title: "Initial Consultation",
+    title: "Let's Talk (Stress-Free Onboarding)",
     desc: "We handle the paperwork and verify your insurance coverage—including Medicaid. We'll match your family with the right therapist on day one."
   },
   {
-    title: "Family Assessment",
-    desc: "During the first sessions, your therapist will conduct a thorough evaluation of your family's history, conflict patterns, and shared goals."
+    title: "Understanding Your Unique Needs",
+    desc: "During the first sessions, we take the time to truly understand your family's history, conflict patterns, and what you all need to feel better."
   },
   {
-    title: "Actionable Roadmap",
+    title: "Your Custom Healing Plan",
     desc: "Collaborate to design a customized roadmap tailored to your family's dynamic, establishing clear objectives for therapy and at-home strategies."
   },
   {
-    title: "Continuous Progress",
-    desc: "Engage in regular joint sessions utilizing evidence-based practices to break negative cycles, track your improvement, and restore harmony."
+    title: "Seeing Real Changes at Home",
+    desc: "Engage in regular joint sessions utilizing proven methods to break negative cycles, track your improvement, and restore harmony."
   }
 ];
 
@@ -350,8 +350,8 @@ export default function FamilyTherapyClient() {
                 Restore Harmony in Your Home
               </span>
               <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Family Therapy in <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
+                Bring Peace Back to Your Home with <br className="hidden md:block" />
+                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Family Therapy in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 Stop the daily power struggles and emotional disconnect. Rebuild a peaceful, connected family dynamic with expert therapy in Darby, PA.
@@ -361,7 +361,7 @@ export default function FamilyTherapyClient() {
         <Link href="#appointment">
           <button className="bg-orange-500 hover:bg-orange-400 text-stone-950 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
-            Book an Appointment
+            Schedule Your First Session
           </button>
         </Link>
         <a href="tel:+18146202162">
@@ -426,22 +426,22 @@ export default function FamilyTherapyClient() {
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-emerald-200/20 border border-emerald-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
                                 <HugeiconsIcon icon={CheckmarkBadge01Icon} className="w-6 h-6 text-emerald-600" />
                             </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Licensed Experts</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with fully licensed, state-certified therapists in Delaware County who specialize in various therapeutic modalities.</p>
+                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Guidance You Can Trust</h3>
+                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with fully licensed, state-certified therapists in Delaware County who specialize in approaches that actually work for your family.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
                                 <HugeiconsIcon icon={BrainIcon} className="w-6 h-6 text-blue-600" />
                             </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like CBT and DBT so you see measurable, real-world progress in your mental health journey.</p>
+                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Strategies That Actually Work</h3>
+                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like Family Systems Therapy so you see measurable, real-world progress in your home.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
                                 <HugeiconsIcon icon={FavouriteIcon} className="w-6 h-6 text-rose-600" />
                             </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Personalized Care</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Your treatment plan is tailored specifically to your unique background, challenges, and personal goals for therapy.</p>
+                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Tailored to Your Unique Story</h3>
+                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Your family's roadmap is tailored specifically to your unique dynamic, communication styles, and shared goals.</p>
                         </Card>
                     </motion.div>
                 </motion.div>
@@ -526,7 +526,7 @@ export default function FamilyTherapyClient() {
                             <span className="font-instrument-serif italic text-orange-400">That Deliver Real Results</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
-                            Stop guessing what your family needs. We exclusively use scientifically proven, evidence-based practices tailored for families—ensuring you see measurable progress at home.
+                            Stop guessing what your family needs. Your family will benefit from scientifically proven, evidence-based practices tailored for families—ensuring you see measurable progress at home, without the guesswork.
                         </p>
                     </div>
 

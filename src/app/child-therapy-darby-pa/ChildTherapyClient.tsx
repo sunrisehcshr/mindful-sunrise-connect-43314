@@ -245,20 +245,20 @@ SpotlightItem.displayName = "SpotlightItem";
 
 const processSteps = [
   {
-    title: "Initial Consultation",
+    title: "Let's Talk (Stress-Free Onboarding)",
     desc: "We handle the paperwork and verify your insurance coverage—including Medicaid. We'll match your child with the right specialist on day one."
   },
   {
-    title: "Comprehensive Assessment",
-    desc: "During the first sessions, your therapist will conduct a thorough evaluation of your child's developmental history, behavioral patterns, and emotional needs."
+    title: "Understanding Your Unique Needs",
+    desc: "During the first sessions, we take the time to truly understand your child's history, behavior, and what they need to feel better."
   },
   {
-    title: "Actionable Roadmap",
+    title: "Your Custom Healing Plan",
     desc: "Collaborate to design a customized roadmap tailored to your child, establishing clear objectives for therapy and practical at-home strategies for parents."
   },
   {
-    title: "Continuous Progress",
-    desc: "Engage in regular sessions utilizing evidence-based practices to build coping skills, track your child's improvement, and adjust strategies as they grow."
+    title: "Seeing Real Changes at Home",
+    desc: "Engage in regular sessions utilizing proven methods to build coping skills, track your child's improvement, and adjust strategies as they grow."
   }
 ];
 
@@ -350,18 +350,18 @@ export default function ChildTherapyClient() {
                 Expert Care for Your Child
               </span>
               <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Child Therapy in <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
+                Help Your Child Thrive with <br className="hidden md:block" />
+                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Child Therapy in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Equip your child with healthy coping skills, overcome behavioral challenges, and foster profound developmental growth with expert child therapy in Darby, PA.
+                Equip your child with healthy coping skills, overcome behavioral challenges, and help them build confidence and succeed with expert child therapy in Darby, PA.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Link href="#appointment">
           <button className="bg-orange-500 hover:bg-orange-400 text-stone-950 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
-            Book an Appointment
+            Schedule Your First Session
           </button>
         </Link>
         <a href="tel:+18146202162">
@@ -410,7 +410,7 @@ export default function ChildTherapyClient() {
                     <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-4 relative z-10">
                         <Card containerClassName="md:col-span-3 rounded-3xl bg-stone-50/50" className="flex flex-col justify-center p-8 md:p-12">
                             <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed max-w-3xl">
-                                Children don't process emotions like adults do. When you partner with our licensed child specialists in Darby, PA, your child gains a safe, engaging environment where they can express themselves naturally through play and age-appropriate therapy, helping them build confidence and resilience.
+                                Children don't process emotions like adults do. Our licensed specialists in Darby, PA provide a safe, engaging environment for your child. Here, they can express themselves naturally through play, helping them build confidence and resilience.
                             </p>
                         </Card>
                         <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
@@ -426,22 +426,22 @@ export default function ChildTherapyClient() {
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-emerald-200/20 border border-emerald-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
                                 <HugeiconsIcon icon={CheckmarkBadge01Icon} className="w-6 h-6 text-emerald-600" />
                             </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Licensed Experts</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with fully licensed, state-certified therapists in Delaware County who specialize in various therapeutic modalities.</p>
+                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Guidance You Can Trust</h3>
+                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with fully licensed, state-certified therapists in Delaware County who specialize in proven therapy methods that actually work for kids.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
                                 <HugeiconsIcon icon={BrainIcon} className="w-6 h-6 text-blue-600" />
                             </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like CBT and DBT so you see measurable, real-world progress in your mental health journey.</p>
+                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Strategies That Actually Work</h3>
+                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like Play Therapy and CBT so you see measurable, real-world progress in your child's behavior and happiness.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
                                 <HugeiconsIcon icon={FavouriteIcon} className="w-6 h-6 text-rose-600" />
                             </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Personalized Care</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Your treatment plan is tailored specifically to your unique background, challenges, and personal goals for therapy.</p>
+                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Tailored to Your Child</h3>
+                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Your child's treatment plan is tailored specifically to their unique background, challenges, and goals for therapy.</p>
                         </Card>
                     </motion.div>
                 </motion.div>
@@ -526,7 +526,7 @@ export default function ChildTherapyClient() {
                             <span className="font-instrument-serif italic text-orange-400">That Deliver Real Results</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
-                            Stop guessing what your child needs. We exclusively use scientifically proven, evidence-based practices tailored for children and teens—ensuring you see measurable progress at home and in school.
+                            Stop guessing what your child needs. Your child will benefit from science-backed, age-appropriate practices tailored for kids and teens—ensuring you see measurable progress at home and in school.
                         </p>
                     </div>
 
