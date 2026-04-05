@@ -8,20 +8,17 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { BrainIcon, ShieldIcon, SafeIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon, FavouriteIcon } from "@hugeicons/core-free-icons";
 import { Lightbulb, CheckCircle2, Shield, Users, Heart, Brain, Sparkles, ArrowRight, Star, ChevronDown, Plus } from 'lucide-react';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer/Footer';
-import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SectionTag from '@/components/ui/section-tag';
 import CurveTransition from '@/components/ui/CurveTransition';
-import UiloraFrostedGlass from '@/components/ui/uilora-frosted-glass';
 import { cn } from "@/lib/utils";
+import dynamic from 'next/dynamic';
 
-// Removed TimelineStep as it's no longer used.
-
-
-
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
+const AppointmentSection = dynamic(() => import('@/components/Appointment/AppointmentSection'));
+const UiloraFrostedGlass = dynamic(() => import('@/components/ui/uilora-frosted-glass'), { ssr: false });
 
 // --- Timeline Step Component ---
-const TimelineStep = ({
+const TimelineStep = React.memo(({
     step,
     i,
     totalSteps,
@@ -112,10 +109,9 @@ const TimelineStep = ({
             </motion.div>
         </div>
     );
-};
+});
 
-
-
+TimelineStep.displayName = "TimelineStep";
 
 // --- Scramble Text Effect (Brand Style) ---
 function ScrambleText({ text, className }: { text: string, className?: string }) {
@@ -190,33 +186,32 @@ function Card({ children, className, containerClassName }: { children: React.Rea
     );
 }
 
-const SpotlightItem = ({ faq, cardBgColor, cardBorderColor, cardTextColor, hoverCardTextColor, answerTextColor, iconColor, hoverIconColor, spotlightColor }: { faq: { question: string, answer: string }, cardBgColor: string, cardBorderColor: string, cardTextColor: string, hoverCardTextColor: string, answerTextColor: string, iconColor: string, hoverIconColor: string, spotlightColor: string }) => {
+const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextColor, hoverCardTextColor, answerTextColor, iconColor, hoverIconColor, spotlightColor }: { faq: { question: string, answer: string }, cardBgColor: string, cardBorderColor: string, cardTextColor: string, hoverCardTextColor: string, answerTextColor: string, iconColor: string, hoverIconColor: string, spotlightColor: string }) => {
     const [isOpen, setIsOpen] = useState(false);
     const divRef = useRef<HTMLDivElement>(null);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [opacity, setOpacity] = useState(0);
+    
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+    const background = useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, ${spotlightColor}, transparent 40%)`;
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!divRef.current) return;
         const rect = divRef.current.getBoundingClientRect();
-        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+        mouseX.set(e.clientX - rect.left);
+        mouseY.set(e.clientY - rect.top);
     };
 
     return (
         <div
             ref={divRef}
             onMouseMove={handleMouseMove}
-            onMouseEnter={() => setOpacity(1)}
-            onMouseLeave={() => setOpacity(0)}
             onClick={() => setIsOpen(!isOpen)}
             className="relative rounded-[2rem] border overflow-hidden cursor-pointer group shadow-sm hover:shadow-md transition-shadow duration-300"
             style={{ backgroundColor: cardBgColor, borderColor: cardBorderColor }}
         >
-            <div
+            <motion.div
                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
-                style={{
-                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
-                }}
+                style={{ background }}
             />
             <div className="relative z-10 p-6 md:p-8">
                 <div className="flex justify-between items-center gap-4">
@@ -244,7 +239,53 @@ const SpotlightItem = ({ faq, cardBgColor, cardBorderColor, cardTextColor, hover
             </div>
         </div>
     );
-};
+});
+
+SpotlightItem.displayName = "SpotlightItem";
+
+const processSteps = [
+  {
+    title: "Initial Consultation",
+    desc: "Reach out to schedule your first appointment. We will discuss your basic needs, match you with the right therapist, and verify your insurance coverage, including Medicaid."
+  },
+  {
+    title: "Comprehensive Assessment",
+    desc: "During your first session, your therapist will conduct a thorough evaluation of your mental health history, current challenges, and personal goals."
+  },
+  {
+    title: "Personalized Plan",
+    desc: "Collaborate to design a personalized treatment plan tailored to your specific needs, establishing clear objectives for your therapy sessions."
+  },
+  {
+    title: "Continuous Progress",
+    desc: "Engage in regular therapy sessions utilizing evidence-based practices to address your concerns, track your improvement, and adjust your treatment as necessary."
+  }
+];
+
+const faqs = [
+  {
+    question: "What does individual therapy in Darby involve?",
+    answer: "Individual therapy in Darby offers a personalized process where licensed therapists support you in addressing challenges like anxiety, depression, or life transitions in a safe, confidential setting. Our Delaware County therapists use evidence-based methods tailored to your needs."
+  },
+  {
+    question: "How often are individual counseling sessions recommended?",
+    answer: "Most clients begin with weekly counseling sessions to establish momentum and build progress. As you meet your therapeutic goals, we can adjust the frequency to bi-weekly or monthly based on your unique situation."
+  },
+  {
+    question: "How long does personal counseling typically last?",
+    answer: "The duration of personal counseling in PA varies widely. Some individuals achieve their specific goals through short-term solution-focused therapy in 8-12 sessions, while others benefit from longer-term counseling to navigate deeper trauma or ongoing life stressors."
+  },
+  {
+    question: "Is individual therapy covered by insurance in PA?",
+    answer: "Yes, Sunrise Human Care accepts Medicaid to ensure mental health care is accessible to the Darby and broader Delaware County community. Our administrative team will verify your benefits prior to your first session."
+  },
+  {
+    question: "What if I'm nervous about starting therapy for the first time?",
+    answer: "It is completely normal to feel nervous or hesitant about starting individual therapy. Our therapists prioritize creating a warm, non-judgmental, and secure environment. We move at a pace that feels comfortable for you, ensuring you feel safe every step of the way."
+  }
+];
+
+const scrollOffset = ["start center", "end center"] as const;
 
 export default function IndividualTherapyClient() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
@@ -255,7 +296,7 @@ export default function IndividualTherapyClient() {
 
   const { scrollYProgress } = useScroll({
       target: containerRef,
-      offset: ["start center", "end center"]
+      offset: scrollOffset
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
@@ -270,47 +311,11 @@ export default function IndividualTherapyClient() {
       ["0%", "100%"]
   );
 
-  const processSteps = [
-    {
-      title: "Initial Consultation",
-      desc: "Reach out to schedule your first appointment. We will discuss your basic needs, match you with the right therapist, and verify your insurance coverage, including Medicaid."
-    },
-    {
-      title: "Comprehensive Assessment",
-      desc: "During your first session, your therapist will conduct a thorough evaluation of your mental health history, current challenges, and personal goals."
-    },
-    {
-      title: "Personalized Plan",
-      desc: "Together, you and your therapist will develop a customized treatment plan outlining the therapeutic methods and frequency of sessions needed to reach your objectives."
-    },
-    {
-      title: "Growth & Healing",
-      desc: "Engage in regular therapy sessions where you will learn new skills, process emotions, and gradually achieve lasting positive change in your life."
-    }
-  ];
+  const [reviewDate, setReviewDate] = useState("");
 
-  const faqs = [
-    {
-      question: "What does individual therapy in Darby involve?",
-      answer: "Individual therapy in Darby offers a personalized process where licensed therapists support you in addressing challenges like anxiety, depression, or life transitions in a safe, confidential setting. Our Delaware County therapists use evidence-based methods tailored to your needs."
-    },
-    {
-      question: "How often are individual counseling sessions recommended?",
-      answer: "Most clients begin with weekly counseling sessions to establish momentum and build progress. As you meet your therapeutic goals, we can adjust the frequency to bi-weekly or monthly based on your unique situation."
-    },
-    {
-      question: "How long does personal counseling typically last?",
-      answer: "The duration of personal counseling in PA varies widely. Some individuals achieve their specific goals through short-term solution-focused therapy in 8-12 sessions, while others benefit from longer-term counseling to navigate deeper trauma or ongoing life stressors."
-    },
-    {
-      question: "Is individual therapy covered by insurance in PA?",
-      answer: "Yes, Sunrise Human Care accepts Medicaid to ensure mental health care is accessible to the Darby and broader Delaware County community. Our administrative team will verify your benefits prior to your first session."
-    },
-    {
-      question: "What if I'm nervous about starting therapy for the first time?",
-      answer: "It is completely normal to feel nervous or hesitant about starting individual therapy. Our therapists prioritize creating a warm, non-judgmental, and secure environment. We move at a pace that feels comfortable for you, ensuring you feel safe every step of the way."
-    }
-  ];
+  useEffect(() => {
+    setReviewDate(new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }));
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-stone-950">
@@ -324,6 +329,8 @@ export default function IndividualTherapyClient() {
               src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg" 
               alt="Individual Therapy in Darby PA" 
               fill 
+              sizes="(max-width: 768px) 100vw, 50vw"
+              unoptimized={true}
               className="object-cover opacity-60"
               priority
             />
@@ -586,7 +593,7 @@ export default function IndividualTherapyClient() {
                   <div className="flex flex-col gap-12 md:gap-16">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
-                              key={i}
+                              key={step.title}
                               step={step}
                               i={i}
                               totalSteps={processSteps.length}
@@ -719,9 +726,9 @@ export default function IndividualTherapyClient() {
                 </div>
 
                 <div className="space-y-4">
-                  {faqs.map((faq, index) => (
+                  {faqs.map((faq) => (
                     <SpotlightItem 
-                        key={index} 
+                        key={faq.question} 
                         faq={faq} 
                         cardBgColor="#ffffff" 
                         cardBorderColor="rgba(249, 115, 22, 0.15)" 
@@ -746,9 +753,9 @@ export default function IndividualTherapyClient() {
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
-              <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
+              <meta itemProp="lastReviewed" content={reviewDate} />
               <p>
-                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {reviewDate} to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>

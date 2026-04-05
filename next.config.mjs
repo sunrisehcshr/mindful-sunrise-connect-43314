@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   typedRoutes: false,
+  experimental: {
+    optimizePackageImports: ['@hugeicons/core-free-icons'],
+  },
   allowedDevOrigins: [
     "**.*",
     "localhost",
