@@ -94,6 +94,10 @@ const faqCategories = [
         answer: "Initially, appointments are typically more frequent (every 2-4 weeks) as we establish the right medication and dosage. Once your symptoms are stable, visits may be scheduled less frequently (every 1-3 months). The schedule is always personalized based on your specific needs, response to medication, and overall stability."
       },
       {
+        question: "Can I combine medication with therapy?",
+        answer: "Yes, and we often recommend this combined approach. Research shows that for many mental health conditions, the combination of medication and therapy provides better outcomes than either treatment alone. We collaborate closely with therapists to ensure coordinated care and optimal results."
+      },
+      {
         question: "What can we expect from couples counseling in Darby?",
         answer: "Couples counseling in Darby at Sunrise Human Care offers a tailored approach where licensed therapists guide partners to improve communication, resolve conflicts, and build a stronger bond in a confidential, supportive environment. We help you navigate challenges together rather than against each other."
       },
@@ -144,6 +148,34 @@ const faqCategories = [
       {
         question: "How long does trauma therapy take?",
         answer: "The timeline for trauma recovery is unique to each individual. Some clients see significant symptom reduction in 8-12 sessions of targeted therapy like EMDR, while others benefit from longer-term support for complex trauma."
+      },
+      {
+        question: "What does individual therapy in Darby involve?",
+        answer: "Individual therapy in Darby offers a personalized process where licensed therapists support you in addressing challenges like anxiety, depression, or life transitions in a safe, confidential setting. Our Delaware County therapists use evidence-based methods tailored to your needs."
+      },
+      {
+        question: "How often are individual counseling sessions recommended?",
+        answer: "Most clients begin with weekly counseling sessions to establish momentum and build progress. As you meet your therapeutic goals, we can adjust the frequency to bi-weekly or monthly based on your unique situation."
+      },
+      {
+        question: "How long does personal counseling typically last?",
+        answer: "The duration of personal counseling in PA varies widely. Some individuals achieve their specific goals through short-term solution-focused therapy in 8-12 sessions, while others benefit from longer-term counseling to navigate deeper trauma or ongoing life stressors."
+      },
+      {
+        question: "What if I'm nervous about starting therapy for the first time?",
+        answer: "It is completely normal to feel nervous or hesitant about starting individual therapy. Our therapists prioritize creating a warm, non-judgmental, and secure environment. We move at a pace that feels comfortable for you, ensuring you feel safe every step of the way."
+      },
+      {
+        question: "How do I know if my relationship would benefit from therapy?",
+        answer: "Consider relationship therapy if you're experiencing recurring conflicts that don't get resolved, communication problems, emotional disconnection, trust issues, intimacy concerns, or if you're navigating major life transitions that are straining your relationship. It's best to seek help early rather than waiting until problems become severe."
+      },
+      {
+        question: "Does relationship therapy only work for couples on the brink of separation?",
+        answer: "No, relationship therapy can benefit relationships at any stage. While it can help relationships in crisis, it's also valuable for relatively healthy relationships that want to enhance communication, deepen connection, or navigate transitions proactively. Many couples use therapy as a relationship wellness tool rather than only as crisis intervention."
+      },
+      {
+        question: "How long does relationship therapy typically take?",
+        answer: "The duration varies depending on the issues being addressed, the goals for therapy, and how actively partners engage in the process. Some couples attend 10-12 sessions and achieve their goals, while others may benefit from longer-term therapy, especially when addressing complex issues or recovering from significant relationship trauma."
       },
       {
         question: "What is a Dual Diagnosis?",
