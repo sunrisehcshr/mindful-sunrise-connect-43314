@@ -39,13 +39,13 @@ export const createPageMetadata = ({
       siteName: "Sunrise Human Care Services",
       locale: "en_US",
       type: "website",
-      images: image ? [{ url: image }] : [{ url: "/images/og-image.jpg" }],
+      images: image ? [{ url: image }] : [{ url: "/og-image.png" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: image ? [image] : ["/images/og-image.jpg"],
+      images: image ? [image] : ["/og-image.png"],
     },
     robots: noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   };

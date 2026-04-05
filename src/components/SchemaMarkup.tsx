@@ -1,5 +1,5 @@
 import React from "react";
-import Script from "next/script";
+import { JsonLd } from "./JsonLd";
 
 interface SchemaMarkupProps {
   type?: "MedicalClinic" | "Person" | "FAQPage" | "BreadcrumbList" | "Organization" | "MedicalService";
@@ -131,10 +131,9 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
   }
 
   return (
-    <Script
+    <JsonLd
       id={`schema-${type || "global"}`}
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(baseSchema) }}
+      data={baseSchema}
     />
   );
 };
