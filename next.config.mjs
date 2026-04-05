@@ -49,6 +49,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'plus.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'coresg-normal.trae.ai',
+      },
     ],
   },
 };
