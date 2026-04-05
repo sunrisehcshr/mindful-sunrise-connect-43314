@@ -349,9 +349,9 @@ export default function CouplesCounselingClient() {
               <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
                 Rebuild Your Relationship in PA
               </span>
-              <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Couples Counseling in <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
+              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
+                Reconnect and Rebuild with <br className="hidden md:block" />
+                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Couples Counseling in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 Stop the endless arguments and emotional distance. Reconnect with your partner, rebuild trust, and restore intimacy with expert marriage counseling in Darby, PA.
@@ -361,7 +361,7 @@ export default function CouplesCounselingClient() {
         <Link href="#appointment">
           <button className="bg-orange-500 hover:bg-orange-400 text-stone-950 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
-            Book an Appointment
+            Schedule Your First Session
           </button>
         </Link>
         <a href="tel:+18146202162">
@@ -633,7 +633,7 @@ export default function CouplesCounselingClient() {
                       Don't Wait Another Day
                     </span>
                    
-                   <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
+                   <h2 className="text-balance font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start communicating better <br className="hidden md:block" />
                      <span className="font-instrument-serif italic text-yellow-200 font-normal">this week.</span>
                    </h2>
@@ -646,7 +646,7 @@ export default function CouplesCounselingClient() {
                      <Link href="/#appointment" className="w-full sm:w-auto">
                        <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
                          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
-                         Book an Appointment
+                         Schedule Your First Session
                          <HugeiconsIcon icon={ArrowRightIcon} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                        </button>
                      </Link>
