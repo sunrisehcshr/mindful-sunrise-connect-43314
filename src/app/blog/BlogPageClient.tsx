@@ -12,60 +12,60 @@ import { motion } from "framer-motion";
 import SectionTag from "@/components/ui/section-tag";
 import CurveTransition from "@/components/ui/CurveTransition";
 
-export default function BlogPage() {
-  const blogPosts = [
-    {
-      id: "finding-therapist-darby-pa-guide",
-      title: "Finding the Right Therapist in Darby, PA: A Complete Guide",
-      excerpt:
-        "Discover how to find the perfect therapist in Darby, PA. Learn about therapy types, insurance options, and what to look for in a mental health professional.",
-      date: "Oct 28, 2025",
-      readTime: "12 min read",
-      image: "/images/finding-therapist-havertown.webp",
-      category: "Guidance",
-    },
-    {
-      id: "anxiety-treatment-delaware-county-pa",
-      title: "Anxiety Treatment Options in Delaware County, PA",
-      excerpt:
-        "Comprehensive guide to anxiety treatment in Delaware County. Learn about therapy approaches, medication options, and local resources.",
-      date: "Oct 27, 2025",
-      readTime: "10 min read",
-      image: "/images/anxiety-treatment-delaware-county.webp",
-      category: "Anxiety",
-    },
-    {
-      id: "depression-therapy-darby-pa-complete-guide",
-      title: "Depression Therapy in Darby, PA: Guide to Recovery",
-      excerpt:
-        "Understanding depression treatment options in Darby, PA. From evidence-based therapies to medication management.",
-      date: "Oct 26, 2025",
-      readTime: "11 min read",
-      image: "/images/depression-therapy-havertown.webp",
-      category: "Depression",
-    },
-    {
-      id: "family-therapy-darby-pa-guide",
-      title: "Family Therapy in Darby, PA: Strengthening Bonds",
-      excerpt:
-        "Learn how family therapy in Darby can help resolve conflicts, improve communication, and strengthen relationships.",
-      date: "Oct 25, 2025",
-      readTime: "9 min read",
-      image: "/images/family-therapy-havertown-guide.webp",
-      category: "Family",
-    },
-    {
-      id: "adhd-treatment-darby-pa-comprehensive-guide",
-      title: "ADHD Treatment in Darby, PA: A Guide for Families",
-      excerpt:
-        "Complete guide to ADHD treatment in Darby, PA. Explore therapy options, medication management, and local resources.",
-      date: "Oct 24, 2025",
-      readTime: "13 min read",
-      image: "/images/adhd-treatment-havertown.webp",
-      category: "ADHD",
-    },
-  ];
+const blogPosts = [
+  {
+    id: "finding-therapist-darby-pa-guide",
+    title: "Finding the Right Therapist in Darby, PA: A Complete Guide",
+    excerpt:
+      "Discover how to find the perfect therapist in Darby, PA. Learn about therapy types, insurance options, and what to look for in a mental health professional.",
+    date: "Oct 28, 2025",
+    readTime: "12 min read",
+    image: "/images/finding-therapist-havertown.webp",
+    category: "Guidance",
+  },
+  {
+    id: "anxiety-treatment-delaware-county-pa",
+    title: "Anxiety Treatment Options in Delaware County, PA",
+    excerpt:
+      "Comprehensive guide to anxiety treatment in Delaware County. Learn about therapy approaches, medication options, and local resources.",
+    date: "Oct 27, 2025",
+    readTime: "10 min read",
+    image: "/images/anxiety-treatment-delaware-county.webp",
+    category: "Anxiety",
+  },
+  {
+    id: "depression-therapy-darby-pa-complete-guide",
+    title: "Depression Therapy in Darby, PA: Guide to Recovery",
+    excerpt:
+      "Understanding depression treatment options in Darby, PA. From evidence-based therapies to medication management.",
+    date: "Oct 26, 2025",
+    readTime: "11 min read",
+    image: "/images/depression-therapy-havertown.webp",
+    category: "Depression",
+  },
+  {
+    id: "family-therapy-darby-pa-guide",
+    title: "Family Therapy in Darby, PA: Strengthening Bonds",
+    excerpt:
+      "Learn how family therapy in Darby can help resolve conflicts, improve communication, and strengthen relationships.",
+    date: "Oct 25, 2025",
+    readTime: "9 min read",
+    image: "/images/family-therapy-havertown-guide.webp",
+    category: "Family",
+  },
+  {
+    id: "adhd-treatment-darby-pa-comprehensive-guide",
+    title: "ADHD Treatment in Darby, PA: A Guide for Families",
+    excerpt:
+      "Complete guide to ADHD treatment in Darby, PA. Explore therapy options, medication management, and local resources.",
+    date: "Oct 24, 2025",
+    readTime: "13 min read",
+    image: "/images/adhd-treatment-havertown.webp",
+    category: "ADHD",
+  },
+];
 
+export default function BlogPage() {
   return (
     <>
       <SEOHead
@@ -83,8 +83,8 @@ export default function BlogPage() {
           {/* Blog Hero */}
           <section className="relative py-20 md:py-32 bg-stone-900 overflow-hidden">
             <div className="absolute inset-0 z-0">
-              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] -mr-48 -mt-48" />
-              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] -ml-48 -mb-48" />
+              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -117,14 +117,28 @@ export default function BlogPage() {
           <section className="py-24 bg-white">
             <div className="container mx-auto px-4">
               <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {blogPosts.map((post, idx) => (
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.1
+                      }
+                    }
+                  }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                  {blogPosts.map((post) => (
                     <motion.div
                       key={post.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0 }
+                      }}
                       className="group flex flex-col"
                     >
                       <Link
@@ -139,7 +153,7 @@ export default function BlogPage() {
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute top-4 left-4">
-                          <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-orange-600 border border-white/50">
+                          <span className="px-4 py-1.5 bg-white/95 rounded-full text-[10px] font-bold uppercase tracking-widest text-orange-600 border border-white/50">
                             {post.category}
                           </span>
                         </div>
@@ -173,7 +187,7 @@ export default function BlogPage() {
                       </Link>
                     </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </div>
             </div>
           </section>

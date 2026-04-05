@@ -514,11 +514,13 @@ const faqCategories = [
   }
 ];
 
-const FAQItem = ({ question, answer, isOpen, onClick }: { question: string, answer: string, isOpen: boolean, onClick: () => void }) => {
+const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="border-b border-stone-100 last:border-0">
       <button
-        onClick={onClick}
+        onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex items-center justify-between text-left group"
       >
         <span className={cn(
@@ -555,20 +557,27 @@ const FAQItem = ({ question, answer, isOpen, onClick }: { question: string, answ
 
 export default function FAQPage() {
   const [activeTab, setActiveTab] = useState(faqCategories[0].id);
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+
+  React.useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(searchQuery);
+    }, 300);
+    return () => clearTimeout(handler);
+  }, [searchQuery]);
 
   const currentCategory = faqCategories.find(cat => cat.id === activeTab);
 
   const filteredQuestions = useMemo(() => {
-    if (!searchQuery) return currentCategory?.questions || [];
+    if (!debouncedSearch) return currentCategory?.questions || [];
     return faqCategories
       .flatMap(cat => cat.questions)
       .filter(q => 
-        q.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        q.answer.toLowerCase().includes(searchQuery.toLowerCase())
+        q.question.toLowerCase().includes(debouncedSearch.toLowerCase()) || 
+        q.answer.toLowerCase().includes(debouncedSearch.toLowerCase())
       );
-  }, [searchQuery, currentCategory]);
+  }, [debouncedSearch, currentCategory]);
 
   return (
     <>
@@ -579,8 +588,8 @@ export default function FAQPage() {
           {/* Hero Section */}
           <section className="relative py-20 md:py-32 bg-stone-900 overflow-hidden">
             <div className="absolute inset-0 z-0">
-               <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] -mr-48 -mt-48" />
-               <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] -ml-48 -mb-48" />
+               <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+               <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -626,7 +635,6 @@ export default function FAQPage() {
                           key={cat.id}
                           onClick={() => {
                             setActiveTab(cat.id);
-                            setOpenIndex(0);
                           }}
                           className={cn(
                             "flex items-center gap-4 px-6 py-4 rounded-2xl border transition-all duration-300 group",
@@ -656,16 +664,14 @@ export default function FAQPage() {
                       className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-stone-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)]"
                     >
                       <h2 className="text-3xl font-barlow font-bold text-stone-900 mb-8 tracking-tight">{currentCategory?.label} Questions</h2>
-                      <div className="flex flex-col">
-                        {currentCategory?.questions.map((faq, idx) => (
-                          <FAQItem 
-                            key={idx} 
-                            {...faq} 
-                            isOpen={openIndex === idx} 
-                            onClick={() => setOpenIndex(openIndex === idx ? null : idx)} 
-                          />
-                        ))}
-                      </div>
+                    <div className="flex flex-col">
+                      {currentCategory?.questions.map((faq) => (
+                        <FAQItem 
+                          key={faq.question} 
+                          {...faq} 
+                        />
+                      ))}
+                    </div>
                     </motion.div>
                   </div>
                 </div>
@@ -685,12 +691,10 @@ export default function FAQPage() {
                   
                   {filteredQuestions.length > 0 ? (
                     <div className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-stone-100 shadow-sm">
-                      {filteredQuestions.map((faq, idx) => (
+                      {filteredQuestions.map((faq) => (
                         <FAQItem 
-                          key={idx} 
+                          key={faq.question} 
                           {...faq} 
-                          isOpen={openIndex === idx} 
-                          onClick={() => setOpenIndex(openIndex === idx ? null : idx)} 
                         />
                       ))}
                     </div>

@@ -186,11 +186,11 @@ const WarmHeroSection = () => {
       {/* Readability overlay (desktop only) */}
       <div className="absolute inset-0 z-0 hidden md:block bg-black/25" />
 
-      <div className="container mx-auto px-4 z-10 relative text-center pt-40 md:pt-48 -mt-16">
+      <div className="container mx-auto px-4 z-10 relative text-center pt-40 md:pt-32 -mt-16">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto py-12 px-6 md:py-16 md:px-12 rounded-[3rem] bg-black/15 backdrop-blur-xl border border-white/10 shadow-2xl md:bg-transparent md:backdrop-blur-0 md:border-none md:shadow-none relative overflow-hidden"
+          className="max-w-5xl mx-auto py-12 px-6 md:py-8 md:px-12 rounded-[3rem] bg-black/15 backdrop-blur-xl border border-white/10 shadow-2xl md:bg-transparent md:backdrop-blur-0 md:border-none md:shadow-none relative overflow-hidden"
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -209,7 +209,7 @@ const WarmHeroSection = () => {
                 transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="flex flex-col items-center gap-1 sm:gap-2 mb-6 sm:mb-8"
+            className="flex flex-col items-center gap-1 sm:gap-2 mb-3 sm:mb-4"
           >
             <div className="inline-block bg-black/20 backdrop-blur-md border border-white/10 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none shadow-sm">
               <div className="overflow-hidden relative w-full h-full flex items-center">
@@ -233,7 +233,7 @@ const WarmHeroSection = () => {
           </motion.div>
 
           <motion.h1
-            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-4 md:mb-6 leading-[1.1] tracking-tight drop-shadow-xl"
+            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-2 md:mb-3 leading-[1.1] tracking-tight drop-shadow-xl"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
@@ -250,7 +250,7 @@ const WarmHeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="text-sm sm:text-base md:text-lg text-white mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed font-barlow drop-shadow-md"
+            className="text-sm sm:text-base md:text-lg text-white mb-4 md:mb-5 max-w-2xl mx-auto leading-relaxed font-barlow drop-shadow-md"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
