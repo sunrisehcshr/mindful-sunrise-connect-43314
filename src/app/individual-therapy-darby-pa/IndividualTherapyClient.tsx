@@ -13,6 +13,7 @@ import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SectionTag from '@/components/ui/section-tag';
 import CurveTransition from '@/components/ui/CurveTransition';
+import ParallaxBanner from '@/components/ui/ParallaxBanner';
 import { cn } from "@/lib/utils";
 
 // Removed TimelineStep as it's no longer used.
@@ -72,7 +73,7 @@ const TimelineStep = ({
                 `}
             >
                 <div
-                    className="relative rounded-[2rem] p-8 transition-all duration-500 cursor-default bg-white"
+                    className="relative rounded-[2rem] p-8 transition-all duration-500 cursor-default bg-white group/step"
                     style={{
                         border: `1px solid ${shouldGlow ? `${accentColor}80` : (isHovered ? `${accentColor}40` : "rgba(0,0,0,0.05)")}`,
                         boxShadow: shouldGlow
@@ -81,15 +82,21 @@ const TimelineStep = ({
                         transform: (isHovered || (shouldGlow && !isHovered)) && !prefersReducedMotion
                             ? (isLeft ? "translateX(-5px)" : "translateX(5px)")
                             : "none",
+                        background: shouldGlow ? 'linear-gradient(135deg, #ffffff 0%, #fff7ed 100%)' : '#ffffff'
                     }}
                 >
-                    <span
-                        className="block text-sm font-bold mb-3 font-barlow tracking-widest uppercase transition-colors duration-500 tabular-nums"
-                        style={{ color: shouldGlow ? accentColor : "rgba(0,0,0,0.4)" }}
+                    <span 
+                        className={cn(
+                            "font-bold text-5xl font-instrument-serif mb-4 block transition-all duration-500",
+                            shouldGlow ? "text-orange-500 opacity-100" : "text-orange-500 opacity-30 group-hover/step:opacity-100"
+                        )}
                     >
-                        Step {number}
+                        {number}
                     </span>
-                    <h3 className="text-2xl font-normal text-stone-900 mb-3 tracking-tight">
+                    <h3 className={cn(
+                        "text-2xl font-bold font-barlow mb-3 tracking-tight transition-colors duration-500",
+                        shouldGlow ? "text-orange-600" : "text-stone-900 group-hover/step:text-orange-600"
+                    )}>
                         {step.title}
                     </h3>
                     <p className="text-stone-500 text-base leading-relaxed font-barlow">
@@ -345,21 +352,21 @@ export default function IndividualTherapyClient() {
                     <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-3 relative z-10">
                         <Card containerClassName="rounded-3xl bg-emerald-50/40 border-emerald-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-emerald-200/20 border border-emerald-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <Users className="w-6 h-6 text-emerald-600" />
+                                <Shield className="w-6 h-6 text-emerald-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Licensed Experts</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with highly trained, compassionate therapists in Delaware County who specialize in various therapeutic modalities.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <Lightbulb className="w-6 h-6 text-blue-600" />
+                                <Sparkles className="w-6 h-6 text-blue-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">We utilize scientifically proven methods like CBT and DBT to ensure effective, measurable progress in your mental health journey.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <Heart className="w-6 h-6 text-rose-600" />
+                                <Users className="w-6 h-6 text-rose-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Personalized Care</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">Your treatment plan is tailored specifically to your unique background, challenges, and personal goals for therapy.</p>
@@ -371,6 +378,7 @@ export default function IndividualTherapyClient() {
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
           <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
+            <CurveTransition fillColor="#ffffff" />
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -456,12 +464,14 @@ export default function IndividualTherapyClient() {
                             { title: "Mindfulness-Based Therapy", desc: "Combines cognitive techniques with mindfulness to manage thoughts and distress." },
                             { title: "Solution-Focused Brief Therapy", desc: "A short-term, future-focused approach that constructs solutions rather than dwelling on problems." }
                         ].map((method, idx) => (
-                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-3xl hover:bg-white/10 transition-colors duration-300">
-                                <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center mb-4">
-                                    <CheckCircle2 className="w-5 h-5 text-orange-400" />
+                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4">
+                                <div className="w-12 h-12 rounded-2xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center shrink-0">
+                                    <CheckCircle2 className="w-6 h-6 text-orange-400" />
                                 </div>
-                                <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
-                                <p className="text-stone-400 text-sm leading-relaxed">{method.desc}</p>
+                                <div>
+                                  <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
+                                  <p className="text-stone-400 text-sm leading-relaxed">{method.desc}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -523,6 +533,11 @@ export default function IndividualTherapyClient() {
                       ))}
                   </div>
               </div>
+            </div>
+
+            {/* Parallax Banner integrated at the end of the section */}
+            <div className="mt-24 md:mt-32">
+                <ParallaxBanner />
             </div>
           </section>
 
