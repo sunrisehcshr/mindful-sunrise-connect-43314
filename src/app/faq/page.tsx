@@ -521,7 +521,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
     <div className="border-b border-stone-100 last:border-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex items-center justify-between text-left group"
+        className="w-full py-6 flex items-start sm:items-center justify-between text-left group gap-4"
       >
         <span className={cn(
           "font-barlow font-medium text-lg md:text-xl transition-colors duration-300",
@@ -530,7 +530,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
           {question}
         </span>
         <div className={cn(
-          "w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300",
+          "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 mt-1 sm:mt-0 transition-all duration-300",
           isOpen ? "bg-orange-500 border-orange-500 text-stone-950 rotate-180" : "bg-white border-stone-200 text-stone-400 group-hover:border-orange-300 group-hover:text-orange-500"
         )}>
           <ChevronDown className="w-4 h-4" />
