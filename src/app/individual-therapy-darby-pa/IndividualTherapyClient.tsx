@@ -190,6 +190,62 @@ function Card({ children, className, containerClassName }: { children: React.Rea
     );
 }
 
+const SpotlightItem = ({ faq, cardBgColor, cardBorderColor, cardTextColor, hoverCardTextColor, answerTextColor, iconColor, hoverIconColor, spotlightColor }: { faq: { question: string, answer: string }, cardBgColor: string, cardBorderColor: string, cardTextColor: string, hoverCardTextColor: string, answerTextColor: string, iconColor: string, hoverIconColor: string, spotlightColor: string }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const divRef = useRef<HTMLDivElement>(null);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [opacity, setOpacity] = useState(0);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!divRef.current) return;
+        const rect = divRef.current.getBoundingClientRect();
+        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    };
+
+    return (
+        <div
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setOpacity(1)}
+            onMouseLeave={() => setOpacity(0)}
+            onClick={() => setIsOpen(!isOpen)}
+            className="relative rounded-[2rem] border overflow-hidden cursor-pointer group shadow-sm hover:shadow-md transition-shadow duration-300"
+            style={{ backgroundColor: cardBgColor, borderColor: cardBorderColor }}
+        >
+            <div
+                className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
+                style={{
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
+                }}
+            />
+            <div className="relative z-10 p-6 md:p-8">
+                <div className="flex justify-between items-center gap-4">
+                    <h3 className="text-lg font-barlow font-medium leading-tight tracking-tight transition-colors group-hover:text-orange-500" style={{ color: cardTextColor }}>{faq.question}</h3>
+                    <motion.div 
+                        animate={{ rotate: isOpen ? 45 : 0 }} 
+                        className="flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-white border border-stone-100 shadow-sm transition-colors duration-300 group-hover:border-orange-200"
+                        style={{ color: iconColor }}
+                    >
+                        <Plus size={20} className="group-hover:text-orange-500 transition-colors" />
+                    </motion.div>
+                </div>
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                        >
+                            <p className="pt-4 font-barlow text-base leading-relaxed" style={{ color: answerTextColor }}>{faq.answer}</p>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+};
+
 export default function IndividualTherapyClient() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -661,56 +717,18 @@ export default function IndividualTherapyClient() {
 
                 <div className="space-y-4">
                   {faqs.map((faq, index) => (
-                    <div 
-                      key={index}
-                      className={cn(
-                        "group relative overflow-hidden rounded-[2rem] border backdrop-blur-xl transition-all duration-500",
-                        activeFaq === index 
-                          ? "border-orange-500/30 bg-stone-50 shadow-md" 
-                          : "border-stone-200/60 bg-white hover:border-orange-200/40 shadow-sm"
-                      )}
-                    >
-                      <button 
-                        type="button"
-                        onClick={() => setActiveFaq(activeFaq === index ? null : index)}
-                        className="relative flex w-full items-start sm:items-center gap-4 px-6 py-6 md:px-8 text-left transition-colors duration-300 focus:outline-none"
-                      >
-                        <span 
-                          className={cn(
-                            "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-500 group-hover:scale-105 mt-1 sm:mt-0",
-                            activeFaq === index ? "bg-orange-500 border-orange-400 text-white" : "bg-orange-50 border-stone-100 text-orange-500"
-                          )}
-                        >
-                          <ChevronDown className={cn("relative h-5 w-5 transition-transform duration-500", activeFaq === index ? "rotate-180" : "")} />
-                        </span>
-
-                        <div className="flex flex-1 flex-col gap-2">
-                          <h3 className={cn(
-                            "text-lg font-barlow font-medium leading-tight tracking-tight transition-colors duration-300",
-                            activeFaq === index ? "text-orange-600" : "text-stone-900 group-hover:text-orange-500"
-                          )}>
-                            {faq.question}
-                          </h3>
-
-                          <AnimatePresence initial={false}>
-                            {activeFaq === index && (
-                              <motion.div 
-                                initial={{ height: 0, opacity: 0 }} 
-                                animate={{ height: "auto", opacity: 1 }} 
-                                exit={{ height: 0, opacity: 0 }} 
-                                transition={{ duration: 0.3 }}
-                              >
-                                <div className="pt-2">
-                                  <p className="text-stone-500 font-barlow text-base leading-relaxed">
-                                    {faq.answer}
-                                  </p>
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </div>
-                      </button>
-                    </div>
+                    <SpotlightItem 
+                        key={index} 
+                        faq={faq} 
+                        cardBgColor="#ffffff" 
+                        cardBorderColor="rgba(249, 115, 22, 0.15)" 
+                        cardTextColor="#1c1917" 
+                        hoverCardTextColor="#ea580c" 
+                        answerTextColor="#78716c" 
+                        iconColor="#f97316" 
+                        hoverIconColor="#ffffff" 
+                        spotlightColor="rgba(249, 115, 22, 0.08)" 
+                    />
                   ))}
                 </div>
               </div>
