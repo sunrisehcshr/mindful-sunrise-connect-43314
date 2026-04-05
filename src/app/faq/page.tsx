@@ -514,11 +514,19 @@ const faqCategories = [
   }
 ];
 
-const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const FAQItem = ({ question, answer, isHighlighted }: { question: string, answer: string, isHighlighted?: boolean }) => {
+  const [isOpen, setIsOpen] = React.useState(isHighlighted || false);
+
+  React.useEffect(() => {
+    if (isHighlighted) {
+      setIsOpen(true);
+    }
+  }, [isHighlighted]);
+
+  const id = question.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9-]/g, '');
 
   return (
-    <div className="border-b border-stone-100 last:border-0">
+    <div id={id} className="border-b border-stone-100 last:border-0 transition-colors duration-500">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex items-start sm:items-center justify-between text-left group gap-4"
@@ -559,6 +567,41 @@ export default function FAQPage() {
   const [activeTab, setActiveTab] = useState(faqCategories[0].id);
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [highlightedQ, setHighlightedQ] = useState<string | null>(null);
+  const dropdownRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSelectFAQ = (catId: string, question: string) => {
+    setSearchQuery("");
+    setShowDropdown(false);
+    setActiveTab(catId);
+    setHighlightedQ(question);
+    
+    const id = question.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9-]/g, '');
+    
+    // Try to find the element and scroll to it. If it's not rendered yet, try again shortly.
+    const scrollToEl = (attempts = 0) => {
+      const el = document.getElementById(id);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      } else if (attempts < 5) {
+        setTimeout(() => scrollToEl(attempts + 1), 50);
+      }
+    };
+    
+    setTimeout(() => scrollToEl(0), 50);
+  };
 
   React.useEffect(() => {
     const handler = setTimeout(() => {
@@ -568,6 +611,16 @@ export default function FAQPage() {
   }, [searchQuery]);
 
   const currentCategory = faqCategories.find(cat => cat.id === activeTab);
+
+  const searchResults = useMemo(() => {
+    if (!debouncedSearch) return [];
+    return faqCategories
+      .flatMap(cat => cat.questions.map(q => ({ ...q, catId: cat.id, catLabel: cat.label })))
+      .filter(q =>
+        q.question.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+        q.answer.toLowerCase().includes(debouncedSearch.toLowerCase())
+      );
+  }, [debouncedSearch]);
 
   const filteredQuestions = useMemo(() => {
     if (!debouncedSearch) return currentCategory?.questions || [];
@@ -586,13 +639,13 @@ export default function FAQPage() {
         <Navbar />
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900 overflow-hidden">
-            <div className="absolute inset-0 z-0">
+          <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
+            <div className="absolute inset-0 z-0 overflow-hidden">
                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-4 relative z-30">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -607,15 +660,58 @@ export default function FAQPage() {
                 </h1>
                 
                 {/* Search Bar */}
-                <div className="relative max-w-2xl mx-auto group">
-                  <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 group-focus-within:text-orange-500 transition-colors" />
-                  <input 
-                    type="text" 
+                <div className="relative max-w-2xl mx-auto group" ref={dropdownRef}>
+                  <Search className="absolute left-6 top-5 w-5 h-5 text-stone-400 group-focus-within:text-orange-500 transition-colors z-10" />
+                  <input
+                    type="text"
                     placeholder="Search for questions (e.g., 'Medicaid', 'Telehealth')..."
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-full py-5 pl-14 pr-8 text-white placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500/30 transition-all text-lg font-barlow"
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setShowDropdown(true);
+                    }}
+                    onFocus={() => {
+                      if (searchQuery) setShowDropdown(true);
+                    }}
+                    className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] py-5 pl-14 pr-8 text-white placeholder:text-stone-300 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all text-lg font-barlow shadow-xl"
                   />
+                  
+                  {/* Dropdown Popup */}
+                  <AnimatePresence>
+                    {showDropdown && searchResults.length > 0 && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute top-full left-0 right-0 mt-4 bg-white rounded-3xl shadow-2xl border border-stone-100 overflow-hidden z-50 max-h-[400px] flex flex-col text-left"
+                      >
+                        <div className="p-4 bg-stone-50 border-b border-stone-100 flex justify-between items-center shrink-0">
+                          <span className="text-sm font-bold text-stone-500 uppercase tracking-wider">Related Questions</span>
+                          <span className="text-xs font-medium text-orange-600 bg-orange-100 px-2 py-1 rounded-full">{searchResults.length} found</span>
+                        </div>
+                        <div className="overflow-y-auto overscroll-contain">
+                          {searchResults.map((result, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => handleSelectFAQ(result.catId, result.question)}
+                              className="w-full text-left px-6 py-4 border-b border-stone-100 hover:bg-orange-50 active:bg-orange-100 transition-colors group/item flex flex-col gap-1 last:border-0"
+                            >
+                              <span className="font-barlow font-bold text-lg text-stone-800 group-hover/item:text-orange-600 transition-colors">
+                                {result.question}
+                              </span>
+                              <span className="text-sm text-stone-500 line-clamp-1">
+                                {result.answer}
+                              </span>
+                              <span className="text-xs font-medium text-orange-500 mt-2 flex items-center gap-1">
+                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                                {result.catLabel}
+                              </span>
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
             </div>
@@ -625,8 +721,7 @@ export default function FAQPage() {
           {/* FAQ Content */}
           <section className="py-24 container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              {!searchQuery ? (
-                <div className="flex flex-col lg:flex-row gap-12">
+              <div className="flex flex-col lg:flex-row gap-12">
                   {/* Sidebar Tabs */}
                   <div className="lg:w-1/3">
                     <div className="sticky top-32 flex flex-col gap-2">
@@ -675,36 +770,7 @@ export default function FAQPage() {
                     </motion.div>
                   </div>
                 </div>
-              ) : (
-                /* Search Results */
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="max-w-4xl mx-auto"
-                >
-                  <div className="flex items-center justify-between mb-12">
-                    <h2 className="text-2xl font-barlow font-bold text-stone-900">
-                      Search results for &quot;{searchQuery}&quot;
-                    </h2>
-                    <button onClick={() => setSearchQuery("")} className="text-orange-600 font-bold text-sm hover:underline">Clear search</button>
-                  </div>
-                  
-                  {filteredQuestions.length > 0 ? (
-                    <div className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-stone-100 shadow-sm">
-                      {filteredQuestions.map((faq) => (
-                        <FAQItem 
-                          key={faq.question} 
-                          {...faq} 
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-20 bg-stone-50 rounded-[2.5rem] border border-dashed border-stone-200">
-                      <p className="text-stone-400 font-barlow text-lg">No matching questions found. Try another term or contact us directly.</p>
-                    </div>
-                  )}
-                </motion.div>
-              )}
+              
             </div>
           </section>
         </main>
