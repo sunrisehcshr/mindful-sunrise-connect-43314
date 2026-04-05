@@ -322,7 +322,7 @@ export default function GriefTherapyClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Close-up%20of%20a%20person%27s%20hand%20on%20the%20shoulder%20of%20a%20Black%20man%20with%20dreadlocks%20looking%20down%20in%20distress&image_size=landscape_16_9" 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775382829/pexels-rdne-9065261_qrpmut.jpg" 
               alt="Grief Therapy in Darby PA" 
               fill 
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -639,7 +639,7 @@ export default function GriefTherapyClient() {
                    </p>
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-                     <Link href="/#appointment" className="w-full sm:w-auto">
+                     <Link href="#appointment" className="w-full sm:w-auto">
                        <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
                          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
                          Schedule Your First Session

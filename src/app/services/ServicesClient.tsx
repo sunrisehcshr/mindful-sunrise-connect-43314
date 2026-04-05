@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
-import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, useMotionTemplate, useMotionValue, AnimatePresence, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ChevronDown, Calendar, Phone, MapPin, ShieldCheck, Users, Stethoscope, Navigation, HeartPulse, UserPlus, Plus } from 'lucide-react';
@@ -9,8 +9,130 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SectionTag from '@/components/ui/section-tag';
+import CurveTransition from '@/components/ui/CurveTransition';
 import ClinicStatus from '@/components/ui/ClinicStatus';
+import dynamic from 'next/dynamic';
+const UiloraFrostedGlass = dynamic(() => import('@/components/ui/uilora-frosted-glass'), { ssr: false });
 import { cn } from "@/lib/utils";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Calendar01Icon, ArrowRight01Icon, CallIcon } from "@hugeicons/core-free-icons";
+
+// --- Timeline Step Component ---
+const TimelineStep = React.memo(({
+    step,
+    i,
+    totalSteps,
+    hoveredIndex,
+    setHoveredIndex,
+    accentColor,
+    progress,
+    prefersReducedMotion,
+}: {
+    step: { title: string; desc: string };
+    i: number;
+    totalSteps: number;
+    hoveredIndex: number | null;
+    setHoveredIndex: (i: number | null) => void;
+    accentColor: string;
+    progress: any;
+    prefersReducedMotion: boolean | null;
+}) => {
+    const isLeft = i % 2 === 0;
+    const isHovered = hoveredIndex === i;
+    const number = String(i + 1).padStart(2, "0");
+
+    const stepThresholdStart = i / totalSteps;
+    const stepThresholdEnd = (i + 1) / totalSteps;
+    
+    // Instead of glowing when passed, we only glow when the progress is inside this step's range
+    // Or if it's the last step and we are at the end.
+    const isCardGlowing = useTransform(progress, (p: number) => {
+        if (i === totalSteps - 1 && p >= stepThresholdStart) return true;
+        return p >= stepThresholdStart && p < stepThresholdEnd;
+    });
+    const [shouldGlow, setShouldGlow] = useState(false);
+
+    useEffect(() => {
+        const unsubscribe = isCardGlowing.on("change", (latest) => {
+            setShouldGlow(latest);
+        });
+        return () => unsubscribe();
+    }, [isCardGlowing]);
+
+    return (
+        <div className="relative flex items-start md:items-center">
+            <motion.div
+                initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as any }}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                whileTap={{ scale: 0.96 }}
+                className={`
+                    ml-10 md:ml-0 w-full md:w-[calc(50%-2.5rem)]
+                    ${isLeft ? "md:mr-auto md:pr-0" : "md:ml-auto md:pl-0"}
+                    cursor-pointer
+                `}
+            >
+                <div
+                    className="relative rounded-[2rem] p-8 transition-all duration-500 cursor-default bg-white group/step"
+                    style={{
+                        border: `1px solid ${shouldGlow ? `${accentColor}80` : (isHovered ? `${accentColor}40` : "rgba(0,0,0,0.05)")}`,
+                        boxShadow: shouldGlow
+                            ? `0 10px 40px -10px ${accentColor}40`
+                            : (isHovered ? `0 10px 30px -10px ${accentColor}20` : "0 4px 20px -10px rgba(0,0,0,0.05)"),
+                        transform: (isHovered || (shouldGlow && !isHovered)) && !prefersReducedMotion
+                            ? (isLeft ? "translateX(-5px)" : "translateX(5px)")
+                            : "none",
+                        background: shouldGlow ? 'linear-gradient(135deg, #ffffff 0%, #fff7ed 100%)' : '#ffffff'
+                    }}
+                >
+                    <span 
+                        className={cn(
+                            "font-bold text-5xl font-instrument-serif mb-4 block transition-all duration-500",
+                            shouldGlow ? "text-orange-500 opacity-100" : "text-orange-500 opacity-30 group-hover/step:opacity-100"
+                        )}
+                    >
+                        {number}
+                    </span>
+                    <h3 className={cn(
+                        "text-2xl font-bold font-barlow mb-3 tracking-tight transition-colors duration-500",
+                        shouldGlow ? "text-orange-600" : "text-stone-900 group-hover/step:text-orange-600"
+                    )}>
+                        {step.title}
+                    </h3>
+                    <p className="text-stone-500 text-base leading-relaxed font-barlow">
+                        {step.desc}
+                    </p>
+                </div>
+            </motion.div>
+        </div>
+    );
+});
+
+TimelineStep.displayName = "TimelineStep";
+
+
+const processSteps = [
+  {
+    title: "Let's Talk (Stress-Free Onboarding)",
+    desc: "We handle the paperwork and verify your Medicaid coverage before you even start. You'll be matched with the right specialist on day one."
+  },
+  {
+    title: "Comprehensive Evaluation",
+    desc: "Whether you need therapy, psychiatry, or both, our clinicians take the time to understand your complete medical and emotional picture."
+  },
+  {
+    title: "Your Custom Care Plan",
+    desc: "We build a tailored roadmap combining the right therapeutic modalities and/or medication management for your specific needs."
+  },
+  {
+    title: "Finding Your Balance",
+    desc: "Engage in consistent, high-quality care to break negative cycles, manage your symptoms, and reclaim control of your daily life."
+  }
+];
+
 
 // --- Opening Hours Component ---
 function OpeningHours() {
@@ -118,25 +240,30 @@ const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextC
     );
 });
 
-function CurveTransition({ fillColor }: { fillColor: string }) {
-    return (
-        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-10 -mt-[1px]">
-            <svg
-                viewBox="0 0 1200 120"
-                preserveAspectRatio="none"
-                className="relative block w-full h-[60px] md:h-[100px]"
-                style={{ transform: "rotate(180deg)" }}
-            >
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    fill={fillColor}
-                ></path>
-            </svg>
-        </div>
-    );
-}
-
 export default function ServicesClient() {
+
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+      target: containerRef,
+      offset: ["start center", "end center"] as any,
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001
+  });
+
+  const lineHeight = useTransform(
+      prefersReducedMotion ? scrollYProgress : smoothProgress,
+      [0, 1],
+      ["0%", "100%"]
+  );
+
+  const accentColor = "#f97316"; // orange-500
 
   const servicesList = [
     {
@@ -173,7 +300,7 @@ export default function ServicesClient() {
       title: "Grief & Loss Therapy",
       link: "/grief-therapy-darby-pa",
       desc: "Compassionate bereavement support to help you process profound loss, honor your loved ones, and find a path forward.",
-      image: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Close-up%20of%20a%20person%27s%20hand%20on%20the%20shoulder%20of%20a%20Black%20man%20with%20dreadlocks%20looking%20down%20in%20distress&image_size=landscape_16_9"
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775382829/pexels-rdne-9065261_qrpmut.jpg"
     }
   ];
 
@@ -186,7 +313,7 @@ export default function ServicesClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A%20blonde%20female%20therapist%20in%20glasses%20and%20a%20red%20top%20comforting%20a%20crying%20Black%20man%20with%20his%20face%20in%20his%20hands&image_size=landscape_16_9" 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775382830/pexels-alex-green-5699748_suqrnx.jpg" 
               alt="Expert Mental Health Services in Darby, PA" 
               fill 
               className="object-cover opacity-60"
@@ -391,39 +518,42 @@ export default function ServicesClient() {
                   }} 
                   className="grid grid-cols-1 gap-4 md:grid-cols-3 relative z-10"
                 >
-                  <Card containerClassName="md:col-span-2 rounded-3xl bg-white" className="flex flex-col justify-between py-10">
-                    <div className="flex justify-between items-start mb-12">
-                      <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center border border-orange-100">
+                  <Card containerClassName="md:col-span-2 rounded-3xl bg-white group" className="flex flex-col justify-between py-10 overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/5 rounded-full blur-[60px] pointer-events-none group-hover:bg-orange-500/10 transition-colors duration-700" />
+                    <div className="flex justify-between items-start mb-12 relative z-10">
+                      <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center border border-orange-100 group-hover:scale-110 transition-transform duration-500">
                         <HeartPulse className="h-6 w-6 text-orange-500" />
                       </div>
-                      <div className="px-3 py-1 rounded-full bg-stone-50 border border-stone-100 text-[10px] uppercase tracking-widest text-stone-400 font-bold">
-                        The Sunrise Difference
+                      <div className="px-3 py-1 rounded-full bg-stone-50 border border-stone-100 text-[10px] uppercase tracking-widest text-stone-400 font-bold group-hover:border-orange-200 transition-colors duration-500">
+                        All-In-One Care
                       </div>
                     </div>
-                    <div className="space-y-6">
-                      <h3 className="text-4xl md:text-5xl font-normal leading-[0.95] tracking-tighter text-stone-900">
-                        Integrated healing <br />
-                        <span className="font-instrument-serif italic text-orange-500">for mind and body.</span>
+                    <div className="space-y-6 relative z-10">
+                      <h3 className="text-4xl md:text-5xl font-normal leading-[0.95] tracking-tighter text-stone-900 group-hover:text-stone-950 transition-colors duration-300">
+                        Everything your family needs <br />
+                        <span className="font-instrument-serif italic text-orange-500 group-hover:text-orange-600 transition-colors duration-300">under one roof.</span>
                       </h3>
-                      <p className="max-w-md text-stone-500 text-sm leading-relaxed font-medium">
-                        Whether you need compassionate talk therapy or precise medication management, our Darby clinic provides a unified approach. We eliminate the gap between diagnosis and recovery.
+                      <p className="max-w-md text-stone-500 text-sm leading-relaxed font-medium group-hover:text-stone-600 transition-colors duration-300">
+                        Stop bouncing between different clinics for therapy and psychiatry. From children struggling with behavioral issues to adults navigating depression or relationship conflict, our Darby clinic provides a unified, expert team for your entire family.
                       </p>
                     </div>
                   </Card>
 
                   <div className="flex flex-col gap-4">
-                    <Card containerClassName="rounded-3xl bg-stone-900 text-white border-none" className="flex flex-col justify-between h-full">
-                      <ShieldCheck className="h-8 w-8 text-orange-400 mb-4" />
+                    <Card containerClassName="rounded-3xl bg-stone-900 text-white border-none group relative overflow-hidden" className="flex flex-col justify-between h-full z-10">
+                      <div className="absolute inset-0 bg-gradient-to-br from-stone-800 to-stone-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[-1]" />
+                      <ShieldCheck className="h-8 w-8 text-orange-400 mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:text-orange-300" />
                       <div>
-                        <h4 className="font-bold text-lg mb-1">100% Medicaid</h4>
-                        <p className="text-stone-400 text-xs leading-relaxed">Exclusively accepting Medicaid for all psychiatric and therapy services in Delaware County.</p>
+                        <h4 className="font-bold text-lg mb-1 group-hover:text-orange-100 transition-colors duration-300">Zero Financial Surprises</h4>
+                        <p className="text-stone-400 text-xs leading-relaxed group-hover:text-stone-300 transition-colors duration-300">We proudly and exclusively accept Medicaid. Get premium psychiatric care without the out-of-pocket costs.</p>
                       </div>
                     </Card>
-                    <Card containerClassName="rounded-3xl bg-orange-500 text-stone-900 border-none" className="flex flex-col justify-between h-full">
-                      <Users className="h-8 w-8 text-white mb-4" />
+                    <Card containerClassName="rounded-3xl bg-orange-500 text-stone-900 border-none group relative overflow-hidden" className="flex flex-col justify-between h-full z-10">
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[-1]" />
+                      <Users className="h-8 w-8 text-white mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1" />
                       <div>
-                        <h4 className="font-bold text-lg mb-1">Local Continuity</h4>
-                        <p className="text-stone-900/70 text-xs leading-relaxed font-medium">Work with the same psychiatrist and therapist every session for deep, meaningful healing.</p>
+                        <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">No More Starting Over</h4>
+                        <p className="text-stone-900/70 text-xs leading-relaxed font-medium group-hover:text-stone-900/90 transition-colors duration-300">Your therapist and prescriber work together. Stop repeating your story to five different doctors.</p>
                       </div>
                     </Card>
                   </div>
@@ -432,6 +562,116 @@ export default function ServicesClient() {
             </div>
           </section>
 
+{/* SECTION 2.5: The Process */}
+          <section className="py-16 md:py-32 bg-white relative overflow-hidden">
+            
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="max-w-4xl mx-auto text-center mb-16 md:mb-24"
+              >
+                <div className="flex flex-col items-center gap-4">
+                  <SectionTag>Your Path Forward</SectionTag>
+                  <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
+                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                  </h2>
+                </div>
+              </motion.div>
+
+              {/* Timeline Container */}
+              <div className="relative max-w-5xl mx-auto" ref={containerRef}>
+                  {/* Background Vertical Line */}
+                  <div
+                      className="absolute top-0 bottom-0 w-px left-4 md:left-1/2 md:-translate-x-px"
+                      style={{ backgroundColor: "rgba(0,0,0,0.08)" }}
+                  />
+                  
+                  {/* Animated Fill Line */}
+                  <motion.div
+                      className="absolute top-0 w-1 left-4 md:left-1/2 md:-translate-x-1/2 rounded-full origin-top"
+                      style={{ 
+                          backgroundColor: accentColor,
+                          height: lineHeight,
+                          boxShadow: `0 0 10px ${accentColor}40`
+                      }}
+                  />
+
+                  <div className="flex flex-col gap-12 md:gap-16">
+                      {processSteps.map((step, i) => (
+                          <TimelineStep 
+                              key={step.title}
+                              step={step}
+                              i={i}
+                              totalSteps={processSteps.length}
+                              hoveredIndex={hoveredIndex}
+                              setHoveredIndex={setHoveredIndex}
+                              accentColor={accentColor}
+                              progress={prefersReducedMotion ? scrollYProgress : smoothProgress}
+                              prefersReducedMotion={prefersReducedMotion}
+                          />
+                      ))}
+                  </div>
+              </div>
+
+              {/* Inlined Sun-style Fluid CTA */}
+              <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
+                  className="mt-24 md:mt-32 max-w-5xl mx-auto bg-orange-600 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-orange-500/20"
+              >
+                 {/* WebGL Fluid Background - Sun Theme */}
+                 <div className="absolute inset-0 z-0 opacity-90 mix-blend-screen">
+                    <UiloraFrostedGlass 
+                      baseColor="#ea580c" // Bright Orange Base
+                      accentColor="#fef08a" // Bright Yellow highlights
+                      speed={0.15}
+                    />
+                 </div>
+                 
+                 {/* Subtle Ambient Glow overlays to ensure text readability */}
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
+                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
+                 
+                 <div className="relative z-10 flex flex-col items-center">
+                    <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.1)] drop-shadow-md">
+                      Don't Wait Another Day
+                    </span>
+                   
+                   <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
+                     Start feeling better <br className="hidden md:block" />
+                     <span className="font-instrument-serif italic text-yellow-200 font-normal">this week.</span>
+                   </h2>
+                   
+                   <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
+                     You don't have to figure this out alone. Schedule your first appointment today and let our Darby, PA specialists help you move forward.
+                   </p>
+                   
+                   <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
+                     <Link href="#appointment" className="w-full sm:w-auto">
+                       <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
+                         <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
+                         Schedule Your First Session
+                         <HugeiconsIcon icon={ArrowRight01Icon} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                       </button>
+                     </Link>
+                     <a href="tel:+18146202162" className="w-full sm:w-auto">
+                       <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
+                         <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
+                         Call (814) 620-2162
+                       </button>
+                     </a>
+                   </div>
+                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          
           {/* SECTION 3: Local Context & Service Areas */}
           <section className="py-16 md:py-24 bg-stone-900 text-white relative overflow-hidden rounded-[3rem] mx-4 md:mx-6 my-12">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />

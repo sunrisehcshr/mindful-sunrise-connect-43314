@@ -643,7 +643,7 @@ export default function ChildTherapyClient() {
                    </p>
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-                     <Link href="/#appointment" className="w-full sm:w-auto">
+                     <Link href="#appointment" className="w-full sm:w-auto">
                        <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
                          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
                          Schedule Your First Session
