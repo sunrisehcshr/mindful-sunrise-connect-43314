@@ -158,9 +158,7 @@ const AppointmentForm = () => {
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="text"
-              name="honeypot"
+            <input id="appointment-honeypot" type="text" name="honeypot"
               value={honeypot}
               onChange={(e) => setHoneypot(e.target.value)}
               className="hidden"

@@ -609,9 +609,7 @@ export default function FAQPage() {
                 {/* Search Bar */}
                 <div className="relative max-w-2xl mx-auto group">
                   <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 group-focus-within:text-orange-500 transition-colors" />
-                  <input 
-                    type="text" 
-                    placeholder="Search for questions (e.g., 'Medicaid', 'Telehealth')..."
+                  <input id="search-faq" name="search-faq" type="text" placeholder="Search for questions (e.g., 'Medicaid', 'Telehealth')..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-full py-5 pl-14 pr-8 text-white placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500/30 transition-all text-lg font-barlow"

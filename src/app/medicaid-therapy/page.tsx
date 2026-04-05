@@ -202,9 +202,7 @@ export default function MedicaidLandingPage() {
                       </select>
                     </div>
 
-                    <input
-                      type="text"
-                      name="honeypot"
+                    <input id="medicaid-honeypot" type="text" name="honeypot"
                       value={honeypot}
                       onChange={(e) => setHoneypot(e.target.value)}
                       className="hidden"

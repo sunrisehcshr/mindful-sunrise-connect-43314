@@ -62,9 +62,7 @@ const NewsletterForm: React.FC = () => {
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input id="honeypot-website" type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }} aria-hidden="true" />
-        <input 
-          type="email" 
-          placeholder="Your email address" 
+        <input id="newsletter-email" name="newsletter-email" type="email" placeholder="Your email address" 
           value={email} 
           onChange={e => setEmail(e.target.value)} 
           className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 bg-stone-50 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30 focus:border-amber-400/30 font-barlow transition-all duration-300" 
