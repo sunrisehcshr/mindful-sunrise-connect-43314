@@ -246,44 +246,44 @@ SpotlightItem.displayName = "SpotlightItem";
 const processSteps = [
   {
     title: "Let's Talk (Stress-Free Onboarding)",
-    desc: "We handle the paperwork and verify your insurance coverage—including Medicaid. We'll match you with a compassionate grief counselor on day one."
+    desc: "We handle the paperwork and verify your insurance coverage—including Medicaid. We'll match you with the right relationship expert on day one."
   },
   {
-    title: "Understanding Your Unique Loss",
-    desc: "During the first sessions, we take the time to truly understand your history, the relationship you lost, and what you need to feel supported."
+    title: "Understanding Your Dynamic",
+    desc: "During your first session, your therapist will conduct a thorough evaluation of your relationship history, current conflict patterns, and shared goals."
   },
   {
-    title: "Your Custom Healing Pace",
-    desc: "Collaborate to design a roadmap tailored to you. We don't force timelines; we establish practical coping strategies for your daily survival."
+    title: "Your Custom Relationship Roadmap",
+    desc: "Collaborate to design a customized roadmap tailored to your specific dynamic, establishing clear, achievable objectives to rebuild your connection."
   },
   {
-    title: "Finding Light in the Darkness",
-    desc: "Engage in regular, supportive sessions to safely process your emotions, integrate the loss into your life story, and slowly rediscover joy."
+    title: "Seeing Real Changes Together",
+    desc: "Engage in regular sessions utilizing proven practices to break negative cycles, track your improvement, and restore your mutual respect."
   }
 ];
 
 const faqs = [
     {
-      question: "Is there a 'normal' way to grieve?",
-      answer: "There is no single 'normal' way to grieve. Grief is highly individual and influenced by many factors. What's important is finding healthy ways to express and process your emotions that work for you."
+      question: "How do I know if my relationship would benefit from therapy?",
+      answer: "Consider therapy if you're experiencing recurring conflicts that don't get resolved, communication problems, emotional disconnection, trust issues, or if you're navigating major life transitions that are straining your relationship."
     },
     {
-      question: "How do I know if I need grief therapy?",
-      answer: "Consider seeking therapy if your grief feels unbearable, if you're having trouble functioning in daily life, if you feel stuck, or if you're experiencing intense yearning that doesn't ease over time."
+      question: "Does relationship therapy only work for couples on the brink of separation?",
+      answer: "No, relationship therapy can benefit relationships at any stage. While it can help those in crisis, it's also highly valuable for healthy relationships that want to enhance communication, deepen connection, or navigate transitions proactively."
     },
     {
-      question: "How long does grief therapy typically last?",
-      answer: "Duration varies based on individual needs. Some benefit from short-term therapy (8-12 sessions), while others need longer-term support, especially for complicated or traumatic grief. We work at your pace."
+      question: "Can I attend relationship therapy alone?",
+      answer: "Yes! Individual relationship therapy is highly effective. You can learn to set better boundaries, understand your own attachment style, and change how you react to toxic people in your life, even if the other person refuses to attend."
     },
     {
-      question: "Do you accept Medicaid for grief counseling in PA?",
-      answer: "Yes, we exclusively accept Medicaid and Medical Assistance. We provide compassionate grief support to ensure you have the help you need during difficult times without financial stress."
+      question: "How long does relationship therapy typically take?",
+      answer: "The duration varies depending on the issues being addressed. Some individuals or couples attend 10-12 sessions and achieve their goals, while others benefit from longer-term therapy to recover from significant relationship trauma."
     }
 ];
 
 const scrollOffset = ["start center", "end center"] as const;
 
-export default function GriefTherapyClient() {
+export default function RelationshipTherapyClient() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -322,8 +322,8 @@ export default function GriefTherapyClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918388/sad-woman-crying-at-psychotherapy-session-comfort-2026-03-25-06-38-04-utc_hfj8y7.jpg" 
-              alt="Grief Therapy in Darby PA" 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
+              alt="Relationship Therapy in Darby PA" 
               fill 
               sizes="(max-width: 768px) 100vw, 50vw"
               unoptimized={true}
@@ -343,14 +343,14 @@ export default function GriefTherapyClient() {
               className="max-w-4xl mx-auto"
             >
               <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Compassionate Bereavement Support
+                Expert Relationship Support
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Find a Path Through the Pain with <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Grief Therapy in Darby, PA</span>
+                Heal and Strengthen Your Connections with <br className="hidden md:block" />
+                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Relationship Therapy in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                You don't have to carry this heavy burden alone. Get compassionate, expert support to navigate loss, honor your loved one, and slowly rebuild your life in a safe space.
+                Stop the endless cycles of conflict and misunderstanding. Whether it's with a partner, family member, or co-worker, get expert support to build healthier, lasting bonds in Darby, PA.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -387,7 +387,7 @@ export default function GriefTherapyClient() {
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Why Choose Sunrise</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Therapy designed to hold your pain, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not rush your healing.</span>
+                            Therapy designed to rebuild trust, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not place blame.</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -406,7 +406,7 @@ export default function GriefTherapyClient() {
                     <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-4 relative z-10">
                         <Card containerClassName="md:col-span-3 rounded-3xl bg-stone-50/50" className="flex flex-col justify-center p-8 md:p-12">
                             <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed max-w-3xl">
-                                Grief doesn't follow a timeline, and neither do we. When you partner with our licensed grief specialists in Darby, PA, you gain a safe harbor to express your deepest sorrow without judgment, process complex emotions, and find a way to breathe again.
+                                Relationships are complex, and navigating them shouldn't feel like a battlefield. When you work with our licensed relationship experts in Darby, PA, you gain an unbiased guide who will help you break destructive communication loops, establish healthy boundaries, and rediscover genuine connection.
                             </p>
                         </Card>
                         <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
@@ -455,25 +455,25 @@ export default function GriefTherapyClient() {
                 className="max-w-4xl mx-auto text-center mb-16"
               >
                 <div className="flex flex-col items-center gap-4">
-                  <SectionTag>Compassionate Support</SectionTag>
+                  <SectionTag>Targeted Relief</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Find a way to carry the weight of <br />
-                    <span className="font-instrument-serif italic text-orange-500">profound loss.</span>
+                    Find your way back to <br />
+                    <span className="font-instrument-serif italic text-orange-500">healthy connections.</span>
                   </h2>
                   <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
-                    You don't have to navigate the darkness by yourself. Our grief specialists in Darby, PA provide a supportive environment to help you process every stage of bereavement.
+                    You don't have to stay stuck in the same toxic patterns. Our relationship specialists in Darby, PA use proven methods to help you bridge the emotional gap and build stronger, healthier partnerships.
                   </p>
                 </div>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {[
-                  { title: "Loss of a Loved One", icon: Heart, desc: "Whether you lost a spouse, parent, child, or friend, we provide a safe space to honor their memory and navigate the painful void." },
-                  { title: "Complicated Grief", icon: Shield, desc: "If you feel entirely stuck in your pain months or years later, we offer specialized care to help you slowly move forward." },
-                  { title: "Anticipatory Grief", icon: Brain, desc: "Caring for a terminally ill loved one is exhausting. Find emotional support to manage the profound sorrow of impending loss." },
-                  { title: "Traumatic Loss", icon: Sparkles, desc: "Sudden or violent deaths leave deep psychological scars. We provide trauma-informed care to safely process the unthinkable." },
-                  { title: "Major Life Transitions", icon: ArrowRight, desc: "Grief isn't just for death. We support you through painful divorces, career losses, empty nest syndrome, or loss of independence." },
-                  { title: "Pet Loss", icon: Star, desc: "The loss of a furry family member is devastating. Receive genuine, validating support to mourn the unconditional love of your pet." }
+                  { title: "Communication Breakdown", icon: Brain, desc: "Stop the endless cycles of arguing. Learn how to truly hear each other and express your needs without triggering defensive reactions." },
+                  { title: "Trust & Infidelity", icon: Shield, desc: "Rebuild after betrayal. We provide a structured, safe roadmap to process the pain, restore broken trust, and create a new foundation." },
+                  { title: "Family Estrangement", icon: Heart, desc: "Navigate the complex pain of broken family ties. We help you set healthy boundaries, heal past wounds, and explore reconciliation safely." },
+                  { title: "Co-Parenting Conflicts", icon: Users, desc: "Get on the same page for your children. Resolve differences in parenting styles and build a united, cooperative front post-divorce." },
+                  { title: "Navigating Divorce", icon: ArrowRight, desc: "Uncoupling doesn't have to destroy you. Receive compassionate guidance to untangle your life, process grief, and establish a healthy future." },
+                  { title: "Workplace & Peer Issues", icon: Star, desc: "It's not just romance. Learn to navigate toxic bosses, difficult friendships, and set firm, respectful boundaries in all areas of life." }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
@@ -519,19 +519,19 @@ export default function GriefTherapyClient() {
                         <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">How We Work</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
                             Discover Proven Therapies <br />
-                            <span className="font-instrument-serif italic text-orange-400">That Honors Your Journey</span>
+                            <span className="font-instrument-serif italic text-orange-400">That Restore Connection</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
-                            Stop feeling pressured to 'move on' or 'get over it.' Your healing process is unique, which is why we use evidence-based grief protocols to help you integrate the loss and find meaning again.
+                            Stop repeating the same arguments. We exclusively use scientifically proven, evidence-based practices for relationship building—ensuring you experience measurable progress and lasting harmony.
                         </p>
                     </div>
 
                     <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {[
-                            { title: "Meaning-Centered Therapy", desc: "Find a way forward. We help you explore how to honor the person or life you lost while rebuilding a sense of purpose for your future." },
-                            { title: "Trauma-Informed Care", desc: "Process the unthinkable safely. We use specialized, gentle techniques to help your nervous system heal from the shock of sudden or traumatic loss." },
-                            { title: "Cognitive Behavioral Therapy for Grief", desc: "Untangle complicated emotions. Learn to identify and reframe the intense guilt, anger, or regret that often accompanies deep mourning." },
-                            { title: "Mindfulness & Acceptance", desc: "Learn to carry the weight. Master practical grounding techniques to manage sudden waves of sorrow and panic when grief strikes unexpectedly." }
+                            { title: "Emotionally Focused Therapy (EFT)", desc: "Stop the negative cycle. Identify the hidden emotional triggers driving your conflicts and create a secure, lasting bond with your loved ones." },
+                            { title: "The Gottman Method", desc: "Build a bulletproof partnership. Master the research-backed framework designed to disarm conflict, increase intimacy, and build shared meaning." },
+                            { title: "Family Systems Therapy", desc: "Heal the whole dynamic. Address the underlying unspoken rules and roles driving family conflict, improve communication, and strengthen bonds." },
+                            { title: "Conflict Resolution Training", desc: "Get unstuck, fast. Stop dwelling on past resentments and start building concrete, actionable communication skills for your future interactions." }
                         ].map((method, idx) => (
                             <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4 group">
                                 <div className="w-10 h-10 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors duration-300">
@@ -626,16 +626,16 @@ export default function GriefTherapyClient() {
                  
                  <div className="relative z-10 flex flex-col items-center">
                     <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.1)] drop-shadow-md">
-                      Don't Carry It Alone
+                      Don't Let Conflict Win
                     </span>
                    
                    <h2 className="text-balance font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
-                     Start finding your way through the dark <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-yellow-200 font-normal">today.</span>
+                     Start communicating better <br className="hidden md:block" />
+                     <span className="font-instrument-serif italic text-yellow-200 font-normal">this week.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
-                     You don't have to navigate this profound sorrow by yourself. Schedule your grief counseling session today and let our Darby, PA specialists support you.
+                     You don't have to fix this alone. Schedule your relationship therapy session today and let our Darby, PA specialists help you find your way back to healthy connections.
                    </p>
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
@@ -717,7 +717,7 @@ export default function GriefTherapyClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Grief Therapy <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Relationship Therapy <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 

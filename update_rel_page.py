@@ -1,4 +1,6 @@
-import React from 'react';
+import re
+
+content = """import React from 'react';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { Metadata } from 'next';
 import { createPageMetadata } from '@/lib/seo';
@@ -52,3 +54,9 @@ export default function RelationshipTherapyPage() {
     </>
   );
 }
+"""
+
+with open('/workspace/src/app/relationship-therapy-darby-pa/page.tsx', 'w') as f:
+    f.write(content)
+
+print("Rel page updated")
