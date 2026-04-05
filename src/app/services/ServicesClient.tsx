@@ -343,14 +343,14 @@ export default function ServicesClient() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="#appointment">
-                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
                     <Calendar className="w-5 h-5" />
                     Schedule Your First Session
                   </button>
                 </Link>
                 <a href="tel:+18146202162">
-                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
                     <Phone className="w-5 h-5 mr-2" />
                     Call (814) 620-2162
                   </button>
@@ -562,7 +562,71 @@ export default function ServicesClient() {
             </div>
           </section>
 
-{/* SECTION 2.5: The Process */}
+{/* SECTION 3: Local Context & Service Areas */}
+          <section className="py-16 md:py-24 bg-stone-900 text-white relative overflow-hidden rounded-[3rem] mx-4 md:mx-6 my-12">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
+            
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <SectionTag className="bg-orange-500/20 text-orange-400 border-orange-500/30 mb-6">Community First</SectionTag>
+                  <h2 className="font-barlow font-normal text-4xl md:text-5xl tracking-tighter leading-tight mb-6">
+                    Accessible Therapy in <br />
+                    <span className="font-instrument-serif italic text-orange-400 font-normal">Delaware County, PA</span>
+                  </h2>
+                  <div className="space-y-6 font-barlow text-stone-300 text-lg leading-relaxed">
+                    <p>
+                      Finding reliable mental health services near you shouldn't be difficult. Sunrise Human Care Services, located at 869 Main Street in Darby, PA, serves as a central hub for healing and psychiatric support in Delaware County.
+                    </p>
+                    <p>
+                      Our clinical team is dedicated to treating a wide variety of conditions, including generalized anxiety disorder, major depressive disorder, PTSD, ADHD, and behavioral challenges in children. We offer culturally competent care that respects your background and personal journey.
+                    </p>
+                    <p>
+                      Whether you need individual counseling, family therapy, or a full psychiatric evaluation, our doors are open to help you achieve long-term mental wellness.
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="space-y-4"
+                >
+                  <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
+                    <h3 className="font-barlow font-bold text-2xl text-white mb-6 flex items-center gap-3">
+                      <MapPin className="w-6 h-6 text-orange-400" />
+                      Areas We Serve
+                    </h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      <Link href="/mental-health-darby-pa" className="px-4 py-3 bg-orange-500 hover:bg-orange-400 transition-colors rounded-xl text-center font-barlow font-bold text-stone-900 shadow-lg shadow-orange-500/20">
+                        Darby (19023)
+                      </Link>
+                      {[
+                        { name: "Yeadon", zip: "19008" },
+                        { name: "Lansdowne", zip: "19003" },
+                        { name: "Upper Darby", zip: "19026" },
+                        { name: "Collingdale", zip: "19064" },
+                        { name: "Sharon Hill", zip: "19073" }
+                      ].map(city => (
+                        <div key={city.name} className="px-4 py-3 bg-white/10 rounded-xl text-center font-barlow text-stone-300 text-sm flex flex-col items-center justify-center border border-white/5">
+                          <span className="font-bold">{city.name}</span>
+                          <span className="text-xs opacity-70">{city.zip}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 2.5: The Process */}
           <section className="py-16 md:py-32 bg-white relative overflow-hidden">
             
             <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -652,15 +716,15 @@ export default function ServicesClient() {
                    </p>
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-                     <Link href="#appointment" className="w-full sm:w-auto">
-                       <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
+                     <Link href="#appointment" className="w-full sm:w-auto" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                       <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
                          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
                          Schedule Your First Session
                          <HugeiconsIcon icon={ArrowRight01Icon} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                        </button>
                      </Link>
                      <a href="tel:+18146202162" className="w-full sm:w-auto">
-                       <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
+                       <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
                          <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
                          Call (814) 620-2162
                        </button>
@@ -668,71 +732,6 @@ export default function ServicesClient() {
                    </div>
                  </div>
               </motion.div>
-            </div>
-          </section>
-
-          
-          {/* SECTION 3: Local Context & Service Areas */}
-          <section className="py-16 md:py-24 bg-stone-900 text-white relative overflow-hidden rounded-[3rem] mx-4 md:mx-6 my-12">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
-            
-            <div className="container mx-auto px-4 md:px-8 relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <SectionTag className="bg-orange-500/20 text-orange-400 border-orange-500/30 mb-6">Community First</SectionTag>
-                  <h2 className="font-barlow font-normal text-4xl md:text-5xl tracking-tighter leading-tight mb-6">
-                    Accessible Therapy in <br />
-                    <span className="font-instrument-serif italic text-orange-400 font-normal">Delaware County, PA</span>
-                  </h2>
-                  <div className="space-y-6 font-barlow text-stone-300 text-lg leading-relaxed">
-                    <p>
-                      Finding reliable mental health services near you shouldn't be difficult. Sunrise Human Care Services, located at 869 Main Street in Darby, PA, serves as a central hub for healing and psychiatric support in Delaware County.
-                    </p>
-                    <p>
-                      Our clinical team is dedicated to treating a wide variety of conditions, including generalized anxiety disorder, major depressive disorder, PTSD, ADHD, and behavioral challenges in children. We offer culturally competent care that respects your background and personal journey.
-                    </p>
-                    <p>
-                      Whether you need individual counseling, family therapy, or a full psychiatric evaluation, our doors are open to help you achieve long-term mental wellness.
-                    </p>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className="space-y-4"
-                >
-                  <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
-                    <h3 className="font-barlow font-bold text-2xl text-white mb-6 flex items-center gap-3">
-                      <MapPin className="w-6 h-6 text-orange-400" />
-                      Areas We Serve
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      <Link href="/mental-health-darby-pa" className="px-4 py-3 bg-orange-500 hover:bg-orange-400 transition-colors rounded-xl text-center font-barlow font-bold text-stone-900 shadow-lg shadow-orange-500/20">
-                        Darby (19023)
-                      </Link>
-                      {[
-                        { name: "Yeadon", zip: "19008" },
-                        { name: "Lansdowne", zip: "19003" },
-                        { name: "Upper Darby", zip: "19026" },
-                        { name: "Collingdale", zip: "19064" },
-                        { name: "Sharon Hill", zip: "19073" }
-                      ].map(city => (
-                        <div key={city.name} className="px-4 py-3 bg-white/10 rounded-xl text-center font-barlow text-stone-300 text-sm flex flex-col items-center justify-center border border-white/5">
-                          <span className="font-bold">{city.name}</span>
-                          <span className="text-xs opacity-70">{city.zip}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
             </div>
           </section>
 
