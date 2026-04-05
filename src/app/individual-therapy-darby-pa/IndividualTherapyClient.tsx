@@ -472,12 +472,14 @@ export default function IndividualTherapyClient() {
                             { title: "Mindfulness-Based Therapy", desc: "Combines cognitive techniques with mindfulness to manage thoughts and distress." },
                             { title: "Solution-Focused Brief Therapy", desc: "A short-term, future-focused approach that constructs solutions rather than dwelling on problems." }
                         ].map((method, idx) => (
-                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-3xl hover:bg-white/10 transition-colors duration-300">
-                                <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center mb-4">
+                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4 group">
+                                <div className="w-10 h-10 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors duration-300">
                                     <CheckCircle2 className="w-5 h-5 text-orange-400" />
                                 </div>
-                                <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
-                                <p className="text-stone-400 text-sm leading-relaxed">{method.desc}</p>
+                                <div>
+                                  <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
+                                  <p className="text-stone-400 text-sm leading-relaxed">{method.desc}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -596,8 +598,7 @@ export default function IndividualTherapyClient() {
           </section>
 
           {/* SECTION 5: FAQs */}
-          <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-            <CurveTransition fillColor="#fafaf9" />
+          <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
