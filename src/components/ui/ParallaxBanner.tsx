@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-export default function ParallaxBanner() {
+export default function ParallaxBanner({ imageUrl = "/images/parallax-bg.png" }: { imageUrl?: string }) {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     offset: ["start end", "end start"],
@@ -43,7 +43,7 @@ export default function ParallaxBanner() {
               alt="Healing landscape"
               className="grayscale-0 object-cover brightness-[0.85] contrast-[1.1]"
               fill
-              src="/images/parallax-bg.png"
+              src={imageUrl}
               style={{ objectFit: "cover" }}
               priority
               sizes="100vw"

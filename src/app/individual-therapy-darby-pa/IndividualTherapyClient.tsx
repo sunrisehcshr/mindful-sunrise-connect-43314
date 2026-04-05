@@ -6,7 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { 
   Brain, Heart, Shield, Lightbulb, Star, Phone, ArrowRight, CheckCircle2, 
-  ChevronDown, ChevronUp, MapPin, Calendar, Clock, Users, Sparkles, Plus
+  ChevronDown, ChevronUp, MapPin, Calendar, Clock, Users, Sparkles, Plus,
+  BookOpen, UserCircle, CloudRain, HeartCrack, Check
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -45,8 +46,15 @@ const TimelineStep = ({
     const isHovered = hoveredIndex === i;
     const number = String(i + 1).padStart(2, "0");
 
-    const stepThreshold = i / Math.max(1, totalSteps - 1);
-    const isCardGlowing = useTransform(progress, (p: number) => p >= stepThreshold);
+    const stepThresholdStart = i / totalSteps;
+    const stepThresholdEnd = (i + 1) / totalSteps;
+    
+    // Instead of glowing when passed, we only glow when the progress is inside this step's range
+    // Or if it's the last step and we are at the end.
+    const isCardGlowing = useTransform(progress, (p: number) => {
+        if (i === totalSteps - 1 && p >= stepThresholdStart) return true;
+        return p >= stepThresholdStart && p < stepThresholdEnd;
+    });
     const [shouldGlow, setShouldGlow] = useState(false);
 
     useEffect(() => {
@@ -359,14 +367,14 @@ export default function IndividualTherapyClient() {
                         </Card>
                         <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <Sparkles className="w-6 h-6 text-blue-600" />
+                                <BookOpen className="w-6 h-6 text-blue-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">We utilize scientifically proven methods like CBT and DBT to ensure effective, measurable progress in your mental health journey.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <Users className="w-6 h-6 text-rose-600" />
+                                <UserCircle className="w-6 h-6 text-rose-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Personalized Care</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">Your treatment plan is tailored specifically to your unique background, challenges, and personal goals for therapy.</p>
@@ -400,9 +408,9 @@ export default function IndividualTherapyClient() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {[
-                  { title: "Anxiety Disorders", icon: Brain, desc: "Identifying triggers and developing coping strategies for generalized anxiety, social anxiety, and panic attacks." },
+                  { title: "Anxiety Disorders", icon: CloudRain, desc: "Identifying triggers and developing coping strategies for generalized anxiety, social anxiety, and panic attacks." },
                   { title: "Depression & Mood", icon: Sparkles, desc: "Proven methods to address persistent sadness, lack of motivation, and help you rediscover joy and purpose." },
-                  { title: "Trauma & PTSD", icon: Shield, desc: "Trauma-informed care to help process and heal from past experiences, reducing the impact of distressing memories." },
+                  { title: "Trauma & PTSD", icon: HeartCrack, desc: "Trauma-informed care to help process and heal from past experiences, reducing the impact of distressing memories." },
                   { title: "Stress & Burnout", icon: Lightbulb, desc: "Equipping you with stress management techniques to restore your energy and work-life balance." },
                   { title: "Life Transitions", icon: ArrowRight, desc: "Guidance during uncertain times like career shifts, relocation, or major relationship changes." },
                   { title: "Self-Esteem & Growth", icon: Star, desc: "Assisting clients in exploring their identity, building self-worth, and achieving personal growth." }
@@ -431,7 +439,8 @@ export default function IndividualTherapyClient() {
 
           {/* SECTION 3: Clinical Approach */}
           <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-8 relative z-10">
+            <CurveTransition fillColor="#fafaf9" />
+            <div className="container mx-auto px-4 md:px-8 relative z-10 mt-12">
               <motion.div 
                 initial="hidden"
                 whileInView="visible"
@@ -465,8 +474,8 @@ export default function IndividualTherapyClient() {
                             { title: "Solution-Focused Brief Therapy", desc: "A short-term, future-focused approach that constructs solutions rather than dwelling on problems." }
                         ].map((method, idx) => (
                             <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center shrink-0">
-                                    <CheckCircle2 className="w-6 h-6 text-orange-400" />
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-[0_0_20px_rgba(249,115,22,0.3)] flex items-center justify-center shrink-0">
+                                    <Check className="w-6 h-6 text-white stroke-[3]" />
                                 </div>
                                 <div>
                                   <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
@@ -481,7 +490,7 @@ export default function IndividualTherapyClient() {
           </section>
 
           {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50/50 relative overflow-hidden">
+          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
             <CurveTransition fillColor="#ffffff" />
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
@@ -537,13 +546,14 @@ export default function IndividualTherapyClient() {
 
             {/* Parallax Banner integrated at the end of the section */}
             <div className="mt-24 md:mt-32">
-                <ParallaxBanner />
+                <ParallaxBanner imageUrl="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=calm%20therapy%20room%20artistic%20orange%20style&image_size=landscape_16_9" />
             </div>
           </section>
 
           {/* SECTION 5: FAQs */}
-          <section className="py-16 md:py-24 bg-white">
-            <div className="container mx-auto px-4 md:px-6">
+          <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+            <CurveTransition fillColor="#fafaf9" />
+            <div className="container mx-auto px-4 md:px-6 relative z-10 mt-12">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
