@@ -143,7 +143,7 @@ export default function ServicesClient() {
       title: "Individual Therapy",
       link: "/individual-therapy-darby-pa",
       desc: "One-on-one sessions focused on personal growth, emotional healing, and developing practical coping strategies for life's challenges.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/young-woman-with-her-psychologist-during-a-therapy-2025-11-20-15-46-12-utc_d2c80h.jpg"
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg"
     },
     {
       title: "Couples Counseling",
@@ -173,7 +173,7 @@ export default function ServicesClient() {
       title: "Grief & Loss Therapy",
       link: "/grief-therapy-darby-pa",
       desc: "Compassionate bereavement support to help you process profound loss, honor your loved ones, and find a path forward.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918388/sad-woman-crying-at-psychotherapy-session-comfort-2026-03-25-06-38-04-utc_hfj8y7.jpg"
+      image: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Close-up%20of%20a%20person%27s%20hand%20on%20the%20shoulder%20of%20a%20Black%20man%20with%20dreadlocks%20looking%20down%20in%20distress&image_size=landscape_16_9"
     }
   ];
 
@@ -186,14 +186,15 @@ export default function ServicesClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" 
+              src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A%20blonde%20female%20therapist%20in%20glasses%20and%20a%20red%20top%20comforting%20a%20crying%20Black%20man%20with%20his%20face%20in%20his%20hands&image_size=landscape_16_9" 
               alt="Expert Mental Health Services in Darby, PA" 
               fill 
               className="object-cover opacity-60"
               priority
               sizes="100vw"
             />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/80 via-stone-950/40 to-stone-50" />
+            <div className="absolute inset-0 z-0 bg-black/30" />
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-white" />
           </div>
           
           <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
@@ -206,7 +207,7 @@ export default function ServicesClient() {
               <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
                 Comprehensive Care
               </span>
-              <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
+              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Find the Right Care in <br className="hidden md:block" />
                 <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
               </h1>
@@ -218,7 +219,7 @@ export default function ServicesClient() {
                 <Link href="#appointment">
                   <button className="bg-orange-500 hover:bg-orange-400 text-stone-900 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
                     <Calendar className="w-5 h-5" />
-                    Book an Appointment
+                    Schedule Your First Session
                   </button>
                 </Link>
                 <a href="tel:+18146202162">
@@ -232,7 +233,7 @@ export default function ServicesClient() {
           </div>
         </section>
 
-        <div className="bg-stone-50 relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
+        <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           
           {/* SECTION 1: Services Grid */}
           <section className="py-16 md:py-24 relative overflow-hidden">
@@ -496,8 +497,8 @@ export default function ServicesClient() {
           </section>
 
           {/* SECTION 4: FAQs */}
-          <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-            <CurveTransition fillColor="#fafaf9" />
+          <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
+            <CurveTransition fillColor="#ffffff" />
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -596,57 +597,6 @@ export default function ServicesClient() {
           </section>
 
           
-          {/* SECTION 5: CTA Banner */}
-          <section className="py-20 md:py-32 relative overflow-hidden bg-stone-950 mx-4 md:mx-6 my-12 rounded-[3rem]">
-            <div className="absolute inset-0 z-0">
-              <Image 
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" 
-                alt="Therapy Session" 
-                fill 
-                className="object-cover opacity-30" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent" />
-            </div>
-
-            <div className="container mx-auto px-4 relative z-10 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="max-w-3xl mx-auto"
-              >
-                <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-lg">
-                  Take the First Step
-                </span>
-                
-                <h2 className="text-balance font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6">
-                  Ready to prioritize your <br className="hidden md:block" />
-                  <span className="font-instrument-serif italic text-yellow-200">mental health?</span>
-                </h2>
-                
-                <p className="text-white/80 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                  You don't have to navigate life's challenges alone. Our compassionate team in Darby, PA is ready to support your journey to wellness.
-                </p>
-
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-                  <Link href="/#appointment" className="w-full sm:w-auto">
-                    <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg">
-                      <Calendar className="w-5 h-5" />
-                      Schedule Your First Session
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </Link>
-                  <a href="tel:+18146202162" className="w-full sm:w-auto">
-                    <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
-                      <Phone className="w-5 h-5 mr-2" />
-                      Call (814) 620-2162
-                    </button>
-                  </a>
-                </div>
-              </motion.div>
-            </div>
-          </section>
-
           {/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}
           <section className="sr-only">
             <div itemScope itemType="https://schema.org/WebPage">
@@ -662,8 +612,13 @@ export default function ServicesClient() {
             </div>
           </section>
 
-          {/* SECTION 3: Appointment */}
-          <AppointmentSection />
+          {/* SECTION 5: Appointment */}
+          <div className="relative z-10 bg-white pb-24 md:pb-32 -mt-1">
+            <CurveTransition fillColor="#fafaf9" />
+          </div>
+          <div className="bg-white pt-24 md:pt-32 -mt-24 md:-mt-32">
+            <AppointmentSection />
+          </div>
           
         </div>
       </main>
