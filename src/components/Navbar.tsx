@@ -142,8 +142,8 @@ const Navbar = () => {
   return (
     <header className="fixed top-4 inset-x-0 mx-auto z-50 w-[calc(100%-1rem)] sm:w-[95%] max-w-6xl">
       <div className={cn(
-        "backdrop-blur-md rounded-[16px] px-4 md:px-6 py-1.5 md:py-2 transition-all duration-300 border border-white/30 shadow-sm",
-        isScrolled ? "bg-white/95 shadow-[0_0_20px_rgba(255,255,255,0.8)]" : "bg-white"
+        "backdrop-blur-md rounded-[16px] px-4 md:px-6 py-1.5 md:py-2 transition-all duration-300 border shadow-sm relative",
+        isScrolled ? "bg-white/95 shadow-[0_0_20px_rgba(255,255,255,0.8)] border-white/30" : "bg-white border-white/30"
       )}>
         <div className="flex items-center justify-between relative">
           <motion.div whileTap={{ scale: 0.96 }}>
@@ -261,26 +261,26 @@ const Navbar = () => {
             </motion.div>
           </div>
 
-          <motion.button 
-            whileTap={{ scale: 0.96 }}
-            onClick={toggleMenu} 
-            className="md:hidden p-2 rounded-md focus:outline-none text-zinc-600 hover:text-stone-900" 
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </motion.button>
+          <motion.button
+              whileTap={{ scale: 0.96 }}
+              onClick={toggleMenu}
+              className="md:hidden p-2.5 rounded-full focus:outline-none bg-stone-100 text-stone-900 hover:bg-stone-200 transition-colors shadow-sm border border-stone-200/50"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </motion.button>
+          </div>
         </div>
-      </div>
 
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-x-0 top-[80px] mx-[2.5%] bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-stone-100 z-40 max-h-[calc(100vh-96px)] overflow-hidden"
-          >
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden absolute top-[calc(100%+0.5rem)] left-0 right-0 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-stone-200/50 overflow-hidden"
+            >
             <ScrollArea className="h-full max-h-[calc(100vh-96px)]">
               <div className="px-4 py-4">
                 <nav className="flex flex-col space-y-1 pb-20">

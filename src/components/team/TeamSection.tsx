@@ -155,8 +155,8 @@ export default function TeamSection() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
             
             <div className="relative z-10 flex flex-col items-center text-center gap-10">
-              <p className="font-barlow font-normal text-3xl md:text-4xl lg:text-5xl text-white leading-[1.2] tracking-tighter max-w-4xl drop-shadow-lg"> 
-                &quot;The team at Sunrise didn&apos;t just listen to me; they gave me the exact tools I needed to finally manage my anxiety and <span className="font-instrument-serif italic text-orange-400 font-normal">get my life back.</span>&quot; 
+              <p className="font-barlow font-normal text-3xl md:text-4xl lg:text-5xl text-white leading-[1.2] tracking-tighter max-w-4xl drop-shadow-lg">
+                &quot;<span className="font-instrument-serif italic">The team at Sunrise didn&apos;t just listen to me; they gave me the exact tools I needed to finally manage my anxiety and</span> <span className="font-instrument-serif italic text-orange-400 font-normal">get my life back.</span>&quot;
               </p>
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="shrink-0">
