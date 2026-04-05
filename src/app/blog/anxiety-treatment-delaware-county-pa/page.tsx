@@ -55,7 +55,7 @@ export default function AnxietyTreatmentDelawareCountyPage() {
       <SEOHead
         title="Anxiety Treatment in Delaware County, PA | Effective Care"
         description="Explore proven anxiety treatment options in Darby and Delaware County. Learn about therapy approaches, medication management, and local support resources."
-        canonicalUrl="https://sunrisehumancare.com/blog/anxiety-treatment-options-delaware-county-pa"
+        canonicalUrl="https://sunrisehumancare.com/blog/anxiety-treatment-delaware-county-pa"
         keywords="anxiety treatment Darby, anxiety therapy Delaware County PA, treating anxiety near me, best anxiety therapist in Darby, medication management for anxiety Darby"
         ogImage="https://sunrisehumancare.com/images/Therapy-in-havertown.webp"
       />
