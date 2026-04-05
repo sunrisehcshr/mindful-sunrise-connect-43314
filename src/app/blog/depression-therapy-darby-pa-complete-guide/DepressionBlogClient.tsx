@@ -1,5 +1,7 @@
 "use client";
 
+import CurveTransition from "@/components/ui/CurveTransition";
+
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -8,7 +10,7 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Phone, Calendar, Clock3, AlertTriangle } from "lucide-react";
+import { Phone, Calendar, Clock3, AlertTriangle , ArrowLeft, MapPin } from "lucide-react";
 import Script from "next/script";
 
 export default function DepressionTherapyDarbyPage() {
@@ -62,36 +64,53 @@ export default function DepressionTherapyDarbyPage() {
         <Navbar />
         
         <main className="flex-grow">
+          {/* Article Hero */}
           <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
             <div className="absolute inset-0 z-0 overflow-hidden">
-              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
-              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
+               <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+               <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
             </div>
-            
-            <div className="container mx-auto px-4 relative z-30 max-w-4xl">
-              <nav className="text-sm mb-6 text-stone-400 font-barlow">
-              <Link href="/" className="hover:text-orange-400 text-stone-300 transition-colors">Home</Link>
-              {" / "}
-              <Link href="/blog" className="hover:text-orange-400 text-stone-300 transition-colors">Blog</Link>
-              {" / "}
-              <span className="text-white">Depression Therapy</span>
-            </nav>
 
-            <header className="mb-8">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white font-barlow tracking-tighter leading-none">
-                Depression Therapy in Darby: Signs You Should Seek Help
-              </h1>
-              <div className="flex items-center gap-4 text-stone-300 text-sm font-barlow">
-                <span className="flex items-center gap-1"><Calendar className="h-4 w-4 text-amber-500" /> January 25, 2025</span>
-                <span>•</span>
-                <span className="flex items-center gap-1"><Clock3 className="h-4 w-4 text-amber-500" /> 9 min read</span>
-              </div>
-            </header>
+            <div className="container mx-auto px-4 relative z-30 max-w-4xl">
+                <Link href="/blog" className="inline-flex items-center gap-2 text-orange-500 font-bold text-xs uppercase tracking-[0.2em] mb-8 hover:text-orange-400 transition-colors group">
+                  <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                  Back to Resources
+                </Link>
+
+                <h1 className="font-barlow font-bold text-4xl md:text-6xl text-white tracking-tighter leading-none mb-8">
+                  Depression Therapy in Darby: <br className="hidden md:block" />
+                  <span className="font-instrument-serif italic text-orange-500 font-normal text-5xl md:text-7xl">Signs You Should Seek Help</span>
+                </h1>
+
+                <div className="flex flex-wrap items-center gap-6 text-stone-400 font-barlow text-sm border-t border-white/10 pt-8">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                      <Calendar className="w-4 h-4" />
+                    </div>
+                    <span>January 25, 2025</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                      <Clock3 className="w-4 h-4" />
+                    </div>
+                    <span>9 min read</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                      <MapPin className="w-4 h-4" />
+                    </div>
+                    <span>Darby, PA</span>
+                  </div>
+                </div>
             </div>
+            <CurveTransition fillColor="#ffffff" inverted className="z-20" />
           </section>
-          
-          <article className="container mx-auto px-4 py-16 max-w-4xl">
-            <div className="prose prose-stone max-w-none mb-12 font-barlow text-stone-600 leading-relaxed md:text-lg">
+
+          {/* Article Content */}
+          <section className="py-24 bg-white relative">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="prose prose-stone prose-lg max-w-none prose-headings:font-barlow prose-headings:font-bold prose-headings:tracking-tight prose-p:font-barlow prose-p:text-stone-600 prose-p:leading-relaxed prose-strong:text-stone-800 prose-blockquote:border-orange-500 prose-blockquote:bg-orange-50/30 prose-blockquote:rounded-2xl prose-blockquote:p-8 prose-blockquote:not-italic prose-blockquote:font-medium">
               <p className="text-lg">Depression affects more than 21 million adults in the United States each year, making it one of the most common mental health conditions. Yet many people in Darby and throughout Delaware County suffer in silence, unsure whether their feelings warrant professional help. Understanding the signs of depression and knowing when to seek treatment can be life-changing—and potentially life-saving. This guide will help you recognize depression symptoms and explore effective treatment options available right here in Darby, PA.</p>
               
               <Card className="p-6 mb-12 bg-rose-50 border-rose-200">
@@ -151,22 +170,31 @@ export default function DepressionTherapyDarbyPage() {
               </Accordion>
             </section>
 
-            {/* CTA */}
-            <div className="mt-16 text-center bg-stone-900 text-white rounded-[40px] p-12">
-              <h2 className="text-3xl font-bold mb-6 font-barlow">Rediscover Hope and Healing</h2>
-              <p className="text-stone-400 mb-8 font-barlow max-w-2xl mx-auto">You don&apos;t have to face depression alone. Our compassionate team in Darby is ready to support you on your path to recovery and renewed well-being.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-amber-500 hover:bg-amber-600 text-white rounded-full px-8">
-                  <Link href="/appointment">Book Appointment</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 hover:bg-white/10 text-white rounded-full px-8">
-                  <a href="tel:+18146202162" className="flex items-center gap-2">
-                    <Phone className="h-4 w-4" /> (814) 620-2162
-                  </a>
-                </Button>
+            {/* Final CTA */}
+                <div className="mt-24 bg-stone-900 rounded-[3rem] p-10 md:p-16 relative overflow-hidden text-center">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -mr-32 -mt-32" />
+                  <div className="relative z-10 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-barlow tracking-tight leading-none">
+                      Rediscover Hope <span className="font-instrument-serif italic text-orange-500 font-normal">and Healing</span>
+                    </h2>
+                    <p className="text-stone-400 mb-10 font-barlow text-lg">
+                      You don&apos;t have to face depression alone. Our compassionate team in Darby is ready to support you on your path to recovery and renewed well-being.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                      <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-stone-50 rounded-full px-10 h-14 font-bold text-base shadow-xl shadow-orange-900/20 w-full sm:w-auto">
+                        <Link href="/appointment">Book Your Session</Link>
+                      </Button>
+                      <Button asChild size="lg" className="bg-transparent border border-white/20 hover:bg-white/10 text-white rounded-full px-10 h-14 font-bold text-base w-full sm:w-auto">
+                        <a href="tel:+18146202162" className="flex items-center gap-3">
+                          <Phone className="h-4 w-4" /> (814) 620-2162
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </article>
+          </section>
         </main>
 
         <Footer />

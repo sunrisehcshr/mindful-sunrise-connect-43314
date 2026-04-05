@@ -1,5 +1,7 @@
 "use client";
 
+import CurveTransition from "@/components/ui/CurveTransition";
+
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -7,7 +9,7 @@ import SEOHead from "@/components/SEOHead";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Phone, Calendar, Clock3 } from "lucide-react";
+import { Phone, Calendar, Clock3 , ArrowLeft, MapPin } from "lucide-react";
 import Script from "next/script";
 
 export default function AnxietyTreatmentDelawareCountyPage() {
@@ -69,36 +71,53 @@ export default function AnxietyTreatmentDelawareCountyPage() {
         <Navbar />
         
         <main className="flex-grow">
+          {/* Article Hero */}
           <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
             <div className="absolute inset-0 z-0 overflow-hidden">
-              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
-              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
+               <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+               <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
             </div>
-            
-            <div className="container mx-auto px-4 relative z-30 max-w-4xl">
-              <nav className="text-sm mb-6 text-stone-400 font-barlow">
-              <Link href="/" className="hover:text-orange-400 text-stone-300 transition-colors">Home</Link>
-              {" / "}
-              <Link href="/blog" className="hover:text-orange-400 text-stone-300 transition-colors">Blog</Link>
-              {" / "}
-              <span className="text-white">Anxiety Treatment Options</span>
-            </nav>
 
-            <header className="mb-8">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white font-barlow tracking-tighter leading-none">
-                Anxiety Treatment Options in Delaware County: What Works?
-              </h1>
-              <div className="flex items-center gap-4 text-stone-300 text-sm font-barlow">
-                <span className="flex items-center gap-1"><Calendar className="h-4 w-4 text-amber-500" /> January 20, 2025</span>
-                <span>•</span>
-                <span className="flex items-center gap-1"><Clock3 className="h-4 w-4 text-amber-500" /> 10 min read</span>
-              </div>
-            </header>
+            <div className="container mx-auto px-4 relative z-30 max-w-4xl">
+                <Link href="/blog" className="inline-flex items-center gap-2 text-orange-500 font-bold text-xs uppercase tracking-[0.2em] mb-8 hover:text-orange-400 transition-colors group">
+                  <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                  Back to Resources
+                </Link>
+
+                <h1 className="font-barlow font-bold text-4xl md:text-6xl text-white tracking-tighter leading-none mb-8">
+                  Anxiety Treatment Options in Delaware County: <br className="hidden md:block" />
+                  <span className="font-instrument-serif italic text-orange-500 font-normal text-5xl md:text-7xl">What Works?</span>
+                </h1>
+
+                <div className="flex flex-wrap items-center gap-6 text-stone-400 font-barlow text-sm border-t border-white/10 pt-8">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                      <Calendar className="w-4 h-4" />
+                    </div>
+                    <span>January 20, 2025</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                      <Clock3 className="w-4 h-4" />
+                    </div>
+                    <span>10 min read</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                      <MapPin className="w-4 h-4" />
+                    </div>
+                    <span>Darby, PA</span>
+                  </div>
+                </div>
             </div>
+            <CurveTransition fillColor="#ffffff" inverted className="z-20" />
           </section>
-          
-          <article className="container mx-auto px-4 py-16 max-w-4xl">
-            <div className="prose prose-stone max-w-none mb-12 font-barlow text-stone-600 leading-relaxed md:text-lg">
+
+          {/* Article Content */}
+          <section className="py-24 bg-white relative">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="prose prose-stone prose-lg max-w-none prose-headings:font-barlow prose-headings:font-bold prose-headings:tracking-tight prose-p:font-barlow prose-p:text-stone-600 prose-p:leading-relaxed prose-strong:text-stone-800 prose-blockquote:border-orange-500 prose-blockquote:bg-orange-50/30 prose-blockquote:rounded-2xl prose-blockquote:p-8 prose-blockquote:not-italic prose-blockquote:font-medium">
               <p className="text-lg">Anxiety disorders affect over 40 million adults in the United States, and residents of Delaware County, PA are no exception. If you&apos;re experiencing persistent worry, panic attacks, or overwhelming fear that interferes with daily life, you&apos;re not alone—and effective treatment is available right here in Darby. This comprehensive guide explores evidence-based anxiety treatment options that can help you regain control and find peace of mind.</p>
               
               <h2 className="text-2xl font-bold text-stone-800 mt-8 mb-4">Understanding Evidence-Based Treatments</h2>
@@ -142,22 +161,31 @@ export default function AnxietyTreatmentDelawareCountyPage() {
               </Accordion>
             </section>
 
-            {/* CTA */}
-            <div className="mt-16 text-center bg-stone-900 text-white rounded-[40px] p-12">
-              <h2 className="text-3xl font-bold mb-6 font-barlow">Take the First Step Today</h2>
-              <p className="text-stone-400 mb-8 font-barlow max-w-2xl mx-auto">Don&apos;t let anxiety hold you back any longer. Our expert team in Darby is here to help you find relief and live your life to the fullest.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-amber-500 hover:bg-amber-600 text-white rounded-full px-8">
-                  <Link href="/appointment">Book Appointment</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 hover:bg-white/10 text-white rounded-full px-8">
-                  <a href="tel:+18146202162" className="flex items-center gap-2">
-                    <Phone className="h-4 w-4" /> (814) 620-2162
-                  </a>
-                </Button>
+            {/* Final CTA */}
+                <div className="mt-24 bg-stone-900 rounded-[3rem] p-10 md:p-16 relative overflow-hidden text-center">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -mr-32 -mt-32" />
+                  <div className="relative z-10 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-barlow tracking-tight leading-none">
+                      Take the First <span className="font-instrument-serif italic text-orange-500 font-normal">Step Today</span>
+                    </h2>
+                    <p className="text-stone-400 mb-10 font-barlow text-lg">
+                      Don&apos;t let anxiety hold you back any longer. Our expert team in Darby is here to help you find relief and live your life to the fullest.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                      <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-stone-50 rounded-full px-10 h-14 font-bold text-base shadow-xl shadow-orange-900/20 w-full sm:w-auto">
+                        <Link href="/appointment">Book Your Session</Link>
+                      </Button>
+                      <Button asChild size="lg" className="bg-transparent border border-white/20 hover:bg-white/10 text-white rounded-full px-10 h-14 font-bold text-base w-full sm:w-auto">
+                        <a href="tel:+18146202162" className="flex items-center gap-3">
+                          <Phone className="h-4 w-4" /> (814) 620-2162
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </article>
+          </section>
         </main>
 
         <Footer />

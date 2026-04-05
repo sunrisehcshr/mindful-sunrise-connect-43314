@@ -80,12 +80,12 @@ export default function FindingTherapistDarbyPage() {
       <div className="flex flex-col min-h-screen bg-white">
         <Navbar />
         
-        <main className="flex-grow pt-28">
+        <main className="flex-grow">
           {/* Article Hero */}
-          <section className="relative py-20 md:py-28 bg-stone-900 overflow-hidden">
-            <div className="absolute inset-0 z-0">
-               <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[120px] -mr-48 -mt-48" />
-               <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[120px] -ml-48 -mb-48" />
+          <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+               <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+               <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -129,7 +129,7 @@ export default function FindingTherapistDarbyPage() {
           <section className="py-24 bg-white relative">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
-                <div className="prose prose-stone prose-lg max-w-none prose-headings:font-barlow prose-headings:font-bold prose-headings:tracking-tight prose-p:font-barlow prose-p:text-stone-600 prose-p:leading-relaxed prose-strong:text-stone-50 prose-blockquote:border-orange-500 prose-blockquote:bg-orange-50/30 prose-blockquote:rounded-2xl prose-blockquote:p-8 prose-blockquote:not-italic prose-blockquote:font-medium">
+                <div className="prose prose-stone prose-lg max-w-none prose-headings:font-barlow prose-headings:font-bold prose-headings:tracking-tight prose-p:font-barlow prose-p:text-stone-600 prose-p:leading-relaxed prose-strong:text-stone-800 prose-blockquote:border-orange-500 prose-blockquote:bg-orange-50/30 prose-blockquote:rounded-2xl prose-blockquote:p-8 prose-blockquote:not-italic prose-blockquote:font-medium">
                   <p className="text-xl text-stone-900 font-medium leading-relaxed mb-12">
                     Finding a therapist who understands your unique journey is the first and most important step toward healing. For residents of Darby, PA, and the wider Delaware County area, navigating the mental health landscape can feel overwhelming. This guide is designed to help you find the professional support you deserve.
                   </p>
@@ -198,7 +198,7 @@ export default function FindingTherapistDarbyPage() {
                       <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-stone-50 rounded-full px-10 h-14 font-bold text-base shadow-xl shadow-orange-900/20 w-full sm:w-auto">
                         <Link href="/appointment">Book Your Session</Link>
                       </Button>
-                      <Button asChild size="lg" variant="outline" className="border-white/20 hover:bg-white/10 text-white rounded-full px-10 h-14 font-bold text-base w-full sm:w-auto">
+                      <Button asChild size="lg" className="bg-transparent border border-white/20 hover:bg-white/10 text-white rounded-full px-10 h-14 font-bold text-base w-full sm:w-auto">
                         <a href="tel:+18146202162" className="flex items-center gap-3">
                           <Phone className="h-4 w-4" /> (814) 620-2162
                         </a>
