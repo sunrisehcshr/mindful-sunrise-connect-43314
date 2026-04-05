@@ -5,7 +5,7 @@ import { motion, useMotionTemplate, useMotionValue, AnimatePresence, useScroll, 
 import Image from 'next/image';
 import Link from 'next/link';
 import { HugeiconsIcon } from "@hugeicons/react";
-import { BrainIcon, ShieldIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon, FavouriteIcon } from "@hugeicons/core-free-icons";
+import { BrainIcon, ShieldIcon, SafeIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon, FavouriteIcon } from "@hugeicons/core-free-icons";
 import { Lightbulb, CheckCircle2, Shield, Users, Heart, Brain, Sparkles, ArrowRight, Star, ChevronDown, Plus } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -407,7 +407,7 @@ export default function IndividualTherapyClient() {
                             </p>
                         </Card>
                         <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
-                            <HugeiconsIcon icon={ShieldIcon} className="w-10 h-10 text-orange-500 mb-4" />
+                            <HugeiconsIcon icon={SafeIcon} className="w-10 h-10 text-orange-500 mb-4" />
                             <h3 className="text-xl font-bold text-stone-900 mb-2">Safe Space</h3>
                             <p className="text-stone-500 text-sm font-medium">100% confidential and non-judgmental.</p>
                         </Card>
@@ -443,7 +443,8 @@ export default function IndividualTherapyClient() {
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
           <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-8 relative z-10">
+            <CurveTransition fillColor="#ffffff" />
+            <div className="container mx-auto px-4 md:px-8 relative z-10 mt-12">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -495,7 +496,8 @@ export default function IndividualTherapyClient() {
 
           {/* SECTION 3: Clinical Approach */}
           <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-8 relative z-10">
+            <CurveTransition fillColor="#fafaf9" />
+            <div className="container mx-auto px-4 md:px-8 relative z-10 mt-12">
               <motion.div 
                 initial="hidden"
                 whileInView="visible"
@@ -655,6 +657,7 @@ export default function IndividualTherapyClient() {
 
           {/* SECTION 5: FAQs */}
           <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
+            <CurveTransition fillColor="#fafaf9" />
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
