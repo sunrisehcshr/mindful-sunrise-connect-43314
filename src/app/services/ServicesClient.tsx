@@ -310,17 +310,17 @@ export default function ServicesClient() {
       
       <main className="flex-grow">
         {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775382830/pexels-alex-green-5699748_suqrnx.jpg" 
-              alt="Expert Mental Health Services in Darby, PA" 
-              fill 
-              className="object-cover opacity-60"
-              priority
-              sizes="100vw"
+        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-900">
+          <div className="absolute inset-0 z-0 opacity-40">
+            <UiloraFrostedGlass
+              baseColor="#1c1917" // stone-900
+              accentColor="#f97316" // orange-500
+              speed={0.15}
             />
-            <div className="absolute inset-0 z-0 bg-black/30" />
+          </div>
+          {/* Subtle Ambient Glow overlays */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
+          <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-white" />
           </div>
           
@@ -688,18 +688,18 @@ export default function ServicesClient() {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
                   className="mt-24 md:mt-32 max-w-5xl mx-auto bg-orange-600 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-orange-500/20"
               >
-                 {/* WebGL Fluid Background - Sun Theme */}
-                 <div className="absolute inset-0 z-0 opacity-90 mix-blend-screen">
-                    <UiloraFrostedGlass 
-                      baseColor="#ea580c" // Bright Orange Base
-                      accentColor="#fef08a" // Bright Yellow highlights
+                 {/* WebGL Fluid Background */}
+                 <div className="absolute inset-0 z-0 opacity-40">
+                    <UiloraFrostedGlass
+                      baseColor="#1c1917" // stone-900
+                      accentColor="#f97316" // orange-500
                       speed={0.15}
                     />
                  </div>
-                 
+
                  {/* Subtle Ambient Glow overlays to ensure text readability */}
-                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
-                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
+                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
                  
                  <div className="relative z-10 flex flex-col items-center">
                     <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.1)] drop-shadow-md">
@@ -708,7 +708,7 @@ export default function ServicesClient() {
                    
                    <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start feeling better <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-yellow-200 font-normal">this week.</span>
+                     <span className="font-instrument-serif italic text-orange-400 font-normal">this week.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
@@ -717,7 +717,7 @@ export default function ServicesClient() {
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
                      <Link href="#appointment" className="w-full sm:w-auto" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                       <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
+                       <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-orange-500/20">
                          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
                          Schedule Your First Session
                          <HugeiconsIcon icon={ArrowRight01Icon} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
