@@ -141,23 +141,28 @@ export default function TeamSection() {
           viewport={{ once: true }}
           className="mx-auto mt-16 max-w-5xl px-6 text-center lg:px-0"
         >
-          <div className="rounded-[2.5rem] p-12 md:p-16 border border-white/10 relative overflow-hidden shadow-2xl bg-orange-600 group">
-            <UiloraFrostedGlass 
-              baseColor="#f97316" 
-              accentColor="#fdba74" 
-              speed={1.2} 
-              className="z-[1]"
-            />
+          <div className="rounded-[2.5rem] p-12 md:p-16 border border-white/10 relative overflow-hidden shadow-2xl bg-stone-900 group">
+            <div className="absolute inset-0 z-0 opacity-40">
+              <UiloraFrostedGlass
+                baseColor="#1c1917" // stone-900
+                accentColor="#f97316" // orange-500
+                speed={0.15}
+                className="z-[1]"
+              />
+            </div>
+            {/* Subtle Ambient Glow overlays to ensure text readability */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
             
             <div className="relative z-10 flex flex-col items-center text-center gap-10">
-              <p className="font-instrument-serif italic text-3xl md:text-5xl text-white leading-snug tracking-tight max-w-4xl"> 
-                &quot;The team at Sunrise didn&apos;t just listen to me; they gave me the exact tools I needed to finally manage my anxiety and <span className="text-amber-200">get my life back.</span>&quot; 
+              <p className="font-barlow font-normal text-3xl md:text-4xl lg:text-5xl text-white leading-[1.2] tracking-tighter max-w-4xl drop-shadow-lg"> 
+                &quot;The team at Sunrise didn&apos;t just listen to me; they gave me the exact tools I needed to finally manage my anxiety and <span className="font-instrument-serif italic text-orange-400 font-normal">get my life back.</span>&quot; 
               </p>
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="shrink-0">
                 <Link 
                   href="/about"
-                  className="inline-flex px-10 py-5 bg-white text-orange-600 font-bold rounded-full items-center gap-3 shadow-xl transition-all hover:bg-amber-50 group/btn whitespace-nowrap"
+                  className="inline-flex px-10 py-5 bg-orange-500 hover:bg-orange-400 text-stone-50 font-bold rounded-full items-center gap-3 shadow-xl shadow-orange-500/20 transition-all group/btn whitespace-nowrap"
                 >
                   Meet the Full Team
                   <ArrowUpRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />

@@ -310,17 +310,17 @@ export default function ServicesClient() {
       
       <main className="flex-grow">
         {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-900">
-          <div className="absolute inset-0 z-0 opacity-40">
-            <UiloraFrostedGlass
-              baseColor="#1c1917" // stone-900
-              accentColor="#f97316" // orange-500
-              speed={0.15}
-            />
-          </div>
-          {/* Subtle Ambient Glow overlays */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
+        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
+            <Image 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775382830/pexels-alex-green-5699748_suqrnx.jpg" 
+              alt="Expert Mental Health Services in Darby, PA" 
+              fill 
+              className="object-cover opacity-60"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 z-0 bg-black/30" />
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-white" />
           </div>
           
@@ -686,7 +686,7 @@ export default function ServicesClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
-                  className="mt-24 md:mt-32 max-w-5xl mx-auto bg-orange-600 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-orange-500/20"
+                  className="mt-24 md:mt-32 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
               >
                  {/* WebGL Fluid Background */}
                  <div className="absolute inset-0 z-0 opacity-40">
@@ -702,7 +702,7 @@ export default function ServicesClient() {
                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
                  
                  <div className="relative z-10 flex flex-col items-center">
-                    <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.1)] drop-shadow-md">
+                    <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-4 py-2 rounded-full border border-orange-500/20 backdrop-blur-sm">
                       Don't Wait Another Day
                     </span>
                    
@@ -724,7 +724,7 @@ export default function ServicesClient() {
                        </button>
                      </Link>
                      <a href="tel:+18146202162" className="w-full sm:w-auto">
-                       <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
+                       <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
                          <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
                          Call (814) 620-2162
                        </button>

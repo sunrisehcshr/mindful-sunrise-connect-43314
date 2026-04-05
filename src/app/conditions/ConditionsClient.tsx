@@ -138,20 +138,18 @@ export default function ConditionsClient() {
       
       <main className="flex-grow">
         {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-900">
-          <div className="absolute inset-0 z-0 opacity-40">
-            <UiloraFrostedGlass
-              baseColor="#1c1917" // stone-900
-              accentColor="#f97316" // orange-500
-              speed={0.15}
-            />
-          </div>
-          {/* Subtle Ambient Glow overlays */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
+        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
+            <Image 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg" 
+              alt="Mental Health Conditions Treated in Darby PA" 
+              fill 
+              className="object-cover opacity-30"
+              priority
+            />
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/80 via-stone-950/60 to-stone-50" />
           </div>
-
+          
           <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

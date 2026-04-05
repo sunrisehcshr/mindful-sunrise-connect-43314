@@ -1,6 +1,4 @@
 "use client";
-import dynamic from "next/dynamic";
-const UiloraFrostedGlass = dynamic(() => import("@/components/ui/uilora-frosted-glass"), { ssr: false });
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -57,20 +55,19 @@ export default function DepressionClient() {
       
       <main className="flex-grow">
         {/* HERO SECTION */}
-        <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-stone-900">
-          <div className="absolute inset-0 z-0 opacity-40">
-            <UiloraFrostedGlass
-              baseColor="#1c1917" // stone-900
-              accentColor="#f97316" // orange-500
-              speed={0.15}
-            />
-          </div>
-          {/* Subtle Ambient Glow overlays */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
+        <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
+            <Image 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918385/young-woman-with-her-psychologist-during-a-therapy-2025-11-20-15-46-12-utc_d2c80h.jpg" 
+              alt="Depression Therapy in Darby PA" 
+              fill 
+              className="object-cover opacity-20"
+              priority
+              sizes="100vw"
+            />
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/90 via-stone-950/70 to-stone-50" />
           </div>
-
+          
           <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
