@@ -62,27 +62,36 @@ export default function DepressionTherapyDarbyPage() {
         <Navbar />
         
         <main className="flex-grow">
-          <article className="container mx-auto px-4 py-12 max-w-4xl pt-28">
-            <nav className="text-sm mb-6 text-muted-foreground font-barlow">
-              <Link href="/" className="hover:text-amber-600">Home</Link>
+          <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
+            </div>
+            
+            <div className="container mx-auto px-4 relative z-30 max-w-4xl">
+              <nav className="text-sm mb-6 text-stone-400 font-barlow">
+              <Link href="/" className="hover:text-orange-400 text-stone-300 transition-colors">Home</Link>
               {" / "}
-              <Link href="/blog" className="hover:text-amber-600">Blog</Link>
+              <Link href="/blog" className="hover:text-orange-400 text-stone-300 transition-colors">Blog</Link>
               {" / "}
-              <span className="text-foreground">Depression Therapy</span>
+              <span className="text-white">Depression Therapy</span>
             </nav>
 
             <header className="mb-8">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-stone-800 font-barlow tracking-tight">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white font-barlow tracking-tighter leading-none">
                 Depression Therapy in Darby: Signs You Should Seek Help
               </h1>
-              <div className="flex items-center gap-4 text-stone-500 text-sm font-barlow">
+              <div className="flex items-center gap-4 text-stone-300 text-sm font-barlow">
                 <span className="flex items-center gap-1"><Calendar className="h-4 w-4 text-amber-500" /> January 25, 2025</span>
                 <span>•</span>
                 <span className="flex items-center gap-1"><Clock3 className="h-4 w-4 text-amber-500" /> 9 min read</span>
               </div>
             </header>
-
-            <div className="prose prose-stone max-w-none mb-12 font-barlow text-stone-600 leading-relaxed">
+            </div>
+          </section>
+          
+          <article className="container mx-auto px-4 py-16 max-w-4xl">
+            <div className="prose prose-stone max-w-none mb-12 font-barlow text-stone-600 leading-relaxed md:text-lg">
               <p className="text-lg">Depression affects more than 21 million adults in the United States each year, making it one of the most common mental health conditions. Yet many people in Darby and throughout Delaware County suffer in silence, unsure whether their feelings warrant professional help. Understanding the signs of depression and knowing when to seek treatment can be life-changing—and potentially life-saving. This guide will help you recognize depression symptoms and explore effective treatment options available right here in Darby, PA.</p>
               
               <Card className="p-6 mb-12 bg-rose-50 border-rose-200">

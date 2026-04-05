@@ -515,18 +515,15 @@ const faqCategories = [
 ];
 
 const FAQItem = ({ question, answer, isHighlighted }: { question: string, answer: string, isHighlighted?: boolean }) => {
-  const [isOpen, setIsOpen] = React.useState(isHighlighted || false);
-
-  React.useEffect(() => {
-    if (isHighlighted) {
-      setIsOpen(true);
-    }
-  }, [isHighlighted]);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const id = question.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9-]/g, '');
 
   return (
-    <div id={id} className="border-b border-stone-100 last:border-0 transition-colors duration-500">
+    <div id={id} className={cn(
+      "border-b border-stone-100 last:border-0 transition-all duration-700 rounded-2xl px-4 -mx-4",
+      isHighlighted ? "bg-orange-50/50 shadow-sm border-transparent" : "bg-transparent"
+    )}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex items-start sm:items-center justify-between text-left group gap-4"
@@ -584,23 +581,36 @@ export default function FAQPage() {
   const handleSelectFAQ = (catId: string, question: string) => {
     setSearchQuery("");
     setShowDropdown(false);
-    setActiveTab(catId);
+
+    if (activeTab !== catId) {
+      setActiveTab(catId);
+    }
+
     setHighlightedQ(question);
-    
-    const id = question.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9-]/g, '');
-    
-    // Try to find the element and scroll to it. If it's not rendered yet, try again shortly.
-    const scrollToEl = (attempts = 0) => {
-      const el = document.getElementById(id);
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      } else if (attempts < 5) {
-        setTimeout(() => scrollToEl(attempts + 1), 50);
-      }
-    };
-    
-    setTimeout(() => scrollToEl(0), 50);
+
+    setTimeout(() => {
+      const id = question.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9-]/g, '');
+      
+      const scrollToEl = (attempts = 0) => {
+        const el = document.getElementById(id);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          
+          // Trigger tap after scrolling reaches the element
+          setTimeout(() => {
+            const btn = el.querySelector('button');
+            if (btn && !btn.innerHTML.includes('rotate-180')) {
+              btn.click();
+            }
+          }, 800);
+        } else if (attempts < 10) {
+          setTimeout(() => scrollToEl(attempts + 1), 50);
+        }
+      };
+      
+      scrollToEl(0);
+    }, 100);
   };
 
   React.useEffect(() => {

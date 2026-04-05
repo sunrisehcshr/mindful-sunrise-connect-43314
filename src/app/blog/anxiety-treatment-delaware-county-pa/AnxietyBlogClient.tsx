@@ -69,27 +69,36 @@ export default function AnxietyTreatmentDelawareCountyPage() {
         <Navbar />
         
         <main className="flex-grow">
-          <article className="container mx-auto px-4 py-12 max-w-4xl pt-28">
-            <nav className="text-sm mb-6 text-muted-foreground font-barlow">
-              <Link href="/" className="hover:text-amber-600">Home</Link>
+          <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
+            </div>
+            
+            <div className="container mx-auto px-4 relative z-30 max-w-4xl">
+              <nav className="text-sm mb-6 text-stone-400 font-barlow">
+              <Link href="/" className="hover:text-orange-400 text-stone-300 transition-colors">Home</Link>
               {" / "}
-              <Link href="/blog" className="hover:text-amber-600">Blog</Link>
+              <Link href="/blog" className="hover:text-orange-400 text-stone-300 transition-colors">Blog</Link>
               {" / "}
-              <span className="text-foreground">Anxiety Treatment Options</span>
+              <span className="text-white">Anxiety Treatment Options</span>
             </nav>
 
             <header className="mb-8">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-stone-800 font-barlow tracking-tight">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white font-barlow tracking-tighter leading-none">
                 Anxiety Treatment Options in Delaware County: What Works?
               </h1>
-              <div className="flex items-center gap-4 text-stone-500 text-sm font-barlow">
+              <div className="flex items-center gap-4 text-stone-300 text-sm font-barlow">
                 <span className="flex items-center gap-1"><Calendar className="h-4 w-4 text-amber-500" /> January 20, 2025</span>
                 <span>•</span>
                 <span className="flex items-center gap-1"><Clock3 className="h-4 w-4 text-amber-500" /> 10 min read</span>
               </div>
             </header>
-
-            <div className="prose prose-stone max-w-none mb-12 font-barlow text-stone-600 leading-relaxed">
+            </div>
+          </section>
+          
+          <article className="container mx-auto px-4 py-16 max-w-4xl">
+            <div className="prose prose-stone max-w-none mb-12 font-barlow text-stone-600 leading-relaxed md:text-lg">
               <p className="text-lg">Anxiety disorders affect over 40 million adults in the United States, and residents of Delaware County, PA are no exception. If you&apos;re experiencing persistent worry, panic attacks, or overwhelming fear that interferes with daily life, you&apos;re not alone—and effective treatment is available right here in Darby. This comprehensive guide explores evidence-based anxiety treatment options that can help you regain control and find peace of mind.</p>
               
               <h2 className="text-2xl font-bold text-stone-800 mt-8 mb-4">Understanding Evidence-Based Treatments</h2>
