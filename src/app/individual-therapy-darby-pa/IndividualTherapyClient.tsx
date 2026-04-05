@@ -473,12 +473,14 @@ export default function IndividualTherapyClient() {
                             { title: "Mindfulness-Based Therapy", desc: "Combines cognitive techniques with mindfulness to manage thoughts and distress." },
                             { title: "Solution-Focused Brief Therapy", desc: "A short-term, future-focused approach that constructs solutions rather than dwelling on problems." }
                         ].map((method, idx) => (
-                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-3 group">
-                                <div className="flex items-center gap-3">
-                                    <Check className="w-6 h-6 text-orange-500 shrink-0" />
-                                    <h4 className="font-barlow font-bold text-lg text-white">{method.title}</h4>
+                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4 group">
+                                <div className="w-10 h-10 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors duration-300">
+                                    <CheckCircle2 className="w-5 h-5 text-orange-400" />
                                 </div>
-                                <p className="text-stone-400 text-sm leading-relaxed pl-9">{method.desc}</p>
+                                <div>
+                                  <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
+                                  <p className="text-stone-400 text-sm leading-relaxed">{method.desc}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -563,9 +565,9 @@ export default function IndividualTherapyClient() {
                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
                  
                  <div className="relative z-10 flex flex-col items-center">
-                   <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-stone-900 mb-6 bg-white/20 px-4 py-2 rounded-full border border-white/30 backdrop-blur-sm shadow-sm">
-                     Take the first step
-                   </span>
+                    <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.1)] drop-shadow-md">
+                      Take the first step
+                    </span>
                    
                    <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Your journey to wellness <br className="hidden md:block" />
