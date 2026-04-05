@@ -14,7 +14,7 @@ import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SectionTag from '@/components/ui/section-tag';
 import CurveTransition from '@/components/ui/CurveTransition';
-import ParallaxBanner from '@/components/ui/ParallaxBanner';
+import AboutCTA from '@/components/about/AboutCTA';
 import { cn } from "@/lib/utils";
 
 // Removed TimelineStep as it's no longer used.
@@ -473,9 +473,9 @@ export default function IndividualTherapyClient() {
                             { title: "Mindfulness-Based Therapy", desc: "Combines cognitive techniques with mindfulness to manage thoughts and distress." },
                             { title: "Solution-Focused Brief Therapy", desc: "A short-term, future-focused approach that constructs solutions rather than dwelling on problems." }
                         ].map((method, idx) => (
-                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-[0_0_20px_rgba(249,115,22,0.3)] flex items-center justify-center shrink-0">
-                                    <Check className="w-6 h-6 text-white stroke-[3]" />
+                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4 group">
+                                <div className="w-10 h-10 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors duration-300">
+                                    <CheckCircle2 className="w-5 h-5 text-orange-400" />
                                 </div>
                                 <div>
                                   <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
@@ -543,16 +543,13 @@ export default function IndividualTherapyClient() {
                   </div>
               </div>
             </div>
-
-            {/* Parallax Banner integrated at the end of the section */}
-            <div className="mt-24 md:mt-32">
-                <ParallaxBanner imageUrl="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=calm%20therapy%20room%20artistic%20orange%20style&image_size=landscape_16_9" />
-            </div>
           </section>
+
+          {/* Fluid Banner CTA from About Section */}
+          <AboutCTA />
 
           {/* SECTION 5: FAQs */}
           <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-            <CurveTransition fillColor="#fafaf9" />
             <div className="container mx-auto px-4 md:px-6 relative z-10 mt-12">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
