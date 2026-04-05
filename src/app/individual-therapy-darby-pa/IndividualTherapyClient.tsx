@@ -5,8 +5,8 @@ import { motion, useMotionTemplate, useMotionValue, AnimatePresence, useScroll, 
 import Image from 'next/image';
 import Link from 'next/link';
 import { HugeiconsIcon } from "@hugeicons/react";
-import { BrainIcon, HeartIcon, ShieldIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon } from "@hugeicons/core-free-icons";
-import { Lightbulb, CheckCircle2 } from 'lucide-react';
+import { BrainIcon, ShieldIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, PlusIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon } from "@hugeicons/core-free-icons";
+import { Lightbulb, CheckCircle2, Shield, Users, Heart } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
@@ -113,6 +113,9 @@ const TimelineStep = ({
         </div>
     );
 };
+
+
+
 
 // --- Scramble Text Effect (Brand Style) ---
 function ScrambleText({ text, className }: { text: string, className?: string }) {
@@ -358,21 +361,21 @@ export default function IndividualTherapyClient() {
                     <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-3 relative z-10">
                         <Card containerClassName="rounded-3xl bg-emerald-50/40 border-emerald-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-emerald-200/20 border border-emerald-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={ShieldIcon} className="w-6 h-6 text-emerald-600" />
+                                <HugeiconsIcon icon={CheckmarkBadge01Icon} className="w-6 h-6 text-emerald-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Licensed Experts</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with highly trained, compassionate therapists in Delaware County who specialize in various therapeutic modalities.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={BookOpen01Icon} className="w-6 h-6 text-blue-600" />
+                                <HugeiconsIcon icon={BrainIcon} className="w-6 h-6 text-blue-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">We utilize scientifically proven methods like CBT and DBT to ensure effective, measurable progress in your mental health journey.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={UserCircleIcon} className="w-6 h-6 text-rose-600" />
+                                <HugeiconsIcon icon={HeartIcon} className="w-6 h-6 text-rose-600" />
                             </div>
                             <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Personalized Care</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">Your treatment plan is tailored specifically to your unique background, challenges, and personal goals for therapy.</p>
@@ -384,7 +387,6 @@ export default function IndividualTherapyClient() {
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
           <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
-            <CurveTransition fillColor="#ffffff" />
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -406,12 +408,12 @@ export default function IndividualTherapyClient() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {[
-                  { title: "Anxiety Disorders", icon: <HugeiconsIcon icon={CloudAngledRainIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Identifying triggers and developing coping strategies for generalized anxiety, social anxiety, and panic attacks." },
-                  { title: "Depression & Mood", icon: <HugeiconsIcon icon={SparklesIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Proven methods to address persistent sadness, lack of motivation, and help you rediscover joy and purpose." },
-                  { title: "Trauma & PTSD", icon: <HugeiconsIcon icon={HeartbreakIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Trauma-informed care to help process and heal from past experiences, reducing the impact of distressing memories." },
-                  { title: "Stress & Burnout", icon: <Lightbulb className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Equipping you with stress management techniques to restore your energy and work-life balance." },
-                  { title: "Life Transitions", icon: <HugeiconsIcon icon={ArrowRightIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Guidance during uncertain times like career shifts, relocation, or major relationship changes." },
-                  { title: "Self-Esteem & Growth", icon: <HugeiconsIcon icon={StarIcon} className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />, desc: "Assisting clients in exploring their identity, building self-worth, and achieving personal growth." }
+                  { title: "Anxiety Disorders", icon: Brain, desc: "Identifying triggers and developing coping strategies for generalized anxiety, social anxiety, and panic attacks." },
+                  { title: "Depression & Mood", icon: Sparkles, desc: "Proven methods to address persistent sadness, lack of motivation, and help you rediscover joy and purpose." },
+                  { title: "Trauma & PTSD", icon: Shield, desc: "Trauma-informed care to help process and heal from past experiences, reducing the impact of distressing memories." },
+                  { title: "Stress & Burnout", icon: Lightbulb, desc: "Equipping you with stress management techniques to restore your energy and work-life balance." },
+                  { title: "Life Transitions", icon: ArrowRight, desc: "Guidance during uncertain times like career shifts, relocation, or major relationship changes." },
+                  { title: "Self-Esteem & Growth", icon: Star, desc: "Assisting clients in exploring their identity, building self-worth, and achieving personal growth." }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
@@ -423,7 +425,7 @@ export default function IndividualTherapyClient() {
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-orange-500/10 transition-colors duration-500" />
                     <div className="w-12 h-12 rounded-2xl bg-stone-50 flex items-center justify-center mb-6 border border-stone-100 group-hover:bg-orange-50 group-hover:border-orange-100 transition-colors duration-500">
-                        {item.icon}
+                        <item.icon className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />
                     </div>
                     <h3 className="text-2xl font-bold text-stone-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors">{item.title}</h3>
                     <p className="text-stone-500 text-base leading-relaxed font-medium">
@@ -437,8 +439,7 @@ export default function IndividualTherapyClient() {
 
           {/* SECTION 3: Clinical Approach */}
           <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-            <CurveTransition fillColor="#fafaf9" />
-            <div className="container mx-auto px-4 md:px-8 relative z-10 mt-12">
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial="hidden"
                 whileInView="visible"
@@ -471,14 +472,12 @@ export default function IndividualTherapyClient() {
                             { title: "Mindfulness-Based Therapy", desc: "Combines cognitive techniques with mindfulness to manage thoughts and distress." },
                             { title: "Solution-Focused Brief Therapy", desc: "A short-term, future-focused approach that constructs solutions rather than dwelling on problems." }
                         ].map((method, idx) => (
-                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4 group">
-                                <div className="w-10 h-10 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors duration-300">
+                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-3xl hover:bg-white/10 transition-colors duration-300">
+                                <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center mb-4">
                                     <CheckCircle2 className="w-5 h-5 text-orange-400" />
                                 </div>
-                                <div>
-                                  <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
-                                  <p className="text-stone-400 text-sm leading-relaxed">{method.desc}</p>
-                                </div>
+                                <h4 className="font-barlow font-bold text-lg text-white mb-2">{method.title}</h4>
+                                <p className="text-stone-400 text-sm leading-relaxed">{method.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -488,7 +487,7 @@ export default function IndividualTherapyClient() {
           </section>
 
           {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+          <section className="py-16 md:py-32 bg-stone-50/50 relative overflow-hidden">
             <CurveTransition fillColor="#ffffff" />
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
@@ -540,63 +539,63 @@ export default function IndividualTherapyClient() {
                       ))}
                   </div>
               </div>
-
-              {/* Inlined Sun-style Fluid CTA */}
-              <motion.div 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
-                  className="mt-24 md:mt-32 max-w-5xl mx-auto bg-orange-600 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-orange-500/20"
-              >
-                 {/* WebGL Fluid Background - Sun Theme */}
-                 <div className="absolute inset-0 z-0 opacity-90 mix-blend-screen">
-                    <UiloraFrostedGlass 
-                      baseColor="#ea580c" // Bright Orange Base
-                      accentColor="#fef08a" // Bright Yellow highlights
-                      speed={0.15}
-                    />
-                 </div>
-                 
-                 {/* Subtle Ambient Glow overlays to ensure text readability */}
-                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
-                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-700/30 blur-[50px] pointer-events-none z-0" />
-                 
-                 <div className="relative z-10 flex flex-col items-center">
-                    <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white mb-6 bg-white/20 px-5 py-2.5 rounded-full border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.1)] drop-shadow-md">
-                      Take the first step
-                    </span>
-                   
-                   <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
-                     Your journey to wellness <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-yellow-200 font-normal">begins here</span>
-                   </h2>
-                   
-                   <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
-                     Our compassionate team is ready to support you. Schedule an appointment today and discover a sanctuary for healing and growth in Darby, PA.
-                   </p>
-                   
-                   <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-                      <Link href="/#appointment" className="w-full sm:w-auto">
-                        <button className="bg-white hover:bg-stone-50 text-orange-600 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto shadow-lg shadow-white/20">
-                          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
-                          Book an Appointment
-                          <HugeiconsIcon icon={ArrowRightIcon} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                      </Link>
-                      <a href="tel:+18146202162" className="w-full sm:w-auto">
-                        <button className="bg-black/10 hover:bg-black/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
-                          Call (814) 620-2162
-                        </button>
-                      </a>
-                    </div>
-                 </div>
-              </motion.div>
             </div>
           </section>
 
           {/* SECTION 5: FAQs */}
           <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+            <CurveTransition fillColor="#fafaf9" />
+            
+            {/* Animated SVG Background */}
+            <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0">
+                <defs>
+                  <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f97316" strokeWidth="0.5" strokeOpacity="0.3" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+                <motion.circle 
+                  cx="80%" 
+                  cy="20%" 
+                  r="150" 
+                  fill="none" 
+                  stroke="#ea580c" 
+                  strokeWidth="1" 
+                  strokeOpacity="0.2"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.1, 0.3, 0.1] 
+                  }}
+                  transition={{ 
+                    duration: 8, 
+                    repeat: Infinity,
+                    ease: "easeInOut" 
+                  }}
+                />
+                <motion.circle 
+                  cx="20%" 
+                  cy="80%" 
+                  r="250" 
+                  fill="none" 
+                  stroke="#ea580c" 
+                  strokeWidth="1" 
+                  strokeOpacity="0.1"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.1, 0.2, 0.1] 
+                  }}
+                  transition={{ 
+                    duration: 12, 
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2
+                  }}
+                />
+              </svg>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
+            </div>
+
             <div className="container mx-auto px-4 md:px-6 relative z-10 mt-12">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
@@ -628,7 +627,7 @@ export default function IndividualTherapyClient() {
                             activeFaq === index ? "bg-orange-500 border-orange-400 text-white" : "bg-orange-50 border-stone-100 text-orange-500"
                           )}
                         >
-                          <HugeiconsIcon icon={ArrowDown01Icon} className={cn("relative h-5 w-5 transition-transform duration-500", activeFaq === index ? "rotate-180" : "")} />
+                          <ChevronDown className={cn("relative h-5 w-5 transition-transform duration-500", activeFaq === index ? "rotate-180" : "")} />
                         </span>
 
                         <div className="flex flex-1 flex-col gap-2">
