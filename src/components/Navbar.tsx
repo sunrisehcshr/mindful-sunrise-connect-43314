@@ -284,7 +284,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
               className="md:hidden absolute top-[calc(100%+0.5rem)] left-0 right-0 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-stone-200/50 overflow-hidden"
             >
-            <ScrollArea className="h-full max-h-[calc(100vh-96px)]">
+            <ScrollArea className="h-full max-h-[calc(100vh-96px)] [&_[data-radix-scroll-area-viewport]]:scrollbar-hide">
               <div className="px-4 py-4">
                 <nav className="flex flex-col space-y-1 pb-20">
                   {navLinks.map((link, index) => {
