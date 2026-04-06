@@ -2,8 +2,8 @@
 
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Phone, Users, Heart, Shield, Calendar, MapPin, MessageCircle, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, Phone, Users, Heart, Shield, Calendar, MapPin, MessageCircle, CheckCircle, Clock, ShieldCheck, HeartPulse, Activity } from "lucide-react";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -14,6 +14,49 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer/Footer";
 import AppointmentSection from "@/components/Appointment/AppointmentSection";
 import { Button } from "@/components/ui/button";
+import SectionTag from "@/components/ui/section-tag";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+// --- Glowing Bento Card ---
+function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  return (
+    <div
+      className={cn(
+        "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition duration-500",
+        "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-amber-200/50 hover:bg-white",
+        containerClassName
+      )}
+      onMouseMove={handleMouseMove}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/50 pointer-events-none" />
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${mouseX}px ${mouseY}px,
+              rgba(245, 158, 11, 0.12),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      <div className={cn("relative h-full w-full p-8", className)}>
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function MentalHealthDarbyClient() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,71 +79,85 @@ export default function MentalHealthDarbyClient() {
     {
       title: "Individual Therapy",
       description: "Private, one-on-one sessions with a licensed therapist to address personal challenges and promote emotional well-being.",
-      link: "/individual-therapy-darby-pa"
+      link: "/individual-therapy-darby-pa",
+      icon: Users
     },
     {
       title: "Couples Counseling",
       description: "Supportive therapy for partners looking to strengthen communication, rebuild trust, and navigate relationship challenges together.",
-      link: "/couples-counseling-darby-pa"
+      link: "/couples-counseling-darby-pa",
+      icon: Heart
     },
     {
       title: "Family Therapy",
       description: "Guided sessions designed to improve family dynamics, resolve conflicts, and foster healthier connections among family members.",
-      link: "/family-therapy-darby-pa"
+      link: "/family-therapy-darby-pa",
+      icon: Users
     },
     {
       title: "Child & Adolescent Therapy",
       description: "Age-appropriate therapeutic support for children and teens facing emotional, behavioral, or developmental concerns.",
-      link: "/child-therapy-darby-pa"
+      link: "/child-therapy-darby-pa",
+      icon: Shield
     },
     {
       title: "Psychiatric Evaluations",
       description: "Comprehensive assessments conducted by qualified professionals to understand mental health needs and guide treatment planning.",
-      link: "/psychiatric-evaluations-darby-pa"
+      link: "/psychiatric-evaluations-darby-pa",
+      icon: ShieldCheck
     },
     {
       title: "Medication Management",
       description: "Careful oversight of psychiatric medications to ensure safe, effective treatment as part of a comprehensive care plan.",
-      link: "/medication-management-darby-pa"
+      link: "/medication-management-darby-pa",
+      icon: Activity
     },
     {
       title: "Grief Therapy",
       description: "Compassionate support for individuals processing loss and navigating the emotional journey of grief.",
-      link: "/grief-therapy-darby-pa"
+      link: "/grief-therapy-darby-pa",
+      icon: HeartPulse
     },
     {
       title: "Relationship Therapy",
       description: "Therapeutic guidance for individuals seeking to improve interpersonal skills and build healthier relationships.",
-      link: "/relationship-therapy-darby-pa"
+      link: "/relationship-therapy-darby-pa",
+      icon: MessageCircle
     }
   ];
 
   const faqs = [
     {
-      question: "How do I know if I should seek therapy?",
-      answer: "If you're experiencing persistent feelings of sadness, anxiety, or stress that affect your daily life, relationships, or work, therapy can help. You don't need to be in crisis to benefit from professional support."
+      question: "How do I know if I should seek therapy in Darby?",
+      answer: "If you're experiencing persistent feelings of sadness, anxiety, or stress that affect your daily life, relationships, or work, therapy can help. You don't need to be in crisis to benefit from professional support at our Darby clinic."
     },
     {
-      question: "Do you offer services for children and families?",
-      answer: "Yes, we provide therapy for children, adolescents, and families. Our licensed therapists are experienced in working with young people and understand the unique challenges they face."
+      question: "Do you offer services for children and families in Darby, PA?",
+      answer: "Yes, we provide specialized therapy for children, adolescents, and families at our Darby location. Our licensed therapists are experienced in working with young people and understand the unique challenges they face in our local community."
     },
     {
-      question: "What should I expect during my first visit?",
-      answer: "Your first visit is an opportunity for you and your therapist to get to know each other. You'll discuss what brings you to therapy, your personal history, and your goals for treatment."
+      question: "What should I expect during my first visit to your Darby clinic?",
+      answer: "Your first visit is an opportunity for you and your therapist to get to know each other. You'll discuss what brings you to therapy, your personal history, and your goals for treatment in a warm, welcoming environment."
     },
     {
       question: "Is my information kept confidential?",
       answer: "Absolutely. We adhere to strict confidentiality standards and HIPAA regulations to protect your privacy. Your trust is essential to the therapeutic relationship."
+    },
+    {
+      question: "Do you accept Medicaid in Darby, PA?",
+      answer: "Yes, we exclusively accept Medicaid and Medical Assistance for all our services in Darby. We provide expert care with no waitlist to ensure the community has timely access to mental health support."
     }
   ];
 
+  const iconContainerStyles = "w-12 h-12 rounded-2xl bg-stone-50 flex items-center justify-center border border-stone-100 transition-transform group-hover:scale-110 duration-300 shrink-0";
+
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white font-barlow">
       <Navbar />
       
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-white overflow-hidden">
           <div className="absolute inset-0 z-0">
             <video
               ref={videoRef}
@@ -113,30 +170,39 @@ export default function MentalHealthDarbyClient() {
             >
               <source src="/videos/hero-background.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-stone-900/90" />
           </div>
           
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center text-white">
+          <div className="container mx-auto px-4 md:px-8 relative z-10 text-center text-white">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
               className="max-w-4xl mx-auto"
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-barlow leading-tight">
-                Compassionate Mental Health Care in Darby, PA
-              </h1>
-              <p className="text-lg md:text-xl mb-8 font-barlow text-white/90 max-w-2xl mx-auto leading-relaxed">
-                Expert therapy and psychiatric services tailored to your unique journey. 100% Medicaid accepted with no waitlist.
+              <div className="flex flex-col items-center gap-6 mb-8">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/20 text-orange-400 text-sm font-bold border border-orange-500/30 backdrop-blur-sm uppercase tracking-widest">
+                  Mental Health Support
+                </span>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal text-white tracking-tighter leading-[1.1] md:leading-tight">
+                  Stop suffering in silence. <br />
+                  <span className="font-instrument-serif italic text-orange-400">Find real help in Darby, PA.</span>
+                </h1>
+              </div>
+              
+              <p className="text-lg md:text-xl mb-10 text-stone-200 max-w-3xl mx-auto leading-relaxed font-medium">
+                Waitlists and expensive out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care right here in Delaware County. 100% Medicaid accepted with immediate openings.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-white text-stone-900 hover:bg-stone-100 rounded-full px-8 py-6 text-lg font-barlow">
+                <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-7 text-lg font-bold transition shadow-xl shadow-orange-500/20">
                   <Link href="/appointment">
                     <Calendar className="mr-2 h-5 w-5" />
-                    Book Evaluation
+                    Book Your First Session
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-white border-white hover:bg-white/10 rounded-full px-8 py-6 text-lg font-barlow">
+                <Button asChild variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10 rounded-full px-10 py-7 text-lg font-bold transition backdrop-blur-sm">
                   <a href="tel:+18146202162">
                     <Phone className="mr-2 h-5 w-5" />
                     Call (814) 620-2162
@@ -147,57 +213,137 @@ export default function MentalHealthDarbyClient() {
           </div>
         </section>
 
-        {/* Core Values Section */}
-        <section className="py-20 bg-stone-50">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="text-center p-8 bg-white rounded-3xl shadow-sm border border-stone-100"
-              >
-                <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Heart className="w-8 h-8 text-amber-600" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 font-barlow text-stone-800">Person-Centered</h3>
-                <p className="text-stone-600 font-barlow leading-relaxed">
-                  We treat you as a whole person, not just a set of symptoms. Your unique story and goals guide our care.
+        {/* Ogilvy Long Copy Section */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="prose prose-lg md:prose-xl prose-stone prose-headings:font-barlow prose-headings:tracking-tight prose-headings:font-normal prose-p:font-barlow prose-p:leading-relaxed prose-a:text-orange-600 max-w-none">
+                <h2 className="text-3xl md:text-5xl text-stone-900 mb-8">
+                  Why is finding good mental health care in Delaware County so difficult?
+                </h2>
+                
+                <p className="text-stone-600 text-xl font-medium mb-8">
+                  If you live in Darby, Pennsylvania, you probably already know the frustration. You finally decide to seek help for your anxiety, depression, or your child's behavioral issues. You make the brave choice to pick up the phone.
                 </p>
-              </motion.div>
+                
+                <p>
+                  And what happens? You're told the clinic isn't accepting new patients. Or they don't take Medicaid. Or the next available appointment is four months away. 
+                </p>
+                
+                <p>
+                  Mental health crises do not operate on a four-month delay. When you are struggling to get out of bed, when your relationship is falling apart, or when your child is facing suspension from school, you need help <strong>now</strong>.
+                </p>
+                
+                <h3 className="text-2xl md:text-3xl text-stone-800 mt-12 mb-6">
+                  Sunrise Human Care Services was built to fix this broken system.
+                </h3>
+                
+                <p>
+                  We established our clinic at <strong>869 Main Street in Darby, PA</strong> with one clear promise: to provide premium, evidence-based psychiatric care and therapy to the Medicaid community, without the wait. 
+                </p>
+                
+                <p>
+                  We are not a massive, faceless hospital network where you are just a number. We are a dedicated, local team of licensed therapists, psychiatrists, and behavioral health technicians. We treat our patients with the dignity, privacy, and clinical excellence they deserve.
+                </p>
 
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="text-center p-8 bg-white rounded-3xl shadow-sm border border-stone-100"
-              >
-                <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Users className="w-8 h-8 text-amber-600" />
+                <div className="bg-stone-50 border border-stone-100 p-8 rounded-3xl my-12 shadow-sm">
+                  <h4 className="text-xl font-bold text-stone-900 mb-4 flex items-center gap-3">
+                    <CheckCircle className="text-orange-500 w-6 h-6" />
+                    The Sunrise Promise to Darby Residents:
+                  </h4>
+                  <ul className="space-y-4 list-none pl-0">
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-orange-500 mt-2.5 shrink-0" />
+                      <span className="text-stone-700"><strong>Zero Waitlists:</strong> We prioritize immediate intake. If you need help, we will get you on the schedule.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-orange-500 mt-2.5 shrink-0" />
+                      <span className="text-stone-700"><strong>100% Medicaid Accepted:</strong> We proudly serve the Medicaid community. No surprise out-of-pocket bills.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-orange-500 mt-2.5 shrink-0" />
+                      <span className="text-stone-700"><strong>Comprehensive Care Under One Roof:</strong> Stop bouncing between different clinics. We offer talk therapy, psychiatric evaluations, and medication management in one place.</span>
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-barlow text-stone-800">Expert Team</h3>
-                <p className="text-stone-600 font-barlow leading-relaxed">
-                  Our licensed therapists and psychiatric providers bring decades of clinical experience to every session.
-                </p>
-              </motion.div>
 
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="text-center p-8 bg-white rounded-3xl shadow-sm border border-stone-100"
-              >
-                <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Shield className="w-8 h-8 text-amber-600" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 font-barlow text-stone-800">Medicaid Focused</h3>
-                <p className="text-stone-600 font-barlow leading-relaxed">
-                  We believe expert care should be accessible. We exclusively accept Medicaid with no waitlists.
+                <h3 className="text-2xl md:text-3xl text-stone-800 mt-12 mb-6">
+                  What does expert mental health care look like?
+                </h3>
+                
+                <p>
+                  It looks like <strong>Individual Therapy</strong> that digs into the root causes of your trauma, rather than just putting a band-aid on the symptoms. It looks like <strong>Medication Management</strong> where your psychiatrist actually listens to your concerns about side effects and adjusts your dosage carefully. 
                 </p>
-              </motion.div>
+
+                <p>
+                  For families in Darby, it looks like our <strong>Intensive Behavioral Health Services (IBHS)</strong>. Instead of asking you to drag your struggling child to a sterile clinic, our behavioral technicians go directly to your home or your child's school in the William Penn School District to provide support right where the behaviors happen.
+                </p>
+
+                <p className="text-stone-600 text-xl font-medium mt-12 border-l-4 border-orange-500 pl-6 py-2">
+                  You don't have to navigate this alone. The right support can change the trajectory of your life, your marriage, and your family.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bento Grid: Local Advantage */}
+        <section className="py-24 bg-stone-50/50">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="flex flex-col items-center gap-4 mb-16 text-center">
+              <SectionTag>Our Location</SectionTag>
+              <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
+                Conveniently located in the heart of <span className="font-instrument-serif italic text-orange-500">Darby.</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-full max-w-6xl mx-auto">
+              {/* Main Content Card */}
+              <Card containerClassName="md:col-span-8 rounded-[2.5rem] min-h-[400px]" className="flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-start mb-8">
+                    <div className={iconContainerStyles}>
+                      <MapPin className="h-6 w-6 text-orange-500" />
+                    </div>
+                    <div className="px-3 py-1 rounded-full bg-stone-50 border border-stone-100 text-[10px] uppercase tracking-widest text-stone-400 font-bold">
+                      Headquarters
+                    </div>
+                  </div>
+                  <h3 className="text-3xl md:text-5xl font-normal leading-tight tracking-tighter text-stone-900 mb-6">
+                    Serving Delaware County <br />
+                    <span className="font-instrument-serif italic text-orange-500">since day one.</span>
+                  </h3>
+                  <p className="text-stone-500 text-lg leading-relaxed font-medium max-w-xl">
+                    Located at 869 Main Street in Darby, PA (19023), our clinic is easily accessible via public transit and offers a safe, welcoming environment. We proudly serve Darby, Yeadon, Collingdale, Lansdowne, and Upper Darby.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-8 border-t border-stone-100 mt-8">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-700 text-sm font-bold border border-orange-100">
+                    <Clock className="w-4 h-4" /> Open Mon-Fri
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 text-sm font-bold border border-emerald-100">
+                    <ShieldCheck className="w-4 h-4" /> Fully Licensed
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-bold border border-blue-100">
+                    <Users className="w-4 h-4" /> Accepting Patients
+                  </div>
+                </div>
+              </Card>
+
+              {/* Map Card */}
+              <Card containerClassName="md:col-span-4 rounded-[2.5rem] min-h-[400px] p-0" className="p-0">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.123!2d-75.2612!3d39.9184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c39e8d!2s869+Main+St%2C+Darby%2C+PA+19023!5e0!3m2!1sen!2sus!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: "400px" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale hover:grayscale-0 transition duration-700"
+                />
+              </Card>
             </div>
           </div>
         </section>
@@ -206,37 +352,33 @@ export default function MentalHealthDarbyClient() {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 font-barlow text-stone-800 tracking-tight">
-                Specialized Mental Health Services
+              <SectionTag>Clinical Excellence</SectionTag>
+              <h2 className="text-3xl md:text-5xl font-normal mt-6 mb-6 font-barlow text-stone-800 tracking-tighter leading-tight">
+                Our Specialized Services in <span className="font-instrument-serif italic text-orange-500">Darby</span>
               </h2>
               <p className="text-lg text-stone-600 font-barlow leading-relaxed">
-                From individual counseling to psychiatric evaluations, we provide a full spectrum of mental health support for the Darby community.
+                From individual counseling to comprehensive psychiatric evaluations, we provide a full spectrum of mental health support.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group p-8 bg-stone-50 rounded-3xl border border-stone-100 hover:border-amber-200 hover:bg-white hover:shadow-xl hover:shadow-amber-900/5 transition duration-500"
-                >
-                  <h3 className="text-xl font-bold mb-3 font-barlow text-stone-800 group-hover:text-amber-700 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-stone-600 font-barlow leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  <Link 
-                    href={service.link}
-                    className="inline-flex items-center text-amber-600 font-semibold hover:gap-2 transition font-barlow"
-                  >
-                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
-                </motion.div>
+                <Link key={index} href={service.link}>
+                  <Card containerClassName="rounded-[2rem] group/service cursor-pointer h-full" className="flex flex-col items-start text-left p-6">
+                    <div className={cn(iconContainerStyles, "mb-6 bg-orange-50 border-orange-100")}>
+                      <service.icon className="h-6 w-6 text-orange-600" />
+                    </div>
+                    <h3 className="text-xl font-bold text-stone-900 group-hover/service:text-orange-600 transition-colors mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-stone-500 text-sm leading-relaxed mb-6 font-medium">
+                      {service.description}
+                    </p>
+                    <div className="mt-auto pt-4 flex items-center gap-2 text-orange-500 font-bold text-[11px] uppercase tracking-widest group-hover/service:gap-3 transition-all">
+                      Learn More <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
@@ -246,20 +388,23 @@ export default function MentalHealthDarbyClient() {
         <section className="py-24 bg-stone-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold mb-12 font-barlow text-stone-800 text-center tracking-tight">
-                Common Questions
-              </h2>
+              <div className="flex flex-col items-center gap-4 mb-16 text-center">
+                <SectionTag>Information</SectionTag>
+                <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
+                  Your questions, <span className="font-instrument-serif italic text-orange-500">answered.</span>
+                </h2>
+              </div>
               <Accordion type="single" collapsible className="w-full space-y-4">
                 {faqs.map((faq, index) => (
                   <AccordionItem 
                     key={index} 
                     value={`item-${index}`}
-                    className="bg-white px-6 rounded-2xl border border-stone-100 shadow-sm"
+                    className="bg-white px-8 rounded-3xl border border-stone-100 shadow-sm overflow-hidden"
                   >
-                    <AccordionTrigger className="text-left font-barlow text-lg font-bold text-stone-800 py-6 hover:no-underline">
+                    <AccordionTrigger className="text-left font-bold text-stone-800 py-6 hover:no-underline text-lg tracking-tight">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="font-barlow text-stone-600 text-lg leading-relaxed pb-6">
+                    <AccordionContent className="text-stone-500 text-lg leading-relaxed pb-6 font-medium">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

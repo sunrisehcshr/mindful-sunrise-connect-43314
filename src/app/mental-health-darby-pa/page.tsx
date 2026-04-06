@@ -14,16 +14,16 @@ export const metadata: Metadata = createPageMetadata({
 export default function MentalHealthDarbyPage() {
   const darbyFAQs = [
     {
-      question: "How do I know if I should seek therapy?",
-      answer: "If you're experiencing persistent feelings of sadness, anxiety, or stress that affect your daily life, relationships, or work, therapy can help. You don't need to be in crisis to benefit from professional support."
+      question: "How do I know if I should seek therapy in Darby?",
+      answer: "If you're experiencing persistent feelings of sadness, anxiety, or stress that affect your daily life, relationships, or work, therapy can help. You don't need to be in crisis to benefit from professional support at our Darby clinic."
     },
     {
-      question: "Do you offer services for children and families?",
-      answer: "Yes, we provide therapy for children, adolescents, and families. Our licensed therapists are experienced in working with young people and understand the unique challenges they face."
+      question: "Do you offer services for children and families in Darby, PA?",
+      answer: "Yes, we provide specialized therapy for children, adolescents, and families at our Darby location. Our licensed therapists are experienced in working with young people and understand the unique challenges they face in our local community."
     },
     {
-      question: "What should I expect during my first visit?",
-      answer: "Your first visit is an opportunity for you and your therapist to get to know each other. You'll discuss what brings you to therapy, your personal history, and your goals for treatment."
+      question: "What should I expect during my first visit to your Darby clinic?",
+      answer: "Your first visit is an opportunity for you and your therapist to get to know each other. You'll discuss what brings you to therapy, your personal history, and your goals for treatment in a warm, welcoming environment."
     },
     {
       question: "Is my information kept confidential?",
