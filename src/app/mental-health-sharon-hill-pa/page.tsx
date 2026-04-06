@@ -43,10 +43,10 @@ export default function MentalHealthSharonHillPage() {
 
   const pageContent: GeoContentProps = {
     heroHeadline: <>
-      Stop suffering in silence. <br />
-      <span className="font-instrument-serif italic text-orange-500 font-normal">Find real help near Sharon Hill, PA.</span>
+      Don't drive 45 minutes for therapy. <br />
+      <span className="font-instrument-serif italic text-orange-500 font-normal">Premium mental health care is near Sharon Hill.</span>
     </>,
-    heroSubheadline: "Waitlists and out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care just 5 minutes away. 100% Medicaid accepted.",
+    heroSubheadline: "Small communities shouldn't have to settle for subpar care. Experience a modern, welcoming environment with expert psychiatric support just 5 minutes from your door.",
     problemHeadline: <>
       Why is finding accessible mental health care in Sharon Hill <span className="font-instrument-serif italic text-orange-500">so difficult?</span>
     </>,

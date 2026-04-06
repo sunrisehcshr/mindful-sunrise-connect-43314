@@ -43,10 +43,10 @@ export default function MentalHealthCollingdalePage() {
 
   const pageContent: GeoContentProps = {
     heroHeadline: <>
-      Stop suffering in silence. <br />
-      <span className="font-instrument-serif italic text-orange-500 font-normal">Find real help near Collingdale, PA.</span>
+      Reliable mental health support for Collingdale. <br />
+      <span className="font-instrument-serif italic text-orange-500 font-normal">No waitlists. No runarounds.</span>
     </>,
-    heroSubheadline: "Waitlists and out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care just 4 minutes away. 100% Medicaid accepted.",
+    heroSubheadline: "Working families don't have time for clinics that don't answer the phone. Get immediate access to licensed therapists and psychiatrists right in your backyard. 100% Medicaid accepted.",
     problemHeadline: <>
       Why is finding good mental health care in Collingdale <span className="font-instrument-serif italic text-orange-500">so difficult?</span>
     </>,

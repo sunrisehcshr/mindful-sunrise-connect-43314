@@ -43,10 +43,10 @@ export default function MentalHealthLansdownePage() {
 
   const pageContent: GeoContentProps = {
     heroHeadline: <>
-      Stop suffering in silence. <br />
-      <span className="font-instrument-serif italic text-orange-500 font-normal">Find real help near Lansdowne, PA.</span>
+      Finally, expert therapy in Lansdowne <br />
+      <span className="font-instrument-serif italic text-orange-500 font-normal">that actually accepts your insurance.</span>
     </>,
-    heroSubheadline: "Waitlists and out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care just 7 minutes away. 100% Medicaid accepted.",
+    heroSubheadline: "Stop paying out of pocket or compromising on quality. We offer premium mental health and behavioral support tailored for your family, fully covered by Medicaid.",
     problemHeadline: <>
       Why is finding accessible mental health care in Lansdowne <span className="font-instrument-serif italic text-orange-500">so difficult?</span>
     </>,

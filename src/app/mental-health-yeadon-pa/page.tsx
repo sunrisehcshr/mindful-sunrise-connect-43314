@@ -43,10 +43,10 @@ export default function MentalHealthYeadonPage() {
 
   const pageContent: GeoContentProps = {
     heroHeadline: <>
-      Stop suffering in silence. <br />
-      <span className="font-instrument-serif italic text-orange-500 font-normal">Find real help near Yeadon, PA.</span>
+      Tired of generic Philadelphia clinics? <br />
+      <span className="font-instrument-serif italic text-orange-500 font-normal">Discover specialized care near Yeadon.</span>
     </>,
-    heroSubheadline: "Waitlists and out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care just 5 minutes away. 100% Medicaid accepted.",
+    heroSubheadline: "Escape the massive hospital networks. Get personalized, evidence-based therapy and psychiatric care just 5 minutes away. 100% Medicaid accepted with zero waitlists.",
     problemHeadline: <>
       Why is finding accessible mental health care in Yeadon <span className="font-instrument-serif italic text-orange-500">so difficult?</span>
     </>,

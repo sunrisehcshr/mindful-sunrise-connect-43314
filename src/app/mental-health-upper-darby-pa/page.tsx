@@ -43,10 +43,10 @@ export default function MentalHealthUpperDarbyPage() {
 
   const pageContent: GeoContentProps = {
     heroHeadline: <>
-      Stop suffering in silence. <br />
-      <span className="font-instrument-serif italic text-orange-500 font-normal">Find real help near Upper Darby, PA.</span>
+      Skip the 69th Street waitlists. <br />
+      <span className="font-instrument-serif italic text-orange-500 font-normal">Get immediate psychiatric care near Upper Darby.</span>
     </>,
-    heroSubheadline: "Waitlists and out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care just 10 minutes down the road. 100% Medicaid accepted.",
+    heroSubheadline: "When you're struggling, four months is too long to wait. Our dedicated team provides expert therapy and medication management with zero waitlists. 100% Medicaid accepted.",
     problemHeadline: <>
       Why is finding good mental health care in Upper Darby <span className="font-instrument-serif italic text-orange-500">so difficult?</span>
     </>,
