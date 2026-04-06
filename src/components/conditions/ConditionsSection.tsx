@@ -213,8 +213,8 @@ const ConditionsSection = () => {
           <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
             <SectionTag>Conditions We Treat</SectionTag>
             <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight max-w-[15ch] md:max-w-none mx-auto">
-              Specialized treatment for <br className="hidden md:block" />
-              <span className="font-instrument-serif italic text-orange-500">the challenges you face.</span>
+              Don&apos;t let your diagnosis define you. Find <br className="hidden md:block" />
+              <span className="font-instrument-serif italic text-orange-500">targeted relief for your specific struggle.</span>
             </h2>
           </motion.div>
           <motion.p variants={itemVariants} className="text-stone-500 font-barlow text-lg mt-6 max-w-2xl mx-auto">

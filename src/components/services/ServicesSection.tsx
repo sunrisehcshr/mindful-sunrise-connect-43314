@@ -47,35 +47,50 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                     whileHover="hover"
                     className="relative border-t border-stone-200 py-6 md:py-12 group cursor-pointer overflow-hidden transition-all duration-300 hover:rounded-3xl hover:border-transparent min-h-[60px] md:min-h-0"
                 >
-                    <div className="flex flex-row items-center justify-between relative z-10 px-4 gap-4">
-                        {/* Number */}
-                        <span className="text-stone-400 font-barlow font-medium text-xs md:text-sm tracking-widest group-hover:text-white transition-colors duration-300 tabular-nums">
-                            0{index + 1}
-                        </span>
+                    <div className="flex flex-col md:flex-row md:items-center justify-between relative z-10 px-4 gap-4 md:gap-4">
+                        <div className="flex items-center justify-between w-full md:w-auto flex-1">
+                            {/* Number */}
+                            <span className="text-stone-400 font-barlow font-medium text-xs md:text-sm tracking-widest group-hover:text-white transition-colors duration-300 tabular-nums w-8">
+                                0{index + 1}
+                            </span>
 
-                        {/* Title */}
-                        <motion.h2
-                            variants={{ initial: { x: 0 }, hover: { x: 20 } }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="text-lg sm:text-2xl md:text-5xl lg:text-6xl font-normal text-stone-400 group-hover:text-white transition-colors duration-300 font-barlow tracking-tighter text-left flex-1 px-4 md:px-10"
-                        >
-                            {item.title}
-                        </motion.h2>
+                            {/* Title */}
+                            <motion.h2
+                                variants={{ initial: { x: 0 }, hover: { x: 20 } }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                className="text-lg sm:text-2xl md:text-5xl lg:text-6xl font-normal text-stone-400 group-hover:text-white transition-colors duration-300 font-barlow tracking-tighter text-left flex-1 px-4 md:px-10"
+                            >
+                                {item.title}
+                            </motion.h2>
 
-                        {/* Button */}
-                        <motion.div
-                            variants={{ 
-                                initial: { scale: 0.8, opacity: 0.5 }, 
-                                hover: { scale: 1, opacity: 1 } 
-                            }}
-                            transition={{ type: "spring", duration: 0.3, bounce: 0 }}
-                            className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-stone-300 text-stone-400 group-hover:border-white group-hover:text-white transition-all duration-300 shrink-0"
-                        >
-                            <ArrowUpRight className="h-4 w-4 md:h-5 md:h-5" />
-                        </motion.div>
+                            {/* Button */}
+                            <motion.div
+                                variants={{ 
+                                    initial: { scale: 0.8, opacity: 0.5 }, 
+                                    hover: { scale: 1, opacity: 1 } 
+                                }}
+                                transition={{ type: "spring", duration: 0.3, bounce: 0 }}
+                                className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-stone-300 text-stone-400 group-hover:border-white group-hover:text-white transition-all duration-300 shrink-0 hidden md:flex"
+                            >
+                                <ArrowUpRight className="h-4 w-4 md:h-5 md:h-5" />
+                            </motion.div>
+                        </div>
+
+                        {/* Mobile Image (Always visible on mobile) */}
+                        {item.image && (
+                            <div className="md:hidden w-full h-[140px] relative rounded-xl overflow-hidden mt-4 shadow-md">
+                                <Image
+                                    src={typeof item.image === 'string' ? (item.image.includes('cloudinary') ? item.image.replace('/upload/', '/upload/f_auto,q_auto,w_600/') : item.image) : item.image.src}
+                                    alt={`${item.title} services at Sunrise Human Care Services`}
+                                    fill
+                                    sizes="100vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                        )}
                     </div>
 
-                    {/* Spotlight Image Reveal with Orange Tint */}
+                    {/* Spotlight Image Reveal with Orange Tint (Desktop only) */}
                     {item.image && (
                         <motion.div
                             variants={{ 
@@ -83,7 +98,7 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                                 hover: { opacity: 1, scale: 1, x: "-50%", y: "-50%" } 
                             }}
                             transition={{ type: "spring", duration: 0.4, bounce: 0 }}
-                            className="absolute top-1/2 left-1/2 w-[200px] h-[140px] md:w-[400px] md:h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 will-change-transform"
+                            className="absolute top-1/2 left-1/2 w-[400px] h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 will-change-transform hidden md:block"
                         >
                             <Image
                               src={typeof item.image === 'string' ? (item.image.includes('cloudinary') ? item.image.replace('/upload/', '/upload/f_auto,q_auto,w_800/') : item.image) : item.image.src}
@@ -164,7 +179,7 @@ const ServicesSection: React.FC = () => {
             </SectionTag>
             <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
                 From Talk Therapy to Psychiatric Care: <br />
-                <span className="font-instrument-serif italic text-orange-500">Specialized Support for Every Step.</span>
+                <span className="font-instrument-serif italic text-orange-500">Everything you need to heal, under one roof.</span>
             </h2>
           </motion.div>
         </motion.div>

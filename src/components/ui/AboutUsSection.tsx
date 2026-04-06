@@ -99,8 +99,8 @@ const AboutUsSection = () => {
           <div className="flex flex-col items-center gap-4">
             <SectionTag>Our Story</SectionTag>
             <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                Compassionate support for your <br />
-                <span className="font-instrument-serif italic text-orange-500">mental wellness journey.</span>
+                Compassionate support to help you <br />
+                <span className="font-instrument-serif italic text-orange-500">feel like yourself again.</span>
             </h2>
           </div>
         </motion.div>
