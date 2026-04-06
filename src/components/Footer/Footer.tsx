@@ -38,38 +38,38 @@ const Footer: React.FC = () => {
             <h3 className="font-barlow font-semibold text-lg text-stone-900">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-50 mt-0.5 shrink-0">
-                  <MapPin className="h-4 w-4 text-amber-500" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-50 mt-0.5 shrink-0">
+                  <MapPin className="h-4 w-4 text-orange-500" />
                 </div>
                 <span className="text-sm text-stone-600 font-barlow">
                   869 Main Street, Darby, PA 19023, United States
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-50 shrink-0">
-                  <Phone className="h-4 w-4 text-amber-500" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-50 shrink-0">
+                  <Phone className="h-4 w-4 text-orange-500" />
                 </div>
                 <motion.a 
                   whileTap={{ scale: 0.98 }}
                   href="tel:+18146202162" 
-                  className="text-sm text-stone-600 hover:text-amber-600 transition-colors font-barlow"
+                  className="text-sm text-stone-600 hover:text-orange-600 transition-colors font-barlow"
                 >
                   (814) 620-2162
                 </motion.a>
               </li>
               <li className="flex items-center space-x-3">
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-50 shrink-0">
-                  <Mail className="h-4 w-4 text-amber-500" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-50 shrink-0">
+                  <Mail className="h-4 w-4 text-orange-500" />
                 </div>
                 <motion.a 
                   whileTap={{ scale: 0.98 }}
                   href="mailto:info@sunrisehumancare.com" 
-                  className="text-sm text-stone-600 hover:text-amber-600 transition-colors font-barlow"
+                  className="text-sm text-stone-600 hover:text-orange-600 transition-colors font-barlow"
                 >info@sunrisehumancare.com</motion.a>
               </li>
               <li className="flex items-start space-x-3">
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-50 mt-0.5 shrink-0">
-                  <Clock className="h-4 w-4 text-amber-500" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-50 mt-0.5 shrink-0">
+                  <Clock className="h-4 w-4 text-orange-500" />
                 </div>
                 <div className="text-sm text-stone-600 font-barlow">
                   <p>Monday - Friday: 9am - 5pm</p>
