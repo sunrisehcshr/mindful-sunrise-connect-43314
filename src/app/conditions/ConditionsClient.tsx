@@ -182,20 +182,20 @@ export default function ConditionsClient() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl"
+              className="max-w-4xl mx-auto text-center"
             >
               <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
                 Specialized Clinical Care
               </span>
-              <h1 className="font-barlow font-normal text-5xl md:text-7xl lg:text-8xl text-white tracking-tighter leading-[1.05] mb-8 text-balance">
+              <h1 className="font-barlow font-normal text-5xl md:text-7xl lg:text-8xl text-white tracking-tighter leading-[1.05] mb-8 text-balance mx-auto">
                 Targeted relief for <br className="hidden md:block" />
                 <span className="font-instrument-serif italic text-orange-400 font-normal">your specific struggle.</span>
               </h1>
-              <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed mb-10 text-balance">
+              <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 text-balance">
                 Don't let a diagnosis define you. We provide evidence-based, compassionate psychiatric care and therapy for complex mental health conditions in Darby, PA.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
                   <motion.button 
                     whileTap={{ scale: 0.96 }}
@@ -232,13 +232,13 @@ export default function ConditionsClient() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="max-w-3xl mb-16"
+                className="max-w-3xl mx-auto text-center mb-16 flex flex-col items-center"
               >
                 <SectionTag>Clinical Expertise</SectionTag>
-                <h2 className="font-barlow font-normal text-4xl md:text-6xl text-stone-900 tracking-tighter mt-6 mb-6 text-balance">
+                <h2 className="font-barlow font-normal text-4xl md:text-6xl text-stone-900 tracking-tighter mt-6 mb-6 text-balance mx-auto">
                   What we <span className="font-instrument-serif italic text-orange-500">treat.</span>
                 </h2>
-                <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed text-balance">
+                <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed text-balance mx-auto">
                   Our licensed psychiatric providers and therapists utilize the latest clinical frameworks to diagnose and treat a comprehensive spectrum of mental health disorders.
                 </p>
               </motion.div>
