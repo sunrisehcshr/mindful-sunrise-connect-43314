@@ -59,7 +59,23 @@ function Card({ children, className, containerClassName }: { children: React.Rea
   );
 }
 
-export default function MentalHealthGeoClient({ location }: { location: string }) {
+export interface GeoContentProps {
+  heroHeadline: React.ReactNode;
+  heroSubheadline: string;
+  problemHeadline: React.ReactNode;
+  problemText1: string;
+  problemText2: string;
+  problemHighlight: string;
+  solutionHeadline: React.ReactNode;
+  solutionText1: React.ReactNode;
+  solutionText2: React.ReactNode;
+  expertCareHeadline: React.ReactNode;
+  expertCareText1: React.ReactNode;
+  expertCareText2: React.ReactNode;
+  localAdvantageText: React.ReactNode;
+}
+
+export default function MentalHealthGeoClient({ location, content }: { location: string, content: GeoContentProps }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -170,7 +186,6 @@ export default function MentalHealthGeoClient({ location }: { location: string }
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
-          {/* Background elements */}
           <div className="absolute inset-0 z-0 overflow-hidden">
              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
@@ -193,12 +208,11 @@ export default function MentalHealthGeoClient({ location }: { location: string }
               </motion.div>
 
               <h1 className="font-barlow font-bold text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] md:leading-tight mb-6">
-                Stop suffering in silence. <br />
-                <span className="font-instrument-serif italic text-orange-500 font-normal">Find real help near {location}.</span>
+                {content.heroHeadline}
               </h1>
               
               <p className="text-lg md:text-xl mb-10 text-stone-300 max-w-3xl mx-auto leading-relaxed font-medium font-barlow">
-                Waitlists and expensive out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care right here in Delaware County. 100% Medicaid accepted with immediate openings.
+                {content.heroSubheadline}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -237,7 +251,7 @@ export default function MentalHealthGeoClient({ location }: { location: string }
               >
                 <SectionTag>The Problem</SectionTag>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl text-balance font-normal text-stone-900 tracking-tighter leading-[1.1] mt-6">
-                  Why is finding good mental health care in Delaware County <span className="font-instrument-serif italic text-orange-500">so difficult?</span>
+                  {content.problemHeadline}
                 </h2>
               </motion.div>
 
@@ -248,16 +262,11 @@ export default function MentalHealthGeoClient({ location }: { location: string }
                   viewport={{ once: true }}
                   className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium"
                 >
-                  <p>
-                    If you live in {location}, Pennsylvania, you probably already know the frustration. You finally decide to seek help for your anxiety, depression, or your child's behavioral issues. You make the brave choice to pick up the phone.
-                  </p>
-                  
-                  <p>
-                    And what happens? You're told the clinic isn't accepting new patients. Or they don't take Medicaid. Or the next available appointment is four months away. 
-                  </p>
+                  <p>{content.problemText1}</p>
+                  <p>{content.problemText2}</p>
                   
                   <p className="text-2xl text-stone-900 border-l-4 border-orange-500 pl-6 py-2 my-12 bg-orange-50/30 rounded-r-2xl">
-                    Mental health crises do not operate on a four-month delay. When you are struggling, you need help <strong>now</strong>.
+                    {content.problemHighlight}
                   </p>
                 </motion.div>
 
@@ -267,17 +276,12 @@ export default function MentalHealthGeoClient({ location }: { location: string }
                   viewport={{ once: true }}
                 >
                   <h3 className="text-3xl md:text-4xl font-normal tracking-tighter text-stone-900 mb-8">
-                    Sunrise Human Care Services was built to <span className="font-instrument-serif italic text-orange-500">fix this broken system.</span>
+                    {content.solutionHeadline}
                   </h3>
                   
                   <div className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium">
-                    <p>
-                      We established our clinic at <strong>869 Main Street in Darby, PA</strong> (just {getDistance(location)} from {location}) with one clear promise: to provide premium, evidence-based psychiatric care and therapy to the Medicaid community, without the wait. 
-                    </p>
-                    
-                    <p>
-                      We are not a massive, faceless hospital network where you are just a number. We are a dedicated, local team of licensed therapists, psychiatrists, and behavioral health technicians. We treat our patients with the dignity, privacy, and clinical excellence they deserve.
-                    </p>
+                    <p>{content.solutionText1}</p>
+                    <p>{content.solutionText2}</p>
                   </div>
                 </motion.div>
 
@@ -321,17 +325,12 @@ export default function MentalHealthGeoClient({ location }: { location: string }
                   viewport={{ once: true }}
                 >
                   <h3 className="text-3xl md:text-4xl font-normal tracking-tighter text-stone-900 mb-8">
-                    What does expert mental health care <span className="font-instrument-serif italic text-orange-500">look like?</span>
+                    {content.expertCareHeadline}
                   </h3>
                   
                   <div className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium">
-                    <p>
-                      It looks like <strong>Individual Therapy</strong> that digs into the root causes of your trauma, rather than just putting a band-aid on the symptoms. It looks like <strong>Medication Management</strong> where your psychiatrist actually listens to your concerns about side effects and adjusts your dosage carefully. 
-                    </p>
-
-                    <p>
-                      For families near {location}, it looks like our <strong>Intensive Behavioral Health Services (IBHS)</strong>. Instead of asking you to drag your struggling child to a sterile clinic, our behavioral technicians go directly to your home or your child's school to provide support right where the behaviors happen.
-                    </p>
+                    <p>{content.expertCareText1}</p>
+                    <p>{content.expertCareText2}</p>
                   </div>
                 </motion.div>
               </div>
@@ -366,7 +365,7 @@ export default function MentalHealthGeoClient({ location }: { location: string }
                     <span className="font-instrument-serif italic text-orange-500">and Delaware County.</span>
                   </h3>
                   <p className="text-stone-500 text-lg leading-relaxed font-medium max-w-xl">
-                    Located at 869 Main Street in Darby, PA (19023), our clinic is easily accessible from {location} and offers a safe, welcoming environment. We proudly serve Darby, Yeadon, Collingdale, Lansdowne, and Upper Darby.
+                    {content.localAdvantageText}
                   </p>
                 </div>
 
