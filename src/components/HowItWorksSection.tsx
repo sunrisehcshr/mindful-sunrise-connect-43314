@@ -94,7 +94,8 @@ const TimelineStep = ({
     const number = String(i + 1).padStart(2, "0");
     
     // Calculate threshold for when this step becomes "active" via scroll
-    const stepThreshold = i / Math.max(1, totalSteps - 1);
+    // Adjust thresholds so step 1 triggers earlier, and they don't overlap awkwardly
+    const stepThreshold = i === 0 ? 0.05 : (i / totalSteps);
     
     // Use the vertical line progress to trigger card glow
     const isCardGlowing = useTransform(progress, (p: number) => p >= stepThreshold);
