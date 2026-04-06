@@ -79,26 +79,38 @@
      const containerRef = useRef<HTMLDivElement>(null); 
  
      useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
+       const container = containerRef.current;
+       if (!container) return;
 
-        let renderer: Renderer;
-        try {
-            renderer = new Renderer({ alpha: false, antialias: true });
-        } catch (error) {
-            console.warn("WebGL not supported, falling back to basic background", error);
-            container.style.backgroundColor = baseColor;
-            return;
-        }
+       // 1. Pre-check WebGL context to prevent the 'TypeError' from ogl
+       const canvas = document.createElement('canvas');
+       const attributes = { alpha: false, antialias: true };
+       const glContext = canvas.getContext('webgl2', attributes) || canvas.getContext('webgl', attributes);
+       
+       if (!glContext) {
+           console.warn("WebGL context not available or context limit reached, falling back to basic background.");
+           container.style.backgroundColor = baseColor;
+           return;
+       }
 
-        const gl = renderer.gl;
-        if (!gl) {
-            console.warn("WebGL context not available");
-            container.style.backgroundColor = baseColor;
-            return;
-        }
+       // 2. Pass the pre-validated canvas to the Renderer
+       let renderer: Renderer;
+       try {
+           renderer = new Renderer({ canvas, alpha: false, antialias: true });
+       } catch (error) {
+           console.warn("WebGL not supported, falling back to basic background", error);
+           container.style.backgroundColor = baseColor;
+           return;
+       }
 
-        gl.canvas.style.display = 'block'; 
+       const gl = renderer.gl;
+       if (!gl) {
+           console.warn("WebGL context not available");
+           container.style.backgroundColor = baseColor;
+           return;
+       }
+
+       gl.canvas.style.display = 'block'; 
          gl.canvas.style.width = '100%'; 
          gl.canvas.style.height = '100%'; 
         container.appendChild(gl.canvas); 
