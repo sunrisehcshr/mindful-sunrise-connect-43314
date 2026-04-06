@@ -91,6 +91,9 @@ const Navbar = () => {
     title: "Child Therapy",
     path: "/child-therapy-darby-pa"
   }, {
+    title: "IBHS Services",
+    path: "/ibhs-darby-pa"
+  }, {
     title: "Psychiatric Evaluations",
     path: "/psychiatric-evaluations-darby-pa"
   }, {
