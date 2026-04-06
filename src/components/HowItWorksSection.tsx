@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useSpring, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, useReducedMotion, useMotionValue, useMotionTemplate } from "framer-motion";
 import SectionTag from './ui/section-tag';
 import ParallaxBanner from './ui/ParallaxBanner';
 import CurveTransition from './ui/CurveTransition';
+import { cn } from "@/lib/utils";
 
 interface StepItem {
     q: string;
@@ -22,6 +23,46 @@ const defaultSteps: StepItem[] = [
     { q: "A Plan Built for You", a: "Receive a clear, evidence-based roadmap combining modern therapy and precise medication management, if needed. No guesswork." },
     { q: "Sustained Recovery", a: "Begin your transformation with the ongoing support of a team that stays by your side until you feel like yourself again." }
 ];
+
+// --- Glowing Bento Card (Shared Style) ---
+function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
+
+    return (
+        <div
+            className={cn(
+                "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-500 rounded-3xl",
+                "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-amber-200/50 hover:bg-white",
+                containerClassName
+            )}
+            onMouseMove={handleMouseMove}
+        >
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/50 pointer-events-none" />
+            <motion.div
+                className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
+                style={{
+                    background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${mouseX}px ${mouseY}px,
+              rgba(245, 158, 11, 0.12),
+              transparent 80%
+            )
+          `,
+                }}
+            />
+            <div className={cn("relative h-full w-full p-8", className)}>
+                {children}
+            </div>
+        </div>
+    );
+}
 
 // Timeline Step Component to safely handle its own hooks
 const TimelineStep = ({
@@ -80,31 +121,20 @@ const TimelineStep = ({
                     cursor-pointer
                 `}
             >
-                <div 
-                    className="relative rounded-2xl p-6 transition-all duration-500 cursor-default bg-white"
-                    style={{
-                        border: `1px solid ${shouldGlow ? `${accentColor}80` : (isHovered ? `${accentColor}40` : "rgba(0,0,0,0.05)")}`,
-                        boxShadow: shouldGlow 
-                            ? `0 10px 40px -10px ${accentColor}40` 
-                            : (isHovered ? `0 10px 30px -10px ${accentColor}20` : "0 4px 20px -10px rgba(0,0,0,0.05)"),
-                        transform: (isHovered || (shouldGlow && !isHovered)) && !prefersReducedMotion 
-                            ? (isLeft ? "translateX(-5px)" : "translateX(5px)") 
-                            : "none",
-                    }}
-                >
+                <Card containerClassName={`transition-all duration-500 border ${shouldGlow ? 'border-orange-200/50 shadow-lg shadow-orange-100/50' : 'border-stone-200/80'} ${(!prefersReducedMotion && (isHovered || (shouldGlow && !isHovered))) ? (isLeft ? '-translate-x-1' : 'translate-x-1') : ''}`}>
                     <span
-                        className="block text-sm font-bold mb-3 font-barlow tracking-widest uppercase transition-colors duration-500 tabular-nums"
+                        className="block text-xs md:text-sm font-bold mb-4 font-barlow tracking-widest uppercase transition-colors duration-500 tabular-nums"
                         style={{ color: shouldGlow ? accentColor : "rgba(0,0,0,0.4)" }}
                     >
                         Step {number}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-normal text-stone-900 mb-3 tracking-tight">
+                    <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors">
                         {step.q}
                     </h3>
-                    <p className="text-stone-500 text-sm md:text-base leading-relaxed font-barlow">
+                    <p className="text-stone-500 text-sm leading-relaxed font-barlow">
                         {step.a}
                     </p>
-                </div>
+                </Card>
             </motion.div>
         </div>
     );

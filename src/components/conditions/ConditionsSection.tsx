@@ -224,7 +224,7 @@ const ConditionsSection = () => {
       </div>
 
       {/* Horizontal Scroll System */}
-      <div className="relative w-full py-10">
+      <div className="relative w-full py-2">
         <HorizontalScroll className="px-4 md:px-8 pb-16" autoPlay={true} autoPlaySpeed={1.2}>
           {[...conditions, ...conditions].map((condition, idx) => (
             <motion.div 
