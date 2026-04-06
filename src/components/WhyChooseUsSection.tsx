@@ -15,29 +15,48 @@ function ScrambleText({ defaultText, hoverText, isHovered, className }: { defaul
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     useEffect(() => {
+        let animationFrameId: number;
         let iteration = 0;
         const targetText = isHovered ? hoverText : defaultText;
         const targetArray = Array.from(targetText); // Use Array.from to correctly handle emojis
+        let lastTime = performance.now();
+        const fpsInterval = 1000 / 30; // ~30fps for smooth visual scrambling
 
-        const interval = setInterval(() => {
-            setDisplayText(
-                targetArray
-                    .map((letter, index) => {
-                        if (index < iteration) return targetArray[index];
-                        return chars[Math.floor(Math.random() * chars.length)];
-                    })
-                    .join("")
-            );
+        const animate = (currentTime: number) => {
+            animationFrameId = requestAnimationFrame(animate);
+            
+            const elapsed = currentTime - lastTime;
+            
+            if (elapsed > fpsInterval) {
+                lastTime = currentTime - (elapsed % fpsInterval);
+                
+                setDisplayText(
+                    targetArray
+                        .map((letter, index) => {
+                            if (index < iteration) return targetArray[index];
+                            return chars[Math.floor(Math.random() * chars.length)];
+                        })
+                        .join("")
+                );
 
-            if (iteration >= targetArray.length) clearInterval(interval);
-            iteration += 1 / 3;
-        }, 30);
+                if (iteration >= targetArray.length) {
+                    cancelAnimationFrame(animationFrameId);
+                }
+                iteration += 1 / 3;
+            }
+        };
 
-        return () => clearInterval(interval);
+        animationFrameId = requestAnimationFrame(animate);
+
+        return () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+        };
     }, [isHovered, defaultText, hoverText]);
 
     return (
-        <span className={cn("cursor-default font-mono", className)}>
+        <span className={cn("cursor-default font-mono tabular-nums", className)}>
             {displayText}
         </span>
     );
