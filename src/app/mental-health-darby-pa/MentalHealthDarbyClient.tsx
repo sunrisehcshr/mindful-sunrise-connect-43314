@@ -212,74 +212,118 @@ export default function MentalHealthDarbyClient() {
         </section>
 
         {/* Ogilvy Long Copy Section */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 md:px-8">
+        <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50/50 rounded-full blur-[100px] pointer-events-none -mr-48 -mt-48" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-stone-50/80 rounded-full blur-[100px] pointer-events-none -ml-48 -mb-48" />
+
+          <div className="container mx-auto px-4 md:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
-              <div className="prose prose-lg md:prose-xl prose-stone prose-headings:font-barlow prose-headings:tracking-tight prose-headings:font-normal prose-p:font-barlow prose-p:leading-relaxed prose-a:text-orange-600 max-w-none">
-                <h2 className="text-3xl md:text-5xl text-stone-900 mb-8">
-                  Why is finding good mental health care in Delaware County so difficult?
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-16 md:mb-24"
+              >
+                <SectionTag>The Problem</SectionTag>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl text-balance font-normal text-stone-900 tracking-tighter leading-[1.1] mt-6">
+                  Why is finding good mental health care in Delaware County <span className="font-instrument-serif italic text-orange-500">so difficult?</span>
                 </h2>
-                
-                <p className="text-stone-600 text-xl font-medium mb-8">
-                  If you live in Darby, Pennsylvania, you probably already know the frustration. You finally decide to seek help for your anxiety, depression, or your child's behavioral issues. You make the brave choice to pick up the phone.
-                </p>
-                
-                <p>
-                  And what happens? You're told the clinic isn't accepting new patients. Or they don't take Medicaid. Or the next available appointment is four months away. 
-                </p>
-                
-                <p>
-                  Mental health crises do not operate on a four-month delay. When you are struggling to get out of bed, when your relationship is falling apart, or when your child is facing suspension from school, you need help <strong>now</strong>.
-                </p>
-                
-                <h3 className="text-2xl md:text-3xl text-stone-800 mt-12 mb-6">
-                  Sunrise Human Care Services was built to fix this broken system.
-                </h3>
-                
-                <p>
-                  We established our clinic at <strong>869 Main Street in Darby, PA</strong> with one clear promise: to provide premium, evidence-based psychiatric care and therapy to the Medicaid community, without the wait. 
-                </p>
-                
-                <p>
-                  We are not a massive, faceless hospital network where you are just a number. We are a dedicated, local team of licensed therapists, psychiatrists, and behavioral health technicians. We treat our patients with the dignity, privacy, and clinical excellence they deserve.
-                </p>
+              </motion.div>
 
-                <div className="bg-stone-50 border border-stone-100 p-8 rounded-3xl my-12 shadow-sm">
-                  <h4 className="text-xl font-bold text-stone-900 mb-4 flex items-center gap-3">
-                    <CheckCircle className="text-orange-500 w-6 h-6" />
-                    The Sunrise Promise to Darby Residents:
-                  </h4>
-                  <ul className="space-y-4 list-none pl-0">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-orange-500 mt-2.5 shrink-0" />
-                      <span className="text-stone-700"><strong>Zero Waitlists:</strong> We prioritize immediate intake. If you need help, we will get you on the schedule.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-orange-500 mt-2.5 shrink-0" />
-                      <span className="text-stone-700"><strong>100% Medicaid Accepted:</strong> We proudly serve the Medicaid community. No surprise out-of-pocket bills.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-orange-500 mt-2.5 shrink-0" />
-                      <span className="text-stone-700"><strong>Comprehensive Care Under One Roof:</strong> Stop bouncing between different clinics. We offer talk therapy, psychiatric evaluations, and medication management in one place.</span>
-                    </li>
-                  </ul>
-                </div>
+              <div className="space-y-12">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium"
+                >
+                  <p>
+                    If you live in Darby, Pennsylvania, you probably already know the frustration. You finally decide to seek help for your anxiety, depression, or your child's behavioral issues. You make the brave choice to pick up the phone.
+                  </p>
+                  
+                  <p>
+                    And what happens? You're told the clinic isn't accepting new patients. Or they don't take Medicaid. Or the next available appointment is four months away. 
+                  </p>
+                  
+                  <p className="text-2xl text-stone-900 border-l-4 border-orange-500 pl-6 py-2 my-12 bg-orange-50/30 rounded-r-2xl">
+                    Mental health crises do not operate on a four-month delay. When you are struggling, you need help <strong>now</strong>.
+                  </p>
+                </motion.div>
 
-                <h3 className="text-2xl md:text-3xl text-stone-800 mt-12 mb-6">
-                  What does expert mental health care look like?
-                </h3>
-                
-                <p>
-                  It looks like <strong>Individual Therapy</strong> that digs into the root causes of your trauma, rather than just putting a band-aid on the symptoms. It looks like <strong>Medication Management</strong> where your psychiatrist actually listens to your concerns about side effects and adjusts your dosage carefully. 
-                </p>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-3xl md:text-4xl font-normal tracking-tighter text-stone-900 mb-8">
+                    Sunrise Human Care Services was built to <span className="font-instrument-serif italic text-orange-500">fix this broken system.</span>
+                  </h3>
+                  
+                  <div className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium">
+                    <p>
+                      We established our clinic at <strong>869 Main Street in Darby, PA</strong> with one clear promise: to provide premium, evidence-based psychiatric care and therapy to the Medicaid community, without the wait. 
+                    </p>
+                    
+                    <p>
+                      We are not a massive, faceless hospital network where you are just a number. We are a dedicated, local team of licensed therapists, psychiatrists, and behavioral health technicians. We treat our patients with the dignity, privacy, and clinical excellence they deserve.
+                    </p>
+                  </div>
+                </motion.div>
 
-                <p>
-                  For families in Darby, it looks like our <strong>Intensive Behavioral Health Services (IBHS)</strong>. Instead of asking you to drag your struggling child to a sterile clinic, our behavioral technicians go directly to your home or your child's school in the William Penn School District to provide support right where the behaviors happen.
-                </p>
+                {/* Restyled Features List */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="grid grid-cols-1 md:grid-cols-3 gap-6 my-16"
+                >
+                  {[
+                    {
+                      title: "Zero Waitlists",
+                      desc: "We prioritize immediate intake. If you need help, we will get you on the schedule.",
+                      icon: Clock
+                    },
+                    {
+                      title: "100% Medicaid",
+                      desc: "We proudly serve the Medicaid community. No surprise out-of-pocket bills.",
+                      icon: ShieldCheck
+                    },
+                    {
+                      title: "All Under One Roof",
+                      desc: "Talk therapy, psychiatric evaluations, and medication management in one place.",
+                      icon: Users
+                    }
+                  ].map((feature, i) => (
+                    <div key={i} className="flex flex-col gap-4 p-8 rounded-[2rem] bg-stone-50 border border-stone-100 hover:border-orange-200 transition-colors">
+                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-stone-100 flex items-center justify-center">
+                        <feature.icon className="w-6 h-6 text-orange-500" />
+                      </div>
+                      <h4 className="font-bold text-xl text-stone-900 tracking-tight">{feature.title}</h4>
+                      <p className="text-stone-500 leading-relaxed font-medium">{feature.desc}</p>
+                    </div>
+                  ))}
+                </motion.div>
 
-                <p className="text-stone-600 text-xl font-medium mt-12 border-l-4 border-orange-500 pl-6 py-2">
-                  You don't have to navigate this alone. The right support can change the trajectory of your life, your marriage, and your family.
-                </p>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-3xl md:text-4xl font-normal tracking-tighter text-stone-900 mb-8">
+                    What does expert mental health care <span className="font-instrument-serif italic text-orange-500">look like?</span>
+                  </h3>
+                  
+                  <div className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium">
+                    <p>
+                      It looks like <strong>Individual Therapy</strong> that digs into the root causes of your trauma, rather than just putting a band-aid on the symptoms. It looks like <strong>Medication Management</strong> where your psychiatrist actually listens to your concerns about side effects and adjusts your dosage carefully. 
+                    </p>
+
+                    <p>
+                      For families in Darby, it looks like our <strong>Intensive Behavioral Health Services (IBHS)</strong>. Instead of asking you to drag your struggling child to a sterile clinic, our behavioral technicians go directly to your home or your child's school in the William Penn School District to provide support right where the behaviors happen.
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>
