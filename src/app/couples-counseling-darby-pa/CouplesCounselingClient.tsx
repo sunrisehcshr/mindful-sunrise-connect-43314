@@ -479,7 +479,7 @@ export default function CouplesCounselingClient() {
                   { title: "Emotional Distance", icon: Heart, desc: "Bridge the gap between you. Reignite the intimacy and deep emotional connection that originally brought you together." },
                   { title: "Parenting Conflicts", link: "/family-therapy-darby-pa", icon: Users, desc: "Get on the same page. Resolve differences in parenting styles and build a united front to lead a healthier, happier family." },
                   { title: "Life Transitions", icon: ArrowRight, desc: "Navigate major changes together. Whether it's a new baby, career shifts, or an empty nest, stay connected through the chaos." },
-                  { title: "Pre-Marital Counseling", link: "/premarital-counseling-darby-pa", icon: Star, desc: "Start your marriage on solid ground. Proactively address finances, family dynamics, and expectations before you say 'I do'." }
+                  { title: "Pre-Marital Counseling", link: "/relationship-therapy-darby-pa", icon: Star, desc: "Start your marriage on solid ground. Proactively address finances, family dynamics, and expectations before you say 'I do'." }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
