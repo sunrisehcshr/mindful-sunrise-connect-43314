@@ -212,7 +212,7 @@ const WarmHeroSection = () => {
             className="flex flex-col items-center gap-1 sm:gap-2 mb-3 sm:mb-4"
           >
             <div className="inline-block bg-black/20 backdrop-blur-md border border-white/10 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none shadow-sm">
-              <div className="overflow-hidden relative w-full h-full flex items-center">
+              <div className="overflow-hidden relative w-full h-full flex items-center" style={{ willChange: 'transform' }}>
                 <motion.div
                   initial={{ x: "0%" }}
                   animate={{ x: "-100%" }}
@@ -283,8 +283,8 @@ const WarmHeroSection = () => {
                 size="lg"
                 className="w-full sm:w-auto bg-white text-stone-900 hover:bg-amber-50 h-12 px-7 text-sm font-barlow font-bold rounded-full shadow-lg transition-all duration-300 group active:scale-[0.96]"
               >
-                <a href="tel:+18146202162">
-                  <Phone className="mr-2 h-4 w-4 group-hover:animate-pulse" />
+                <a href="tel:+18146202162" className="flex items-center">
+                  <Phone className="mr-2 h-4 w-4 -mt-[1px] group-hover:animate-pulse" />
                   Talk to a Specialist Now
                 </a>
               </Button>
@@ -294,10 +294,11 @@ const WarmHeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto border border-white/30 text-white bg-white/10 backdrop-blur-md h-12 px-7 text-sm font-barlow font-bold rounded-full hover:bg-white/20 transition-all duration-300 group active:scale-[0.96]"
+                className="w-full sm:w-auto border border-white/30 text-white bg-white/10 backdrop-blur-md h-12 px-7 text-sm font-barlow font-bold rounded-full hover:bg-white/20 hover:border-white/50 transition-all duration-300 group active:scale-[0.96]"
               >
                 <a
                   href="#appointment"
+                  className="flex items-center"
                   onClick={(e) => {
                     e.preventDefault();
                     document
@@ -305,7 +306,7 @@ const WarmHeroSection = () => {
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  <Calendar className="mr-2 h-4 w-4 group-hover:text-amber-300" />
+                  <Calendar className="mr-2 h-4 w-4 -mt-[1px] group-hover:text-amber-300" />
                   Schedule Your Visit
                 </a>
               </Button>
