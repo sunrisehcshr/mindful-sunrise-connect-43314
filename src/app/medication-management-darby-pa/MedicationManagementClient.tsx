@@ -768,9 +768,9 @@ export default function MedicationManagementClient() {
                 <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
                 <link itemProp="image" href="/images/holly.jpg" />
               </div>
-              <meta itemProp="lastReviewed" content={reviewDate} />
+              <meta itemProp="lastReviewed" content="2026-04-05" />
               <p>
-                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on {reviewDate} to ensure accuracy and compliance with current medical standards.
+                This content was clinically reviewed by Holli O'Donnell, Licensed Mental Health Professional, on April 5, 2026 to ensure accuracy and compliance with current medical standards.
               </p>
             </div>
           </section>
