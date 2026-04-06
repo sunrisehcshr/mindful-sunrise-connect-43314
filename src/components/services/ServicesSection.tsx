@@ -1,8 +1,8 @@
 
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { ArrowUpRight } from "lucide-react";
 import Link from 'next/link';
 import Image from 'next/image';
@@ -39,17 +39,31 @@ const itemVariants = {
 };
 
 const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const isInCenter = useInView(ref, { margin: "-30% 0px -30% 0px" });
+    const [isTouch, setIsTouch] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+        setIsTouch(window.matchMedia("(hover: none)").matches);
+    }, []);
+
+    const currentState = (isTouch && isInCenter) || isHovered ? "hover" : "initial";
+
     return (
-        <motion.div variants={itemVariants} whileTap={{ scale: 0.98 }} className="w-full">
+        <motion.div ref={ref} variants={itemVariants} whileTap={{ scale: 0.98 }} className="w-full">
             <Link href={item.link || "#"} className="block group mb-2 last:mb-0 w-full">
                 <motion.div
                     initial="initial"
-                    whileHover="hover"
-                    className="relative border-t border-stone-200 py-6 md:py-12 group cursor-pointer overflow-hidden transition-all duration-300 hover:rounded-3xl hover:border-transparent min-h-[60px] md:min-h-0"
+                    animate={currentState}
+                    onHoverStart={() => setIsHovered(true)}
+                    onHoverEnd={() => setIsHovered(false)}
+                    data-active={currentState === "hover"}
+                    className="relative border-t border-stone-200 py-6 md:py-12 group cursor-pointer overflow-hidden transition-all duration-300 hover:rounded-3xl data-[active=true]:rounded-3xl hover:border-transparent data-[active=true]:border-transparent min-h-[60px] md:min-h-0"
                 >
                     <div className="flex flex-row items-center justify-between relative z-10 px-4 gap-4">
                         {/* Number */}
-                        <span className="text-stone-400 font-barlow font-medium text-xs md:text-sm tracking-widest group-hover:text-white transition-colors duration-300 tabular-nums">
+                        <span className="text-stone-400 font-barlow font-medium text-xs md:text-sm tracking-widest group-hover:text-white group-data-[active=true]:text-white transition-colors duration-300 tabular-nums">
                             0{index + 1}
                         </span>
 
@@ -57,7 +71,7 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                         <motion.h2
                             variants={{ initial: { x: 0 }, hover: { x: 20 } }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="text-lg sm:text-2xl md:text-5xl lg:text-6xl font-normal text-stone-400 group-hover:text-white transition-colors duration-300 font-barlow tracking-tighter text-left flex-1 px-4 md:px-10"
+                            className="text-lg sm:text-2xl md:text-5xl lg:text-6xl font-normal text-stone-400 group-hover:text-white group-data-[active=true]:text-white transition-colors duration-300 font-barlow tracking-tighter text-left flex-1 px-4 md:px-10"
                         >
                             {item.title}
                         </motion.h2>
@@ -69,7 +83,7 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                                 hover: { scale: 1, opacity: 1 } 
                             }}
                             transition={{ type: "spring", duration: 0.3, bounce: 0 }}
-                            className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-stone-300 text-stone-400 group-hover:border-white group-hover:text-white transition-all duration-300 shrink-0"
+                            className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-stone-300 text-stone-400 group-hover:border-white group-data-[active=true]:border-white group-hover:text-white group-data-[active=true]:text-white transition-all duration-300 shrink-0"
                         >
                             <ArrowUpRight className="h-4 w-4 md:h-5 md:h-5" />
                         </motion.div>
@@ -90,7 +104,7 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                               alt={`${item.title} services at Sunrise Human Care Services in Darby, PA`}
                               fill
                               sizes="(max-width: 768px) 200px, 400px"
-                              className="object-cover transition-[filter,transform] duration-500 group-hover:sepia group-hover:hue-rotate-[320deg] group-hover:saturate-[2] group-hover:brightness-[0.8]"
+                              className="object-cover transition-[filter,transform] duration-500 group-hover:sepia group-data-[active=true]:sepia group-hover:hue-rotate-[320deg] group-data-[active=true]:hue-rotate-[320deg] group-hover:saturate-[2] group-data-[active=true]:saturate-[2] group-hover:brightness-[0.8] group-data-[active=true]:brightness-[0.8]"
                             />
                             <div className="absolute inset-0 bg-orange-600/30 mix-blend-overlay" />
                         </motion.div>
