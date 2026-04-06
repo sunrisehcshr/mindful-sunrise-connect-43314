@@ -10,13 +10,13 @@ import Image from "next/image";
 import ClinicStatus from "./ui/ClinicStatus";
 
 // --- Scramble Text Effect (Restored & Enhanced) ---
-function ScrambleText({ defaultText, hoverText, className }: { defaultText: string, hoverText: string, className?: string }) {
+function ScrambleText({ defaultText, hoverText, isHovered, className }: { defaultText: string, hoverText: string, isHovered?: boolean, className?: string }) {
     const [displayText, setDisplayText] = useState(defaultText);
-    const [isHovered, setIsHovered] = useState(false);
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    const scramble = (targetText: string) => {
+    useEffect(() => {
         let iteration = 0;
+        const targetText = isHovered ? hoverText : defaultText;
         const targetArray = Array.from(targetText); // Use Array.from to correctly handle emojis
 
         const interval = setInterval(() => {
@@ -32,28 +32,12 @@ function ScrambleText({ defaultText, hoverText, className }: { defaultText: stri
             if (iteration >= targetArray.length) clearInterval(interval);
             iteration += 1 / 3;
         }, 30);
-    };
 
-    const handleMouseEnter = () => {
-        if (!isHovered) {
-            setIsHovered(true);
-            scramble(hoverText);
-        }
-    };
-
-    const handleMouseLeave = () => {
-        if (isHovered) {
-            setIsHovered(false);
-            scramble(defaultText);
-        }
-    };
+        return () => clearInterval(interval);
+    }, [isHovered, defaultText, hoverText]);
 
     return (
-        <span
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={cn("cursor-default font-mono", className)}
-        >
+        <span className={cn("cursor-default font-mono", className)}>
             {displayText}
         </span>
     );
@@ -70,7 +54,7 @@ function OpeningHours() {
 }
 
 // --- Glowing Bento Card ---
-function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
+function Card({ children, className, containerClassName, onMouseEnter, onMouseLeave }: { children: React.ReactNode; className?: string, containerClassName?: string, onMouseEnter?: () => void, onMouseLeave?: () => void }) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -88,6 +72,8 @@ function Card({ children, className, containerClassName }: { children: React.Rea
                 containerClassName
             )}
             onMouseMove={handleMouseMove}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             {/* Subtle Gradient Inset */}
             <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/50 pointer-events-none" />
@@ -133,6 +119,7 @@ const itemVariants = {
 
 // --- Main Layout ---
 const WhyChooseUsSection = () => {
+    const [isScrambleCardHovered, setIsScrambleCardHovered] = useState(false);
     const iconContainerStyles = "w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 aspect-square rounded-xl bg-white flex items-center justify-center shadow-md shadow-stone-200/50 border border-stone-100 transition-transform group-hover:scale-110 duration-300 shrink-0";
 
     return (
@@ -290,9 +277,19 @@ const WhyChooseUsSection = () => {
                                 </div>
                             </Card>
 
-                            <Card containerClassName="h-1/3 rounded-3xl bg-gradient-to-br from-stone-50 to-white border-stone-100/30 shadow-sm" className="flex items-center justify-center">
+                            <Card 
+                                containerClassName="h-1/3 rounded-3xl bg-gradient-to-br from-stone-50 to-white border-stone-100/30 shadow-sm" 
+                                className="flex items-center justify-center"
+                                onMouseEnter={() => setIsScrambleCardHovered(true)}
+                                onMouseLeave={() => setIsScrambleCardHovered(false)}
+                            >
                                 <div className="text-center">
-                                    <ScrambleText defaultText="TRUSTED☀️CARE" hoverText="REAL☀️HEALING" className="text-lg font-bold tracking-[0.2em] text-stone-700 uppercase" />
+                                    <ScrambleText 
+                                        defaultText="TRUSTED☀️CARE" 
+                                        hoverText="REAL☀️HEALING" 
+                                        isHovered={isScrambleCardHovered}
+                                        className="text-lg font-bold tracking-[0.2em] text-stone-700 uppercase" 
+                                    />
                                     <p className="text-[10px] text-stone-600/60 mt-1 font-bold uppercase tracking-widest">With Compassionate Experts</p>
                                 </div>
                             </Card>
