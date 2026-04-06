@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Phone, Users, Heart, Shield, Calendar, MapPin, MessageCircle, CheckCircle, ArrowUpRight, Clock, ShieldCheck, HeartPulse } from "lucide-react";
+import { ArrowRight, Phone, Users, Heart, Shield, Calendar, MapPin, MessageCircle, CheckCircle, Clock, ShieldCheck, HeartPulse, Activity } from "lucide-react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import {
   Accordion,
@@ -16,6 +16,8 @@ import AppointmentSection from "@/components/Appointment/AppointmentSection";
 import { Button } from "@/components/ui/button";
 import SectionTag from "@/components/ui/section-tag";
 import { cn } from "@/lib/utils";
+
+import CurveTransition from "@/components/ui/CurveTransition";
 
 // --- Glowing Bento Card ---
 function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
@@ -58,17 +60,21 @@ function Card({ children, className, containerClassName }: { children: React.Rea
 }
 
 export default function MentalHealthGeoClient({ location }: { location: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay blocked — silent fallback
+      });
+    }
+  }, []);
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
-
-  const services = [
-    { title: "Individual Therapy", link: "/individual-therapy-darby-pa", icon: Users },
-    { title: "Anxiety Treatment", link: "/anxiety-therapy-darby-pa", icon: HeartPulse },
-    { title: "Depression Therapy", link: "/depression-therapy-darby-pa", icon: Heart },
-    { title: "Psychiatric Evaluations", link: "/psychiatric-evaluations-darby-pa", icon: ShieldCheck }
-  ];
 
   const getDistance = (loc: string) => {
     switch(loc.toLowerCase()) {
@@ -81,18 +87,77 @@ export default function MentalHealthGeoClient({ location }: { location: string }
     }
   };
 
+  const services = [
+    {
+      title: "Individual Therapy",
+      description: "Private, one-on-one sessions with a licensed therapist to address personal challenges and promote emotional well-being.",
+      link: "/individual-therapy-darby-pa",
+      icon: Users
+    },
+    {
+      title: "Couples Counseling",
+      description: "Supportive therapy for partners looking to strengthen communication, rebuild trust, and navigate relationship challenges together.",
+      link: "/couples-counseling-darby-pa",
+      icon: Heart
+    },
+    {
+      title: "Family Therapy",
+      description: "Guided sessions designed to improve family dynamics, resolve conflicts, and foster healthier connections among family members.",
+      link: "/family-therapy-darby-pa",
+      icon: Users
+    },
+    {
+      title: "Child & Adolescent Therapy",
+      description: "Age-appropriate therapeutic support for children and teens facing emotional, behavioral, or developmental concerns.",
+      link: "/child-therapy-darby-pa",
+      icon: Shield
+    },
+    {
+      title: "Psychiatric Evaluations",
+      description: "Comprehensive assessments conducted by qualified professionals to understand mental health needs and guide treatment planning.",
+      link: "/psychiatric-evaluations-darby-pa",
+      icon: ShieldCheck
+    },
+    {
+      title: "Medication Management",
+      description: "Careful oversight of psychiatric medications to ensure safe, effective treatment as part of a comprehensive care plan.",
+      link: "/medication-management-darby-pa",
+      icon: Activity
+    },
+    {
+      title: "Grief Therapy",
+      description: "Compassionate support for individuals processing loss and navigating the emotional journey of grief.",
+      link: "/grief-therapy-darby-pa",
+      icon: HeartPulse
+    },
+    {
+      title: "Relationship Therapy",
+      description: "Therapeutic guidance for individuals seeking to improve interpersonal skills and build healthier relationships.",
+      link: "/relationship-therapy-darby-pa",
+      icon: MessageCircle
+    }
+  ];
+
   const faqs = [
     {
+      question: `How do I know if I should seek therapy in ${location}?`,
+      answer: "If you're experiencing persistent feelings of sadness, anxiety, or stress that affect your daily life, relationships, or work, therapy can help. You don't need to be in crisis to benefit from professional support."
+    },
+    {
+      question: `Do you offer services for children and families near ${location}, PA?`,
+      answer: `Yes, we provide specialized therapy for children, adolescents, and families. Our licensed therapists are experienced in working with young people and understand the unique challenges they face in our local community.`
+    },
+    {
+      question: `How far is your clinic from ${location}?`,
+      answer: `Our main clinic in Darby is located just ${getDistance(location)} from ${location}. This makes it a very convenient option for residents seeking in-person therapy without the long commute.`
+    },
+    {
+      question: "Is my information kept confidential?",
+      answer: "Absolutely. We adhere to strict confidentiality standards and HIPAA regulations to protect your privacy. Your trust is essential to the therapeutic relationship."
+    },
+    {
       question: `Do you accept Medicaid for ${location} residents?`,
-      answer: `Yes, Sunrise Human Care Services is a Medicaid-only provider. We are dedicated to providing high-quality mental health care to Medicaid recipients in ${location} and surrounding Delaware County areas.`
-    },
-    {
-      question: `Is there a waitlist for therapy near ${location}?`,
-      answer: "No, we currently have no waitlist for new patients. We typically respond to all inquiries within 24 hours, ensuring you get the support you need quickly."
-    },
-    {
-      question: `How far is the Darby clinic from ${location}, PA?`,
-      answer: `Our Darby clinic is located just ${getDistance(location)} from ${location}. This makes it a very convenient option for ${location} residents seeking in-person therapy.`
+      answer: `Yes, we exclusively accept Medicaid and Medical Assistance for all our services. We provide expert care with no waitlist to ensure the community has timely access to mental health support.`
     }
   ];
 
@@ -101,54 +166,190 @@ export default function MentalHealthGeoClient({ location }: { location: string }
   return (
     <div className="flex flex-col min-h-screen bg-white font-barlow">
       <Navbar />
+      
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 bg-white overflow-hidden">
-          <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
+        <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
+          {/* Background elements */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
+          </div>
+          
+          <div className="container mx-auto px-4 md:px-8 relative z-30 text-center text-white">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
               className="max-w-4xl mx-auto"
             >
-              <div className="flex flex-col items-center gap-6 mb-8">
-                <SectionTag>Mental Health Support</SectionTag>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal text-stone-900 tracking-tighter leading-[1.1] md:leading-tight">
-                  Expert psychiatric care for <br />
-                  <span className="font-instrument-serif italic text-orange-500">{location}, Pennsylvania.</span>
-                </h1>
-              </div>
+              <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="mb-6 flex justify-center"
+              >
+                <SectionTag className="border-white/20 text-white bg-white/10">Mental Health Support</SectionTag>
+              </motion.div>
+
+              <h1 className="font-barlow font-bold text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] md:leading-tight mb-6">
+                Stop suffering in silence. <br />
+                <span className="font-instrument-serif italic text-orange-500 font-normal">Find real help near {location}.</span>
+              </h1>
               
-              <p className="text-lg md:text-xl mb-10 text-stone-500 max-w-2xl mx-auto leading-relaxed font-medium">
-                High-quality therapy and medication management just {getDistance(location)} from {location}. 100% Medicaid accepted with zero waitlist.
+              <p className="text-lg md:text-xl mb-10 text-stone-300 max-w-3xl mx-auto leading-relaxed font-medium font-barlow">
+                Waitlists and expensive out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care right here in Delaware County. 100% Medicaid accepted with immediate openings.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-[#222] hover:bg-stone-800 text-white rounded-full px-10 py-7 text-lg font-bold transition shadow-xl shadow-stone-200">
+                <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-400 text-stone-50 rounded-full px-10 py-7 text-lg font-bold transition shadow-xl shadow-orange-500/20 font-barlow z-50 relative pointer-events-auto">
                   <Link href="/appointment">
                     <Calendar className="mr-2 h-5 w-5" />
-                    Book Evaluation
+                    Book Your First Session
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-stone-600 border-stone-200 hover:bg-stone-50 rounded-full px-10 py-7 text-lg font-bold transition">
+                <Button asChild variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10 rounded-full px-10 py-7 text-lg font-bold transition backdrop-blur-sm font-barlow z-50 relative pointer-events-auto bg-transparent">
                   <a href="tel:+18146202162">
                     <Phone className="mr-2 h-5 w-5" />
-                    (814) 620-2162
+                    Call (814) 620-2162
                   </a>
                 </Button>
               </div>
             </motion.div>
           </div>
           
-          {/* Subtle Background Elements */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50 opacity-[0.03] rounded-full blur-[100px] -mr-64 -mt-64" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-50 opacity-[0.03] rounded-full blur-[100px] -ml-64 -mb-64" />
+          <CurveTransition fillColor="#ffffff" inverted className="z-20" />
+        </section>
+
+        {/* Ogilvy Long Copy Section */}
+        <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50/50 rounded-full blur-[100px] pointer-events-none -mr-48 -mt-48" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-stone-50/80 rounded-full blur-[100px] pointer-events-none -ml-48 -mb-48" />
+
+          <div className="container mx-auto px-4 md:px-8 relative z-10">
+            <div className="max-w-4xl mx-auto">
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-16 md:mb-24"
+              >
+                <SectionTag>The Problem</SectionTag>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl text-balance font-normal text-stone-900 tracking-tighter leading-[1.1] mt-6">
+                  Why is finding good mental health care in Delaware County <span className="font-instrument-serif italic text-orange-500">so difficult?</span>
+                </h2>
+              </motion.div>
+
+              <div className="space-y-12">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium"
+                >
+                  <p>
+                    If you live in {location}, Pennsylvania, you probably already know the frustration. You finally decide to seek help for your anxiety, depression, or your child's behavioral issues. You make the brave choice to pick up the phone.
+                  </p>
+                  
+                  <p>
+                    And what happens? You're told the clinic isn't accepting new patients. Or they don't take Medicaid. Or the next available appointment is four months away. 
+                  </p>
+                  
+                  <p className="text-2xl text-stone-900 border-l-4 border-orange-500 pl-6 py-2 my-12 bg-orange-50/30 rounded-r-2xl">
+                    Mental health crises do not operate on a four-month delay. When you are struggling, you need help <strong>now</strong>.
+                  </p>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-3xl md:text-4xl font-normal tracking-tighter text-stone-900 mb-8">
+                    Sunrise Human Care Services was built to <span className="font-instrument-serif italic text-orange-500">fix this broken system.</span>
+                  </h3>
+                  
+                  <div className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium">
+                    <p>
+                      We established our clinic at <strong>869 Main Street in Darby, PA</strong> (just {getDistance(location)} from {location}) with one clear promise: to provide premium, evidence-based psychiatric care and therapy to the Medicaid community, without the wait. 
+                    </p>
+                    
+                    <p>
+                      We are not a massive, faceless hospital network where you are just a number. We are a dedicated, local team of licensed therapists, psychiatrists, and behavioral health technicians. We treat our patients with the dignity, privacy, and clinical excellence they deserve.
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Restyled Features List */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="grid grid-cols-1 md:grid-cols-3 gap-6 my-16"
+                >
+                  {[
+                    {
+                      title: "Zero Waitlists",
+                      desc: "We prioritize immediate intake. If you need help, we will get you on the schedule.",
+                      icon: Clock
+                    },
+                    {
+                      title: "100% Medicaid",
+                      desc: "We proudly serve the Medicaid community. No surprise out-of-pocket bills.",
+                      icon: ShieldCheck
+                    },
+                    {
+                      title: "All Under One Roof",
+                      desc: "Talk therapy, psychiatric evaluations, and medication management in one place.",
+                      icon: Users
+                    }
+                  ].map((feature, i) => (
+                    <div key={i} className="flex flex-col gap-4 p-8 rounded-[2rem] bg-stone-50 border border-stone-100 hover:border-orange-200 transition-colors">
+                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-stone-100 flex items-center justify-center">
+                        <feature.icon className="w-6 h-6 text-orange-500" />
+                      </div>
+                      <h4 className="font-bold text-xl text-stone-900 tracking-tight">{feature.title}</h4>
+                      <p className="text-stone-500 leading-relaxed font-medium">{feature.desc}</p>
+                    </div>
+                  ))}
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-3xl md:text-4xl font-normal tracking-tighter text-stone-900 mb-8">
+                    What does expert mental health care <span className="font-instrument-serif italic text-orange-500">look like?</span>
+                  </h3>
+                  
+                  <div className="prose prose-xl prose-stone prose-p:font-barlow prose-p:leading-relaxed max-w-none text-stone-600 font-medium">
+                    <p>
+                      It looks like <strong>Individual Therapy</strong> that digs into the root causes of your trauma, rather than just putting a band-aid on the symptoms. It looks like <strong>Medication Management</strong> where your psychiatrist actually listens to your concerns about side effects and adjusts your dosage carefully. 
+                    </p>
+
+                    <p>
+                      For families near {location}, it looks like our <strong>Intensive Behavioral Health Services (IBHS)</strong>. Instead of asking you to drag your struggling child to a sterile clinic, our behavioral technicians go directly to your home or your child's school to provide support right where the behaviors happen.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Bento Grid: Local Advantage */}
         <section className="py-24 bg-stone-50/50">
           <div className="container mx-auto px-4 md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-full">
+            <div className="flex flex-col items-center gap-4 mb-16 text-center">
+              <SectionTag>Our Location</SectionTag>
+              <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
+                Conveniently located just <span className="font-instrument-serif italic text-orange-500">{getDistance(location).split('(')[0]} away.</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-full max-w-6xl mx-auto">
               {/* Main Content Card */}
               <Card containerClassName="md:col-span-8 rounded-[2.5rem] min-h-[400px]" className="flex flex-col justify-between">
                 <div>
@@ -157,27 +358,27 @@ export default function MentalHealthGeoClient({ location }: { location: string }
                       <MapPin className="h-6 w-6 text-orange-500" />
                     </div>
                     <div className="px-3 py-1 rounded-full bg-stone-50 border border-stone-100 text-[10px] uppercase tracking-widest text-stone-400 font-bold">
-                      Location Advantage
+                      Headquarters
                     </div>
                   </div>
-                  <h2 className="text-3xl md:text-5xl font-normal leading-tight tracking-tighter text-stone-900 mb-6">
-                    Professional support, <br />
-                    <span className="font-instrument-serif italic text-orange-500">closer than you think.</span>
-                  </h2>
+                  <h3 className="text-3xl md:text-5xl font-normal leading-tight tracking-tighter text-stone-900 mb-6">
+                    Serving {location} <br />
+                    <span className="font-instrument-serif italic text-orange-500">and Delaware County.</span>
+                  </h3>
                   <p className="text-stone-500 text-lg leading-relaxed font-medium max-w-xl">
-                    Located at 869 Main Street in Darby, we are strategically positioned to serve {location} residents. Our clinic provides a warm, modern environment for healing, reachable in under {getDistance(location).split('(')[1].replace(')', '')} by car.
+                    Located at 869 Main Street in Darby, PA (19023), our clinic is easily accessible from {location} and offers a safe, welcoming environment. We proudly serve Darby, Yeadon, Collingdale, Lansdowne, and Upper Darby.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-4 pt-8 border-t border-stone-100 mt-8">
                   <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-700 text-sm font-bold border border-orange-100">
-                    <Clock className="w-4 h-4" /> 24h Response
+                    <Clock className="w-4 h-4" /> Open Mon-Fri
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 text-sm font-bold border border-emerald-100">
-                    <ShieldCheck className="w-4 h-4" /> Medicaid Only
+                    <ShieldCheck className="w-4 h-4" /> Fully Licensed
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-bold border border-blue-100">
-                    <Users className="w-4 h-4" /> No Waitlist
+                    <Users className="w-4 h-4" /> Accepting Patients
                   </div>
                 </div>
               </Card>
@@ -188,56 +389,45 @@ export default function MentalHealthGeoClient({ location }: { location: string }
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.123!2d-75.2612!3d39.9184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c39e8d!2s869+Main+St%2C+Darby%2C+PA+19023!5e0!3m2!1sen!2sus!4v1"
                   width="100%"
                   height="100%"
-                  style={{ border: 0 }}
+                  style={{ border: 0, minHeight: "400px" }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="grayscale hover:grayscale-0 transition duration-700"
                 />
               </Card>
-
-              {/* Differentiators Grid */}
-              <div className="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-4">
-                {[
-                  { title: "Medicaid-Only Focus", text: "We exclusively serve the Medicaid community, ensuring high-quality care is accessible to those who need it most.", icon: Shield },
-                  { title: "Zero Waitlist", text: "Mental health care can't wait. We eliminate the 3-month delay typical of other clinics.", icon: Clock },
-                  { title: "Community Driven", text: `We are part of the Delaware County fabric, dedicated to the wellness of ${location} families.`, icon: Heart }
-                ].map((item, i) => (
-                  <Card key={i} containerClassName="rounded-3xl" className="flex flex-col gap-4">
-                    <div className={iconContainerStyles}>
-                      <item.icon className="h-5 w-5 text-orange-500" />
-                    </div>
-                    <h4 className="font-bold text-stone-800 text-xl tracking-tight">{item.title}</h4>
-                    <p className="text-stone-500 leading-relaxed text-sm font-medium">{item.text}</p>
-                  </Card>
-                ))}
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Services Section: Stylized List */}
+        {/* Services Grid */}
         <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 md:px-8">
-            <div className="flex flex-col items-center gap-4 mb-16 text-center">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-16">
               <SectionTag>Clinical Excellence</SectionTag>
-              <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
-                Specialized care for <span className="font-instrument-serif italic text-orange-500">every need.</span>
+              <h2 className="text-3xl md:text-5xl font-normal mt-6 mb-6 font-barlow text-stone-800 tracking-tighter leading-tight">
+                Our Specialized Services near <span className="font-instrument-serif italic text-orange-500">{location}</span>
               </h2>
+              <p className="text-lg text-stone-600 font-barlow leading-relaxed">
+                From individual counseling to comprehensive psychiatric evaluations, we provide a full spectrum of mental health support.
+              </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {services.map((service, i) => (
-                <Link key={i} href={service.link}>
-                  <Card containerClassName="rounded-[2rem] group/service cursor-pointer h-full" className="flex flex-col items-center text-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              {services.map((service, index) => (
+                <Link key={index} href={service.link}>
+                  <Card containerClassName="rounded-[2rem] group/service cursor-pointer h-full" className="flex flex-col items-start text-left p-6">
                     <div className={cn(iconContainerStyles, "mb-6 bg-orange-50 border-orange-100")}>
                       <service.icon className="h-6 w-6 text-orange-600" />
                     </div>
-                    <h3 className="text-xl font-bold text-stone-900 group-hover/service:text-orange-600 transition-colors mb-2">
+                    <h3 className="text-xl font-bold text-stone-900 group-hover/service:text-orange-600 transition-colors mb-3">
                       {service.title}
                     </h3>
-                    <div className="mt-auto pt-4 flex items-center gap-2 text-stone-400 font-bold text-[10px] uppercase tracking-widest">
-                      Learn More <ArrowUpRight className="w-3 h-3" />
+                    <p className="text-stone-500 text-sm leading-relaxed mb-6 font-medium">
+                      {service.description}
+                    </p>
+                    <div className="mt-auto pt-4 flex items-center gap-2 text-orange-500 font-bold text-[11px] uppercase tracking-widest group-hover/service:gap-3 transition-all">
+                      Learn More <ArrowRight className="w-3 h-3" />
                     </div>
                   </Card>
                 </Link>
@@ -247,8 +437,8 @@ export default function MentalHealthGeoClient({ location }: { location: string }
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 bg-stone-50/50">
-          <div className="container mx-auto px-4 md:px-8">
+        <section className="py-24 bg-stone-50">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto">
               <div className="flex flex-col items-center gap-4 mb-16 text-center">
                 <SectionTag>Information</SectionTag>
@@ -256,8 +446,7 @@ export default function MentalHealthGeoClient({ location }: { location: string }
                   Your questions, <span className="font-instrument-serif italic text-orange-500">answered.</span>
                 </h2>
               </div>
-              
-              <Accordion type="single" collapsible className="w-full space-y-3">
+              <Accordion type="single" collapsible className="w-full space-y-4">
                 {faqs.map((faq, index) => (
                   <AccordionItem 
                     key={index} 
@@ -279,6 +468,7 @@ export default function MentalHealthGeoClient({ location }: { location: string }
 
         <AppointmentSection />
       </main>
+
       <Footer />
     </div>
   );

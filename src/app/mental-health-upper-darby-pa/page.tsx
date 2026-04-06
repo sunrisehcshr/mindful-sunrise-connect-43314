@@ -5,10 +5,10 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient from '../mental-health-yeadon-pa/MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Mental Health Services for Upper Darby, PA | Therapy & Psychiatry",
-  description: "Expert mental health care for Upper Darby, PA residents. Therapy and psychiatry just 3 miles away in Darby. 100% Medicaid accepted. No waitlist.",
+  title: "Best Mental Health Services in Upper Darby, PA | Medicaid Accepted | Sunrise",
+  description: "Find the best mental health services in Upper Darby, PA. Top-rated therapy and psychiatric care for the Upper Darby community. 100% Medicaid accepted. No waitlists.",
   path: "/mental-health-upper-darby-pa",
-  keywords: ["mental health upper darby pa", "therapy upper darby", "psychiatrist upper darby", "medicaid therapy Delaware County", "counseling upper darby", "mental health clinic near Upper Darby"],
+  keywords: ["best mental health upper darby pa", "top therapy upper darby pa", "psychiatrist upper darby pa", "Delaware County mental health", "upper darby counseling services", "Medicaid mental health PA", "immediate therapy upper darby pa", "behavioral health upper darby pa"],
 });
 
 export default function MentalHealthUpperDarbyPage() {

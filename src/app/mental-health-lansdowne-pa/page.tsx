@@ -5,10 +5,10 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient from '../mental-health-yeadon-pa/MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Mental Health Services for Lansdowne, PA | Therapy & Psychiatry",
-  description: "Expert mental health care for Lansdowne, PA residents. Therapy and psychiatry just 2 miles away in Darby. 100% Medicaid accepted. No waitlist.",
+  title: "Best Mental Health Services in Lansdowne, PA | Medicaid Accepted | Sunrise",
+  description: "Find the best mental health services in Lansdowne, PA. Top-rated therapy and psychiatric care for the Lansdowne community. 100% Medicaid accepted. No waitlists.",
   path: "/mental-health-lansdowne-pa",
-  keywords: ["mental health lansdowne pa", "therapy lansdowne", "psychiatrist lansdowne", "medicaid therapy Delaware County", "counseling lansdowne", "mental health clinic near Lansdowne"],
+  keywords: ["best mental health lansdowne pa", "top therapy lansdowne pa", "psychiatrist lansdowne pa", "Delaware County mental health", "lansdowne counseling services", "Medicaid mental health PA", "immediate therapy lansdowne pa", "behavioral health lansdowne pa"],
 });
 
 export default function MentalHealthLansdownePage() {

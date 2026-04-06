@@ -5,10 +5,10 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient from '../mental-health-yeadon-pa/MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Mental Health Services for Sharon Hill, PA | Therapy & Psychiatry",
-  description: "Expert mental health care for Sharon Hill, PA residents. Therapy and psychiatry just 1.2 miles away in Darby. 100% Medicaid accepted. No waitlist.",
+  title: "Best Mental Health Services in Sharon Hill, PA | Medicaid Accepted | Sunrise",
+  description: "Find the best mental health services in Sharon Hill, PA. Top-rated therapy and psychiatric care for the Sharon Hill community. 100% Medicaid accepted. No waitlists.",
   path: "/mental-health-sharon-hill-pa",
-  keywords: ["mental health sharon hill pa", "therapy sharon hill", "psychiatrist sharon hill", "medicaid therapy Delaware County", "counseling sharon hill", "mental health clinic near Sharon Hill"],
+  keywords: ["best mental health sharon hill pa", "top therapy sharon hill pa", "psychiatrist sharon hill pa", "Delaware County mental health", "sharon hill counseling services", "Medicaid mental health PA", "immediate therapy sharon hill pa", "behavioral health sharon hill pa"],
 });
 
 export default function MentalHealthSharonHillPage() {

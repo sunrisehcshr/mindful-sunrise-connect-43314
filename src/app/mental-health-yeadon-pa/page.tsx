@@ -5,10 +5,10 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient from './MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Mental Health Services for Yeadon, PA | Therapy & Psychiatry | Sunrise",
-  description: "Expert mental health care for Yeadon, PA residents. Therapy and psychiatry just 1.5 miles away in Darby. 100% Medicaid accepted. No waitlist.",
+  title: "Best Mental Health Services in Yeadon, PA | Medicaid Accepted | Sunrise",
+  description: "Find the best mental health services in Yeadon, PA. Top-rated therapy and psychiatric care for the Yeadon community. 100% Medicaid accepted. No waitlists.",
   path: "/mental-health-yeadon-pa",
-  keywords: ["mental health yeadon pa", "therapy yeadon", "psychiatrist yeadon", "medicaid therapy Delaware County", "counseling yeadon", "mental health clinic near Yeadon"],
+  keywords: ["best mental health yeadon pa", "top therapy yeadon pa", "psychiatrist yeadon pa", "Delaware County mental health", "yeadon counseling services", "Medicaid mental health PA", "immediate therapy yeadon pa", "behavioral health yeadon pa"],
 });
 
 export default function MentalHealthYeadonPage() {

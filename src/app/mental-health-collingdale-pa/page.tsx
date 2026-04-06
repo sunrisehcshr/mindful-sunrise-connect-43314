@@ -5,10 +5,10 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient from '../mental-health-yeadon-pa/MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Mental Health Services for Collingdale, PA | Therapy & Psychiatry",
-  description: "Expert mental health care for Collingdale, PA residents. Therapy and psychiatry just 1 mile away in Darby. 100% Medicaid accepted. No waitlist.",
+  title: "Best Mental Health Services in Collingdale, PA | Medicaid Accepted | Sunrise",
+  description: "Find the best mental health services in Collingdale, PA. Top-rated therapy and psychiatric care for the Collingdale community. 100% Medicaid accepted. No waitlists.",
   path: "/mental-health-collingdale-pa",
-  keywords: ["mental health collingdale pa", "therapy collingdale", "psychiatrist collingdale", "medicaid therapy Delaware County", "counseling collingdale", "mental health clinic near Collingdale"],
+  keywords: ["best mental health collingdale pa", "top therapy collingdale pa", "psychiatrist collingdale pa", "Delaware County mental health", "collingdale counseling services", "Medicaid mental health PA", "immediate therapy collingdale pa", "behavioral health collingdale pa"],
 });
 
 export default function MentalHealthCollingdalePage() {
