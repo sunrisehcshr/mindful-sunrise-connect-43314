@@ -72,7 +72,14 @@ export interface GeoContentProps {
   expertCareHeadline: React.ReactNode;
   expertCareText1: React.ReactNode;
   expertCareText2: React.ReactNode;
+  locationHeadline: React.ReactNode;
+  locationSubheadline: React.ReactNode;
   localAdvantageText: React.ReactNode;
+  servicesHeadline: React.ReactNode;
+  servicesSubheadline: string;
+  faqHeadline: React.ReactNode;
+  servicesOverrides: Record<string, string>;
+  faqOverrides: { question: string; answer: string }[];
 }
 
 export default function MentalHealthGeoClient({ location, content }: { location: string, content: GeoContentProps }) {
@@ -103,77 +110,54 @@ export default function MentalHealthGeoClient({ location, content }: { location:
     }
   };
 
-  const services = [
+  const baseServices = [
     {
+      id: "individual",
       title: "Individual Therapy",
-      description: "Private, one-on-one sessions with a licensed therapist to address personal challenges and promote emotional well-being.",
       link: "/individual-therapy-darby-pa",
       icon: Users
     },
     {
+      id: "couples",
       title: "Couples Counseling",
-      description: "Supportive therapy for partners looking to strengthen communication, rebuild trust, and navigate relationship challenges together.",
       link: "/couples-counseling-darby-pa",
       icon: Heart
     },
     {
+      id: "family",
       title: "Family Therapy",
-      description: "Guided sessions designed to improve family dynamics, resolve conflicts, and foster healthier connections among family members.",
       link: "/family-therapy-darby-pa",
       icon: Users
     },
     {
+      id: "child",
       title: "Child & Adolescent Therapy",
-      description: "Age-appropriate therapeutic support for children and teens facing emotional, behavioral, or developmental concerns.",
       link: "/child-therapy-darby-pa",
       icon: Shield
     },
     {
+      id: "psychiatric",
       title: "Psychiatric Evaluations",
-      description: "Comprehensive assessments conducted by qualified professionals to understand mental health needs and guide treatment planning.",
       link: "/psychiatric-evaluations-darby-pa",
       icon: ShieldCheck
     },
     {
+      id: "medication",
       title: "Medication Management",
-      description: "Careful oversight of psychiatric medications to ensure safe, effective treatment as part of a comprehensive care plan.",
       link: "/medication-management-darby-pa",
       icon: Activity
     },
     {
+      id: "grief",
       title: "Grief Therapy",
-      description: "Compassionate support for individuals processing loss and navigating the emotional journey of grief.",
       link: "/grief-therapy-darby-pa",
       icon: HeartPulse
     },
     {
+      id: "relationship",
       title: "Relationship Therapy",
-      description: "Therapeutic guidance for individuals seeking to improve interpersonal skills and build healthier relationships.",
       link: "/relationship-therapy-darby-pa",
       icon: MessageCircle
-    }
-  ];
-
-  const faqs = [
-    {
-      question: `How do I know if I should seek therapy in ${location}?`,
-      answer: "If you're experiencing persistent feelings of sadness, anxiety, or stress that affect your daily life, relationships, or work, therapy can help. You don't need to be in crisis to benefit from professional support."
-    },
-    {
-      question: `Do you offer services for children and families near ${location}, PA?`,
-      answer: `Yes, we provide specialized therapy for children, adolescents, and families. Our licensed therapists are experienced in working with young people and understand the unique challenges they face in our local community.`
-    },
-    {
-      question: `How far is your clinic from ${location}?`,
-      answer: `Our main clinic in Darby is located just ${getDistance(location)} from ${location}. This makes it a very convenient option for residents seeking in-person therapy without the long commute.`
-    },
-    {
-      question: "Is my information kept confidential?",
-      answer: "Absolutely. We adhere to strict confidentiality standards and HIPAA regulations to protect your privacy. Your trust is essential to the therapeutic relationship."
-    },
-    {
-      question: `Do you accept Medicaid for ${location} residents?`,
-      answer: `Yes, we exclusively accept Medicaid and Medical Assistance for all our services. We provide expert care with no waitlist to ensure the community has timely access to mental health support.`
     }
   ];
 
@@ -285,7 +269,6 @@ export default function MentalHealthGeoClient({ location, content }: { location:
                   </div>
                 </motion.div>
 
-                {/* Restyled Features List */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -344,7 +327,7 @@ export default function MentalHealthGeoClient({ location, content }: { location:
             <div className="flex flex-col items-center gap-4 mb-16 text-center">
               <SectionTag>Our Location</SectionTag>
               <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
-                Conveniently located just <span className="font-instrument-serif italic text-orange-500">{getDistance(location).split('(')[0]} away.</span>
+                {content.locationHeadline}
               </h2>
             </div>
 
@@ -361,8 +344,7 @@ export default function MentalHealthGeoClient({ location, content }: { location:
                     </div>
                   </div>
                   <h3 className="text-3xl md:text-5xl font-normal leading-tight tracking-tighter text-stone-900 mb-6">
-                    Serving {location} <br />
-                    <span className="font-instrument-serif italic text-orange-500">and Delaware County.</span>
+                    {content.locationSubheadline}
                   </h3>
                   <p className="text-stone-500 text-lg leading-relaxed font-medium max-w-xl">
                     {content.localAdvantageText}
@@ -405,15 +387,15 @@ export default function MentalHealthGeoClient({ location, content }: { location:
             <div className="max-w-3xl mx-auto text-center mb-16">
               <SectionTag>Clinical Excellence</SectionTag>
               <h2 className="text-3xl md:text-5xl font-normal mt-6 mb-6 font-barlow text-stone-800 tracking-tighter leading-tight">
-                Our Specialized Services near <span className="font-instrument-serif italic text-orange-500">{location}</span>
+                {content.servicesHeadline}
               </h2>
               <p className="text-lg text-stone-600 font-barlow leading-relaxed">
-                From individual counseling to comprehensive psychiatric evaluations, we provide a full spectrum of mental health support.
+                {content.servicesSubheadline}
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-              {services.map((service, index) => (
+              {baseServices.map((service, index) => (
                 <Link key={index} href={service.link}>
                   <Card containerClassName="rounded-[2rem] group/service cursor-pointer h-full" className="flex flex-col items-start text-left p-6">
                     <div className={cn(iconContainerStyles, "mb-6 bg-orange-50 border-orange-100")}>
@@ -423,7 +405,7 @@ export default function MentalHealthGeoClient({ location, content }: { location:
                       {service.title}
                     </h3>
                     <p className="text-stone-500 text-sm leading-relaxed mb-6 font-medium">
-                      {service.description}
+                      {content.servicesOverrides[service.id] || "Specialized mental health care designed to support your journey to wellness."}
                     </p>
                     <div className="mt-auto pt-4 flex items-center gap-2 text-orange-500 font-bold text-[11px] uppercase tracking-widest group-hover/service:gap-3 transition-all">
                       Learn More <ArrowRight className="w-3 h-3" />
@@ -442,11 +424,11 @@ export default function MentalHealthGeoClient({ location, content }: { location:
               <div className="flex flex-col items-center gap-4 mb-16 text-center">
                 <SectionTag>Information</SectionTag>
                 <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
-                  Your questions, <span className="font-instrument-serif italic text-orange-500">answered.</span>
+                  {content.faqHeadline}
                 </h2>
               </div>
               <Accordion type="single" collapsible className="w-full space-y-4">
-                {faqs.map((faq, index) => (
+                {content.faqOverrides.map((faq, index) => (
                   <AccordionItem 
                     key={index} 
                     value={`item-${index}`}
