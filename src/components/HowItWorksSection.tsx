@@ -19,7 +19,7 @@ interface HowItWorksSectionProps {
 
 const defaultSteps: StepItem[] = [
     { q: "The First Conversation", a: "Call or click to speak with a care coordinator who actually listens. We'll match you with the right specialist in Darby—no automated menus, just real people." },
-    { q: "Your Clinical Evaluation", a: "Meet with a board-certified expert for a deep-dive assessment. We don't just look at symptoms; we look at the whole person." },
+    { q: "Your Clinical Evaluation", a: "Meet with licensed clinical specialists for a deep-dive assessment. We don't just look at symptoms; we look at the whole person." },
     { q: "A Plan Built for You", a: "Receive a clear, evidence-based roadmap combining modern therapy and precise medication management, if needed. No guesswork." },
     { q: "Sustained Recovery", a: "Begin your transformation with the ongoing support of a team that stays by your side until you feel like yourself again." }
 ];

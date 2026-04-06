@@ -251,7 +251,7 @@ const WhyChooseUsSection = () => {
                                     without the <span className="font-instrument-serif italic text-orange-500">3-month waitlist.</span>
                                 </h2>
                                 <p className="max-w-md text-stone-500 text-sm leading-relaxed font-medium">
-                                    We&apos;ve eliminated the typical barriers to care. Get compassionate, board-certified specialists ready to help you thrive—available in our clinic or from your home within days, not months.
+                                    We&apos;ve eliminated the typical barriers to care. Get compassionate, licensed clinical specialists ready to help you thrive—available in our clinic or from your home within days, not months.
                                 </p>
                             </div>
 
