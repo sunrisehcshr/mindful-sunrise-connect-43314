@@ -92,24 +92,26 @@ const TimelineStep = ({
     const isLeft = i % 2 === 0;
     const isHovered = hoveredIndex === i;
     const number = String(i + 1).padStart(2, "0");
+    const stepRef = useRef<HTMLDivElement>(null);
     
-    // Calculate threshold for when this step becomes "active" via scroll
-    // Adjust thresholds so step 1 triggers earlier, and they don't overlap awkwardly
-    const stepThreshold = i === 0 ? 0.05 : (i / totalSteps);
+    // Instead of arbitrary math, track when THIS specific card reaches the center of the screen
+    const { scrollYProgress: stepProgress } = useScroll({
+        target: stepRef,
+        offset: ["start center", "end center"] // Triggers exactly when the line hits the top of the card
+    });
     
-    // Use the vertical line progress to trigger card glow
-    const isCardGlowing = useTransform(progress, (p: number) => p >= stepThreshold);
     const [shouldGlow, setShouldGlow] = useState(false);
 
     useEffect(() => {
-        const unsubscribe = isCardGlowing.on("change", (latest) => {
-            setShouldGlow(latest);
+        const unsubscribe = stepProgress.on("change", (latest) => {
+            // If the center of the screen has reached or passed the top of this card
+            setShouldGlow(latest > 0);
         });
         return () => unsubscribe();
-    }, [isCardGlowing]);
+    }, [stepProgress]);
 
     return (
-        <div className="relative flex items-start md:items-center">
+        <div ref={stepRef} className="relative flex items-start md:items-center">
             {/* Dot removed as per requirement */}
 
             {/* Card positioning */}
