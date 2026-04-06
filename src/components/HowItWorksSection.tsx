@@ -25,7 +25,7 @@ const defaultSteps: StepItem[] = [
 ];
 
 // --- Glowing Bento Card (Shared Style) ---
-function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
+function Card({ children, className, containerClassName, isActive }: { children: React.ReactNode; className?: string, containerClassName?: string, isActive?: boolean }) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -39,19 +39,24 @@ function Card({ children, className, containerClassName }: { children: React.Rea
         <div
             className={cn(
                 "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-500 rounded-3xl",
-                "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-amber-200/50 hover:bg-white",
+                "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-amber-200/50",
+                isActive ? "bg-orange-600 border-transparent shadow-[0_20px_50px_rgba(249,115,22,0.3)] -translate-y-1.5" : "hover:bg-white",
                 containerClassName
             )}
             onMouseMove={handleMouseMove}
+            data-active={isActive}
         >
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/50 pointer-events-none" />
+            <div className={cn(
+                "absolute inset-0 pointer-events-none transition-opacity duration-500",
+                isActive ? "bg-orange-600" : "bg-gradient-to-br from-transparent to-stone-50/50"
+            )} />
             <motion.div
                 className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
                 style={{
                     background: useMotionTemplate`
             radial-gradient(
               650px circle at ${mouseX}px ${mouseY}px,
-              rgba(245, 158, 11, 0.12),
+              rgba(255, 255, 255, 0.15),
               transparent 80%
             )
           `,
@@ -121,17 +126,25 @@ const TimelineStep = ({
                     cursor-pointer
                 `}
             >
-                <Card containerClassName={`transition-all duration-500 border ${shouldGlow ? 'border-orange-200/50 shadow-lg shadow-orange-100/50' : 'border-stone-200/80'} ${(!prefersReducedMotion && (isHovered || (shouldGlow && !isHovered))) ? (isLeft ? '-translate-x-1' : 'translate-x-1') : ''}`}>
+                <Card isActive={shouldGlow} containerClassName={`transition-all duration-500 border ${shouldGlow ? 'border-orange-500 shadow-lg shadow-orange-500/50' : 'border-stone-200/80'} ${(!prefersReducedMotion && (isHovered || (shouldGlow && !isHovered))) ? (isLeft ? '-translate-x-1' : 'translate-x-1') : ''}`}>
                     <span
-                        className="block text-xs md:text-sm font-bold mb-4 font-barlow tracking-widest uppercase transition-colors duration-500 tabular-nums"
-                        style={{ color: shouldGlow ? accentColor : "rgba(0,0,0,0.4)" }}
+                        className={cn(
+                            "block text-xs md:text-sm font-bold mb-4 font-barlow tracking-widest uppercase transition-colors duration-500 tabular-nums",
+                            shouldGlow ? "text-white" : "text-stone-400"
+                        )}
                     >
                         Step {number}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors">
+                    <h3 className={cn(
+                        "text-xl md:text-2xl font-bold mb-3 tracking-tight transition-colors duration-500",
+                        shouldGlow ? "text-white" : "text-stone-900 group-hover:text-orange-600"
+                    )}>
                         {step.q}
                     </h3>
-                    <p className="text-stone-500 text-sm leading-relaxed font-barlow">
+                    <p className={cn(
+                        "text-sm leading-relaxed font-barlow transition-colors duration-500",
+                        shouldGlow ? "text-white/90" : "text-stone-500"
+                    )}>
                         {step.a}
                     </p>
                 </Card>
