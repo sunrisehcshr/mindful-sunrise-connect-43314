@@ -5,10 +5,10 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthDarbyClient from './MentalHealthDarbyClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Mental Health Services in Darby, PA | No Waitlist | Sunrise",
-  description: "Comprehensive mental health services in Darby, PA. Expert therapy and psychiatric care for the Darby community. 100% Medicaid accepted. No waitlist.",
+  title: "Best Mental Health Services in Darby, PA | Medicaid Accepted | Sunrise",
+  description: "Find the best mental health services in Darby, PA. Top-rated therapy and psychiatric care for the Darby community. 100% Medicaid accepted. No waitlists.",
   path: "/mental-health-darby-pa",
-  keywords: ["mental health Darby PA", "therapy Darby PA", "psychiatrist Darby PA", "Delaware County mental health", "Darby counseling services", "Medicaid mental health PA"],
+  keywords: ["best mental health Darby PA", "top therapy Darby PA", "psychiatrist Darby PA", "Delaware County mental health", "Darby counseling services", "Medicaid mental health PA", "immediate therapy darby pa", "behavioral health darby pa"],
 });
 
 export default function MentalHealthDarbyPage() {

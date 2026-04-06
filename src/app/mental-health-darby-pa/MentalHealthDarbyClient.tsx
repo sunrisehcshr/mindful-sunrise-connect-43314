@@ -157,52 +157,46 @@ export default function MentalHealthDarbyClient() {
       
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-white overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-              poster="/images/hero-poster.jpg"
-            >
-              <source src="/videos/hero-background.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-black/60" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-stone-900/90" />
+        <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
+          {/* Background elements */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
+             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
           </div>
           
-          <div className="container mx-auto px-4 md:px-8 relative z-10 text-center text-white">
+          <div className="container mx-auto px-4 md:px-8 relative z-30 text-center text-white">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
               className="max-w-4xl mx-auto"
             >
-              <div className="flex flex-col items-center gap-6 mb-8">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/20 text-orange-400 text-sm font-bold border border-orange-500/30 backdrop-blur-sm uppercase tracking-widest">
-                  Mental Health Support
-                </span>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal text-white tracking-tighter leading-[1.1] md:leading-tight">
-                  Stop suffering in silence. <br />
-                  <span className="font-instrument-serif italic text-orange-400">Find real help in Darby, PA.</span>
-                </h1>
-              </div>
+              <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="mb-6 flex justify-center"
+              >
+                <SectionTag className="border-white/20 text-white bg-white/10">Mental Health Support</SectionTag>
+              </motion.div>
+
+              <h1 className="font-barlow font-bold text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] md:leading-tight mb-6">
+                Stop suffering in silence. <br />
+                <span className="font-instrument-serif italic text-orange-500 font-normal">Find real help in Darby, PA.</span>
+              </h1>
               
-              <p className="text-lg md:text-xl mb-10 text-stone-200 max-w-3xl mx-auto leading-relaxed font-medium">
+              <p className="text-lg md:text-xl mb-10 text-stone-300 max-w-3xl mx-auto leading-relaxed font-medium font-barlow">
                 Waitlists and expensive out-of-pocket costs shouldn't keep you from healing. We provide high-quality therapy and psychiatric care right here in Delaware County. 100% Medicaid accepted with immediate openings.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-7 text-lg font-bold transition shadow-xl shadow-orange-500/20">
+                <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-400 text-stone-50 rounded-full px-10 py-7 text-lg font-bold transition shadow-xl shadow-orange-500/20 font-barlow z-50 relative pointer-events-auto">
                   <Link href="/appointment">
                     <Calendar className="mr-2 h-5 w-5" />
                     Book Your First Session
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10 rounded-full px-10 py-7 text-lg font-bold transition backdrop-blur-sm">
+                <Button asChild variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10 rounded-full px-10 py-7 text-lg font-bold transition backdrop-blur-sm font-barlow z-50 relative pointer-events-auto bg-transparent">
                   <a href="tel:+18146202162">
                     <Phone className="mr-2 h-5 w-5" />
                     Call (814) 620-2162
@@ -210,6 +204,12 @@ export default function MentalHealthDarbyClient() {
                 </Button>
               </div>
             </motion.div>
+          </div>
+          
+          <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none">
+            <svg viewBox="0 0 1440 120" className="w-full h-auto text-white fill-current" preserveAspectRatio="none">
+                <path d="M0,0 C240,120 480,120 720,120 C960,120 1200,120 1440,0 L1440,120 L0,120 Z"></path>
+            </svg>
           </div>
         </section>
 
