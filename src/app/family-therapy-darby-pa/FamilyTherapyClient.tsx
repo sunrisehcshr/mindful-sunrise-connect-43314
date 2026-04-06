@@ -435,7 +435,7 @@ export default function FamilyTherapyClient() {
                             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
                                 <HugeiconsIcon icon={BrainIcon} className="w-6 h-6 text-blue-600" />
                             </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Strategies That Actually Work</h3>
+                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based Approaches</h3>
                             <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like Family Systems Therapy so you see measurable, real-world progress in your home.</p>
                         </Card>
                         <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">

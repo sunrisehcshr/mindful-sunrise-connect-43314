@@ -85,6 +85,9 @@ const Navbar = () => {
     title: "Couples Counseling",
     path: "/couples-counseling-darby-pa"
   }, {
+    title: "Premarital Counseling",
+    path: "/premarital-counseling-darby-pa"
+  }, {
     title: "Family Therapy",
     path: "/family-therapy-darby-pa"
   }, {

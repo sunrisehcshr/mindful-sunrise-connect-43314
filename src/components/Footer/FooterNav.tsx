@@ -8,6 +8,7 @@ import { ChevronDown } from 'lucide-react';
 const servicesLinks = [
   { label: "Individual Therapy", href: "/individual-therapy-darby-pa" },
   { label: "Couples Counseling", href: "/couples-counseling-darby-pa" },
+  { label: "Premarital Counseling", href: "/premarital-counseling-darby-pa" },
   { label: "Family Therapy", href: "/family-therapy-darby-pa" },
   { label: "Psychiatric Evaluations", href: "/psychiatric-evaluations-darby-pa" },
   { label: "Medication Management", href: "/medication-management-darby-pa" },

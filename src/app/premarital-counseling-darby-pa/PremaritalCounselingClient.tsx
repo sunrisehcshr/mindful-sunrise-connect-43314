@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { HugeiconsIcon } from "@hugeicons/react";
 import { BrainIcon, ShieldIcon, SafeIcon, StarIcon, CallIcon, ArrowRightIcon, CheckmarkCircle02Icon, ArrowDown01Icon, ArrowUp01Icon, Location01Icon, Calendar01Icon, Clock01Icon, UserGroupIcon, SparklesIcon, BookOpen01Icon, UserCircleIcon, CloudAngledRainIcon, HeartbreakIcon, CheckmarkBadge01Icon, FavouriteIcon } from "@hugeicons/core-free-icons";
-import { Lightbulb, CheckCircle2, Shield, Users, Heart, Brain, Sparkles, ArrowRight, Star, ChevronDown, Plus } from 'lucide-react';
+import { Lightbulb, CheckCircle2, Shield, Users, Heart, Brain, Sparkles, ArrowRight, Star, ChevronDown, Plus, Wallet, HeartHandshake, Briefcase, MessagesSquare } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import SectionTag from '@/components/ui/section-tag';
 import CurveTransition from '@/components/ui/CurveTransition';
@@ -46,8 +46,6 @@ const TimelineStep = React.memo(({
     const stepThresholdStart = i / totalSteps;
     const stepThresholdEnd = (i + 1) / totalSteps;
     
-    // Instead of glowing when passed, we only glow when the progress is inside this step's range
-    // Or if it's the last step and we are at the end.
     const isCardGlowing = useTransform(progress, (p: number) => {
         if (i === totalSteps - 1 && p >= stepThresholdStart) return true;
         return p >= stepThresholdStart && p < stepThresholdEnd;
@@ -114,39 +112,6 @@ const TimelineStep = React.memo(({
 });
 
 TimelineStep.displayName = "TimelineStep";
-
-// --- Scramble Text Effect (Brand Style) ---
-function ScrambleText({ text, className }: { text: string, className?: string }) {
-    const [displayText, setDisplayText] = useState(text);
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-    const scramble = () => {
-        let iteration = 0;
-        const interval = setInterval(() => {
-            setDisplayText(
-                text
-                    .split("")
-                    .map((letter, index) => {
-                        if (index < iteration) return text[index];
-                        return chars[Math.floor(Math.random() * chars.length)];
-                    })
-                    .join("")
-            );
-
-            if (iteration >= text.length) clearInterval(interval);
-            iteration += 1 / 3;
-        }, 30);
-    };
-
-    return (
-        <span
-            onMouseEnter={scramble}
-            className={cn("cursor-default", className)}
-        >
-            {displayText}
-        </span>
-    );
-}
 
 // --- Glowing Bento Card ---
 function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
@@ -248,49 +213,48 @@ SpotlightItem.displayName = "SpotlightItem";
 const processSteps = [
   {
     title: "Initial Consultation",
-    desc: "We handle the paperwork and verify your insurance coverage—including Medicaid—before you even start. We'll match you with the right couples therapist on day one."
+    desc: "We handle the paperwork and verify your insurance coverage—including Medicaid—before you even start. We'll match you with the right therapist on day one."
   },
   {
     title: "Relationship Assessment",
-    desc: "During your first session, your therapist will conduct a thorough evaluation of your relationship history, current conflict patterns, and shared goals."
+    desc: "During your first session, your therapist will conduct a thorough evaluation of your relationship history, current communication patterns, and shared goals."
   },
   {
-    title: "Actionable Roadmap",
-    desc: "Collaborate to design a customized roadmap tailored to your specific dynamic, establishing clear, achievable objectives to rebuild your connection."
+    title: "Your Roadmap",
+    desc: "Collaborate to design a customized roadmap tailored to your specific dynamic, establishing clear, achievable objectives to build a strong foundation."
   },
   {
-    title: "Continuous Progress",
-    desc: "Engage in regular joint sessions utilizing evidence-based practices to break negative cycles, track your improvement, and restore your intimacy."
+    title: "Growing Together",
+    desc: "Engage in regular joint sessions utilizing evidence-based practices to build communication skills, track your improvement, and prepare for marriage."
   }
 ];
 
 const faqs = [
     {
-      question: "What can we expect from couples counseling in Darby?",
-      answer: "Couples counseling in Darby at Sunrise Human Care offers a tailored approach where licensed therapists guide partners to improve communication, resolve conflicts, and build a stronger bond in a confidential, supportive environment. We help you navigate challenges together rather than against each other."
+      question: "Is premarital counseling only for couples with problems?",
+      answer: "Not at all. Premarital counseling is a proactive step for any couple wanting to build a strong foundation, improve communication, and align expectations before marriage."
     },
     {
-      question: "Is couples counseling effective for long-term relationships?",
-      answer: "Yes, couples counseling helps long-term partners address entrenched patterns, rebuild trust, and rediscover connection. By utilizing proven methods like The Gottman Method and EFT, we assist couples in overcoming emotional distance and reigniting intimacy, regardless of how long they've been together."
+      question: "How many sessions are recommended before marriage?",
+      answer: "While every couple is different, we typically recommend starting 3 to 6 months before your wedding and planning for 6 to 8 sessions to cover key areas comprehensively."
     },
     {
-      question: "Can unmarried couples benefit from relationship therapy in Delaware County?",
-      answer: "Absolutely. Relationship therapy in Delaware County supports all committed relationships. Whether you are dating, engaged, or living together, our therapists can help unmarried couples strengthen their partnership, navigate life transitions, and lay a solid foundation for the future."
+      question: "Does Medicaid cover premarital counseling in Pennsylvania?",
+      answer: "Yes, at Sunrise Human Care, we accept Medicaid and Medical Assistance for our therapy services, removing cost barriers so you can focus on building a healthy marriage."
     },
     {
-      question: "How many sessions are needed for couples therapy near me?",
-      answer: "The duration of couples therapy depends entirely on your specific goals and challenges. Some couples see significant progress through short-term, solution-focused therapy in 8-12 sessions, while others dealing with deeper issues like infidelity or severe communication breakdowns may engage longer for lasting transformation."
+      question: "Can we do premarital counseling via telehealth?",
+      answer: "Yes! We offer flexible telehealth options so you and your partner can attend sessions from the comfort of your home, making it easier to fit into busy pre-wedding schedules."
     },
     {
-      question: "Does marriage counseling PA accept insurance?",
-      answer: "Yes, our marriage counseling PA services accept Medicaid to ensure that relationship support is accessible to the Darby and broader Delaware County community. Our administrative team will verify your benefits and clearly explain any coverage details prior to your first session."
+      question: "What is the Gottman Method and how does it apply to premarital counseling?",
+      answer: "The Gottman Method is an evidence-based approach that helps couples build friendship, manage conflict, and create shared meaning. We use these principles to give you practical tools for a lasting marriage."
     }
 ];
 
 const scrollOffset: any = ["start center", "end center"];
 
-export default function CouplesCounselingClient() {
-  const [activeFaq, setActiveFaq] = useState<number | null>(0);
+export default function PremaritalCounselingClient() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -313,12 +277,6 @@ export default function CouplesCounselingClient() {
       ["0%", "100%"]
   );
 
-  const [reviewDate, setReviewDate] = useState("");
-
-  useEffect(() => {
-    setReviewDate(new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }));
-  }, []);
-
   return (
     <div className="flex flex-col min-h-screen bg-stone-950">
       <Navbar />
@@ -329,14 +287,13 @@ export default function CouplesCounselingClient() {
           <div className="absolute inset-0 z-0">
             <Image 
               src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
-              alt="Couples Counseling in Darby PA" 
+              alt="Premarital Counseling in Darby PA" 
               fill 
               sizes="(max-width: 768px) 100vw, 50vw"
               unoptimized={true}
               className="object-cover opacity-60"
               priority
             />
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
             <div className="absolute inset-0 z-0 bg-black/30" />
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
           </div>
@@ -349,40 +306,39 @@ export default function CouplesCounselingClient() {
               className="max-w-4xl mx-auto"
             >
               <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Rebuild Your Relationship in PA
+                Start Strong in PA
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Reconnect and Rebuild with <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Couples Counseling in Darby, PA</span>
+                Premarital Counseling <br className="hidden md:block" />
+                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Stop the endless arguments and emotional distance. Reconnect with your partner, rebuild trust, and restore intimacy with expert marriage counseling in Darby, PA.
+                Build the foundation your marriage deserves before you say "I do." Our licensed therapists help you navigate finances, family dynamics, communication, and expectations — together.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-          <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
-            <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
-            Schedule Your First Session
-          </button>
-        </Link>
-        <a href="tel:+18146202162">
-          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
-            <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
-            Call (814) 620-2162
-          </button>
-        </a>
-      </div>
+                <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+                    <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
+                    Schedule Your First Session
+                  </button>
+                </Link>
+                <a href="tel:+18146202162">
+                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+                    <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
+                    Call (814) 620-2162
+                  </button>
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>
 
         <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           
-          {/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}
-          <section className="pt-16 md:pt-24 pb-40 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
+          {/* SECTION 1: What is Premarital Counseling? */}
+          <section className="pt-16 md:pt-24 pb-20 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
             <div className="container mx-auto px-4 md:px-8">
-                {/* Header Row */}
                 <motion.div 
                     initial="hidden"
                     whileInView="visible"
@@ -391,9 +347,9 @@ export default function CouplesCounselingClient() {
                     className="max-w-4xl mx-auto text-center mb-16"
                 >
                     <div className="flex flex-col items-center gap-4">
-                        <SectionTag>Why Choose Sunrise</SectionTag>
+                        <SectionTag>About Premarital Therapy</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Therapy designed to heal your relationship, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not take sides.</span>
+                            What is Premarital Counseling?
                         </h2>
                     </div>
                 </motion.div>
@@ -406,52 +362,19 @@ export default function CouplesCounselingClient() {
                         hidden: { opacity: 0 },
                         visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
                     }}
-                    className="relative z-10 mx-auto max-w-7xl flex flex-col gap-4 bg-white p-4 md:p-8 rounded-[3rem] border border-stone-100 shadow-sm"
+                    className="relative z-10 mx-auto max-w-4xl flex flex-col gap-6"
                 >
-                    {/* Top Row */}
-                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-4 relative z-10">
-                        <Card containerClassName="md:col-span-3 rounded-3xl bg-stone-50/50" className="flex flex-col justify-center p-8 md:p-12">
-                            <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed max-w-3xl">
-                                Couples counseling isn't about finding out who is right—it's about getting your relationship back on track. When you work with our licensed relationship experts in Darby, PA, you gain an unbiased guide who will help you break destructive communication loops, rebuild broken trust, and rediscover the love you thought was lost.
-                            </p>
-                        </Card>
-                        <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
-                            <HugeiconsIcon icon={SafeIcon} className="w-10 h-10 text-orange-500 mb-4" />
-                            <h3 className="text-xl font-bold text-stone-900 mb-2">Safe Space</h3>
-                            <p className="text-stone-500 text-sm font-medium">100% confidential and non-judgmental.</p>
-                        </Card>
-                    </motion.div>
-
-                    {/* Features Row - With varied colors */}
-                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-3 relative z-10">
-                        <Card containerClassName="rounded-3xl bg-emerald-50/40 border-emerald-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-emerald-200/20 border border-emerald-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={CheckmarkBadge01Icon} className="w-6 h-6 text-emerald-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Licensed Experts</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with fully licensed, state-certified therapists in Delaware County who specialize in various therapeutic modalities.</p>
-                        </Card>
-                        <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={BrainIcon} className="w-6 h-6 text-blue-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like The Gottman Method and EFT so you see measurable, real-world progress in your relationship journey.</p>
-                        </Card>
-                        <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={FavouriteIcon} className="w-6 h-6 text-rose-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Personalized Care</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Your roadmap is tailored specifically to your unique dynamic, communication styles, and shared goals for counseling.</p>
-                        </Card>
-                    </motion.div>
+                    <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed text-center">
+                        Premarital counseling is a proactive, specialized form of therapy that helps couples prepare for long-term commitment. Rather than waiting for conflicts to arise, couples seek premarital therapy to openly discuss expectations, align on core values, and build healthy communication habits. Studies consistently show that premarital counseling is highly effective—in fact, couples who participate in premarital education have up to a 30% lower risk of divorce and report significantly higher relationship satisfaction.
+                    </p>
+                    <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed text-center">
+                        At Sunrise Human Care in Darby, PA (serving all of Delaware County), our licensed relationship specialists utilize evidence-based approaches, including the renowned Gottman Method and Emotionally Focused Therapy (EFT). We don't just offer generic advice; we provide a structured, supportive environment where you and your partner can deeply understand each other, resolve potential friction points early, and walk down the aisle with absolute confidence.
+                    </p>
                 </motion.div>
             </div>
-            <CurveTransition fillColor="#fafaf9" inverted />
           </section>
 
-          {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
+          {/* SECTION 2: What We Cover */}
           <section className="pt-16 md:pt-24 pb-40 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
@@ -461,25 +384,21 @@ export default function CouplesCounselingClient() {
                 className="max-w-4xl mx-auto text-center mb-16"
               >
                 <div className="flex flex-col items-center gap-4">
-                  <SectionTag>Relationship Repair</SectionTag>
+                  <SectionTag>Core Focus Areas</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Find your way back to <br />
-                    <span className="font-instrument-serif italic text-orange-500">each other.</span>
+                    What We <span className="font-instrument-serif italic text-orange-500">Cover.</span>
                   </h2>
-                  <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
-                    You don't have to stay stuck in the same arguments. Our marriage specialists in Darby, PA use proven methods to help you bridge the emotional gap and build a stronger, healthier partnership.
-                  </p>
                 </div>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {[
-                  { title: "Communication Breakdown", icon: Brain, desc: "Stop the endless cycles of arguing. Learn how to truly hear each other and express your needs without triggering defensive reactions." },
-                  { title: "Trust & Infidelity", icon: Shield, desc: "Rebuild after betrayal. We provide a structured, safe roadmap to process the pain, restore broken trust, and create a new foundation." },
-                  { title: "Emotional Distance", icon: Heart, desc: "Bridge the gap between you. Reignite the intimacy and deep emotional connection that originally brought you together." },
-                  { title: "Parenting Conflicts", link: "/family-therapy-darby-pa", icon: Users, desc: "Get on the same page. Resolve differences in parenting styles and build a united front to lead a healthier, happier family." },
-                  { title: "Life Transitions", icon: ArrowRight, desc: "Navigate major changes together. Whether it's a new baby, career shifts, or an empty nest, stay connected through the chaos." },
-                  { title: "Pre-Marital Counseling", link: "/premarital-counseling-darby-pa", icon: Star, desc: "Start your marriage on solid ground. Proactively address finances, family dynamics, and expectations before you say 'I do'." }
+                  { title: "Communication Styles", icon: MessagesSquare, desc: "Learn how to listen and express needs without triggering conflict. Discover your partner's communication style." },
+                  { title: "Financial Expectations", icon: Wallet, desc: "Align on spending, saving, and financial goals before they become arguments. Money is a leading cause of marital stress." },
+                  { title: "Family Dynamics", icon: Users, desc: "Navigate boundaries with in-laws and establish your own family identity as a new, united partnership." },
+                  { title: "Conflict Resolution", icon: Shield, desc: "Develop tools to disagree constructively rather than destructively, preventing minor issues from escalating." },
+                  { title: "Intimacy & Connection", icon: Heart, desc: "Build emotional and physical closeness that sustains through life's challenges and changes over time." },
+                  { title: "Roles & Responsibilities", icon: Briefcase, desc: "Discuss expectations around household duties, careers, and future family planning to prevent resentment." }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
@@ -493,14 +412,7 @@ export default function CouplesCounselingClient() {
                     <div className="w-12 h-12 rounded-2xl bg-stone-50 flex items-center justify-center mb-6 border border-stone-100 group-hover:bg-orange-50 group-hover:border-orange-100 transition-colors duration-500">
                         <item.icon className="w-6 h-6 text-stone-400 group-hover:text-orange-500 transition-colors duration-500" />
                     </div>
-                    {item.link ? (
-                      <Link href={item.link} className="flex items-center gap-2 text-2xl font-bold text-stone-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors">
-                        {item.title}
-                        <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition duration-300" />
-                      </Link>
-                    ) : (
-                      <h3 className="text-2xl font-bold text-stone-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                    )}
+                    <h3 className="text-2xl font-bold text-stone-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors">{item.title}</h3>
                     <p className="text-stone-500 text-base leading-relaxed font-medium">
                         {item.desc}
                     </p>
@@ -511,7 +423,7 @@ export default function CouplesCounselingClient() {
             <CurveTransition fillColor="#ffffff" inverted />
           </section>
 
-          {/* SECTION 3: Clinical Approach */}
+          {/* SECTION 3: Why Choose Sunrise */}
           <section className="pt-16 md:pt-24 pb-40 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
@@ -529,24 +441,20 @@ export default function CouplesCounselingClient() {
                 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
                     <div className="lg:col-span-5 flex flex-col justify-center">
-                        <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">How We Work</SectionTag>
+                        <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">The Sunrise Difference</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
-                            Discover Proven Therapies <br />
-                            <span className="font-instrument-serif italic text-orange-400">That Deliver Real Results</span>
+                            Why Couples Choose <br />
+                            <span className="font-instrument-serif italic text-orange-400">Sunrise Human Care</span>
                         </h2>
-                        <p className="text-stone-400 text-lg leading-relaxed mb-8">
-                            Stop guessing what will fix your relationship. We exclusively use scientifically proven, evidence-based practices for couples—ensuring you experience measurable progress and lasting connection, faster.
-                        </p>
                     </div>
 
-                    <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="lg:col-span-7 grid grid-cols-1 gap-4">
                         {[
-                            { title: "The Gottman Method", desc: "Build a bulletproof partnership. Master the research-backed framework designed to disarm conflict, increase intimacy, and build shared meaning." },
-                            { title: "Emotionally Focused Therapy (EFT)", desc: "Stop the negative cycle. Identify the hidden emotional triggers driving your arguments and create a secure, lasting bond with your partner." },
-                            { title: "Imago Relationship Therapy", desc: "Heal childhood wounds together. Understand how your past influences your present relationship dynamics and transform conflict into connection." },
-                            { title: "Solution-Focused Counseling", desc: "Get unstuck, fast. Stop dwelling on past resentments and start building concrete, actionable solutions for your shared future in fewer sessions." }
+                            { title: "Medicaid Accepted", desc: "No cost barrier to a healthy marriage. We proudly accept Medicaid and Medical Assistance, making expert premarital counseling accessible to everyone." },
+                            { title: "No Waitlist", desc: "Start within days before the wedding date pressure hits. We match you with a therapist immediately so you can focus on your relationship right away." },
+                            { title: "Specialized Licensed Therapists", desc: "You'll work directly with highly trained, fully licensed clinicians who specialize in relationship dynamics, communication, and family systems." }
                         ].map((method, idx) => (
-                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col items-start gap-4 group">
+                            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-colors duration-300 flex flex-col sm:flex-row items-start gap-4 group">
                                 <div className="w-10 h-10 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors duration-300">
                                     <CheckCircle2 className="w-5 h-5 text-orange-400" />
                                 </div>
@@ -563,9 +471,7 @@ export default function CouplesCounselingClient() {
             <CurveTransition fillColor="#fafaf9" inverted />
           </section>
 
-                    
-
-{/* SECTION 4: The Process */}
+          {/* SECTION 4: The Process */}
           <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
@@ -578,20 +484,17 @@ export default function CouplesCounselingClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">starting strong.</span>
                   </h2>
                 </div>
               </motion.div>
 
               {/* Timeline Container */}
               <div className="relative max-w-5xl mx-auto" ref={containerRef}>
-                  {/* Background Vertical Line */}
                   <div
                       className="absolute top-0 bottom-0 w-px left-4 md:left-1/2 md:-translate-x-px"
                       style={{ backgroundColor: "rgba(0,0,0,0.08)" }}
                   />
-                  
-                  {/* Animated Fill Line */}
                   <motion.div
                       className="absolute top-0 w-1 left-4 md:left-1/2 md:-translate-x-1/2 rounded-full origin-top"
                       style={{ 
@@ -600,7 +503,6 @@ export default function CouplesCounselingClient() {
                           boxShadow: `0 0 10px ${accentColor}40`
                       }}
                   />
-
                   <div className="flex flex-col gap-12 md:gap-16">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
@@ -626,16 +528,13 @@ export default function CouplesCounselingClient() {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
                   className="mt-16 md:mt-24 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
               >
-                 {/* WebGL Fluid Background */}
                  <div className="absolute inset-0 z-0 opacity-40">
                     <UiloraFrostedGlass
-                      baseColor="#1c1917" // stone-900
-                      accentColor="#f97316" // orange-500
+                      baseColor="#1c1917"
+                      accentColor="#f97316"
                       speed={0.15}
                     />
                  </div>
-
-                 {/* Subtle Ambient Glow overlays to ensure text readability */}
                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-900/40 blur-[50px] pointer-events-none z-0" />
                  
@@ -650,7 +549,7 @@ export default function CouplesCounselingClient() {
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
-                     You don't have to fix this alone. Schedule your first couples session today and let our Darby, PA specialists help you find your way back to each other.
+                     Schedule your first premarital session today and let our Darby, PA specialists help you build the strongest possible foundation for your marriage.
                    </p>
                    
                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
@@ -673,14 +572,8 @@ export default function CouplesCounselingClient() {
             </div>
           </section>
 
-          
-
-
-
           {/* SECTION 5: FAQs */}
           <section className="pt-8 pb-40 bg-stone-50 relative overflow-hidden">
-            
-            {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
               <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0">
                 <defs>
@@ -697,34 +590,8 @@ export default function CouplesCounselingClient() {
                   stroke="#ea580c" 
                   strokeWidth="1" 
                   strokeOpacity="0.2"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.1, 0.3, 0.1] 
-                  }}
-                  transition={{ 
-                    duration: 8, 
-                    repeat: Infinity,
-                    ease: "easeInOut" 
-                  }}
-                />
-                <motion.circle 
-                  cx="20%" 
-                  cy="80%" 
-                  r="250" 
-                  fill="none" 
-                  stroke="#ea580c" 
-                  strokeWidth="1" 
-                  strokeOpacity="0.1"
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    opacity: [0.1, 0.2, 0.1] 
-                  }}
-                  transition={{ 
-                    duration: 12, 
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 2
-                  }}
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                 />
               </svg>
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
@@ -735,7 +602,7 @@ export default function CouplesCounselingClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Couples Counseling <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Premarital Counseling <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 
@@ -777,7 +644,6 @@ export default function CouplesCounselingClient() {
 
           {/* SECTION: Related Services (Animated Stack) */}
           <section className="pt-24 pb-0 bg-white relative overflow-hidden">
-            
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -795,9 +661,9 @@ export default function CouplesCounselingClient() {
               </motion.div>
               
               <AnimatedCardStack items={[
-                  { title: "Family Therapy in Darby", description: "Support for families navigating difficult transitions.", href: "/family-therapy-darby-pa", image: "/images/family-counseling-havertown.webp" },
-                  { title: "Individual Therapy in Darby", description: "One-on-one therapy tailored to your unique journey.", href: "/individual-therapy-darby-pa", image: "/images/finding-therapist-havertown.webp" },
-                  { title: "Premarital Counseling in Darby", description: "Strengthen your bond with relationship counseling.", href: "/relationship-therapy-darby-pa", image: "/images/couple-counseling-havertown-pa.webp" }
+                  { title: "Couples Counseling in Darby", description: "Strengthen your bond and resolve ongoing conflicts.", href: "/couples-counseling-darby-pa", image: "/images/couple-counseling-havertown-pa.webp" },
+                  { title: "Individual Therapy in Darby", description: "One-on-one therapy tailored to your unique experience.", href: "/individual-therapy-darby-pa", image: "/images/finding-therapist-havertown.webp" },
+                  { title: "Family Therapy in Darby", description: "Support for families navigating difficult transitions.", href: "/family-therapy-darby-pa", image: "/images/family-counseling-havertown.webp" }
                 ]} />
             </div>
           </section>

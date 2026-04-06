@@ -301,6 +301,12 @@ export default function ServicesClient() {
       link: "/grief-therapy-darby-pa",
       desc: "Compassionate bereavement support to help you process profound loss, honor your loved ones, and find a path forward.",
       image: "https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775382829/pexels-rdne-9065261_qrpmut.jpg"
+    },
+    {
+      title: "Premarital Counseling",
+      link: "/premarital-counseling-darby-pa",
+      desc: "Start your marriage on solid ground. We help couples navigate finances, family dynamics, communication, and expectations.",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
     }
   ];
 

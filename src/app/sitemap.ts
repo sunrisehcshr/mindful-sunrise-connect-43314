@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages = [
     '/individual-therapy-darby-pa',
     '/couples-counseling-darby-pa',
+    '/premarital-counseling-darby-pa',
     '/family-therapy-darby-pa',
     '/child-therapy-darby-pa',
     '/psychiatric-evaluations-darby-pa',
