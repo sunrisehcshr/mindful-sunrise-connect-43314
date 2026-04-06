@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion, useMotionTemplate, useMotionValue, useReducedMotion } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValue, useReducedMotion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
@@ -135,6 +135,9 @@ const conditions = [
 
 export default function ConditionsClient() {
   const prefersReducedMotion = useReducedMotion();
+  const [activeConditionIndex, setActiveConditionIndex] = useState(0);
+
+  const activeCondition = conditions[activeConditionIndex];
 
   const containerVariants: any = {
     hidden: { opacity: 0 },
@@ -243,40 +246,86 @@ export default function ConditionsClient() {
                 </p>
               </motion.div>
 
-              <motion.div 
-                variants={prefersReducedMotion ? undefined : containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
-              >
-                {conditions.map((condition, index) => (
-                  <motion.div key={index} variants={itemVariants} className="h-full">
-                    <Link href={condition.url} className="block h-full outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-[2rem]">
-                      <motion.div whileTap={{ scale: 0.98 }} className="h-full">
-                        <Card className="flex flex-col">
-                          <div className="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-8 shadow-sm border border-orange-100/50 group-hover:scale-110 group-hover:bg-orange-100 transition-[transform,background-color] duration-500 ease-out">
-                            <condition.icon className="w-6 h-6 text-orange-500 transition-transform duration-500" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                {/* LEFT SIDE: List of Conditions */}
+                <motion.div 
+                  variants={prefersReducedMotion ? undefined : containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  className="lg:col-span-5 xl:col-span-4 flex flex-col gap-3"
+                >
+                  {conditions.map((condition, index) => {
+                    const isActive = index === activeConditionIndex;
+                    return (
+                      <motion.button
+                        key={index}
+                        variants={itemVariants}
+                        onClick={() => setActiveConditionIndex(index)}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={cn(
+                          "w-full text-left px-5 py-4 rounded-[1.5rem] flex items-center gap-4 transition-all duration-300 border",
+                          isActive 
+                            ? "bg-orange-500 border-orange-500 shadow-lg shadow-orange-500/20 text-white" 
+                            : "bg-white border-stone-200/60 text-stone-600 hover:bg-orange-50/80 hover:border-orange-200"
+                        )}
+                      >
+                        <div className={cn(
+                          "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300",
+                          isActive ? "bg-white/20" : "bg-orange-50 text-orange-500"
+                        )}>
+                          <condition.icon className={cn("w-5 h-5", isActive ? "text-white" : "text-orange-500")} />
+                        </div>
+                        <span className="font-barlow font-bold text-lg tracking-tight">
+                          {condition.title}
+                        </span>
+                      </motion.button>
+                    );
+                  })}
+                </motion.div>
+
+                {/* RIGHT SIDE: Active Condition Details */}
+                <div className="lg:col-span-7 xl:col-span-8 relative">
+                  <div className="sticky top-32">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeConditionIndex}
+                        initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        className="h-full"
+                      >
+                        <Card className="flex flex-col min-h-[400px] lg:min-h-[500px]">
+                          <div className="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-8 shadow-sm border border-orange-100/50">
+                            <activeCondition.icon className="w-8 h-8 text-orange-500" />
                           </div>
                           
-                          <h3 className="font-barlow font-bold text-2xl text-stone-900 mb-4 group-hover:text-orange-600 transition-colors duration-300 tracking-tight">
-                            {condition.title}
+                          <h3 className="font-barlow font-bold text-3xl md:text-4xl text-stone-900 mb-6 tracking-tight">
+                            {activeCondition.title}
                           </h3>
                           
-                          <p className="font-barlow text-stone-500 text-base leading-relaxed flex-grow mb-8">
-                            {condition.short}
+                          <p className="font-barlow text-stone-500 text-lg md:text-xl leading-relaxed flex-grow mb-10">
+                            {activeCondition.short}
                           </p>
                           
-                          <div className="flex items-center text-orange-600 font-barlow font-bold text-sm mt-auto group/link">
-                            Explore treatment 
-                            <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
-                          </div>
+                          <Link href={activeCondition.url} className="mt-auto outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-full inline-block w-fit">
+                            <motion.button 
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.96 }}
+                              className="bg-stone-900 hover:bg-stone-800 text-white font-barlow font-bold px-8 py-4 text-base rounded-full transition-colors duration-300 flex items-center justify-center gap-2 group shadow-lg"
+                            >
+                              Explore treatment 
+                              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+                            </motion.button>
+                          </Link>
                         </Card>
                       </motion.div>
-                    </Link>
-                  </motion.div>
-                ))}
-              </motion.div>
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
