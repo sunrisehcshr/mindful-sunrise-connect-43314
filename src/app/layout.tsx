@@ -56,11 +56,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/lovable-uploads/5de7ce79-1094-4c76-bc02-377afb48eb0a.png", sizes: "32x32", type: "image/png" },
-      { url: "/lovable-uploads/3558a012-a648-4c7b-bce2-31f787f6a654.png", sizes: "16x16", type: "image/png" },
+      { url: "/sun-favicon.svg", type: "image/svg+xml" },
     ],
-    apple: "/lovable-uploads/947ba080-a4e6-428b-a1cd-41a174bfe001.png",
+    apple: "/sun-favicon.svg",
   },
   manifest: "/manifest.json",
   openGraph: {
