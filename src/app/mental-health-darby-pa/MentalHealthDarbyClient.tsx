@@ -18,6 +18,8 @@ import SectionTag from "@/components/ui/section-tag";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
+import CurveTransition from "@/components/ui/CurveTransition";
+
 // --- Glowing Bento Card ---
 function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
   const mouseX = useMotionValue(0);
@@ -155,7 +157,7 @@ export default function MentalHealthDarbyClient() {
     <div className="flex flex-col min-h-screen bg-white font-barlow">
       <Navbar />
       
-      <main className="flex-grow pt-24">
+      <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative pt-48 pb-20 md:pt-60 md:pb-32 bg-stone-900">
           {/* Background elements */}
@@ -206,11 +208,7 @@ export default function MentalHealthDarbyClient() {
             </motion.div>
           </div>
           
-          <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none">
-            <svg viewBox="0 0 1440 120" className="w-full h-auto text-white fill-current" preserveAspectRatio="none">
-                <path d="M0,0 C240,120 480,120 720,120 C960,120 1200,120 1440,0 L1440,120 L0,120 Z"></path>
-            </svg>
-          </div>
+          <CurveTransition fillColor="#ffffff" inverted className="z-20" />
         </section>
 
         {/* Ogilvy Long Copy Section */}
