@@ -154,7 +154,7 @@ const WarmHeroSection = () => {
         >
           {shouldLoadVideo && (
             <source
-              src="https://res.cloudinary.com/dabsxebx8/video/upload/q_auto/f_auto/v1775492640/7551529-hd_1920_1080_30fps_sk2ft0.mp4"
+              src="https://res.cloudinary.com/dabsxebx8/video/upload/q_auto/f_auto/v1775495838/5722168-uhd_3840_2160_24fps_skusi3.mp4"
               type="video/mp4"
             />
           )}
