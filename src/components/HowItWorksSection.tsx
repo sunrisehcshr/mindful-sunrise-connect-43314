@@ -39,17 +39,24 @@ function Card({ children, className, containerClassName, isActive }: { children:
         <div
             className={cn(
                 "group relative border border-stone-200/80 bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-500 rounded-3xl",
-                "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-amber-200/50",
-                isActive ? "bg-orange-600 border-transparent shadow-[0_20px_50px_rgba(249,115,22,0.3)] -translate-y-1.5" : "hover:bg-white",
+                "hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5",
+                isActive ? "border-transparent shadow-[0_20px_50px_rgba(249,115,22,0.3)] -translate-y-1.5" : "hover:border-amber-200/50",
                 containerClassName
             )}
             onMouseMove={handleMouseMove}
             data-active={isActive}
         >
-            <div className={cn(
-                "absolute inset-0 pointer-events-none transition-opacity duration-500",
-                isActive ? "bg-orange-600" : "bg-gradient-to-br from-transparent to-stone-50/50"
-            )} />
+            {/* Default background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/50 pointer-events-none" />
+            
+            {/* Active orange background with smooth opacity transition */}
+            <div 
+                className={cn(
+                    "absolute inset-0 bg-orange-600 pointer-events-none transition-opacity duration-500",
+                    isActive ? "opacity-100" : "opacity-0"
+                )} 
+            />
+
             <motion.div
                 className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
                 style={{
@@ -104,8 +111,8 @@ const TimelineStep = ({
 
     useEffect(() => {
         const unsubscribe = stepProgress.on("change", (latest) => {
-            // If the center of the screen has reached or passed the top of this card
-            setShouldGlow(latest > 0);
+            // The card glows ONLY when the line's tip (center of screen) is actively traversing this specific card
+            setShouldGlow(latest > 0 && latest < 1);
         });
         return () => unsubscribe();
     }, [stepProgress]);
