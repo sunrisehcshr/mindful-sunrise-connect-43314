@@ -154,7 +154,7 @@ const WarmHeroSection = () => {
         >
           {shouldLoadVideo && (
             <source
-              src="https://res.cloudinary.com/dabsxebx8/video/upload/q_auto,f_auto/v1774833967/happy-funny-and-sunset-with-big-family-at-beach-f-2025-12-17-13-03-02-utc_i9s1nu.mp4"
+              src="https://res.cloudinary.com/dabsxebx8/video/upload/q_auto/f_auto/v1775492640/7551529-hd_1920_1080_30fps_sk2ft0.mp4"
               type="video/mp4"
             />
           )}
