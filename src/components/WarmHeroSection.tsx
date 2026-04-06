@@ -183,14 +183,14 @@ const WarmHeroSection = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* Readability overlay (desktop only) */}
-      <div className="absolute inset-0 z-0 hidden md:block bg-black/25" />
+      {/* Readability overlay (all devices) */}
+      <div className="absolute inset-0 z-0 bg-black/40" />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-40 md:pt-32 -mt-16">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto py-12 px-6 md:py-8 md:px-12 rounded-[3rem] bg-black/15 backdrop-blur-xl border border-white/10 shadow-2xl md:bg-transparent md:backdrop-blur-0 md:border-none md:shadow-none relative overflow-hidden"
+          className="max-w-5xl mx-auto py-12 px-6 md:py-8 md:px-12 relative overflow-hidden"
           variants={{
             hidden: { opacity: 0 },
             visible: {
