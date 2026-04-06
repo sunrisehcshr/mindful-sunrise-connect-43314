@@ -9,32 +9,48 @@ import Link from "next/link";
 import Image from "next/image";
 import ClinicStatus from "./ui/ClinicStatus";
 
-// --- Scramble Text Effect (Restored) ---
-function ScrambleText({ text, className }: { text: string, className?: string }) {
-    const [displayText, setDisplayText] = useState(text);
+// --- Scramble Text Effect (Restored & Enhanced) ---
+function ScrambleText({ defaultText, hoverText, className }: { defaultText: string, hoverText: string, className?: string }) {
+    const [displayText, setDisplayText] = useState(defaultText);
+    const [isHovered, setIsHovered] = useState(false);
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    const scramble = () => {
+    const scramble = (targetText: string) => {
         let iteration = 0;
         const interval = setInterval(() => {
             setDisplayText(
-                text
+                targetText
                     .split("")
                     .map((letter, index) => {
-                        if (index < iteration) return text[index];
+                        if (index < iteration) return targetText[index];
                         return chars[Math.floor(Math.random() * chars.length)];
                     })
                     .join("")
             );
 
-            if (iteration >= text.length) clearInterval(interval);
+            if (iteration >= targetText.length) clearInterval(interval);
             iteration += 1 / 3;
         }, 30);
     };
 
+    const handleMouseEnter = () => {
+        if (!isHovered) {
+            setIsHovered(true);
+            scramble(hoverText);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (isHovered) {
+            setIsHovered(false);
+            scramble(defaultText);
+        }
+    };
+
     return (
         <span
-            onMouseEnter={scramble}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             className={cn("cursor-default font-mono", className)}
         >
             {displayText}
@@ -275,8 +291,8 @@ const WhyChooseUsSection = () => {
 
                             <Card containerClassName="h-1/3 rounded-3xl bg-gradient-to-br from-stone-50 to-white border-stone-100/30 shadow-sm" className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <ScrambleText text="TRUSTED_CARE" className="text-lg font-bold tracking-[0.2em] text-stone-700 uppercase" />
-                                    <p className="text-[10px] text-stone-600/60 mt-1 font-bold uppercase tracking-widest">Compassionate Experts</p>
+                                    <ScrambleText defaultText="TRUSTED_CARE" hoverText="REAL_HEALING" className="text-lg font-bold tracking-[0.2em] text-stone-700 uppercase" />
+                                    <p className="text-[10px] text-stone-600/60 mt-1 font-bold uppercase tracking-widest">With Compassionate Experts</p>
                                 </div>
                             </Card>
                         </div>
