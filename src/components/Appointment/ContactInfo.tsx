@@ -22,9 +22,14 @@ const ContactInfo: React.FC = () => {
               </div>
               <div>
                 <p className="font-barlow font-bold text-stone-900 text-base">Location</p>
-                <p className="text-stone-500 font-barlow text-sm leading-relaxed">
+                <a 
+                  href="https://maps.app.goo.gl/x9UrhQE4cwZd9Ee47" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-stone-500 font-barlow text-sm leading-relaxed hover:text-orange-500 transition-colors block"
+                >
                   869 Main Street, Darby, PA 19023
-                </p>
+                </a>
               </div>
             </div>
             

@@ -124,7 +124,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       { "@type": "City", "name": "Upper Darby" },
       { "@type": "City", "name": "Collingdale" }
     ],
-    "hasMap": "https://www.google.com/maps?q=39.9184,-75.2590"
+    "hasMap": "https://maps.app.goo.gl/x9UrhQE4cwZd9Ee47"
   };
 
   // Generate breadcrumb items or use provided ones

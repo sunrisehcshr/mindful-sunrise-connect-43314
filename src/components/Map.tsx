@@ -72,8 +72,15 @@ const Map: React.FC<MapProps> = ({ className }) => {
             </svg>
           </div>
           <h3 className="text-lg font-semibold text-stone-900 mb-2">Sunrise Human Care Services</h3>
-          <p className="text-stone-800 mb-1">869 Main Street</p>
-          <p className="text-stone-800">Darby, PA 19023</p>
+          <a 
+            href="https://maps.app.goo.gl/x9UrhQE4cwZd9Ee47" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block hover:text-orange-500 transition-colors"
+          >
+            <p className="text-stone-800 mb-1">869 Main Street</p>
+            <p className="text-stone-800">Darby, PA 19023</p>
+          </a>
           <button 
             onClick={() => setShouldLoadMap(true)}
             className="mt-4 px-4 py-2 bg-orange-600 text-stone-50 rounded-md hover:bg-orange-700 transition-colors shadow-sm font-barlow font-bold"

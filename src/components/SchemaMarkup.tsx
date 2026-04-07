@@ -63,7 +63,7 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
     "insuranceAccepted": "Medicaid / Medical Assistance PA",
     "npi": "1528784568",
     "priceRange": "$",
-    "hasMap": "https://maps.app.goo.gl/YourMapID",
+    "hasMap": "https://maps.app.goo.gl/x9UrhQE4cwZd9Ee47",
     "image": "https://sunrisehumancare.com/images/logo.png"
   };
 

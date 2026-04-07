@@ -41,9 +41,14 @@ const Footer: React.FC = () => {
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-50 mt-0.5 shrink-0">
                   <MapPin className="h-4 w-4 text-orange-500" />
                 </div>
-                <span className="text-sm text-stone-600 font-barlow">
+                <a 
+                  href="https://maps.app.goo.gl/x9UrhQE4cwZd9Ee47" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-sm text-stone-600 font-barlow hover:text-orange-500 transition-colors"
+                >
                   869 Main Street, Darby, PA 19023, United States
-                </span>
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-50 shrink-0">
