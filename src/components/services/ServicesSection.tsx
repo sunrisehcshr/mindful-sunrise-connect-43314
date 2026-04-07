@@ -40,7 +40,6 @@ const itemVariants = {
 
 const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const isInCenter = useInView(ref, { margin: "-30% 0px -30% 0px" });
     const [isTouch, setIsTouch] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -48,7 +47,7 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
         setIsTouch(window.matchMedia("(hover: none)").matches);
     }, []);
 
-    const currentState = (isTouch && isInCenter) || isHovered ? "hover" : "initial";
+    const currentState = isHovered ? "hover" : "initial";
 
     return (
         <motion.div ref={ref} variants={itemVariants} whileTap={{ scale: 0.98 }} className="w-full">
@@ -56,8 +55,8 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                 <motion.div
                     initial="initial"
                     animate={currentState}
-                    onHoverStart={() => setIsHovered(true)}
-                    onHoverEnd={() => setIsHovered(false)}
+                    onHoverStart={() => { if (!isTouch) setIsHovered(true); }}
+                    onHoverEnd={() => { if (!isTouch) setIsHovered(false); }}
                     data-active={currentState === "hover"}
                     className="relative border-t border-stone-200 py-6 md:py-12 group cursor-pointer overflow-hidden transition-all duration-300 hover:rounded-3xl data-[active=true]:rounded-3xl hover:border-transparent data-[active=true]:border-transparent min-h-[60px] md:min-h-0"
                 >
