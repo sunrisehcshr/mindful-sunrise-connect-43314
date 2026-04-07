@@ -45,7 +45,7 @@ const Map: React.FC<MapProps> = ({ className }) => {
       {shouldLoadMap ? (
         <>
           <iframe 
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=869+Main+Street,+Darby,+PA+19023&zoom=15" 
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Sunrise+Human+Care+Services,+Darby,+PA&zoom=15" 
             className={cn("w-full h-full border-0", mapLoaded ? "opacity-100" : "opacity-0")}
             allowFullScreen={true} 
             loading="lazy" 
