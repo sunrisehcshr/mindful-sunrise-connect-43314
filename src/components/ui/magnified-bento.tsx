@@ -74,7 +74,17 @@ const CONFIG = {
   lensSize: 80,
 };
 
-const MagnifiedBento = ({ className }: { className?: string }) => {
+const MagnifiedBento = ({ 
+  className,
+  title = "A Healthier Tomorrow",
+  description = "Take the first step towards mental wellness with our compassionate team of experts dedicated to your growth.",
+  buttonText = "Start Healing"
+}: { 
+  className?: string,
+  title?: string,
+  description?: string,
+  buttonText?: string
+}) => {
   return (
     <div 
       className={cn("group relative w-full h-full overflow-hidden rounded-[2.5rem] border border-stone-200/80 bg-white/95 backdrop-blur-md p-2 shadow-sm transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:border-orange-200/50 hover:bg-white", className)}
@@ -87,13 +97,14 @@ const MagnifiedBento = ({ className }: { className?: string }) => {
       >
         <div className="relative h-full w-full flex flex-col items-center justify-center">
           {/* base layer */}
-          <div className="flex flex-col gap-3 w-full h-full justify-center">
+          <div className="flex flex-col gap-3 w-full h-full justify-center overflow-visible">
             {TAG_ROWS.map((row, rowIndex) => (
-              <motion.div 
-                key={`row-${rowIndex}`} 
-                className="flex gap-3 w-max" 
-                animate={{ 
-                  x: rowIndex % 2 === 0 ? ["0%", "-33.333%"] : ["-33.333%", "0%"], 
+              <motion.div
+                key={`row-${rowIndex}`}
+                className="flex gap-3 w-max"
+                style={{ willChange: "transform" }}
+                animate={{
+                  x: rowIndex % 2 === 0 ? ["0%", "-33.333%"] : ["-33.333%", "0%"],
                 }} 
                 transition={{ 
                   duration: 30, 
@@ -117,14 +128,46 @@ const MagnifiedBento = ({ className }: { className?: string }) => {
 
         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-stone-50 to-transparent z-20"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-stone-50 to-transparent z-20"></div>
+        
+        {/* MAGNIFYING LENS */}
+        <motion.div
+          className="absolute z-30 pointer-events-none flex items-center justify-center"
+          initial={{ x: "20%", y: "20%" }}
+          style={{
+            willChange: "transform",
+            width: CONFIG.lensSize,
+            height: CONFIG.lensSize,
+          }}
+          animate={{ 
+            x: ["20%", "70%", "30%", "60%", "20%"],
+            y: ["20%", "40%", "60%", "30%", "20%"] 
+          }}
+          transition={{
+            duration: 15,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        >
+          {/* Glass Effect Circle */}
+          <div 
+            className="absolute inset-0 rounded-full border border-orange-200/50 bg-orange-50/10 backdrop-blur-md shadow-[0_8px_32px_rgba(249,115,22,0.15)]"
+            style={{
+              boxShadow: 'inset 0 0 20px rgba(255,255,255,0.5), 0 8px 32px rgba(249,115,22,0.15)'
+            }}
+          />
+          {/* SVG Handle */}
+          <div className="absolute -bottom-6 -right-6 text-stone-300 drop-shadow-sm opacity-80">
+            <MagnifyingLens size={48} />
+          </div>
+        </motion.div>
       </div>
 
       <div className="p-6">
         <h3 className="text-xl font-bold text-stone-900 tracking-tight mb-2">
-          {CONFIG.title}
+          {title}
         </h3>
         <p className="text-sm text-stone-500 leading-relaxed font-medium mb-4">
-          {CONFIG.description}
+          {description}
         </p>
         <Link href="/appointment#home">
           <motion.button
@@ -132,7 +175,7 @@ const MagnifiedBento = ({ className }: { className?: string }) => {
             whileTap={{ scale: 0.98 }}
             className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-stone-50 font-bold rounded-2xl shadow-lg shadow-orange-500/20 transition-all flex items-center justify-center gap-2 group/btn"
           >
-            <span>Start Healing</span>
+            <span>{buttonText}</span>
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
           </motion.button>
         </Link>

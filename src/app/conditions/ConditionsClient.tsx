@@ -1,24 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, useMotionTemplate, useMotionValue, useReducedMotion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion, useMotionValue, useMotionTemplate } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
   MapPin, ArrowRight, Brain, Heart, Activity, Stethoscope, 
-  Wind, CloudRain, Zap, Shield, Search, Focus, Users,
-  ShieldAlert, Moon, Apple, Layers, Calendar, Phone 
+  Wind, CloudRain, Zap, Shield, Search, Focus,
+  ShieldAlert, Moon, Apple, Layers, Calendar, Phone, Leaf, ShieldCheck
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer/Footer';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SectionTag from '@/components/ui/section-tag';
 import { cn } from "@/lib/utils";
-import UiloraFrostedGlass from '@/components/ui/uilora-frosted-glass';
 import CurveTransition from '@/components/ui/CurveTransition';
+import dynamic from 'next/dynamic';
+
+const MagnifiedBento = dynamic(() => import('@/components/ui/magnified-bento'), {
+  ssr: true,
+});
 
 // --- Glowing Bento Card (Refined UX) ---
-function Card({ children, className, containerClassName }: { children: React.ReactNode; className?: string, containerClassName?: string }) {
+function Card({ children, className, containerClassName, onMouseEnter, onMouseLeave }: { children: React.ReactNode; className?: string, containerClassName?: string, onMouseEnter?: () => void, onMouseLeave?: () => void }) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -37,6 +41,8 @@ function Card({ children, className, containerClassName }: { children: React.Rea
                 containerClassName
             )}
             onMouseMove={handleMouseMove}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             <div className="absolute inset-0 bg-gradient-to-br from-transparent to-stone-50/40 pointer-events-none" />
             <motion.div
@@ -133,39 +139,23 @@ const conditions = [
   }
 ];
 
+const itemVariants: any = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { type: "spring", stiffness: 100, damping: 20 }
+  }
+};
+
 export default function ConditionsClient() {
-  const prefersReducedMotion = useReducedMotion();
-  const [activeConditionIndex, setActiveConditionIndex] = useState(0);
-
-  const activeCondition = conditions[activeConditionIndex];
-
-  const containerVariants: any = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants: any = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 20 }
-    }
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-stone-950">
       <Navbar />
       
       <main className="flex-grow">
         {/* HERO SECTION - Editorial & Premium */}
-        <section className="relative pt-40 pb-28 md:pt-56 md:pb-48 overflow-hidden bg-stone-950">
+        <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 lg:pt-40 lg:pb-24 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
               src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg" 
@@ -246,7 +236,7 @@ export default function ConditionsClient() {
                 </p>
               </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-24">
                 {conditions.map((condition, index) => (
                   <motion.div key={index} variants={itemVariants} className="h-full">
                     <Link href={condition.url} className="block h-full outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-[2rem]">
@@ -277,103 +267,8 @@ export default function ConditionsClient() {
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </section>
 
-          {/* SECTION 2: Why Choose Us (Refined E-E-A-T) */}
-          <section className="py-24 bg-white relative overflow-hidden border-y border-stone-100">
-            <div className="container mx-auto px-4 md:px-8 relative z-10">
-              <div className="max-w-3xl mx-auto text-center mb-16">
-                <SectionTag>Our Philosophy</SectionTag>
-                <h2 className="font-barlow font-normal text-4xl md:text-5xl text-stone-900 tracking-tighter mt-6 mb-6 text-balance">
-                  Why patients <span className="font-instrument-serif italic text-orange-500">choose us.</span>
-                </h2>
-                <p className="text-stone-500 font-barlow text-lg leading-relaxed text-balance">
-                  We don't just treat symptoms; we treat the whole person. Our clinical team provides evidence-based, compassionate care designed to create lasting change.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-                {[
-                  { icon: Heart, title: "Empathy First", desc: "We listen without judgment and treat every individual with the profound respect and dignity they deserve." },
-                  { icon: Shield, title: "Evidence-Based", desc: "Our therapeutic and psychiatric approaches are grounded in proven clinical research to ensure safe, effective outcomes." },
-                  { icon: Users, title: "Community Focused", desc: "Deeply rooted in Darby, PA, striving to make high-quality mental health support accessible to our neighbors." },
-                  { icon: Stethoscope, title: "Holistic Healing", desc: "We treat the whole person—mind, body, and spirit—recognizing that true wellness goes beyond symptom management." }
-                ].map((item, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex flex-col h-full p-8 rounded-[2rem] bg-stone-50/50 border border-stone-100 hover:bg-stone-50 transition-colors duration-300"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6 shadow-sm border border-stone-100">
-                      <item.icon className="w-5 h-5 text-orange-500" />
-                    </div>
-                    <h3 className="text-xl font-barlow font-bold text-stone-900 mb-3 tracking-tight">{item.title}</h3>
-                    <p className="text-stone-500 font-barlow text-sm leading-relaxed flex-grow">{item.desc}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* SECTION 3: WebGL Fluid Background CTA */}
-          <section className="py-24 bg-stone-50 overflow-hidden">
-            <div className="container mx-auto px-4 md:px-8">
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="max-w-6xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-24 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
-              >
-                {/* WebGL Fluid Background */}
-                <div className="absolute inset-0 z-0 opacity-40">
-                  <UiloraFrostedGlass 
-                    baseColor="#1c1917" // stone-900
-                    accentColor="#f97316" // orange-500
-                    speed={0.15}
-                  />
-                </div>
-                
-                {/* Subtle Ambient Glow overlays to ensure text readability */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-stone-900/50 blur-[50px] pointer-events-none z-0" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-900/50 blur-[50px] pointer-events-none z-0" />
-                
-                <div className="relative z-10 flex flex-col items-center">
-                  <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-sm">
-                    Our Mission
-                  </span>
-                  
-                  <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-7xl text-white tracking-tighter leading-[1.05] mb-8 max-w-3xl drop-shadow-lg text-balance">
-                    Healing tailored to <br className="hidden md:block" />
-                    <span className="font-instrument-serif italic text-orange-400 font-normal">your life.</span>
-                  </h2>
-                  
-                  <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md text-balance">
-                    We recognize that mental health is deeply connected to every aspect of your life. That's why our clinical approach moves beyond simple symptom management.
-                  </p>
-                  
-                  <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                    <motion.button 
-                      whileTap={{ scale: 0.96 }}
-                      className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-8 py-4 text-base rounded-full transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20"
-                    >
-                      <Calendar className="w-5 h-5" />
-                      Start Your Recovery
-                      <ArrowRight className="w-4 h-4 ml-1" />
-                    </motion.button>
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
-          </section>
-
-          {/* SECTION 4: Local Context & Medicaid */}
-          <section className="pt-12 pb-24 bg-stone-50 relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-8 relative z-10">
+              {/* Delaware County Container (Moved inside Section 1) */}
               <div className="bg-stone-900 text-white rounded-[3rem] relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
@@ -437,8 +332,10 @@ export default function ConditionsClient() {
                         <Shield className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-barlow font-bold text-white text-xl mb-2">100% Medicaid Acceptance</h4>
-                        <p className="font-barlow text-stone-300 text-sm md:text-base leading-relaxed">We exclusively accept Medicaid to ensure critical psychiatric care reaches those who need it most.</p>
+                        <h4 className="font-barlow font-bold text-white text-xl mb-2">Medicaid & Affordable Self-Pay Accepted</h4>
+                        <p className="font-barlow text-stone-300 text-sm md:text-base leading-relaxed">
+                          Your finances shouldn't stand between you and your recovery. Whether you are covered by Medicaid or need accessible out-of-pocket options, we ensure you get the expert psychiatric care you deserve.
+                        </p>
                       </div>
                     </div>
                   </motion.div>
@@ -446,6 +343,107 @@ export default function ConditionsClient() {
               </div>
             </div>
             <CurveTransition fillColor="#ffffff" inverted />
+          </section>
+
+          {/* SECTION 3: Why Choose Us (Refined E-E-A-T) */}
+          <section className="pt-24 pb-12 md:pb-16 bg-white relative overflow-hidden">
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <SectionTag>Our Philosophy</SectionTag>
+                <h2 className="font-barlow font-normal text-4xl md:text-5xl text-stone-900 tracking-tighter mt-6 mb-6 text-balance">
+                  Care that treats the cause, <span className="font-instrument-serif italic text-orange-500">not just the symptoms.</span>
+                </h2>
+                <p className="text-stone-500 font-barlow text-lg leading-relaxed text-balance">
+                  At Sunrise Human Care, we combine proven psychiatric methods with genuine compassion. Our focus is on long-term recovery, equipping you with the tools to regain control of your life.
+                </p>
+              </div>
+
+              {/* Bento Grid Layout (Matched to Home Page Our Story) */}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 max-w-6xl mx-auto">
+                
+                {/* Main Story Card */}
+                <Card containerClassName="md:col-span-8 rounded-[2.5rem]" className="flex flex-col md:flex-row gap-8 items-center p-8 md:p-10">
+                  <div className="w-full md:w-1/2 space-y-6">
+                    <div className="h-10 w-10 rounded-xl bg-white flex items-center justify-center shadow-md shadow-stone-200/50 border border-stone-100 transition-transform group-hover:scale-110 duration-300">
+                      <Stethoscope className="h-5 w-5 text-amber-500" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-stone-900 tracking-tight">
+                      Treating the Root Cause
+                    </h3>
+                    <div className="space-y-4">
+                      <p className="text-stone-500 leading-relaxed font-medium italic">
+                        &quot;A diagnosis like anxiety, depression, or trauma is just a starting point. True recovery requires understanding the specific biological, psychological, and social factors driving your condition.&quot;
+                      </p>
+                      <p className="text-stone-500 leading-relaxed font-medium">
+                        Our clinical team utilizes peer-reviewed, evidence-based methods—including targeted psychiatric medication management and cognitive-behavioral therapies—to build a roadmap specifically for you.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-full md:w-1/2 relative aspect-square md:aspect-auto md:h-full min-h-[300px] rounded-3xl overflow-hidden shadow-xl group/img">
+                    <video 
+                      src="https://res.cloudinary.com/dabsxebx8/video/upload/w_800,q_auto,f_auto/v1775521186/5697334-uhd_2160_3840_24fps_zh1enu.mp4" 
+                      poster="https://res.cloudinary.com/dabsxebx8/video/upload/w_800,so_0,f_auto,q_auto/v1775521186/5697334-uhd_2160_3840_24fps_zh1enu.jpg"
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-3 px-3 py-2 bg-stone-900/40 backdrop-blur-md border border-white/10 rounded-xl shadow-xl">
+                      <p className="text-white font-bold text-[10px] uppercase tracking-widest leading-none">Evidence-Based</p>
+                      <p className="text-orange-400 font-bold text-[8px] uppercase tracking-[0.1em] mt-1 leading-none opacity-90">Clinical Excellence</p>
+                    </div>
+                  </div>
+                </Card>
+
+                {/* Experience Magnified Bento Card */}
+                <MagnifiedBento 
+                  className="md:col-span-4 rounded-[2.5rem]" 
+                  title="Neuroplasticity & Growth"
+                  description="We believe the brain is capable of profound change. Our therapies focus on rewiring thought patterns for lasting emotional resilience."
+                  buttonText="Start Healing"
+                />
+
+                {/* Patient-Centered Feature */}
+                <Card containerClassName="md:col-span-4 rounded-[2.5rem]" className="p-8">
+                  <div className="h-10 w-10 rounded-xl bg-white flex items-center justify-center shadow-md shadow-stone-200/50 border border-stone-100 transition-transform group-hover:scale-110 duration-300 mb-6">
+                    <Heart className="h-5 w-5 text-orange-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-orange-600 transition-colors">
+                      Trauma-Informed Care
+                  </h3>
+                  <p className="text-sm text-stone-500 leading-relaxed font-medium">
+                    We ask &quot;what happened to you?&quot; instead of &quot;what's wrong with you?&quot; establishing a foundation of absolute safety before doing the deep work.
+                  </p>
+                </Card>
+
+                {/* Accessible Care Feature */}
+                <Card containerClassName="md:col-span-4 rounded-[2.5rem]" className="p-8">
+                  <div className="h-10 w-10 rounded-xl bg-white flex items-center justify-center shadow-md shadow-stone-200/50 border border-stone-100 transition-transform group-hover:scale-110 duration-300 mb-6">
+                    <ShieldCheck className="h-5 w-5 text-emerald-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-orange-600 transition-colors">
+                      Radical Acceptance
+                  </h3>
+                  <p className="text-sm text-stone-500 leading-relaxed font-medium">
+                    Healing begins the moment judgment ends. We meet you exactly where you are, validating your experience while guiding you toward change.
+                  </p>
+                </Card>
+
+                {/* Holistic Growth Stat Card */}
+                <Card containerClassName="md:col-span-4 rounded-[2.5rem]" className="flex flex-col justify-center items-center text-center p-8">
+                  <div className="h-10 w-10 rounded-xl bg-white flex items-center justify-center shadow-md shadow-stone-200/50 border border-stone-100 transition-transform group-hover:scale-110 duration-300 mb-6">
+                    <Leaf className="h-5 w-5 text-orange-500" />
+                  </div>
+                  <div className="text-5xl font-black text-stone-900 tracking-tighter mb-2">Holistic</div>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400">
+                      Whole-Person Healing
+                  </p>
+                </Card>
+
+              </div>
+            </div>
           </section>
 
           {/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}
@@ -464,7 +462,7 @@ export default function ConditionsClient() {
           </section>
 
           {/* SECTION 5: Appointment */}
-          <div className="bg-white pt-12 md:pt-24">
+          <div className="bg-white pb-12 md:pb-24">
             <AppointmentSection />
           </div>
           
