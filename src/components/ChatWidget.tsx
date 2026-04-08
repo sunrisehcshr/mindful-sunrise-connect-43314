@@ -397,7 +397,7 @@ export default function ChatWidget() {
                   animate={{ opacity: 1, scale: 1, rotate: 0 }}
                   exit={{ opacity: 0, scale: 0.8, rotate: 90 }}
                   transition={{ duration: 0.2 }}
-                  className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-xl hover:bg-orange-600 transition-colors"
+                  className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1a1a1a] text-white shadow-xl hover:bg-orange-500 hover:shadow-orange-500/25 transition-all duration-300"
                   aria-label="Close chat"
                 >
                   <X size={24} />
@@ -409,7 +409,7 @@ export default function ChatWidget() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.2 }}
-                  className="flex items-center bg-orange-500 p-1 rounded-full shadow-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-orange-500/25 h-12"
+                  className="flex items-center bg-[#1a1a1a] p-1 rounded-full shadow-2xl cursor-pointer hover:bg-orange-500 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group h-12"
                   onClick={() => setIsOpen(true)}
                 >
                   <div className="flex h-full items-center bg-white rounded-full pl-1 pr-5 sm:pr-6 gap-2.5 sm:gap-3">
@@ -436,7 +436,7 @@ export default function ChatWidget() {
                       Tap to ask AI
                     </span>
                   </div>
-                  <div className="px-3 sm:px-4 text-orange-50 flex items-center justify-center w-[36px] h-[36px] shrink-0 box-content">
+                  <div className="px-3 sm:px-4 text-stone-400 group-hover:text-white transition-colors duration-300 flex items-center justify-center w-[36px] h-[36px] shrink-0 box-content">
                     <MessageSquareText size={22} className="opacity-90" />
                   </div>
                 </motion.div>
