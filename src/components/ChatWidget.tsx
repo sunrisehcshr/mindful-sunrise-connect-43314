@@ -409,12 +409,12 @@ export default function ChatWidget() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.2 }}
-                  className="flex items-center bg-orange-500 p-1.5 rounded-full shadow-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-orange-500/25"
+                  className="flex items-center bg-orange-500 p-1 rounded-full shadow-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-orange-500/25 h-12"
                   onClick={() => setIsOpen(true)}
                 >
-                  <div className="flex items-center bg-white rounded-full pl-1.5 pr-6 sm:pr-8 py-1.5 gap-3 sm:gap-4">
+                  <div className="flex h-full items-center bg-white rounded-full pl-1 pr-5 sm:pr-6 gap-2.5 sm:gap-3">
                     <button 
-                      className="flex shrink-0 items-center justify-center w-10 h-10 bg-orange-50/50 rounded-full hover:bg-orange-100 transition-colors"
+                      className="flex shrink-0 items-center justify-center w-8 h-8 bg-orange-50/50 rounded-full hover:bg-orange-100 transition-colors"
                       onClick={(e) => {
                         e.stopPropagation();
                         setIsOpen(true);
@@ -430,14 +430,14 @@ export default function ChatWidget() {
                       title="Start speaking"
                       aria-label="Start speaking"
                     >
-                      <Mic size={18} className="text-orange-600" />
+                      <Mic size={16} className="text-orange-600" />
                     </button>
-                    <span className="font-mono text-[11px] sm:text-xs tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5">
+                    <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5 whitespace-nowrap">
                       Tap and ask AI
                     </span>
                   </div>
                   <div className="px-3 sm:px-4 text-orange-50">
-                    <MessageSquareText size={22} className="opacity-90" />
+                    <MessageSquareText size={18} className="opacity-90" />
                   </div>
                 </motion.div>
               )}
