@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, User, Bot, Loader2, Mic, Volume2, VolumeX, Square } from "lucide-react";
+import { MessageCircle, X, Send, User, Bot, Loader2, Mic, Volume2, VolumeX, Square, MessageSquareText } from "lucide-react";
 
 type Message = {
   id: string;
@@ -361,37 +361,60 @@ export default function ChatWidget() {
       </AnimatePresence>
 
       {/* Floating Toggle Button */}
-      <motion.button
-        onClick={() => isOpen ? closeChat() : setIsOpen(true)}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-600 transition-colors shadow-orange-500/25"
-        aria-label={isOpen ? "Close chat" : "Open chat"}
-      >
-        <AnimatePresence mode="wait" initial={false}>
-          {isOpen ? (
-            <motion.div
-              key="close"
-              initial={{ opacity: 0, rotate: -90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 90 }}
-              transition={{ duration: 0.2 }}
-            >
-              <X size={24} />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="open"
-              initial={{ opacity: 0, rotate: 90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: -90 }}
-              transition={{ duration: 0.2 }}
-            >
-              <MessageCircle size={24} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.button>
+      <AnimatePresence mode="wait" initial={false}>
+        {isOpen ? (
+          <motion.button
+            key="close"
+            onClick={closeChat}
+            initial={{ opacity: 0, scale: 0.8, rotate: -90 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, scale: 0.8, rotate: 90 }}
+            transition={{ duration: 0.2 }}
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1a1a1a] text-white shadow-xl hover:bg-black transition-colors"
+            aria-label="Close chat"
+          >
+            <X size={24} />
+          </motion.button>
+        ) : (
+          <motion.div
+            key="open"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.2 }}
+            className="flex items-center bg-[#1a1a1a] p-1.5 rounded-full shadow-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform"
+            onClick={() => setIsOpen(true)}
+          >
+            <div className="flex items-center bg-white rounded-full pl-1.5 pr-6 sm:pr-8 py-1.5 gap-3 sm:gap-4">
+              <button 
+                className="flex shrink-0 items-center justify-center w-10 h-10 bg-[#f4f4f5] rounded-full hover:bg-[#e4e4e7] transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsOpen(true);
+                  if (hasSpeechSupport) {
+                     setTimeout(() => {
+                       if (!isListening) {
+                         recognitionRef.current?.start();
+                         setIsListening(true);
+                       }
+                     }, 400);
+                  }
+                }}
+                title="Start speaking"
+                aria-label="Start speaking"
+              >
+                <Mic size={18} className="text-stone-800" />
+              </button>
+              <span className="font-mono text-[11px] sm:text-xs tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5">
+                Tap and ask AI
+              </span>
+            </div>
+            <div className="px-3 sm:px-4 text-stone-400">
+              <MessageSquareText size={22} className="opacity-80" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
