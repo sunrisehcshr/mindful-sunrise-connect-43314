@@ -16,14 +16,14 @@ export default function ChatWidget() {
     {
       id: "welcome-1",
       role: "assistant",
-      content: "Hi! I'm the Sunrise Human Care Assistant. How can I help you today?",
+      content: "Hello. I'm the Sunrise Assistant. Are you looking for mental health care, or do you have a question about Medicaid and scheduling?",
     },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   
   // Voice feature states
-  const [isVoiceEnabled, setIsVoiceEnabled] = useState(false);
+  const [isVoiceEnabled, setIsVoiceEnabled] = useState(true);
   const [isListening, setIsListening] = useState(false);
   const [hasSpeechSupport, setHasSpeechSupport] = useState(false);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
@@ -247,13 +247,17 @@ export default function ChatWidget() {
           >
             {/* Header */}
             <div className="flex items-center justify-between bg-stone-900 px-4 py-4 text-white">
-              <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500">
-                  <Bot size={18} className="text-white" />
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 overflow-hidden shadow-inner border border-stone-700">
+                  <img 
+                    src="https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
+                    alt="Sunrise Assistant" 
+                    className="h-full w-full object-cover opacity-90"
+                  />
                 </div>
                 <div>
-                  <h3 className="font-barlow font-bold leading-none">Sunrise Assistant</h3>
-                  <p className="text-xs text-stone-400 mt-1">We typically reply instantly</p>
+                  <h3 className="font-barlow font-bold text-[15px] leading-tight">Sunrise Care Assistant</h3>
+                  <p className="text-[11px] text-stone-400 mt-0.5">We reply instantly</p>
                 </div>
               </div>
               <div className="flex items-center gap-1">
@@ -291,14 +295,18 @@ export default function ChatWidget() {
                     }`}
                   >
                     <div
-                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                        msg.role === "user" ? "bg-stone-200" : "bg-orange-100"
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full overflow-hidden ${
+                        msg.role === "user" ? "bg-stone-200" : "bg-orange-500 border border-stone-200"
                       }`}
                     >
                       {msg.role === "user" ? (
                         <User size={14} className="text-stone-600" />
                       ) : (
-                        <Bot size={14} className="text-orange-600" />
+                        <img 
+                          src="https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
+                          alt="AI" 
+                          className="h-full w-full object-cover opacity-90"
+                        />
                       )}
                     </div>
                     <div
@@ -316,8 +324,12 @@ export default function ChatWidget() {
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="flex items-start gap-2">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100">
-                      <Bot size={14} className="text-orange-600" />
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-500 overflow-hidden border border-stone-200">
+                      <img 
+                        src="https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
+                        alt="AI" 
+                        className="h-full w-full object-cover opacity-90"
+                      />
                     </div>
                     <div className="rounded-2xl rounded-tl-sm bg-white border border-stone-200 px-4 py-3 shadow-sm">
                       <Loader2 size={16} className="animate-spin text-stone-400" />
@@ -433,7 +445,7 @@ export default function ChatWidget() {
                       <Mic size={18} className="text-orange-600" />
                     </button>
                     <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5 whitespace-nowrap">
-                      Tap and ask AI
+                      Ask AI
                     </span>
                   </div>
                   <div className="px-3 sm:px-4 text-orange-50 flex items-center justify-center w-[36px] h-[36px] shrink-0 box-content">
