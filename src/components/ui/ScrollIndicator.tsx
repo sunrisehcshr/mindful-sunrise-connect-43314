@@ -1,12 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function ScrollIndicator() {
   const [isVisible, setIsVisible] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
   const { scrollYProgress } = useScroll();
   
   // Smooth spring for the circle fill - matches the scroll speed smoothly
@@ -18,13 +21,48 @@ export default function ScrollIndicator() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Visible after 300px scroll
-      setIsVisible(window.scrollY > 300);
+      const currentScrollY = window.scrollY;
+      
+      // If we are at the very top (less than 300px), definitely hide it
+      if (currentScrollY < 300) {
+        setIsVisible(false);
+        setLastScrollY(currentScrollY);
+        return;
+      }
+
+      // Check if scrolling up (current is less than last)
+      const isScrollingUp = currentScrollY < lastScrollY;
+      
+      // If scrolling up, show it. If scrolling down, hide it.
+      if (isScrollingUp) {
+        setIsVisible(true);
+        
+        // Clear any existing timeout
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+        
+        // Set a new timeout to hide the button after 3 seconds of inactivity
+        timeoutRef.current = setTimeout(() => {
+          setIsVisible(false);
+        }, 3000);
+      } else {
+        setIsVisible(false);
+      }
+
+      // Update last scroll position
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [lastScrollY]);
 
   const scrollToTop = () => {
     window.scrollTo({
