@@ -70,21 +70,26 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                         <motion.h2
                             variants={{ initial: { x: 0 }, hover: { x: 20 } }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="text-lg sm:text-2xl md:text-5xl lg:text-6xl font-normal text-stone-400 group-hover:text-white group-data-[active=true]:text-white transition-colors duration-300 font-barlow tracking-tighter text-left flex-1 px-4 md:px-10"
+                            className="text-lg sm:text-2xl md:text-5xl lg:text-6xl font-normal text-stone-400 group-hover:text-white group-data-[active=true]:text-white transition-colors duration-300 font-barlow tracking-tighter text-left flex-1 px-4 md:px-10 text-balance line-clamp-2 md:line-clamp-none"
                         >
                             {item.title}
                         </motion.h2>
 
-                        {/* Button */}
+                        {/* Button / CTA */}
                         <motion.div
                             variants={{ 
-                                initial: { scale: 0.8, opacity: 0.5 }, 
-                                hover: { scale: 1, opacity: 1 } 
+                                initial: { opacity: 0.5 }, 
+                                hover: { opacity: 1 } 
                             }}
                             transition={{ type: "spring", duration: 0.3, bounce: 0 }}
-                            className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-stone-300 text-stone-400 group-hover:border-white group-data-[active=true]:border-white group-hover:text-white group-data-[active=true]:text-white transition-all duration-300 shrink-0"
+                            className="flex items-center gap-3 shrink-0"
                         >
-                            <ArrowUpRight className="h-4 w-4 md:h-5 md:h-5" />
+                            <span className="hidden sm:block font-barlow font-bold uppercase tracking-[0.2em] text-[10px] text-stone-400 group-hover:text-white transition-colors duration-300">
+                                Tap to Explore
+                            </span>
+                            <div className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-stone-300 text-stone-400 group-hover:border-white group-data-[active=true]:border-white group-hover:text-orange-500 group-data-[active=true]:text-orange-500 group-hover:bg-white group-data-[active=true]:bg-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:scale-110 group-hover:rotate-12">
+                                <ArrowUpRight className="h-4 w-4 md:h-5 md:h-5" />
+                            </div>
                         </motion.div>
                     </div>
 

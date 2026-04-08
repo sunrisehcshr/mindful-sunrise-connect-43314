@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
-import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
 
 export interface AnimatedCardItem {
   id?: number
@@ -35,13 +35,11 @@ function CardContent({ data }: { data: AnimatedCardItem }) {
     <div className="flex h-full w-full flex-col gap-4 bg-white">
       <div className="relative -outline-offset-1 flex h-[160px] w-full items-center justify-center overflow-hidden rounded-[1.5rem] outline outline-black/10 dark:outline-white/10 bg-stone-50">
         {data.image ? (
-          <Image
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
             src={data.image}
             alt={data.title}
-            fill
-            sizes="(max-width: 768px) 100vw, 400px"
-            className="select-none object-cover"
-            priority={false}
+            className="h-full w-full select-none object-cover"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-stone-100/50">
@@ -49,24 +47,14 @@ function CardContent({ data }: { data: AnimatedCardItem }) {
           </div>
         )}
       </div>
-      <div className="flex w-full items-center justify-between gap-2 px-3 pb-6">
-        <div className="flex min-w-0 flex-1 flex-col">
-          <span className="truncate font-barlow font-bold text-lg text-stone-900">{data.title}</span>
-          <span className="text-stone-500 text-sm truncate font-medium">{data.description}</span>
+      <div className="flex w-full items-center justify-between gap-2 px-3 pb-6 mt-2">
+        <div className="flex min-w-0 flex-1 flex-col justify-center">
+          <span className="font-barlow font-bold text-lg text-stone-900 leading-tight text-balance line-clamp-2 mb-1">{data.title}</span>
+          <span className="text-stone-500 text-sm font-medium leading-snug line-clamp-2">{data.description}</span>
         </div>
-        <Link href={data.href} className="flex h-10 shrink-0 cursor-pointer select-none items-center gap-1.5 rounded-full bg-stone-900 pl-4 pr-3 text-sm font-bold font-barlow text-white hover:bg-orange-600 transition-colors shadow-sm">
-            Visit
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="square"
-            >
-              <path d="M9.5 18L15.5 12L9.5 6" />
-            </svg>
+        <Link href={data.href} className="group flex h-10 shrink-0 cursor-pointer select-none items-center gap-1.5 rounded-full bg-stone-900 pl-4 pr-3 text-sm font-bold font-barlow text-white transition-all duration-300 hover:bg-orange-500 hover:shadow-lg active:scale-[0.96]">
+            Tap to Explore
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
         </Link>
       </div>
     </div>
@@ -106,7 +94,7 @@ function AnimatedCard({
         x: "-50%",
         bottom: "20px",
       }}
-      className="absolute flex h-[280px] w-[320px] sm:w-[400px] items-center justify-center overflow-hidden rounded-[2rem] border border-stone-200 bg-white p-2 shadow-none will-change-transform"
+      className="absolute flex h-[300px] w-[320px] sm:w-[400px] items-center justify-center overflow-hidden rounded-[2rem] border border-stone-200 bg-white p-2 shadow-none will-change-transform"
     >
       <CardContent data={item} />
     </motion.div>

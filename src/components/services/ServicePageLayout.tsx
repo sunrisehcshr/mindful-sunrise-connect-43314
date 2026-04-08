@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 import SEOHead from '../SEOHead';
 import SchemaMarkup from '../SchemaMarkup';
 import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Calendar, PhoneCall, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Calendar, PhoneCall, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
@@ -290,13 +290,20 @@ const ServicePageLayout = ({
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="h-full"
                       >
-                        <Link href={service.url}>
-                          <Card className="h-full flex flex-col justify-between group-hover:border-orange-300">
-                            <h3 className="text-xl font-barlow font-bold mb-3 text-stone-800">{service.title}</h3>
-                            <div className="flex items-center text-orange-500 mt-4 font-barlow font-bold uppercase tracking-widest text-xs">
-                              <span>Learn more</span>
-                              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        <Link href={service.url} className="block h-full">
+                          <Card className="h-full flex flex-col justify-between group-hover:border-orange-300/60 transition-all duration-300 p-6 md:p-8 bg-white/50 hover:bg-white shadow-sm hover:shadow-xl hover:shadow-orange-900/5 hover:-translate-y-1">
+                            <h3 className="text-xl md:text-2xl font-barlow font-bold mb-6 text-stone-800 leading-tight tracking-tight group-hover:text-orange-600 transition-colors text-balance">
+                              {service.title}
+                            </h3>
+                            <div className="flex items-center justify-between mt-auto pt-6 border-t border-stone-100 group-hover:border-orange-100 transition-colors">
+                              <span className="font-barlow font-bold uppercase tracking-[0.2em] text-[11px] text-stone-400 group-hover:text-orange-500 transition-colors">
+                                Tap to Explore
+                              </span>
+                              <div className="w-10 h-10 rounded-full bg-stone-50 border border-stone-100 flex items-center justify-center text-stone-400 group-hover:bg-orange-500 group-hover:border-orange-400 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
+                                <ArrowUpRight className="h-5 w-5 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+                              </div>
                             </div>
                           </Card>
                         </Link>
