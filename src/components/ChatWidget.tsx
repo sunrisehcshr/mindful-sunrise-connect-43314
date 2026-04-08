@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, User, Bot, Loader2 } from "lucide-react";
+import { MessageCircle, X, Send, User, Bot, Loader2, Mic, Volume2, VolumeX, Square } from "lucide-react";
 
 type Message = {
   id: string;
@@ -21,7 +21,40 @@ export default function ChatWidget() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  
+  // Voice feature states
+  const [isVoiceEnabled, setIsVoiceEnabled] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const [hasSpeechSupport, setHasSpeechSupport] = useState(false);
+  
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const recognitionRef = useRef<any>(null);
+
+  // Initialize Speech Recognition (Speech-to-Text)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      if (SpeechRecognition) {
+        setHasSpeechSupport(true);
+        const recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = true;
+        recognition.lang = 'en-US';
+
+        recognition.onresult = (event: any) => {
+          const current = event.resultIndex;
+          const transcript = event.results[current][0].transcript;
+          setInput(transcript);
+        };
+
+        recognition.onend = () => {
+          setIsListening(false);
+        };
+
+        recognitionRef.current = recognition;
+      }
+    }
+  }, []);
 
   // Auto-scroll to bottom of messages
   useEffect(() => {
@@ -30,9 +63,56 @@ export default function ChatWidget() {
     }
   }, [messages, isOpen]);
 
-  const handleSend = async (e: React.FormEvent) => {
+  // Text-to-Speech Helper
+  const speakMessage = (text: string) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel(); // Stop any currently playing speech
+    const utterance = new SpeechSynthesisUtterance(text);
+    // Optional: tweak voice properties here if desired
+    // utterance.rate = 1.0;
+    // utterance.pitch = 1.0;
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const toggleVoice = () => {
+    const newState = !isVoiceEnabled;
+    setIsVoiceEnabled(newState);
+    // Stop speaking immediately if turned off
+    if (!newState && window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+    }
+  };
+
+  const toggleListening = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (isListening) {
+      recognitionRef.current?.stop();
+      setIsListening(false);
+    } else {
+      setInput(""); // Optional: clear input when starting to dictate
+      recognitionRef.current?.start();
+      setIsListening(true);
+    }
+  };
+
+  const closeChat = () => {
+    setIsOpen(false);
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (isListening && recognitionRef.current) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    }
+  };
+
+  const handleSend = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     if (!input.trim() || isLoading) return;
+
+    // Stop listening if user hits send while mic is active
+    if (isListening && recognitionRef.current) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    }
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -45,8 +125,6 @@ export default function ChatWidget() {
     setIsLoading(true);
 
     try {
-      // For now, this points to a simple placeholder API.
-      // We will replace this with OpenAI or Anthropic later.
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -64,6 +142,11 @@ export default function ChatWidget() {
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
+      
+      // Speak the response if voice mode is enabled
+      if (isVoiceEnabled) {
+        speakMessage(data.message);
+      }
     } catch (error) {
       console.error(error);
       const errorMessage: Message = {
@@ -72,8 +155,20 @@ export default function ChatWidget() {
         content: "Sorry, I'm having trouble connecting right now. Please call us at (814) 620-2162.",
       };
       setMessages((prev) => [...prev, errorMessage]);
+      
+      if (isVoiceEnabled) {
+        speakMessage(errorMessage.content);
+      }
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  // Allow 'Enter' to send when typing
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSend();
     }
   };
 
@@ -99,13 +194,26 @@ export default function ChatWidget() {
                   <p className="text-xs text-stone-400 mt-1">We typically reply instantly</p>
                 </div>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="rounded-full p-2 text-stone-400 hover:bg-stone-800 hover:text-white transition-colors"
-                aria-label="Close chat"
-              >
-                <X size={20} />
-              </button>
+              <div className="flex items-center gap-1">
+                {/* Voice Auto-Read Toggle */}
+                <button
+                  onClick={toggleVoice}
+                  className={`rounded-full p-2 transition-colors ${
+                    isVoiceEnabled ? "text-orange-400 hover:bg-stone-800" : "text-stone-400 hover:bg-stone-800 hover:text-white"
+                  }`}
+                  title={isVoiceEnabled ? "Mute Voice" : "Enable Voice Reader"}
+                  aria-label="Toggle voice responses"
+                >
+                  {isVoiceEnabled ? <Volume2 size={18} /> : <VolumeX size={18} />}
+                </button>
+                <button
+                  onClick={closeChat}
+                  className="rounded-full p-2 text-stone-400 hover:bg-stone-800 hover:text-white transition-colors"
+                  aria-label="Close chat"
+                >
+                  <X size={20} />
+                </button>
+              </div>
             </div>
 
             {/* Messages Area */}
@@ -160,22 +268,44 @@ export default function ChatWidget() {
 
             {/* Input Area */}
             <div className="border-t border-stone-200 bg-white p-3">
-              <form onSubmit={handleSend} className="relative flex items-center">
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Type your message..."
-                  className="w-full rounded-full border border-stone-200 bg-stone-50 py-3 pl-4 pr-12 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
-                  disabled={isLoading}
-                />
+              <form onSubmit={handleSend} className="relative flex items-center gap-2">
+                <div className="relative flex-1">
+                  <input
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    placeholder={isListening ? "Listening..." : "Type your message..."}
+                    className={`w-full rounded-full border bg-stone-50 py-3 pl-4 text-sm focus:outline-none focus:ring-1 ${
+                      isListening 
+                        ? "border-orange-500 ring-1 ring-orange-500 text-orange-700 pr-10" 
+                        : "border-stone-200 pr-10 focus:border-orange-500 focus:ring-orange-500"
+                    }`}
+                    disabled={isLoading}
+                  />
+                  {hasSpeechSupport && (
+                    <button
+                      type="button"
+                      onClick={toggleListening}
+                      disabled={isLoading}
+                      className={`absolute right-2 top-1/2 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-full transition-colors ${
+                        isListening 
+                          ? "bg-orange-100 text-orange-600 animate-pulse" 
+                          : "text-stone-400 hover:bg-stone-200 hover:text-stone-700"
+                      }`}
+                      aria-label={isListening ? "Stop listening" : "Dictate message"}
+                    >
+                      {isListening ? <Square size={12} className="fill-current" /> : <Mic size={14} />}
+                    </button>
+                  )}
+                </div>
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading}
-                  className="absolute right-2 flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-white transition-colors hover:bg-orange-600 disabled:bg-stone-300 disabled:text-stone-500"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500 text-white transition-colors hover:bg-orange-600 disabled:bg-stone-300 disabled:text-stone-500"
                   aria-label="Send message"
                 >
-                  <Send size={14} className="ml-0.5" />
+                  <Send size={16} className="ml-0.5" />
                 </button>
               </form>
               <div className="mt-2 text-center">
@@ -188,7 +318,7 @@ export default function ChatWidget() {
 
       {/* Floating Toggle Button */}
       <motion.button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => isOpen ? closeChat() : setIsOpen(true)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-600 transition-colors shadow-orange-500/25"
