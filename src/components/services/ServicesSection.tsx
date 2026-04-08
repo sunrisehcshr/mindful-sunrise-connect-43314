@@ -99,7 +99,7 @@ const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => 
                             className="absolute top-1/2 left-1/2 w-[200px] h-[140px] md:w-[400px] md:h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 will-change-transform"
                         >
                             <Image
-                              src={typeof item.image === 'string' ? (item.image.includes('cloudinary') ? item.image.replace('/upload/', '/upload/f_auto,q_auto,w_800/') : item.image) : item.image.src}
+                              src={typeof item.image === 'string' ? (item.image.includes('cloudinary') && !item.image.includes('f_auto') ? item.image.replace('/upload/', '/upload/f_auto,q_auto,w_800/') : item.image) : item.image.src}
                               alt={`${item.title} services at Sunrise Human Care Services in Darby, PA`}
                               fill
                               sizes="(max-width: 768px) 200px, 400px"
@@ -127,7 +127,7 @@ const ServicesSection: React.FC = () => {
       title: "Individual Therapy",
       link: "/individual-therapy-darby-pa",
       desc: "One-on-one sessions focused on personal growth, emotional healing, and developing practical coping strategies for life's challenges.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/young-woman-with-her-psychologist-during-a-therapy-2025-11-20-15-46-12-utc_d2c80h.jpg",
+      image: "https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775606298/pexels-alex-green-5699466_kkze9s.jpg",
     },
     {
       title: "Couples Counseling",

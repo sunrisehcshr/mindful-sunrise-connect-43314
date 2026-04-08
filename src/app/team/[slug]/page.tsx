@@ -11,6 +11,7 @@ const providers = [
     specialties: ["Anxiety", "Depression", "ADHD", "Substance Use"],
     bio: "Mr. Michael Thevar built his successful career in the mental health industry over twenty years ago as a drug and alcohol counselor. His dedication to providing accessible care led to the founding of Sunrise Human Care Services, where he continues to lead with a focus on community wellness and clinical excellence.",
     image: "/images/michael.jpg",
+    acceptingPatients: false,
   },
   {
     slug: "holli-odonnell",
@@ -20,6 +21,7 @@ const providers = [
     specialties: ["Medication Management", "Bipolar", "OCD", "Clinical Supervision"],
     bio: "Holli O'Donnell is the Clinical Director for Sunrise Human Care. She is a Licensed Clinical Social Worker with over 25 years of experience in the mental health field.",
     image: "/images/holly.jpg",
+    acceptingPatients: false,
   },
   {
     slug: "dr-farah-khan",
@@ -29,6 +31,7 @@ const providers = [
     specialties: ["Child Therapy", "Adolescent Care", "Behavioral Issues", "ASD"],
     bio: "Specialized in children with ASD (Autism spectrum disorder) ADHD and other behavioral problems.",
     image: "/images/dr-farah-khan.jpeg",
+    acceptingPatients: true,
   },
   {
     slug: "chevonne-worthy",
@@ -38,6 +41,7 @@ const providers = [
     specialties: ["Individual Therapy", "Couples Counseling", "Family Therapy"],
     bio: "Chevonne is a compassionate and curious therapist providing Outpatient Therapeutic services.",
     image: "/images/chevonne-worthy.jpg",
+    acceptingPatients: true,
   },
   {
     slug: "anthony-obi",
@@ -47,6 +51,7 @@ const providers = [
     specialties: ["Schizophrenia", "Mood Disorders", "Geriatric Care"],
     bio: "Anthony Obi works as an Outpatient Therapist at Sunrise Human Care Services with a focus on severe mental health conditions.",
     image: "/images/Toni Obi's Profile Picture.jpeg",
+    acceptingPatients: true,
   },
   {
     slug: "michael-flynn",
@@ -56,6 +61,7 @@ const providers = [
     specialties: ["Social Work", "Evidence-Based Care", "Emotional Well-being"],
     bio: "Michael Flynn works as an Outpatient Therapist at Sunrise Human Care Services, dedicated to emotional well-being.",
     image: "/images/michael-flynn.jpg",
+    acceptingPatients: true,
   },
   {
     slug: "shanada-anderson",
@@ -65,6 +71,7 @@ const providers = [
     specialties: ["Couples Counseling", "Relationship Issues", "Communication"],
     bio: "Shanada Anderson, MS, is a therapist dedicated to creating safe, affirming spaces for relationship healing.",
     image: "/images/Shanada Anderson.jpeg",
+    acceptingPatients: true,
   }
 ];
 

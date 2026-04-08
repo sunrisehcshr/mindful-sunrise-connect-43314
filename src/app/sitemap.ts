@@ -15,8 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/medicaid-therapy',
     '/mental-health-darby-pa',
     '/betterhelp-alternatives-pa',
-    '/privacy-policy',
-    '/terms-of-service',
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified,

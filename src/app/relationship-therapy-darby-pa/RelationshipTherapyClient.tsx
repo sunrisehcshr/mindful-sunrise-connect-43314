@@ -322,7 +322,7 @@ export default function RelationshipTherapyClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
               alt="Relationship Therapy in Darby PA" 
               fill 
               sizes="(max-width: 768px) 100vw, 50vw"

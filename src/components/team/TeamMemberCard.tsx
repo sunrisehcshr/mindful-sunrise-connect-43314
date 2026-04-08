@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Image from 'next/image';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { Button } from '../ui/button';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 interface TeamMemberCardProps {
@@ -14,6 +14,7 @@ interface TeamMemberCardProps {
   bio: string;
   image?: string;
   index: number;
+  slug?: string;
 }
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
@@ -22,9 +23,9 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   specialties,
   bio,
   image,
-  index
+  index,
+  slug
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -95,32 +96,23 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
             </div>
 
             <div className="w-full mt-auto pt-5 border-t border-stone-100/80 flex flex-col justify-end flex-grow">
-              {isExpanded && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="mb-4 text-left"
-                >
-                  <p className="text-sm text-stone-500 font-barlow leading-relaxed">
-                    {bio}
-                  </p>
-                </motion.div>
-              )}
+              <p className="mb-6 text-sm text-stone-500 font-barlow leading-relaxed text-left line-clamp-4">
+                {bio}
+              </p>
               
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="w-full text-stone-600 hover:text-orange-600 hover:bg-orange-50/50 font-barlow font-medium rounded-2xl transition-colors"
-              >
-                {isExpanded ? (
-                  <>Close Bio <ChevronUp className="ml-1.5 h-4 w-4" /></>
-                ) : (
-                  <>Read Bio <ChevronDown className="ml-1.5 h-4 w-4" /></>
-                )}
-              </Button>
+              {slug ? (
+                <Link 
+                  href={`/team/${slug}`}
+                  className="mt-auto w-full py-3 px-4 bg-orange-50 hover:bg-orange-100 text-orange-600 rounded-xl font-bold transition-colors flex items-center justify-center group/btn"
+                >
+                  View Full Profile 
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              ) : (
+                <div className="mt-auto w-full py-3 px-4 bg-stone-50 text-stone-400 rounded-xl font-bold flex items-center justify-center">
+                  Profile Coming Soon
+                </div>
+              )}
             </div>
           </div>
         </div>

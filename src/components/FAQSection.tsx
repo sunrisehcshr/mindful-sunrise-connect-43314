@@ -91,35 +91,39 @@ const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextC
                 style={{ background }}
             />
             <div className="relative z-10 p-6 md:p-8">
-                <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                        <h3 className="text-lg font-barlow font-medium leading-tight tracking-tight transition-colors group-hover:text-orange-500" style={{ color: cardTextColor }}>{faq.question}</h3>
+                <div className="flex items-start justify-between gap-4 md:gap-6">
+                    <div className="flex flex-col flex-1 w-full">
+                        {/* Small badge above heading */}
                         {faq.meta && (
-                            <span className="inline-flex w-fit items-center rounded-full border border-stone-100 bg-stone-50/50 px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 transition-opacity duration-300 sm:ml-auto shrink-0">
+                            <span className="mb-3 inline-flex w-fit items-center rounded-full border border-stone-100 bg-stone-50/50 px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400 transition-opacity duration-300">
                                 {faq.meta}
                             </span>
                         )}
+                        <h3 className="text-lg md:text-xl font-barlow font-medium leading-tight tracking-tight transition-colors group-hover:text-orange-500" style={{ color: cardTextColor }}>{faq.question}</h3>
+                        
+                        <AnimatePresence>
+                            {isOpen && (
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    className="overflow-hidden"
+                                >
+                                    <p className="pt-4 font-barlow text-base leading-relaxed" style={{ color: answerTextColor }}>{faq.answer}</p>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
+
+                    {/* Plus icon on right */}
                     <motion.div
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        className="flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-white border border-stone-100 shadow-sm transition-colors duration-300 group-hover:border-orange-200"
+                        animate={{ rotate: isOpen ? -45 : 0 }}
+                        className="flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-white border border-stone-100 shadow-sm transition-colors duration-300 group-hover:border-orange-200 mt-1 md:mt-2"
                         style={{ color: iconColor }}
                     >
                         <Plus size={20} className="group-hover:text-orange-500 transition-colors" />
                     </motion.div>
                 </div>
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden"
-                        >
-                            <p className="pt-4 font-barlow text-base leading-relaxed" style={{ color: answerTextColor }}>{faq.answer}</p>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </div>
         </div>
     );

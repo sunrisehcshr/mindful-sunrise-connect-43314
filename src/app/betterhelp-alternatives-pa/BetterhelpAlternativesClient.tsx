@@ -81,10 +81,10 @@ export default function BetterhelpAlternativesClient() {
       
       <main className="flex-grow">
         {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
+        <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774917848/friendly-psychologist-having-session-with-patient-2023-11-27-05-07-28-utc_jovc0x.jpg" 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775606297/pexels-gustavo-fring-7447075_nogd9k.jpg" 
               alt="BetterHelp Alternatives in PA" 
               fill 
               className="object-cover opacity-60"

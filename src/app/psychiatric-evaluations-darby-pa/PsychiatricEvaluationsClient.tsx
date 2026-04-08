@@ -328,7 +328,7 @@ export default function PsychiatricEvaluationsClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg" 
+              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg" 
               alt="Psychiatric Evaluations in Darby PA" 
               fill 
               sizes="(max-width: 768px) 100vw, 50vw"

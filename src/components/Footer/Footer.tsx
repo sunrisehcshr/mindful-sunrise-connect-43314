@@ -15,9 +15,9 @@ const Footer: React.FC = () => {
     <footer className="bg-white text-stone-800 border-t border-stone-200">
       {/* Main Footer */}
       <div className="container mx-auto px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* About */}
-          <div className="space-y-5">
+          <div className="space-y-5 lg:col-span-2">
             <motion.div whileTap={{ scale: 0.96 }}>
               <Link href="/" className="flex items-center gap-2 w-fit group">
                 <Image src="/images/logo.png" alt="Sunrise Human Care Services Logo" width={80} height={72} className="object-contain transition-transform duration-300 group-hover:-translate-y-1" />
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-5">
+          <div className="space-y-5 lg:col-span-2">
             <h3 className="font-barlow font-semibold text-lg text-stone-900">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
@@ -84,16 +84,60 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-5">
-            <h3 className="font-barlow font-semibold text-lg text-stone-900">Quick Links</h3>
-            <FooterNav />
+          {/* Quick Links & Locations */}
+          <div className="space-y-8">
+            <div className="space-y-5">
+              <h3 className="font-barlow font-semibold text-lg text-stone-900">Quick Links</h3>
+              <FooterNav />
+            </div>
+            
+            <div className="space-y-5">
+              <h3 className="font-barlow font-semibold text-lg text-stone-900">Locations</h3>
+              <ul className="space-y-3">
+                {[
+                  { label: "Darby, PA", href: "/mental-health-darby-pa" },
+                  { label: "Lansdowne, PA", href: "/mental-health-lansdowne-pa" },
+                  { label: "Upper Darby, PA", href: "/mental-health-upper-darby-pa" },
+                  { label: "Yeadon, PA", href: "/mental-health-yeadon-pa" },
+                  { label: "Sharon Hill, PA", href: "/mental-health-sharon-hill-pa" },
+                  { label: "Collingdale, PA", href: "/mental-health-collingdale-pa" }
+                ].map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-sm text-stone-600 hover:text-orange-500 transition-colors font-barlow flex items-center group">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500/40 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           
-          {/* Newsletter */}
-          <div className="space-y-5">
-            <h3 className="font-barlow font-semibold text-lg text-stone-900">Newsletter</h3>
-            <NewsletterForm />
+          {/* Resources & Newsletter */}
+          <div className="space-y-8">
+            <div className="space-y-5">
+              <h3 className="font-barlow font-semibold text-lg text-stone-900">Resources</h3>
+              <ul className="space-y-3">
+                {[
+                  { label: "FAQ", href: "/faq" },
+                  { label: "Medicaid Therapy", href: "/medicaid-therapy" },
+                  { label: "BetterHelp Alternatives", href: "/betterhelp-alternatives-pa" },
+                  { label: "Blog", href: "/blog" }
+                ].map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-sm text-stone-600 hover:text-orange-500 transition-colors font-barlow flex items-center group">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500/40 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-5">
+              <h3 className="font-barlow font-semibold text-lg text-stone-900">Newsletter</h3>
+              <NewsletterForm />
+            </div>
           </div>
         </div>
       </div>
