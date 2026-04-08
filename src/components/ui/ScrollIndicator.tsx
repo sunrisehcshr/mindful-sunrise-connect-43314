@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 export default function ScrollIndicator() {
   const [isVisible, setIsVisible] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   const { scrollYProgress } = useScroll();
@@ -26,12 +26,12 @@ export default function ScrollIndicator() {
       // If we are at the very top (less than 300px), definitely hide it
       if (currentScrollY < 300) {
         setIsVisible(false);
-        setLastScrollY(currentScrollY);
+        lastScrollY.current = currentScrollY;
         return;
       }
 
       // Check if scrolling up (current is less than last)
-      const isScrollingUp = currentScrollY < lastScrollY;
+      const isScrollingUp = currentScrollY < lastScrollY.current;
       
       // If scrolling up, show it. If scrolling down, hide it.
       if (isScrollingUp) {
@@ -51,7 +51,7 @@ export default function ScrollIndicator() {
       }
 
       // Update last scroll position
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -62,7 +62,7 @@ export default function ScrollIndicator() {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [lastScrollY]);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
