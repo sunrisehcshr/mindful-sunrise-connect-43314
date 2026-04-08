@@ -1,13 +1,11 @@
 import { NextResponse } from "next/server";
 import { generateObject } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { z } from "zod";
 
-// Create a custom OpenAI client that can connect to any Open-Source Model provider
-// (Like Together AI, Groq, OpenRouter, etc.)
-const customProvider = createOpenAI({
-  apiKey: process.env.AI_API_KEY || "",
-  baseURL: process.env.AI_BASE_URL || "https://api.openai.com/v1", // Change this in your .env
+// Create a custom Google Generative AI client (for AI Studio API keys)
+const googleProvider = createGoogleGenerativeAI({
+  apiKey: process.env.GOOGLE_API_KEY || "",
 });
 
 const SYSTEM_PROMPT = `
@@ -34,17 +32,17 @@ export async function POST(request: Request) {
     const { messages } = await request.json();
 
     // Ensure we have an API key configured
-    if (!process.env.AI_API_KEY) {
-      console.warn("AI_API_KEY is not set in the environment variables.");
+    if (!process.env.GOOGLE_API_KEY) {
+      console.warn("GOOGLE_API_KEY is not set in the environment variables.");
       return NextResponse.json({
         message: "Thank you for reaching out to Sunrise Human Care Services! Our AI system is currently being configured. Please call us at (814) 620-2162 for immediate assistance.",
         navigateTo: null
       });
     }
 
-    // Call the Gemma model and force it to return perfectly structured JSON
+    // Call the Google model and force it to return perfectly structured JSON
     const { object } = await generateObject({
-      model: customProvider(process.env.AI_MODEL_NAME || "gemma-4-31b-it"),
+      model: googleProvider(process.env.GOOGLE_MODEL_NAME || "gemini-1.5-flash"),
       system: SYSTEM_PROMPT,
       messages: messages.map((m: any) => ({ role: m.role, content: m.content })),
       schema: z.object({
