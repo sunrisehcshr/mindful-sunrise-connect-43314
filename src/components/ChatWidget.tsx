@@ -414,7 +414,7 @@ export default function ChatWidget() {
                 >
                   <div className="flex h-full items-center bg-white rounded-full pl-1 pr-5 sm:pr-6 gap-2.5 sm:gap-3">
                     <button 
-                      className="flex shrink-0 items-center justify-center w-8 h-8 bg-orange-50/50 rounded-full hover:bg-orange-100 transition-colors"
+                      className="flex shrink-0 items-center justify-center w-[36px] h-[36px] bg-orange-50/50 rounded-full hover:bg-orange-100 transition-colors"
                       onClick={(e) => {
                         e.stopPropagation();
                         setIsOpen(true);
@@ -430,14 +430,14 @@ export default function ChatWidget() {
                       title="Start speaking"
                       aria-label="Start speaking"
                     >
-                      <Mic size={16} className="text-orange-600" />
+                      <Mic size={18} className="text-orange-600" />
                     </button>
                     <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5 whitespace-nowrap">
                       Tap and ask AI
                     </span>
                   </div>
-                  <div className="px-3 sm:px-4 text-orange-50">
-                    <MessageSquareText size={18} className="opacity-90" />
+                  <div className="px-3 sm:px-4 text-orange-50 flex items-center justify-center w-[36px] h-[36px] shrink-0 box-content">
+                    <MessageSquareText size={22} className="opacity-90" />
                   </div>
                 </motion.div>
               )}
