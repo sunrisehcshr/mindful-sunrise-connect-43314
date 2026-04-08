@@ -7,10 +7,11 @@ import { cn } from "@/lib/utils";
 
 export default function ScrollIndicator() {
   const [isVisible, setIsVisible] = useState(false);
+  
+  // We moved the useRefs below the useScroll to ensure hook order never changes
+  const { scrollYProgress } = useScroll();
   const lastScrollY = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  
-  const { scrollYProgress } = useScroll();
   
   // Smooth spring for the circle fill - matches the scroll speed smoothly
   const pathLength = useSpring(scrollYProgress, {
