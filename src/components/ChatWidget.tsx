@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, User, Bot, Loader2, Mic, Volume2, VolumeX, Square, MessageSquareText } from "lucide-react";
+import { MessageCircle, X, Send, User, Loader2, Mic, Volume2, VolumeX, Square, MessageSquareText, Sparkles } from "lucide-react";
 
 type Message = {
   id: string;
@@ -248,12 +248,8 @@ export default function ChatWidget() {
             {/* Header */}
             <div className="flex items-center justify-between bg-stone-900 px-4 py-4 text-white">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 overflow-hidden shadow-inner border border-stone-700">
-                  <img 
-                    src="https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
-                    alt="Sunrise Assistant" 
-                    className="h-full w-full object-cover opacity-90"
-                  />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-inner border border-orange-500/20">
+                  <Sparkles size={20} className="text-white" />
                 </div>
                 <div>
                   <h3 className="font-barlow font-bold text-[15px] leading-tight">Sunrise Care Assistant</h3>
@@ -295,18 +291,14 @@ export default function ChatWidget() {
                     }`}
                   >
                     <div
-                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full overflow-hidden ${
-                        msg.role === "user" ? "bg-stone-200" : "bg-orange-500 border border-stone-200"
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+                        msg.role === "user" ? "bg-stone-200" : "bg-gradient-to-br from-orange-400 to-orange-600 shadow-sm"
                       }`}
                     >
                       {msg.role === "user" ? (
                         <User size={14} className="text-stone-600" />
                       ) : (
-                        <img 
-                          src="https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
-                          alt="AI" 
-                          className="h-full w-full object-cover opacity-90"
-                        />
+                        <Sparkles size={14} className="text-white" />
                       )}
                     </div>
                     <div
@@ -324,12 +316,8 @@ export default function ChatWidget() {
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="flex items-start gap-2">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-500 overflow-hidden border border-stone-200">
-                      <img 
-                        src="https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
-                        alt="AI" 
-                        className="h-full w-full object-cover opacity-90"
-                      />
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-sm">
+                      <Sparkles size={14} className="text-white" />
                     </div>
                     <div className="rounded-2xl rounded-tl-sm bg-white border border-stone-200 px-4 py-3 shadow-sm">
                       <Loader2 size={16} className="animate-spin text-stone-400" />
