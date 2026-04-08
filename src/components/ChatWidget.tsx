@@ -31,6 +31,8 @@ export default function ChatWidget() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<any>(null);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
   // Load available voices for TTS
   useEffect(() => {
     const loadVoices = () => {
@@ -86,6 +88,22 @@ export default function ChatWidget() {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages, isOpen]);
+
+  // Scroll visibility logic
+  useEffect(() => {
+    const handleScroll = () => {
+      // 40% of the window height ensures it appears shortly after scrolling past the hero
+      if (window.scrollY > window.innerHeight * 0.4) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Text-to-Speech Helper
   const speakMessage = (text: string) => {
@@ -217,7 +235,7 @@ export default function ChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center pointer-events-none">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -225,7 +243,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="mb-4 w-[350px] max-w-[calc(100vw-3rem)] overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl flex flex-col h-[500px] max-h-[calc(100vh-8rem)]"
+            className="mb-4 w-[350px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl flex flex-col h-[500px] max-h-[calc(100vh-8rem)] pointer-events-auto"
           >
             {/* Header */}
             <div className="flex items-center justify-between bg-stone-900 px-4 py-4 text-white">
@@ -361,57 +379,69 @@ export default function ChatWidget() {
       </AnimatePresence>
 
       {/* Floating Toggle Button */}
-      <AnimatePresence mode="wait" initial={false}>
-        {isOpen ? (
-          <motion.button
-            key="close"
-            onClick={closeChat}
-            initial={{ opacity: 0, scale: 0.8, rotate: -90 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            exit={{ opacity: 0, scale: 0.8, rotate: 90 }}
-            transition={{ duration: 0.2 }}
-            className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1a1a1a] text-white shadow-xl hover:bg-black transition-colors"
-            aria-label="Close chat"
-          >
-            <X size={24} />
-          </motion.button>
-        ) : (
+      <AnimatePresence>
+        {(isScrolled || isOpen) && (
           <motion.div
-            key="open"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.2 }}
-            className="flex items-center bg-[#1a1a1a] p-1.5 rounded-full shadow-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform"
-            onClick={() => setIsOpen(true)}
+            exit={{ opacity: 0, y: 40 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="pointer-events-auto"
           >
-            <div className="flex items-center bg-white rounded-full pl-1.5 pr-6 sm:pr-8 py-1.5 gap-3 sm:gap-4">
-              <button 
-                className="flex shrink-0 items-center justify-center w-10 h-10 bg-[#f4f4f5] rounded-full hover:bg-[#e4e4e7] transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsOpen(true);
-                  if (hasSpeechSupport) {
-                     setTimeout(() => {
-                       if (!isListening) {
-                         recognitionRef.current?.start();
-                         setIsListening(true);
-                       }
-                     }, 400);
-                  }
-                }}
-                title="Start speaking"
-                aria-label="Start speaking"
-              >
-                <Mic size={18} className="text-stone-800" />
-              </button>
-              <span className="font-mono text-[11px] sm:text-xs tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5">
-                Tap and ask AI
-              </span>
-            </div>
-            <div className="px-3 sm:px-4 text-stone-400">
-              <MessageSquareText size={22} className="opacity-80" />
-            </div>
+            <AnimatePresence mode="wait" initial={false}>
+              {isOpen ? (
+                <motion.button
+                  key="close"
+                  onClick={closeChat}
+                  initial={{ opacity: 0, scale: 0.8, rotate: -90 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                  exit={{ opacity: 0, scale: 0.8, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-xl hover:bg-orange-600 transition-colors"
+                  aria-label="Close chat"
+                >
+                  <X size={24} />
+                </motion.button>
+              ) : (
+                <motion.div
+                  key="open"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center bg-orange-500 p-1.5 rounded-full shadow-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-orange-500/25"
+                  onClick={() => setIsOpen(true)}
+                >
+                  <div className="flex items-center bg-white rounded-full pl-1.5 pr-6 sm:pr-8 py-1.5 gap-3 sm:gap-4">
+                    <button 
+                      className="flex shrink-0 items-center justify-center w-10 h-10 bg-orange-50/50 rounded-full hover:bg-orange-100 transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsOpen(true);
+                        if (hasSpeechSupport) {
+                           setTimeout(() => {
+                             if (!isListening) {
+                               recognitionRef.current?.start();
+                               setIsListening(true);
+                             }
+                           }, 400);
+                        }
+                      }}
+                      title="Start speaking"
+                      aria-label="Start speaking"
+                    >
+                      <Mic size={18} className="text-orange-600" />
+                    </button>
+                    <span className="font-mono text-[11px] sm:text-xs tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5">
+                      Tap and ask AI
+                    </span>
+                  </div>
+                  <div className="px-3 sm:px-4 text-orange-50">
+                    <MessageSquareText size={22} className="opacity-90" />
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
