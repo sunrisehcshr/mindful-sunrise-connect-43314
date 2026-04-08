@@ -16,7 +16,7 @@ export default function ChatWidget() {
     {
       id: "welcome-1",
       role: "assistant",
-      content: "Hello. I'm the Sunrise Assistant. Are you looking for mental health care, or do you have a question about Medicaid and scheduling?",
+      content: "Hello. I'm the Sunrise AI Assistant. Tell me what you're looking for, and I'll find the right care for you.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -249,11 +249,11 @@ export default function ChatWidget() {
             <div className="flex items-center justify-between bg-stone-900 px-4 py-4 text-white">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-inner border border-orange-500/20">
-                  <Sparkles size={20} className="text-white" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bot-icon lucide-bot text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
                 </div>
                 <div>
-                  <h3 className="font-barlow font-bold text-[15px] leading-tight">Sunrise Care Assistant</h3>
-                  <p className="text-[11px] text-stone-400 mt-0.5">We reply instantly</p>
+                  <h3 className="font-barlow font-bold text-[15px] leading-tight">Sunrise AI Assistant</h3>
+                  <p className="text-[11px] text-stone-400 mt-0.5">I can help you find what you need.</p>
                 </div>
               </div>
               <div className="flex items-center gap-1">
@@ -298,7 +298,7 @@ export default function ChatWidget() {
                       {msg.role === "user" ? (
                         <User size={14} className="text-stone-600" />
                       ) : (
-                        <Sparkles size={14} className="text-white" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bot-icon lucide-bot text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
                       )}
                     </div>
                     <div
@@ -317,7 +317,7 @@ export default function ChatWidget() {
                 <div className="flex justify-start">
                   <div className="flex items-start gap-2">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-sm">
-                      <Sparkles size={14} className="text-white" />
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bot-icon lucide-bot text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
                     </div>
                     <div className="rounded-2xl rounded-tl-sm bg-white border border-stone-200 px-4 py-3 shadow-sm">
                       <Loader2 size={16} className="animate-spin text-stone-400" />
