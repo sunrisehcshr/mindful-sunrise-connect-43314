@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, User, Loader2, Mic, Volume2, VolumeX, Square, MessageSquareText, Sparkles } from "lucide-react";
 
@@ -11,6 +12,7 @@ type Message = {
 };
 
 export default function ChatWidget() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -208,6 +210,11 @@ export default function ChatWidget() {
       // Speak the response if voice mode is enabled
       if (isVoiceEnabled) {
         speakMessage(data.message);
+      }
+
+      // If the API returned a route, navigate to it in the background
+      if (data.navigateTo) {
+        router.push(data.navigateTo);
       }
     } catch (error) {
       console.error(error);
