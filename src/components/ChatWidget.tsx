@@ -26,9 +26,25 @@ export default function ChatWidget() {
   const [isVoiceEnabled, setIsVoiceEnabled] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [hasSpeechSupport, setHasSpeechSupport] = useState(false);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<any>(null);
+
+  // Load available voices for TTS
+  useEffect(() => {
+    const loadVoices = () => {
+      if (typeof window !== "undefined" && window.speechSynthesis) {
+        setVoices(window.speechSynthesis.getVoices());
+      }
+    };
+    
+    if (typeof window !== "undefined" && window.speechSynthesis) {
+      loadVoices();
+      // Chrome loads voices asynchronously, so we must listen to the event
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  }, []);
 
   // Initialize Speech Recognition (Speech-to-Text)
   useEffect(() => {
@@ -45,6 +61,14 @@ export default function ChatWidget() {
           const current = event.resultIndex;
           const transcript = event.results[current][0].transcript;
           setInput(transcript);
+        };
+
+        recognition.onerror = (event: any) => {
+          console.error("Speech recognition error:", event.error);
+          setIsListening(false);
+          if (event.error === 'not-allowed') {
+            alert("Microphone access was denied. Please allow microphone permissions in your browser to use voice input.");
+          }
         };
 
         recognition.onend = () => {
@@ -68,9 +92,29 @@ export default function ChatWidget() {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel(); // Stop any currently playing speech
     const utterance = new SpeechSynthesisUtterance(text);
-    // Optional: tweak voice properties here if desired
-    // utterance.rate = 1.0;
-    // utterance.pitch = 1.0;
+    
+    // Find a natural sounding English female voice
+    const englishVoices = voices.filter(v => v.lang.startsWith('en'));
+    const femaleVoice = englishVoices.find(v => 
+      v.name.includes('Samantha') || // Apple's high quality voice
+      v.name.includes('Google US English') || // Chrome's high quality voice
+      v.name.includes('Zira') || // Microsoft's default female
+      v.name.includes('Victoria') ||
+      v.name.includes('Karen') ||
+      v.name.toLowerCase().includes('female')
+    );
+
+    if (femaleVoice) {
+      utterance.voice = femaleVoice;
+    } else if (englishVoices.length > 0) {
+      // Fallback to the first English voice if no specific female voice is found
+      utterance.voice = englishVoices[0];
+    }
+
+    // Slightly tweak the speech properties for a calmer, more natural tone
+    utterance.rate = 0.95;
+    utterance.pitch = 1.05;
+
     window.speechSynthesis.speak(utterance);
   };
 
