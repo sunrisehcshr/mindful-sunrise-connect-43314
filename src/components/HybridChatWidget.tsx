@@ -308,19 +308,13 @@ export default function HybridChatWidget() {
     setAgentState("connecting");
 
     try {
-      // 1. Fetch short-lived token from our own secure backend
-      const tokenRes = await fetch("/api/sunny");
-      const { token, error } = await tokenRes.json();
-      
-      if (error || !token) throw new Error("Failed to get token");
-
-      // 2. Access mic
+      // Access mic
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: { channelCount: 1, sampleRate: 48000, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
       });
       micStreamRef.current = stream;
 
-      // 3. Audio Contexts
+      // Audio Contexts
       const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 48000 });
       audioCtxRef.current = audioCtx;
 
@@ -328,8 +322,9 @@ export default function HybridChatWidget() {
       playbackCtxRef.current = playCtx;
       nextPlayTimeRef.current = playCtx.currentTime;
 
-      // 4. Connect DIRECTLY to Deepgram using the temporary token (Bypasses Netlify Edge completely)
-      const ws = new WebSocket("wss://agent.deepgram.com/agent", ["token", token]);
+      // Connect to the Netlify Edge Function Proxy
+      const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+      const ws = new WebSocket(`${protocol}//${window.location.host}/api/sunny`);
       ws.binaryType = "arraybuffer";
       wsRef.current = ws;
 
