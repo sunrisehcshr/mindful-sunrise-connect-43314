@@ -1,0 +1,1 @@
+interface WebSocket { accept?: () => void; }

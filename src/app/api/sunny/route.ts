@@ -131,7 +131,7 @@ export async function GET(request: Request) {
 function handleCloudflareWS(request: Request, apiKey: string) {
   // @ts-ignore
   const pair = new WebSocketPair();
-  const [client, server] = Object.values(pair) as any[];
+  const [client, server] = Object.values(pair) as WebSocket[];
 
   server.accept?.();
 
