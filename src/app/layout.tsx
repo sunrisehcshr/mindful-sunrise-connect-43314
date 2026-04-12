@@ -102,7 +102,8 @@ export default function RootLayout({
           <Sonner />
           {children}
           <ScrollIndicator />
-          <HybridChatWidget />
+          {/* AI Chat Widget - Temporarily Disabled */}
+          {/* <HybridChatWidget /> */}
         </TooltipProvider>
       </body>
     </html>
