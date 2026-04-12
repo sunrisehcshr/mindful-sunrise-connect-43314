@@ -2,8 +2,8 @@
  * netlify/edge-functions/sunny.ts
  *
  * Native Netlify Edge Function WebSocket proxy for the Deepgram Voice Agent.
- * This explicitly bypasses Next.js's App Router, which is known to strip
- * the WebSocket upgrades and block `WebSocketPair` on Netlify.
+ * This runs on Deno (Netlify's Edge platform) and uses Deno's native
+ * `upgradeWebSocket` API to proxy the connection securely.
  *
  * Flow:
  *   Browser <--WS--> /api/sunny <--WS--> api.deepgram.com/agent
@@ -12,6 +12,7 @@
 const DEEPGRAM_AGENT_URL = "wss://agent.deepgram.com/agent";
 
 export default async (request: Request, context: any) => {
+  // Get API key from Netlify/Deno environment
   // @ts-ignore: Deno is available in Netlify Edge runtime
   const apiKey = Deno.env.get("DEEPGRAM_API_KEY");
 
@@ -24,41 +25,47 @@ export default async (request: Request, context: any) => {
     return new Response("Expected WebSocket upgrade", { status: 426 });
   }
 
+  // Upgrade the HTTP request to a WebSocket using Deno's native API
   // @ts-ignore
-  const pair = new WebSocketPair();
-  const [client, server] = Object.values(pair) as any[];
-
-  server.accept?.();
+  const { socket: clientSocket, response } = Deno.upgradeWebSocket(request);
 
   // Connect to Deepgram
   const dgSocket = new WebSocket(DEEPGRAM_AGENT_URL, ["token", apiKey]);
   dgSocket.binaryType = "arraybuffer";
 
-  // Deepgram -> Client
+  // When Deepgram sends audio/events, forward them to the Client
   dgSocket.addEventListener("message", (event: MessageEvent) => {
-    if (server.readyState === 1) { // WebSocket.OPEN
-      server.send(event.data);
+    if (clientSocket.readyState === 1) { // 1 = OPEN
+      clientSocket.send(event.data);
     }
   });
 
-  dgSocket.addEventListener("close", () => server.close());
-  dgSocket.addEventListener("error", (e: Event) => {
-    console.error("Deepgram WS error:", e);
-    server.close(1011, "Deepgram connection error");
+  dgSocket.addEventListener("close", () => {
+    if (clientSocket.readyState === 1) {
+      clientSocket.close();
+    }
   });
 
-  // Client -> Deepgram
-  server.addEventListener("message", (event: MessageEvent) => {
-    if (dgSocket.readyState === 1) { // WebSocket.OPEN
+  dgSocket.addEventListener("error", (e: Event) => {
+    console.error("Deepgram WS error:", e);
+    if (clientSocket.readyState === 1) {
+      clientSocket.close(1011, "Deepgram connection error");
+    }
+  });
+
+  // When the Client sends audio, forward it to Deepgram
+  clientSocket.addEventListener("message", (event: MessageEvent) => {
+    if (dgSocket.readyState === 1) {
       dgSocket.send(event.data);
     }
   });
 
-  server.addEventListener("close", () => dgSocket.close());
-
-  return new Response(null, {
-    status: 101,
-    // @ts-ignore
-    webSocket: client,
+  clientSocket.addEventListener("close", () => {
+    if (dgSocket.readyState === 1) {
+      dgSocket.close();
+    }
   });
+
+  // Return the 101 Switching Protocols response to the browser
+  return response;
 };
