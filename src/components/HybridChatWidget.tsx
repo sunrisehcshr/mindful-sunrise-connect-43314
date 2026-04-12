@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, User, Loader2, Mic, MicOff, Volume2, VolumeX, Square, MessageSquareText, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, User, Loader2, Mic, Volume2, VolumeX, Square, MessageSquareText, Sparkles } from "lucide-react";
 import { VoicePoweredOrb, type OrbState } from "@/components/ui/voice-powered-orb";
 
 type Message = {
@@ -57,32 +57,91 @@ function int16ToFloat32(buffer: ArrayBuffer): Float32Array {
   return float32;
 }
 
+// Full Deepgram config matching the original plan
+const AGENT_SETTINGS = {
+  type: "Settings",
+  audio: {
+    input: { encoding: "linear16", sample_rate: 48000 },
+    output: { encoding: "linear16", sample_rate: 24000, container: "none" },
+  },
+  agent: {
+    speak: { provider: { type: "deepgram", model: "aura-2-thalia-en" } },
+    listen: { provider: { type: "deepgram", version: "v1", model: "nova-3-medical", language: "en" } },
+    think: {
+      provider: { type: "google", model: "gemini-2.5-flash", temperature: 0.4 },
+      prompt: `Your name is Sunny. You are the virtual care assistant for Sunrise Human Care Services, a mental health clinic in Darby, Pennsylvania serving Delaware County and the Greater Philadelphia area.
+
+You are warm, empathetic, professional, and concise. You speak naturally as if on a phone call — short sentences, no bullet points, no lists. Never read out URLs or say "slash" — just speak naturally about the page or service.
+
+You are NOT a therapist or doctor. Never give medical advice, diagnosis, or clinical guidance. If someone is in crisis, calmly tell them to call 911 or go to their nearest emergency room.
+
+ALWAYS refer to the clinic as "we", "our team", or "Sunrise Human Care" — never say "I offer therapy" or "I treat anxiety."
+
+KEY FACTS TO WEAVE IN NATURALLY:
+- We proudly accept Medicaid as well as private pay
+- We currently have no waitlist — patients can start right away
+- We offer flexible telehealth appointments for those who prefer to meet from home
+- Our phone number is 814-620-2162
+- We are located in Darby, Pennsylvania
+
+SERVICES WE OFFER:
+Child and adolescent therapy, couples and marriage counseling, individual therapy, family therapy, psychiatric evaluations, medication management, and IBHS services for children.
+
+CONDITIONS WE TREAT:
+Anxiety, depression, ADHD, PTSD, trauma, grief, OCD, bipolar disorder, BPD, schizophrenia, eating disorders, sleep disorders, somatic disorders, substance use, and dissociative disorders.
+
+NAVIGATION:
+When a user asks about a specific service or condition, include a navigation marker in your response using this exact format on a new line: [NAVIGATE:/the-route-here]
+Use only these exact routes:
+/ | /#about | /#team | /#faq | /#appointment | /services | /conditions |
+/child-therapy-darby-pa | /couples-counseling-darby-pa | /individual-therapy-darby-pa |
+/family-therapy-darby-pa | /relationship-therapy-darby-pa | /ibhs-darby-pa |
+/psychiatric-evaluations-darby-pa | /medication-management-darby-pa |
+/adhd-treatment-darby-pa | /anxiety-therapy-darby-pa | /bipolar-disorder-therapy-darby-pa |
+/bpd-treatment-darby-pa | /depression-therapy-darby-pa | /dissociative-disorders-treatment-darby-pa |
+/eating-disorders-treatment-darby-pa | /grief-therapy-darby-pa | /ocd-therapy-darby-pa |
+/ptsd-therapy-darby-pa | /schizophrenia-treatment-darby-pa | /sleep-disorders-treatment-darby-pa |
+/somatic-disorders-treatment-darby-pa | /substance-use-treatment-darby-pa
+Only navigate once per topic.
+
+CONVERSATION RULES:
+- Keep responses under 3 sentences unless the caller genuinely needs more detail
+- Only give the phone number when the caller explicitly asks how to reach us or wants to book
+- If someone asks about cost, gently mention we accept Medicaid and there is no waitlist
+- If someone wants to book, give the phone number and encourage them to call the front desk
+- Never repeat the phone number more than once per conversation
+- If you don't know something specific say "I'd recommend calling our front desk at 814-620-2162 and they can help you directly"
+- Never say goodbye abruptly — always end warmly`,
+    },
+    greeting: "Hello. I'm the Sunrise AI Assistant. Tell me what you're looking for, and I'll find the right care for you.",
+  },
+};
+
 export default function HybridChatWidget() {
   const router = useRouter();
-
-  // Core UI States
+  
+  // UI States
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mode, setMode] = useState<"text" | "voice">("text");
+  const [isVoiceMode, setIsVoiceMode] = useState(false); // Controls whether we show text input or Orb
 
   // Text Chat States
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome-1",
       role: "assistant",
-      content: "Hello. I'm the Sunrise AI Assistant. Tell me what you're looking for, or tap the microphone to speak with me directly.",
+      content: "Hello. I'm the Sunrise AI Assistant. Tell me what you're looking for, and I'll find the right care for you.",
     },
   ]);
   const [input, setInput] = useState("");
   const [isLoadingText, setIsLoadingText] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Voice Chat States (Deepgram)
+  // Deepgram Voice States
   const [agentState, setAgentState] = useState<AgentState>("idle");
-  const [isMuted, setIsMuted] = useState(false);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  // Audio / WS Refs
+  const [isVoiceEnabled, setIsVoiceEnabled] = useState(true); // Matches the old auto-read toggle
+  
+  // Audio & WS Refs
   const wsRef = useRef<WebSocket | null>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const micStreamRef = useRef<MediaStream | null>(null);
@@ -100,7 +159,14 @@ export default function HybridChatWidget() {
     agentState === "thinking"   ? "thinking"   :
     agentState === "speaking"   ? "speaking"   : "idle";
 
-  // ─── UI Scrolling ──────────────────────────────────────────────────────────
+  // Auto-scroll messages
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages, isOpen, isVoiceMode]);
+
+  // Scroll visibility logic
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > window.innerHeight * 0.4);
@@ -110,19 +176,13 @@ export default function HybridChatWidget() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [messages, isOpen, mode]);
-
-  // ─── Text Chat Engine ──────────────────────────────────────────────────────
+  // ─── Text Engine (Gemini) ───────────────────────────────────────────────────
   const handleSendText = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    if (!input.trim() || isLoadingText || mode === "voice") return;
+    if (!input.trim() || isLoadingText || isVoiceMode) return;
 
     const userMessage: Message = { id: Date.now().toString(), role: "user", content: input.trim() };
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoadingText(true);
 
@@ -135,25 +195,36 @@ export default function HybridChatWidget() {
 
       if (!response.ok) throw new Error("Failed to send message");
       const data = await response.json();
-      
-      if (data.route) router.push(data.route);
 
-      setMessages(prev => [
-        ...prev,
-        { id: (Date.now() + 1).toString(), role: "assistant", content: data.message },
-      ]);
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: data.message,
+      };
+
+      setMessages((prev) => [...prev, assistantMessage]);
+
+      if (data.navigateTo) {
+        router.push(data.navigateTo);
+      }
     } catch (error) {
-      console.error(error);
-      setMessages(prev => [
+      setMessages((prev) => [
         ...prev,
-        { id: (Date.now() + 1).toString(), role: "assistant", content: "I'm having trouble connecting right now. Please try again later or call our front desk." },
+        { id: (Date.now() + 1).toString(), role: "assistant", content: "Sorry, I'm having trouble connecting right now. Please call us at (814) 620-2162." },
       ]);
     } finally {
       setIsLoadingText(false);
     }
   };
 
-  // ─── Voice Engine (Deepgram WebSocket) ─────────────────────────────────────
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSendText();
+    }
+  };
+
+  // ─── Voice Engine (Deepgram Direct WS via Temp Token) ──────────────────────
   const schedulePlayback = useCallback((samples: Float32Array) => {
     const ctx = playbackCtxRef.current;
     if (!ctx) return;
@@ -185,7 +256,7 @@ export default function HybridChatWidget() {
 
   const handleWsMessage = useCallback((event: MessageEvent) => {
     if (event.data instanceof ArrayBuffer) {
-      if (isMuted) return;
+      if (!isVoiceEnabled) return;
       const samples = int16ToFloat32(event.data);
       playbackQueue.current.push(samples);
       flushPlaybackQueue();
@@ -225,25 +296,31 @@ export default function HybridChatWidget() {
         }
         case "Error":
           console.error("Deepgram error:", msg);
-          setErrorMsg(msg.description || "Voice connection failed.");
           setAgentState("error");
           break;
       }
     } catch {}
-  }, [isMuted, flushPlaybackQueue, router]);
+  }, [isVoiceEnabled, flushPlaybackQueue, router]);
 
   const startVoiceSession = useCallback(async () => {
     unlockAudio();
-    setMode("voice");
+    setIsVoiceMode(true);
     setAgentState("connecting");
-    setErrorMsg(null);
 
     try {
+      // 1. Fetch short-lived token from our own secure backend
+      const tokenRes = await fetch("/api/sunny");
+      const { token, error } = await tokenRes.json();
+      
+      if (error || !token) throw new Error("Failed to get token");
+
+      // 2. Access mic
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: { channelCount: 1, sampleRate: 48000, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
       });
       micStreamRef.current = stream;
 
+      // 3. Audio Contexts
       const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 48000 });
       audioCtxRef.current = audioCtx;
 
@@ -251,12 +328,15 @@ export default function HybridChatWidget() {
       playbackCtxRef.current = playCtx;
       nextPlayTimeRef.current = playCtx.currentTime;
 
-      const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-      const ws = new WebSocket(`${protocol}//${window.location.host}/api/sunny`);
+      // 4. Connect DIRECTLY to Deepgram using the temporary token (Bypasses Netlify Edge completely)
+      const ws = new WebSocket("wss://agent.deepgram.com/agent", ["token", token]);
       ws.binaryType = "arraybuffer";
       wsRef.current = ws;
 
       ws.onopen = () => {
+        // Send settings first
+        ws.send(JSON.stringify(AGENT_SETTINGS));
+
         const source = audioCtx.createMediaStreamSource(stream);
         const processor = audioCtx.createScriptProcessor(4096, 1, 1);
         processor.onaudioprocess = (e) => {
@@ -270,17 +350,14 @@ export default function HybridChatWidget() {
       };
 
       ws.onmessage = handleWsMessage;
-      ws.onerror = () => {
-        setErrorMsg("Could not connect to Sunny's voice server.");
-        setAgentState("error");
-      };
+      ws.onerror = () => setAgentState("error");
       ws.onclose = () => {
         if (agentState !== "idle") setAgentState("idle");
       };
     } catch (err: any) {
-      if (err?.name === "NotAllowedError") setErrorMsg("Microphone access denied.");
-      else setErrorMsg("Could not start voice session.");
+      if (err?.name === "NotAllowedError") alert("Microphone access denied.");
       setAgentState("error");
+      setIsVoiceMode(false); // Revert on failure
     }
   }, [handleWsMessage, agentState]);
 
@@ -303,153 +380,177 @@ export default function HybridChatWidget() {
     wsRef.current = null;
 
     setAgentState("idle");
-    setMode("text"); // revert to text UI
+    setIsVoiceMode(false); // revert to text UI
   }, []);
 
-  const toggleMute = () => {
-    setIsMuted(prev => {
-      if (!prev) processorRef.current?.disconnect();
-      else if (micSourceRef.current && processorRef.current && audioCtxRef.current) {
-        micSourceRef.current.connect(processorRef.current);
-        processorRef.current.connect(audioCtxRef.current.destination);
-      }
-      return !prev;
-    });
-  };
-
-  const closeWidget = () => {
-    if (mode === "voice") stopVoiceSession();
+  const closeChat = () => {
     setIsOpen(false);
+    if (isVoiceMode) stopVoiceSession();
   };
 
   useEffect(() => {
-    return () => { if (mode === "voice") stopVoiceSession(); };
-  }, [stopVoiceSession, mode]);
+    return () => { if (isVoiceMode) stopVoiceSession(); };
+  }, [stopVoiceSession, isVoiceMode]);
 
-  // ─── Render ────────────────────────────────────────────────────────────────
   return (
-    <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end pointer-events-none">
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center pointer-events-none">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="mb-4 w-[350px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl flex flex-col h-[520px] max-h-[calc(100vh-8rem)] pointer-events-auto"
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="mb-4 w-[350px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl flex flex-col h-[500px] max-h-[calc(100vh-8rem)] pointer-events-auto"
           >
-            {/* Header */}
+            {/* Header (EXACTLY matching original UI) */}
             <div className="flex items-center justify-between bg-stone-900 px-4 py-4 text-white">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-inner border border-orange-500/20">
-                  <Sparkles size={20} className="text-white" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bot-icon lucide-bot text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
                 </div>
                 <div>
-                  <h3 className="font-barlow font-bold text-[15px] leading-tight">Sunny</h3>
-                  <p className="text-[11px] text-stone-400 mt-0.5">Virtual care assistant</p>
+                  <h3 className="font-barlow font-bold text-[15px] leading-tight">Sunrise AI Assistant</h3>
+                  <p className="text-[11px] text-stone-400 mt-0.5">I can help you find what you need.</p>
                 </div>
               </div>
               <div className="flex items-center gap-1">
-                {mode === "voice" && (
-                  <button onClick={toggleMute} className={`rounded-full p-2 transition-colors ${isMuted ? "text-red-400 hover:bg-stone-800" : "text-stone-400 hover:bg-stone-800 hover:text-white"}`}>
-                    {isMuted ? <MicOff size={18} /> : <Mic size={18} />}
-                  </button>
-                )}
-                <button onClick={closeWidget} className="rounded-full p-2 text-stone-400 hover:bg-stone-800 hover:text-white transition-colors">
+                <button
+                  onClick={() => setIsVoiceEnabled(!isVoiceEnabled)}
+                  className={`rounded-full p-2 transition-colors ${
+                    isVoiceEnabled ? "text-orange-400 hover:bg-stone-800" : "text-stone-400 hover:bg-stone-800 hover:text-white"
+                  }`}
+                  title={isVoiceEnabled ? "Mute Voice" : "Enable Voice Reader"}
+                >
+                  {isVoiceEnabled ? <Volume2 size={18} /> : <VolumeX size={18} />}
+                </button>
+                <button
+                  onClick={closeChat}
+                  className="rounded-full p-2 text-stone-400 hover:bg-stone-800 hover:text-white transition-colors"
+                >
                   <X size={20} />
                 </button>
               </div>
             </div>
 
-            {/* Voice Orb Area (Only visible in voice mode) */}
-            <AnimatePresence>
-              {mode === "voice" && (
-                <motion.div 
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="relative bg-stone-50/80 flex flex-col items-center justify-center pt-6 pb-4 border-b border-stone-100"
-                >
-                  <div className="w-32 h-32">
-                    <VoicePoweredOrb state={orbState} aiAudioRef={orbAudioRef} />
-                  </div>
-                  <p className={`mt-3 text-sm font-medium tracking-wide transition-colors ${agentState === "error" ? "text-red-500" : agentState === "listening" ? "text-orange-500 animate-pulse" : "text-stone-500"}`}>
-                    {agentState === "error" ? errorMsg : agentState === "connecting" ? "Connecting to voice..." : agentState === "listening" ? "Listening..." : agentState === "thinking" ? "Thinking..." : "Speaking..."}
-                  </p>
-                  {agentState === "error" && (
-                    <button onClick={startVoiceSession} className="mt-2 text-xs text-orange-500 underline hover:text-orange-600">Try again</button>
-                  )}
-                  <button onClick={stopVoiceSession} className="mt-4 text-xs font-semibold text-stone-500 hover:text-stone-800 flex items-center gap-1">
-                    <Square size={12} /> Stop Voice Mode
-                  </button>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Chat Transcript Area */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-stone-50">
+            {/* Messages Area (EXACTLY matching original UI) */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-stone-50/50">
               {messages.map((msg) => (
-                <div key={msg.id} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-                  {msg.role === "assistant" && (
-                    <div className="mr-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600 mt-1">
-                      <Sparkles size={14} />
+                <div
+                  key={msg.id}
+                  className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`flex max-w-[85%] items-start gap-2 ${
+                      msg.role === "user" ? "flex-row-reverse" : "flex-row"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+                        msg.role === "user" ? "bg-stone-200" : "bg-gradient-to-br from-orange-400 to-orange-600 shadow-sm"
+                      }`}
+                    >
+                      {msg.role === "user" ? (
+                        <User size={14} className="text-stone-600" />
+                      ) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bot-icon lucide-bot text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                      )}
                     </div>
-                  )}
-                  <div className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-[15px] leading-relaxed ${msg.role === "user" ? "bg-stone-900 text-white rounded-tr-sm shadow-md" : "bg-white border border-stone-200 text-stone-800 rounded-tl-sm shadow-sm"}`}>
-                    {msg.content}
+                    <div
+                      className={`rounded-2xl px-4 py-2.5 text-sm ${
+                        msg.role === "user"
+                          ? "bg-stone-900 text-white rounded-tr-sm"
+                          : "bg-white border border-stone-200 text-stone-800 rounded-tl-sm shadow-sm"
+                      }`}
+                    >
+                      {msg.content}
+                    </div>
                   </div>
                 </div>
               ))}
               {isLoadingText && (
                 <div className="flex justify-start">
-                  <div className="mr-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600 mt-1">
-                    <Sparkles size={14} />
-                  </div>
-                  <div className="max-w-[80%] rounded-2xl bg-white border border-stone-200 px-4 py-3 rounded-tl-sm flex items-center shadow-sm">
-                    <Loader2 className="h-4 w-4 animate-spin text-orange-500" />
+                  <div className="flex items-start gap-2">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bot-icon lucide-bot text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                    </div>
+                    <div className="rounded-2xl rounded-tl-sm bg-white border border-stone-200 px-4 py-3 shadow-sm">
+                      <Loader2 size={16} className="animate-spin text-stone-400" />
+                    </div>
                   </div>
                 </div>
               )}
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input Area (Only visible in text mode) */}
-            {mode === "text" && (
-              <div className="border-t border-stone-200 bg-white p-4">
-                <form onSubmit={handleSendText} className="flex items-end gap-2">
-                  <div className="relative flex-1">
-                    <input
-                      type="text"
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      placeholder="Ask Sunny a question..."
-                      className="w-full rounded-full border border-stone-300 bg-stone-50 py-3 pl-4 pr-12 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 shadow-inner"
-                      disabled={isLoadingText}
-                    />
-                    <button
-                      type="button"
-                      onClick={startVoiceSession}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-stone-400 hover:bg-orange-100 hover:text-orange-600 transition-colors"
-                      title="Switch to Voice Mode"
-                    >
-                      <Mic size={18} />
-                    </button>
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={!input.trim() || isLoadingText}
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-orange-500 text-white shadow-md hover:bg-orange-600 hover:shadow-lg disabled:opacity-50 transition-all active:scale-95"
+            {/* Input Area (Text Box OR WebGL Orb) */}
+            <div className="border-t border-stone-200 bg-white p-3 relative">
+              <AnimatePresence mode="wait">
+                {!isVoiceMode ? (
+                  <motion.form 
+                    key="text-mode"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    onSubmit={handleSendText} 
+                    className="relative flex items-center gap-2"
                   >
-                    <Send size={18} className="ml-0.5" />
-                  </button>
-                </form>
+                    <div className="relative flex-1">
+                      <input
+                        type="text"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        placeholder="Type your message..."
+                        className="w-full rounded-full border border-stone-200 bg-stone-50 py-3 pl-4 pr-10 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                        disabled={isLoadingText}
+                      />
+                      <button
+                        type="button"
+                        onClick={(e) => { e.preventDefault(); startVoiceSession(); }}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-full text-stone-400 hover:bg-stone-200 hover:text-stone-700 transition-colors"
+                        title="Switch to Voice Mode"
+                      >
+                        <Mic size={14} />
+                      </button>
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={!input.trim() || isLoadingText}
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500 text-white transition-colors hover:bg-orange-600 disabled:bg-stone-300 disabled:text-stone-500"
+                    >
+                      <Send size={16} className="ml-0.5" />
+                    </button>
+                  </motion.form>
+                ) : (
+                  <motion.div 
+                    key="voice-mode"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    className="flex flex-col items-center justify-center py-2"
+                  >
+                    <div className="w-16 h-16 relative">
+                      <VoicePoweredOrb state={orbState} aiAudioRef={orbAudioRef} />
+                    </div>
+                    <p className={`mt-2 text-xs font-medium ${agentState === "error" ? "text-red-500" : "text-orange-500 animate-pulse"}`}>
+                      {agentState === "error" ? "Connection failed" : agentState === "connecting" ? "Connecting..." : agentState === "listening" ? "Listening..." : agentState === "thinking" ? "Thinking..." : "Speaking..."}
+                    </p>
+                    <button onClick={stopVoiceSession} className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600">
+                      <Square size={16} className="fill-current" />
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <div className="mt-2 text-center">
+                <span className="text-[10px] text-stone-400 font-medium">AI Assistant • Powered by Sunrise</span>
               </div>
-            )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Floating Pill Button */}
+      {/* Floating Toggle Button (EXACTLY matching original UI) */}
       <AnimatePresence>
         {(isScrolled || isOpen) && (
           <motion.div
@@ -463,31 +564,41 @@ export default function HybridChatWidget() {
               {isOpen ? (
                 <motion.button
                   key="close"
-                  onClick={closeWidget}
+                  onClick={closeChat}
                   initial={{ opacity: 0, scale: 0.8, rotate: -90 }}
                   animate={{ opacity: 1, scale: 1, rotate: 0 }}
                   exit={{ opacity: 0, scale: 0.8, rotate: 90 }}
                   transition={{ duration: 0.2 }}
-                  className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1a1a1a] text-white shadow-xl hover:bg-orange-500 transition-all duration-300"
+                  className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1a1a1a] text-white shadow-xl hover:bg-orange-500 hover:shadow-orange-500/25 transition-all duration-300"
+                  aria-label="Close chat"
                 >
                   <X size={24} />
                 </motion.button>
               ) : (
                 <motion.div
                   key="open"
-                  onClick={() => setIsOpen(true)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.2 }}
                   className="flex items-center bg-[#1a1a1a] p-1 rounded-full shadow-2xl cursor-pointer hover:bg-orange-500 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group h-12"
+                  onClick={() => setIsOpen(true)}
                 >
                   <div className="flex h-full items-center bg-white rounded-full pl-1 pr-5 sm:pr-6 gap-2.5 sm:gap-3">
-                    <div className="flex shrink-0 items-center justify-center w-[36px] h-[36px] bg-[#f4f4f5] rounded-full">
-                      <Sparkles size={18} className="text-stone-800" />
-                    </div>
+                    <button
+                      className="flex shrink-0 items-center justify-center w-[36px] h-[36px] bg-[#f4f4f5] rounded-full hover:bg-[#e4e4e7] transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsOpen(true);
+                        startVoiceSession();
+                      }}
+                      title="Start speaking"
+                      aria-label="Start speaking"
+                    >
+                      <Mic size={18} className="text-stone-800" />
+                    </button>
                     <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5 whitespace-nowrap">
-                      Chat with AI
+                      Tap to ask AI
                     </span>
                   </div>
                   <div className="px-3 sm:px-4 text-stone-400 group-hover:text-white transition-colors duration-300 flex items-center justify-center w-[36px] h-[36px] shrink-0 box-content">
