@@ -40,3 +40,6 @@ dist-ssr
 # Package manager locks (pick one)
 bun.lock
 bun.lockb
+
+# Local Netlify folder
+.netlify
