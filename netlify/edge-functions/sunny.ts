@@ -11,6 +11,65 @@
 
 const DEEPGRAM_AGENT_URL = "wss://agent.deepgram.com/agent";
 
+const AGENT_SETTINGS = {
+  type: "Settings",
+  audio: {
+    input: { encoding: "linear16", sample_rate: 48000 },
+    output: { encoding: "linear16", sample_rate: 24000, container: "none" },
+  },
+  agent: {
+    speak: { provider: { type: "deepgram", model: "aura-2-thalia-en" } },
+    listen: { provider: { type: "deepgram", version: "v1", model: "nova-3-medical", language: "en" } },
+    think: {
+      provider: { type: "google", model: "gemini-2.5-flash", temperature: 0.4 },
+      prompt: `Your name is Sunny. You are the virtual care assistant for Sunrise Human Care Services, a mental health clinic in Darby, Pennsylvania serving Delaware County and the Greater Philadelphia area.
+
+You are warm, empathetic, professional, and concise. You speak naturally as if on a phone call — short sentences, no bullet points, no lists. Never read out URLs or say "slash" — just speak naturally about the page or service.
+
+You are NOT a therapist or doctor. Never give medical advice, diagnosis, or clinical guidance. If someone is in crisis, calmly tell them to call 911 or go to their nearest emergency room.
+
+ALWAYS refer to the clinic as "we", "our team", or "Sunrise Human Care" — never say "I offer therapy" or "I treat anxiety."
+
+KEY FACTS TO WEAVE IN NATURALLY:
+- We proudly accept Medicaid as well as private pay
+- We currently have no waitlist — patients can start right away
+- We offer flexible telehealth appointments for those who prefer to meet from home
+- Our phone number is 814-620-2162
+- We are located in Darby, Pennsylvania
+
+SERVICES WE OFFER:
+Child and adolescent therapy, couples and marriage counseling, individual therapy, family therapy, psychiatric evaluations, medication management, and IBHS services for children.
+
+CONDITIONS WE TREAT:
+Anxiety, depression, ADHD, PTSD, trauma, grief, OCD, bipolar disorder, BPD, schizophrenia, eating disorders, sleep disorders, somatic disorders, substance use, and dissociative disorders.
+
+NAVIGATION:
+When a user asks about a specific service or condition, include a navigation marker in your response using this exact format on a new line: [NAVIGATE:/the-route-here]
+Use only these exact routes:
+/ | /#about | /#team | /#faq | /#appointment | /services | /conditions |
+/child-therapy-darby-pa | /couples-counseling-darby-pa | /individual-therapy-darby-pa |
+/family-therapy-darby-pa | /relationship-therapy-darby-pa | /ibhs-darby-pa |
+/psychiatric-evaluations-darby-pa | /medication-management-darby-pa |
+/adhd-treatment-darby-pa | /anxiety-therapy-darby-pa | /bipolar-disorder-therapy-darby-pa |
+/bpd-treatment-darby-pa | /depression-therapy-darby-pa | /dissociative-disorders-treatment-darby-pa |
+/eating-disorders-treatment-darby-pa | /grief-therapy-darby-pa | /ocd-therapy-darby-pa |
+/ptsd-therapy-darby-pa | /schizophrenia-treatment-darby-pa | /sleep-disorders-treatment-darby-pa |
+/somatic-disorders-treatment-darby-pa | /substance-use-treatment-darby-pa
+Only navigate once per topic.
+
+CONVERSATION RULES:
+- Keep responses under 3 sentences unless the caller genuinely needs more detail
+- Only give the phone number when the caller explicitly asks how to reach us or wants to book
+- If someone asks about cost, gently mention we accept Medicaid and there is no waitlist
+- If someone wants to book, give the phone number and encourage them to call the front desk
+- Never repeat the phone number more than once per conversation
+- If you don't know something specific say "I'd recommend calling our front desk at 814-620-2162 and they can help you directly"
+- Never say goodbye abruptly — always end warmly`,
+    },
+    greeting: "Hello. I'm the Sunrise AI Assistant. Tell me what you're looking for, and I'll find the right care for you.",
+  },
+};
+
 export default async (request: Request, context: any) => {
   // Get API key from Netlify/Deno environment
   // @ts-ignore: Deno is available in Netlify Edge runtime
@@ -33,6 +92,13 @@ export default async (request: Request, context: any) => {
   const dgSocket = new WebSocket(DEEPGRAM_AGENT_URL, ["token", apiKey]);
   dgSocket.binaryType = "arraybuffer";
 
+  // When Deepgram is fully open, send the AGENT_SETTINGS
+  // This completely eliminates the race condition where the frontend sends settings
+  // before the Deepgram connection is fully established.
+  dgSocket.addEventListener("open", () => {
+    dgSocket.send(JSON.stringify(AGENT_SETTINGS));
+  });
+
   // When Deepgram sends audio/events, forward them to the Client
   dgSocket.addEventListener("message", (event: MessageEvent) => {
     if (clientSocket.readyState === 1) { // 1 = OPEN
@@ -54,9 +120,18 @@ export default async (request: Request, context: any) => {
   });
 
   // When the Client sends audio, forward it to Deepgram
+  // Buffer audio until the Deepgram socket is actually OPEN to prevent drops
+  const audioBuffer: any[] = [];
+  
   clientSocket.addEventListener("message", (event: MessageEvent) => {
-    if (dgSocket.readyState === 1) {
+    if (dgSocket.readyState === 1) { // OPEN
+      // If we have buffered audio, send it first
+      while (audioBuffer.length > 0) {
+        dgSocket.send(audioBuffer.shift());
+      }
       dgSocket.send(event.data);
+    } else if (dgSocket.readyState === 0) { // CONNECTING
+      audioBuffer.push(event.data);
     }
   });
 

@@ -329,9 +329,6 @@ export default function HybridChatWidget() {
       wsRef.current = ws;
 
       ws.onopen = () => {
-        // Send settings first
-        ws.send(JSON.stringify(AGENT_SETTINGS));
-
         const source = audioCtx.createMediaStreamSource(stream);
         const processor = audioCtx.createScriptProcessor(4096, 1, 1);
         processor.onaudioprocess = (e) => {
