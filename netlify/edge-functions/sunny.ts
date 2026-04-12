@@ -21,7 +21,13 @@ const AGENT_SETTINGS = {
     speak: { provider: { type: "deepgram", model: "aura-2-thalia-en" } },
     listen: { provider: { type: "deepgram", version: "v1", model: "nova-3-medical", language: "en" } },
     think: {
-      provider: { type: "google", model: "gemini-2.5-flash", temperature: 0.4 },
+      provider: { 
+        type: "google", 
+        // We will inject the key dynamically in the function below
+        key: "", 
+        model: "gemini-2.5-flash", 
+        temperature: 0.4 
+      },
       prompt: `Your name is Sunny. You are the virtual care assistant for Sunrise Human Care Services, a mental health clinic in Darby, Pennsylvania serving Delaware County and the Greater Philadelphia area.
 
 You are warm, empathetic, professional, and concise. You speak naturally as if on a phone call — short sentences, no bullet points, no lists. Never read out URLs or say "slash" — just speak naturally about the page or service.
@@ -71,13 +77,18 @@ CONVERSATION RULES:
 };
 
 export default async (request: Request, context: any) => {
-  // Get API key from Netlify/Deno environment
+  // Get API keys from Netlify/Deno environment
   // @ts-ignore: Deno is available in Netlify Edge runtime
-  const apiKey = Deno.env.get("DEEPGRAM_API_KEY");
+  const deepgramKey = Deno.env.get("DEEPGRAM_API_KEY");
+  // @ts-ignore
+  const aiKey = Deno.env.get("AI_API_KEY");
 
-  if (!apiKey) {
-    return new Response("DEEPGRAM_API_KEY not configured in Netlify environment variables", { status: 503 });
+  if (!deepgramKey || !aiKey) {
+    return new Response("Missing DEEPGRAM_API_KEY or AI_API_KEY in Netlify environment variables", { status: 503 });
   }
+
+  // Inject the Google Gemini API key into the settings
+  AGENT_SETTINGS.agent.think.provider.key = aiKey;
 
   const upgradeHeader = request.headers.get("upgrade");
   if (upgradeHeader !== "websocket") {
@@ -89,7 +100,7 @@ export default async (request: Request, context: any) => {
   const { socket: clientSocket, response } = Deno.upgradeWebSocket(request);
 
   // Connect to Deepgram
-  const dgSocket = new WebSocket(DEEPGRAM_AGENT_URL, ["token", apiKey]);
+  const dgSocket = new WebSocket(DEEPGRAM_AGENT_URL, ["token", deepgramKey]);
   dgSocket.binaryType = "arraybuffer";
 
   // When Deepgram is fully open, send the AGENT_SETTINGS
