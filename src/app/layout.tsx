@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
-import ChatWidget from "@/components/ChatWidget";
+import SunnyAgent from "@/components/SunnyAgent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -102,7 +102,7 @@ export default function RootLayout({
           <Sonner />
           {children}
           <ScrollIndicator />
-          <ChatWidget />
+          <SunnyAgent />
         </TooltipProvider>
       </body>
     </html>
