@@ -75,8 +75,12 @@ export default async (request: Request, context: any) => {
   // @ts-ignore
   const { socket: clientSocket, response } = Deno.upgradeWebSocket(request);
 
-  // Connect to Deepgram
-  const dgSocket = new WebSocket(DEEPGRAM_AGENT_URL, ["token", deepgramKey]);
+  // Connect to Deepgram using the correct HTTP header
+  // Note: Deno's WebSocket constructor supports headers as a non-standard 2nd argument (string | object)
+  // or via fetch upgrade. The Deepgram API allows auth as a header OR query param.
+  // Using query param here is the most robust standard way to bypass the TS definition limitation.
+  const urlWithAuth = `${DEEPGRAM_AGENT_URL}?token=${deepgramKey}`;
+  const dgSocket = new WebSocket(urlWithAuth);
   dgSocket.binaryType = "arraybuffer";
 
   // When Deepgram is fully open, send the AGENT_SETTINGS
