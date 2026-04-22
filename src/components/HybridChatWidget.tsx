@@ -590,7 +590,7 @@ export default function HybridChatWidget() {
                       <Mic size={18} className="text-stone-800" />
                     </button>
                     <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] font-bold text-stone-900 uppercase mt-0.5 whitespace-nowrap">
-                      Ask Sunny for Care
+                      Ask Sunny, Find Care
                     </span>
                   </div>
                   <div className="px-3 sm:px-4 text-stone-400 group-hover:text-white transition-colors duration-300 flex items-center justify-center w-[36px] h-[36px] shrink-0 box-content">
