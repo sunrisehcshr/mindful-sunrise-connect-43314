@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 import SubstanceUseClient from './SubstanceUseClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Substance Use Treatment in Darby, PA | Addiction Therapy | No Waitlist",
+  title: "Substance Use Treatment in Darby, PA | Addiction Therapy |…",
   description: "Evidence-based substance use treatment in Darby, PA. Compassionate therapy for addiction and dual diagnosis. 100% Medicaid accepted. No waitlist.",
   path: "/substance-use-treatment-darby-pa",
   keywords: ["substance use treatment Darby PA", "addiction therapy Delaware County", "dual diagnosis PA", "alcohol counseling near me", "drug recovery support", "Medicaid addiction therapy PA"],
@@ -47,7 +47,8 @@ export default function SubstanceUseTreatmentPage() {
     serviceType: "Substance Use Treatment"
   };
 
-  return (
+  <h1 className="sr-only">substance use treatment darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={substanceFAQs} />

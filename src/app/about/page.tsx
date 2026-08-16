@@ -79,7 +79,8 @@ export default function AboutPage() {
     { position: 2, name: 'About Us', url: '/about' }
   ];
 
-  return (
+  <h1 className="sr-only">about</h1>
+return (
     <>
       <SchemaMarkup type="Person" data={fullTeamMembers} />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />

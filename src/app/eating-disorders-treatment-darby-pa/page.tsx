@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 import EatingDisordersClient from './EatingDisordersClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Eating Disorder Treatment in Darby, PA | No Waitlist | Sunrise",
+  title: "Eating Disorder Treatment in Darby, PA | No Waitlist | Sunr…",
   description: "Specialized psychiatric treatment for anorexia, bulimia, and binge eating in Darby, PA. Compassionate care with 100% Medicaid acceptance. No waitlist.",
   path: "/eating-disorders-treatment-darby-pa",
   keywords: ["eating disorders treatment Darby PA", "anorexia therapy Delaware County", "bulimia treatment near me", "binge eating help PA", "disordered eating recovery", "Medicaid eating disorder therapy PA"],
@@ -47,7 +47,8 @@ export default function EatingDisordersTreatmentPage() {
     serviceType: "Eating Disorder Treatment"
   };
 
-  return (
+  <h1 className="sr-only">eating disorders treatment darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={eatingFAQs} />

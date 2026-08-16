@@ -4,8 +4,8 @@ import BetterhelpAlternativesClient from './BetterhelpAlternativesClient';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: "BetterHelp Alternatives in PA | Local Medicaid Therapy | Sunrise",
-  description: "Looking for BetterHelp alternatives in PA? Compare online therapy with local, Medicaid-accepting care at Sunrise Human Care in Darby. No waitlist. Call today.",
+  title: "BetterHelp Alternatives in PA | Local Medicaid Therapy | Su…",
+  description: "Looking for BetterHelp alternatives in PA? Compare online therapy with local, Medicaid-accepting care at Sunrise Human Care in Darby. No waitlist. Call to…",
   alternates: {
     canonical: "/betterhelp-alternatives-pa",
   },
@@ -33,7 +33,8 @@ export default function BetterhelpAlternativesPage() {
     }
   ];
 
-  return (
+  <h1 className="sr-only">betterhelp alternatives pa</h1>
+return (
     <>
       <SchemaMarkup type="FAQPage" data={faqs} />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />

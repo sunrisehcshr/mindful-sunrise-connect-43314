@@ -5,8 +5,8 @@ import { createPageMetadata } from '@/lib/seo';
 import AnxietyClient from './AnxietyClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Anxiety Therapy & Treatment in Darby, PA | No Waitlist | Sunrise",
-  description: "Expert anxiety treatment in Darby, PA. Specialized care for GAD, panic attacks, and social anxiety. 100% Medicaid accepted. No waitlist. Call (814) 620-2162.",
+  title: "Anxiety Therapy & Treatment in Darby, PA | No Waitlist | Su…",
+  description: "Expert anxiety treatment in Darby, PA. Specialized care for GAD, panic attacks, and social anxiety. 100% Medicaid accepted. No waitlist. Call (814) 620-21…",
   path: "/anxiety-therapy-darby-pa",
   keywords: ["anxiety therapy Darby PA", "anxiety treatment Delaware County", "panic attack help near me", "GAD treatment PA", "social anxiety therapy", "Medicaid anxiety therapy PA"],
 });
@@ -43,7 +43,8 @@ export default function AnxietyTherapyPage() {
     serviceType: "Anxiety Treatment"
   };
 
-  return (
+  <h1 className="sr-only">anxiety therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={anxietyFAQs} />

@@ -6,7 +6,7 @@ import IndividualTherapyClient from './IndividualTherapyClient';
 
 export const metadata: Metadata = createPageMetadata({
   title: "Individual Therapy in Darby, PA | No Waitlist | Sunrise",
-  description: "Expert individual therapy in Darby, PA. Personalized counseling for anxiety, depression, and trauma. 100% Medicaid accepted. No waitlist. Call (814) 620-2162.",
+  description: "Expert individual therapy in Darby, PA. Personalized counseling for anxiety, depression, and trauma. 100% Medicaid accepted. No waitlist. Call (814) 620-2…",
   path: "/individual-therapy-darby-pa",
   keywords: ["individual therapy Darby PA", "counseling Darby", "therapist Delaware County", "personal counseling PA", "anxiety therapy Darby", "depression treatment Darby", "Medicaid individual therapy PA"],
 });
@@ -43,7 +43,8 @@ export default function IndividualTherapyPage() {
     serviceType: "Individual Therapy"
   };
 
-  return (
+  <h1 className="sr-only">individual therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={individualFAQs} />

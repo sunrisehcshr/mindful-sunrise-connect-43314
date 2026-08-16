@@ -5,8 +5,8 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient, { GeoContentProps } from '../mental-health-yeadon-pa/MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Best Mental Health Services in Upper Darby, PA | Medicaid Accepted | Sunrise",
-  description: "Find the best mental health services in Upper Darby, PA. Top-rated therapy and psychiatric care for the Upper Darby community. 100% Medicaid accepted. No waitlists.",
+  title: "Best Mental Health Services in Upper Darby, PA | Medicaid A…",
+  description: "Find the best mental health services in Upper Darby, PA. Top-rated therapy and psychiatric care for the Upper Darby community. 100% Medicaid accepted. No…",
   path: "/mental-health-upper-darby-pa",
   keywords: ["best mental health upper darby pa", "top therapy upper darby pa", "psychiatrist upper darby pa", "Delaware County mental health", "upper darby counseling services", "Medicaid mental health PA", "immediate therapy upper darby pa", "behavioral health upper darby pa"],
 });
@@ -95,7 +95,8 @@ export default function MentalHealthUpperDarbyPage() {
     ]
   };
 
-  return (
+  <h1 className="sr-only">mental health upper darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={pageContent.faqOverrides} />

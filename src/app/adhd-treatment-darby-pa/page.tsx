@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 import ADHDClient from './ADHDClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "ADHD Testing & Treatment in Darby, PA | No Waitlist | Sunrise Human Care",
+  title: "ADHD Testing & Treatment in Darby, PA | No Waitlist | Sunri…",
   description: "Specialized ADHD assessment and treatment in Darby, PA. No waitlist for child and adult ADHD evaluations. Medicaid accepted. Expert psychiatric care.",
   path: "/adhd-treatment-darby-pa",
   keywords: ["ADHD treatment Darby PA", "ADHD testing Delaware County", "adult ADHD diagnosis near me", "ADD treatment PA", "child ADHD therapy", "Medicaid ADHD therapy PA"],
@@ -47,7 +47,8 @@ export default function ADHDTreatmentPage() {
     serviceType: "ADHD Treatment"
   };
 
-  return (
+  <h1 className="sr-only">adhd treatment darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={adhdFAQs} />

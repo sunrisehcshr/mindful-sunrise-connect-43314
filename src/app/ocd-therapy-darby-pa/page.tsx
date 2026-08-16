@@ -6,7 +6,7 @@ import OCDClient from './OCDClient';
 
 export const metadata: Metadata = createPageMetadata({
   title: "OCD Treatment in Darby, PA | ERP Therapy | No Waitlist",
-  description: "Specialized OCD therapy in Darby, PA. Evidence-based ERP (Exposure and Response Prevention) and psychiatric medication management. Medicaid accepted. No waitlist.",
+  description: "Specialized OCD therapy in Darby, PA. Evidence-based ERP (Exposure and Response Prevention) and psychiatric medication management. Medicaid accepted. No w…",
   path: "/ocd-therapy-darby-pa",
   keywords: ["OCD treatment Darby PA", "ERP therapy Delaware County", "intrusive thoughts help", "compulsion reduction therapy", "OCD specialist near me", "contamination OCD treatment", "Medicaid OCD therapy"],
 });
@@ -47,7 +47,8 @@ export default function OCDTreatmentPage() {
     serviceType: "OCD Treatment"
   };
 
-  return (
+  <h1 className="sr-only">ocd therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={ocdFAQs} />

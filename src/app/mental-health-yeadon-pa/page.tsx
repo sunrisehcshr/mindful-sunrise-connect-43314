@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient, { GeoContentProps } from './MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Best Mental Health Services in Yeadon, PA | Medicaid Accepted | Sunrise",
+  title: "Best Mental Health Services in Yeadon, PA | Medicaid Accept…",
   description: "Find the best mental health services in Yeadon, PA. Top-rated therapy and psychiatric care for the Yeadon community. 100% Medicaid accepted. No waitlists.",
   path: "/mental-health-yeadon-pa",
   keywords: ["best mental health yeadon pa", "top therapy yeadon pa", "psychiatrist yeadon pa", "Delaware County mental health", "yeadon counseling services", "Medicaid mental health PA", "immediate therapy yeadon pa", "behavioral health yeadon pa"],
@@ -95,7 +95,8 @@ export default function MentalHealthYeadonPage() {
     ]
   };
 
-  return (
+  <h1 className="sr-only">mental health yeadon pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={pageContent.faqOverrides} />

@@ -43,7 +43,8 @@ export default function PTSDTreatmentPage() {
     serviceType: "PTSD Treatment"
   };
 
-  return (
+  <h1 className="sr-only">ptsd therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={ptsdFAQs} />

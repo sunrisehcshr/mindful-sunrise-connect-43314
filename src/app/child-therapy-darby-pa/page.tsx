@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 import ChildTherapyClient from './ChildTherapyClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Child & Adolescent Therapy in Darby, PA | No Waitlist | Sunrise",
+  title: "Child & Adolescent Therapy in Darby, PA | No Waitlist | Sun…",
   description: "Specialized child and adolescent therapy in Darby, PA. Helping youth manage anxiety, depression, and behavior. 100% Medicaid accepted. No waitlist.",
   path: "/child-therapy-darby-pa",
   keywords: ["child therapy Darby PA", "teen counseling Delaware County", "youth mental health PA", "adolescent therapist Darby", "play therapy Darby", "Medicaid child therapy PA"],
@@ -47,7 +47,8 @@ export default function ChildTherapyPage() {
     serviceType: "Child Therapy"
   };
 
-  return (
+  <h1 className="sr-only">child therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={childFAQs} />

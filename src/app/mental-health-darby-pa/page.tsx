@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthDarbyClient from './MentalHealthDarbyClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Best Mental Health Services in Darby, PA | Medicaid Accepted | Sunrise",
+  title: "Best Mental Health Services in Darby, PA | Medicaid Accepte…",
   description: "Find the best mental health services in Darby, PA. Top-rated therapy and psychiatric care for the Darby community. 100% Medicaid accepted. No waitlists.",
   path: "/mental-health-darby-pa",
   keywords: ["best mental health Darby PA", "top therapy Darby PA", "psychiatrist Darby PA", "Delaware County mental health", "Darby counseling services", "Medicaid mental health PA", "immediate therapy darby pa", "behavioral health darby pa"],
@@ -47,7 +47,8 @@ export default function MentalHealthDarbyPage() {
     serviceType: "Mental Health Clinic"
   };
 
-  return (
+  <h1 className="sr-only">mental health darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={darbyFAQs} />
