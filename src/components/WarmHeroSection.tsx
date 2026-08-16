@@ -147,7 +147,7 @@ const WarmHeroSection = () => {
           preload="auto"
           disablePictureInPicture
           controlsList="nodownload nofullscreen noremoteplayback"
-          poster="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1200/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
+          poster="https://ik.imagekit.io/l6c5pgwlc3/pexels-kampus-8380086.jpg"
           className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-center pointer-events-none transition-opacity duration-1000"
           style={{ opacity: 1 }}
           title="Expert mental health care - Sunrise Human Care Services"
@@ -173,7 +173,7 @@ const WarmHeroSection = () => {
                 className="absolute inset-0 w-full h-full bg-cover bg-[60%_center] md:bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://res.cloudinary.com/dabsxebx8/image/upload/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg')",
+                      "url('https://ik.imagekit.io/l6c5pgwlc3/pexels-kampus-8380086.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
