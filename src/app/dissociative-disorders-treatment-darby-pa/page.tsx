@@ -47,7 +47,8 @@ export default function DissociativeDisordersTreatmentPage() {
     serviceType: "Dissociative Disorder Treatment"
   };
 
-  return (
+  <h1 className="sr-only">dissociative disorders treatment darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={dissociativeFAQs} />

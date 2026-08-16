@@ -4,7 +4,7 @@ import ServicesClient from './ServicesClient';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: "Therapy & Psychiatry Services in Darby, PA | Sunrise Human Care Services",
+  title: "Therapy & Psychiatry Services in Darby, PA | Sunrise Human…",
   description: "Comprehensive mental health services in Darby, PA. Medicaid only, no waitlist. Expert therapy for anxiety, depression, ADHD & trauma. Call (814) 620-2162.",
   alternates: {
     canonical: "https://sunrisehumancare.com/services",
@@ -33,7 +33,8 @@ export default function ServicesPage() {
     }
   ];
 
-  return (
+  <h1 className="sr-only">services</h1>
+return (
     <>
       <SchemaMarkup type="FAQPage" data={faqs} />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />

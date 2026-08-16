@@ -6,7 +6,7 @@ import RelationshipTherapyClient from './RelationshipTherapyClient';
 
 export const metadata: Metadata = createPageMetadata({
   title: "Relationship Therapy in Darby, PA | No Waitlist | Sunrise",
-  description: "Effective therapy for communication problems, conflict resolution, and rebuilding trust in Darby, PA. 100% Medicaid accepted. No waitlist. Call (814) 620-2162.",
+  description: "Effective therapy for communication problems, conflict resolution, and rebuilding trust in Darby, PA. 100% Medicaid accepted. No waitlist. Call (814) 620-…",
   path: "/relationship-therapy-darby-pa",
   keywords: ["relationship therapy Darby PA", "communication counseling", "trust rebuilding therapy", "conflict resolution Darby", "relationship counseling PA", "Medicaid relationship therapy"],
 });
@@ -43,7 +43,8 @@ export default function RelationshipTherapyPage() {
     serviceType: "Relationship Therapy"
   };
 
-  return (
+  <h1 className="sr-only">relationship therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={relFAQs} />

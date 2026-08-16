@@ -5,8 +5,8 @@ import { createPageMetadata } from '@/lib/seo';
 import DepressionClient from './DepressionClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Depression Therapy & Treatment in Darby, PA | No Waitlist | Sunrise Human Care",
-  description: "Expert depression treatment in Darby, PA. Specialized care for Major Depressive Disorder, PDD, and SAD. 100% Medicaid accepted. No waitlist. Book your evaluation today.",
+  title: "Depression Therapy & Treatment in Darby, PA | No Waitlist |…",
+  description: "Expert depression treatment in Darby, PA. Specialized care for Major Depressive Disorder, PDD, and SAD. 100% Medicaid accepted. No waitlist. Book your eva…",
   path: "/depression-therapy-darby-pa",
   keywords: ["depression therapy Darby PA", "depression treatment Delaware County", "major depressive disorder help", "SAD treatment PA", "persistent depressive disorder", "Medicaid depression therapy PA"],
 });
@@ -47,7 +47,8 @@ export default function DepressionTherapyPage() {
     serviceType: "Depression Treatment"
   };
 
-  return (
+  <h1 className="sr-only">depression therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={depressionFAQs} />

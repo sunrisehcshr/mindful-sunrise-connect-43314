@@ -6,7 +6,7 @@ import FamilyTherapyClient from './FamilyTherapyClient';
 
 export const metadata: Metadata = createPageMetadata({
   title: "Family Therapy in Darby, PA | No Waitlist | Sunrise",
-  description: "Expert family therapy in Darby, PA. Improve communication and resolve conflicts with our licensed therapists. 100% Medicaid accepted. No waitlist. Call (814) 620-2162.",
+  description: "Expert family therapy in Darby, PA. Improve communication and resolve conflicts with our licensed therapists. 100% Medicaid accepted. No waitlist. Call (8…",
   path: "/family-therapy-darby-pa",
   keywords: ["family therapy Darby PA", "family counseling Delaware County", "family therapist PA", "strengthen family bonds Darby", "family support services PA", "Medicaid family therapy PA"],
 });
@@ -47,7 +47,8 @@ export default function FamilyTherapyPage() {
     serviceType: "Family Therapy"
   };
 
-  return (
+  <h1 className="sr-only">family therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={familyFAQs} />

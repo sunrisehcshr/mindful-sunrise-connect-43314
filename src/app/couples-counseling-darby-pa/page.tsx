@@ -5,8 +5,8 @@ import { createPageMetadata } from '@/lib/seo';
 import CouplesCounselingClient from './CouplesCounselingClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Couples Counseling & Relationship Therapy in Darby, PA | No Waitlist",
-  description: "Expert couples counseling in Darby, PA. Improve communication and rebuild trust with licensed therapists. 100% Medicaid accepted. No waitlist. Call (814) 620-2162.",
+  title: "Couples Counseling & Relationship Therapy in Darby, PA | No…",
+  description: "Expert couples counseling in Darby, PA. Improve communication and rebuild trust with licensed therapists. 100% Medicaid accepted. No waitlist. Call (814)…",
   path: "/couples-counseling-darby-pa",
   keywords: ["couples counseling Darby PA", "marriage therapy Delaware County", "relationship counseling PA", "marriage counselor Darby", "couples therapy near me", "premarital counseling Darby", "Medicaid couples therapy PA"],
 });
@@ -43,7 +43,8 @@ export default function CouplesCounselingPage() {
     serviceType: "Couples Counseling"
   };
 
-  return (
+  <h1 className="sr-only">couples counseling darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={couplesFAQs} />

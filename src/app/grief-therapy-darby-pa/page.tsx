@@ -6,7 +6,7 @@ import GriefTherapyClient from './GriefTherapyClient';
 
 export const metadata: Metadata = createPageMetadata({
   title: "Grief & Loss Therapy in Darby, PA | No Waitlist | Sunrise",
-  description: "Compassionate grief counseling and bereavement support in Darby, PA. Professional therapy for coping with loss and complicated grief. 100% Medicaid accepted. No waitlist.",
+  description: "Compassionate grief counseling and bereavement support in Darby, PA. Professional therapy for coping with loss and complicated grief. 100% Medicaid accept…",
   path: "/grief-therapy-darby-pa",
   keywords: ["grief therapy Darby PA", "bereavement counseling Delaware County", "loss support group PA", "complicated grief treatment", "coping with loss Darby", "Medicaid grief therapy PA"],
 });
@@ -43,7 +43,8 @@ export default function GriefTherapyPage() {
     serviceType: "Grief Therapy"
   };
 
-  return (
+  <h1 className="sr-only">grief therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={griefFAQs} />

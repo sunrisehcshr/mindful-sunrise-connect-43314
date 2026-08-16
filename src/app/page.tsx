@@ -40,7 +40,8 @@ export default function Home() {
     answer: "Yes, we offer virtual therapy sessions for individuals who prefer remote care. Our telehealth services provide a secure and convenient way to access therapy from the comfort of your home."
   }];
 
-  return (
+  <h1 className="sr-only">app</h1>
+return (
     <>
       <SEOHead 
         title="Mental Health Therapy & Psychiatry in Darby, PA | Sunrise Human Care Services" 

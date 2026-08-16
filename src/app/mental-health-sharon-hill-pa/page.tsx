@@ -5,8 +5,8 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient, { GeoContentProps } from '../mental-health-yeadon-pa/MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Best Mental Health Services in Sharon Hill, PA | Medicaid Accepted | Sunrise",
-  description: "Find the best mental health services in Sharon Hill, PA. Top-rated therapy and psychiatric care for the Sharon Hill community. 100% Medicaid accepted. No waitlists.",
+  title: "Best Mental Health Services in Sharon Hill, PA | Medicaid A…",
+  description: "Find the best mental health services in Sharon Hill, PA. Top-rated therapy and psychiatric care for the Sharon Hill community. 100% Medicaid accepted. No…",
   path: "/mental-health-sharon-hill-pa",
   keywords: ["best mental health sharon hill pa", "top therapy sharon hill pa", "psychiatrist sharon hill pa", "Delaware County mental health", "sharon hill counseling services", "Medicaid mental health PA", "immediate therapy sharon hill pa", "behavioral health sharon hill pa"],
 });
@@ -95,7 +95,8 @@ export default function MentalHealthSharonHillPage() {
     ]
   };
 
-  return (
+  <h1 className="sr-only">mental health sharon hill pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={pageContent.faqOverrides} />

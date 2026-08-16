@@ -5,8 +5,8 @@ import { createPageMetadata } from '@/lib/seo';
 import MentalHealthGeoClient, { GeoContentProps } from '../mental-health-yeadon-pa/MentalHealthGeoClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Best Mental Health Services in Lansdowne, PA | Medicaid Accepted | Sunrise",
-  description: "Find the best mental health services in Lansdowne, PA. Top-rated therapy and psychiatric care for the Lansdowne community. 100% Medicaid accepted. No waitlists.",
+  title: "Best Mental Health Services in Lansdowne, PA | Medicaid Acc…",
+  description: "Find the best mental health services in Lansdowne, PA. Top-rated therapy and psychiatric care for the Lansdowne community. 100% Medicaid accepted. No wait…",
   path: "/mental-health-lansdowne-pa",
   keywords: ["best mental health lansdowne pa", "top therapy lansdowne pa", "psychiatrist lansdowne pa", "Delaware County mental health", "lansdowne counseling services", "Medicaid mental health PA", "immediate therapy lansdowne pa", "behavioral health lansdowne pa"],
 });
@@ -95,7 +95,8 @@ export default function MentalHealthLansdownePage() {
     ]
   };
 
-  return (
+  <h1 className="sr-only">mental health lansdowne pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={pageContent.faqOverrides} />

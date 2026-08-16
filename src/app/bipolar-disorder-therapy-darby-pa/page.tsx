@@ -5,8 +5,8 @@ import { createPageMetadata } from '@/lib/seo';
 import BipolarClient from './BipolarClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Bipolar Disorder Treatment in Darby, PA | No Waitlist | Sunrise",
-  description: "Specialized bipolar disorder treatment in Darby, PA. Expert medication management and therapy for Bipolar I, Bipolar II, and Cyclothymia. Medicaid accepted. No waitlist.",
+  title: "Bipolar Disorder Treatment in Darby, PA | No Waitlist | Sun…",
+  description: "Specialized bipolar disorder treatment in Darby, PA. Expert medication management and therapy for Bipolar I, Bipolar II, and Cyclothymia. Medicaid accepte…",
   path: "/bipolar-disorder-therapy-darby-pa",
   keywords: ["bipolar disorder treatment Darby PA", "bipolar therapy Delaware County", "manic depression help", "bipolar 1 treatment", "bipolar 2 therapy near me", "Medicaid bipolar therapy PA"],
 });
@@ -47,7 +47,8 @@ export default function BipolarTreatmentPage() {
     serviceType: "Bipolar Disorder Treatment"
   };
 
-  return (
+  <h1 className="sr-only">bipolar disorder therapy darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={bipolarFAQs} />

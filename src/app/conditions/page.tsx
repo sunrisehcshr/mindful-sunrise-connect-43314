@@ -80,7 +80,8 @@ export default function ConditionsPage() {
     ]
   };
 
-  return (
+  <h1 className="sr-only">conditions</h1>
+return (
     <>
       <script
         type="application/ld+json"

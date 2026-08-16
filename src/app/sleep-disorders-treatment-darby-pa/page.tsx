@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 import SleepDisordersClient from './SleepDisordersClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Sleep Disorders Treatment in Darby, PA | No Waitlist | Sunrise",
+  title: "Sleep Disorders Treatment in Darby, PA | No Waitlist | Sunr…",
   description: "Effective sleep disorder treatment in Darby, PA. Specialized care for insomnia and circadian rhythm disorders. 100% Medicaid accepted. No waitlist.",
   path: "/sleep-disorders-treatment-darby-pa",
   keywords: ["sleep disorders treatment Darby PA", "insomnia therapy Delaware County", "sleep anxiety help", "CBT-I near me", "hypersomnia treatment PA", "circadian rhythm sleep disorder", "Medicaid sleep therapy PA"],
@@ -47,7 +47,8 @@ export default function SleepDisordersTreatmentPage() {
     serviceType: "Sleep Disorder Treatment"
   };
 
-  return (
+  <h1 className="sr-only">sleep disorders treatment darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={sleepFAQs} />

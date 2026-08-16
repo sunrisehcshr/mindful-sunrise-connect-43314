@@ -47,7 +47,8 @@ export default function PsychiatricEvaluationsPage() {
     serviceType: "Psychiatric Evaluation"
   };
 
-  return (
+  <h1 className="sr-only">psychiatric evaluations darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={evalFAQs} />

@@ -6,7 +6,7 @@ import MedicationManagementClient from './MedicationManagementClient';
 
 export const metadata: Metadata = createPageMetadata({
   title: "Psychiatric Medication Management in Darby, PA | No Waitlist",
-  description: "Expert psychiatric medication management in Darby, PA. Board-certified providers offering personalized plans and monitoring. 100% Medicaid accepted. No waitlist.",
+  description: "Expert psychiatric medication management in Darby, PA. Board-certified providers offering personalized plans and monitoring. 100% Medicaid accepted. No wa…",
   path: "/medication-management-darby-pa",
   keywords: ["medication management Darby PA", "psychiatric medication Delaware County", "psychiatrist near me PA", "medication for anxiety Darby", "depression medication PA", "ADHD medication management", "Medicaid psychiatrist PA"],
 });
@@ -47,7 +47,8 @@ export default function MedicationManagementPage() {
     serviceType: "Psychiatric Medication Management"
   };
 
-  return (
+  <h1 className="sr-only">medication management darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={medFAQs} />

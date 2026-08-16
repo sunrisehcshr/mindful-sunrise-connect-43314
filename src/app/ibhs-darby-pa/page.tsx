@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 import IBHSClient from './IBHSClient';
 
 export const metadata: Metadata = createPageMetadata({
-  title: "IBHS Services in Darby, PA | Intensive Behavioral Health | Sunrise",
+  title: "IBHS Services in Darby, PA | Intensive Behavioral Health |…",
   description: "Intensive Behavioral Health Services (IBHS) in Darby, PA and Delaware County. Behavioral therapy for autism and ADHD. 100% Medicaid accepted. No waitlist.",
   path: "/ibhs-darby-pa",
   keywords: ["IBHS Delaware County PA", "intensive behavioral health services Darby", "IBHS near me", "ABA therapy Darby PA", "behavioral health children PA", "IBHS Medicaid Delaware County", "autism services Darby", "Medicaid IBHS therapy PA"],
@@ -47,7 +47,8 @@ export default function IBHSServicesPage() {
     serviceType: "Intensive Behavioral Health Services"
   };
 
-  return (
+  <h1 className="sr-only">ibhs darby pa</h1>
+return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={ibhsFAQs} />
