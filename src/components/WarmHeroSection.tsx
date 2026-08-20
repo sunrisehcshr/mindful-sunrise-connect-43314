@@ -1,118 +1,13 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
 import { Button } from "./ui/button";
-import { motion, AnimatePresence, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { Phone, Calendar } from "lucide-react";
 import CurveTransition from "./ui/CurveTransition";
 
 const WarmHeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-
-  const [showFallback, setShowFallback] = useState(false);
-  const [loopCount, setLoopCount] = useState(0);
-  const MAX_LOOPS = 10;
-
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-  const [videoKey, setVideoKey] = useState(0);
-
-  const { scrollY } = useScroll();
-
-  // Pause video when user scrolls past the second section
-  useEffect(() => {
-    return scrollY.onChange((latest) => {
-      if (!videoRef.current) return;
-
-      if (latest > 1800) {
-        if (!videoRef.current.paused) videoRef.current.pause();
-      } else if (latest < 1800 && shouldLoadVideo) {
-        if (videoRef.current.paused) {
-          videoRef.current.play().catch(() => {});
-        }
-      }
-    });
-  }, [scrollY, shouldLoadVideo]);
-
-  useEffect(() => {
-    // Lazy load video after mount to prioritize LCP
-    const timer = setTimeout(() => {
-      setShouldLoadVideo(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!shouldLoadVideo) return;
-
-    const video = videoRef.current;
-    const section = sectionRef.current;
-    if (!video || !section) return;
-
-    const handleVideoEnded = () => {
-      setLoopCount((prev) => {
-        const newCount = prev + 1;
-
-        if (newCount >= MAX_LOOPS) {
-          setShowFallback(true);
-        } else {
-          setVideoKey((k) => k + 1);
-          video.play().catch(() => {});
-        }
-
-        return newCount;
-      });
-    };
-
-    video.addEventListener("ended", handleVideoEnded);
-
-    const handleScroll = () => {
-      if (showFallback || loopCount >= MAX_LOOPS) return;
-
-      const rect = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      // Hero is in view if its bottom is above 0 and its top is below viewportHeight
-      const inView = rect.bottom > 0 && rect.top < viewportHeight;
-
-      // Pause when user scrolls 30% into the next section
-      const pastThirtyPercentOfNext = rect.bottom < -0.3 * viewportHeight;
-
-      if (inView && !pastThirtyPercentOfNext) {
-        if (video.paused) {
-          video.play().catch(() => {});
-          setIsPlaying(true);
-        }
-      } else {
-        if (!video.paused) {
-          video.pause();
-          setIsPlaying(false);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    const tryPlay = () => {
-      if (loopCount >= MAX_LOOPS) return;
-      video.play().catch(() => setShowFallback(true));
-    };
-
-    if (video.readyState >= 2) {
-      tryPlay();
-    } else {
-      video.addEventListener("loadeddata", tryPlay, { once: true });
-    }
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      video.removeEventListener("loadeddata", tryPlay);
-      video.removeEventListener("ended", handleVideoEnded);
-    };
-  }, [loopCount, showFallback, shouldLoadVideo]);
 
   return (
     <section
@@ -122,13 +17,10 @@ const WarmHeroSection = () => {
     >
       <div className="absolute inset-0 w-full h-full pointer-events-none" />
 
-      {/* Background Media */}
+      {/* Background Image */}
       <motion.div
         initial={{ opacity: 0, scale: 1.1 }}
-        animate={{
-          opacity: isPlaying && !showFallback ? 1 : 0.8,
-          scale: isPlaying ? 1 : 1.05,
-        }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="absolute inset-0 w-full h-full"
         style={{
@@ -137,50 +29,12 @@ const WarmHeroSection = () => {
           transform: "translateZ(0)",
         }}
       >
-        <video
-          ref={videoRef}
-          key={videoKey}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          disablePictureInPicture
-          controlsList="nodownload nofullscreen noremoteplayback"
-          poster="https://ik.imagekit.io/l6c5pgwlc3/pexels-kampus-8380086.jpg"
-          className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-center pointer-events-none transition-opacity duration-1000"
-          style={{ opacity: 1 }}
-          title="Expert mental health care - Sunrise Human Care Services"
-        >
-          {shouldLoadVideo && (
-            <source
-              src="https://ik.imagekit.io/l6c5pgwlc3/5727383-uhd_3840_2160_24fps.mp4"
-              type="video/mp4"
-            />
-          )}
-        </video>
-
-        <AnimatePresence>
-          {showFallback && (
-            <motion.div
-              key="hero-fallback-image"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.5 }}
-              className="absolute inset-0 w-full h-full z-10"
-            >
-              <div
-                className="absolute inset-0 w-full h-full bg-cover bg-[60%_center] md:bg-center"
-                style={{
-                  backgroundImage:
-                      "url('https://ik.imagekit.io/l6c5pgwlc3/pexels-kampus-8380086.jpg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-[60%_center] md:bg-center"
+          style={{
+            backgroundImage: "url('https://ik.imagekit.io/l6c5pgwlc3/pexels-kampus-8380086.jpg')",
+          }}
+        />
       </motion.div>
 
       {/* Readability overlay (all devices) */}
@@ -321,22 +175,6 @@ const WarmHeroSection = () => {
         className="z-20"
         targetRef={sectionRef as any}
       />
-
-      <style>{`
-        video::-webkit-media-controls,
-        video::-webkit-media-controls-panel,
-        video::-webkit-media-controls-play-button,
-        video::-webkit-media-controls-start-playback-button,
-        video::-webkit-media-controls-overlay-play-button {
-          display: none !important;
-          -webkit-appearance: none !important;
-          opacity: 0 !important;
-          pointer-events: none !important;
-        }
-        video::-moz-media-controls {
-          display: none !important;
-        }
-      `}</style>
     </section>
   );
 };
