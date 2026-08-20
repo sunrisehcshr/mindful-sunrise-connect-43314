@@ -132,37 +132,37 @@ const ServicesSection: React.FC = () => {
       title: "Individual Therapy",
       link: "/individual-therapy-darby-pa",
       desc: "One-on-one sessions focused on personal growth, emotional healing, and developing practical coping strategies for life's challenges.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775606298/pexels-alex-green-5699466_kkze9s.jpg",
+      image: "/images/therapy-in-havertown.webp",
     },
     {
       title: "Couples Counseling",
       link: "/couples-counseling-darby-pa",
       desc: "Strengthening relationships through improved communication, conflict resolution, and rebuilding trust in a supportive environment.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg",
+      image: "/images/couple-counseling-havertown-pa.webp",
     },
     {
       title: "Family Therapy",
       link: "/family-therapy-darby-pa",
       desc: "Nurturing family dynamics and fostering healthy connections by addressing collective challenges and improving understanding.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg",
+      image: "/images/family-counseling-havertown.webp",
     },
     {
       title: "IBHS Services",
       link: "/ibhs-darby-pa",
       desc: "Intensive Behavioral Health Services (IBHS) in Darby, PA and Delaware County. Behavioral therapy for autism and ADHD.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg",
+      image: "/images/therapy-for-older-adults.webp",
     },
     {
       title: "Psychiatric Evaluations",
       link: "/psychiatric-evaluations-darby-pa",
       desc: "Comprehensive diagnostic assessments to understand your mental health needs and determine the best course of treatment.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg",
+      image: "/images/therapy-in-havertown.webp",
     },
     {
       title: "Medication Management",
       link: "/medication-management-darby-pa",
       desc: "Professional oversight and monitoring of psychiatric medications to ensure optimal effectiveness and safety in your recovery.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg",
+      image: "/images/therapy-in-havertown.webp",
     },
   ];
 
