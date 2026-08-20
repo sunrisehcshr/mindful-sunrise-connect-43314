@@ -32,7 +32,7 @@ const WarmHeroSection = () => {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-[60%_center] md:bg-center"
           style={{
-            backgroundImage: "url('/images/hero-fallback.png')",
+            backgroundImage: "url('https://ik.imagekit.io/l6c5pgwlc3/pexels-kampus-8380086.jpg')",
           }}
         />
       </motion.div>
