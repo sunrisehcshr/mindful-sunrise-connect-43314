@@ -33,8 +33,7 @@ export default function ServicesPage() {
     }
   ];
 
-  <h1 className="sr-only">services</h1>
-return (
+  return (
     <>
       <SchemaMarkup type="FAQPage" data={faqs} />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />

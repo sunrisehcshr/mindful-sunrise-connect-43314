@@ -26,14 +26,14 @@ export const createPageMetadata = ({
     : keywords || defaultKeywords;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: formattedKeywords,
     alternates: {
       canonical: path,
     },
     openGraph: {
-      title,
+      title: { absolute: title },
       description,
       url,
       siteName: "Sunrise Human Care Services",
@@ -43,7 +43,7 @@ export const createPageMetadata = ({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: { absolute: title },
       description,
       images: image ? [image] : ["/og-image.png"],
     },
