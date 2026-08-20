@@ -47,8 +47,7 @@ export default function MentalHealthDarbyPage() {
     serviceType: "Mental Health Clinic"
   };
 
-  <h1 className="sr-only">mental health darby pa</h1>
-return (
+  return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={darbyFAQs} />

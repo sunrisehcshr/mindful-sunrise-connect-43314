@@ -47,8 +47,7 @@ export default function SleepDisordersTreatmentPage() {
     serviceType: "Sleep Disorder Treatment"
   };
 
-  <h1 className="sr-only">sleep disorders treatment darby pa</h1>
-return (
+  return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={sleepFAQs} />

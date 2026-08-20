@@ -95,8 +95,7 @@ export default function MentalHealthYeadonPage() {
     ]
   };
 
-  <h1 className="sr-only">mental health yeadon pa</h1>
-return (
+  return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={pageContent.faqOverrides} />

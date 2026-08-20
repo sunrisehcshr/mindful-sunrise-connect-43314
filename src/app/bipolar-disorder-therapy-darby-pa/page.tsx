@@ -47,7 +47,6 @@ export default function BipolarTreatmentPage() {
     serviceType: "Bipolar Disorder Treatment"
   };
 
-  <h1 className="sr-only">bipolar disorder therapy darby pa</h1>
 return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
