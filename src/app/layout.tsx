@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     default: "Sunrise Human Care Services | Mental Health Clinic in Darby, PA",
     template: "%s | Sunrise Human Care Services"
   },
-  description: "Comprehensive mental health care in Darby, PA. Medicaid only, no waitlist. Licensed therapists & psychiatrists for anxiety, depression, ADHD & trauma. Call (814) 620-2162.",
+  description: "Comprehensive mental health care in Darby, PA. Medicaid only, no waitlist. Licensed therapists & psychiatrists for anxiety, depression, ADHD & trauma.",
   keywords: "mental health Darby, therapy Darby PA, counseling Delaware County, psychiatry Darby, anxiety treatment Darby, depression therapy Darby, ADHD treatment Darby, trauma therapy PA, PTSD counseling Darby, OCD treatment Darby, bipolar disorder Darby, medication management Darby, psychologist Darby, therapist near me, Darby mental health clinic",
   robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   authors: [{ name: "Sunrise Human Care Services" }],
