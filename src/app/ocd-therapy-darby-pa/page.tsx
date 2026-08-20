@@ -47,7 +47,6 @@ export default function OCDTreatmentPage() {
     serviceType: "OCD Treatment"
   };
 
-  <h1 className="sr-only">ocd therapy darby pa</h1>
 return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
