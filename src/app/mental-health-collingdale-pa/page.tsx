@@ -95,8 +95,7 @@ export default function MentalHealthCollingdalePage() {
     ]
   };
 
-  <h1 className="sr-only">mental health collingdale pa</h1>
-return (
+  return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={pageContent.faqOverrides} />

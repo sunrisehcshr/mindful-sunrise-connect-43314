@@ -14,11 +14,13 @@ export const metadata: Metadata = {
 };
 
 export default function AppointmentPage() {
-  <h1 className="sr-only">appointment</h1>
-return (
+  return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow pt-24">
+        <section className="sr-only" aria-hidden="true">
+          <h1>Book a Therapy Appointment</h1>
+        </section>
         <AppointmentSection />
       </main>
       <Footer />

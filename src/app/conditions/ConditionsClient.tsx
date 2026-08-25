@@ -158,7 +158,7 @@ export default function ConditionsClient() {
         <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 lg:pt-40 lg:pb-24 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg" 
+              src="/lovable-uploads/psychotherapist-clipboard.webp" 
               alt="Mental Health Conditions Treated in Darby PA" 
               fill 
               sizes="100vw"
@@ -380,13 +380,10 @@ export default function ConditionsClient() {
                     </div>
                   </div>
                   <div className="w-full md:w-1/2 relative aspect-square md:aspect-auto md:h-full min-h-[300px] rounded-3xl overflow-hidden shadow-xl group/img">
-                    <video 
-                      src="https://res.cloudinary.com/dabsxebx8/video/upload/w_800,q_auto,f_auto/v1775521186/5697334-uhd_2160_3840_24fps_zh1enu.mp4" 
-                      poster="https://res.cloudinary.com/dabsxebx8/video/upload/w_800,so_0,f_auto,q_auto/v1775521186/5697334-uhd_2160_3840_24fps_zh1enu.jpg"
-                      autoPlay 
-                      loop 
-                      muted 
-                      playsInline
+                    <Image
+                      src="/lovable-uploads/psychotherapist-clipboard.webp"
+                      alt="Evidence-Based Clinical Excellence at Sunrise Human Care"
+                      fill
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent" />

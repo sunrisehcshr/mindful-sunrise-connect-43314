@@ -47,7 +47,6 @@ export default function DepressionTherapyPage() {
     serviceType: "Depression Treatment"
   };
 
-  <h1 className="sr-only">depression therapy darby pa</h1>
 return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />

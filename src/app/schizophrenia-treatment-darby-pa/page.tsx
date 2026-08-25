@@ -47,7 +47,6 @@ export default function SchizophreniaTreatmentPage() {
     serviceType: "Schizophrenia Treatment"
   };
 
-  <h1 className="sr-only">schizophrenia treatment darby pa</h1>
 return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />

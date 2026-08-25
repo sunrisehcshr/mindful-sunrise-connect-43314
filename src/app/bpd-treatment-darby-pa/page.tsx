@@ -47,8 +47,7 @@ export default function BPDTreatmentPage() {
     serviceType: "BPD Treatment"
   };
 
-  <h1 className="sr-only">bpd treatment darby pa</h1>
-return (
+  return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
       <SchemaMarkup type="FAQPage" data={bpdFAQs} />

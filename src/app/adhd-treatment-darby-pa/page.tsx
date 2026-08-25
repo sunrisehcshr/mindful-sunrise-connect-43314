@@ -47,7 +47,6 @@ export default function ADHDTreatmentPage() {
     serviceType: "ADHD Treatment"
   };
 
-  <h1 className="sr-only">adhd treatment darby pa</h1>
 return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />

@@ -1,0 +1,1211 @@
+[
+  {
+    "severity": "warning",
+    "issueType": "duplicate-meta-description",
+    "issue": "Duplicate meta description",
+    "url": "https://sunrisehumancare.com/",
+    "details": {
+      "groupSize": 8,
+      "otherUrls": [
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy",
+        "https://sunrisehumancare.com/team/dr-farah-khan"
+      ]
+    },
+    "howToFix": "Write a unique meta description per page, or remove the duplicated one entirely — search engines will generate a snippet from page content, which beats a wrong duplicate."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-meta-description",
+    "issue": "Duplicate meta description",
+    "url": "https://sunrisehumancare.com/team/anthony-obi",
+    "details": {
+      "groupSize": 8,
+      "otherUrls": [
+        "https://sunrisehumancare.com/",
+        "https://sunrisehumancare.com/team/chevonne-worthy",
+        "https://sunrisehumancare.com/team/dr-farah-khan"
+      ]
+    },
+    "howToFix": "Write a unique meta description per page, or remove the duplicated one entirely — search engines will generate a snippet from page content, which beats a wrong duplicate."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-meta-description",
+    "issue": "Duplicate meta description",
+    "url": "https://sunrisehumancare.com/team/chevonne-worthy",
+    "details": {
+      "groupSize": 8,
+      "otherUrls": [
+        "https://sunrisehumancare.com/",
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/dr-farah-khan"
+      ]
+    },
+    "howToFix": "Write a unique meta description per page, or remove the duplicated one entirely — search engines will generate a snippet from page content, which beats a wrong duplicate."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-meta-description",
+    "issue": "Duplicate meta description",
+    "url": "https://sunrisehumancare.com/team/dr-farah-khan",
+    "details": {
+      "groupSize": 8,
+      "otherUrls": [
+        "https://sunrisehumancare.com/",
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy"
+      ]
+    },
+    "howToFix": "Write a unique meta description per page, or remove the duplicated one entirely — search engines will generate a snippet from page content, which beats a wrong duplicate."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-meta-description",
+    "issue": "Duplicate meta description",
+    "url": "https://sunrisehumancare.com/team/holli-odonnell",
+    "details": {
+      "groupSize": 8,
+      "otherUrls": [
+        "https://sunrisehumancare.com/",
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy"
+      ]
+    },
+    "howToFix": "Write a unique meta description per page, or remove the duplicated one entirely — search engines will generate a snippet from page content, which beats a wrong duplicate."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-meta-description",
+    "issue": "Duplicate meta description",
+    "url": "https://sunrisehumancare.com/team/michael-flynn",
+    "details": {
+      "groupSize": 8,
+      "otherUrls": [
+        "https://sunrisehumancare.com/",
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy"
+      ]
+    },
+    "howToFix": "Write a unique meta description per page, or remove the duplicated one entirely — search engines will generate a snippet from page content, which beats a wrong duplicate."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-meta-description",
+    "issue": "Duplicate meta description",
+    "url": "https://sunrisehumancare.com/team/michael-thevar",
+    "details": {
+      "groupSize": 8,
+      "otherUrls": [
+        "https://sunrisehumancare.com/",
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy"
+      ]
+    },
+    "howToFix": "Write a unique meta description per page, or remove the duplicated one entirely — search engines will generate a snippet from page content, which beats a wrong duplicate."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-meta-description",
+    "issue": "Duplicate meta description",
+    "url": "https://sunrisehumancare.com/team/shanada-anderson",
+    "details": {
+      "groupSize": 8,
+      "otherUrls": [
+        "https://sunrisehumancare.com/",
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy"
+      ]
+    },
+    "howToFix": "Write a unique meta description per page, or remove the duplicated one entirely — search engines will generate a snippet from page content, which beats a wrong duplicate."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-title",
+    "issue": "Duplicate title",
+    "url": "https://sunrisehumancare.com/team/anthony-obi",
+    "details": {
+      "groupSize": 7,
+      "otherUrls": [
+        "https://sunrisehumancare.com/team/chevonne-worthy",
+        "https://sunrisehumancare.com/team/dr-farah-khan",
+        "https://sunrisehumancare.com/team/holli-odonnell"
+      ]
+    },
+    "howToFix": "Write a unique title for each page describing its specific content. For templated pages, include the distinguishing attribute (name, category, location) in the template."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-title",
+    "issue": "Duplicate title",
+    "url": "https://sunrisehumancare.com/team/chevonne-worthy",
+    "details": {
+      "groupSize": 7,
+      "otherUrls": [
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/dr-farah-khan",
+        "https://sunrisehumancare.com/team/holli-odonnell"
+      ]
+    },
+    "howToFix": "Write a unique title for each page describing its specific content. For templated pages, include the distinguishing attribute (name, category, location) in the template."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-title",
+    "issue": "Duplicate title",
+    "url": "https://sunrisehumancare.com/team/dr-farah-khan",
+    "details": {
+      "groupSize": 7,
+      "otherUrls": [
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy",
+        "https://sunrisehumancare.com/team/holli-odonnell"
+      ]
+    },
+    "howToFix": "Write a unique title for each page describing its specific content. For templated pages, include the distinguishing attribute (name, category, location) in the template."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-title",
+    "issue": "Duplicate title",
+    "url": "https://sunrisehumancare.com/team/holli-odonnell",
+    "details": {
+      "groupSize": 7,
+      "otherUrls": [
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy",
+        "https://sunrisehumancare.com/team/dr-farah-khan"
+      ]
+    },
+    "howToFix": "Write a unique title for each page describing its specific content. For templated pages, include the distinguishing attribute (name, category, location) in the template."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-title",
+    "issue": "Duplicate title",
+    "url": "https://sunrisehumancare.com/team/michael-flynn",
+    "details": {
+      "groupSize": 7,
+      "otherUrls": [
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy",
+        "https://sunrisehumancare.com/team/dr-farah-khan"
+      ]
+    },
+    "howToFix": "Write a unique title for each page describing its specific content. For templated pages, include the distinguishing attribute (name, category, location) in the template."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-title",
+    "issue": "Duplicate title",
+    "url": "https://sunrisehumancare.com/team/michael-thevar",
+    "details": {
+      "groupSize": 7,
+      "otherUrls": [
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy",
+        "https://sunrisehumancare.com/team/dr-farah-khan"
+      ]
+    },
+    "howToFix": "Write a unique title for each page describing its specific content. For templated pages, include the distinguishing attribute (name, category, location) in the template."
+  },
+  {
+    "severity": "warning",
+    "issueType": "duplicate-title",
+    "issue": "Duplicate title",
+    "url": "https://sunrisehumancare.com/team/shanada-anderson",
+    "details": {
+      "groupSize": 7,
+      "otherUrls": [
+        "https://sunrisehumancare.com/team/anthony-obi",
+        "https://sunrisehumancare.com/team/chevonne-worthy",
+        "https://sunrisehumancare.com/team/dr-farah-khan"
+      ]
+    },
+    "howToFix": "Write a unique title for each page describing its specific content. For templated pages, include the distinguishing attribute (name, category, location) in the template."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/couples-counseling-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/individual-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/medication-management-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/psychiatric-evaluations-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/grief-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/family-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/depression-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/child-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/relationship-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/anxiety-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/bipolar-disorder-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/ptsd-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/adhd-treatment-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/substance-use-treatment-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/ocd-therapy-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/bpd-treatment-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/dissociative-disorders-treatment-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/eating-disorders-treatment-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/schizophrenia-treatment-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/sleep-disorders-treatment-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/somatic-disorders-treatment-darby-pa",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "heading-order-skip",
+    "issue": "Heading levels skip",
+    "url": "https://sunrisehumancare.com/blog/depression-therapy-darby-pa-complete-guide",
+    "details": null,
+    "howToFix": "Adjust heading levels so they descend one step at a time (H1 → H2 → H3) without skipping."
+  },
+  {
+    "severity": "info",
+    "issueType": "meta-description-too-long",
+    "issue": "Meta description too long",
+    "url": "https://sunrisehumancare.com/",
+    "details": {
+      "length": 171
+    },
+    "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+  },
+  {
+    "severity": "info",
+    "issueType": "meta-description-too-long",
+    "issue": "Meta description too long",
+    "url": "https://sunrisehumancare.com/team/dr-farah-khan",
+    "details": {
+      "length": 171
+    },
+    "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+  },
+  {
+    "severity": "info",
+    "issueType": "meta-description-too-long",
+    "issue": "Meta description too long",
+    "url": "https://sunrisehumancare.com/team/michael-thevar",
+    "details": {
+      "length": 171
+    },
+    "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+  },
+  {
+    "severity": "info",
+    "issueType": "meta-description-too-long",
+    "issue": "Meta description too long",
+    "url": "https://sunrisehumancare.com/team/holli-odonnell",
+    "details": {
+      "length": 171
+    },
+    "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+  },
+  {
+    "severity": "info",
+    "issueType": "meta-description-too-long",
+    "issue": "Meta description too long",
+    "url": "https://sunrisehumancare.com/team/anthony-obi",
+    "details": {
+      "length": 171
+    },
+    "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+  },
+  {
+    "severity": "info",
+    "issueType": "meta-description-too-long",
+    "issue": "Meta description too long",
+    "url": "https://sunrisehumancare.com/team/chevonne-worthy",
+    "details": {
+      "length": 171
+    },
+    "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+  },
+  {
+    "severity": "info",
+    "issueType": "meta-description-too-long",
+    "issue": "Meta description too long",
+    "url": "https://sunrisehumancare.com/team/michael-flynn",
+    "details": {
+      "length": 171
+    },
+    "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+  },
+  {
+    "severity": "info",
+    "issueType": "meta-description-too-long",
+    "issue": "Meta description too long",
+    "url": "https://sunrisehumancare.com/team/shanada-anderson",
+    "details": {
+      "length": 171
+    },
+    "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+  },
+  {
+    "severity": "warning",
+    "issueType": "missing-h1",
+    "issue": "Missing H1 heading",
+    "url": "https://sunrisehumancare.com/appointment",
+    "details": null,
+    "howToFix": "Add a single H1 that states the page's main topic, consistent with the title tag."
+  },
+  {
+    "severity": "warning",
+    "issueType": "multiple-h1",
+    "issue": "Multiple H1 headings",
+    "url": "https://sunrisehumancare.com/about",
+    "details": {
+      "h1Count": 2
+    },
+    "howToFix": "Keep one H1 for the page's main heading and demote the others to H2/H3 (or unstyled elements for non-headings like logos)."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/contact",
+    "details": {
+      "responseTimeMs": 1805
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/individual-therapy-darby-pa",
+    "details": {
+      "responseTimeMs": 1870
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/psychiatric-evaluations-darby-pa",
+    "details": {
+      "responseTimeMs": 1580
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/family-therapy-darby-pa",
+    "details": {
+      "responseTimeMs": 1984
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/child-therapy-darby-pa",
+    "details": {
+      "responseTimeMs": 1568
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/mental-health-yeadon-pa",
+    "details": {
+      "responseTimeMs": 1605
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/dissociative-disorders-treatment-darby-pa",
+    "details": {
+      "responseTimeMs": 1966
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/somatic-disorders-treatment-darby-pa",
+    "details": {
+      "responseTimeMs": 1634
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/team/dr-farah-khan",
+    "details": {
+      "responseTimeMs": 5629
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/team/michael-thevar",
+    "details": {
+      "responseTimeMs": 5633
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/team/holli-odonnell",
+    "details": {
+      "responseTimeMs": 5523
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/team/anthony-obi",
+    "details": {
+      "responseTimeMs": 5904
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/blog",
+    "details": {
+      "responseTimeMs": 5140
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/blog/anxiety-treatment-delaware-county-pa",
+    "details": {
+      "responseTimeMs": 5298
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/blog/adhd-treatment-darby-pa-comprehensive-guide",
+    "details": {
+      "responseTimeMs": 5320
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/blog/family-therapy-darby-pa-guide",
+    "details": {
+      "responseTimeMs": 5929
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/blog/finding-therapist-darby-pa-guide",
+    "details": {
+      "responseTimeMs": 5377
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/blog/depression-therapy-darby-pa-complete-guide",
+    "details": {
+      "responseTimeMs": 6097
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/team/chevonne-worthy",
+    "details": {
+      "responseTimeMs": 6453
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/team/michael-flynn",
+    "details": {
+      "responseTimeMs": 5971
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "slow-response",
+    "issue": "Slow server response",
+    "url": "https://sunrisehumancare.com/team/shanada-anderson",
+    "details": {
+      "responseTimeMs": 6555
+    },
+    "howToFix": "Investigate server/database time and caching for this route; serving cached or statically generated HTML usually fixes it."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/",
+    "details": {
+      "length": 63
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/faq",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/about",
+    "details": {
+      "length": 82
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/services",
+    "details": {
+      "length": 89
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/betterhelp-alternatives-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/mental-health-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/appointment",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/medicaid-therapy",
+    "details": {
+      "length": 97
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/couples-counseling-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/contact",
+    "details": {
+      "length": 84
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/conditions",
+    "details": {
+      "length": 82
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/individual-therapy-darby-pa",
+    "details": {
+      "length": 85
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/medication-management-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/psychiatric-evaluations-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/ibhs-darby-pa",
+    "details": {
+      "length": 89
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/grief-therapy-darby-pa",
+    "details": {
+      "length": 87
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/family-therapy-darby-pa",
+    "details": {
+      "length": 81
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/depression-therapy-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/child-therapy-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/relationship-therapy-darby-pa",
+    "details": {
+      "length": 87
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/anxiety-therapy-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/bipolar-disorder-therapy-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/ptsd-therapy-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/adhd-treatment-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/substance-use-treatment-darby-pa",
+    "details": {
+      "length": 89
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/ocd-therapy-darby-pa",
+    "details": {
+      "length": 84
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/bpd-treatment-darby-pa",
+    "details": {
+      "length": 80
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/mental-health-upper-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/mental-health-yeadon-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/dissociative-disorders-treatment-darby-pa",
+    "details": {
+      "length": 89
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/eating-disorders-treatment-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/mental-health-collingdale-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/schizophrenia-treatment-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/mental-health-lansdowne-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/sleep-disorders-treatment-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/somatic-disorders-treatment-darby-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/mental-health-sharon-hill-pa",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/team/dr-farah-khan",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/team/michael-thevar",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/team/holli-odonnell",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/team/anthony-obi",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/blog",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/blog/anxiety-treatment-delaware-county-pa",
+    "details": {
+      "length": 87
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/blog/adhd-treatment-darby-pa-comprehensive-guide",
+    "details": {
+      "length": 90
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/blog/family-therapy-darby-pa-guide",
+    "details": {
+      "length": 87
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/blog/finding-therapist-darby-pa-guide",
+    "details": {
+      "length": 87
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/blog/depression-therapy-darby-pa-complete-guide",
+    "details": {
+      "length": 81
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/team/chevonne-worthy",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/team/michael-flynn",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  },
+  {
+    "severity": "info",
+    "issueType": "title-too-long",
+    "issue": "Title too long",
+    "url": "https://sunrisehumancare.com/team/shanada-anderson",
+    "details": {
+      "length": 78
+    },
+    "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+  }
+]

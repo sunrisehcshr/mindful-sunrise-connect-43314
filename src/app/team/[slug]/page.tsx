@@ -2,6 +2,12 @@ import { Metadata } from 'next';
 import { createPageMetadata } from '@/lib/seo';
 import TeamMemberClient from './TeamMemberClient';
 
+export function generateStaticParams() {
+  return providers.map((provider) => ({
+    slug: provider.slug,
+  }));
+}
+
 const providers = [
   {
     slug: "michael-thevar",
@@ -85,8 +91,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 
   return createPageMetadata({
-    title: `${provider.name} | ${provider.role} in Darby, PA | Sunrise`,
-    description: `${provider.name} is a ${provider.role} at Sunrise Human Care in Darby, PA. Specializing in ${provider.specialties.join(", ")}. Medicaid accepted, no waitlist.`,
+    title: `${provider.name} | ${provider.role} | Sunrise Human Care`,
+    description: `${provider.name}, ${provider.role} at Sunrise Human Care in Darby, PA. Specialties: ${provider.specialties.join(", ")}. Medicaid accepted.`,
     path: `/team/${provider.slug}`,
     keywords: `${provider.name}, ${provider.role} Darby PA, therapist Darby, psychiatrist Darby, mental health professional Delaware County`,
     image: provider.image

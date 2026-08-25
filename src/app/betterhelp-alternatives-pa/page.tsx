@@ -33,8 +33,7 @@ export default function BetterhelpAlternativesPage() {
     }
   ];
 
-  <h1 className="sr-only">betterhelp alternatives pa</h1>
-return (
+  return (
     <>
       <SchemaMarkup type="FAQPage" data={faqs} />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />

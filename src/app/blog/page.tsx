@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import { createPageMetadata } from '@/lib/seo';
 import BlogPageClient from './BlogPageClient';
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = createPageMetadata({
   title: "Mental Health Resources & Blog | Sunrise Human Care Service…",
   description: "Expert mental health insights for Darby residents. Read our professional articles on anxiety management, depression treatment, and family support.",

@@ -43,7 +43,6 @@ export default function AnxietyTherapyPage() {
     serviceType: "Anxiety Treatment"
   };
 
-  <h1 className="sr-only">anxiety therapy darby pa</h1>
 return (
     <>
       <SchemaMarkup type="MedicalService" data={serviceData} />
