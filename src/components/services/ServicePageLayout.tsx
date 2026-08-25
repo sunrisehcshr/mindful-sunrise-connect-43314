@@ -79,7 +79,7 @@ const ServicePageLayout = ({
   metaDescription,
   serviceType = "Mental Health Service",
   canonicalUrl = "https://sunrisehumancare.com",
-  heroImage = 'https://res.cloudinary.com/dabsxebx8/image/upload/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg',
+  heroImage = "/lovable-uploads/man-therapy-session.webp",
   benefits,
   approaches,
   faqs,
@@ -391,7 +391,7 @@ const ServicePageLayout = ({
                 <div itemProp="reviewedBy" itemScope itemType="https://schema.org/Person">
                   <meta itemProp="name" content="Holli O'Donnell" />
                   <meta itemProp="jobTitle" content="Licensed Mental Health Professional" />
-                  <link itemProp="image" href="https://res.cloudinary.com/dabsxebx8/image/upload/v1774574164/holli_d6mwnh.jpg" />
+                  <link itemProp="image" href="/images/holly.jpg" />
                 </div>
                 <meta itemProp="lastReviewed" content={new Date().toISOString().split('T')[0]} />
                 <p>

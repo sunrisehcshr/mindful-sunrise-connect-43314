@@ -58,7 +58,7 @@ export default function DepressionClient() {
         <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775606299/pexels-alex-green-5699455_gw9npo.jpg" 
+              src="/lovable-uploads/depression.webp" 
               alt="Depression Therapy in Darby PA" 
               fill 
               className="object-cover opacity-20"

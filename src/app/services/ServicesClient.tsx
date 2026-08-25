@@ -270,37 +270,43 @@ export default function ServicesClient() {
       title: "Individual Therapy",
       link: "/individual-therapy-darby-pa",
       desc: "One-on-one sessions focused on personal growth, emotional healing, and developing practical coping strategies for life's challenges.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918057/cropped-shot-of-a-man-having-a-therapeutic-session-2026-03-25-02-43-30-utc_bzrrq0.jpg"
+      image: "/lovable-uploads/man-therapy-session.webp"
     },
     {
       title: "Couples Counseling",
       link: "/couples-counseling-darby-pa",
       desc: "Strengthening relationships through improved communication, conflict resolution, and rebuilding trust in a supportive environment.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg"
+      image: "/lovable-uploads/couple-therapy.webp"
     },
     {
       title: "Family Therapy",
       link: "/family-therapy-darby-pa",
       desc: "Nurturing family dynamics and fostering healthy connections by addressing collective challenges and improving understanding.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg"
+      image: "/lovable-uploads/women-child-progress.webp"
     },
     {
       title: "Psychiatric Evaluations",
       link: "/psychiatric-evaluations-darby-pa",
       desc: "Comprehensive diagnostic assessments by our clinical team to provide clarity and establish an effective treatment roadmap.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg"
+      image: "/lovable-uploads/psychotherapist-clipboard.webp"
     },
     {
       title: "Medication Management",
       link: "/medication-management-darby-pa",
       desc: "Ongoing psychiatric care and prescription monitoring to ensure your medications are safe, effective, and properly balanced.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_800/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg"
+      image: "/lovable-uploads/doctor-medicine-advice.webp"
     },
     {
       title: "Grief & Loss Therapy",
       link: "/grief-therapy-darby-pa",
       desc: "Compassionate bereavement support to help you process profound loss, honor your loved ones, and find a path forward.",
-      image: "https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775382829/pexels-rdne-9065261_qrpmut.jpg"
+      image: "/lovable-uploads/depression-therapy.webp"
+    },
+    {
+      title: "Anxiety Therapy",
+      link: "/anxiety-therapy-darby-pa",
+      desc: "Evidence-based treatment for anxiety disorders, panic attacks, and chronic worry to help you regain calm and control.",
+      image: "/lovable-uploads/anxiety-treatment-delaware-county.webp"
     }
   ];
 
@@ -313,7 +319,7 @@ export default function ServicesClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1775382830/pexels-alex-green-5699748_suqrnx.jpg" 
+              src="/lovable-uploads/anxiety-treatment-delaware-county.webp" 
               alt="Expert Mental Health Services in Darby, PA" 
               fill 
               className="object-cover opacity-60"
