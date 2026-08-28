@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { createPageMetadata } from '@/lib/seo';
+import { pageMetadata } from '@/app/metadata';
 import TeamMemberClient from './TeamMemberClient';
 
 export function generateStaticParams() {
@@ -90,13 +90,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
-  return createPageMetadata({
-    title: `${provider.name} | ${provider.role} | Sunrise Human Care`,
-    description: `${provider.name}, ${provider.role} at Sunrise Human Care in Darby, PA. Specialties: ${provider.specialties.join(", ")}. Medicaid accepted.`,
-    path: `/team/${provider.slug}`,
-    keywords: `${provider.name}, ${provider.role} Darby PA, therapist Darby, psychiatrist Darby, mental health professional Delaware County`,
-    image: provider.image
-  });
+  return pageMetadata(
+    `${provider.name} — ${provider.role} at Sunrise Human Care Services`,
+    `Meet ${provider.name}, a licensed ${provider.role.toLowerCase()} at our Darby, PA clinic. Specialties: ${provider.specialties.join(", ")}. Medicaid accepted, no waitlist.`
+  );
 }
 
 export default function ProviderPage() {
