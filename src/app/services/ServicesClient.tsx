@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useMotionTemplate, useMotionValue, AnimatePresence, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -247,13 +247,13 @@ export default function ServicesClient() {
   const prefersReducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
-      target: containerRef,
-      offset: ["start center", "end center"] as any,
+      layout: "viewport",
+      offset: ["start start", "end start"] as any,
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-      stiffness: 100,
-      damping: 30,
+      stiffness: 80,
+      damping: 25,
       restDelta: 0.001
   });
 
@@ -652,7 +652,7 @@ export default function ServicesClient() {
               </motion.div>
 
               {/* Timeline Container */}
-              <div className="relative max-w-5xl mx-auto" ref={containerRef}>
+              <div className="relative max-w-5xl mx-auto">
                   {/* Background Vertical Line */}
                   <div
                       className="absolute top-0 bottom-0 w-px left-4 md:left-1/2 md:-translate-x-px"

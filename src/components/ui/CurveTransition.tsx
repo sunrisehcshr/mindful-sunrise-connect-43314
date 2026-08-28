@@ -1,64 +1,85 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface CurveTransitionProps {
-  fillColor?: string; // The background color of the PREVIOUS section (e.g. "#ffffff" or "rgb(250, 250, 249)")
-  className?: string; // Additional classes for positioning
-  inverted?: boolean; // If true, the curve points upwards (for bottom of sections)
-  targetRef?: React.RefObject<HTMLElement | null>; // Optional target to track for scroll
+  fillColor?: string;
+  className?: string;
+  inverted?: boolean;
+  targetRef?: React.RefObject<HTMLElement | null>;
 }
 
 export default function CurveTransition({ fillColor = "#ffffff", className, inverted = false, targetRef }: CurveTransitionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const animationRef = useRef<number>(-1);
 
   useEffect(() => {
-    let ticking = false;
+    const target = targetRef?.current || containerRef.current;
+    if (!target) return;
 
-    const updateCurve = () => {
-      const target = targetRef?.current || containerRef.current;
-      if (!target || !pathRef.current) {
-        ticking = false;
-        return;
+    observerRef.current = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "200px 0px", 
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
       }
+    );
 
-      const rect = target.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      let progress;
-      if (inverted) {
-        // Curve is at the bottom of the section
-        // Animate from when bottom enters viewport (windowHeight) to when it reaches top (0)
-        progress = (windowHeight - rect.bottom) / windowHeight;
-      } else {
-        // Curve is at the top of the section
-        // Animate from when top enters viewport (windowHeight) to when it reaches top (0)
-        progress = (windowHeight - rect.top) / windowHeight;
+    observerRef.current.observe(target);
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
       }
-      
-      // Clamp between 0 and 1
-      if (progress < 0) progress = 0;
-      if (progress > 1) progress = 1;
-
-      // Curve value goes from 150 down to 0
-      const curveValue = 150 * (1 - progress);
-      
-      const d = inverted 
-        ? `M 0 100 Q 400 ${curveValue} 800 100 Z` 
-        : `M 0 0 Q 400 ${curveValue} 800 0 Z`;
-        
-      pathRef.current.setAttribute("d", d);
-      ticking = false;
+      if (animationRef.current !== -1) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
+  }, [targetRef]);
 
-    // Initial update
-    updateCurve();
+  const updateCurve = React.useCallback(() => {
+    const target = targetRef?.current || containerRef.current;
+    if (!target || !pathRef.current) return;
 
+    const rect = target.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    let progress;
+    if (inverted) {
+      progress = (windowHeight - rect.bottom) / windowHeight;
+    } else {
+      progress = (windowHeight - rect.top) / windowHeight;
+    }
+
+    if (progress < 0) progress = 0;
+    if (progress > 1) progress = 1;
+
+    const curveValue = 150 * (1 - progress);
+
+    const d = inverted
+      ? `M 0 100 Q 400 ${curveValue} 800 100 Z`
+      : `M 0 0 Q 400 ${curveValue} 800 0 Z`;
+
+    pathRef.current.setAttribute("d", d);
+  }, [inverted, targetRef]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
-        window.requestAnimationFrame(updateCurve);
+        animationRef.current = requestAnimationFrame(() => {
+          updateCurve();
+          ticking = false;
+        });
         ticking = true;
       }
     };
@@ -66,37 +87,42 @@ export default function CurveTransition({ fillColor = "#ffffff", className, inve
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll, { passive: true });
 
+    updateCurve();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      if (animationRef.current !== -1) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
-  }, [inverted, targetRef]);
+  }, [isVisible, updateCurve]);
 
   return (
-    <div 
-      ref={containerRef} 
+    <div
+      ref={containerRef}
       className={cn(
-        "absolute left-0 w-full overflow-hidden z-10 pointer-events-none", 
+        "absolute left-0 w-full overflow-hidden z-10 pointer-events-none",
         inverted ? "bottom-0" : "top-0",
         className
       )}
-      style={{ 
-        height: "10vw", 
-        minHeight: "60px", 
-        maxHeight: "150px", 
+      style={{
+        height: "10vw",
+        minHeight: "60px",
+        maxHeight: "150px",
         transform: inverted ? "translateY(1px)" : "translateY(-1px)",
-        position: "absolute" 
-      }} 
+        position: "absolute",
+      }}
     >
-      <svg 
-        viewBox="0 0 800 100" 
-        preserveAspectRatio="none" 
+      <svg
+        viewBox="0 0 800 100"
+        preserveAspectRatio="none"
         className="w-full h-full overflow-visible"
       >
-        <path 
+        <path
           ref={pathRef}
-          fill={fillColor} 
-          d={inverted ? "M 0 100 Q 400 150 800 100 Z" : "M 0 0 Q 400 150 800 0 Z"} 
+          fill={fillColor}
+          d={inverted ? "M 0 100 Q 400 150 800 100 Z" : "M 0 0 Q 400 150 800 0 Z"}
         />
       </svg>
     </div>
