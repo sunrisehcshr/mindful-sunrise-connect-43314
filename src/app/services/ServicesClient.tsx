@@ -240,6 +240,8 @@ const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextC
     );
 });
 
+SpotlightItem.displayName = "SpotlightItem";
+
 export default function ServicesClient() {
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

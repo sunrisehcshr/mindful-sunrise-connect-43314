@@ -181,21 +181,21 @@ function Card({ children, className, containerClassName }: { children: React.Rea
 }
 
 const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextColor, hoverCardTextColor, answerTextColor, iconColor, hoverIconColor, spotlightColor }: { faq: { question: string, answer: string }, cardBgColor: string, cardBorderColor: string, cardTextColor: string, hoverCardTextColor: string, answerTextColor: string, iconColor: string, hoverIconColor: string, spotlightColor: string }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const divRef = useRef<HTMLDivElement>(null);
-    
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
-    const background = useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, ${spotlightColor}, transparent 40%)`;
+  const [isOpen, setIsOpen] = useState(false);
+  const divRef = useRef<HTMLDivElement>(null);
+  
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const background = useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, ${spotlightColor}, transparent 40%)`;
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!divRef.current) return;
-        const rect = divRef.current.getBoundingClientRect();
-        mouseX.set(e.clientX - rect.left);
-        mouseY.set(e.clientY - rect.top);
-    };
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!divRef.current) return;
+      const rect = divRef.current.getBoundingClientRect();
+      mouseX.set(e.clientX - rect.left);
+      mouseY.set(e.clientY - rect.top);
+  };
 
-    return (
+  return (
         <div
             ref={divRef}
             onMouseMove={handleMouseMove}
@@ -234,6 +234,8 @@ const SpotlightItem = React.memo(({ faq, cardBgColor, cardBorderColor, cardTextC
         </div>
     );
 });
+
+SpotlightItem.displayName = "SpotlightItem";
 
 export default function IBHSClient() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
