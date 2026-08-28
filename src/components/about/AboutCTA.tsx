@@ -38,10 +38,10 @@ const AboutCTA = () => {
               Take the first step
             </span>
             
-            <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
+            <h3 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
               Your journey to wellness <br className="hidden md:block" />
               <span className="font-instrument-serif italic text-orange-400 font-normal">begins here</span>
-            </h2>
+            </h3>
             
             <p className="text-stone-300 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
               Our compassionate team is ready to support you. Schedule an appointment today and discover a sanctuary for healing and growth in Darby, PA.

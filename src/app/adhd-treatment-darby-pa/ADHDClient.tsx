@@ -250,9 +250,9 @@ export default function ADHDClient() {
                 <div id="local-treatment" className="scroll-mt-32 bg-stone-900 text-white rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] pointer-events-none" />
                   
-                  <h3 className="font-barlow font-normal text-3xl md:text-4xl tracking-tighter mb-6 relative z-10">
+                  <h2 className="font-barlow font-normal text-3xl md:text-4xl tracking-tighter mb-6 relative z-10">
                     Accessible ADHD Treatment in <span className="font-instrument-serif italic text-orange-400">Darby, PA</span>
-                  </h3>
+                  </h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     <div className="font-barlow text-stone-300 text-lg leading-relaxed space-y-4">
@@ -309,6 +309,7 @@ export default function ADHDClient() {
                   </div>
                   <div>
                     <span className="text-xs font-bold tracking-wider uppercase text-stone-400 mb-1 block">Clinically Reviewed By</span>
+                    <h2 className="sr-only">Clinically Reviewed By</h2>
                     <h3 className="font-barlow font-bold text-2xl text-stone-900">Holli O'Donnell, Licensed Mental Health Professional</h3>
                     <p className="font-barlow text-stone-500 mt-2 text-sm leading-relaxed">
                       Holli O'Donnell is a dedicated mental health professional at Sunrise Human Care Services, specializing in the diagnosis and multimodal treatment of ADHD, neurodevelopmental disorders, and co-occurring conditions.

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,11 +9,50 @@ import {
   MapPin, Shield, Activity, Brain, HeartPulse, Wind,
   ChevronDown
 } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer/Footer';
-import AppointmentSection from '@/components/Appointment/AppointmentSection';
-import SectionTag from '@/components/ui/section-tag';
 import { cn } from "@/lib/utils";
+
+// Lazy load heavy components
+const Navbar = lazy(() => import('@/components/Navbar'));
+const Footer = lazy(() => import('@/components/Footer/Footer'));
+const AppointmentSection = lazy(() => import('@/components/Appointment/AppointmentSection'));
+const SectionTag = lazy(() => import('@/components/ui/section-tag'));
+
+// Loading fallbacks
+const NavbarFallback = () => (
+  <header className="fixed top-4 inset-x-0 mx-auto z-50 w-[calc(100%-1rem)] sm:w-[95%] max-w-6xl">
+    <div className="backdrop-blur-md rounded-[16px] px-4 md:px-6 py-1.5 md:py-2 transition-all duration-300 border shadow-sm bg-white border-white/30 animate-pulse h-16" />
+  </header>
+);
+
+const FooterFallback = () => (
+  <footer className="bg-white text-stone-800 border-t border-stone-200 animate-pulse h-96" />
+);
+
+const AppointmentSectionFallback = () => (
+  <section className="py-12 md:py-16 bg-white animate-pulse">
+    <div className="container mx-auto px-4 md:px-6">
+      <div className="max-w-4xl mx-auto text-center mb-6">
+        <div className="h-6 w-32 bg-stone-200 rounded-full mx-auto mb-4" />
+        <div className="h-8 w-80 bg-stone-200 rounded mx-auto mb-3" />
+        <div className="h-6 w-96 bg-stone-200 rounded mx-auto" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-6xl flex flex-col gap-4 bg-white p-3 md:p-4 rounded-[3rem] border border-stone-100/50">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
+          <div className="lg:col-span-7 flex">
+            <div className="w-full bg-white rounded-[2.5rem] p-5 md:p-8 border border-stone-200/60 shadow-[0_30px_60px_rgba(0,0,0,0.02)] relative overflow-hidden flex flex-col h-96" />
+          </div>
+          <div className="lg:col-span-5 flex">
+            <div className="w-full bg-white/80 backdrop-blur-xl p-6 md:p-8 rounded-[2.5rem] border border-stone-200/60 shadow-sm group flex flex-col h-full h-96" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const SectionTagFallback = () => (
+  <span className="bg-orange-500/10 text-orange-400 border-orange-500/20 mb-6 backdrop-blur-md inline-block px-3 py-1 rounded-full text-sm font-medium animate-pulse" />
+);
 
 const faqs = [
   {
@@ -51,7 +90,9 @@ export default function AnxietyClient() {
 
   return (
     <div className="flex flex-col min-h-screen bg-stone-50">
-      <Navbar />
+      <Suspense fallback={<NavbarFallback />}>
+        <Navbar />
+      </Suspense>
       
       <main className="flex-grow">
         {/* HERO SECTION */}
@@ -63,7 +104,9 @@ export default function AnxietyClient() {
               fill 
               className="object-cover opacity-20"
               priority
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
             />
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/90 via-stone-950/70 to-stone-50" />
           </div>
@@ -75,9 +118,11 @@ export default function AnxietyClient() {
               transition={{ duration: 0.8 }}
               className="max-w-4xl mx-auto"
             >
-              <SectionTag className="bg-orange-500/10 text-orange-400 border-orange-500/20 mb-6 backdrop-blur-md">
-                Conditions We Treat
-              </SectionTag>
+              <Suspense fallback={<SectionTagFallback />}>
+                <SectionTag className="bg-orange-500/10 text-orange-400 border-orange-500/20 mb-6 backdrop-blur-md">
+                  Conditions We Treat
+                </SectionTag>
+              </Suspense>
               <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Anxiety Treatment <br className="hidden md:block" />
                 <span className="font-instrument-serif italic text-orange-400 font-normal">in Darby, PA</span>
@@ -120,6 +165,7 @@ export default function AnxietyClient() {
                     <a href="#panic" onClick={(e) => scrollToSection(e, 'panic')} className="block hover:text-orange-500 transition-colors ml-4">Panic Disorder</a>
                     <a href="#social" onClick={(e) => scrollToSection(e, 'social')} className="block hover:text-orange-500 transition-colors ml-4">Social Anxiety</a>
                     <a href="#local-treatment" onClick={(e) => scrollToSection(e, 'local-treatment')} className="block hover:text-orange-500 transition-colors">Treatment in Darby, PA</a>
+                    <a href="#eeat-reviewer" onClick={(e) => scrollToSection(e, 'eeat-reviewer')} className="block hover:text-orange-500 transition-colors">Clinically Reviewed By</a>
                     <a href="#faq" onClick={(e) => scrollToSection(e, 'faq')} className="block hover:text-orange-500 transition-colors">Frequently Asked Questions</a>
                   </nav>
 
@@ -260,9 +306,9 @@ export default function AnxietyClient() {
                 <div id="local-treatment" className="scroll-mt-32 bg-stone-900 text-white rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] pointer-events-none" />
                   
-                  <h3 className="font-barlow font-normal text-3xl md:text-4xl tracking-tighter mb-6 relative z-10">
+                  <h2 className="font-barlow font-normal text-3xl md:text-4xl tracking-tighter mb-6 relative z-10">
                     Accessible Anxiety Treatment in <span className="font-instrument-serif italic text-orange-400">Darby, PA</span>
-                  </h3>
+                  </h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     <div className="font-barlow text-stone-300 text-lg leading-relaxed space-y-4">
@@ -307,7 +353,7 @@ export default function AnxietyClient() {
                 </div>
 
                 {/* Section 7: EEAT Reviewer Block */}
-                <div className="bg-white border border-stone-200 p-8 rounded-3xl shadow-sm flex flex-col sm:flex-row gap-6 items-start sm:items-center relative z-20">
+                <div id="eeat-reviewer" className="scroll-mt-32 bg-white border border-stone-200 p-8 rounded-3xl shadow-sm flex flex-col sm:flex-row gap-6 items-start sm:items-center relative z-20">
                   <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-4 border-stone-50">
                     <Image 
                       src="/images/holly.jpg" 
@@ -315,11 +361,13 @@ export default function AnxietyClient() {
                       fill 
                       sizes="96px"
                       className="object-cover"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
                     />
                   </div>
                   <div>
                     <span className="text-xs font-bold tracking-wider uppercase text-stone-400 mb-1 block">Clinically Reviewed By</span>
-                    <h3 className="font-barlow font-bold text-2xl text-stone-900">Holli O'Donnell, Licensed Mental Health Professional</h3>
+                    <h2 className="font-barlow font-bold text-2xl text-stone-900">Holli O'Donnell, Licensed Mental Health Professional</h2>
                     <p className="font-barlow text-stone-500 mt-2 text-sm leading-relaxed">
                       Holli O'Donnell is a dedicated mental health professional at Sunrise Human Care Services, specializing in the diagnosis and evidence-based treatment of anxiety disorders, mood disorders, and trauma.
                     </p>
@@ -368,10 +416,14 @@ export default function AnxietyClient() {
           </div>
         </section>
 
-        <AppointmentSection />
+        <Suspense fallback={<AppointmentSectionFallback />}>
+          <AppointmentSection />
+        </Suspense>
       </main>
       
-      <Footer />
+      <Suspense fallback={<FooterFallback />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

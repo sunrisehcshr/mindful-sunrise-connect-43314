@@ -18,8 +18,10 @@ export default function AppointmentPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow pt-24">
-        <section className="sr-only" aria-hidden="true">
-          <h1>Book a Therapy Appointment</h1>
+        <section className="py-8">
+          <div className="container mx-auto px-4 md:px-6">
+            <h1 className="sr-only">Book a Therapy Appointment</h1>
+          </div>
         </section>
         <AppointmentSection />
       </main>
