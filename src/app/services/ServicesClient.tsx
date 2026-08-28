@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionTemplate, useMotionValue, AnimatePresence, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -247,7 +247,6 @@ export default function ServicesClient() {
   const prefersReducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
-      layout: "viewport",
       offset: ["start start", "end start"] as any,
   });
 
