@@ -4,7 +4,6 @@ import React from 'react';
 import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import SocialLinks from './SocialLinks';
 import FooterNav from './FooterNav';
 import NewsletterForm from './NewsletterForm';
 
@@ -30,7 +29,6 @@ const Footer: React.FC = () => {
             <p className="text-sm text-stone-600 font-barlow leading-relaxed">
               Sunrise Human Care Services Inc is a registered health care organization committed to delivering compassionate and high-quality behavioral health services. We are officially listed in the National Plan and Provider Enumeration System (NPPES) under NPI Number: 1528784568.
             </p>
-            <SocialLinks />
           </div>
 
           {/* Contact Info */}
