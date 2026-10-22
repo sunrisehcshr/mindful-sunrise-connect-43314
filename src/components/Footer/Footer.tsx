@@ -93,11 +93,6 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {[
                   { label: "Darby, PA", href: "/mental-health-darby-pa" },
-                  { label: "Lansdowne, PA", href: "/mental-health-lansdowne-pa" },
-                  { label: "Upper Darby, PA", href: "/mental-health-upper-darby-pa" },
-                  { label: "Yeadon, PA", href: "/mental-health-yeadon-pa" },
-                  { label: "Sharon Hill, PA", href: "/mental-health-sharon-hill-pa" },
-                  { label: "Collingdale, PA", href: "/mental-health-collingdale-pa" }
                 ].map((link) => (
                   <li key={link.label}>
                     <Link href={link.href} className="text-sm text-stone-600 hover:text-orange-500 transition-colors font-barlow flex items-center group">
