@@ -87,7 +87,7 @@ const WarmHeroSection = () => {
           </motion.div>
 
           <motion.h1
-            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-orange-500 mb-2 md:mb-3 leading-[1.1] tracking-tight drop-shadow-xl"
+            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white-500 mb-2 md:mb-3 leading-[1.1] tracking-tight drop-shadow-xl"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
@@ -98,7 +98,7 @@ const WarmHeroSection = () => {
             }}
           >
             Expert mental health care in Darby <br className="sm:hidden" />
-            <span className="inline md:block font-instrument-serif italic text-white font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 leading-tight drop-shadow-md">
+            <span className="inline md:block font-barlow not-italic font-semibold text-orange-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 leading-tight drop-shadow-md">
               to help you reclaim your peace of mind
             </span>
           </motion.h1>
