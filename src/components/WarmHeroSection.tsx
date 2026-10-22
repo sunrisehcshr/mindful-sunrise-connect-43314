@@ -87,7 +87,7 @@ const WarmHeroSection = () => {
           </motion.div>
 
           <motion.h1
-            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-2 md:mb-3 leading-[1.1] tracking-tight drop-shadow-xl"
+            className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-orange-500 mb-2 md:mb-3 leading-[1.1] tracking-tight drop-shadow-xl"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
