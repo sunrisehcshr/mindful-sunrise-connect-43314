@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
                 <motion.a 
                   whileTap={{ scale: 0.98 }}
                   href="tel:988" 
-                  className="font-black text-orange-700 hover:text-orange-800 underline underline-offset-2 inline-flex items-center"
+                  className="font-black text-2xl text-orange-700 hover:text-orange-800 underline underline-offset-2 inline-flex items-center"
                 >
                   <Phone className="h-3 w-3 mr-1" /> 988
                 </motion.a>
