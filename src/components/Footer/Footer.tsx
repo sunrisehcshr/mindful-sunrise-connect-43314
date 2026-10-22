@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-red-100 mr-3 shrink-0">
                 <AlertTriangle className="h-4 w-4 text-red-500" />
               </div>
-              <p className="text-sm text-stone-700 font-barlow">
+              <p className="text-base text-stone-700 font-barlow">
                 <span className="font-semibold text-stone-900">Emergency:</span> If this is a life-threatening emergency, please call 911 or the National Suicide Prevention Lifeline{' '}
                 <motion.a 
                   whileTap={{ scale: 0.98 }}
