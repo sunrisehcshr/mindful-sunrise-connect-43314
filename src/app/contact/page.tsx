@@ -42,7 +42,7 @@ export default function ContactPage() {
                 
                 <h1 className="font-barlow font-bold text-4xl md:text-6xl text-white tracking-tighter leading-none mb-6">
                   We&apos;re here to <br className="hidden sm:block" />
-                  <span className="font-instrument-serif italic text-orange-500 font-normal">listen and help.</span>
+                 <span className="font-barlow not-italic text-orange-500 font-bold">Listen and help.</span>
                 </h1>
                 
                 <p className="text-stone-300 text-lg md:text-xl font-barlow max-w-2xl mx-auto leading-relaxed">
