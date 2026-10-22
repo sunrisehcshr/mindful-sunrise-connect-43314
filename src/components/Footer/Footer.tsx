@@ -5,7 +5,6 @@ import { MapPin, Phone, Mail, Clock, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterNav from './FooterNav';
-import NewsletterForm from './NewsletterForm';
 
 import { motion } from 'framer-motion';
 
@@ -132,10 +131,6 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="space-y-5">
-              <h3 className="font-barlow font-semibold text-lg text-stone-900">Newsletter</h3>
-              <NewsletterForm />
-            </div>
           </div>
         </div>
       </div>
