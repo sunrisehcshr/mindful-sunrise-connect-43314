@@ -122,7 +122,7 @@ const WarmHeroSection = () => {
       </div>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 justify-center"
+            className="flex flex-col sm:flex-row gap-3 justify-center mb-12 md:mb-16"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
