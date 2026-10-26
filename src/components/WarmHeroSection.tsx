@@ -12,7 +12,7 @@ const WarmHeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-stone-900"
+      className="relative min-h-[100vh] md:min-h-screen md:h-auto w-full flex items-center justify-center overflow-hidden bg-stone-900"
       id="home"
     >
       <div className="absolute inset-0 w-full h-full pointer-events-none" />
@@ -40,11 +40,11 @@ const WarmHeroSection = () => {
       {/* Readability overlay (all devices) */}
       <div className="absolute inset-0 z-0 bg-black/40" />
 
-      <div className="container mx-auto px-4 z-10 relative text-center pt-40 md:pt-32 -mt-16">
+      <div className="container mx-auto px-4 z-20 relative text-center pt-40 md:pt-32 -mt-16">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto py-12 px-6 md:py-8 md:px-12 relative overflow-hidden"
+         className="w-full max-w-5xl mx-auto relative overflow-hidden"
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -63,7 +63,7 @@ const WarmHeroSection = () => {
                 transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="flex flex-col items-center gap-1 sm:gap-2 mb-3 sm:mb-4"
+            className="flex flex-col items-center gap-1 sm:gap-2 mb-3 sm:mb-4 relative z-20 mt-16 md:mt-20"
           >
             <div className="inline-block bg-black/20 backdrop-blur-md border border-white/10 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none shadow-sm">
               <div className="overflow-hidden relative w-full h-full flex items-center" style={{ willChange: 'transform' }}>
@@ -85,7 +85,7 @@ const WarmHeroSection = () => {
               </div>
             </div>
           </motion.div>
-
+<div className="inline-block w-fit max-w-full mx-auto mb-3 rounded-xl border border-white/10 bg-[#171717]/90 px-4 py-3 md:px-6 md:py-4">
           <motion.h1
             className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-2 md:mb-3 leading-[1.1] tracking-tight drop-shadow-xl"
             variants={{
@@ -119,9 +119,10 @@ const WarmHeroSection = () => {
             anxiety, depression, or trauma. You don’t have to wait months for
             the support you need today.
           </motion.p>
+      </div>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 justify-center"
+        className="flex flex-col sm:flex-row gap-3 justify-center mb-6 relative z-10"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
