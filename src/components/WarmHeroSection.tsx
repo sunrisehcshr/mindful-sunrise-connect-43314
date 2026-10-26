@@ -38,7 +38,7 @@ const WarmHeroSection = () => {
       </motion.div>
 
       {/* Readability overlay (all devices) */}
-      <div className="absolute inset-0 z-0 bg-black/40" />
+      <div className="absolute inset-0 z-0 bg-black/55" />
 
       <div className="container mx-auto px-4 z-10 relative text-center pt-40 md:pt-32 -mt-16">
         <motion.div
