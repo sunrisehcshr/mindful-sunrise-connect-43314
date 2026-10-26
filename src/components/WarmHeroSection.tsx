@@ -85,7 +85,7 @@ const WarmHeroSection = () => {
               </div>
             </div>
           </motion.div>
-<div className="w-fit max-w-[1000px] mx-auto mb-3 rounded-xl border border-white/10 bg-[#171717]/90 px-4 py-4 md:px-6 md:py-5">
+<div className="inline-block w-fit max-w-full mx-auto mb-3 rounded-xl border border-white/10 bg-[#171717]/90 px-4 py-3 md:px-6 md:py-4">
           <motion.h1
             className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-2 md:mb-3 leading-[1.1] tracking-tight drop-shadow-xl"
             variants={{
