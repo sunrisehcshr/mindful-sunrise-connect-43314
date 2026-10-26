@@ -44,7 +44,7 @@ const WarmHeroSection = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-         className="w-fit max-w-[95%] mx-auto py-6 px-5 md:py-6 md:px-8 relative overflow-hidden rounded-2xl bg-black/25 backdrop-blur-[2px] border border-white/10"
+         className="w-full max-w-5xl mx-auto relative overflow-hidden"
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -85,7 +85,7 @@ const WarmHeroSection = () => {
               </div>
             </div>
           </motion.div>
-
+<div className="w-fit max-w-full mx-auto mb-6 rounded-xl border border-white/10 bg-black/25 px-4 py-4 md:px-6 md:py-5">
           <motion.h1
             className="font-barlow text-balance font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-2 md:mb-3 leading-[1.1] tracking-tight drop-shadow-xl"
             variants={{
@@ -119,6 +119,7 @@ const WarmHeroSection = () => {
             anxiety, depression, or trauma. You don’t have to wait months for
             the support you need today.
           </motion.p>
+      </div>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-3 justify-center"
