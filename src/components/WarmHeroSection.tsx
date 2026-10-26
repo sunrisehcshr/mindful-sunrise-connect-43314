@@ -44,7 +44,7 @@ const WarmHeroSection = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-         className="max-w-4xl mx-auto py-8 px-5 md:py-8 md:px-8 relative overflow-hidden rounded-2xl bg-black/25 backdrop-blur-[2px] border border-white/10"
+         className="w-fit max-w-[95%] mx-auto py-6 px-5 md:py-6 md:px-8 relative overflow-hidden rounded-2xl bg-black/25 backdrop-blur-[2px] border border-white/10"
           variants={{
             hidden: { opacity: 0 },
             visible: {
