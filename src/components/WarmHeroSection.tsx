@@ -63,7 +63,7 @@ const WarmHeroSection = () => {
                 transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="flex flex-col items-center gap-1 sm:gap-2 mb-3 sm:mb-4 relative z-20 translate-y-6"
+            className="flex flex-col items-center gap-1 sm:gap-2 mb-3 sm:mb-4 relative z-20 mt-10 md:mt-12"
           >
             <div className="inline-block bg-black/20 backdrop-blur-md border border-white/10 text-white font-barlow font-semibold text-[9px] xs:text-[10px] sm:text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full whitespace-nowrap overflow-hidden max-w-[280px] xs:max-w-none shadow-sm">
               <div className="overflow-hidden relative w-full h-full flex items-center" style={{ willChange: 'transform' }}>
