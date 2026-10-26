@@ -122,7 +122,7 @@ const WarmHeroSection = () => {
       </div>
 
           <motion.div
-            <div className="inline-block w-fit max-w-[900px] mx-auto mb-3 rounded-xl border border-white/10 bg-[#171717]/80 px-3 py-2 md:px-5 md:py-3">
+        className="flex flex-col sm:flex-row gap-3 justify-center mb-6 relative z-10"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
