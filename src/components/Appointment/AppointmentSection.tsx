@@ -44,7 +44,7 @@ const AppointmentSection = () => {
           
           <motion.h2 variants={itemVariants} className="font-barlow font-normal text-4xl md:text-5xl text-balance text-stone-900 tracking-tighter leading-none mb-3">
             Start your recovery within {' '}
-            <span className="font-instrument-serif italic text-orange-500 font-normal">24 hours.</span>
+            <span className="font-barlow not-italic text-orange-500 font-normal">24 hours.</span>
           </motion.h2>
           
           <motion.p variants={itemVariants} className="text-stone-500 font-barlow text-lg max-w-2xl mx-auto">
