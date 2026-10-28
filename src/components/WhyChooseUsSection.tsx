@@ -156,7 +156,7 @@ const WhyChooseUsSection = () => {
                         <SectionTag>Why Choose Us</SectionTag>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-balance font-normal text-stone-900 tracking-tighter leading-[1.1] md:leading-tight">
                             Expert clinical care that <br />
-                            <span className="font-instrument-serif italic text-orange-500">doesn&apos;t make you wait.</span>
+                            <span className="font-barlow not-italic text-orange-500">doesn&apos;t make you wait.</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -184,7 +184,7 @@ const WhyChooseUsSection = () => {
                                             Sunrise
                                         </span>
                                         <div className="flex items-center gap-2">
-                                            <span className="text-sm md:text-base font-instrument-serif italic text-stone-400">Human Care Services</span>
+                                            <span className="text-sm md:text-base font-barlow not-italic text-stone-400">Human Care Services</span>
                                             <div className="h-px w-8 bg-stone-200" />
                                         </div>
                                         <div className="mt-2">
@@ -248,7 +248,7 @@ const WhyChooseUsSection = () => {
                             <div className="space-y-6">
                                 <h2 className="text-4xl md:text-6xl font-normal leading-[0.95] tracking-tighter text-stone-900">
                                     Mental health care <br />
-                                    without the <span className="font-instrument-serif italic text-orange-500">3-month waitlist.</span>
+                                    without the <span className="font-barlow not-italic text-orange-500">3-month waitlist.</span>
                                 </h2>
                                 <p className="max-w-md text-stone-500 text-sm leading-relaxed font-medium">
                                     We&apos;ve eliminated the typical barriers to care. Get compassionate, licensed clinical specialists ready to help you thrive—available in our clinic or from your home within days, not months.
@@ -349,7 +349,7 @@ const WhyChooseUsSection = () => {
                                     <ShieldCheck className="h-6 w-6 md:h-8 md:w-8 text-emerald-500" />
                                 </div>
                                 <h3 className="text-xl sm:text-2xl md:text-4xl font-light tracking-tight text-stone-800 leading-[1.2] md:leading-[1.1] max-w-[900px] mx-auto text-balance">
-                                    &quot;We don&apos;t just treat symptoms; we help you <span className="font-instrument-serif italic text-orange-500">reclaim the person you were before the struggle began.</span>&quot;
+                                    &quot;We don&apos;t just treat symptoms; we help you <span className="font-barlow not-italic text-orange-500">reclaim the person you were before the struggle began.</span>&quot;
                                 </h3>
                                 <Link href="/contact">
                                     <motion.button

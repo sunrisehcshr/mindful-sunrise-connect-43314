@@ -182,7 +182,7 @@ const ServicesSection: React.FC = () => {
             </SectionTag>
             <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
                 From Talk Therapy to Psychiatric Care: <br />
-                <span className="font-instrument-serif italic text-orange-500">Everything you need to heal, under one roof.</span>
+                <span className="font-barlow not-italic text-orange-500">Everything you need to heal, under one roof.</span>
             </h2>
           </motion.div>
         </motion.div>

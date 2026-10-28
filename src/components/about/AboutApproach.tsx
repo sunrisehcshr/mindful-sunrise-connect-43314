@@ -34,7 +34,7 @@ const AboutApproach = () => {
                 <SectionTag>Clinical Approach</SectionTag>
               </div>
               <h2 className="font-barlow font-normal text-4xl md:text-5xl text-stone-900 tracking-tighter leading-none mb-6">
-                Healing tailored to <span className="font-instrument-serif italic text-orange-500 font-normal">your life</span>
+                Healing tailored to <span className="font-barlow not-italic text-orange-500 font-normal">your life</span>
               </h2>
               <div className="space-y-4 text-stone-500 font-barlow text-sm md:text-base leading-relaxed mb-8">
                 <p>
