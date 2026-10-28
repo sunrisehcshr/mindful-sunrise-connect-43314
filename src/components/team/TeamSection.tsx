@@ -89,7 +89,7 @@ export default function TeamSection() {
             </SectionTag>
             <h2 className="mb-6 font-normal text-4xl md:text-6xl text-balance text-stone-900 tracking-tighter leading-tight">
               Meet our clinical experts <br />
-              <span className="font-instrument-serif italic text-orange-500">dedicated to your recovery.</span>
+              <span className="font-barlow not-italic text-orange-500">dedicated to your recovery.</span>
             </h2>
             <p className="max-w-2xl text-stone-500 text-lg leading-relaxed mx-auto">
               Our compassionate team of licensed therapists and psychiatrists is dedicated to providing personalized, evidence-based care in Darby, PA.
@@ -156,7 +156,7 @@ export default function TeamSection() {
             
             <div className="relative z-10 flex flex-col items-center text-center gap-10">
               <p className="font-barlow font-normal text-3xl md:text-4xl lg:text-5xl text-white leading-[1.2] tracking-tighter max-w-4xl drop-shadow-lg">
-                &quot;<span className="font-instrument-serif italic">The team at Sunrise didn&apos;t just listen to me; they gave me the exact tools I needed to finally manage my anxiety and</span> <span className="font-instrument-serif italic text-orange-400 font-normal">get my life back.</span>&quot;
+                &quot;<span className="font-barlow not-italic">The team at Sunrise didn&apos;t just listen to me; they gave me the exact tools I needed to finally manage my anxiety and</span> <span className="font-barlow not-italic text-orange-400 font-normal">get my life back.</span>&quot;
               </p>
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="shrink-0">
