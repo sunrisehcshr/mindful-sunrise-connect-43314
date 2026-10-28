@@ -249,7 +249,7 @@ const FAQSection = () => {
           
           <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight mb-6">
             7 questions you might be {' '}
-            <span className="font-instrument-serif italic text-orange-500 font-normal">hesitant to ask.</span>
+            <span className="font-barlow not-italic text-orange-500 font-normal">hesitant to ask.</span>
           </motion.h2>
           
           <motion.p variants={itemVariants} className="text-stone-500 font-barlow text-lg md:text-xl max-w-2xl mx-auto">
