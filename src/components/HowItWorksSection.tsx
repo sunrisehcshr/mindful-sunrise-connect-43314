@@ -210,8 +210,8 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                         Your Journey
                     </SectionTag>
                     <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                        The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
-                    </h2>
+  The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
+</h2>
                   </div>
                 </motion.div>
 
