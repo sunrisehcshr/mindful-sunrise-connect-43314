@@ -27,7 +27,7 @@ const AboutSection = () => {
           
           <h2 className="font-barlow font-normal text-4xl md:text-6xl text-stone-900 tracking-tighter leading-none mb-6">
             Compassionate care for {' '}
-            <span className="font-instrument-serif italic text-orange-500 font-normal">every journey</span>
+           <span className="font-barlow not-italic text-orange-500 font-normal">every journey</span>
           </h2>
           
           <p className="text-stone-500 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
@@ -101,7 +101,7 @@ const AboutSection = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-[50px] -mr-16 -mt-16 group-hover:bg-orange-500/20 transition-all duration-700" />
                 <div className="relative z-10">
                   <h3 className="text-4xl md:text-5xl font-barlow font-normal text-white mb-2 tracking-tighter">
-                    30<span className="font-instrument-serif italic text-orange-500">+</span>
+                    30<span className="font-barlow not-italic text-orange-500">+</span>
                   </h3>
                   <p className="text-stone-400 font-barlow text-sm font-bold uppercase tracking-widest">Years Experience</p>
                   <p className="text-stone-500 font-barlow text-sm mt-3 leading-relaxed">Decades of dedicated clinical excellence and compassionate care.</p>
@@ -112,7 +112,7 @@ const AboutSection = () => {
               <div className="bg-white rounded-[2rem] p-8 relative overflow-hidden group border border-stone-200/60 shadow-[0_30px_60px_rgba(0,0,0,0.02)]">
                 <div className="relative z-10">
                   <h3 className="text-4xl md:text-5xl font-barlow font-normal text-stone-900 mb-2 tracking-tighter">
-                    100<span className="font-instrument-serif italic text-orange-500">%</span>
+                    100<span className="font-barlow not-italic text-orange-500">%</span>
                   </h3>
                   <p className="text-stone-900 font-barlow text-sm font-bold uppercase tracking-widest">Personalized</p>
                   <p className="text-stone-500 font-barlow text-sm mt-3 leading-relaxed">Treatment plans specifically tailored to your unique journey.</p>
