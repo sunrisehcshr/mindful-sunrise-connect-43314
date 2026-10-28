@@ -86,7 +86,7 @@ const AboutValues = () => {
         >
           <SectionTag>Our Core Values</SectionTag>
           <h2 className="font-barlow font-normal text-4xl md:text-5xl text-stone-900 tracking-tighter leading-none mb-6">
-            The principles that <span className="font-instrument-serif italic text-orange-500 font-normal">guide us</span>
+            The principles that <span className="font-barlow not-italic text-orange-500 font-normal">guide us</span>
           </h2>
           <p className="text-stone-500 font-barlow text-lg max-w-2xl mx-auto leading-relaxed">
             Everything we do at Sunrise Human Care is built upon a foundation of core beliefs designed to create a safe, supportive environment.
