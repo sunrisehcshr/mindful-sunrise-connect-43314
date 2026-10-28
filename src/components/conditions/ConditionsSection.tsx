@@ -214,7 +214,7 @@ const ConditionsSection = () => {
             <SectionTag>Conditions We Treat</SectionTag>
             <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight max-w-[20ch] md:max-w-[35ch] mx-auto w-full text-balance">
               Find targeted relief <br />
-              <span className="font-instrument-serif italic text-orange-500">for your specific struggle.</span>
+              <span className="font-barlow not-italic text-orange-500">for your specific struggle.</span>
             </h2>
           </motion.div>
           <motion.p variants={itemVariants} className="text-stone-500 font-barlow text-lg mt-6 max-w-2xl mx-auto">
