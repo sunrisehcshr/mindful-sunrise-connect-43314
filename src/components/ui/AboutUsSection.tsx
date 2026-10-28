@@ -100,7 +100,7 @@ const AboutUsSection = () => {
             <SectionTag>Our Story</SectionTag>
             <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                 Compassionate support to help you <br />
-                <span className="font-instrument-serif italic text-orange-500">feel like yourself again.</span>
+                <span className="font-barlow not-italic text-orange-500">feel like yourself again.</span>
             </h2>
           </div>
         </motion.div>
@@ -118,7 +118,7 @@ const AboutUsSection = () => {
                 Our Vision for Darby
               </h3>
               <div className="space-y-4">
-                <p className="text-stone-500 leading-relaxed font-medium italic">
+                <p className="text-stone-500 leading-relaxed font-medium not-italic font-barlow">
                   &quot;We treat the person, not the symptom. Our goal is to provide a trauma-informed environment where evidence-based therapy leads to measurable clinical improvement.&quot;
                 </p>
                 <p className="text-stone-500 leading-relaxed font-medium">
