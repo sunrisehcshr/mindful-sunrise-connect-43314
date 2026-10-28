@@ -356,7 +356,7 @@ export default function IndividualTherapyClient() {
                 <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Individual Therapy in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                One-on-one counseling in Darby, PA. Learn practical tools to <Link href="/anxiety-therapy-darby-pa" className="text-white font-barlow not-italic font-normal hover:text-stone-200 underline decoration-orange-500/50 underline-offset-4 transition-colors" reduce anxiety</Link>, <Link href="/depression-therapy-darby-pa" className="text-white font-instrument-serif italic font-normal hover:text-stone-200 underline decoration-orange-500/50 underline-offset-4 transition-colors">overcome depression</Link>, and regain control of your daily life in a 100% confidential environment.
+                One-on-one counseling in Darby, PA. Learn practical tools to <Link href="/anxiety-therapy-darby-pa" className="text-white font-barlow not-italic font-normal hover:text-stone-200 underline decoration-orange-500/50 underline-offset-4 transition-colors">reduce anxiety</Link>, <Link href="/depression-therapy-darby-pa" className="text-white font-barlow not-italic font-normal hover:text-stone-200 underline decoration-orange-500/50 underline-offset-4 transition-colors">overcome depression</Link>, and regain control of your daily life in a 100% confidential environment.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
