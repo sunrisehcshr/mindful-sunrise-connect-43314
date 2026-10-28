@@ -89,7 +89,7 @@ export default function TeamSection() {
             </SectionTag>
             <h2 className="mb-6 font-normal text-4xl md:text-6xl text-balance text-stone-900 tracking-tighter leading-tight">
               Meet our clinical experts <br />
-              <span className="font-instrument-serif italic text-orange-500">dedicated to your recovery.</span>
+              <span className="font-barlow not-italic text-orange-500">dedicated to your recovery.</span>
             </h2>
             <p className="max-w-2xl text-stone-500 text-lg leading-relaxed mx-auto">
               Our compassionate team of licensed therapists and psychiatrists is dedicated to providing personalized, evidence-based care in Darby, PA.
