@@ -20,7 +20,7 @@ export default function ParallaxBanner({ imageUrl = "/images/parallax-bg.png" }:
       >
         <div className="relative z-10 flex h-full w-full flex-col justify-between p-10 md:p-20 text-white">
           <p 
-            className="w-full md:w-[60vw] self-end text-2xl md:text-[3.2vw] font-instrument-serif italic tracking-tight leading-tight text-right opacity-95 drop-shadow-lg"
+             className="w-full md:w-[60vw] self-end text-2xl md:text-[3.2vw] font-barlow not-italic tracking-tight leading-tight text-right opacity-95 drop-shadow-lg"
           >
             <span className="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent drop-shadow-none">Healing</span> is not a linear journey, <br />
             but a continuous evolution of the self. <br />
@@ -30,7 +30,7 @@ export default function ParallaxBanner({ imageUrl = "/images/parallax-bg.png" }:
             <div className="text-4xl md:text-[6vw] font-barlow font-black tracking-[0.05em] leading-[0.8] drop-shadow-xl">
               <span className="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent drop-shadow-none inline-block">Sunrise</span> <br />
               <span 
-                className="font-instrument-serif italic font-normal lowercase tracking-normal text-white"
+                className="font-barlow not-italic font-normal lowercase tracking-normal text-white"
               >
                 Human Care
               </span>

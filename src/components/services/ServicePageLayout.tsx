@@ -153,7 +153,7 @@ const ServicePageLayout = ({
                 </span>
                 <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                   {title.split(' ').slice(0, -1).join(' ')} <br className="hidden md:block" />
-                  <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">{title.split(' ').slice(-1)}</span>
+                  <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">{title.split(' ').slice(-1)}</span>
                 </h1>
                 <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                   {description}
@@ -240,7 +240,7 @@ const ServicePageLayout = ({
                       <SectionTag className="bg-orange-500/20 text-orange-400 border-orange-500/30 mb-6">Our Approach</SectionTag>
                       <h2 className="font-barlow font-normal text-4xl md:text-5xl tracking-tighter leading-tight mb-6">
                         Treatment approaches <br />
-                        <span className="font-instrument-serif italic text-orange-400 font-normal">for {serviceType}</span>
+                       <span className="font-barlow not-italic text-orange-400 font-normal">for {serviceType}</span>
                       </h2>
                       <div className="space-y-6 font-barlow text-stone-300 text-lg leading-relaxed">
                         <p>

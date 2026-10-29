@@ -104,7 +104,7 @@ const FullTeamSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Meet the professionals <span className="font-instrument-serif italic text-orange-500 font-normal">behind your care</span>
+            Meet the professionals <span className="font-barlow not-italic text-orange-500 font-normal">behind your care</span>
           </motion.h2>
 
           <motion.p

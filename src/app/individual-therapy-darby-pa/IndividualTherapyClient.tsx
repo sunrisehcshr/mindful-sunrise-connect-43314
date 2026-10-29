@@ -92,7 +92,7 @@ const TimelineStep = React.memo(({
                 >
                     <span 
                         className={cn(
-                            "font-bold text-5xl font-instrument-serif mb-4 block transition duration-500",
+                            "font-bold text-5xl font-barlow mb-4 block transition duration-500",
                             shouldGlow ? "text-orange-500 opacity-100" : "text-orange-500 opacity-30 group-hover/step:opacity-100"
                         )}
                     >
@@ -353,10 +353,10 @@ export default function IndividualTherapyClient() {
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Take Back Your Life with <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Individual Therapy in Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Individual Therapy in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                One-on-one counseling in Darby, PA. Learn practical tools to <Link href="/anxiety-therapy-darby-pa" className="text-white font-instrument-serif italic font-normal hover:text-stone-200 underline decoration-orange-500/50 underline-offset-4 transition-colors">reduce anxiety</Link>, <Link href="/depression-therapy-darby-pa" className="text-white font-instrument-serif italic font-normal hover:text-stone-200 underline decoration-orange-500/50 underline-offset-4 transition-colors">overcome depression</Link>, and regain control of your daily life in a 100% confidential environment.
+                One-on-one counseling in Darby, PA. Learn practical tools to <Link href="/anxiety-therapy-darby-pa" className="text-white font-barlow not-italic font-normal hover:text-stone-200 underline decoration-orange-500/50 underline-offset-4 transition-colors">reduce anxiety</Link>, <Link href="/depression-therapy-darby-pa" className="text-white font-barlow not-italic font-normal hover:text-stone-200 underline decoration-orange-500/50 underline-offset-4 transition-colors">overcome depression</Link>, and regain control of your daily life in a 100% confidential environment.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -393,7 +393,7 @@ export default function IndividualTherapyClient() {
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Why Choose Sunrise</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Therapy tailored to your exact needs, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not a textbook.</span>
+                            Therapy tailored to your exact needs, <br className="hidden md:block" /><span className="font-barlow not-italic text-orange-500">not a textbook.</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -464,7 +464,7 @@ export default function IndividualTherapyClient() {
                   <SectionTag>Targeted Relief</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     Find relief from the weight of <br />
-                    <span className="font-instrument-serif italic text-orange-500">everyday struggles.</span>
+                    <span className="font-barlow not-italic text-orange-500">everyday struggles.</span>
                   </h2>
                   <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
                     You don't have to carry this burden alone. Our specialists in Darby, PA use proven, evidence-based methods to help you break free from emotional pain and get back to living fully.
@@ -532,7 +532,7 @@ export default function IndividualTherapyClient() {
                         <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">How We Work</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
                             Discover Proven Therapies <br />
-                            <span className="font-instrument-serif italic text-orange-400">That Deliver Real Results</span>
+                            <span className="font-barlow not-italic text-orange-400">That Deliver Real Results</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
                             Stop guessing with your mental health. We exclusively use scientifically proven, evidence-based practices (EBPs) tailored to your unique mind—ensuring you experience measurable progress, faster.
@@ -578,7 +578,7 @@ export default function IndividualTherapyClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                    The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -646,7 +646,7 @@ export default function IndividualTherapyClient() {
                    
                    <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start feeling better <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-orange-400 font-normal">this week.</span>
+                     <span className="font-barlow not-italic text-orange-400 font-normal">this week.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
@@ -735,7 +735,7 @@ export default function IndividualTherapyClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Individual Therapy <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Individual Therapy <span className="font-barlow not-italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 
@@ -789,7 +789,7 @@ export default function IndividualTherapyClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>More Support</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Explore <span className="font-instrument-serif italic text-orange-500">related services.</span>
+                    Explore <span className="font-barlow not-italic text-orange-500">related services.</span>
                   </h2>
                 </div>
               </motion.div>
