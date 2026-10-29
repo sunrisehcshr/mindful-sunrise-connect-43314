@@ -27,7 +27,7 @@ const AboutSection = () => {
           
           <h2 className="font-barlow font-normal text-4xl md:text-6xl text-stone-900 tracking-tighter leading-none mb-6">
             Compassionate care for {' '}
-           <span className="font-barlow not-italic text-orange-500 font-normal">every journey</span>
+            <span className="font-barlow not-italic text-orange-500 font-normal">every journey</span>
           </h2>
           
           <p className="text-stone-500 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
