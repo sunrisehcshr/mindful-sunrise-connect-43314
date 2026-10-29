@@ -134,7 +134,9 @@ const newMainContent = `{/* SECTION 1: Understanding Individual Therapy (Bento G
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Understanding Your Journey</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            What is <span className="font-instrument-serif italic text-orange-500">Individual Therapy?</span>
+                            What is <span className="font-barlow not-italic text-orange-500">
+  Individual Therapy?
+</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -204,7 +206,7 @@ const newMainContent = `{/* SECTION 1: Understanding Individual Therapy (Bento G
                   <SectionTag>Comprehensive Care</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     What we treat with <br />
-                    <span className="font-instrument-serif italic text-orange-500">Individual Therapy.</span>
+                    <span className="font-barlow not-italic text-orange-500">Individual Therapy.</span>
                   </h2>
                   <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
                     Our licensed professionals in Darby, PA are equipped to help you manage and overcome a wide spectrum of psychological and emotional challenges.
@@ -264,7 +266,7 @@ const newMainContent = `{/* SECTION 1: Understanding Individual Therapy (Bento G
                         <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">Clinical Excellence</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
                             Evidence-Based <br />
-                            <span className="font-instrument-serif italic text-orange-400">Therapeutic Approaches</span>
+                            <span className="font-barlow not-italic text-orange-400">Therapeutic Approaches</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
                             We adhere strictly to evidence-based practices (EBPs). Our licensed therapists integrate various modalities depending on your specific diagnosis and personal preferences.
@@ -306,7 +308,7 @@ const newMainContent = `{/* SECTION 1: Understanding Individual Therapy (Bento G
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                    The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -355,7 +357,7 @@ const newMainContent = `{/* SECTION 1: Understanding Individual Therapy (Bento G
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Individual Therapy <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Individual Therapy <span className="font-barlow not-italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 
