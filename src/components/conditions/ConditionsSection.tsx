@@ -212,7 +212,7 @@ const ConditionsSection = () => {
         >
           <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
             <SectionTag>Conditions We Treat</SectionTag>
-            <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight max-w-[20ch] md:max-w-[35ch] mx-auto w-full text-balance">
+            <h3 className="font-barlow text-xl font-bold text-stone-900 mb-4 tracking-tight group-hover/card:text-orange-600 transition-colors">
               Find targeted relief <br />
               <span className="font-barlow not-italic text-orange-500">for your specific struggle.</span>
             </h2>
@@ -254,7 +254,7 @@ const ConditionsSection = () => {
                       </div>
                     </div>
                     
-                    <h3 className="text-xl font-bold text-stone-900 mb-4 tracking-tight group-hover/card:text-orange-600 transition-colors">
+                    <h3 className="font-barlow text-xl font-bold text-stone-900 mb-4 tracking-tight group-hover/card:text-orange-600 transition-colors">
                       {condition.title}
                     </h3>
                     
