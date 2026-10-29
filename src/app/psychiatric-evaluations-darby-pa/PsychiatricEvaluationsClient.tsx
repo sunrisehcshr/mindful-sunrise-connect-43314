@@ -353,7 +353,7 @@ export default function PsychiatricEvaluationsClient() {
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Get the Right Diagnosis with <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Psychiatric Evaluations in Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Psychiatric Evaluations in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 Stop wondering what is wrong. Get a clear, accurate diagnosis and a personalized medical treatment plan from licensed psychiatric specialists who actually listen to you.
@@ -393,7 +393,7 @@ export default function PsychiatricEvaluationsClient() {
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Why Choose Sunrise</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Evaluations designed to give you answers, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not just a prescription.</span>
+                            Evaluations designed to give you answers, <br className="hidden md:block" /><span className="font-barlow not-italic text-orange-500">not just a prescription.</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -464,7 +464,7 @@ export default function PsychiatricEvaluationsClient() {
                   <SectionTag>Clarity and Relief</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     Find clarity and relief from <br />
-                    <span className="font-instrument-serif italic text-orange-500">complex symptoms.</span>
+                    <span className="font-barlow not-italic text-orange-500">complex symptoms.</span>
                   </h2>
                   <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
                     You don't have to live with untreated or mismanaged symptoms. Our psychiatric specialists in Darby, PA provide accurate diagnoses and targeted medical treatment for a wide range of conditions.
@@ -532,7 +532,7 @@ export default function PsychiatricEvaluationsClient() {
                         <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">How We Work</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
                             Discover Proven Therapies <br />
-                            <span className="font-instrument-serif italic text-orange-400">That Prioritizes Your Wellbeing</span>
+                            <span className="font-barlow not-italic text-orange-400">That Prioritizes Your Wellbeing</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
                             Stop enduring trial-and-error treatments. You will benefit from thorough, evidence-based psychiatric assessments ensuring you receive the safest, most effective medical care possible.
@@ -576,7 +576,7 @@ export default function PsychiatricEvaluationsClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                    The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -644,7 +644,7 @@ export default function PsychiatricEvaluationsClient() {
                    
                    <h2 className="text-balance font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start finding the right answers <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-orange-400 font-normal">for your mental health.</span>
+                     <span className="font-barlow not-italic text-orange-400 font-normal">for your mental health.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
@@ -735,7 +735,7 @@ export default function PsychiatricEvaluationsClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Psychiatric Evaluation <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Psychiatric Evaluation <span className="font-barlow not-italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 
@@ -789,7 +789,7 @@ export default function PsychiatricEvaluationsClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>More Support</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Explore <span className="font-instrument-serif italic text-orange-500">related services.</span>
+                    Explore <span className="font-barlow not-italic text-orange-500">related services.</span>
                   </h2>
                 </div>
               </motion.div>
