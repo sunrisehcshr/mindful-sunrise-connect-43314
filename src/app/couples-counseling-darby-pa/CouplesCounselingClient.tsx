@@ -353,7 +353,7 @@ export default function CouplesCounselingClient() {
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Reconnect and Rebuild with <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Couples Counseling in Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Couples Counseling in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 Stop the endless arguments and emotional distance. Reconnect with your partner, rebuild trust, and restore intimacy with expert marriage counseling in Darby, PA.
@@ -393,7 +393,7 @@ export default function CouplesCounselingClient() {
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Why Choose Sunrise</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Therapy designed to heal your relationship, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not take sides.</span>
+                            Therapy designed to heal your relationship, <br className="hidden md:block" /><span className="font-barlow not-italic text-orange-500">not take sides.</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -464,7 +464,7 @@ export default function CouplesCounselingClient() {
                   <SectionTag>Relationship Repair</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     Find your way back to <br />
-                    <span className="font-instrument-serif italic text-orange-500">each other.</span>
+                    <span className="font-barlow not-italic text-orange-500">each other.</span>
                   </h2>
                   <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
                     You don't have to stay stuck in the same arguments. Our marriage specialists in Darby, PA use proven methods to help you bridge the emotional gap and build a stronger, healthier partnership.
@@ -532,7 +532,7 @@ export default function CouplesCounselingClient() {
                         <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">How We Work</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
                             Discover Proven Therapies <br />
-                            <span className="font-instrument-serif italic text-orange-400">That Deliver Real Results</span>
+                            <span className="font-barlow not-italic text-orange-400">That Deliver Real Results</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
                             Stop guessing what will fix your relationship. We exclusively use scientifically proven, evidence-based practices for couples—ensuring you experience measurable progress and lasting connection, faster.
@@ -578,7 +578,7 @@ export default function CouplesCounselingClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                    The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -646,7 +646,7 @@ export default function CouplesCounselingClient() {
                    
                    <h2 className="text-balance font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start communicating better <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-orange-400 font-normal">this week.</span>
+                     <span className="font-barlow not-italic text-orange-400 font-normal">this week.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
@@ -735,7 +735,7 @@ export default function CouplesCounselingClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Couples Counseling <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Couples Counseling <span className="font-barlow not-italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 
