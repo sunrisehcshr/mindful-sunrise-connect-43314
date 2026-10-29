@@ -229,7 +229,7 @@ export default function ConditionsClient() {
               >
                 <SectionTag>Clinical Expertise</SectionTag>
                 <h2 className="font-barlow font-normal text-4xl md:text-6xl text-stone-900 tracking-tighter mt-6 mb-6 text-balance mx-auto">
-                  What we <span className="font-instrument-serif italic text-orange-500">treat.</span>
+                  What we <span className="font-barlow not-italic text-orange-500">treat.</span>
                 </h2>
                 <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed text-balance mx-auto">
                   Our licensed psychiatric providers and therapists utilize the latest clinical frameworks to diagnose and treat a comprehensive spectrum of mental health disorders.
@@ -283,7 +283,7 @@ export default function ConditionsClient() {
                     <SectionTag className="bg-orange-500/20 text-orange-400 border-orange-500/30 mb-8">Delaware County</SectionTag>
                     <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[1.05] mb-8 text-balance">
                       Accessible treatment in <br />
-                      <span className="font-instrument-serif italic text-orange-400 font-normal">Darby, PA.</span>
+                      <span className="font-barlow not-italic text-orange-400 font-normal">Darby, PA.</span>
                     </h2>
                     <div className="space-y-6 font-barlow text-stone-300 text-lg leading-relaxed">
                       <p>
