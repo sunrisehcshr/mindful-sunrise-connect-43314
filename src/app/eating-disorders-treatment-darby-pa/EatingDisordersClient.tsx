@@ -79,7 +79,7 @@ export default function EatingDisordersClient() {
               </SectionTag>
               <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Eating Disorders Treatment <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal">in Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal">in Darby, PA</span>
               </h1>
               <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
                 Break free from the exhausting cycle of disordered eating. Our compassionate psychiatric team provides specialized care to help you heal your relationship with food, your body, and yourself.
@@ -250,7 +250,7 @@ export default function EatingDisordersClient() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] pointer-events-none" />
                   
                   <h3 className="font-barlow font-normal text-3xl md:text-4xl tracking-tighter mb-6 relative z-10">
-                    Compassionate Eating Disorder Treatment in <span className="font-instrument-serif italic text-orange-400">Darby, PA</span>
+                    Compassionate Eating Disorder Treatment in <span className="font-barlow not-italic text-orange-400">Darby, PA</span>
                   </h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">

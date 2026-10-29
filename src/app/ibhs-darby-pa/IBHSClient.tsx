@@ -316,7 +316,7 @@ export default function IBHSClient() {
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Transform Your Child's Behavior in <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 Stop letting daily meltdowns, school suspensions, and communication struggles disrupt your family. Get comprehensive, in-home and in-school behavioral support fully covered by Medicaid—without the wait.
@@ -355,7 +355,7 @@ export default function IBHSClient() {
               >
                 <SectionTag>Our Approach</SectionTag>
                 <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight mt-4 mb-6">
-                  Care Delivered <span className="font-instrument-serif italic text-orange-500">Where It Matters.</span>
+                  Care Delivered <span className="font-barlow not-italic text-orange-500">Where It Matters.</span>
                 </h2>
                 <p className="text-stone-500 font-barlow text-lg leading-relaxed">
                   IBHS is a Pennsylvania-regulated program that provides highly individualized treatment for children under 21. We treat Autism Spectrum Disorder, ADHD, ODD, and severe anxiety right where the behaviors happen.
@@ -401,7 +401,7 @@ export default function IBHSClient() {
                   <SectionTag>Why Choose Sunrise</SectionTag>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-stone-900 tracking-tighter leading-tight">
                     Measurable improvements <br className="hidden md:block" />
-                    <span className="font-instrument-serif italic text-orange-500">without the barriers.</span>
+                    <span className="font-barlow not-italic text-orange-500">without the barriers.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -440,7 +440,7 @@ export default function IBHSClient() {
                         Sunrise
                       </span>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm md:text-base font-instrument-serif italic text-stone-400">Human Care Services</span>
+                        <span className="text-sm md:text-base font-barlow not-italic text-stone-400">Human Care Services</span>
                         <div className="h-px w-8 bg-stone-200" />
                       </div>
                       <div className="mt-2">
@@ -495,7 +495,7 @@ export default function IBHSClient() {
                     <div className="space-y-6 relative z-10">
                       <h3 className="text-4xl md:text-5xl font-normal leading-[0.95] tracking-tighter text-stone-900 group-hover:text-stone-950 transition-colors duration-300">
                         We go where your child <br />
-                        <span className="font-instrument-serif italic text-orange-500 group-hover:text-orange-600 transition-colors duration-300">needs us most.</span>
+                        <span className="font-barlow not-italic text-orange-500 group-hover:text-orange-600 transition-colors duration-300">needs us most.</span>
                       </h3>
                       <p className="max-w-md text-stone-500 text-sm leading-relaxed font-medium group-hover:text-stone-600 transition-colors duration-300">
                         Clinic visits alone aren't enough for severe behavioral challenges. Our licensed clinicians and technicians work directly with your family in the home, coordinate with teachers in the school, and provide support in the community.
@@ -541,7 +541,7 @@ export default function IBHSClient() {
                   <SectionTag className="bg-orange-500/20 text-orange-400 border-orange-500/30 mb-6">Community First</SectionTag>
                   <h2 className="font-barlow font-normal text-4xl md:text-5xl tracking-tighter leading-tight mb-6">
                     Accessible IBHS in <br />
-                    <span className="font-instrument-serif italic text-orange-400 font-normal">Delaware County, PA</span>
+                    <span className="font-barlow not-italic text-orange-400 font-normal">Delaware County, PA</span>
                   </h2>
                   <div className="space-y-6 font-barlow text-stone-300 text-lg leading-relaxed">
                     <p>
@@ -604,7 +604,7 @@ export default function IBHSClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">lasting change.</span>
+                    The 4-step path to <span className="font-barlow not-italic text-orange-500">lasting change.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -666,7 +666,7 @@ export default function IBHSClient() {
                    
                    <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start transforming behavior <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-orange-400 font-normal">this week.</span>
+                     <span className="font-barlow not-italic text-orange-400 font-normal">this week.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
@@ -751,7 +751,7 @@ export default function IBHSClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    IBHS <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    IBHS <span className="font-barlow not-italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 

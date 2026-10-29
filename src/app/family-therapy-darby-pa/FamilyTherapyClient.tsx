@@ -353,7 +353,7 @@ export default function FamilyTherapyClient() {
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Bring Peace Back to Your Home with <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Family Therapy in Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Family Therapy in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 Stop the daily power struggles and emotional disconnect. Rebuild a peaceful, connected family dynamic with expert therapy in Darby, PA.
@@ -393,7 +393,7 @@ export default function FamilyTherapyClient() {
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Why Choose Sunrise</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Therapy designed to support your family, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not judge your parenting.</span>
+                            Therapy designed to support your family, <br className="hidden md:block" /><span className="font-barlow not-italic text-orange-500">not judge your parenting.</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -464,7 +464,7 @@ export default function FamilyTherapyClient() {
                   <SectionTag>Targeted Relief for Families</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     Find your way back to a <br />
-                    <span className="font-instrument-serif italic text-orange-500">peaceful home.</span>
+                    <span className="font-barlow not-italic text-orange-500">peaceful home.</span>
                   </h2>
                   <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
                     You don't have to navigate parenting struggles or family conflict alone. Our specialists in Darby, PA use proven methods to help your family thrive and restore balance to your household.
@@ -532,7 +532,7 @@ export default function FamilyTherapyClient() {
                         <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">How We Work</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
                             Discover Proven Therapies <br className="hidden md:block" />
-                            <span className="font-instrument-serif italic text-orange-400">That Deliver Real Results</span>
+                            <span className="font-barlow not-italic text-orange-400">That Deliver Real Results</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
                             Stop guessing what your family needs. Your family will benefit from scientifically proven, evidence-based practices tailored for families—ensuring you see measurable progress at home, without the guesswork.
@@ -578,7 +578,7 @@ export default function FamilyTherapyClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                    The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -646,7 +646,7 @@ export default function FamilyTherapyClient() {
                    
                    <h2 className="text-balance font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start restoring peace <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-orange-400 font-normal">in your home.</span>
+                     <span className="font-barlow not-italic text-orange-400 font-normal">in your home.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
@@ -735,7 +735,7 @@ export default function FamilyTherapyClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Family Therapy <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Family Therapy <span className="font-barlow not-italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 
@@ -789,7 +789,7 @@ export default function FamilyTherapyClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>More Support</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Explore <span className="font-instrument-serif italic text-orange-500">related services.</span>
+                    Explore <span className="font-barlow not-italic text-orange-500">related services.</span>
                   </h2>
                 </div>
               </motion.div>

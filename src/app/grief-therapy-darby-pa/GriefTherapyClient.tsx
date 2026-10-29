@@ -347,7 +347,7 @@ export default function GriefTherapyClient() {
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Find a Path Through the Pain with <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Grief Therapy in Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Grief Therapy in Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 You don't have to carry this heavy burden alone. Get compassionate, expert support to navigate loss, honor your loved one, and slowly rebuild your life in a safe space.
@@ -387,7 +387,7 @@ export default function GriefTherapyClient() {
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Why Choose Sunrise</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Therapy designed to hold your pain, <br className="hidden md:block" /><span className="font-instrument-serif italic text-orange-500">not rush your healing.</span>
+                            Therapy designed to hold your pain, <br className="hidden md:block" /><span className="font-barlow not-italic text-orange-500">not rush your healing.</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -458,7 +458,7 @@ export default function GriefTherapyClient() {
                   <SectionTag>Compassionate Support</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     Find a way to carry the weight of <br />
-                    <span className="font-instrument-serif italic text-orange-500">profound loss.</span>
+                    <span className="font-barlow not-italic text-orange-500">profound loss.</span>
                   </h2>
                   <p className="text-stone-500 font-barlow text-lg leading-relaxed max-w-2xl mx-auto mt-2">
                     You don't have to navigate the darkness by yourself. Our grief specialists in Darby, PA provide a supportive environment to help you process every stage of bereavement.
@@ -519,7 +519,7 @@ export default function GriefTherapyClient() {
                         <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">How We Work</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
                             Discover Proven Therapies <br />
-                            <span className="font-instrument-serif italic text-orange-400">That Honors Your Journey</span>
+                            <span className="font-barlow not-italic text-orange-400">That Honors Your Journey</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
                             Stop feeling pressured to 'move on' or 'get over it.' Your healing process is unique, which is why we use evidence-based grief protocols to help you integrate the loss and find meaning again.
@@ -563,7 +563,7 @@ export default function GriefTherapyClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                    The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -631,7 +631,7 @@ export default function GriefTherapyClient() {
                    
                    <h2 className="text-balance font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start finding your way through the dark <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-orange-400 font-normal">today.</span>
+                     <span className="font-barlow not-italic text-orange-400 font-normal">today.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
@@ -717,7 +717,7 @@ export default function GriefTherapyClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Grief Therapy <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Grief Therapy <span className="font-barlow not-italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 

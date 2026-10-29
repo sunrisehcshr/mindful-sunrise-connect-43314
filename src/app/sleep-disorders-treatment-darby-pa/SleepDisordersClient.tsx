@@ -79,7 +79,7 @@ export default function SleepDisordersClient() {
               </SectionTag>
               <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Sleep Disorders Treatment <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal">in Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal">in Darby, PA</span>
               </h1>
               <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
                 Exhausted but unable to sleep? Chronic insomnia and sleep disturbances destroy your mental health. Our psychiatric team provides the evidence-based care you need to finally get the rest you deserve.

@@ -182,7 +182,7 @@ export default function ConditionsClient() {
               </span>
               <h1 className="font-barlow font-normal text-5xl md:text-7xl lg:text-8xl text-white tracking-tighter leading-[1.05] mb-8 text-balance mx-auto">
                 Targeted relief for <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal">your specific struggle.</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal">your specific struggle.</span>
               </h1>
               <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 text-balance">
                 Don't let a diagnosis define you. We provide evidence-based, compassionate psychiatric care and therapy for complex mental health conditions in Darby, PA.
@@ -351,7 +351,7 @@ export default function ConditionsClient() {
               <div className="max-w-3xl mx-auto text-center mb-16">
                 <SectionTag>Our Philosophy</SectionTag>
                 <h2 className="font-barlow font-normal text-4xl md:text-5xl text-stone-900 tracking-tighter mt-6 mb-6 text-balance">
-                  Care that treats the cause, <span className="font-instrument-serif italic text-orange-500">not just the symptoms.</span>
+                  Care that treats the cause, <span className="font-barlow not-italic text-orange-500">not just the symptoms.</span>
                 </h2>
                 <p className="text-stone-500 font-barlow text-lg leading-relaxed text-balance">
                   At Sunrise Human Care, we combine proven psychiatric methods with genuine compassion. Our focus is on long-term recovery, equipping you with the tools to regain control of your life.
@@ -371,7 +371,7 @@ export default function ConditionsClient() {
                       Treating the Root Cause
                     </h3>
                     <div className="space-y-4">
-                      <p className="text-stone-500 leading-relaxed font-medium italic">
+                      <p className="text-stone-500 leading-relaxed font-medium not-italic">
                         &quot;A diagnosis like anxiety, depression, or trauma is just a starting point. True recovery requires understanding the specific biological, psychological, and social factors driving your condition.&quot;
                       </p>
                       <p className="text-stone-500 leading-relaxed font-medium">
