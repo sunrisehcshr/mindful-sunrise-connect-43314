@@ -134,40 +134,65 @@ const Footer: React.FC = () => {
       {/* Emergency + Bottom Bar */}
       <div className="border-t border-stone-200">
         <div className="container mx-auto px-4 md:px-6 py-6">
-          {/* Emergency Information */}
-          <div
-  role="alert"
+          
+{/* Emergency Information */}
+<div
   className="bg-red-50 border-l-4 border-red-700 border-y border-r border-red-200 rounded-md p-5 md:p-6 mb-6 font-sans"
 >
-  <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+  <div className="flex items-center gap-3 mb-5">
+    <div className="flex items-center justify-center w-10 h-10 bg-red-100 rounded-md shrink-0">
+      <AlertTriangle className="h-5 w-5 text-red-800" />
+    </div>
+    <h3 className="text-lg font-bold text-red-900">
+      Emergency Information
+    </h3>
+  </div>
 
-    {/* Emergency Icon and Message */}
-    <div className="flex items-start gap-3 flex-1">
-      <div className="flex items-center justify-center w-10 h-10 bg-red-100 rounded-md shrink-0">
-        <AlertTriangle className="h-5 w-5 text-red-800" />
-      </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-      <p className="text-sm md:text-base text-stone-900 leading-relaxed">
-        <span className="font-bold text-red-900">
-          Emergency:
-        </span>{" "}
-        If this is a life-threatening emergency, please call 911 or the National Suicide Prevention Lifeline
+    {/* 911 Emergency */}
+    <div className="bg-white border border-red-200 rounded-md p-4">
+      <p className="font-bold text-stone-900 mb-2">
+        Life-threatening emergency
+      </p>
+      <p className="text-sm text-stone-700 mb-3">
+        If this is a life-threatening emergency, please call 911.
+      </p>
+      <a
+        href="tel:911"
+        className="inline-flex items-center gap-2 text-red-800 font-bold text-2xl underline underline-offset-4"
+        aria-label="Call 911"
+      >
+        <Phone className="h-5 w-5" />
+        911
+      </a>
+    </div>
+
+    {/* 988 Suicide Prevention Support */}
+    <div className="bg-white border border-red-200 rounded-md p-4">
+      <p className="font-bold text-stone-900 mb-2">
+        Suicide prevention and crisis support
+      </p>
+      <p className="text-sm text-stone-700 mb-3">
+        Contact the National Suicide Prevention Lifeline.
+      </p>
+      <motion.a
+        whileTap={{ scale: 0.97 }}
+        href="tel:988"
+        aria-label="Call 988"
+        className="inline-flex items-center gap-2 bg-red-800 hover:bg-red-900 text-white px-5 py-2 rounded-md font-bold text-xl transition-colors"
+      >
+        <Phone className="h-5 w-5" />
+        988
+      </motion.a>
+      <p className="text-xs text-stone-600 mt-2">
+        Call or text 988
       </p>
     </div>
 
-    {/* Prominent 988 Number */}
-    <motion.a
-      whileTap={{ scale: 0.97 }}
-      href="tel:988"
-      aria-label="Call 988"
-      className="inline-flex items-center justify-center gap-2 bg-red-800 hover:bg-red-900 text-white px-6 py-3 rounded-md font-bold text-2xl tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-800 shrink-0"
-    >
-      <Phone className="h-5 w-5" />
-      988
-    </motion.a>
-
   </div>
 </div>
+
 
           {/* HIPAA Notice */}
           <p className="text-xs text-stone-500 text-center mb-6 font-barlow leading-relaxed">
