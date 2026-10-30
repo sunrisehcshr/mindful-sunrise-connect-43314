@@ -158,7 +158,7 @@ const replacement = `<div className="bg-white relative z-10 -mt-10 rounded-t-[3r
                         <SectionTag className="bg-white/10 text-white border-white/20 mb-6 w-fit">Clinical Excellence</SectionTag>
                         <h2 className="text-3xl md:text-5xl text-balance font-normal text-white tracking-tighter leading-tight mb-6">
                             Evidence-Based <br />
-                            <span className="font-instrument-serif italic text-orange-400">Therapeutic Approaches</span>
+                            <span className="font-barlow not-italic text-orange-400">Therapeutic Approaches</span>
                         </h2>
                         <p className="text-stone-400 text-lg leading-relaxed mb-8">
                             We adhere strictly to evidence-based practices (EBPs). Our licensed therapists integrate various modalities depending on your specific diagnosis and personal preferences.
@@ -279,7 +279,7 @@ const replacement = `<div className="bg-white relative z-10 -mt-10 rounded-t-[3r
                                 transition={{ duration: 0.3 }}
                               >
                                 <div className="pt-2">
-                                  <p className="text-stone-500 font-barlow text-base leading-relaxed">
+                                  <p className="text-stone-500 font-barlow text-base leading-relaxed not-italic">
                                     {faq.answer}
                                   </p>
                                 </div>
