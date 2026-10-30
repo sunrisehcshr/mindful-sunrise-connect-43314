@@ -106,7 +106,9 @@ export default function BetterhelpAlternativesClient() {
               </span>
               <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 BetterHelp Alternatives in <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Pennsylvania</span>
+               <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">
+  Pennsylvania
+</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 Looking for therapy that accepts Medicaid and offers real, in-person connection? Compare big therapy apps to local care at Sunrise Human Care in Darby, PA.
@@ -193,7 +195,9 @@ export default function BetterhelpAlternativesClient() {
                 <SectionTag className="bg-orange-500/20 text-orange-400 border-orange-500/30 mb-6">Head to Head</SectionTag>
                 <h2 className="font-barlow font-normal text-4xl md:text-5xl tracking-tighter leading-tight mb-6">
                   Sunrise Human Care vs. <br className="hidden md:block" />
-                  <span className="font-instrument-serif italic text-orange-400 font-normal">Therapy Apps</span>
+                  <span className="font-barlow not-italic text-orange-400 font-normal">
+  Therapy Apps
+</span>
                 </h2>
                 <p className="font-barlow text-stone-300 text-lg">
                   See how local, comprehensive care compares to national telehealth platforms.
