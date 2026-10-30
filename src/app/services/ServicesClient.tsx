@@ -307,7 +307,7 @@ export default function ServicesClient() {
       title: "Anxiety Therapy",
       link: "/anxiety-therapy-darby-pa",
       desc: "Evidence-based treatment for anxiety disorders, panic attacks, and chronic worry to help you regain calm and control.",
-      image: "/lovable-uploads/anxiety-treatment-delaware-county.webp"
+      image: "/images/anxiety-therapy.png"
     }
   ];
 
