@@ -100,7 +100,7 @@ export default function BlogPage() {
                 </div>
                 <h1 className="font-barlow font-bold text-4xl md:text-7xl text-white tracking-tighter leading-none mb-8">
                   Healing Through <br />
-                  <span className="font-instrument-serif italic text-orange-500 font-normal">
+                  <span className="font-barlow not-italic text-orange-500 font-normal">
                     Understanding.
                   </span>
                 </h1>
