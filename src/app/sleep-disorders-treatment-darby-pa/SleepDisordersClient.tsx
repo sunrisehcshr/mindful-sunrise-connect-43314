@@ -247,7 +247,7 @@ export default function SleepDisordersClient() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] pointer-events-none" />
                   
                   <h3 className="font-barlow font-normal text-3xl md:text-4xl tracking-tighter mb-6 relative z-10">
-                    Accessible Sleep Disorder Treatment in <span className="font-instrument-serif italic text-orange-400">Darby, PA</span>
+                    Accessible Sleep Disorder Treatment in <span className="font-barlow not-italic text-orange-400">Darby, PA</span>
                   </h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">

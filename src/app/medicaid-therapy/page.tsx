@@ -129,7 +129,7 @@ export default function MedicaidLandingPage() {
                   </span>
                   <h1 className="font-barlow font-bold text-3xl md:text-5xl lg:text-6xl text-stone-800 tracking-tight leading-tight mb-6">
                     Compassionate Mental Health Care
-                    <span className="block font-instrument-serif italic text-amber-700/70 font-normal">for Everyone</span>
+                    <span className="block font-barlow not-italic text-amber-700/70 font-normal">for Everyone</span>
                   </h1>
                   <p className="text-lg text-stone-600 font-barlow mb-8 leading-relaxed max-w-xl">
                     At Sunrise Human Care Services, we believe quality mental health care should be accessible. We proudly accept Medicaid for therapy, counseling, and psychiatric services in Darby, PA.
