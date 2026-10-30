@@ -665,8 +665,8 @@ export default function FAQPage() {
                   <SectionTag className="border-white/20 text-white bg-white/10">Resource Center</SectionTag>
                 </div>
                 <h1 className="font-barlow font-bold text-4xl md:text-7xl text-white tracking-tighter leading-none mb-8">
-                  Common <span className="font-instrument-serif italic text-orange-500 font-normal">Questions.</span> <br />
-                  Clear <span className="font-instrument-serif italic text-orange-500 font-normal">Answers.</span>
+                  Common <span className="font-barlow not-italic text-orange-500 font-normal">Questions.</span> <br />
+                  Clear <span className="font-barlow not-italic text-orange-500 font-normal">Answers.</span>
                 </h1>
                 
                 {/* Search Bar */}

@@ -789,7 +789,7 @@ export default function CouplesCounselingClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>More Support</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Explore <span className="font-instrument-serif italic text-orange-500">related services.</span>
+                    Explore <span className="font-barlow not-italic text-orange-500">related services.</span>
                   </h2>
                 </div>
               </motion.div>

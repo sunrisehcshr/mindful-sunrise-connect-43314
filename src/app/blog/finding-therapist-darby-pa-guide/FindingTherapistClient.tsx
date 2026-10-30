@@ -97,7 +97,7 @@ export default function FindingTherapistDarbyPage() {
                 
                 <h1 className="font-barlow font-bold text-4xl md:text-6xl text-white tracking-tighter leading-none mb-8">
                   Finding the Right <br className="hidden md:block" />
-                  <span className="font-instrument-serif italic text-orange-500 font-normal text-5xl md:text-7xl">Therapist in Darby.</span>
+                  <span className="font-barlow not-italic text-orange-500 font-normal text-5xl md:text-7xl">Therapist in Darby.</span>
                 </h1>
 
                 <div className="flex flex-wrap items-center gap-6 text-stone-400 font-barlow text-sm border-t border-white/10 pt-8">
@@ -189,7 +189,7 @@ export default function FindingTherapistDarbyPage() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -mr-32 -mt-32" />
                   <div className="relative z-10 max-w-2xl mx-auto">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-barlow tracking-tight leading-none">
-                      Ready to take the <span className="font-instrument-serif italic text-orange-500 font-normal">first step?</span>
+                      Ready to take the <span className="font-barlow not-italic text-orange-500 font-normal">first step?</span>
                     </h2>
                     <p className="text-stone-400 mb-10 font-barlow text-lg">
                       Our compassionate team in Darby is ready to support you with expert care tailored to your specific needs.

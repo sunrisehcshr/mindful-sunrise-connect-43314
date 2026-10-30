@@ -343,7 +343,7 @@ export default function ServicesClient() {
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
                 Find the Right Care in <br className="hidden md:block" />
-                <span className="font-instrument-serif italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
+                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
               </h1>
               <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
                 Stop letting waitlists and confusing networks delay your healing. Get immediate access to expert therapy and psychiatric care in Delaware County. We proudly and exclusively accept Medicaid.
@@ -382,7 +382,7 @@ export default function ServicesClient() {
               >
                 <SectionTag>Our Specialties</SectionTag>
                 <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight mt-4 mb-6">
-                  Care Tailored to <span className="font-instrument-serif italic text-orange-500">You.</span>
+                  Care Tailored to <span className="font-barlow not-italic text-orange-500">You.</span>
                 </h2>
                 <p className="text-stone-500 font-barlow text-lg leading-relaxed">
                   From traditional talk therapy to comprehensive psychiatric evaluations, our Darby clinic offers a full spectrum of mental health services under one roof.
@@ -442,7 +442,7 @@ export default function ServicesClient() {
                   <SectionTag>Why Choose Us</SectionTag>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-stone-900 tracking-tighter leading-tight">
                     Expert therapy & psychiatric care <br className="hidden md:block" />
-                    <span className="font-instrument-serif italic text-orange-500">without the barriers.</span>
+                    <span className="font-barlow not-italic text-orange-500">without the barriers.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -482,7 +482,7 @@ export default function ServicesClient() {
                         Sunrise
                       </span>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm md:text-base font-instrument-serif italic text-stone-400">Human Care Services</span>
+                        <span className="text-sm md:text-base font-barlow not-italic text-stone-400">Human Care Services</span>
                         <div className="h-px w-8 bg-stone-200" />
                       </div>
                       <div className="mt-2">
@@ -538,7 +538,9 @@ export default function ServicesClient() {
                     <div className="space-y-6 relative z-10">
                       <h3 className="text-4xl md:text-5xl font-normal leading-[0.95] tracking-tighter text-stone-900 group-hover:text-stone-950 transition-colors duration-300">
                         Everything your family needs <br />
-                        <span className="font-instrument-serif italic text-orange-500 group-hover:text-orange-600 transition-colors duration-300">under one roof.</span>
+                        <span className="font-barlow not-italic text-orange-500 group-hover:text-orange-600 transition-colors duration-300">
+  under one roof.
+</span>
                       </h3>
                       <p className="max-w-md text-stone-500 text-sm leading-relaxed font-medium group-hover:text-stone-600 transition-colors duration-300">
                         Stop bouncing between different clinics for therapy and psychiatry. From children struggling with behavioral issues to adults navigating depression or relationship conflict, our Darby clinic provides a unified, expert team for your entire family.
@@ -584,7 +586,7 @@ export default function ServicesClient() {
                   <SectionTag className="bg-orange-500/20 text-orange-400 border-orange-500/30 mb-6">Community First</SectionTag>
                   <h2 className="font-barlow font-normal text-4xl md:text-5xl tracking-tighter leading-tight mb-6">
                     Accessible Therapy in <br />
-                    <span className="font-instrument-serif italic text-orange-400 font-normal">Delaware County, PA</span>
+                    <span className="font-barlow not-italic text-orange-400 font-normal">Delaware County, PA</span>
                   </h2>
                   <div className="space-y-6 font-barlow text-stone-300 text-lg leading-relaxed">
                     <p>
@@ -614,18 +616,7 @@ export default function ServicesClient() {
                       <Link href="/mental-health-darby-pa" className="px-4 py-3 bg-orange-500 hover:bg-orange-400 transition-colors rounded-xl text-center font-barlow font-bold text-stone-50 shadow-lg shadow-orange-500/20">
                         Darby (19023)
                       </Link>
-                      {[
-                        { name: "Yeadon", zip: "19008" },
-                        { name: "Lansdowne", zip: "19003" },
-                        { name: "Upper Darby", zip: "19026" },
-                        { name: "Collingdale", zip: "19064" },
-                        { name: "Sharon Hill", zip: "19073" }
-                      ].map(city => (
-                        <div key={city.name} className="px-4 py-3 bg-white/10 rounded-xl text-center font-barlow text-stone-300 text-sm flex flex-col items-center justify-center border border-white/5">
-                          <span className="font-bold">{city.name}</span>
-                          <span className="text-xs opacity-70">{city.zip}</span>
-                        </div>
-                      ))}
+                    
                     </div>
                   </div>
                 </motion.div>
@@ -647,7 +638,7 @@ export default function ServicesClient() {
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    The 4-step path to <span className="font-instrument-serif italic text-orange-500">reclaiming your life.</span>
+                    The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
                   </h2>
                 </div>
               </motion.div>
@@ -715,7 +706,7 @@ export default function ServicesClient() {
                    
                    <h2 className="font-barlow font-normal text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.1] mb-6 max-w-3xl drop-shadow-lg">
                      Start feeling better <br className="hidden md:block" />
-                     <span className="font-instrument-serif italic text-orange-400 font-normal">this week.</span>
+                     <span className="font-barlow not-italic text-orange-400 font-normal">this week.</span>
                    </h2>
                    
                    <p className="text-white/90 font-barlow text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
@@ -801,7 +792,7 @@ export default function ServicesClient() {
                 <div className="text-center mb-12 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                    Mental Health Services <span className="font-instrument-serif italic text-orange-500">FAQs.</span>
+                    Mental Health Services <span className="font-barlow not-italic text-orange-500">FAQs.</span>
                   </h2>
                 </div>
 
