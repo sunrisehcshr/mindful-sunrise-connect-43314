@@ -29,41 +29,41 @@ export default function MentalHealthCollingdalePage() {
   const pageContent: GeoContentProps = {
     heroHeadline: <>
       Reliable mental health support for Collingdale. <br />
-      <span className="font-instrument-serif italic text-orange-500 font-normal">No waitlists. No runarounds.</span>
-    </>,
+  No waitlists. No runarounds.
+</>,
     heroSubheadline: "Working families don't have time for clinics that don't answer the phone. Get immediate access to licensed therapists and psychiatrists right in your backyard. 100% Medicaid accepted.",
     problemHeadline: <>
-      Why is finding good mental health care in Collingdale <span className="font-instrument-serif italic text-orange-500">so frustrating?</span>
+      Why is finding good mental health care in Collingdale <span className="font-barlow not-italic text-orange-500">so frustrating?</span>
     </>,
     problemText1: "Working families in Collingdale are constantly juggling jobs, schools, and the hustle of daily life along the MacDade Blvd corridor. When a mental health crisis hits your household, the last thing you need is a massive hospital network that treats you like a number.",
     problemText2: "You finally decide to seek help for your anxiety, depression, or your child's behavioral issues. You make the brave choice to reach out, only to be told the nearest clinic is out of network, or their next available appointment is four months away.",
     problemHighlight: "Mental health crises do not operate on a four-month delay. When you are struggling to keep your family together, you need reliable help immediately.",
-    solutionHeadline: <>
-      Sunrise Human Care Services was built to <span className="font-instrument-serif italic text-orange-500">fix this broken system.</span>
-    </>,
+   solutionHeadline: <>
+  Sunrise Human Care Services was built to <span className="font-barlow not-italic text-orange-500">fix this broken system.</span>
+</>,
     solutionText1: "We established our clinic at 869 Main Street in Darby, PA—literally just 1 mile from Collingdale—with one clear promise: to provide premium, evidence-based psychiatric care to the Medicaid community, without the wait.",
     solutionText2: "We are not a massive, faceless hospital network. We are a dedicated, local team of licensed therapists, psychiatrists, and behavioral health technicians treating Collingdale families with the dignity and clinical excellence they deserve.",
     expertCareHeadline: <>
-      What does expert mental health care <span className="font-instrument-serif italic text-orange-500">look like?</span>
+      What does expert mental health care <span className="font-barlow not-italic text-orange-500">look like?</span>
     </>,
     expertCareText1: "It looks like Individual Therapy that digs into the root causes of your trauma, rather than just putting a band-aid on the symptoms. It looks like Medication Management where your psychiatrist actually listens to your concerns about side effects and adjusts your dosage carefully.",
     expertCareText2: "For families in Collingdale, it looks like our Intensive Behavioral Health Services (IBHS). Instead of asking you to drag your struggling child to a sterile clinic, our behavioral technicians go directly to your home or their local school (like those in the Southeast Delco School District) to provide support right where the behaviors happen.",
     locationHeadline: <>
-      Conveniently located just <span className="font-instrument-serif italic text-orange-500">4 minutes away.</span>
+      Conveniently located just <span className="font-barlow not-italic text-orange-500">4 minutes away.</span>
     </>,
     locationSubheadline: <>
       Serving Collingdale <br />
-      <span className="font-instrument-serif italic text-orange-500">and Delaware County.</span>
+      <span className="font-barlow not-italic text-orange-500">and Delaware County.</span>
     </>,
     localAdvantageText: <>
       Located at 869 Main Street in Darby, PA (19023), our clinic is a remarkably fast 4-minute drive from Collingdale. We provide a warm, modern environment for healing, practically right in your backyard.
     </>,
     servicesHeadline: <>
-      Our Specialized Services near <span className="font-instrument-serif italic text-orange-500">Collingdale</span>
+      Our Specialized Services near <span className="font-barlow not-italic text-orange-500">Collingdale</span>
     </>,
     servicesSubheadline: "From individual counseling to comprehensive psychiatric evaluations, we provide a full spectrum of mental health support tailored for working families in Collingdale.",
     faqHeadline: <>
-      Your questions about Collingdale care, <span className="font-instrument-serif italic text-orange-500">answered.</span>
+      Your questions about Collingdale care, <span className="font-barlow not-italic text-orange-500">answered.</span>
     </>,
     servicesOverrides: {
       individual: "Private, 1-on-1 sessions with a licensed therapist. Deep emotional healing for Collingdale residents balancing work, family, and life stress.",
