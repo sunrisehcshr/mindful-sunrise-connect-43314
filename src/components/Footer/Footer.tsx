@@ -135,23 +135,39 @@ const Footer: React.FC = () => {
       <div className="border-t border-stone-200">
         <div className="container mx-auto px-4 md:px-6 py-6">
           {/* Emergency Information */}
-          <div className="bg-red-50 border border-red-200 p-4 rounded-2xl mb-6">
-            <div className="flex items-start">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-red-100 mr-3 shrink-0">
-                <AlertTriangle className="h-4 w-4 text-red-500" />
-              </div>
-              <p className="text-sm text-stone-700 font-barlow">
-                <span className="font-semibold text-stone-900">Emergency:</span> If this is a life-threatening emergency, please call 911 or the National Suicide Prevention Lifeline{' '}
-                <motion.a 
-                  whileTap={{ scale: 0.98 }}
-                  href="tel:988" 
-                  className="font-black text-2xl text-orange-700 hover:text-orange-800 underline underline-offset-2 inline-flex items-center"
-                >
-                  <Phone className="h-3 w-3 mr-1" /> 988
-                </motion.a>
-              </p>
-            </div>
-          </div>
+          <div
+  role="alert"
+  className="bg-red-50 border-l-4 border-red-700 border-y border-r border-red-200 rounded-md p-5 md:p-6 mb-6 font-sans"
+>
+  <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+
+    {/* Emergency Icon and Message */}
+    <div className="flex items-start gap-3 flex-1">
+      <div className="flex items-center justify-center w-10 h-10 bg-red-100 rounded-md shrink-0">
+        <AlertTriangle className="h-5 w-5 text-red-800" />
+      </div>
+
+      <p className="text-sm md:text-base text-stone-900 leading-relaxed">
+        <span className="font-bold text-red-900">
+          Emergency:
+        </span>{" "}
+        If this is a life-threatening emergency, please call 911 or the National Suicide Prevention Lifeline
+      </p>
+    </div>
+
+    {/* Prominent 988 Number */}
+    <motion.a
+      whileTap={{ scale: 0.97 }}
+      href="tel:988"
+      aria-label="Call 988"
+      className="inline-flex items-center justify-center gap-2 bg-red-800 hover:bg-red-900 text-white px-6 py-3 rounded-md font-bold text-2xl tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-800 shrink-0"
+    >
+      <Phone className="h-5 w-5" />
+      988
+    </motion.a>
+
+  </div>
+</div>
 
           {/* HIPAA Notice */}
           <p className="text-xs text-stone-500 text-center mb-6 font-barlow leading-relaxed">
