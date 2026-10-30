@@ -538,7 +538,9 @@ export default function ServicesClient() {
                     <div className="space-y-6 relative z-10">
                       <h3 className="text-4xl md:text-5xl font-normal leading-[0.95] tracking-tighter text-stone-900 group-hover:text-stone-950 transition-colors duration-300">
                         Everything your family needs <br />
-                        <span className="font-instrument-serif italic text-orange-500 group-hover:text-orange-600 transition-colors duration-300">under one roof.</span>
+                        <span className="font-barlow not-italic text-orange-500 group-hover:text-orange-600 transition-colors duration-300">
+  under one roof.
+</span>
                       </h3>
                       <p className="max-w-md text-stone-500 text-sm leading-relaxed font-medium group-hover:text-stone-600 transition-colors duration-300">
                         Stop bouncing between different clinics for therapy and psychiatry. From children struggling with behavioral issues to adults navigating depression or relationship conflict, our Darby clinic provides a unified, expert team for your entire family.
