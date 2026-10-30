@@ -16,6 +16,7 @@ const UiloraFrostedGlass = dynamic(() => import('@/components/ui/uilora-frosted-
 import { cn } from "@/lib/utils";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Calendar01Icon, ArrowRight01Icon, CallIcon } from "@hugeicons/core-free-icons";
+import anxietyTherapyImage from "@/assets/services/anxiety-therapy.png";
 
 // --- Timeline Step Component ---
 const TimelineStep = React.memo(({
@@ -307,7 +308,7 @@ export default function ServicesClient() {
       title: "Anxiety Therapy",
       link: "/anxiety-therapy-darby-pa",
       desc: "Evidence-based treatment for anxiety disorders, panic attacks, and chronic worry to help you regain calm and control.",
-      image: "/images/anxiety-therapy.png"
+      image: anxietyTherapyImage.src
     }
   ];
 
