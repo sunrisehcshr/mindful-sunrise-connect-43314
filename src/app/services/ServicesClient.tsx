@@ -616,18 +616,7 @@ export default function ServicesClient() {
                       <Link href="/mental-health-darby-pa" className="px-4 py-3 bg-orange-500 hover:bg-orange-400 transition-colors rounded-xl text-center font-barlow font-bold text-stone-50 shadow-lg shadow-orange-500/20">
                         Darby (19023)
                       </Link>
-                      {[
-                        { name: "Yeadon", zip: "19008" },
-                        { name: "Lansdowne", zip: "19003" },
-                        { name: "Upper Darby", zip: "19026" },
-                        { name: "Collingdale", zip: "19064" },
-                        { name: "Sharon Hill", zip: "19073" }
-                      ].map(city => (
-                        <div key={city.name} className="px-4 py-3 bg-white/10 rounded-xl text-center font-barlow text-stone-300 text-sm flex flex-col items-center justify-center border border-white/5">
-                          <span className="font-bold">{city.name}</span>
-                          <span className="text-xs opacity-70">{city.zip}</span>
-                        </div>
-                      ))}
+                    
                     </div>
                   </div>
                 </motion.div>
