@@ -12,7 +12,7 @@ export default function ParallaxBanner({ imageUrl = "/images/parallax-bg.png" }:
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   
   return (
-    <div className="mx-2 mt-10 mb-24 overflow-hidden rounded-[3rem] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
+    <div className="mx-2 mt-10 mb-4 overflow-hidden rounded-[3rem] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
       <div
         className="relative flex h-[60vh] md:h-[80vh] items-center justify-center overflow-hidden bg-white"
         ref={container}
