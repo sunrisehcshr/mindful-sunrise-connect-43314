@@ -73,7 +73,7 @@ const itemVariants = {
 
 export default function TeamSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-24 font-barlow selection:bg-stone-100 selection:text-stone-900">
+    <section className="relative w-full overflow-hidden bg-white pt-10 pb-16 md:pt-12 md:pb-16 font-barlow selection:bg-stone-100 selection:text-stone-900">
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header Section */}
         <motion.div 
