@@ -41,7 +41,7 @@ const itemVariants = {
 
 const WhyChooseUsSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-12 font-barlow md:py-16">
+    <section className="relative overflow-hidden bg-white pt-12 pb-6 font-barlow md:pt-16 md:pb-8">
       <div className="container mx-auto px-4 md:px-8">
 
         {/* Section heading */}
