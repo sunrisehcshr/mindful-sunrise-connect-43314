@@ -81,7 +81,7 @@ const ServicesSection: React.FC = () => {
   return (
     <section
       id="services"
-      className="bg-white py-10 md:py-12"
+      className="bg-white pt-10 pb-4 md:pt-12 md:pb-6"
     >
       <div className="container mx-auto px-4 md:px-8">
         {/* Section heading */}
