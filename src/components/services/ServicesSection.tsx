@@ -44,7 +44,7 @@ const ServicesSection: React.FC = () => {
       title: "Individual Therapy",
       link: "/individual-therapy-darby-pa",
       desc: "One-on-one sessions focused on personal growth, emotional healing, and developing practical coping strategies for life's challenges.",
-      image: "/lovable-uploads/anxiety-treatment-delaware-county.webp",
+      image: "/lovable-uploads/individual-therapy-card.webp",
     },
     {
       title: "Couples Counseling",
