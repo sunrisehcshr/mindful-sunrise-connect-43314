@@ -56,7 +56,7 @@ const ServicesSection: React.FC = () => {
       title: "Family Therapy",
       link: "/family-therapy-darby-pa",
       desc: "Nurturing family dynamics and fostering healthy connections by addressing collective challenges and improving understanding.",
-      image: "/lovable-uploads/women-child-progress.webp",
+      image: "/lovable-uploads/Family Therapy.jpg",
     },
     {
       title: "IBHS Services",
