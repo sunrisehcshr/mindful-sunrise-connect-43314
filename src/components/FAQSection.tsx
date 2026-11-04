@@ -197,7 +197,7 @@ const FAQSection = () => {
   }, []);
 
   return (
-    <section id="faq" className="relative pt-12 md:pt-16 pb-16 bg-stone-50 overflow-hidden">
+    <section id="faq" className="relative pt-6 md:pt-8 pb-12 bg-stone-50 overflow-hidden">
       <CurveTransition fillColor="#ffffff" />
       
       {/* Animated SVG Background */}
@@ -237,7 +237,7 @@ const FAQSection = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
-          className="max-w-4xl mx-auto text-center mb-20" 
+          className="max-w-4xl mx-auto text-center mb-12" 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
