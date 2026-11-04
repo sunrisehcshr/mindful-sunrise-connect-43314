@@ -197,7 +197,7 @@ const FAQSection = () => {
   }, []);
 
   return (
-    <section id="faq" className="relative pt-40 md:pt-48 pb-48 bg-stone-50 overflow-hidden">
+    <section id="faq" className="relative pt-12 md:pt-16 pb-16 bg-stone-50 overflow-hidden">
       <CurveTransition fillColor="#ffffff" />
       
       {/* Animated SVG Background */}
