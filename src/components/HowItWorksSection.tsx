@@ -193,7 +193,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
 
     return (
         <div
-            className="relative w-full pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-stone-50/50"
+            className="relative w-full pt-10 pb-16 md:pt-12 md:pb-24 overflow-hidden bg-stone-50/50"
         >
             <CurveTransition fillColor="#ffffff" />
             <div className="w-full max-w-6xl mx-auto px-4 md:px-8">
