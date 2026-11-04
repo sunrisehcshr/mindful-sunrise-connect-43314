@@ -73,7 +73,7 @@ const itemVariants = {
 
 export default function TeamSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white pt-10 pb-16 md:pt-12 md:pb-16 font-barlow selection:bg-stone-100 selection:text-stone-900">
+    <section className="relative w-full overflow-hidden bg-white pt-10 pb-4 md:pt-12 md:pb-6 font-barlow selection:bg-stone-100 selection:text-stone-900">
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header Section */}
         <motion.div 
@@ -139,7 +139,7 @@ export default function TeamSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto mt-16 max-w-5xl px-6 text-center lg:px-0"
+          className="mx-auto mt-8 max-w-5xl px-6 text-center lg:px-0"
         >
           <div className="rounded-[2.5rem] p-12 md:p-16 border border-white/10 relative overflow-hidden shadow-2xl bg-stone-900 group">
             <div className="absolute inset-0 z-0 opacity-40">
