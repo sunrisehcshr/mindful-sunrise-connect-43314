@@ -55,8 +55,8 @@ export default function HomeClient() {
           <div className="relative">
             <WarmHeroSection />
             <div className="relative z-10 bg-white overflow-hidden">
+               <ServicesSection />
               <WhyChooseUsSection />
-              <ServicesSection />
               <HowItWorksSection />
               <ConditionsSection />
               <AboutUsSection />
