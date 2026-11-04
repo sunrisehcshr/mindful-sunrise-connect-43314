@@ -391,10 +391,11 @@ export default function PsychiatricEvaluationsClient() {
                     className="max-w-4xl mx-auto text-center mb-16"
                 >
                     <div className="flex flex-col items-center gap-4">
-                        <SectionTag>Why Choose Sunrise</SectionTag>
-                        <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Evaluations designed to give you answers, <br className="hidden md:block" /><span className="font-barlow not-italic text-orange-500">not just a prescription.</span>
-                        </h2>
+                       <SectionTag>Psychiatric Evaluations</SectionTag>
+<h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
+    Understanding Yourself Starts with a Conversation:
+    <span className="font-barlow not-italic text-orange-500"> Psychiatric Evaluations in Darby, PA</span>
+</h2>
                     </div>
                 </motion.div>
 
@@ -411,10 +412,17 @@ export default function PsychiatricEvaluationsClient() {
                     {/* Top Row */}
                     <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-4 relative z-10">
                         <Card containerClassName="md:col-span-3 rounded-3xl bg-stone-50/50" className="flex flex-col justify-center p-8 md:p-12">
-                            <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed max-w-3xl">
-                                A psychiatric evaluation isn't just a checklist—it's the crucial first step to getting your life back. When you meet with our licensed psychiatric providers in Darby, PA, you receive a comprehensive medical assessment of your symptoms, a clear diagnosis, and a collaborative roadmap for medication and therapy.
-                            </p>
-                        </Card>
+    <div className="max-w-3xl">
+        <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed">
+            Feeling unsure about what you’re experiencing can be exhausting, and you don’t have to figure it out alone. Your evaluation is a collaborative process with a licensed psychiatric professional. Using trusted diagnostic tools alongside a thoughtful conversation about your history, your concerns, and your goals, your provider will help you make sense of what you’re going through. Together, you’ll build a personalized plan that supports you in managing your symptoms and moving forward at your own pace.
+        </p>
+
+        <p className="text-stone-500 font-barlow text-lg leading-relaxed mt-4">
+            <strong className="text-stone-700">What to expect:</strong>{" "}
+            We start by listening. Your provider will take time to understand your story, then use standardized diagnostic assessments to gain a clear and accurate picture. You’ll leave with a better understanding of your needs and a treatment plan designed around you.
+        </p>
+    </div>
+</Card>
                         <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
                             <HugeiconsIcon icon={SafeIcon} className="w-10 h-10 text-orange-500 mb-4" />
                             <h3 className="text-xl font-bold text-stone-900 mb-2">Safe Space</h3>
