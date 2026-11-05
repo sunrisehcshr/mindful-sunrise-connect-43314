@@ -18,10 +18,22 @@ interface HowItWorksSectionProps {
 }
 
 const defaultSteps: StepItem[] = [
-    { q: "The First Conversation", a: "Call or click to speak with a care coordinator who actually listens. We'll match you with the right specialist in Darby—no automated menus, just real people." },
-    { q: "Your Clinical Evaluation", a: "Meet with licensed clinical specialists for a deep-dive assessment. We don't just look at symptoms; we look at the whole person." },
-    { q: "A Plan Built for You", a: "Receive a clear, evidence-based roadmap combining modern therapy and precise medication management, if needed. No guesswork." },
-    { q: "Sustained Recovery", a: "Begin your transformation with the ongoing support of a team that stays by your side until you feel like yourself again." }
+    {
+        q: "Let's Start a Conversation",
+        a: "Connect with our care team to discuss what you're looking for and learn about available services."
+    },
+    {
+        q: "Understanding Your Needs",
+        a: "Meet with a qualified clinician to discuss your experiences, strengths, concerns, and personal goals."
+    },
+    {
+        q: "Creating a Plan Together",
+        a: "Work with your care team to develop an individualized plan based on your needs and preferences."
+    },
+    {
+        q: "Ongoing Support and Growth",
+        a: "Continue building skills and working toward your goals with support from your care team."
+    }
 ];
 
 // --- Glowing Bento Card (Shared Style) ---
@@ -210,7 +222,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                         Your Journey
                     </SectionTag>
                     <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-  The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
+  Your journey toward <span className="font-barlow not-italic text-orange-500">greater well-being starts here.</span>
 </h2>
                   </div>
                 </motion.div>
