@@ -53,7 +53,7 @@ const WhyChooseUsSection: React.FC = () => {
           className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
         >
           <div className="flex flex-col items-center gap-4">
-            <SectionTag>Why Choose Us</SectionTag>
+            <SectionTag className="text-xs md:text-sm tracking-[0.22em] px-5 py-2.5 bg-orange-50 text-orange-700 border-orange-200">   Why Choose Us </SectionTag>
 
             <h2 className="text-3xl font-normal leading-tight tracking-tighter text-stone-900 sm:text-4xl md:text-5xl lg:text-6xl">
               Expert clinical care that
