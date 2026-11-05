@@ -7,7 +7,6 @@ import AboutHero from '@/components/about/AboutHero';
 import AboutSection from '@/components/AboutSection';
 import AboutValues from '@/components/about/AboutValues';
 import AboutApproach from '@/components/about/AboutApproach';
-import FullTeamSection from '@/components/team/FullTeamSection';
 import AboutCTA from '@/components/about/AboutCTA';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -91,7 +90,6 @@ export default function AboutPage() {
             <AboutSection />
             <AboutValues />
             <AboutApproach />
-            <FullTeamSection />
             <AboutCTA />
             
             {/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}
