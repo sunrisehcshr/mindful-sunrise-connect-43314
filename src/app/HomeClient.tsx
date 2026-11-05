@@ -6,7 +6,6 @@ import WarmHeroSection from '@/components/WarmHeroSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
 import ServicesSection from '@/components/services/ServicesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
-import ConditionsSection from '@/components/conditions/ConditionsSection';
 import AboutUsSection from '@/components/ui/AboutUsSection';
 import FAQSection from '@/components/FAQSection';
 
