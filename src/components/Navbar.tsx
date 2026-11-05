@@ -126,6 +126,9 @@ const Navbar = () => {
     path: "/about",
     label: "About"
   }, {
+    path: "/our-team",
+    label: "Our Team"
+  }, {
     type: "dropdown",
     label: "Services",
     children: serviceLinks
