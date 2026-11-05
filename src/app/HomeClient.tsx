@@ -8,7 +8,6 @@ import ServicesSection from '@/components/services/ServicesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import ConditionsSection from '@/components/conditions/ConditionsSection';
 import AboutUsSection from '@/components/ui/AboutUsSection';
-import TeamSection from '@/components/team/TeamSection';
 import FAQSection from '@/components/FAQSection';
 
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
@@ -60,7 +59,6 @@ export default function HomeClient() {
               <HowItWorksSection />
               <ConditionsSection />
               <AboutUsSection />
-              <TeamSection />
               <FAQSection />
               <AppointmentSection />
             </div>
