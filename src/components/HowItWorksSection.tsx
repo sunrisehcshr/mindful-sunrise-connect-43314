@@ -245,7 +245,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                         }}
                     />
 
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-4">
                         {steps.map((step, i) => (
                             <TimelineStep 
                                 key={i}
