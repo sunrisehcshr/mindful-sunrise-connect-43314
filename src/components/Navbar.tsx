@@ -112,12 +112,11 @@ const Navbar = () => {
 
   const resourceLinks = [
     { title: "Blog", path: "/blog" },
-    { title: "FAQ", path: "/faq" },
   ];
 
   const isResourcePage = () => {
-    return isActive("/blog") || isActive("/faq");
-  };
+  return isActive("/blog");
+};
 
   const navLinks = [{
     path: "/",
@@ -132,10 +131,13 @@ const Navbar = () => {
     type: "dropdown",
     label: "Services",
     children: serviceLinks
-  }, {
+}, {
     type: "dropdown",
     label: "Conditions",
     children: conditionLinks
+  }, {
+    path: "/faq",
+    label: "FAQ"
   }, {
     type: "dropdown",
     label: "Resources",
