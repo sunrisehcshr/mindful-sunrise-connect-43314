@@ -217,7 +217,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                   viewport={{ once: true, margin: "-100px" }} 
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  <div className="flex flex-col items-center gap-4">
+                  <div className="flex flex-col items-center gap-2">
                     <SectionTag>
                         Your Journey
                     </SectionTag>
