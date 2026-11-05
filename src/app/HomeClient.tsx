@@ -6,7 +6,6 @@ import WarmHeroSection from '@/components/WarmHeroSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
 import ServicesSection from '@/components/services/ServicesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
-import AboutUsSection from '@/components/ui/AboutUsSection';
 import FAQSection from '@/components/FAQSection';
 
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
@@ -56,7 +55,6 @@ export default function HomeClient() {
                <ServicesSection />
               <WhyChooseUsSection />
               <HowItWorksSection />
-              <AboutUsSection />
               <FAQSection />
               <AppointmentSection />
             </div>
