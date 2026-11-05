@@ -56,7 +56,6 @@ export default function HomeClient() {
                <ServicesSection />
               <WhyChooseUsSection />
               <HowItWorksSection />
-              <ConditionsSection />
               <AboutUsSection />
               <FAQSection />
               <AppointmentSection />
