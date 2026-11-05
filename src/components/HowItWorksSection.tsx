@@ -81,7 +81,7 @@ function Card({ children, className, containerClassName, isActive }: { children:
           `,
                 }}
             />
-            <div className={cn("relative h-full w-full p-8", className)}>
+            <div className={cn("relative h-full w-full p-6 md:p-7", className)}>
                 {children}
             </div>
         </div>
@@ -245,7 +245,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                         }}
                     />
 
-                    <div className="flex flex-col gap-16">
+                    <div className="flex flex-col gap-6">
                         {steps.map((step, i) => (
                             <TimelineStep 
                                 key={i}
