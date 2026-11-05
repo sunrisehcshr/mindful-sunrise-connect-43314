@@ -264,7 +264,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
             </div>
             
             {/* Parallax Banner integrated at the end of the section */}
-            <div className="mt-24 md:mt-32">
+            <div className="mt-8 md:mt-10">
                 <ParallaxBanner />
             </div>
         </div>
