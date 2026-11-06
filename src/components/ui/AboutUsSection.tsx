@@ -97,7 +97,7 @@ const AboutUsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="flex flex-col items-center gap-4">
-            <SectionTag>Our Story</SectionTag>
+            <SectionTag>Our Vision</SectionTag>
             <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                 Compassionate support to help you <br />
                 <span className="font-barlow not-italic text-orange-500">feel like yourself again.</span>
