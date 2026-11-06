@@ -68,7 +68,7 @@ const ServicesSection: React.FC = () => {
       title: "Psychiatric Evaluations",
       link: "/psychiatric-evaluations-darby-pa",
       desc: "Comprehensive diagnostic assessments to understand your mental health needs and determine the best course of treatment.",
-      image: "/lovable-uploads/psychotherapist-clipboard.webp",
+      image: "/lovable-uploads/Physcatarics.jpg",
     },
     {
       title: "Medication Management",
