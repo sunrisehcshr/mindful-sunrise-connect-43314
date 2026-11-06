@@ -97,10 +97,10 @@ const WarmHeroSection = () => {
               },
             }}
           >
-            Expert mental health care in Darby <br className="sm:hidden" />
-            <span className="inline md:block font-barlow not-italic font-semibold text-orange-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 leading-tight drop-shadow-md">
-              to help you reclaim your peace of mind
-            </span>
+            Compassionate mental health care in Darby, PA <br className="sm:hidden" />
+<span className="inline md:block font-barlow not-italic font-semibold text-orange-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 leading-tight drop-shadow-md">
+  Support for your journey toward greater well-being
+</span>
           </motion.h1>
 
           <motion.p
@@ -114,10 +114,11 @@ const WarmHeroSection = () => {
               },
             }}
           >
-            Stop struggling alone. Within 24 hours, our licensed Darby team will
-            help you start a personalized, evidence-based plan to manage
-            anxiety, depression, or trauma. You don’t have to wait months for
-            the support you need today.
+            Every person's journey is different. Our team works alongside
+individuals and families to understand their needs, build on their
+strengths, and explore personalized approaches to mental health
+care. Whether you're navigating anxiety, depression, or other life
+challenges, we're here to help you take the next step.
           </motion.p>
       </div>
 
@@ -140,7 +141,7 @@ const WarmHeroSection = () => {
               >
                 <a href="tel:+18146202162" className="flex items-center">
                   <Phone className="mr-2 h-4 w-4 -mt-[1px] group-hover:animate-pulse" />
-                  Talk to a Specialist Now
+                  Talk With Our Care Team
                 </a>
               </Button>
             </motion.div>
@@ -162,7 +163,7 @@ const WarmHeroSection = () => {
                   }}
                 >
                   <Calendar className="mr-2 h-4 w-4 -mt-[1px] group-hover:text-amber-300" />
-                  Schedule Your Visit
+                  Request an Appointment
                 </a>
               </Button>
             </motion.div>
