@@ -200,7 +200,7 @@ const ConditionsSection = () => {
   ];
 
   return (
-    <section id="conditions" className="relative py-24 pb-16 bg-white font-barlow overflow-hidden">
+    <section id="conditions" className="relative pt-10 pb-4 md:pt-12 md:pb-6 bg-white font-barlow overflow-hidden">
       <CurveTransition fillColor="#fdfdfc" />
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 

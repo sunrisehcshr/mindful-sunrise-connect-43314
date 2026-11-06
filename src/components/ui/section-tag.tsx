@@ -16,7 +16,7 @@ const SectionTag = ({
   return (
     <span 
       className={cn(
-        "inline-flex items-center gap-2 bg-stone-100 text-stone-600 font-barlow font-bold text-[10px] tracking-[0.3em] uppercase px-4 py-2 rounded-full border border-stone-200 mb-6 shadow-sm",
+        "inline-flex items-center gap-2 bg-orange-50 text-orange-700 font-barlow font-bold text-sm md:text-base tracking-[0.22em] uppercase px-7 py-3 rounded-full border border-orange-200 mb-6 shadow-sm",
         className
       )}
     >

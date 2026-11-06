@@ -18,10 +18,22 @@ interface HowItWorksSectionProps {
 }
 
 const defaultSteps: StepItem[] = [
-    { q: "The First Conversation", a: "Call or click to speak with a care coordinator who actually listens. We'll match you with the right specialist in Darby—no automated menus, just real people." },
-    { q: "Your Clinical Evaluation", a: "Meet with licensed clinical specialists for a deep-dive assessment. We don't just look at symptoms; we look at the whole person." },
-    { q: "A Plan Built for You", a: "Receive a clear, evidence-based roadmap combining modern therapy and precise medication management, if needed. No guesswork." },
-    { q: "Sustained Recovery", a: "Begin your transformation with the ongoing support of a team that stays by your side until you feel like yourself again." }
+    {
+        q: "Let's Start a Conversation",
+        a: "Connect with our care team to discuss what you're looking for and learn about available services."
+    },
+    {
+        q: "Understanding Your Needs",
+        a: "Meet with a qualified clinician to discuss your experiences, strengths, concerns, and personal goals."
+    },
+    {
+        q: "Creating a Plan Together",
+        a: "Work with your care team to develop an individualized plan based on your needs and preferences."
+    },
+    {
+        q: "Ongoing Support and Growth",
+        a: "Continue building skills and working toward your goals with support from your care team."
+    }
 ];
 
 // --- Glowing Bento Card (Shared Style) ---
@@ -69,7 +81,7 @@ function Card({ children, className, containerClassName, isActive }: { children:
           `,
                 }}
             />
-            <div className={cn("relative h-full w-full p-8", className)}>
+            <div className={cn("relative h-full w-full p-6 md:p-7", className)}>
                 {children}
             </div>
         </div>
@@ -193,7 +205,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
 
     return (
         <div
-            className="relative w-full pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-stone-50/50"
+            className="relative w-full pt-10 pb-4 md:pt-12 md:pb-6 overflow-hidden bg-stone-50/50"
         >
             <CurveTransition fillColor="#ffffff" />
             <div className="w-full max-w-6xl mx-auto px-4 md:px-8">
@@ -205,12 +217,12 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                   viewport={{ once: true, margin: "-100px" }} 
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  <div className="flex flex-col items-center gap-4">
+                  <div className="flex flex-col items-center gap-2">
                     <SectionTag>
                         Your Journey
                     </SectionTag>
                     <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-  The 4-step path to <span className="font-barlow not-italic text-orange-500">reclaiming your life.</span>
+  Your journey toward <span className="font-barlow not-italic text-orange-500">greater well-being starts here.</span>
 </h2>
                   </div>
                 </motion.div>
@@ -233,7 +245,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                         }}
                     />
 
-                    <div className="flex flex-col gap-16">
+                    <div className="flex flex-col gap-4">
                         {steps.map((step, i) => (
                             <TimelineStep 
                                 key={i}
@@ -252,7 +264,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
             </div>
             
             {/* Parallax Banner integrated at the end of the section */}
-            <div className="mt-24 md:mt-32">
+            <div className="mt-8 md:mt-10">
                 <ParallaxBanner />
             </div>
         </div>

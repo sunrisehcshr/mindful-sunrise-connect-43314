@@ -32,11 +32,11 @@ const AboutHero = () => {
             About Sunrise Human Care
           </span>
           <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6">
-            Dedicated to illuminating the path to <span className="font-barlow not-italic text-orange-400 font-normal">mental wellness.</span>
-          </h1>
+  Supporting every step of your <span className="font-barlow not-italic text-orange-400 font-normal">mental wellness journey.</span>
+</h1>
           <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            We are a sanctuary for healing, growth, and transformation, providing compassionate and expert psychiatric care to the Darby community since 2018. We exclusively accept Medicaid.
-          </p>
+  Since 2018, we've been supporting the Darby community with compassionate mental health care. Our team works alongside individuals and families, building on their strengths and helping them work toward their personal well-being goals. We currently accept Medicaid.
+</p>
         </motion.div>
       </div>
     </section>
