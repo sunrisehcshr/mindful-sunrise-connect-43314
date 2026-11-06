@@ -56,12 +56,12 @@ const WhyChooseUsSection: React.FC = () => {
             <SectionTag>Why Choose Us</SectionTag>
 
             <h2 className="text-3xl font-normal leading-tight tracking-tighter text-stone-900 sm:text-4xl md:text-5xl lg:text-6xl">
-              Expert clinical care that
-              <br />
-              <span className="text-orange-500">
-                doesn&apos;t make you wait.
-              </span>
-            </h2>
+  Compassionate care that
+  <br />
+  <span className="text-orange-500">
+    puts you first.
+  </span>
+</h2>
           </div>
         </motion.div>
 
@@ -89,20 +89,19 @@ const WhyChooseUsSection: React.FC = () => {
 
                   <div className="space-y-5">
                     <h2 className="text-3xl font-normal leading-[1.05] tracking-tighter text-stone-900 sm:text-4xl md:text-5xl lg:text-6xl">
-                      Mental health care
-                      <br />
-                      without the{" "}
-                      <span className="text-orange-500">
-                        3-month waitlist.
-                      </span>
-                    </h2>
+  Mental health care
+  <br />
+  <span className="text-orange-500">
+    centered around your needs.
+  </span>
+</h2>
 
                     <p className="max-w-2xl text-sm font-medium leading-relaxed text-stone-500 sm:text-base">
-                      We&apos;ve eliminated the typical barriers to care. Get
-                      compassionate, licensed clinical specialists ready to
-                      help you thrive—available in our clinic or from your home
-                      within days, not months.
-                    </p>
+  Our team works alongside individuals and families to provide
+  compassionate, personalized mental health support. We build
+  on each person&apos;s strengths and work together toward goals
+  that support their well-being.
+</p>
                   </div>
 
                   {/* Existing navigation links */}
