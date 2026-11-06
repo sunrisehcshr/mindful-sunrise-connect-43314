@@ -102,7 +102,7 @@ const ServicesSection: React.FC = () => {
               From Talk Therapy to Psychiatric Care:
               <br />
               <span className="font-barlow text-orange-500">
-                Everything you need to heal, under one roof.
+                A connected approach to care, built around your needs.
               </span>
             </h2>
           </motion.div>
