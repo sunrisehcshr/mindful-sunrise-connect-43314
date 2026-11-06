@@ -201,10 +201,10 @@ const WhyChooseUsSection: React.FC = () => {
               </div>
 
               <p className="text-xs font-medium leading-relaxed text-emerald-800/80">
-                Start Your Care Within Days.
-                <br />
-                Medicaid and Private Pay welcome.
-              </p>
+  Connect with our team today.
+  <br />
+  Medicaid and Private Pay welcome.
+</p>
             </div>
 
             {/* Clinic Address */}
