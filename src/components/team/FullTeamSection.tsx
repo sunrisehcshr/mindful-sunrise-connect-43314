@@ -35,19 +35,11 @@ const fullTeamMembers = [
   },
   {
     name: "Chevonne Worthy",
-    role: "Outpatient Therapist",
+    role: "Clinical Supervisor",
     specialties: ["Individual Therapy", "Couples Counseling", "Family Therapy"],
     bio: "Chevonne is a compassionate and curious therapist providing Outpatient Therapeutic services at Sunrise Human Care Services. She provides client centered counseling to individuals, couples and families. Chevonne specializes in providing space and calm for individuals to learn, grow, grieve, laugh, cry and process the big and small moments in life. Chevonne holds a Master's Degree in Clinical and Counseling Psychology with a Concentration in Marriage and Family Therapy. She uses her 10+ years of experience and creativity to provide a wide range of modalities catered to the needs of the persons or families needing support.",
     image: "/images/chevonne-worthy.jpg",
     slug: "chevonne-worthy"
-  },
-  {
-    name: "Anthony Obi",
-    role: "Outpatient Therapist",
-    specialties: ["Schizophrenia", "Mood Disorders", "Geriatric Care"],
-    bio: "Anthony Obi works as an Outpatient Therapist at Sunrise Human Care Services, providing compassionate, client-centered counseling to individuals, families, and groups. His responsibilities include assessing mental health needs, creating personalized treatment plans, and guiding clients through therapies that promote resilience and emotional well-being. By partnering with healthcare providers and community resources, Anthony ensures each client receives comprehensive support. Through his dedication, Anthony helps clients achieve personal growth and stability while contributing to Sunrise Human Care Services' mission of strengthening lives and uplifting the community.",
-    image: "/images/Toni Obi's Profile Picture.jpeg",
-    slug: "anthony-obi"
   },
   {
     name: "Michael Flynn",
