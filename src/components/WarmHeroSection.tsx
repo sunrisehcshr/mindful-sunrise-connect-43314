@@ -118,8 +118,7 @@ const WarmHeroSection = () => {
             Every person's journey is different. Our team works alongside
 individuals and families to understand their needs, build on their
 strengths, and explore personalized approaches to mental health
-care. Whether you're navigating anxiety, depression, or other life
-challenges, we're here to help you take the next step.
+care.
           </motion.p>
       </div>
 
