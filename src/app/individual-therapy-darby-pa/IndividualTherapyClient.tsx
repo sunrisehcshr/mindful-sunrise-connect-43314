@@ -691,7 +691,7 @@
     
     
               {/* SECTION 5: FAQs */}
-              <section className="pt-8 pb-40 bg-stone-50 relative overflow-hidden">
+              <section className="pt-8 pb-12 bg-stone-50 relative overflow-hidden">
                 
                 {/* Animated SVG Background */}
                 <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -789,7 +789,7 @@
               </section>
     
               {/* SECTION: Related Services (Animated Stack) */}
-              <section className="pt-24 pb-0 bg-white relative overflow-hidden">
+              <section className="pt-8 pb-0 bg-white relative overflow-hidden">
                 
                 <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
                   <motion.div
