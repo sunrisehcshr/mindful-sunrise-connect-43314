@@ -328,7 +328,7 @@ export default function FamilyTherapyClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
            <Image 
-  src="/images/Family.jpg"
+  src="/images/Family.png"
   alt="Family spending meaningful time together at home"
   fill
   sizes="100vw"
@@ -384,7 +384,7 @@ export default function FamilyTherapyClient() {
         <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           
           {/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}
-          <section className="pt-16 md:pt-24 pb-40 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
+          <section className="pt-12 md:pt-16 pb-12 md:pb-16 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Header Row */}
                 <motion.div 
@@ -456,7 +456,7 @@ export default function FamilyTherapyClient() {
           </section>
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
-          <section className="pt-16 md:pt-24 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -516,7 +516,7 @@ export default function FamilyTherapyClient() {
           </section>
 
           {/* SECTION 3: Clinical Approach */}
-          <section className="pt-16 md:pt-24 pb-40 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial="hidden"
@@ -570,7 +570,7 @@ export default function FamilyTherapyClient() {
                     
 
 {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
@@ -682,7 +682,7 @@ export default function FamilyTherapyClient() {
 
 
           {/* SECTION 5: FAQs */}
-          <section className="pt-8 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -780,7 +780,7 @@ export default function FamilyTherapyClient() {
           </section>
 
           {/* SECTION: Related Services (Animated Stack) */}
-          <section className="pt-24 pb-0 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-0 bg-white relative overflow-hidden">
             
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
               <motion.div
@@ -807,7 +807,7 @@ export default function FamilyTherapyClient() {
           </section>
 
           {/* SECTION 6: Appointment */}
-          <div className="bg-white pt-16 md:pt-24">
+          <div className="bg-white pt-4 md:pt-8">
             <AppointmentSection />
           </div>
           
