@@ -566,7 +566,7 @@ export default function CouplesCounselingClient() {
                     
 
 {/* SECTION 4: The Process */}
-          <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-8 md:pb-12 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
@@ -601,7 +601,7 @@ export default function CouplesCounselingClient() {
                       }}
                   />
 
-                  <div className="flex flex-col gap-12 md:gap-16">
+                  <div className="flex flex-col gap-4 md:gap-6">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
                               key={step.title}
@@ -678,7 +678,7 @@ export default function CouplesCounselingClient() {
 
 
           {/* SECTION 5: FAQs */}
-          <section className="pt-8 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-4 md:pt-6 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -776,7 +776,7 @@ export default function CouplesCounselingClient() {
           </section>
 
           {/* SECTION: Related Services (Animated Stack) */}
-          <section className="pt-24 pb-0 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-0 bg-white relative overflow-hidden">
             
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
               <motion.div
