@@ -327,19 +327,17 @@ export default function CouplesCounselingClient() {
         {/* HERO SECTION */}
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
-              alt="Couples Counseling in Darby PA" 
-              fill 
-              sizes="(max-width: 768px) 100vw, 50vw"
-              unoptimized={true}
-              className="object-cover opacity-60"
-              priority
-            />
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
-            <div className="absolute inset-0 z-0 bg-black/30" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
-          </div>
+  <Image
+    src="/images/couples.jpg"
+    alt="Couple sitting together in a welcoming couples counseling office"
+    fill
+    sizes="100vw"
+    className="object-cover object-center"
+    priority
+  />
+  <div className="absolute inset-0 z-0 bg-black/45" />
+  <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/40 via-stone-950/30 to-stone-950/70" />
+</div>
           
           <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
             <motion.div
@@ -349,15 +347,17 @@ export default function CouplesCounselingClient() {
               className="max-w-4xl mx-auto"
             >
               <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Rebuild Your Relationship in PA
+                Support for Your Relationship in PA
               </span>
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Reconnect and Rebuild with <br className="hidden md:block" />
-                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Couples Counseling in Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Stop the endless arguments and emotional distance. Reconnect with your partner, rebuild trust, and restore intimacy with expert marriage counseling in Darby, PA.
-              </p>
+  Build a Stronger, More Connected Relationship <br className="hidden md:block" />
+  <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">
+    Couples Counseling in Darby, PA
+  </span>
+</h1>
+             <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
+  Every relationship experiences challenges and change. Couples counseling offers a supportive space to improve communication, understand each other's perspectives, and work toward shared goals.
+</p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
