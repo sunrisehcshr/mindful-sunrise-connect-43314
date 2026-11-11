@@ -46,17 +46,10 @@ const fullTeamMembers = [
   },
   {
     name: "Chevonne Worthy",
-    role: "Outpatient Therapist",
+    role: "Clinical Supervisor",
     specialties: ["Individual Therapy", "Couples Counseling", "Family Therapy"],
     bio: "Chevonne is a compassionate and curious therapist providing Outpatient Therapeutic services.",
     image: "/images/chevonne-worthy.jpg"
-  },
-  {
-    name: "Anthony Obi",
-    role: "Outpatient Therapist",
-    specialties: ["Schizophrenia", "Mood Disorders", "Geriatric Care"],
-    bio: "Anthony Obi works as an Outpatient Therapist at Sunrise Human Care Services.",
-    image: "/images/Toni Obi's Profile Picture.jpeg"
   },
   {
     name: "Michael Flynn",
