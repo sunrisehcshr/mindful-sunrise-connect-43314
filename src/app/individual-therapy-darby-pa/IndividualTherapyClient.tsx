@@ -389,31 +389,6 @@
     </motion.div>
   </div>
 </section>
-
-
-<p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-  One-on-one counseling in Darby, PA, where you can explore concerns such as{" "}
-  anxiety and depression, build practical coping skills, and work toward
-  personal goals in a supportive, confidential setting.
-</p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
-                <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
-                Schedule Your First Session
-              </button>
-            </Link>
-            <a href="tel:+18146202162">
-              <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
-                <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
-                Call (814) 620-2162
-              </button>
-            </a>
-          </div>
-                </motion.div>
-              </div>
-            </section>
     
             <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
               
