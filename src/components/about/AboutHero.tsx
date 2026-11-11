@@ -35,7 +35,10 @@ const AboutHero = () => {
   Supporting every step of your <span className="font-barlow not-italic text-orange-400 font-normal">mental wellness journey.</span>
 </h1>
           <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-  Since 2018, we've been supporting the Darby community with compassionate mental health care. Our team works alongside individuals and families, building on their strengths and helping them work toward their personal well-being goals. We currently accept Medicaid.
+  Since 2018, we've partnered with the Darby community to provide
+  compassionate mental health care. Our team works alongside individuals
+  and families, recognizing their strengths and supporting them as they
+  work toward their personal well-being goals. We currently accept Medicaid.
 </p>
         </motion.div>
       </div>
