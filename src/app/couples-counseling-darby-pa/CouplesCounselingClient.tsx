@@ -803,9 +803,9 @@ export default function CouplesCounselingClient() {
           </section>
 
           {/* SECTION 6: Appointment */}
-          <div className="bg-white pt-16 md:pt-24">
-            <AppointmentSection />
-          </div>
+         <div className="bg-white pt-4 md:pt-8">
+  <AppointmentSection />
+</div>
           
         </div>
       </main>
