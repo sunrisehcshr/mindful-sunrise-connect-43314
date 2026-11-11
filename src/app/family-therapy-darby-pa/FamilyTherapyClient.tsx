@@ -327,15 +327,14 @@ export default function FamilyTherapyClient() {
         {/* HERO SECTION */}
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918387/family-counseling-talk-from-home-parents-listen-t-2026-03-25-02-29-59-utc_a9m3eu.jpg" 
-              alt="Family Therapy in Darby PA" 
-              fill 
-              sizes="(max-width: 768px) 100vw, 50vw"
-              unoptimized={true}
-              className="object-cover opacity-60"
-              priority
-            />
+           <Image 
+  src="/images/Family.jpg"
+  alt="Family spending meaningful time together at home"
+  fill
+  sizes="100vw"
+  className="object-cover object-center opacity-60"
+  priority
+/>
             {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
             <div className="absolute inset-0 z-0 bg-black/30" />
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
@@ -349,15 +348,20 @@ export default function FamilyTherapyClient() {
               className="max-w-4xl mx-auto"
             >
               <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Restore Harmony in Your Home
-              </span>
+  Restore Connection, Build Stronger Family Bonds
+</span>
+
               <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Bring Peace Back to Your Home with <br className="hidden md:block" />
-                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Family Therapy in Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Stop the daily power struggles and emotional disconnect. Rebuild a peaceful, connected family dynamic with expert therapy in Darby, PA.
-              </p>
+  Build Stronger Connections and a More Supportive Family
+  <br className="hidden md:block" />
+  <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">
+    Family Therapy in Darby, PA
+  </span>
+</h1>
+
+<p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
+  Every family experiences changes and challenges. Family therapy provides a supportive space to improve communication, understand one another's perspectives, and build healthier relationships together.
+</p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
@@ -601,7 +605,7 @@ export default function FamilyTherapyClient() {
                       }}
                   />
 
-                  <div className="flex flex-col gap-12 md:gap-16">
+                  <div className="flex flex-col gap-6 md:gap-8">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
                               key={step.title}
@@ -624,7 +628,7 @@ export default function FamilyTherapyClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
-                  className="mt-16 md:mt-24 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
+                  className="mt-10 md:mt-12 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
               >
                  {/* WebGL Fluid Background */}
                  <div className="absolute inset-0 z-0 opacity-40">
