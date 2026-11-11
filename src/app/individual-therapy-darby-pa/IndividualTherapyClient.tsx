@@ -328,7 +328,7 @@
             <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
               <div className="absolute inset-0 z-0">
                <Image
-  src="/images/individual-therapy-office.jpg.png"
+  src="/images/individualtherapyoffice"
   alt="Welcoming and comfortable therapy office with seating and natural light"
   fill
   sizes="100vw"
