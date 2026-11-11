@@ -97,10 +97,10 @@ const WarmHeroSection = () => {
               },
             }}
           >
-           Mental health care centered around you.
+           Mental Health Care That Starts With Understanding You.
 <br className="sm:hidden" />
 <span className="inline md:block font-barlow not-italic font-semibold text-orange-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 leading-tight drop-shadow-md">
-  Compassionate support in Darby, PA.
+  Compassionate Support in Darby, PA.
 </span>
           </motion.h1>
 
