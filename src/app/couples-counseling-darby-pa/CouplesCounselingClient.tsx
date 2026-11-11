@@ -452,7 +452,7 @@ export default function CouplesCounselingClient() {
           </section>
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
-          <section className="pt-8 md:pt-12 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -512,7 +512,7 @@ export default function CouplesCounselingClient() {
           </section>
 
           {/* SECTION 3: Clinical Approach */}
-          <section className="pt-16 md:pt-24 pb-40 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial="hidden"
@@ -566,7 +566,7 @@ export default function CouplesCounselingClient() {
                     
 
 {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
