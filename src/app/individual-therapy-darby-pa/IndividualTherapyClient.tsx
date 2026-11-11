@@ -816,7 +816,7 @@
               </section>
     
               {/* SECTION 6: Appointment */}
-              <div className="bg-white pt-16 md:pt-24">
+              <div className="bg-white pt-0">
                 <AppointmentSection />
               </div>
               
