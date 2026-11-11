@@ -351,7 +351,7 @@
                     Personalized Counseling in PA
                   </span>
                 <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-  Support your mental well-being with <br className="hidden md:block" />
+  Support Your Mental Well-being with <br className="hidden md:block" />
   <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">
     Individual Therapy in Darby, PA
   </span>
