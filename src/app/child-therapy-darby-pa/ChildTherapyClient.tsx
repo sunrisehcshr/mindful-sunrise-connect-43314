@@ -328,7 +328,7 @@ export default function ChildTherapyClient() {
         <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="/photos/child.png"
+              src="/child.png"
               alt="Child Therapy in Darby PA" 
               fill 
               sizes="(max-width: 768px) 100vw, 50vw"
