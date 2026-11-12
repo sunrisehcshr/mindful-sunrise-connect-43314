@@ -324,58 +324,101 @@ export default function FamilyTherapyClient() {
       <Navbar />
       
       <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918387/family-counseling-talk-from-home-parents-listen-t-2026-03-25-02-29-59-utc_a9m3eu.jpg" 
-              alt="Family Therapy in Darby PA" 
-              fill 
-              sizes="(max-width: 768px) 100vw, 50vw"
-              unoptimized={true}
-              className="object-cover opacity-60"
-              priority
-            />
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
-            <div className="absolute inset-0 z-0 bg-black/30" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
-          </div>
-          
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Restore Harmony in Your Home
-              </span>
-              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Bring Peace Back to Your Home with <br className="hidden md:block" />
-                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Family Therapy in Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Stop the daily power struggles and emotional disconnect. Rebuild a peaceful, connected family dynamic with expert therapy in Darby, PA.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-          <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+       
+{/* HERO SECTION */}
+<section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
+
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918387/family-counseling-talk-from-home-parents-listen-t-2026-03-25-02-29-59-utc_a9m3eu.jpg"
+      alt="Family spending meaningful time together"
+      fill
+      sizes="100vw"
+      unoptimized={true}
+      className="object-cover object-center opacity-100"
+      priority
+    />
+
+    {/* Dark gradient concentrated on the left */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(12,10,9,0.88) 0%, rgba(12,10,9,0.72) 30%, rgba(12,10,9,0.38) 52%, rgba(12,10,9,0.08) 75%, transparent 100%)",
+      }}
+    />
+
+    {/* Subtle overall overlay */}
+    <div className="absolute inset-0 bg-black/10" />
+
+    {/* Bottom transition */}
+    <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-stone-950/10" />
+  </div>
+
+  {/* Left-aligned Hero Content */}
+  <div className="w-full max-w-[1500px] mx-auto px-6 md:px-10 lg:px-12 relative z-10">
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="max-w-3xl text-left"
+    >
+
+      {/* Eyebrow */}
+      <span className="inline-flex items-center font-barlow font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-orange-400 mb-8 bg-orange-500/10 px-6 py-3 rounded-full border border-orange-500/40 backdrop-blur-md">
+        Restore Connection, Build Stronger Family Bonds
+      </span>
+
+      {/* Main Heading */}
+      <h1 className="font-barlow font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-7 max-w-3xl">
+        Build Stronger Connections and a More Supportive Family
+        <span className="block text-orange-400 font-normal mt-2">
+          Family Therapy in Darby, PA
+        </span>
+      </h1>
+
+      {/* Description */}
+      <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+        Every family experiences changes and challenges. Family therapy
+        provides a supportive space to improve communication, understand
+        one another's perspectives, and build healthier relationships together.
+      </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 items-start">
+
+        <Link
+          href="#appointment"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("appointment")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
+          <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
             Schedule Your First Session
           </button>
         </Link>
+
         <a href="tel:+18146202162">
-          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center backdrop-blur-md">
             <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
             Call (814) 620-2162
           </button>
         </a>
+
       </div>
-            </motion.div>
-          </div>
-        </section>
+    </motion.div>
+  </div>
+</section>
+
 
         <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           
