@@ -324,7 +324,7 @@ export default function FamilyTherapyClient() {
       <Navbar />
       
       <main className="flex-grow">
-        
+       
 {/* HERO SECTION */}
 <section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
 
@@ -339,7 +339,7 @@ export default function FamilyTherapyClient() {
       priority
     />
 
-    {/* Left-side dark gradient for text readability */}
+    {/* Dark gradient concentrated on the left */}
     <div
       className="absolute inset-0"
       style={{
@@ -414,6 +414,57 @@ export default function FamilyTherapyClient() {
         </a>
 
       </div>
+    </motion.div>
+  </div>
+</section>
+
+
+        <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
+          
+          {/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}
+          <section className="pt-16 md:pt-24 pb-40 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
+            <div className="container mx-auto px-4 md:px-8">
+                {/* Header Row */}
+                <motion.div 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                    className="max-w-4xl mx-auto text-center mb-16"
+                >
+                    <div className="flex flex-col items-center gap-4">
+                        <SectionTag>Why Choose Sunrise</SectionTag>
+                        <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
+                            Therapy designed to support your family, <br className="hidden md:block" /><span className="font-barlow not-italic text-orange-500">not judge your parenting.</span>
+                        </h2>
+                    </div>
+                </motion.div>
+
+                <motion.div 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
+                    }}
+                    className="relative z-10 mx-auto max-w-7xl flex flex-col gap-4 bg-white p-4 md:p-8 rounded-[3rem] border border-stone-100 shadow-sm"
+                >
+                    {/* Top Row */}
+                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-4 relative z-10">
+                        <Card containerClassName="md:col-span-3 rounded-3xl bg-stone-50/50" className="flex flex-col justify-center p-8 md:p-12">
+                            <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed max-w-3xl">
+                                Family therapy isn't about assigning blame—it's about healing the whole unit. When you partner with our licensed family specialists in Darby, PA, you gain a dedicated team who will help your family break destructive behavioral loops, resolve deep-seated conflict, and empower everyone to communicate with compassion and clarity.
+                            </p>
+                        </Card>
+                        <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
+                            <HugeiconsIcon icon={SafeIcon} className="w-10 h-10 text-orange-500 mb-4" />
+                            <h3 className="text-xl font-bold text-stone-900 mb-2">Safe Space</h3>
+                            <p className="text-stone-500 text-sm font-medium">100% confidential and non-judgmental.</p>
+                        </Card>
+                    </motion.div>
+
+     </motion.div>
     </motion.div>
   </div>
 </section>
@@ -774,7 +825,8 @@ export default function FamilyTherapyClient() {
             <AppointmentSection />
           </div>
 
-      </main>
+      </div>
+</main>
 
       <div className="relative z-20 bg-white">
         <Footer />
