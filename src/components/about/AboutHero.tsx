@@ -15,19 +15,19 @@ const AboutHero = () => {
           src="/images/therapy-for-older-adults.webp"
           alt="Older adult receiving compassionate support at Sunrise Human Care Services"
           fill
-          className="object-cover object-[65%_center] opacity-90"
+          className="object-cover object-[78%_center] opacity-100"
           priority
           sizes="100vw"
         />
 
         {/* Left-side dark gradient */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(12,10,9,0.92) 0%, rgba(12,10,9,0.78) 35%, rgba(12,10,9,0.42) 65%, rgba(12,10,9,0.12) 100%)",
-          }}
-        />
+       <div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(90deg, rgba(12,10,9,0.92) 0%, rgba(12,10,9,0.78) 25%, rgba(12,10,9,0.40) 43%, rgba(12,10,9,0.08) 60%, transparent 72%)",
+  }}
+/>
 
         {/* Subtle overall overlay */}
         <div className="absolute inset-0 bg-black/10" />
