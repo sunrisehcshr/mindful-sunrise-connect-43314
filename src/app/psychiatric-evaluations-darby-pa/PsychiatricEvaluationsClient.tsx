@@ -644,7 +644,7 @@ export default function PsychiatricEvaluationsClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="max-w-4xl mx-auto text-center mb-16 md:mb-24"
+                className="max-w-4xl mx-auto text-center mb-8 md:mb-10"
               >
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
@@ -672,7 +672,7 @@ export default function PsychiatricEvaluationsClient() {
                       }}
                   />
 
-                  <div className="flex flex-col gap-12 md:gap-16">
+                  <div className="flex flex-col gap-4 md:gap-6">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
                               key={step.title}
@@ -695,7 +695,7 @@ export default function PsychiatricEvaluationsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
-                  className="mt-16 md:mt-24 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
+                  className="mt-8 md:mt-10 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
               >
                  {/* WebGL Fluid Background */}
                  <div className="absolute inset-0 z-0 opacity-40">
