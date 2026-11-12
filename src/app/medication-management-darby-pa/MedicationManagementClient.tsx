@@ -331,7 +331,7 @@ export default function MedicationManagementClient() {
   {/* Background Image */}
   <div className="absolute inset-0 z-0">
     <Image
-      src="Medication Managemnt.jpg"
+      src="Medication Management.webp"
       alt="Medication Management in Darby PA"
       fill
       sizes="100vw"
