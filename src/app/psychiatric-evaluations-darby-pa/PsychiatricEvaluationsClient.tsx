@@ -525,7 +525,7 @@ export default function PsychiatricEvaluationsClient() {
           </section>
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
-          <section className="pt-16 md:pt-24 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-40 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -637,7 +637,7 @@ export default function PsychiatricEvaluationsClient() {
           </section>
 
           {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-16 md:pb-32 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
@@ -751,7 +751,7 @@ export default function PsychiatricEvaluationsClient() {
                     
 
 {/* SECTION 5: FAQs */}
-          <section className="pt-8 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-0 pb-40 bg-stone-50 relative overflow-hidden">
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
