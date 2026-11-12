@@ -12,14 +12,18 @@ const AboutHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/therapy-for-older-adults.webp"
-          alt="Older adult receiving compassionate support at Sunrise Human Care Services"
-          fill
-          className="object-cover object-[0%_center] opacity-100"
-          priority
-          sizes="100vw"
-        />
-
+  src="/images/therapy-for-older-adults.webp"
+  alt="Older adult receiving compassionate support at Sunrise Human Care Services"
+  fill
+  className="object-cover opacity-100"
+  style={{
+    objectPosition: "center center",
+    transform: "scale(1.2) translateX(8%)",
+    transformOrigin: "center center",
+  }}
+  priority
+  sizes="100vw"
+/>
         {/* Left-side dark gradient */}
        <div
   className="absolute inset-0"
