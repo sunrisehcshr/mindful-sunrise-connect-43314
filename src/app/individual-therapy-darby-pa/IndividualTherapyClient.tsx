@@ -324,9 +324,9 @@
           <Navbar />
           
           <main className="flex-grow">
-            {/* HERO SECTION */}
-            
-<section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
+           
+{/* HERO SECTION */}
+<section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
 
   {/* HERO BACKGROUND IMAGE */}
   <div className="absolute inset-0 z-0">
@@ -339,40 +339,59 @@
       priority
     />
 
-    {/* Dark overlay for text readability */}
-    <div className="absolute inset-0 bg-black/45" />
+    {/* Dark gradient for left-side text readability */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(12,10,9,0.88) 0%, rgba(12,10,9,0.72) 30%, rgba(12,10,9,0.35) 55%, rgba(12,10,9,0.08) 78%, transparent 100%)",
+      }}
+    />
 
     {/* Bottom gradient */}
-    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-stone-950/50" />
+    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-stone-950/10" />
   </div>
 
   {/* HERO CONTENT */}
-  <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+  <div className="w-full max-w-[1500px] mx-auto px-6 md:px-10 lg:px-12 relative z-10">
+
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="max-w-4xl mx-auto"
+      className="w-full max-w-[680px] mr-auto text-left"
     >
-      <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
+
+      {/* Eyebrow */}
+      <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/30 backdrop-blur-md">
         Personalized Counseling in PA
       </span>
 
-      <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-        Support Your Mental Well-being with <br className="hidden md:block" />
-        <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">
+      {/* Main Heading */}
+      <h1 className="font-barlow font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-6 drop-shadow-md">
+        Support Your Mental Well-being with
+        <span className="block text-orange-400 font-normal mt-2">
           Individual Therapy in Darby, PA
         </span>
       </h1>
 
-      <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-        One-on-one counseling in Darby, PA, where you can explore concerns such as{" "}
+      {/* Description */}
+      <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-[620px] leading-relaxed mb-10 drop-shadow-md">
+        One-on-one counseling in Darby, PA, where you can explore concerns such as
         anxiety and depression, build practical coping skills, and work toward
         personal goals in a supportive, confidential setting.
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-start items-start">
+
+        <Link
+          href="#appointment"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("appointment")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
             Schedule Your First Session
@@ -385,10 +404,12 @@
             Call (814) 620-2162
           </button>
         </a>
+
       </div>
     </motion.div>
   </div>
 </section>
+
     
             <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
               
