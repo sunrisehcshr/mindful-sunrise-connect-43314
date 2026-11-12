@@ -324,136 +324,99 @@ export default function FamilyTherapyClient() {
       <Navbar />
       
       <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-           <Image 
-  src="/images/Family.png"
-  alt="Family spending meaningful time together at home"
-  fill
-  sizes="100vw"
-  className="object-cover object-center opacity-60"
-  priority
-/>
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
-            <div className="absolute inset-0 z-0 bg-black/30" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
-          </div>
-          
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-  Restore Connection, Build Stronger Family Bonds
-</span>
+        
+{/* HERO SECTION */}
+<section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
 
-              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-  Build Stronger Connections and a More Supportive Family
-  <br className="hidden md:block" />
-  <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">
-    Family Therapy in Darby, PA
-  </span>
-</h1>
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/images/Family.png"
+      alt="Family spending meaningful time together at home"
+      fill
+      sizes="100vw"
+      className="object-cover object-center opacity-100"
+      priority
+    />
 
-<p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-  Every family experiences changes and challenges. Family therapy provides a supportive space to improve communication, understand one another's perspectives, and build healthier relationships together.
-</p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-          <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+    {/* Left-side dark gradient for text readability */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(12,10,9,0.88) 0%, rgba(12,10,9,0.72) 30%, rgba(12,10,9,0.38) 52%, rgba(12,10,9,0.08) 75%, transparent 100%)",
+      }}
+    />
+
+    {/* Subtle overall overlay */}
+    <div className="absolute inset-0 bg-black/10" />
+
+    {/* Bottom transition */}
+    <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-stone-950/10" />
+  </div>
+
+  {/* Left-aligned Hero Content */}
+  <div className="w-full max-w-[1500px] mx-auto px-6 md:px-10 lg:px-12 relative z-10">
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="max-w-3xl text-left"
+    >
+
+      {/* Eyebrow */}
+      <span className="inline-flex items-center font-barlow font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-orange-400 mb-8 bg-orange-500/10 px-6 py-3 rounded-full border border-orange-500/40 backdrop-blur-md">
+        Restore Connection, Build Stronger Family Bonds
+      </span>
+
+      {/* Main Heading */}
+      <h1 className="font-barlow font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-7 max-w-3xl">
+        Build Stronger Connections and a More Supportive Family
+        <span className="block text-orange-400 font-normal mt-2">
+          Family Therapy in Darby, PA
+        </span>
+      </h1>
+
+      {/* Description */}
+      <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+        Every family experiences changes and challenges. Family therapy
+        provides a supportive space to improve communication, understand
+        one another's perspectives, and build healthier relationships together.
+      </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 items-start">
+
+        <Link
+          href="#appointment"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("appointment")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
+          <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
             Schedule Your First Session
           </button>
         </Link>
+
         <a href="tel:+18146202162">
-          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center backdrop-blur-md">
             <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
             Call (814) 620-2162
           </button>
         </a>
+
       </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
-          
-          {/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}
-          <section className="pt-12 md:pt-16 pb-12 md:pb-16 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
-            <div className="container mx-auto px-4 md:px-8">
-                {/* Header Row */}
-                <motion.div 
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                    className="max-w-4xl mx-auto text-center mb-16"
-                >
-                    <div className="flex flex-col items-center gap-4">
-                        <SectionTag>Why Choose Sunrise</SectionTag>
-                        <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
-                            Therapy designed to support your family, <br className="hidden md:block" /><span className="font-barlow not-italic text-orange-500">not judge your parenting.</span>
-                        </h2>
-                    </div>
-                </motion.div>
-
-                <motion.div 
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
-                    }}
-                    className="relative z-10 mx-auto max-w-7xl flex flex-col gap-4 bg-white p-4 md:p-8 rounded-[3rem] border border-stone-100 shadow-sm"
-                >
-                    {/* Top Row */}
-                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-4 relative z-10">
-                        <Card containerClassName="md:col-span-3 rounded-3xl bg-stone-50/50" className="flex flex-col justify-center p-8 md:p-12">
-                            <p className="text-stone-500 font-barlow text-lg md:text-xl leading-relaxed max-w-3xl">
-                                Family therapy isn't about assigning blame—it's about healing the whole unit. When you partner with our licensed family specialists in Darby, PA, you gain a dedicated team who will help your family break destructive behavioral loops, resolve deep-seated conflict, and empower everyone to communicate with compassion and clarity.
-                            </p>
-                        </Card>
-                        <Card containerClassName="md:col-span-1 rounded-3xl bg-orange-50/50 border-orange-100/50" className="flex flex-col items-center justify-center text-center p-8">
-                            <HugeiconsIcon icon={SafeIcon} className="w-10 h-10 text-orange-500 mb-4" />
-                            <h3 className="text-xl font-bold text-stone-900 mb-2">Safe Space</h3>
-                            <p className="text-stone-500 text-sm font-medium">100% confidential and non-judgmental.</p>
-                        </Card>
-                    </motion.div>
-
-                    {/* Features Row - With varied colors */}
-                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-3 relative z-10">
-                        <Card containerClassName="rounded-3xl bg-emerald-50/40 border-emerald-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-emerald-200/20 border border-emerald-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={CheckmarkBadge01Icon} className="w-6 h-6 text-emerald-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Guidance You Can Trust</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with fully licensed, state-certified therapists in Delaware County who specialize in approaches that actually work for your family.</p>
-                        </Card>
-                        <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={BrainIcon} className="w-6 h-6 text-blue-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based Approaches</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like Family Systems Therapy so you see measurable, real-world progress in your home.</p>
-                        </Card>
-                        <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={FavouriteIcon} className="w-6 h-6 text-rose-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Tailored to Your Unique Story</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Your family's roadmap is tailored specifically to your unique dynamic, communication styles, and shared goals.</p>
-                        </Card>
-                    </motion.div>
-                </motion.div>
-            </div>
-            <CurveTransition fillColor="#fafaf9" inverted />
-          </section>
+    </motion.div>
+  </div>
+</section>
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
           <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
