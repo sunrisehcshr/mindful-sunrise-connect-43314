@@ -388,7 +388,7 @@ export default function ChildTherapyClient() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                    className="max-w-4xl mx-auto text-center mb-16"
+                    className="max-w-4xl mx-auto text-center mb-10"
                 >
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Why Choose Sunrise</SectionTag>
@@ -458,7 +458,7 @@ export default function ChildTherapyClient() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="max-w-4xl mx-auto text-center mb-16"
+                className="max-w-4xl mx-auto text-center mb-8 md:mb-10"
               >
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Support for Your Child</SectionTag>
@@ -626,7 +626,7 @@ export default function ChildTherapyClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
-                  className="mt-8 md:mt-12 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
+                  className="mt-6 md:mt-8 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
               >
                  {/* WebGL Fluid Background */}
                  <div className="absolute inset-0 z-0 opacity-40">
@@ -738,7 +738,7 @@ export default function ChildTherapyClient() {
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-12 flex flex-col items-center gap-4">
+                <div className="text-center mb-8 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     Child Therapy <span className="font-barlow not-italic text-orange-500">
