@@ -324,58 +324,124 @@ export default function PsychiatricEvaluationsClient() {
       <Navbar />
       
       <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg" 
-              alt="Psychiatric Evaluations in Darby PA" 
-              fill 
-              sizes="(max-width: 768px) 100vw, 50vw"
-              unoptimized={true}
-              className="object-cover opacity-60"
-              priority
-            />
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
-            <div className="absolute inset-0 z-0 bg-black/30" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
-          </div>
-          
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Expert Psychiatric Care in PA
-              </span>
-              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Get the Right Diagnosis with <br className="hidden md:block" />
-                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Psychiatric Evaluations in Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Stop wondering what is wrong. Get a clear, accurate diagnosis and a personalized medical treatment plan from licensed psychiatric specialists who actually listen to you.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-          <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
-            <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
-            Schedule Your First Session
-          </button>
+        
+{/* HERO SECTION */}
+<section className="relative isolate min-h-[760px] md:min-h-[850px] flex items-center overflow-hidden bg-stone-950">
+
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg"
+      alt="Psychiatric professional providing a supportive consultation"
+      fill
+      priority
+      unoptimized
+      sizes="100vw"
+      className="object-cover object-center"
+    />
+
+    {/* Dark overlay */}
+    <div className="absolute inset-0 bg-black/20" />
+
+    {/* Left-side gradient for text readability */}
+    <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/90 via-45% to-stone-950/10" />
+
+    {/* Bottom gradient */}
+    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-stone-950/20" />
+  </div>
+
+  {/* Hero Content */}
+  <div className="container mx-auto px-6 md:px-10 relative z-10 pt-36 pb-16 md:pt-40 md:pb-20">
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="max-w-3xl text-left"
+    >
+
+      {/* Eyebrow */}
+      <span className="inline-flex items-center font-barlow font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-orange-400 mb-8 bg-orange-500/10 px-6 py-3 rounded-full border border-orange-500/40 backdrop-blur-md">
+        Expert Psychiatric Care in PA
+      </span>
+
+      {/* Main Heading */}
+      <h1 className="text-balance font-barlow font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-7 max-w-3xl">
+        Comprehensive
+        <span className="block text-orange-400 font-normal">
+          Psychiatric Evaluations
+        </span>
+        in Darby, PA
+      </h1>
+
+      {/* Description */}
+      <p className="text-stone-200 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+        Get clear answers, an accurate diagnosis, and a personalized
+        treatment plan from licensed psychiatric specialists who listen,
+        understand, and support your mental health goals.
+      </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
+
+        <Link
+          href="#appointment"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("appointment")?.scrollIntoView({
+              behavior: "smooth"
+            });
+          }}
+          className="bg-orange-500 hover:bg-orange-400 text-white font-barlow font-bold px-8 py-5 text-base rounded-full transition duration-300 flex items-center justify-center gap-3 shadow-lg shadow-orange-500/25 w-full sm:w-auto"
+        >
+          <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
+          Schedule Your First Session
         </Link>
-        <a href="tel:+18146202162">
-          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
-            <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
-            Call (814) 620-2162
-          </button>
+
+        <a
+          href="tel:+18146202162"
+          className="bg-white/10 hover:bg-white/20 text-white border border-white/40 font-barlow font-bold px-8 py-5 text-base rounded-full transition duration-300 flex items-center justify-center gap-3 backdrop-blur-md w-full sm:w-auto"
+        >
+          <HugeiconsIcon icon={CallIcon} className="w-5 h-5" />
+          Call (814) 620-2162
         </a>
+
       </div>
-            </motion.div>
-          </div>
-        </section>
+
+      {/* Benefit Highlights */}
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-4 text-white font-barlow">
+
+        <div className="flex items-center gap-3">
+          <Shield className="w-8 h-8 text-orange-400 shrink-0" />
+          <span className="text-sm md:text-base font-medium">
+            Licensed<br />Psychiatric Experts
+          </span>
+        </div>
+
+        <div className="hidden sm:block h-10 w-px bg-orange-500/40" />
+
+        <div className="flex items-center gap-3">
+          <Users className="w-8 h-8 text-orange-400 shrink-0" />
+          <span className="text-sm md:text-base font-medium">
+            Personalized<br />Treatment Plans
+          </span>
+        </div>
+
+        <div className="hidden sm:block h-10 w-px bg-orange-500/40" />
+
+        <div className="flex items-center gap-3">
+          <Heart className="w-8 h-8 text-orange-400 shrink-0" />
+          <span className="text-sm md:text-base font-medium">
+            Compassionate,<br />Patient-Centered Care
+          </span>
+        </div>
+
+      </div>
+
+    </motion.div>
+  </div>
+</section>
+
 
         <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           
