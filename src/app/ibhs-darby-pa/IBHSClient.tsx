@@ -94,13 +94,13 @@ const TimelineStep = React.memo(({
                     >
                         {number}
                     </span>
-                    <h3 className={cn(
+                    <h3 ={cn(
                         "text-2xl font-bold font-barlow mb-3 tracking-tight transition-colors duration-500",
                         shouldGlow ? "text-orange-600" : "text-stone-900 group-hover/step:text-orange-600"
                     )}>
                         {step.title}
                     </h3>
-                    <p className="text-stone-500 text-base leading-relaxed font-barlow">
+                    <p ="text-stone-500 text-base leading-relaxed font-barlow">
                         {step.desc}
                     </p>
                 </div>
@@ -629,7 +629,7 @@ export default function IBHSClient() {
                       }}
                   />
 
-                  <div className="flex flex-col gap-6 md:gap-8">
+                  <div className="flex flex-col gap-4 md:gap-6">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
                               key={step.title}
