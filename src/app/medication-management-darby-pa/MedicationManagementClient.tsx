@@ -331,7 +331,7 @@ export default function MedicationManagementClient() {
   {/* Background Image */}
   <div className="absolute inset-0 z-0">
     <Image
-      src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg"
+      src="Medication Managemnt.jpg"
       alt="Medication Management in Darby PA"
       fill
       sizes="100vw"
