@@ -340,13 +340,13 @@ export default function PsychiatricEvaluationsClient() {
   />
 
   {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/10" />
+  <div className="absolute inset-0 bg-black/5" />
 
   {/* Left-side gradient for text readability */}
-  <div className="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/65 via-45% to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-r from-stone-950/85 via-stone-950/45 via-45% to-stone-950/5" />
 
   {/* Bottom gradient */}
-  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-stone-950/10" />
+  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/30 via-transparent to-stone-950/5" />
 </div>
 
   {/* Hero Content */}
