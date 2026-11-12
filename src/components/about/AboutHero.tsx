@@ -15,7 +15,7 @@ const AboutHero = () => {
           src="/images/therapy-for-older-adults.webp"
           alt="Older adult receiving compassionate support at Sunrise Human Care Services"
           fill
-          className="object-cover object-[35%_center] opacity-100"
+          className="object-cover object-[10%_center] opacity-100"
           priority
           sizes="100vw"
         />
