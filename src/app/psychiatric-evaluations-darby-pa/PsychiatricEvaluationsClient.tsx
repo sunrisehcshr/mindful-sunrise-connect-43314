@@ -331,7 +331,7 @@ export default function PsychiatricEvaluationsClient() {
  {/* Background Image */}
 <div className="absolute inset-0 z-0">
   <Image
-    src="/PE.png"
+    src="/PSY.jpg"
     alt="Psychiatric professional listening to a patient during a consultation"
     fill
     priority
