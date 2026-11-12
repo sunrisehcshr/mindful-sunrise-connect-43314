@@ -17,9 +17,9 @@ const AboutHero = () => {
   fill
   className="object-cover opacity-100"
   style={{
-    objectPosition: "center center",
-    transform: "scale(1.2) translateX(8%)",
-    transformOrigin: "center center",
+    objectPosition: "left center",
+    transform: "scale(1.4)",
+    transformOrigin: "left center",
   }}
   priority
   sizes="100vw"
