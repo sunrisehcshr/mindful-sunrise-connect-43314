@@ -328,27 +328,26 @@ export default function PsychiatricEvaluationsClient() {
 {/* HERO SECTION */}
 <section className="relative isolate min-h-[760px] md:min-h-[850px] flex items-center overflow-hidden bg-stone-950">
 
-  {/* Background Image */}
-  <div className="absolute inset-0 z-0">
-    <Image
-      src="https://res.cloudinary.com/dabsxebx8/image/upload/q_auto/f_auto/v1774918057/cropped-view-of-psychotherapist-writing-on-clipboa-2026-03-11-19-39-36-utc_j17vdo.jpg"
-      alt="Psychiatric professional providing a supportive consultation"
-      fill
-      priority
-      unoptimized
-      sizes="100vw"
-      className="object-cover object-center"
-    />
+ {/* Background Image */}
+<div className="absolute inset-0 z-0">
+  <Image
+    src="/PE.png"
+    alt="Psychiatric professional listening to a patient during a consultation"
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-center"
+  />
 
-    {/* Dark overlay */}
-    <div className="absolute inset-0 bg-black/20" />
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/20" />
 
-    {/* Left-side gradient for text readability */}
-    <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/90 via-45% to-stone-950/10" />
+  {/* Left-side gradient for text readability */}
+  <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/90 via-45% to-stone-950/10" />
 
-    {/* Bottom gradient */}
-    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-stone-950/20" />
-  </div>
+  {/* Bottom gradient */}
+  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-stone-950/20" />
+</div>
 
   {/* Hero Content */}
   <div className="container mx-auto px-6 md:px-10 relative z-10 pt-36 pb-16 md:pt-40 md:pb-20">
