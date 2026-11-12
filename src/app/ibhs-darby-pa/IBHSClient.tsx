@@ -567,26 +567,17 @@ export default function IBHSClient() {
                   viewport={{ once: true }}
                   className="space-y-4"
                 >
-                  <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
-                    <h3 className="font-barlow font-bold text-2xl text-white mb-6 flex items-center gap-3">
-                      <MapPin className="w-6 h-6 text-orange-400" />
-                      Areas We Serve
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      <div className="px-4 py-3 bg-orange-500 rounded-xl text-center font-barlow font-bold text-stone-50 shadow-lg shadow-orange-500/20">
-                        Darby (19023)
-                      </div>
-                      {[
-                        { name: "Yeadon", zip: "19008" },
-                        { name: "Lansdowne", zip: "19003" },
-                        { name: "Upper Darby", zip: "19026" },
-                        { name: "Collingdale", zip: "19064" },
-                        { name: "Sharon Hill", zip: "19073" }
-                      ].map(city => (
-                        <div key={city.name} className="px-4 py-3 bg-white/10 rounded-xl text-center font-barlow text-stone-300 text-sm flex flex-col items-center justify-center border border-white/5">
-                          <span className="font-bold">{city.name}</span>
-                          <span className="text-xs opacity-70">{city.zip}</span>
-                        </div>
+                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
+  <h3 className="font-barlow font-bold text-2xl text-white mb-6 flex items-center gap-3">
+    <MapPin className="w-6 h-6 text-orange-400" />
+    Areas We Serve
+  </h3>
+  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+    <div className="px-4 py-3 bg-orange-500 rounded-xl text-center font-barlow font-bold text-stone-50 shadow-lg shadow-orange-500/20">
+      Darby (19023)
+    </div>
+  </div>
+</div>
                       ))}
                     </div>
                   </div>
