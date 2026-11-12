@@ -578,9 +578,7 @@ export default function IBHSClient() {
     </div>
   </div>
 </div>
-                      ))}
-                    </div>
-                  </div>
+                    
                 </motion.div>
               </div>
             </div>
