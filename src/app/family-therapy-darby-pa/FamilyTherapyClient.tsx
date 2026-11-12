@@ -769,14 +769,13 @@ export default function FamilyTherapyClient() {
             </div>
           </section>
 
-          {/* SECTION 6: Appointment */}
+                    {/* SECTION 6: Appointment */}
           <div className="bg-white pt-4 md:pt-8">
             <AppointmentSection />
           </div>
-          
-        </div>
+
       </main>
-      
+
       <div className="relative z-20 bg-white">
         <Footer />
       </div>
