@@ -465,7 +465,6 @@ export default function FamilyTherapyClient() {
                     </motion.div>
 
      </motion.div>
-    </motion.div>
   </div>
 </section>
 
