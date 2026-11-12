@@ -94,7 +94,7 @@ const TimelineStep = React.memo(({
                     >
                         {number}
                     </span>
-                    <h3 ={cn(
+                    <h3 className={cn(
                         "text-2xl font-bold font-barlow mb-3 tracking-tight transition-colors duration-500",
                         shouldGlow ? "text-orange-600" : "text-stone-900 group-hover/step:text-orange-600"
                     )}>
