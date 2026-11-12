@@ -100,7 +100,7 @@ const TimelineStep = React.memo(({
                     )}>
                         {step.title}
                     </h3>
-                    <p ="text-stone-500 text-base leading-relaxed font-barlow">
+                   <p className="text-stone-500 text-base leading-relaxed font-barlow">
                         {step.desc}
                     </p>
                 </div>
