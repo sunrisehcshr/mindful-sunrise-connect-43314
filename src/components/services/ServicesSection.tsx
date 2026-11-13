@@ -59,11 +59,11 @@ const ServicesSection: React.FC = () => {
       image: "/lovable-uploads/Family Therapy.jpg",
     },
     {
-      title: "IBHS Services",
-      link: "/ibhs-darby-pa",
-      desc: "Intensive Behavioral Health Services (IBHS) in Darby, PA and Delaware County. Behavioral therapy for autism and ADHD.",
-      image: "/lovable-uploads/women-child-progress.webp",
-    },
+  title: "Children's Therapy",
+  link: "/child-therapy-darby-pa",
+  desc: "Compassionate therapy supporting children's emotional, behavioral, and social development in a safe and supportive environment.",
+  image: "/lovable-uploads/women-child-progress.webp",
+},
     {
       title: "Psychiatric Evaluations",
       link: "/psychiatric-evaluations-darby-pa",
