@@ -349,7 +349,16 @@ export default function PsychiatricEvaluationsClient() {
 />
 
   {/* Left-side gradient for text readability */}
-  <div className="absolute inset-0 bg-gradient-to-r from-stone-950/85 via-stone-950/45 via-45% to-stone-950/5" />
+  <div className="absolute inset-0 bg-gradient-to-r from-stone-950/85 via-stone-950/45 via-45% to-stone-950/5" /> 
+
+    {/* Brighten the therapist and office on the right */}
+<div
+  className="absolute inset-0 pointer-events-none"
+  style={{
+    background:
+      "linear-gradient(90deg, transparent 42%, rgba(255,255,255,0.08) 58%, rgba(255,255,255,0.22) 78%, rgba(255,255,255,0.28) 100%)",
+  }}
+/>
 
   {/* Bottom gradient */}
   <div className="absolute inset-0 bg-gradient-to-t from-stone-950/30 via-transparent to-stone-950/5" />
