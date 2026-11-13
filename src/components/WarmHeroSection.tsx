@@ -32,7 +32,7 @@ const WarmHeroSection = () => {
           className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-[65%_center]"
           style={{
             backgroundImage:
-              "url('https://ik.imagekit.io/l6c5pgwlc3/pexels-kampus-8380086.jpg')",
+              "url('/images/Warm%20Therapy%20Session%20Conversation.png')",
           }}
         />
       </motion.div>
