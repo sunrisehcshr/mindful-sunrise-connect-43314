@@ -264,28 +264,30 @@ const processSteps = [
   }
 ];
 
+
 const faqs = [
-    {
-      question: "What can we expect from couples counseling in Darby?",
-      answer: "Couples counseling in Darby at Sunrise Human Care offers a tailored approach where licensed therapists guide partners to improve communication, resolve conflicts, and build a stronger bond in a confidential, supportive environment. We help you navigate challenges together rather than against each other."
-    },
-    {
-      question: "Is couples counseling effective for long-term relationships?",
-      answer: "Yes, couples counseling helps long-term partners address entrenched patterns, rebuild trust, and rediscover connection. By utilizing proven methods like The Gottman Method and EFT, we assist couples in overcoming emotional distance and reigniting intimacy, regardless of how long they've been together."
-    },
-    {
-      question: "Can unmarried couples benefit from relationship therapy in Delaware County?",
-      answer: "Absolutely. Relationship therapy in Delaware County supports all committed relationships. Whether you are dating, engaged, or living together, our therapists can help unmarried couples strengthen their partnership, navigate life transitions, and lay a solid foundation for the future."
-    },
-    {
-      question: "How many sessions are needed for couples therapy near me?",
-      answer: "The duration of couples therapy depends entirely on your specific goals and challenges. Some couples see significant progress through short-term, solution-focused therapy in 8-12 sessions, while others dealing with deeper issues like infidelity or severe communication breakdowns may engage longer for lasting transformation."
-    },
-    {
-      question: "Does marriage counseling PA accept insurance?",
-      answer: "Yes, our marriage counseling PA services accept Medicaid to ensure that relationship support is accessible to the Darby and broader Delaware County community. Our administrative team will verify your benefits and clearly explain any coverage details prior to your first session."
-    }
+  {
+    question: "What can we expect from couples counseling in Darby?",
+    answer: "Couples counseling at Sunrise Human Care offers a supportive, confidential space for partners to better understand one another, strengthen communication, and build on the positive aspects of their relationship. With guidance from licensed therapists, couples can explore different perspectives, work through challenges, and develop healthier ways to connect and grow together."
+  },
+  {
+    question: "Is couples counseling effective for long-term relationships?",
+    answer: "Yes. Couples counseling can help long-term partners develop a deeper understanding of one another, strengthen trust, and rediscover meaningful connection. Using approaches such as The Gottman Method and Emotionally Focused Therapy (EFT), therapists support couples in improving communication, navigating emotional distance, and building a stronger partnership, no matter how long they have been together."
+  },
+  {
+    question: "Can unmarried couples benefit from relationship therapy in Delaware County?",
+    answer: "Absolutely. Relationship therapy in Delaware County welcomes couples at different stages of their journey. Whether you are dating, engaged, or living together, counseling can help you strengthen your connection, understand each other's needs, navigate life transitions, and build a shared foundation for the future."
+  },
+  {
+    question: "How many sessions are needed for couples therapy near me?",
+    answer: "Every relationship has its own needs and goals, so the number of sessions varies from couple to couple. Some partners may benefit from short-term, solution-focused counseling in 8–12 sessions, while others may choose ongoing support to work through challenges such as rebuilding trust or improving communication. Your therapist can help you determine an approach that supports your shared goals and progress."
+  },
+  {
+    question: "Does marriage counseling PA accept insurance?",
+    answer: "Yes, Sunrise Human Care accepts Medicaid to help make mental health services more accessible to the Darby and broader Delaware County community. Our administrative team can help verify your benefits and explain applicable coverage details before your first session."
+  }
 ];
+
 
 const scrollOffset: any = ["start center", "end center"];
 
