@@ -137,17 +137,16 @@ const WarmHeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 items-start mb-10"
           >
             <motion.div whileTap={{ scale: 0.96 }}>
-              <Button
-                asChild
-                size="lg"
-                className="w-full sm:w-auto bg-orange-500 hover:bg-orange-400 text-white h-14 px-8 text-base font-barlow font-bold rounded-full shadow-lg shadow-orange-500/25 transition-all duration-300"
-              >
-                <a href="#services">
-                  Explore Our Services
-                </a>
-              </Button>
-            </motion.div>
-
+  <Button
+    asChild
+    size="lg"
+    className="w-full sm:w-auto bg-orange-500 hover:bg-orange-400 text-white h-14 px-8 text-base font-barlow font-bold rounded-full shadow-lg shadow-orange-500/25 transition-all duration-300"
+  >
+    <a href="/appointment">
+      Book Appointment
+    </a>
+  </Button>
+</motion.div>
             <motion.div whileTap={{ scale: 0.96 }}>
               <Button
                 asChild
