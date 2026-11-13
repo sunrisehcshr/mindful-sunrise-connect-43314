@@ -28,13 +28,14 @@ const WarmHeroSection = () => {
           transform: "translateZ(0)",
         }}
       >
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-[65%_center] brightness-110"
-          style={{
-            backgroundImage:
-              "url('/images/Warm%20Therapy%20Session%20Conversation.png')",
-          }}
-        />
+      <div
+  className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-[65%_center] brightness-110
+             max-md:bg-contain max-md:bg-no-repeat max-md:bg-top"
+  style={{
+    backgroundImage:
+      "url('/images/Warm%20Therapy%20Session%20Conversation.png')",
+  }}
+/>
       </motion.div>
 
       {/* Image overlays */}
