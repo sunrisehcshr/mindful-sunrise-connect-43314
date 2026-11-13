@@ -29,7 +29,7 @@ const WarmHeroSection = () => {
         }}
       >
         <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-[65%_center] brightness-110"
+          className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-[65%_center] max-md:bg-[60%_center] brightness-110"
           style={{
             backgroundImage:
               "url('/images/Warm%20Therapy%20Session%20Conversation.png')",
@@ -37,17 +37,28 @@ const WarmHeroSection = () => {
         />
       </motion.div>
 
+      
       {/* Image overlays */}
-      <div className="absolute inset-0 z-0 bg-black/5" />
+      <div className="absolute inset-0 z-0 bg-black/15" />
 
-      {/* Softer left-side gradient for text readability */}
-<div
-  className="absolute inset-0 z-0"
-  style={{
-    background:
-      "linear-gradient(90deg, rgba(12,10,9,0.78) 0%, rgba(12,10,9,0.65) 30%, rgba(12,10,9,0.35) 50%, rgba(12,10,9,0.10) 70%, transparent 100%)",
-  }}
-/>
+      {/* Desktop left-side gradient */}
+      <div
+        className="absolute inset-0 z-0 hidden md:block"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(12,10,9,0.78) 0%, rgba(12,10,9,0.65) 30%, rgba(12,10,9,0.35) 50%, rgba(12,10,9,0.10) 70%, transparent 100%)",
+        }}
+      />
+
+      {/* Mobile vertical gradient */}
+      <div
+        className="absolute inset-0 z-0 md:hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(12,10,9,0.20) 0%, rgba(12,10,9,0.48) 35%, rgba(12,10,9,0.82) 70%, rgba(12,10,9,0.95) 100%)",
+        }}
+      />
+
 
       {/* Bottom gradient */}
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-stone-950/15 via-transparent to-transparent" />
