@@ -264,29 +264,30 @@
       }
     ];
     
-    const faqs = [
-      {
-        question: "What does individual therapy in Darby involve?",
-        answer: "Individual therapy in Darby offers a personalized process where licensed therapists support you in addressing challenges like anxiety, depression, or life transitions in a safe, confidential setting. Our Delaware County therapists use evidence-based methods tailored to your needs."
-      },
-      {
-        question: "How often are individual counseling sessions recommended?",
-        answer: "Most clients begin with weekly counseling sessions to establish momentum and build progress. As you meet your therapeutic goals, we can adjust the frequency to bi-weekly or monthly based on your unique situation."
-      },
-      {
-  question: "How long does personal counseling typically last?",
-  answer: "Every person's journey is unique. Some individuals build confidence, develop helpful coping strategies, and make meaningful progress in 8–12 sessions, while others choose ongoing counseling to continue exploring their strengths, navigating life's challenges, and creating lasting positive change. Your counseling journey moves at a pace that feels right for you."
-},
-      {
-        question: "Is individual therapy covered by insurance in PA?",
-        answer: "Yes, Sunrise Human Care accepts Medicaid to ensure mental health care is accessible to the Darby and broader Delaware County community. Our administrative team will verify your benefits prior to your first session."
-      },
-      {
-        question: "What if I'm nervous about starting therapy for the first time?",
-        answer: "It is completely normal to feel nervous or hesitant about starting individual therapy. Our therapists prioritize creating a warm, non-judgmental, and secure environment. We move at a pace that feels comfortable for you, ensuring you feel safe every step of the way."
-      }
-    ];
-    
+   
+const faqs = [
+  {
+    question: "What does individual therapy in Darby involve?",
+    answer: "Individual therapy in Darby provides a supportive, confidential space to better understand yourself, build on your strengths, and work through challenges such as anxiety, depression, or life transitions. Our Delaware County therapists use evidence-based approaches tailored to your individual needs, helping you develop practical skills and move toward your personal goals."
+  },
+  {
+    question: "How often are individual counseling sessions recommended?",
+    answer: "Many clients begin with weekly counseling sessions to build consistency, establish a strong therapeutic connection, and make steady progress toward their goals. As you grow and achieve your therapeutic goals, your therapist can work with you to adjust sessions to a bi-weekly or monthly schedule based on your individual needs."
+  },
+  {
+    question: "How long does personal counseling typically last?",
+    answer: "Every person's journey is unique. Some individuals build confidence, develop helpful coping strategies, and make meaningful progress in 8–12 sessions, while others choose ongoing counseling to continue exploring their strengths, navigating life's challenges, and creating lasting positive change. Your counseling journey moves at a pace that feels right for you."
+  },
+  {
+    question: "Is individual therapy covered by insurance in PA?",
+    answer: "Yes, Sunrise Human Care accepts Medicaid to help make mental health care accessible to individuals and families in Darby and the broader Delaware County community. Our administrative team will verify your insurance benefits before your first session so you can better understand your coverage and take the next step with confidence."
+  },
+  {
+    question: "What if I'm nervous about starting therapy for the first time?",
+    answer: "Starting therapy can feel like a big step, and it's completely normal to have questions or feel uncertain. Our therapists provide a warm, supportive, and non-judgmental environment where you can feel heard, build trust, and move at a pace that feels comfortable for you. You don't need to have everything figured out before you begin."
+  }
+];
+
     const scrollOffset: any = ["start center", "end center"];
     
     export default function IndividualTherapyClient() {
