@@ -264,26 +264,27 @@ const processSteps = [
   }
 ];
 
+
 const faqs = [
     {
       question: "What happens during a psychiatric evaluation in Darby?",
-      answer: "A psychiatric evaluation at Sunrise Human Care is a comprehensive assessment where a licensed medical professional reviews your mental health history, symptoms, and lifestyle to provide an accurate diagnosis and treatment plan."
+      answer: "A psychiatric evaluation at Sunrise Human Care provides an opportunity to better understand your mental health needs in a supportive, confidential setting. A licensed medical professional will take time to learn about your history, experiences, symptoms, and goals. This collaborative process helps develop a clearer understanding of your needs and identify appropriate next steps for your care."
     },
     {
       question: "How is this different from regular therapy?",
-      answer: "While therapy focuses on talking through emotional and behavioral challenges, a psychiatric evaluation is a medical assessment designed to diagnose mental health conditions and determine if medication is a safe, effective option for you."
+      answer: "Therapy offers a space to explore emotions, develop coping strategies, and work through life's challenges. A psychiatric evaluation is a medical assessment that focuses on understanding symptoms, identifying possible mental health conditions, and determining whether medication or other medical support may be appropriate. Both approaches can complement one another as part of your overall mental health care."
     },
     {
       question: "Will I definitely be prescribed medication?",
-      answer: "Not necessarily. Medication is only prescribed if it is clinically appropriate and aligns with your personal goals. We explore all treatment options, including lifestyle changes and coordinated therapy."
+      answer: "No. Medication is not automatically prescribed following a psychiatric evaluation. Your provider will discuss your concerns, goals, and available treatment options with you. If medication is clinically appropriate, its potential benefits and considerations will be explained. Other options, including lifestyle adjustments and coordinated therapy, may also be discussed as part of your personalized care plan."
     },
     {
       question: "How long does the evaluation take?",
-      answer: "Initial psychiatric evaluations typically take 60 to 90 minutes. This gives our providers ample time to understand your complete history without rushing, ensuring a highly accurate diagnosis."
+      answer: "Initial psychiatric evaluations typically take 60 to 90 minutes. This time allows your provider to understand your history, listen to your concerns, and discuss your needs without feeling rushed. The goal is to give you space to ask questions and leave with a clearer understanding of possible next steps."
     },
     {
       question: "Does your psychiatric clinic in PA accept Medicaid?",
-      answer: "Yes, our psychiatric services accept Medicaid to ensure critical medical mental health care is accessible to the Darby and Delaware County community. We will verify your benefits before your appointment."
+      answer: "Yes, Sunrise Human Care accepts Medicaid to help make mental health services more accessible to individuals in Darby and the broader Delaware County community. Our administrative team can verify your benefits and explain applicable coverage details before your appointment."
     }
 ];
 
