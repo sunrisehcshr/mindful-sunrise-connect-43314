@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/medication-management-darby-pa',
     '/grief-therapy-darby-pa',
     '/relationship-therapy-darby-pa',
-    '/ibhs-darby-pa',
+  
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified,
