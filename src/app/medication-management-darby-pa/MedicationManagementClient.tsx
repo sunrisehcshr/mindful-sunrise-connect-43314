@@ -264,28 +264,30 @@ const processSteps = [
   }
 ];
 
+
 const faqs = [
     {
       question: "What happens during a medication management appointment?",
-      answer: "Our psychiatric provider will review your current symptoms, medical history, and any past medications to determine the safest, most effective prescription plan for you."
+      answer: "During a medication management appointment, your psychiatric provider will take time to understand your current concerns, medical history, and previous experiences with medication. Together, you will review your treatment goals, discuss available options, and develop a personalized plan that supports your wellbeing. Follow-up appointments help your provider understand how your treatment is working and whether any adjustments may be appropriate."
     },
     {
       question: "Will I be forced to take medication?",
-      answer: "Never. Medication is always a collaborative choice. We explain all your options, including the benefits and potential side effects, so you can make an informed decision."
+      answer: "No. Your treatment decisions are made collaboratively, and you will have the opportunity to ask questions and discuss your preferences. Your provider will explain the potential benefits, risks, and side effects of available options so you can make an informed decision about your care. Medication is considered only when it is clinically appropriate and aligns with your treatment goals."
     },
     {
       question: "How often will I need to see my provider?",
-      answer: "Initially, you may see your provider every 2 to 4 weeks to monitor your body's response to a new medication. Once you are stable, appointments are typically spaced out to every 1 to 3 months."
+      answer: "The frequency of appointments depends on your individual needs, treatment plan, and response to medication. When starting a new medication or making an adjustment, your provider may recommend follow-up visits every 2–4 weeks. Once your treatment is stable, appointments may be spaced out to every 1–3 months, as clinically appropriate."
     },
     {
       question: "Can I do both therapy and medication management at Sunrise?",
-      answer: "Yes! We highly recommend a combined approach. Our prescribers and therapists work together under one roof to provide you with seamless, comprehensive care."
+      answer: "Yes. Therapy and medication management can work together as part of a coordinated approach to mental health care. Our psychiatric providers and therapists can collaborate to support your treatment goals, helping address emotional, behavioral, and medical needs while keeping your care centered on you."
     },
     {
       question: "Does your clinic in PA accept Medicaid for prescriptions?",
-      answer: "Yes, our psychiatric services accept Medicaid. We will verify your benefits before your appointment and work with your pharmacy to ensure your medications are covered."
+      answer: "Yes, Sunrise Human Care accepts Medicaid for eligible services. Our administrative team can help verify your insurance benefits and explain applicable coverage before your appointment. Prescription coverage may depend on your specific Medicaid plan, medication, and pharmacy, so these details should be confirmed before filling a prescription."
     }
 ];
+
 
 const scrollOffset: any = ["start center", "end center"];
 
