@@ -264,28 +264,30 @@ const processSteps = [
   }
 ];
 
+
 const faqs = [
     {
       question: "What can we expect from family therapy in Darby?",
-      answer: "Family therapy at Sunrise Human Care offers a tailored approach where licensed therapists guide your family to improve communication, resolve conflicts, and build a stronger bond in a supportive environment."
+      answer: "Family therapy at Sunrise Human Care provides a supportive space for family members to better understand one another, strengthen communication, and build on the strengths within their family. Our therapists work collaboratively with your family to navigate challenges, develop healthier ways of interacting, and create stronger, more meaningful connections."
     },
     {
       question: "Do all family members need to attend?",
-      answer: "While having everyone present is ideal, it is not strictly necessary for every session. Your therapist will recommend the best configuration—sometimes meeting with just parents, just siblings, or the whole family."
+      answer: "Having everyone involved can be helpful, but it is not necessary for every session. Your therapist will recommend an approach that best supports your family's needs. Some sessions may involve the whole family, while others may focus on parents, siblings, or specific family members."
     },
     {
       question: "Is family counseling effective for blended families?",
-      answer: "Yes, blended families face unique challenges. Therapy helps establish new roles, build trust, and navigate the complex emotions that come with integrating two households."
+      answer: "Yes. Family counseling can help blended families build trust, strengthen relationships, and create a shared sense of belonging. Therapy provides a supportive opportunity to understand different perspectives, establish comfortable family roles, and navigate the emotions and transitions that come with bringing two households together."
     },
     {
       question: "How long does family therapy typically last?",
-      answer: "The duration depends on your family's specific goals. Many families see significant improvements in communication and behavior through short-term therapy in 8-12 sessions."
+      answer: "Every family's journey is different and depends on its unique needs and goals. Many families may benefit from short-term therapy over 8–12 sessions, focusing on strengthening communication and developing healthier ways to interact. Your therapist can help determine an approach and pace that feels right for your family."
     },
     {
       question: "Does your family therapy in PA accept insurance?",
-      answer: "Yes, our family therapy services accept Medicaid to ensure that relationship support is accessible to the Darby and broader Delaware County community. We verify benefits prior to your first session."
+      answer: "Yes, Sunrise Human Care accepts Medicaid to help make mental health services more accessible to families in Darby and the broader Delaware County community. Our administrative team can verify your benefits and explain applicable coverage details before your first session."
     }
 ];
+
 
 const scrollOffset: any = ["start center", "end center"];
 
