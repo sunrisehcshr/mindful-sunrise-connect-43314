@@ -336,11 +336,17 @@ export default function PsychiatricEvaluationsClient() {
     fill
     priority
     sizes="100vw"
-    className="object-cover object-center"
+    className="object-cover object-center brightness-110"
   />
 
   {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/5" />
+  <div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.02) 45%, rgba(255,255,255,0.12) 75%, rgba(255,255,255,0.18) 100%)",
+  }}
+/>
 
   {/* Left-side gradient for text readability */}
   <div className="absolute inset-0 bg-gradient-to-r from-stone-950/85 via-stone-950/45 via-45% to-stone-950/5" />
