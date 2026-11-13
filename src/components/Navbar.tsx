@@ -87,16 +87,13 @@ const Navbar = () => {
   }, {
     title: "Family Therapy",
     path: "/family-therapy-darby-pa"
-  }, {
-    title: "Child Therapy",
-    path: "/child-therapy-darby-pa"
-  }, {
-    title: "IBHS Services",
-    path: "/ibhs-darby-pa"
-  }, {
-    title: "Psychiatric Evaluations",
-    path: "/psychiatric-evaluations-darby-pa"
-  }, {
+  },{
+  title: "Children's Therapy",
+  path: "/child-therapy-darby-pa"
+}, {
+  title: "Psychiatric Evaluations",
+  path: "/psychiatric-evaluations-darby-pa"
+}, {
     title: "Medication Management",
     path: "/medication-management-darby-pa"
   }];
