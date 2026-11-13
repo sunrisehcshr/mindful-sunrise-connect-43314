@@ -267,23 +267,23 @@ const processSteps = [
 const faqs = [
     {
       question: "What can we expect from child therapy in Darby?",
-      answer: "Child therapy at Sunrise Human Care provides a safe, engaging environment where licensed specialists use age-appropriate methods like play therapy and CBT to help children express emotions, develop coping skills, and overcome behavioral challenges."
+      answer: "Child therapy at Sunrise Human Care provides a safe, welcoming space where children can express themselves, explore their feelings, and build on their individual strengths. Our licensed specialists use age-appropriate approaches, including play therapy and CBT, to help children develop coping skills, strengthen emotional understanding, and navigate everyday challenges."
     },
     {
       question: "Do parents participate in the therapy sessions?",
-      answer: "Yes, parental involvement is highly encouraged. Depending on your child's age and needs, therapists will regularly consult with parents, offer at-home strategies, and may include you in joint sessions to ensure progress continues outside the clinic."
+      answer: "Yes. Parents and caregivers play an important role in supporting a child's growth. Depending on your child's age and individual needs, therapists may meet with parents, share practical strategies for home, or include parents in joint sessions. This collaborative approach helps families reinforce the skills children develop during therapy."
     },
     {
       question: "How do I know if my child needs therapy?",
-      answer: "If your child is experiencing sudden changes in mood, extreme tantrums, school refusal, withdrawal from friends, or difficulty sleeping, professional support can make a significant difference. Early intervention often prevents minor issues from becoming long-term struggles."
+      answer: "Every child experiences challenges differently. Changes in mood, frequent tantrums, difficulty attending school, withdrawal from friends, or changes in sleep may be signs that additional support could help. Therapy provides children with a supportive space to understand their emotions, develop healthy coping strategies, and build confidence as they navigate these experiences."
     },
     {
       question: "How long does child therapy usually take?",
-      answer: "The duration depends entirely on your child's specific goals and challenges. Some children see significant behavioral improvements through short-term therapy in 8-12 sessions, while children dealing with trauma or deep-seated anxiety may engage longer."
+      answer: "Every child's journey is unique and depends on their individual needs, strengths, and therapeutic goals. Some children may benefit from short-term support over 8–12 sessions, while others may choose ongoing therapy to work through more complex challenges. Your therapist will work with your family to determine an approach and pace that supports your child's progress."
     },
     {
       question: "Does your child therapy in PA accept Medicaid?",
-      answer: "Yes, our child therapy services accept Medicaid to ensure that crucial developmental support is accessible to the Darby and broader Delaware County community. Our team will verify your benefits prior to your first session."
+      answer: "Yes, Sunrise Human Care accepts Medicaid to help make mental health services more accessible to children and families in Darby and the broader Delaware County community. Our administrative team can verify your benefits and explain applicable coverage details before your child's first session."
     }
 ];
 
