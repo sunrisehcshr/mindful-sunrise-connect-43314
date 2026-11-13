@@ -274,9 +274,9 @@
         answer: "Most clients begin with weekly counseling sessions to establish momentum and build progress. As you meet your therapeutic goals, we can adjust the frequency to bi-weekly or monthly based on your unique situation."
       },
       {
-        question: "How long does personal counseling typically last?",
-        answer: "The duration of personal counseling in PA varies widely. Some individuals achieve their specific goals through short-term solution-focused therapy in 8-12 sessions, while others benefit from longer-term counseling to navigate deeper trauma or ongoing life stressors."
-      },
+  question: "How long does personal counseling typically last?",
+  answer: "Every person's journey is unique. Some individuals build confidence, develop helpful coping strategies, and make meaningful progress in 8–12 sessions, while others choose ongoing counseling to continue exploring their strengths, navigating life's challenges, and creating lasting positive change. Your counseling journey moves at a pace that feels right for you."
+},
       {
         question: "Is individual therapy covered by insurance in PA?",
         answer: "Yes, Sunrise Human Care accepts Medicaid to ensure mental health care is accessible to the Darby and broader Delaware County community. Our administrative team will verify your benefits prior to your first session."
