@@ -29,7 +29,7 @@ const WarmHeroSection = () => {
         }}
       >
         <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-[65%_center]"
+          className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-[65%_center] brightness-110"
           style={{
             backgroundImage:
               "url('/images/Warm%20Therapy%20Session%20Conversation.png')",
@@ -40,17 +40,17 @@ const WarmHeroSection = () => {
       {/* Image overlays */}
       <div className="absolute inset-0 z-0 bg-black/5" />
 
-      {/* Darker left side for text readability */}
-      <div
+      {/* Softer left-side gradient for text readability */}
+<div
   className="absolute inset-0 z-0"
   style={{
     background:
-      "linear-gradient(90deg, rgba(12,10,9,0.95) 0%, rgba(12,10,9,0.82) 35%, rgba(12,10,9,0.50) 60%, rgba(12,10,9,0.12) 100%)",
+      "linear-gradient(90deg, rgba(12,10,9,0.78) 0%, rgba(12,10,9,0.65) 30%, rgba(12,10,9,0.35) 50%, rgba(12,10,9,0.10) 70%, transparent 100%)",
   }}
 />
 
       {/* Bottom gradient */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-stone-950/40 via-transparent to-stone-950/10" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-stone-950/15 via-transparent to-transparent" />
 
       {/* Hero Content */}
       <div className="container mx-auto px-6 md:px-10 relative z-10 pt-40 pb-20 md:pt-44 md:pb-24">
