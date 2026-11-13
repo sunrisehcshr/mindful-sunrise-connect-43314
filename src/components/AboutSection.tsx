@@ -81,14 +81,14 @@ const AboutSection = () => {
                   
                   <div className="space-y-4 text-stone-500 font-barlow text-sm md:text-base leading-relaxed">
                     <p>
-                      Founded by Michael Thevar, Sunrise Human Care Services has grown into a leading provider of mental health care in Darby. With over 30 years of dedication to mental health, we&apos;ve built a foundation of experience, trust, and community care to help individuals navigate their challenges and realize their full potential.
+                      Founded by Michael Thevar, Sunrise Human Care Services has been part of the Darby mental health community for many years. With decades of experience in mental health care, our team is committed to building relationships, understanding individual needs, and providing compassionate support that recognizes each person&apos;s strengths and goals.
                     </p>
                     <p>
-                      Our team of experienced therapists and psychiatric providers brings diverse backgrounds and specialties to Darby, PA, united by a shared commitment to compassionate, evidence-based care. We believe in treating the whole person, not just symptoms, and in creating individualized treatment plans that respect each client&apos;s unique needs and goals.
-                    </p>
+  Our team of therapists and psychiatric providers brings diverse backgrounds and areas of experience to support individuals and families in Darby, PA. We take a collaborative approach to mental health care, developing individualized plans that consider each person&apos;s experiences, strengths, needs, and goals.
+</p>
                     <p className="font-medium text-stone-700">
-                      Whether you&apos;re seeking support for anxiety, depression, ADHD, or working toward personal growth, our mental health care in Darby is designed to walk alongside you on your journey.
-                    </p>
+  Whether you&apos;re navigating anxiety, depression, ADHD, or other life challenges, we&apos;re here to work alongside you as you explore your goals and take steps toward greater well-being.
+</p>
                   </div>
                 </div>
               </div>
@@ -104,7 +104,9 @@ const AboutSection = () => {
                     30<span className="font-barlow not-italic text-orange-500">+</span>
                   </h3>
                   <p className="text-stone-400 font-barlow text-sm font-bold uppercase tracking-widest">Years Experience</p>
-                  <p className="text-stone-500 font-barlow text-sm mt-3 leading-relaxed">Decades of dedicated clinical excellence and compassionate care.</p>
+                  <p className="text-stone-500 font-barlow text-sm mt-3 leading-relaxed">
+  A commitment to compassionate, evidence-based mental health care.
+</p>
                 </div>
               </div>
 
@@ -112,10 +114,12 @@ const AboutSection = () => {
               <div className="bg-white rounded-[2rem] p-8 relative overflow-hidden group border border-stone-200/60 shadow-[0_30px_60px_rgba(0,0,0,0.02)]">
                 <div className="relative z-10">
                   <h3 className="text-4xl md:text-5xl font-barlow font-normal text-stone-900 mb-2 tracking-tighter">
-                    100<span className="font-barlow not-italic text-orange-500">%</span>
+                    <HeartHandshake className="h-10 w-10 text-orange-500" />
                   </h3>
-                  <p className="text-stone-900 font-barlow text-sm font-bold uppercase tracking-widest">Personalized</p>
-                  <p className="text-stone-500 font-barlow text-sm mt-3 leading-relaxed">Treatment plans specifically tailored to your unique journey.</p>
+                  <p className="text-stone-900 font-barlow text-sm font-bold uppercase tracking-widest">   Individualized Care </p>
+                  <p className="text-stone-500 font-barlow text-sm mt-3 leading-relaxed">
+  Care plans developed around each person's needs, preferences, and goals.
+</p>
                 </div>
               </div>
 

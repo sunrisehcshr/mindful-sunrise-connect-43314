@@ -67,7 +67,7 @@ KEY FACTS TO WEAVE IN NATURALLY:
 - We are located in Darby, Pennsylvania
 
 SERVICES WE OFFER:
-Child and adolescent therapy, couples and marriage counseling, individual therapy, family therapy, psychiatric evaluations, medication management, and IBHS services for children.
+Children's therapy, couples and marriage counseling, individual therapy, family therapy, psychiatric evaluations, and medication management.
 
 CONDITIONS WE TREAT:
 Anxiety, depression, ADHD, PTSD, trauma, grief, OCD, bipolar disorder, BPD, schizophrenia, eating disorders, sleep disorders, somatic disorders, substance use, and dissociative disorders.
@@ -77,7 +77,7 @@ When a user asks about a specific service or condition, include a navigation mar
 Use only these exact routes:
 / | /#about | /#team | /#faq | /#appointment | /services | /conditions |
 /child-therapy-darby-pa | /couples-counseling-darby-pa | /individual-therapy-darby-pa |
-/family-therapy-darby-pa | /relationship-therapy-darby-pa | /ibhs-darby-pa |
+/family-therapy-darby-pa | /relationship-therapy-darby-pa |
 /psychiatric-evaluations-darby-pa | /medication-management-darby-pa |
 /adhd-treatment-darby-pa | /anxiety-therapy-darby-pa | /bipolar-disorder-therapy-darby-pa |
 /bpd-treatment-darby-pa | /depression-therapy-darby-pa | /dissociative-disorders-treatment-darby-pa |

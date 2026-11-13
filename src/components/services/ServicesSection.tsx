@@ -1,18 +1,18 @@
 
 "use client";
 
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import Link from 'next/link';
-import Image from 'next/image';
-import SectionTag from '../ui/section-tag';
+import Link from "next/link";
+import Image from "next/image";
+import SectionTag from "../ui/section-tag";
 
 interface FeatureItem {
-    title: string;
-    desc?: string;
-    image?: any;
-    link?: string;
+  title: string;
+  desc: string;
+  image: string;
+  link: string;
 }
 
 const containerVariants = {
@@ -20,8 +20,8 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
     },
   },
 };
@@ -32,98 +32,10 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1] as any
-    }
-  }
-};
-
-const SpotlightRow = ({ item, index }: { item: FeatureItem; index: number }) => {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isTouch, setIsTouch] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
-
-    useEffect(() => {
-        setIsTouch(window.matchMedia("(hover: none)").matches);
-    }, []);
-
-    const currentState = isHovered ? "hover" : "initial";
-
-    return (
-        <motion.div ref={ref} variants={itemVariants} whileTap={{ scale: 0.98 }} className="w-full">
-            <Link href={item.link || "#"} className="block group mb-2 last:mb-0 w-full">
-                <motion.div
-                    initial="initial"
-                    animate={currentState}
-                    onHoverStart={() => { if (!isTouch) setIsHovered(true); }}
-                    onHoverEnd={() => { if (!isTouch) setIsHovered(false); }}
-                    data-active={currentState === "hover"}
-                    className="relative border-t border-stone-200 py-6 md:py-12 group cursor-pointer overflow-hidden transition-all duration-300 hover:rounded-3xl data-[active=true]:rounded-3xl hover:border-transparent data-[active=true]:border-transparent min-h-[60px] md:min-h-0"
-                >
-                    <div className="flex flex-row items-center justify-between relative z-10 px-4 gap-4">
-                        {/* Number */}
-                        <span className="text-stone-400 font-barlow font-medium text-xs md:text-sm tracking-widest group-hover:text-white group-data-[active=true]:text-white transition-colors duration-300 tabular-nums">
-                            0{index + 1}
-                        </span>
-
-                        {/* Title */}
-                        <motion.h2
-                            variants={{ initial: { x: 0 }, hover: { x: 20 } }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="text-lg sm:text-2xl md:text-5xl lg:text-6xl font-normal text-stone-400 group-hover:text-white group-data-[active=true]:text-white transition-colors duration-300 font-barlow tracking-tighter text-left flex-1 px-4 md:px-10 text-balance line-clamp-2 md:line-clamp-none"
-                        >
-                            {item.title}
-                        </motion.h2>
-
-                        {/* Button / CTA */}
-                        <motion.div
-                            variants={{ 
-                                initial: { opacity: 0.5 }, 
-                                hover: { opacity: 1 } 
-                            }}
-                            transition={{ type: "spring", duration: 0.3, bounce: 0 }}
-                            className="flex items-center gap-3 shrink-0"
-                        >
-                            <span className="hidden sm:block font-barlow font-bold uppercase tracking-[0.2em] text-[10px] text-stone-400 group-hover:text-white transition-colors duration-300">
-                                Tap to Explore
-                            </span>
-                            <div className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-stone-300 text-stone-400 group-hover:border-white group-data-[active=true]:border-white group-hover:text-orange-500 group-data-[active=true]:text-orange-500 group-hover:bg-white group-data-[active=true]:bg-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:scale-110 group-hover:rotate-12">
-                                <ArrowUpRight className="h-4 w-4 md:h-5 md:h-5" />
-                            </div>
-                        </motion.div>
-                    </div>
-
-                    {/* Spotlight Image Reveal with Orange Tint */}
-                    {item.image && (
-                        <motion.div
-                            variants={{ 
-                                initial: { opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }, 
-                                hover: { opacity: 1, scale: 1, x: "-50%", y: "-50%" } 
-                            }}
-                            transition={{ type: "spring", duration: 0.4, bounce: 0 }}
-                            className="absolute top-1/2 left-1/2 w-[200px] h-[140px] md:w-[400px] md:h-[250px] pointer-events-none z-0 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 will-change-transform"
-                        >
-                            <Image
-                              src={typeof item.image === 'string' ? (item.image.includes('cloudinary') && !item.image.includes('f_auto') ? item.image.replace('/upload/', '/upload/f_auto,q_auto,w_800/') : item.image) : item.image.src}
-                              alt={`${item.title} services at Sunrise Human Care Services in Darby, PA`}
-                              fill
-                              sizes="(max-width: 768px) 200px, 400px"
-                              className="object-cover transition-[filter,transform] duration-500 group-hover:sepia group-data-[active=true]:sepia group-hover:hue-rotate-[320deg] group-data-[active=true]:hue-rotate-[320deg] group-hover:saturate-[2] group-data-[active=true]:saturate-[2] group-hover:brightness-[0.8] group-data-[active=true]:brightness-[0.8]"
-                            />
-                            <div className="absolute inset-0 bg-orange-600/30 mix-blend-overlay" />
-                        </motion.div>
-                    )}
-
-                    {/* Background Orange Hover State */}
-                    <motion.div
-                        variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute inset-0 bg-orange-600/90 blur-none transition-opacity duration-300"
-                    />
-                </motion.div>
-            </Link>
-        </motion.div>
-    );
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  },
 };
 
 const ServicesSection: React.FC = () => {
@@ -132,7 +44,7 @@ const ServicesSection: React.FC = () => {
       title: "Individual Therapy",
       link: "/individual-therapy-darby-pa",
       desc: "One-on-one sessions focused on personal growth, emotional healing, and developing practical coping strategies for life's challenges.",
-      image: "/lovable-uploads/anxiety-treatment-delaware-county.webp",
+      image: "/lovable-uploads/individual-therapy-card.webp",
     },
     {
       title: "Couples Counseling",
@@ -144,19 +56,19 @@ const ServicesSection: React.FC = () => {
       title: "Family Therapy",
       link: "/family-therapy-darby-pa",
       desc: "Nurturing family dynamics and fostering healthy connections by addressing collective challenges and improving understanding.",
-      image: "/lovable-uploads/women-child-progress.webp",
+      image: "/lovable-uploads/Family Therapy.jpg",
     },
     {
-      title: "IBHS Services",
-      link: "/ibhs-darby-pa",
-      desc: "Intensive Behavioral Health Services (IBHS) in Darby, PA and Delaware County. Behavioral therapy for autism and ADHD.",
-      image: "/lovable-uploads/women-child-progress.webp",
-    },
+  title: "Children's Therapy",
+  link: "/child-therapy-darby-pa",
+  desc: "Compassionate therapy supporting children's emotional, behavioral, and social development in a safe and supportive environment.",
+  image: "/lovable-uploads/women-child-progress.webp",
+},
     {
       title: "Psychiatric Evaluations",
       link: "/psychiatric-evaluations-darby-pa",
       desc: "Comprehensive diagnostic assessments to understand your mental health needs and determine the best course of treatment.",
-      image: "/lovable-uploads/psychotherapist-clipboard.webp",
+      image: "/lovable-uploads/Physcatarics.jpg",
     },
     {
       title: "Medication Management",
@@ -167,36 +79,88 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-16 md:py-20 bg-white">
+    <section
+      id="services"
+      className="bg-white pt-10 pb-4 md:pt-12 md:pb-6"
+    >
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div 
-          className="max-w-4xl mx-auto text-center mb-12" 
+        {/* Section heading */}
+        <motion.div
+          className="mx-auto mb-8 max-w-4xl text-center md:mb-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }} 
+          viewport={{ once: true, margin: "-60px" }}
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
-            <SectionTag>
-                Our Specialties
-            </SectionTag>
-            <h2 className="text-3xl md:text-5xl font-normal text-stone-900 tracking-tighter leading-tight">
-                From Talk Therapy to Psychiatric Care: <br />
-                <span className="font-barlow not-italic text-orange-500">Everything you need to heal, under one roof.</span>
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center gap-3"
+          >
+            <SectionTag>Our Specialties</SectionTag>
+
+            <h2 className="text-2xl font-normal leading-tight tracking-tighter text-stone-900 sm:text-3xl md:text-4xl">
+              From Talk Therapy to Psychiatric Care:
+              <br />
+              <span className="font-barlow text-orange-500">
+                A connected approach to care, built around your needs.
+              </span>
             </h2>
           </motion.div>
         </motion.div>
-        
-        <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="max-w-6xl mx-auto border-b border-stone-200"
+
+        {/* Responsive service card grid */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={containerVariants}
+          className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5"
         >
-            {services.map((item, i) => (
-                <SpotlightRow key={i} item={item} index={i} />
-            ))}
+          {services.map((item, index) => (
+            <motion.div
+              key={item.link}
+              variants={itemVariants}
+              whileHover={{ y: -4 }}
+              whileTap={{ scale: 0.98 }}
+              className="h-full"
+            >
+              <Link
+                href={item.link}
+                aria-label={`Explore ${item.title}`}
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:border-orange-200 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
+              >
+                {/* Service thumbnail */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-stone-100">
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} at Sunrise Human Care in Darby, PA`}
+                    fill
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+                </div>
+
+                {/* Service title and link */}
+                <div className="flex flex-1 items-center justify-between gap-3 p-3 sm:p-4">
+                  <div className="min-w-0">
+                    <span className="mb-1 block font-barlow text-[10px] font-medium uppercase tracking-widest text-stone-400">
+                      0{index + 1} / 06
+                    </span>
+
+                    <h3 className="font-barlow text-lg font-medium leading-tight tracking-tight text-stone-800 transition-colors duration-300 group-hover:text-orange-600 sm:text-xl">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stone-200 text-stone-500 transition-all duration-300 group-hover:border-orange-500 group-hover:bg-orange-500 group-hover:text-white">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

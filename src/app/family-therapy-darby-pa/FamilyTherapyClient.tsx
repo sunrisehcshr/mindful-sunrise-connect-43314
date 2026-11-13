@@ -264,28 +264,30 @@ const processSteps = [
   }
 ];
 
+
 const faqs = [
     {
       question: "What can we expect from family therapy in Darby?",
-      answer: "Family therapy at Sunrise Human Care offers a tailored approach where licensed therapists guide your family to improve communication, resolve conflicts, and build a stronger bond in a supportive environment."
+      answer: "Family therapy at Sunrise Human Care provides a supportive space for family members to better understand one another, strengthen communication, and build on the strengths within their family. Our therapists work collaboratively with your family to navigate challenges, develop healthier ways of interacting, and create stronger, more meaningful connections."
     },
     {
       question: "Do all family members need to attend?",
-      answer: "While having everyone present is ideal, it is not strictly necessary for every session. Your therapist will recommend the best configuration—sometimes meeting with just parents, just siblings, or the whole family."
+      answer: "Having everyone involved can be helpful, but it is not necessary for every session. Your therapist will recommend an approach that best supports your family's needs. Some sessions may involve the whole family, while others may focus on parents, siblings, or specific family members."
     },
     {
       question: "Is family counseling effective for blended families?",
-      answer: "Yes, blended families face unique challenges. Therapy helps establish new roles, build trust, and navigate the complex emotions that come with integrating two households."
+      answer: "Yes. Family counseling can help blended families build trust, strengthen relationships, and create a shared sense of belonging. Therapy provides a supportive opportunity to understand different perspectives, establish comfortable family roles, and navigate the emotions and transitions that come with bringing two households together."
     },
     {
       question: "How long does family therapy typically last?",
-      answer: "The duration depends on your family's specific goals. Many families see significant improvements in communication and behavior through short-term therapy in 8-12 sessions."
+      answer: "Every family's journey is different and depends on its unique needs and goals. Many families may benefit from short-term therapy over 8–12 sessions, focusing on strengthening communication and developing healthier ways to interact. Your therapist can help determine an approach and pace that feels right for your family."
     },
     {
       question: "Does your family therapy in PA accept insurance?",
-      answer: "Yes, our family therapy services accept Medicaid to ensure that relationship support is accessible to the Darby and broader Delaware County community. We verify benefits prior to your first session."
+      answer: "Yes, Sunrise Human Care accepts Medicaid to help make mental health services more accessible to families in Darby and the broader Delaware County community. Our administrative team can verify your benefits and explain applicable coverage details before your first session."
     }
 ];
+
 
 const scrollOffset: any = ["start center", "end center"];
 
@@ -331,11 +333,10 @@ export default function FamilyTherapyClient() {
   {/* Background Image */}
   <div className="absolute inset-0 z-0">
     <Image
-      src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918387/family-counseling-talk-from-home-parents-listen-t-2026-03-25-02-29-59-utc_a9m3eu.jpg"
-      alt="Family spending meaningful time together"
+      src="/images/Family.png"
+      alt="Family spending meaningful time together at home"
       fill
       sizes="100vw"
-      unoptimized={true}
       className="object-cover object-center opacity-100"
       priority
     />
@@ -465,37 +466,12 @@ export default function FamilyTherapyClient() {
                         </Card>
                     </motion.div>
 
-                    {/* Features Row - With varied colors */}
-                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="grid grid-cols-1 gap-4 md:grid-cols-3 relative z-10">
-                        <Card containerClassName="rounded-3xl bg-emerald-50/40 border-emerald-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-emerald-200/20 border border-emerald-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={CheckmarkBadge01Icon} className="w-6 h-6 text-emerald-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-emerald-700 transition-colors">Guidance You Can Trust</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Work with fully licensed, state-certified therapists in Delaware County who specialize in approaches that actually work for your family.</p>
-                        </Card>
-                        <Card containerClassName="rounded-3xl bg-blue-50/40 border-blue-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-blue-200/20 border border-blue-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={BrainIcon} className="w-6 h-6 text-blue-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-blue-700 transition-colors">Evidence-Based Approaches</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">We use proven methods like Family Systems Therapy so you see measurable, real-world progress in your home.</p>
-                        </Card>
-                        <Card containerClassName="rounded-3xl bg-rose-50/40 border-rose-100/50" className="p-8">
-                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-rose-200/20 border border-rose-100 mb-6 shrink-0 transition-transform group-hover:scale-110 duration-300">
-                                <HugeiconsIcon icon={FavouriteIcon} className="w-6 h-6 text-rose-600" />
-                            </div>
-                            <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-rose-700 transition-colors">Tailored to Your Unique Story</h3>
-                            <p className="text-sm text-stone-600 leading-relaxed font-medium">Your family's roadmap is tailored specifically to your unique dynamic, communication styles, and shared goals.</p>
-                        </Card>
-                    </motion.div>
-                </motion.div>
-            </div>
-            <CurveTransition fillColor="#fafaf9" inverted />
-          </section>
+     </motion.div>
+  </div>
+</section>
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
-          <section className="pt-16 md:pt-24 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -555,7 +531,7 @@ export default function FamilyTherapyClient() {
           </section>
 
           {/* SECTION 3: Clinical Approach */}
-          <section className="pt-16 md:pt-24 pb-40 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial="hidden"
@@ -609,7 +585,7 @@ export default function FamilyTherapyClient() {
                     
 
 {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
@@ -644,7 +620,7 @@ export default function FamilyTherapyClient() {
                       }}
                   />
 
-                  <div className="flex flex-col gap-12 md:gap-16">
+                  <div className="flex flex-col gap-6 md:gap-8">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
                               key={step.title}
@@ -667,7 +643,7 @@ export default function FamilyTherapyClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
-                  className="mt-16 md:mt-24 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
+                  className="mt-10 md:mt-12 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
               >
                  {/* WebGL Fluid Background */}
                  <div className="absolute inset-0 z-0 opacity-40">
@@ -721,7 +697,7 @@ export default function FamilyTherapyClient() {
 
 
           {/* SECTION 5: FAQs */}
-          <section className="pt-8 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -819,7 +795,7 @@ export default function FamilyTherapyClient() {
           </section>
 
           {/* SECTION: Related Services (Animated Stack) */}
-          <section className="pt-24 pb-0 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-0 bg-white relative overflow-hidden">
             
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
               <motion.div
@@ -845,14 +821,14 @@ export default function FamilyTherapyClient() {
             </div>
           </section>
 
-          {/* SECTION 6: Appointment */}
-          <div className="bg-white pt-16 md:pt-24">
+                    {/* SECTION 6: Appointment */}
+          <div className="bg-white pt-4 md:pt-8">
             <AppointmentSection />
           </div>
-          
-        </div>
-      </main>
-      
+
+      </div>
+</main>
+
       <div className="relative z-20 bg-white">
         <Footer />
       </div>

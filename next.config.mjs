@@ -99,10 +99,15 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/adhd-therapy-darby-pa',
-        destination: '/adhd-treatment-darby-pa',
-        permanent: true,
-      }
+  source: '/adhd-therapy-darby-pa',
+  destination: '/adhd-treatment-darby-pa',
+  permanent: true,
+},
+{
+  source: '/ibhs-darby-pa',
+  destination: '/child-therapy-darby-pa',
+  permanent: true,
+}
     ]
   },
 };

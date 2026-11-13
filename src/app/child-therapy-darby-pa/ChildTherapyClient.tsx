@@ -267,23 +267,23 @@ const processSteps = [
 const faqs = [
     {
       question: "What can we expect from child therapy in Darby?",
-      answer: "Child therapy at Sunrise Human Care provides a safe, engaging environment where licensed specialists use age-appropriate methods like play therapy and CBT to help children express emotions, develop coping skills, and overcome behavioral challenges."
+      answer: "Child therapy at Sunrise Human Care provides a safe, welcoming space where children can express themselves, explore their feelings, and build on their individual strengths. Our licensed specialists use age-appropriate approaches, including play therapy and CBT, to help children develop coping skills, strengthen emotional understanding, and navigate everyday challenges."
     },
     {
       question: "Do parents participate in the therapy sessions?",
-      answer: "Yes, parental involvement is highly encouraged. Depending on your child's age and needs, therapists will regularly consult with parents, offer at-home strategies, and may include you in joint sessions to ensure progress continues outside the clinic."
+      answer: "Yes. Parents and caregivers play an important role in supporting a child's growth. Depending on your child's age and individual needs, therapists may meet with parents, share practical strategies for home, or include parents in joint sessions. This collaborative approach helps families reinforce the skills children develop during therapy."
     },
     {
       question: "How do I know if my child needs therapy?",
-      answer: "If your child is experiencing sudden changes in mood, extreme tantrums, school refusal, withdrawal from friends, or difficulty sleeping, professional support can make a significant difference. Early intervention often prevents minor issues from becoming long-term struggles."
+      answer: "Every child experiences challenges differently. Changes in mood, frequent tantrums, difficulty attending school, withdrawal from friends, or changes in sleep may be signs that additional support could help. Therapy provides children with a supportive space to understand their emotions, develop healthy coping strategies, and build confidence as they navigate these experiences."
     },
     {
       question: "How long does child therapy usually take?",
-      answer: "The duration depends entirely on your child's specific goals and challenges. Some children see significant behavioral improvements through short-term therapy in 8-12 sessions, while children dealing with trauma or deep-seated anxiety may engage longer."
+      answer: "Every child's journey is unique and depends on their individual needs, strengths, and therapeutic goals. Some children may benefit from short-term support over 8–12 sessions, while others may choose ongoing therapy to work through more complex challenges. Your therapist will work with your family to determine an approach and pace that supports your child's progress."
     },
     {
       question: "Does your child therapy in PA accept Medicaid?",
-      answer: "Yes, our child therapy services accept Medicaid to ensure that crucial developmental support is accessible to the Darby and broader Delaware County community. Our team will verify your benefits prior to your first session."
+      answer: "Yes, Sunrise Human Care accepts Medicaid to help make mental health services more accessible to children and families in Darby and the broader Delaware County community. Our administrative team can verify your benefits and explain applicable coverage details before your child's first session."
     }
 ];
 
@@ -324,63 +324,95 @@ export default function ChildTherapyClient() {
       <Navbar />
       
       <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg" 
-              alt="Child Therapy in Darby PA" 
-              fill 
-              sizes="(max-width: 768px) 100vw, 50vw"
-              unoptimized={true}
-              className="object-cover opacity-60"
-              priority
-            />
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
-            <div className="absolute inset-0 z-0 bg-black/30" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
-          </div>
-          
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Expert Care for Your Child
-              </span>
-              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Help Your Child Thrive with <br className="hidden md:block" />
-                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Child Therapy in Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Equip your child with healthy coping skills, overcome behavioral challenges, and help them build confidence and succeed with expert child therapy in Darby, PA.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
+        
+{/* HERO SECTION */}
+<section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
+
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/child.png"
+      alt="Child Therapy in Darby PA"
+      fill
+      sizes="100vw"
+      unoptimized={true}
+      className="object-cover object-center opacity-100"
+      priority
+    />
+
+    {/* Dark gradient focused on the left */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(12,10,9,0.88) 0%, rgba(12,10,9,0.72) 30%, rgba(12,10,9,0.38) 52%, rgba(12,10,9,0.08) 75%, transparent 100%)",
+      }}
+    />
+
+    {/* Bottom white transition */}
+    <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-stone-950/10" />
+  </div>
+
+  {/* Hero Content */}
+  <div className="w-full max-w-[1500px] mx-auto px-6 md:px-10 lg:px-12 relative z-10">
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="max-w-3xl text-left"
+    >
+
+      <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
+        Expert Care for Your Child
+      </span>
+
+      <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-6 drop-shadow-md">
+        Help Your Child Thrive with
+        <span className="block text-orange-400 font-normal mt-2">
+          Child Therapy in Darby, PA
+        </span>
+      </h1>
+
+      <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed mb-10 drop-shadow-md">
+        Equip your child with healthy coping skills, overcome behavioral
+        challenges, and help them build confidence and succeed with expert
+        child therapy in Darby, PA.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 items-start">
+
+        <Link
+          href="#appointment"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("appointment")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
           <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
             Schedule Your First Session
           </button>
         </Link>
+
         <a href="tel:+18146202162">
-          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
             <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
             Call (814) 620-2162
           </button>
         </a>
+
       </div>
-            </motion.div>
-          </div>
-        </section>
+    </motion.div>
+  </div>
+</section>
 
         <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           
           {/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}
-          <section className="pt-16 md:pt-24 pb-40 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
+          <section className="pt-16 md:pt-24 pb-8 md:pb-10 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Header Row */}
                 <motion.div 
@@ -388,7 +420,7 @@ export default function ChildTherapyClient() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                    className="max-w-4xl mx-auto text-center mb-16"
+                    className="max-w-4xl mx-auto text-center mb-10"
                 >
                     <div className="flex flex-col items-center gap-4">
                         <SectionTag>Why Choose Sunrise</SectionTag>
@@ -452,13 +484,13 @@ export default function ChildTherapyClient() {
           </section>
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
-          <section className="pt-16 md:pt-24 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-4 md:pt-6 pb-40 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="max-w-4xl mx-auto text-center mb-16"
+                className="max-w-4xl mx-auto text-center mb-8 md:mb-10"
               >
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Support for Your Child</SectionTag>
@@ -512,7 +544,7 @@ export default function ChildTherapyClient() {
           </section>
 
           {/* SECTION 3: Clinical Approach */}
-          <section className="pt-16 md:pt-24 pb-40 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-10 pb-4 md:pb-6 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial="hidden"
@@ -566,14 +598,14 @@ export default function ChildTherapyClient() {
           </section>
 
           {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+          <section className="pt-4 md:pt-6 pb-8 md:pb-10 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="max-w-4xl mx-auto text-center mb-16 md:mb-24"
+                className="max-w-4xl mx-auto text-center mb-8 md:mb-12"
               >
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
@@ -603,7 +635,7 @@ export default function ChildTherapyClient() {
                       }}
                   />
 
-                  <div className="flex flex-col gap-12 md:gap-16">
+                  <div className="flex flex-col gap-4 md:gap-6">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
                               key={step.title}
@@ -626,7 +658,7 @@ export default function ChildTherapyClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
-                  className="mt-16 md:mt-24 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
+                  className="mt-6 md:mt-8 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
               >
                  {/* WebGL Fluid Background */}
                  <div className="absolute inset-0 z-0 opacity-40">
@@ -684,7 +716,7 @@ export default function ChildTherapyClient() {
                     
 
 {/* SECTION 5: FAQs */}
-          <section className="pt-8 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 pb-4 md:pb-6 bg-stone-50 relative overflow-hidden">
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -738,7 +770,7 @@ export default function ChildTherapyClient() {
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-12 flex flex-col items-center gap-4">
+                <div className="text-center mb-8 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     Child Therapy <span className="font-barlow not-italic text-orange-500">
@@ -784,7 +816,7 @@ export default function ChildTherapyClient() {
           </section>
 
           {/* SECTION: Related Services (Animated Stack) */}
-          <section className="pt-24 pb-0 bg-white relative overflow-hidden">
+          <section className="pt-4 md:pt-6 pb-0 bg-white relative overflow-hidden">
             
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
               <motion.div

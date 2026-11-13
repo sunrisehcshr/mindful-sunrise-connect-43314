@@ -86,7 +86,7 @@ const AboutUsSection = () => {
   const iconContainerStyles = "h-10 w-10 rounded-xl bg-white flex items-center justify-center shadow-md shadow-stone-200/50 border border-stone-100 transition-transform group-hover:scale-110 duration-300";
 
   return (
-    <section id="about" className="py-24 bg-white selection:bg-amber-100 selection:text-amber-900 font-barlow">
+    <section id="our-vision" className="pt-10 pb-16 md:pt-12 md:pb-16 bg-white selection:bg-amber-100 selection:text-amber-900 font-barlow">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
         <motion.div 
@@ -97,7 +97,7 @@ const AboutUsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="flex flex-col items-center gap-4">
-            <SectionTag>Our Story</SectionTag>
+            <SectionTag>Our Vision</SectionTag>
             <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                 Compassionate support to help you <br />
                 <span className="font-barlow not-italic text-orange-500">feel like yourself again.</span>

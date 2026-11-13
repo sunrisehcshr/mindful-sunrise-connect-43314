@@ -1,42 +1,80 @@
+
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const AboutHero = () => {
   return (
-    <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
+    <section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
+
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/therapy-for-older-adults.webp" 
-          alt="Young family with a child having a session at Sunrise Human Care Services in Darby, PA" 
-          fill 
-          className="object-cover opacity-60"
-          priority
-          sizes="100vw"
-        />
-        {/* Soft overlay gradient mimicking the brand warmth */}
-        <div className="absolute inset-0 z-0 bg-black/50" />
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/80 via-stone-950/40 to-white" />
+        <Image
+  src="/images/therapy-for-older-adults.webp"
+  alt="Older adult receiving compassionate support at Sunrise Human Care Services"
+  fill
+  className="object-cover opacity-100"
+  style={{
+    objectPosition: "left center",
+    transform: "scale(1.4)",
+    transformOrigin: "left center",
+  }}
+  priority
+  sizes="100vw"
+/>
+        {/* Left-side dark gradient */}
+       <div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(90deg, rgba(12,10,9,0.92) 0%, rgba(12,10,9,0.78) 25%, rgba(12,10,9,0.40) 43%, rgba(12,10,9,0.08) 60%, transparent 72%)",
+  }}
+/>
+
+        {/* Subtle overall overlay */}
+        <div className="absolute inset-0 bg-black/10" />
+
+        {/* Bottom transition into white section */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-stone-950/10" />
       </div>
-      
-      <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+
+      {/* Hero Content */}
+      <div className="w-full max-w-[1500px] mx-auto px-6 md:px-10 lg:px-12 relative z-10">
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl mx-auto"
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="max-w-3xl text-left"
         >
-          <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
+
+          {/* Eyebrow */}
+          <span className="inline-flex items-center font-barlow font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-orange-400 mb-8 bg-orange-500/10 px-6 py-3 rounded-full border border-orange-500/40 backdrop-blur-md">
             About Sunrise Human Care
           </span>
-          <h1 className="font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6">
-            Dedicated to illuminating the path to <span className="font-barlow not-italic text-orange-400 font-normal">mental wellness.</span>
+
+          {/* Main Heading */}
+          <h1 className="font-barlow font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-7 max-w-3xl">
+            Supporting every step of your
+            <span className="block text-orange-400 font-normal mt-2">
+              mental wellness journey.
+            </span>
           </h1>
-          <p className="text-stone-300 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            We are a sanctuary for healing, growth, and transformation, providing compassionate and expert psychiatric care to the Darby community since 2018. We exclusively accept Medicaid.
+
+          {/* Description */}
+          <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed">
+            Since 2018, we've partnered with the Darby community to provide
+            compassionate mental health care. Our team works alongside
+            individuals and families, recognizing their strengths and
+            supporting them as they work toward their personal well-being
+            goals. We currently accept Medicaid.
           </p>
+
         </motion.div>
       </div>
     </section>

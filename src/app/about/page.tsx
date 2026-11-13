@@ -5,12 +5,13 @@ import Footer from '@/components/Footer/Footer';
 import SEOHead from '@/components/SEOHead';
 import AboutHero from '@/components/about/AboutHero';
 import AboutSection from '@/components/AboutSection';
+import AboutUsSection from '@/components/ui/AboutUsSection';
 import AboutValues from '@/components/about/AboutValues';
 import AboutApproach from '@/components/about/AboutApproach';
-import FullTeamSection from '@/components/team/FullTeamSection';
 import AboutCTA from '@/components/about/AboutCTA';
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import SchemaMarkup from '@/components/SchemaMarkup';
+
 
 export const metadata: Metadata = {
   title: "About Our Mental Health Clinic | Darby, PA | Sunrise",
@@ -45,17 +46,10 @@ const fullTeamMembers = [
   },
   {
     name: "Chevonne Worthy",
-    role: "Outpatient Therapist",
+    role: "Clinical Supervisor",
     specialties: ["Individual Therapy", "Couples Counseling", "Family Therapy"],
     bio: "Chevonne is a compassionate and curious therapist providing Outpatient Therapeutic services.",
     image: "/images/chevonne-worthy.jpg"
-  },
-  {
-    name: "Anthony Obi",
-    role: "Outpatient Therapist",
-    specialties: ["Schizophrenia", "Mood Disorders", "Geriatric Care"],
-    bio: "Anthony Obi works as an Outpatient Therapist at Sunrise Human Care Services.",
-    image: "/images/Toni Obi's Profile Picture.jpeg"
   },
   {
     name: "Michael Flynn",
@@ -86,12 +80,12 @@ export default function AboutPage() {
       <div className="flex flex-col min-h-screen bg-stone-950">
         <Navbar />
         <main className="flex-grow">
-          <AboutHero />
-          <div className="bg-stone-50 relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
-            <AboutSection />
-            <AboutValues />
+         <AboutHero />
+<div className="bg-stone-50 relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
+  <AboutSection />
+  <AboutUsSection />
+  <AboutValues />
             <AboutApproach />
-            <FullTeamSection />
             <AboutCTA />
             
             {/* Medical Reviewer / E-E-A-T Footer Section (Visually Hidden for SEO) */}

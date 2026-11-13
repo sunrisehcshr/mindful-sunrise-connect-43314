@@ -264,28 +264,30 @@ const processSteps = [
   }
 ];
 
+
 const faqs = [
-    {
-      question: "What can we expect from couples counseling in Darby?",
-      answer: "Couples counseling in Darby at Sunrise Human Care offers a tailored approach where licensed therapists guide partners to improve communication, resolve conflicts, and build a stronger bond in a confidential, supportive environment. We help you navigate challenges together rather than against each other."
-    },
-    {
-      question: "Is couples counseling effective for long-term relationships?",
-      answer: "Yes, couples counseling helps long-term partners address entrenched patterns, rebuild trust, and rediscover connection. By utilizing proven methods like The Gottman Method and EFT, we assist couples in overcoming emotional distance and reigniting intimacy, regardless of how long they've been together."
-    },
-    {
-      question: "Can unmarried couples benefit from relationship therapy in Delaware County?",
-      answer: "Absolutely. Relationship therapy in Delaware County supports all committed relationships. Whether you are dating, engaged, or living together, our therapists can help unmarried couples strengthen their partnership, navigate life transitions, and lay a solid foundation for the future."
-    },
-    {
-      question: "How many sessions are needed for couples therapy near me?",
-      answer: "The duration of couples therapy depends entirely on your specific goals and challenges. Some couples see significant progress through short-term, solution-focused therapy in 8-12 sessions, while others dealing with deeper issues like infidelity or severe communication breakdowns may engage longer for lasting transformation."
-    },
-    {
-      question: "Does marriage counseling PA accept insurance?",
-      answer: "Yes, our marriage counseling PA services accept Medicaid to ensure that relationship support is accessible to the Darby and broader Delaware County community. Our administrative team will verify your benefits and clearly explain any coverage details prior to your first session."
-    }
+  {
+    question: "What can we expect from couples counseling in Darby?",
+    answer: "Couples counseling at Sunrise Human Care offers a supportive, confidential space for partners to better understand one another, strengthen communication, and build on the positive aspects of their relationship. With guidance from licensed therapists, couples can explore different perspectives, work through challenges, and develop healthier ways to connect and grow together."
+  },
+  {
+    question: "Is couples counseling effective for long-term relationships?",
+    answer: "Yes. Couples counseling can help long-term partners develop a deeper understanding of one another, strengthen trust, and rediscover meaningful connection. Using approaches such as The Gottman Method and Emotionally Focused Therapy (EFT), therapists support couples in improving communication, navigating emotional distance, and building a stronger partnership, no matter how long they have been together."
+  },
+  {
+    question: "Can unmarried couples benefit from relationship therapy in Delaware County?",
+    answer: "Absolutely. Relationship therapy in Delaware County welcomes couples at different stages of their journey. Whether you are dating, engaged, or living together, counseling can help you strengthen your connection, understand each other's needs, navigate life transitions, and build a shared foundation for the future."
+  },
+  {
+    question: "How many sessions are needed for couples therapy near me?",
+    answer: "Every relationship has its own needs and goals, so the number of sessions varies from couple to couple. Some partners may benefit from short-term, solution-focused counseling in 8–12 sessions, while others may choose ongoing support to work through challenges such as rebuilding trust or improving communication. Your therapist can help you determine an approach that supports your shared goals and progress."
+  },
+  {
+    question: "Does marriage counseling PA accept insurance?",
+    answer: "Yes, Sunrise Human Care accepts Medicaid to help make mental health services more accessible to the Darby and broader Delaware County community. Our administrative team can help verify your benefits and explain applicable coverage details before your first session."
+  }
 ];
+
 
 const scrollOffset: any = ["start center", "end center"];
 
@@ -324,63 +326,105 @@ export default function CouplesCounselingClient() {
       <Navbar />
       
       <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918015/diverse-couple-on-a-therapy-session-in-a-psycholog-2026-03-25-04-41-39-utc_jebtlc.jpg" 
-              alt="Couples Counseling in Darby PA" 
-              fill 
-              sizes="(max-width: 768px) 100vw, 50vw"
-              unoptimized={true}
-              className="object-cover opacity-60"
-              priority
-            />
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
-            <div className="absolute inset-0 z-0 bg-black/30" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
-          </div>
-          
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Rebuild Your Relationship in PA
-              </span>
-              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Reconnect and Rebuild with <br className="hidden md:block" />
-                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Couples Counseling in Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Stop the endless arguments and emotional distance. Reconnect with your partner, rebuild trust, and restore intimacy with expert marriage counseling in Darby, PA.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-          <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+
+{/* HERO SECTION */}
+<section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
+
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/images/Couple.png"
+      alt="Couple sitting together in a welcoming couples counseling office"
+      fill
+      sizes="100vw"
+      className="object-cover object-[35%_center] md:object-[35%_center]"
+      priority
+    />
+
+    {/* Dark gradient — strongest behind the text on the left */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(12,10,9,0.88) 0%, rgba(12,10,9,0.72) 30%, rgba(12,10,9,0.38) 52%, rgba(12,10,9,0.08) 75%, transparent 100%)",
+      }}
+    />
+
+    {/* Subtle overall overlay */}
+    <div className="absolute inset-0 bg-black/10" />
+
+    {/* Bottom transition */}
+    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-stone-950/10" />
+  </div>
+
+  {/* Hero Content — Left Aligned */}
+  <div className="w-full max-w-[1500px] mx-auto px-6 md:px-10 lg:px-12 relative z-10">
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="max-w-3xl text-left"
+    >
+
+      {/* Eyebrow */}
+      <span className="inline-flex items-center font-barlow font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-orange-400 mb-8 bg-orange-500/10 px-6 py-3 rounded-full border border-orange-500/40 backdrop-blur-md">
+        Support for Your Relationship in PA
+      </span>
+
+      {/* Main Heading */}
+      <h1 className="font-barlow font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-7 max-w-3xl">
+        Build a Stronger, More Connected Relationship
+        <span className="block text-orange-400 font-normal mt-2">
+          Couples Counseling in Darby, PA
+        </span>
+      </h1>
+
+      {/* Description */}
+      <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+        Every relationship experiences challenges and change. Couples
+        counseling offers a supportive space to improve communication,
+        understand each other's perspectives, and work toward shared goals.
+      </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 items-start">
+
+        <Link
+          href="#appointment"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("appointment")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
+          <button className="bg-orange-500 hover:bg-orange-400 text-white font-barlow font-bold px-8 py-4 text-base rounded-full transition duration-300 flex items-center justify-center gap-2 shadow-lg shadow-orange-500/25">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
             Schedule Your First Session
           </button>
         </Link>
+
         <a href="tel:+18146202162">
-          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-barlow font-bold px-8 py-4 text-base rounded-full transition duration-300 flex items-center justify-center backdrop-blur-md">
             <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
             Call (814) 620-2162
           </button>
         </a>
+
       </div>
-            </motion.div>
-          </div>
-        </section>
+    </motion.div>
+  </div>
+</section>
+
 
         <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           
           {/* SECTION 1: Understanding Individual Therapy (Bento Grid) */}
-          <section className="pt-16 md:pt-24 pb-40 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
+          <section className="pt-16 md:pt-24 pb-16 md:pb-20 relative overflow-hidden bg-white selection:bg-stone-100 selection:text-stone-900 font-barlow">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Header Row */}
                 <motion.div 
@@ -452,7 +496,7 @@ export default function CouplesCounselingClient() {
           </section>
 
           {/* SECTION 2: Conditions Treated (Distinct Grid Layout) */}
-          <section className="pt-16 md:pt-24 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -512,7 +556,7 @@ export default function CouplesCounselingClient() {
           </section>
 
           {/* SECTION 3: Clinical Approach */}
-          <section className="pt-16 md:pt-24 pb-40 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial="hidden"
@@ -566,7 +610,7 @@ export default function CouplesCounselingClient() {
                     
 
 {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-8 md:pb-12 bg-stone-50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
@@ -601,7 +645,7 @@ export default function CouplesCounselingClient() {
                       }}
                   />
 
-                  <div className="flex flex-col gap-12 md:gap-16">
+                  <div className="flex flex-col gap-4 md:gap-6">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
                               key={step.title}
@@ -678,7 +722,7 @@ export default function CouplesCounselingClient() {
 
 
           {/* SECTION 5: FAQs */}
-          <section className="pt-8 pb-40 bg-stone-50 relative overflow-hidden">
+          <section className="pt-4 md:pt-6 pb-12 md:pb-16 bg-stone-50 relative overflow-hidden">
             
             {/* Animated SVG Background */}
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -776,7 +820,7 @@ export default function CouplesCounselingClient() {
           </section>
 
           {/* SECTION: Related Services (Animated Stack) */}
-          <section className="pt-24 pb-0 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-12 pb-0 bg-white relative overflow-hidden">
             
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
               <motion.div
@@ -803,9 +847,9 @@ export default function CouplesCounselingClient() {
           </section>
 
           {/* SECTION 6: Appointment */}
-          <div className="bg-white pt-16 md:pt-24">
-            <AppointmentSection />
-          </div>
+         <div className="bg-white pt-4 md:pt-8">
+  <AppointmentSection />
+</div>
           
         </div>
       </main>

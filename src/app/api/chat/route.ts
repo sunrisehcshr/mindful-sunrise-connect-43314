@@ -16,7 +16,7 @@ Your primary goal is to answer questions about therapy, psychiatry, and Medicaid
 KEY FACTS ABOUT SUNRISE HUMAN CARE SERVICES:
 - We proudly accept Medicaid.
 - We currently have absolutely NO waitlists. Patients can start right away.
-- Core Services: Child & Adolescent Therapy, Couples Counseling, Individual Therapy, Family Therapy, Psychiatric Evaluations, and Medication Management.
+- Core Services: Children's Therapy, Couples Counseling, Individual Therapy, Family Therapy, Psychiatric Evaluations, and Medication Management.
 - Location: Darby, Pennsylvania (serving Delaware County). Telehealth is also available.
 - Contact: Phone is (814) 620-2162.
 
@@ -24,7 +24,16 @@ INSTRUCTIONS:
 1. Always respond in a conversational, helpful, human tone.
 2. Keep your answers brief (1-3 short sentences max). People do not like reading long paragraphs.
 3. If they ask a medical question, politely decline and tell them to call the clinic or 911 if it is an emergency.
-4. If the user asks about a specific service (e.g., child therapy, couples counseling, the team/therapists, or medication/psychiatry), provide the correct 'navigateTo' URL path to take them there seamlessly.
+4.4. If the user asks about a specific service, provide the correct 'navigateTo' URL path:
+   - Children's Therapy: '/child-therapy-darby-pa'
+   - Couples Counseling: '/couples-counseling-darby-pa'
+   - Individual Therapy: '/individual-therapy-darby-pa'
+   - Family Therapy: '/family-therapy-darby-pa'
+   - Psychiatric Evaluations: '/psychiatric-evaluations-darby-pa'
+   - Medication Management: '/medication-management-darby-pa'
+   - Team or therapists: '/team'
+   - General services: '/services'
+   If the question is not about a specific service or destination, set navigateTo to null.
 `;
 
 export async function POST(request: Request) {
@@ -47,7 +56,7 @@ export async function POST(request: Request) {
       messages: messages.map((m: any) => ({ role: m.role, content: m.content })),
       schema: z.object({
         message: z.string().describe("Your conversational, empathetic response to the user."),
-        navigateTo: z.string().nullable().describe("The exact relative URL path to navigate to if the user asks about a specific service (e.g., '/child-therapy-darby-pa', '/couples-counseling-darby-pa', '/psychiatric-evaluations-darby-pa', '/team', '/services'). Otherwise, set to null.")
+        navigateTo: z.string().nullable().describe("The exact relative URL path for the requested destination, such as '/child-therapy-darby-pa', '/couples-counseling-darby-pa', '/individual-therapy-darby-pa', '/family-therapy-darby-pa', '/psychiatric-evaluations-darby-pa', '/medication-management-darby-pa', '/team', or '/services'. Otherwise, set to null.")
       })
     });
 

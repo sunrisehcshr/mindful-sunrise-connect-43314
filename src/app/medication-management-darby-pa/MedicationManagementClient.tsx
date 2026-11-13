@@ -264,28 +264,30 @@ const processSteps = [
   }
 ];
 
+
 const faqs = [
     {
       question: "What happens during a medication management appointment?",
-      answer: "Our psychiatric provider will review your current symptoms, medical history, and any past medications to determine the safest, most effective prescription plan for you."
+      answer: "During a medication management appointment, your psychiatric provider will take time to understand your current concerns, medical history, and previous experiences with medication. Together, you will review your treatment goals, discuss available options, and develop a personalized plan that supports your wellbeing. Follow-up appointments help your provider understand how your treatment is working and whether any adjustments may be appropriate."
     },
     {
       question: "Will I be forced to take medication?",
-      answer: "Never. Medication is always a collaborative choice. We explain all your options, including the benefits and potential side effects, so you can make an informed decision."
+      answer: "No. Your treatment decisions are made collaboratively, and you will have the opportunity to ask questions and discuss your preferences. Your provider will explain the potential benefits, risks, and side effects of available options so you can make an informed decision about your care. Medication is considered only when it is clinically appropriate and aligns with your treatment goals."
     },
     {
       question: "How often will I need to see my provider?",
-      answer: "Initially, you may see your provider every 2 to 4 weeks to monitor your body's response to a new medication. Once you are stable, appointments are typically spaced out to every 1 to 3 months."
+      answer: "The frequency of appointments depends on your individual needs, treatment plan, and response to medication. When starting a new medication or making an adjustment, your provider may recommend follow-up visits every 2–4 weeks. Once your treatment is stable, appointments may be spaced out to every 1–3 months, as clinically appropriate."
     },
     {
       question: "Can I do both therapy and medication management at Sunrise?",
-      answer: "Yes! We highly recommend a combined approach. Our prescribers and therapists work together under one roof to provide you with seamless, comprehensive care."
+      answer: "Yes. Therapy and medication management can work together as part of a coordinated approach to mental health care. Our psychiatric providers and therapists can collaborate to support your treatment goals, helping address emotional, behavioral, and medical needs while keeping your care centered on you."
     },
     {
       question: "Does your clinic in PA accept Medicaid for prescriptions?",
-      answer: "Yes, our psychiatric services accept Medicaid. We will verify your benefits before your appointment and work with your pharmacy to ensure your medications are covered."
+      answer: "Yes, Sunrise Human Care accepts Medicaid for eligible services. Our administrative team can help verify your insurance benefits and explain applicable coverage before your appointment. Prescription coverage may depend on your specific Medicaid plan, medication, and pharmacy, so these details should be confirmed before filling a prescription."
     }
 ];
+
 
 const scrollOffset: any = ["start center", "end center"];
 
@@ -324,58 +326,86 @@ export default function MedicationManagementClient() {
       <Navbar />
       
       <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto/v1774918385/doctor-give-advice-about-medicine-or-vitamin-to-el-2026-01-08-05-55-04-utc_fvofy1.jpg" 
-              alt="Medication Management in Darby PA" 
-              fill 
-              sizes="(max-width: 768px) 100vw, 50vw"
-              unoptimized={true}
-              className="object-cover opacity-60"
-              priority
-            />
-            {/* Extremely light dark overlay so the image is fully visible while keeping text readable */}
-            <div className="absolute inset-0 z-0 bg-black/30" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-stone-50" />
-          </div>
-          
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Safe, Effective Psychiatric Care
-              </span>
-              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Find the Right Balance with <br className="hidden md:block" />
-                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Medication Management in Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Stop struggling with side effects and treatments that don't work. Get a safe, personalized medication plan from psychiatric specialists who monitor your progress closely.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
+        
+{/* HERO SECTION */}
+<section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
+
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/Medication%20Management.webp"
+      alt="Medication Management in Darby PA"
+      fill
+      sizes="100vw"
+      unoptimized={true}
+      className="object-cover object-center opacity-100"
+      priority
+    />
+
+    {/* Dark gradient concentrated on the left */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(12,10,9,0.88) 0%, rgba(12,10,9,0.72) 30%, rgba(12,10,9,0.38) 52%, rgba(12,10,9,0.08) 75%, transparent 100%)",
+      }}
+    />
+
+    {/* Bottom white transition */}
+    <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-stone-950/10" />
+  </div>
+
+  {/* Left-aligned Hero Content */}
+  <div className="w-full max-w-[1500px] mx-auto px-6 md:px-10 lg:px-12 relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="max-w-3xl text-left"
+    >
+      <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
+        Safe, Effective Psychiatric Care
+      </span>
+
+      <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-6 drop-shadow-md">
+        Find the Right Balance with
+        <span className="block text-orange-400 font-normal mt-2">
+          Medication Management in Darby, PA
+        </span>
+      </h1>
+
+      <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed mb-10 drop-shadow-md">
+        Stop struggling with side effects and treatments that don't work. Get a safe,
+        personalized medication plan from psychiatric specialists who monitor your
+        progress closely.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 items-start">
+        <Link
+          href="#appointment"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("appointment")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
           <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
             <HugeiconsIcon icon={Calendar01Icon} className="w-5 h-5" />
             Schedule Your First Session
           </button>
         </Link>
+
         <a href="tel:+18146202162">
-          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
+          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
             <HugeiconsIcon icon={CallIcon} className="w-5 h-5 mr-2" />
             Call (814) 620-2162
           </button>
         </a>
       </div>
-            </motion.div>
-          </div>
-        </section>
+    </motion.div>
+  </div>
+</section>
 
         <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           

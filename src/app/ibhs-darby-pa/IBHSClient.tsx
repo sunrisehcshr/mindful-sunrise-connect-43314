@@ -100,7 +100,7 @@ const TimelineStep = React.memo(({
                     )}>
                         {step.title}
                     </h3>
-                    <p className="text-stone-500 text-base leading-relaxed font-barlow">
+                   <p className="text-stone-500 text-base leading-relaxed font-barlow">
                         {step.desc}
                     </p>
                 </div>
@@ -289,61 +289,92 @@ export default function IBHSClient() {
       <Navbar />
       
       <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-40 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-stone-950">
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://res.cloudinary.com/dabsxebx8/image/upload/f_auto,q_auto,w_1600/v1774918385/women-discussing-childs-progress-in-kindergarten-e-2026-03-25-09-19-16-utc_j1quiw.jpg" 
-              alt="Child receiving behavioral therapy support" 
-              fill 
-              className="object-cover opacity-40"
-              priority
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 z-0 bg-black/40" />
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-stone-950/30 via-transparent to-white" />
-          </div>
-          
-          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
-                Intensive Behavioral Health Services (IBHS)
-              </span>
-              <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                Transform Your Child's Behavior in <br className="hidden md:block" />
-                <span className="font-barlow not-italic text-orange-400 font-normal drop-shadow-md">Darby, PA</span>
-              </h1>
-              <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                Stop letting daily meltdowns, school suspensions, and communication struggles disrupt your family. Get comprehensive, in-home and in-school behavioral support fully covered by Medicaid—without the wait.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="#appointment" onClick={(e) => { e.preventDefault(); document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                  <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
-                    <Calendar className="w-5 h-5" />
-                    Schedule Your Free Consultation
-                  </button>
-                </Link>
-                <a href="tel:+18146202162">
-                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call (814) 620-2162
-                  </button>
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        
+{/* HERO SECTION */}
+<section className="relative min-h-[750px] md:min-h-screen flex items-center pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden bg-stone-950">
+
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/IBHS.png"
+      alt="Child receiving individualized behavioral health support"
+      fill
+      sizes="100vw"
+      className="object-cover object-center opacity-100"
+      priority
+    />
+
+    {/* Dark gradient concentrated on the left */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(12,10,9,0.88) 0%, rgba(12,10,9,0.72) 30%, rgba(12,10,9,0.38) 52%, rgba(12,10,9,0.08) 75%, transparent 100%)",
+      }}
+    />
+
+    {/* Bottom white transition */}
+    <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-stone-950/10" />
+  </div>
+
+  {/* Left-aligned Hero Content */}
+  <div className="w-full max-w-[1500px] mx-auto px-6 md:px-10 lg:px-12 relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="max-w-3xl text-left"
+    >
+      <span className="inline-block font-barlow font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-orange-400 mb-6 bg-orange-500/10 px-5 py-2.5 rounded-full border border-orange-500/20 backdrop-blur-md">
+        Intensive Behavioral Health Services (IBHS)
+      </span>
+
+      <h1 className="text-balance font-barlow font-normal text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-6 drop-shadow-md">
+        Help Your Child Build Skills and Confidence
+        <span className="block text-orange-400 font-normal mt-2">
+          IBHS in Darby, PA
+        </span>
+      </h1>
+
+      <p className="text-stone-100 font-barlow text-lg md:text-xl max-w-2xl leading-relaxed mb-10 drop-shadow-md">
+        Support your child as they develop communication, emotional regulation,
+        and everyday life skills. Our individualized behavioral health services
+        work alongside families to help children grow and build confidence at
+        home, in school, and in their communities.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 items-start">
+        <Link
+          href="#appointment"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("appointment")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
+          <button className="bg-orange-500 hover:bg-orange-400 text-stone-50 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+            <Calendar className="w-5 h-5" />
+            Schedule Your Free Consultation
+          </button>
+        </Link>
+
+        <a href="tel:+18146202162">
+          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-barlow font-bold px-4 sm:px-8 py-3 sm:py-4 text-[13px] sm:text-base whitespace-nowrap rounded-full transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-md">
+            <Phone className="w-5 h-5 mr-2" />
+            Call (814) 620-2162
+          </button>
+        </a>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
         <div className="bg-white relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_60px_rgba(0,0,0,0.15)]">
           
           {/* SECTION 1: Services Grid */}
-          <section className="py-16 md:py-24 relative overflow-hidden">
+          <section className="pt-12 md:pt-16 pb-8 md:pb-10 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-orange-50/50 rounded-full blur-[120px] -ml-[300px] -mt-[300px] pointer-events-none" />
             
             <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -351,7 +382,7 @@ export default function IBHSClient() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-3xl mx-auto text-center mb-16"
+                className="max-w-3xl mx-auto text-center mb-8 md:mb-10"
               >
                 <SectionTag>Our Approach</SectionTag>
                 <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight mt-4 mb-6">
@@ -389,13 +420,13 @@ export default function IBHSClient() {
           </section>
 
           {/* SECTION 2: Why Choose Us */}
-          <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+          <section className="pt-8 md:pt-10 pb-8 md:pb-10 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto text-center mb-16"
+                className="max-w-4xl mx-auto text-center mb-8 md:mb-10"
               >
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Why Choose Sunrise</SectionTag>
@@ -527,7 +558,7 @@ export default function IBHSClient() {
           </section>
 
           {/* SECTION 3: Local Context & Service Areas */}
-          <section className="py-16 md:py-24 bg-stone-900 text-white relative overflow-hidden rounded-[3rem] mx-4 md:mx-6 my-12">
+          <section className="py-10 md:py-12 bg-stone-900 text-white relative overflow-hidden rounded-[3rem] mx-4 md:mx-6 my-6">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
             
@@ -562,36 +593,25 @@ export default function IBHSClient() {
                   viewport={{ once: true }}
                   className="space-y-4"
                 >
-                  <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
-                    <h3 className="font-barlow font-bold text-2xl text-white mb-6 flex items-center gap-3">
-                      <MapPin className="w-6 h-6 text-orange-400" />
-                      Areas We Serve
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      <div className="px-4 py-3 bg-orange-500 rounded-xl text-center font-barlow font-bold text-stone-50 shadow-lg shadow-orange-500/20">
-                        Darby (19023)
-                      </div>
-                      {[
-                        { name: "Yeadon", zip: "19008" },
-                        { name: "Lansdowne", zip: "19003" },
-                        { name: "Upper Darby", zip: "19026" },
-                        { name: "Collingdale", zip: "19064" },
-                        { name: "Sharon Hill", zip: "19073" }
-                      ].map(city => (
-                        <div key={city.name} className="px-4 py-3 bg-white/10 rounded-xl text-center font-barlow text-stone-300 text-sm flex flex-col items-center justify-center border border-white/5">
-                          <span className="font-bold">{city.name}</span>
-                          <span className="text-xs opacity-70">{city.zip}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
+  <h3 className="font-barlow font-bold text-2xl text-white mb-6 flex items-center gap-3">
+    <MapPin className="w-6 h-6 text-orange-400" />
+    Areas We Serve
+  </h3>
+  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+    <div className="px-4 py-3 bg-orange-500 rounded-xl text-center font-barlow font-bold text-stone-50 shadow-lg shadow-orange-500/20">
+      Darby (19023)
+    </div>
+  </div>
+</div>
+                    
                 </motion.div>
               </div>
             </div>
           </section>
 
           {/* SECTION 4: The Process */}
-          <section className="py-16 md:py-32 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-10 pb-8 md:pb-10 bg-stone-50 relative overflow-hidden">
             <CurveTransition fillColor="#ffffff" />
             <div className="container mx-auto px-4 md:px-8 relative z-10">
               <motion.div 
@@ -599,7 +619,7 @@ export default function IBHSClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="max-w-4xl mx-auto text-center mb-16 md:mb-24"
+                className="max-w-4xl mx-auto text-center mb-8 md:mb-10"
               >
                 <div className="flex flex-col items-center gap-4">
                   <SectionTag>Your Path Forward</SectionTag>
@@ -624,7 +644,7 @@ export default function IBHSClient() {
                       }}
                   />
 
-                  <div className="flex flex-col gap-12 md:gap-16">
+                  <div className="flex flex-col gap-4 md:gap-6">
                       {processSteps.map((step, i) => (
                           <TimelineStep 
                               key={step.title}
@@ -646,7 +666,7 @@ export default function IBHSClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }}
-                  className="mt-24 md:mt-32 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
+                  className="mt-8 md:mt-10 max-w-5xl mx-auto bg-stone-900 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-center shadow-2xl shadow-stone-900/20"
               >
                  <div className="absolute inset-0 z-0 opacity-40">
                     <UiloraFrostedGlass
@@ -694,7 +714,7 @@ export default function IBHSClient() {
           </section>
 
           {/* SECTION 5: FAQs */}
-          <section className="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
+          <section className="pt-8 md:pt-10 pb-8 md:pb-10 bg-stone-50 relative overflow-hidden">
             <CurveTransition fillColor="#fafaf9" />
             
             <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -746,9 +766,9 @@ export default function IBHSClient() {
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
             </div>
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10 mt-12">
+            <div className="container mx-auto px-4 md:px-6 relative z-10 mt-4 md:mt-6">
               <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-12 flex flex-col items-center gap-4">
+                <div className="text-center mb-8 flex flex-col items-center gap-4">
                   <SectionTag>Common Questions</SectionTag>
                   <h2 className="text-3xl md:text-5xl text-balance font-normal text-stone-900 tracking-tighter leading-tight">
                     IBHS <span className="font-barlow not-italic text-orange-500">FAQs.</span>
@@ -796,12 +816,12 @@ export default function IBHSClient() {
             </div>
           </section>
 
-          <div className="relative z-10 bg-white pb-24 md:pb-32 -mt-1">
-            <CurveTransition fillColor="#fafaf9" />
-          </div>
-          <div className="bg-white pt-24 md:pt-32 -mt-24 md:-mt-32">
-            <AppointmentSection />
-          </div>
+         <div className="relative z-10 bg-white pb-8 md:pb-10 -mt-1">
+  <CurveTransition fillColor="#fafaf9" />
+</div>
+<div className="bg-white pt-8 md:pt-10 -mt-8 md:-mt-10">
+  <AppointmentSection />
+</div>
           
         </div>
       </main>

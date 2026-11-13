@@ -87,16 +87,13 @@ const Navbar = () => {
   }, {
     title: "Family Therapy",
     path: "/family-therapy-darby-pa"
-  }, {
-    title: "Child Therapy",
-    path: "/child-therapy-darby-pa"
-  }, {
-    title: "IBHS Services",
-    path: "/ibhs-darby-pa"
-  }, {
-    title: "Psychiatric Evaluations",
-    path: "/psychiatric-evaluations-darby-pa"
-  }, {
+  },{
+  title: "Children's Therapy",
+  path: "/child-therapy-darby-pa"
+}, {
+  title: "Psychiatric Evaluations",
+  path: "/psychiatric-evaluations-darby-pa"
+}, {
     title: "Medication Management",
     path: "/medication-management-darby-pa"
   }];
@@ -112,12 +109,11 @@ const Navbar = () => {
 
   const resourceLinks = [
     { title: "Blog", path: "/blog" },
-    { title: "FAQ", path: "/faq" },
   ];
 
   const isResourcePage = () => {
-    return isActive("/blog") || isActive("/faq");
-  };
+  return isActive("/blog");
+};
 
   const navLinks = [{
     path: "/",
@@ -126,13 +122,19 @@ const Navbar = () => {
     path: "/about",
     label: "About"
   }, {
+    path: "/our-team",
+    label: "Our Team"
+  }, {
     type: "dropdown",
     label: "Services",
     children: serviceLinks
-  }, {
+}, {
     type: "dropdown",
     label: "Conditions",
     children: conditionLinks
+  }, {
+    path: "/faq",
+    label: "FAQ"
   }, {
     type: "dropdown",
     label: "Resources",

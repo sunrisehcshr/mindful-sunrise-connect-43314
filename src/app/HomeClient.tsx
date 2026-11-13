@@ -6,10 +6,6 @@ import WarmHeroSection from '@/components/WarmHeroSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
 import ServicesSection from '@/components/services/ServicesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
-import ConditionsSection from '@/components/conditions/ConditionsSection';
-import AboutUsSection from '@/components/ui/AboutUsSection';
-import TeamSection from '@/components/team/TeamSection';
-import FAQSection from '@/components/FAQSection';
 
 import AppointmentSection from '@/components/Appointment/AppointmentSection';
 import Navbar from '@/components/Navbar';
@@ -55,13 +51,9 @@ export default function HomeClient() {
           <div className="relative">
             <WarmHeroSection />
             <div className="relative z-10 bg-white overflow-hidden">
+               <ServicesSection />
               <WhyChooseUsSection />
-              <ServicesSection />
               <HowItWorksSection />
-              <ConditionsSection />
-              <AboutUsSection />
-              <TeamSection />
-              <FAQSection />
               <AppointmentSection />
             </div>
           </div>
